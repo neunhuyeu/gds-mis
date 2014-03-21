@@ -17,6 +17,20 @@ namespace Doctor_Client
             InitializeComponent();
         }
 
+        private void textBox1_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            dataGridView1 = new DataGridView();
+            if (tbSearchName.Text.Length + tbInsuranceSearch.Text.Length + tbDOBSearch.Text.Length > 0)
+            {
+                // List<Patient> potentualPatients
+                //if (todo: search command
+                //foreach(Patient p in potentualPatients)
+                //{
+               // todo:add a row into the grid viewer
+                //}
+            }
+        }
+
  
     }
 }

@@ -28,300 +28,329 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PatientDetails));
             this.tabCurrentMedication = new System.Windows.Forms.TabPage();
             this.tabPastAppointments = new System.Windows.Forms.TabPage();
             this.tabOverview = new System.Windows.Forms.TabPage();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.lbOverview = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
+            this.tbPatientDetailsOverviewPhone = new System.Windows.Forms.Label();
+            this.tbPatientDetailsOverviewMPhone = new System.Windows.Forms.Label();
+            this.tbPatientDetailsOverviewEMail = new System.Windows.Forms.Label();
+            this.tbPatientDetailsOverviewIsuranceNumber = new System.Windows.Forms.Label();
+            this.tbPatientDetailsOverviewGender = new System.Windows.Forms.Label();
+            this.tbPatientDetailsOverviewDoB = new System.Windows.Forms.Label();
+            this.tbPatientDetailsOverviewAge = new System.Windows.Forms.Label();
+            this.tbPatientDetailsOverviewName = new System.Windows.Forms.Label();
+            this.lPatientDetailsOverviewPhone = new System.Windows.Forms.Label();
+            this.lPatientDetailsOverviewMPhone = new System.Windows.Forms.Label();
+            this.lPatientDetailsOverviewEMail = new System.Windows.Forms.Label();
+            this.lPatientDetailsOverviewName = new System.Windows.Forms.Label();
+            this.lPatientDetailsOverviewInsuranceNumber = new System.Windows.Forms.Label();
+            this.lPatientDetailsOverviewAge = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
-            this.label14 = new System.Windows.Forms.Label();
-            this.label15 = new System.Windows.Forms.Label();
-            this.label16 = new System.Windows.Forms.Label();
-            this.label17 = new System.Windows.Forms.Label();
+            this.lPatientDetailsOverviewGender = new System.Windows.Forms.Label();
+            this.lPatientDetailsOverviewDoB = new System.Windows.Forms.Label();
+            this.lbOverview = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.tabs = new System.Windows.Forms.TabControl();
             this.tabOverview.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.tabs.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabCurrentMedication
             // 
-            this.tabCurrentMedication.Location = new System.Drawing.Point(4, 22);
+            this.tabCurrentMedication.Location = new System.Drawing.Point(4, 25);
+            this.tabCurrentMedication.Margin = new System.Windows.Forms.Padding(4);
             this.tabCurrentMedication.Name = "tabCurrentMedication";
-            this.tabCurrentMedication.Padding = new System.Windows.Forms.Padding(3);
-            this.tabCurrentMedication.Size = new System.Drawing.Size(651, 334);
+            this.tabCurrentMedication.Padding = new System.Windows.Forms.Padding(4);
+            this.tabCurrentMedication.Size = new System.Drawing.Size(837, 401);
             this.tabCurrentMedication.TabIndex = 2;
             this.tabCurrentMedication.Text = "Perscriptions";
             this.tabCurrentMedication.UseVisualStyleBackColor = true;
             // 
             // tabPastAppointments
             // 
-            this.tabPastAppointments.Location = new System.Drawing.Point(4, 22);
+            this.tabPastAppointments.Location = new System.Drawing.Point(4, 25);
+            this.tabPastAppointments.Margin = new System.Windows.Forms.Padding(4);
             this.tabPastAppointments.Name = "tabPastAppointments";
-            this.tabPastAppointments.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPastAppointments.Size = new System.Drawing.Size(651, 334);
+            this.tabPastAppointments.Padding = new System.Windows.Forms.Padding(4);
+            this.tabPastAppointments.Size = new System.Drawing.Size(837, 401);
             this.tabPastAppointments.TabIndex = 1;
             this.tabPastAppointments.Text = "Appointments";
             this.tabPastAppointments.UseVisualStyleBackColor = true;
             // 
             // tabOverview
             // 
+            this.tabOverview.BackColor = System.Drawing.Color.White;
+            this.tabOverview.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("tabOverview.BackgroundImage")));
+            this.tabOverview.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.tabOverview.Controls.Add(this.panel1);
             this.tabOverview.Controls.Add(this.lbOverview);
             this.tabOverview.Controls.Add(this.pictureBox1);
-            this.tabOverview.Location = new System.Drawing.Point(4, 22);
+            this.tabOverview.Location = new System.Drawing.Point(4, 25);
+            this.tabOverview.Margin = new System.Windows.Forms.Padding(4);
             this.tabOverview.Name = "tabOverview";
-            this.tabOverview.Padding = new System.Windows.Forms.Padding(3);
-            this.tabOverview.Size = new System.Drawing.Size(651, 334);
+            this.tabOverview.Padding = new System.Windows.Forms.Padding(4);
+            this.tabOverview.Size = new System.Drawing.Size(837, 401);
             this.tabOverview.TabIndex = 0;
             this.tabOverview.Text = "Overview";
-            this.tabOverview.UseVisualStyleBackColor = true;
             this.tabOverview.Click += new System.EventHandler(this.tabPage1_Click);
             // 
-            // pictureBox1
+            // panel1
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(11, 55);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(110, 122);
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
+            this.panel1.BackColor = System.Drawing.Color.Transparent;
+            this.panel1.Controls.Add(this.tbPatientDetailsOverviewPhone);
+            this.panel1.Controls.Add(this.tbPatientDetailsOverviewMPhone);
+            this.panel1.Controls.Add(this.tbPatientDetailsOverviewEMail);
+            this.panel1.Controls.Add(this.tbPatientDetailsOverviewIsuranceNumber);
+            this.panel1.Controls.Add(this.tbPatientDetailsOverviewGender);
+            this.panel1.Controls.Add(this.tbPatientDetailsOverviewDoB);
+            this.panel1.Controls.Add(this.tbPatientDetailsOverviewAge);
+            this.panel1.Controls.Add(this.tbPatientDetailsOverviewName);
+            this.panel1.Controls.Add(this.lPatientDetailsOverviewPhone);
+            this.panel1.Controls.Add(this.lPatientDetailsOverviewMPhone);
+            this.panel1.Controls.Add(this.lPatientDetailsOverviewEMail);
+            this.panel1.Controls.Add(this.lPatientDetailsOverviewName);
+            this.panel1.Controls.Add(this.lPatientDetailsOverviewInsuranceNumber);
+            this.panel1.Controls.Add(this.lPatientDetailsOverviewAge);
+            this.panel1.Controls.Add(this.label5);
+            this.panel1.Controls.Add(this.lPatientDetailsOverviewGender);
+            this.panel1.Controls.Add(this.lPatientDetailsOverviewDoB);
+            this.panel1.Location = new System.Drawing.Point(169, 68);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(595, 284);
+            this.panel1.TabIndex = 8;
+            // 
+            // tbPatientDetailsOverviewPhone
+            // 
+            this.tbPatientDetailsOverviewPhone.AutoSize = true;
+            this.tbPatientDetailsOverviewPhone.Location = new System.Drawing.Point(188, 231);
+            this.tbPatientDetailsOverviewPhone.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.tbPatientDetailsOverviewPhone.Name = "tbPatientDetailsOverviewPhone";
+            this.tbPatientDetailsOverviewPhone.Size = new System.Drawing.Size(31, 17);
+            this.tbPatientDetailsOverviewPhone.TabIndex = 18;
+            this.tbPatientDetailsOverviewPhone.Text = "N/A";
+            // 
+            // tbPatientDetailsOverviewMPhone
+            // 
+            this.tbPatientDetailsOverviewMPhone.AutoSize = true;
+            this.tbPatientDetailsOverviewMPhone.Location = new System.Drawing.Point(188, 201);
+            this.tbPatientDetailsOverviewMPhone.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.tbPatientDetailsOverviewMPhone.Name = "tbPatientDetailsOverviewMPhone";
+            this.tbPatientDetailsOverviewMPhone.Size = new System.Drawing.Size(88, 17);
+            this.tbPatientDetailsOverviewMPhone.TabIndex = 17;
+            this.tbPatientDetailsOverviewMPhone.Text = "0623453745";
+            // 
+            // tbPatientDetailsOverviewEMail
+            // 
+            this.tbPatientDetailsOverviewEMail.AutoSize = true;
+            this.tbPatientDetailsOverviewEMail.Location = new System.Drawing.Point(188, 170);
+            this.tbPatientDetailsOverviewEMail.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.tbPatientDetailsOverviewEMail.Name = "tbPatientDetailsOverviewEMail";
+            this.tbPatientDetailsOverviewEMail.Size = new System.Drawing.Size(131, 17);
+            this.tbPatientDetailsOverviewEMail.TabIndex = 16;
+            this.tbPatientDetailsOverviewEMail.Text = "diktrom@gmail.com";
+            // 
+            // tbPatientDetailsOverviewIsuranceNumber
+            // 
+            this.tbPatientDetailsOverviewIsuranceNumber.AutoSize = true;
+            this.tbPatientDetailsOverviewIsuranceNumber.Location = new System.Drawing.Point(188, 139);
+            this.tbPatientDetailsOverviewIsuranceNumber.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.tbPatientDetailsOverviewIsuranceNumber.Name = "tbPatientDetailsOverviewIsuranceNumber";
+            this.tbPatientDetailsOverviewIsuranceNumber.Size = new System.Drawing.Size(56, 17);
+            this.tbPatientDetailsOverviewIsuranceNumber.TabIndex = 15;
+            this.tbPatientDetailsOverviewIsuranceNumber.Text = "133734";
+            // 
+            // tbPatientDetailsOverviewGender
+            // 
+            this.tbPatientDetailsOverviewGender.AutoSize = true;
+            this.tbPatientDetailsOverviewGender.Location = new System.Drawing.Point(188, 108);
+            this.tbPatientDetailsOverviewGender.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.tbPatientDetailsOverviewGender.Name = "tbPatientDetailsOverviewGender";
+            this.tbPatientDetailsOverviewGender.Size = new System.Drawing.Size(38, 17);
+            this.tbPatientDetailsOverviewGender.TabIndex = 14;
+            this.tbPatientDetailsOverviewGender.Text = "Male";
+            // 
+            // tbPatientDetailsOverviewDoB
+            // 
+            this.tbPatientDetailsOverviewDoB.AutoSize = true;
+            this.tbPatientDetailsOverviewDoB.Location = new System.Drawing.Point(188, 78);
+            this.tbPatientDetailsOverviewDoB.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.tbPatientDetailsOverviewDoB.Name = "tbPatientDetailsOverviewDoB";
+            this.tbPatientDetailsOverviewDoB.Size = new System.Drawing.Size(74, 17);
+            this.tbPatientDetailsOverviewDoB.TabIndex = 13;
+            this.tbPatientDetailsOverviewDoB.Text = "14-2-2002";
+            // 
+            // tbPatientDetailsOverviewAge
+            // 
+            this.tbPatientDetailsOverviewAge.AutoSize = true;
+            this.tbPatientDetailsOverviewAge.Location = new System.Drawing.Point(188, 47);
+            this.tbPatientDetailsOverviewAge.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.tbPatientDetailsOverviewAge.Name = "tbPatientDetailsOverviewAge";
+            this.tbPatientDetailsOverviewAge.Size = new System.Drawing.Size(24, 17);
+            this.tbPatientDetailsOverviewAge.TabIndex = 12;
+            this.tbPatientDetailsOverviewAge.Text = "12";
+            // 
+            // tbPatientDetailsOverviewName
+            // 
+            this.tbPatientDetailsOverviewName.AutoSize = true;
+            this.tbPatientDetailsOverviewName.Location = new System.Drawing.Point(188, 16);
+            this.tbPatientDetailsOverviewName.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.tbPatientDetailsOverviewName.Name = "tbPatientDetailsOverviewName";
+            this.tbPatientDetailsOverviewName.Size = new System.Drawing.Size(65, 17);
+            this.tbPatientDetailsOverviewName.TabIndex = 11;
+            this.tbPatientDetailsOverviewName.Text = "Dik Trom";
+            // 
+            // lPatientDetailsOverviewPhone
+            // 
+            this.lPatientDetailsOverviewPhone.AutoSize = true;
+            this.lPatientDetailsOverviewPhone.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lPatientDetailsOverviewPhone.Location = new System.Drawing.Point(21, 231);
+            this.lPatientDetailsOverviewPhone.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lPatientDetailsOverviewPhone.Name = "lPatientDetailsOverviewPhone";
+            this.lPatientDetailsOverviewPhone.Size = new System.Drawing.Size(105, 17);
+            this.lPatientDetailsOverviewPhone.TabIndex = 10;
+            this.lPatientDetailsOverviewPhone.Text = "Home Phone:";
+            // 
+            // lPatientDetailsOverviewMPhone
+            // 
+            this.lPatientDetailsOverviewMPhone.AutoSize = true;
+            this.lPatientDetailsOverviewMPhone.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lPatientDetailsOverviewMPhone.Location = new System.Drawing.Point(21, 201);
+            this.lPatientDetailsOverviewMPhone.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lPatientDetailsOverviewMPhone.Name = "lPatientDetailsOverviewMPhone";
+            this.lPatientDetailsOverviewMPhone.Size = new System.Drawing.Size(111, 17);
+            this.lPatientDetailsOverviewMPhone.TabIndex = 9;
+            this.lPatientDetailsOverviewMPhone.Text = "Mobile Phone:";
+            // 
+            // lPatientDetailsOverviewEMail
+            // 
+            this.lPatientDetailsOverviewEMail.AutoSize = true;
+            this.lPatientDetailsOverviewEMail.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lPatientDetailsOverviewEMail.Location = new System.Drawing.Point(21, 170);
+            this.lPatientDetailsOverviewEMail.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lPatientDetailsOverviewEMail.Name = "lPatientDetailsOverviewEMail";
+            this.lPatientDetailsOverviewEMail.Size = new System.Drawing.Size(121, 17);
+            this.lPatientDetailsOverviewEMail.TabIndex = 8;
+            this.lPatientDetailsOverviewEMail.Text = "E-Mail address:";
+            // 
+            // lPatientDetailsOverviewName
+            // 
+            this.lPatientDetailsOverviewName.AutoSize = true;
+            this.lPatientDetailsOverviewName.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lPatientDetailsOverviewName.Location = new System.Drawing.Point(21, 16);
+            this.lPatientDetailsOverviewName.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lPatientDetailsOverviewName.Name = "lPatientDetailsOverviewName";
+            this.lPatientDetailsOverviewName.Size = new System.Drawing.Size(54, 17);
+            this.lPatientDetailsOverviewName.TabIndex = 2;
+            this.lPatientDetailsOverviewName.Text = "Name:";
+            // 
+            // lPatientDetailsOverviewInsuranceNumber
+            // 
+            this.lPatientDetailsOverviewInsuranceNumber.AutoSize = true;
+            this.lPatientDetailsOverviewInsuranceNumber.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lPatientDetailsOverviewInsuranceNumber.Location = new System.Drawing.Point(21, 139);
+            this.lPatientDetailsOverviewInsuranceNumber.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lPatientDetailsOverviewInsuranceNumber.Name = "lPatientDetailsOverviewInsuranceNumber";
+            this.lPatientDetailsOverviewInsuranceNumber.Size = new System.Drawing.Size(145, 17);
+            this.lPatientDetailsOverviewInsuranceNumber.TabIndex = 7;
+            this.lPatientDetailsOverviewInsuranceNumber.Text = "Insurance Number:";
+            // 
+            // lPatientDetailsOverviewAge
+            // 
+            this.lPatientDetailsOverviewAge.AutoSize = true;
+            this.lPatientDetailsOverviewAge.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lPatientDetailsOverviewAge.Location = new System.Drawing.Point(21, 47);
+            this.lPatientDetailsOverviewAge.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lPatientDetailsOverviewAge.Name = "lPatientDetailsOverviewAge";
+            this.lPatientDetailsOverviewAge.Size = new System.Drawing.Size(41, 17);
+            this.lPatientDetailsOverviewAge.TabIndex = 3;
+            this.lPatientDetailsOverviewAge.Text = "Age:";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(32, 143);
+            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(0, 17);
+            this.label5.TabIndex = 6;
+            // 
+            // lPatientDetailsOverviewGender
+            // 
+            this.lPatientDetailsOverviewGender.AutoSize = true;
+            this.lPatientDetailsOverviewGender.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lPatientDetailsOverviewGender.Location = new System.Drawing.Point(21, 108);
+            this.lPatientDetailsOverviewGender.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lPatientDetailsOverviewGender.Name = "lPatientDetailsOverviewGender";
+            this.lPatientDetailsOverviewGender.Size = new System.Drawing.Size(67, 17);
+            this.lPatientDetailsOverviewGender.TabIndex = 4;
+            this.lPatientDetailsOverviewGender.Text = "Gender:";
+            // 
+            // lPatientDetailsOverviewDoB
+            // 
+            this.lPatientDetailsOverviewDoB.AutoSize = true;
+            this.lPatientDetailsOverviewDoB.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lPatientDetailsOverviewDoB.Location = new System.Drawing.Point(21, 78);
+            this.lPatientDetailsOverviewDoB.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lPatientDetailsOverviewDoB.Name = "lPatientDetailsOverviewDoB";
+            this.lPatientDetailsOverviewDoB.Size = new System.Drawing.Size(105, 17);
+            this.lPatientDetailsOverviewDoB.TabIndex = 5;
+            this.lPatientDetailsOverviewDoB.Text = "Date of Birth:";
             // 
             // lbOverview
             // 
             this.lbOverview.AutoSize = true;
             this.lbOverview.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbOverview.Location = new System.Drawing.Point(6, 14);
+            this.lbOverview.Location = new System.Drawing.Point(9, 15);
+            this.lbOverview.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbOverview.Name = "lbOverview";
-            this.lbOverview.Size = new System.Drawing.Size(193, 26);
+            this.lbOverview.Size = new System.Drawing.Size(236, 31);
             this.lbOverview.TabIndex = 1;
             this.lbOverview.Text = "Patient Overview";
             this.lbOverview.Click += new System.EventHandler(this.label1_Click);
             // 
-            // panel1
+            // pictureBox1
             // 
-            this.panel1.Controls.Add(this.label17);
-            this.panel1.Controls.Add(this.label16);
-            this.panel1.Controls.Add(this.label15);
-            this.panel1.Controls.Add(this.label14);
-            this.panel1.Controls.Add(this.label13);
-            this.panel1.Controls.Add(this.label12);
-            this.panel1.Controls.Add(this.label11);
-            this.panel1.Controls.Add(this.label10);
-            this.panel1.Controls.Add(this.label9);
-            this.panel1.Controls.Add(this.label8);
-            this.panel1.Controls.Add(this.label7);
-            this.panel1.Controls.Add(this.label1);
-            this.panel1.Controls.Add(this.label6);
-            this.panel1.Controls.Add(this.label2);
-            this.panel1.Controls.Add(this.label5);
-            this.panel1.Controls.Add(this.label3);
-            this.panel1.Controls.Add(this.label4);
-            this.panel1.Location = new System.Drawing.Point(127, 55);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(446, 231);
-            this.panel1.TabIndex = 8;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(16, 63);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(83, 13);
-            this.label4.TabIndex = 5;
-            this.label4.Text = "Date of Birth:";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(16, 88);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(52, 13);
-            this.label3.TabIndex = 4;
-            this.label3.Text = "Gender:";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(24, 116);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(0, 13);
-            this.label5.TabIndex = 6;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(16, 38);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(33, 13);
-            this.label2.TabIndex = 3;
-            this.label2.Text = "Age:";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(16, 113);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(114, 13);
-            this.label6.TabIndex = 7;
-            this.label6.Text = "Insurance Number:";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(16, 13);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(43, 13);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "Name:";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(16, 138);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(94, 13);
-            this.label7.TabIndex = 8;
-            this.label7.Text = "E-Mail address:";
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(16, 163);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(88, 13);
-            this.label8.TabIndex = 9;
-            this.label8.Text = "Mobile Phone:";
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(16, 188);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(83, 13);
-            this.label9.TabIndex = 10;
-            this.label9.Text = "Home Phone:";
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(141, 13);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(50, 13);
-            this.label10.TabIndex = 11;
-            this.label10.Text = "Dik Trom";
-            this.label10.Click += new System.EventHandler(this.label10_Click);
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(141, 38);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(19, 13);
-            this.label11.TabIndex = 12;
-            this.label11.Text = "12";
-            this.label11.Click += new System.EventHandler(this.label11_Click);
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(141, 63);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(55, 13);
-            this.label12.TabIndex = 13;
-            this.label12.Text = "14-2-2002";
-            this.label12.Click += new System.EventHandler(this.label12_Click);
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(141, 88);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(30, 13);
-            this.label13.TabIndex = 14;
-            this.label13.Text = "Male";
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(141, 113);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(43, 13);
-            this.label14.TabIndex = 15;
-            this.label14.Text = "133734";
-            // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(141, 138);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(99, 13);
-            this.label15.TabIndex = 16;
-            this.label15.Text = "diktrom@gmail.com";
-            // 
-            // label16
-            // 
-            this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(141, 163);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(67, 13);
-            this.label16.TabIndex = 17;
-            this.label16.Text = "0623453745";
-            // 
-            // label17
-            // 
-            this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(141, 188);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(27, 13);
-            this.label17.TabIndex = 18;
-            this.label17.Text = "N/A";
+            this.pictureBox1.Location = new System.Drawing.Point(15, 68);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(147, 150);
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
             // 
             // tabs
             // 
             this.tabs.Controls.Add(this.tabOverview);
             this.tabs.Controls.Add(this.tabPastAppointments);
             this.tabs.Controls.Add(this.tabCurrentMedication);
-            this.tabs.Location = new System.Drawing.Point(0, 0);
+            this.tabs.Location = new System.Drawing.Point(13, 13);
+            this.tabs.Margin = new System.Windows.Forms.Padding(4);
             this.tabs.Name = "tabs";
             this.tabs.SelectedIndex = 0;
-            this.tabs.Size = new System.Drawing.Size(659, 360);
+            this.tabs.Size = new System.Drawing.Size(845, 430);
             this.tabs.TabIndex = 0;
             // 
             // PatientDetails
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(660, 361);
+            this.BackColor = System.Drawing.SystemColors.Window;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.ClientSize = new System.Drawing.Size(880, 446);
             this.Controls.Add(this.tabs);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "PatientDetails";
             this.Text = "Patient Details";
+            this.Load += new System.EventHandler(this.PatientDetails_Load);
             this.tabOverview.ResumeLayout(false);
             this.tabOverview.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.tabs.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -333,23 +362,23 @@
         private System.Windows.Forms.TabPage tabPastAppointments;
         private System.Windows.Forms.TabPage tabOverview;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Label label17;
-        private System.Windows.Forms.Label label16;
-        private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label tbPatientDetailsOverviewPhone;
+        private System.Windows.Forms.Label tbPatientDetailsOverviewMPhone;
+        private System.Windows.Forms.Label tbPatientDetailsOverviewEMail;
+        private System.Windows.Forms.Label tbPatientDetailsOverviewIsuranceNumber;
+        private System.Windows.Forms.Label tbPatientDetailsOverviewGender;
+        private System.Windows.Forms.Label tbPatientDetailsOverviewDoB;
+        private System.Windows.Forms.Label tbPatientDetailsOverviewAge;
+        private System.Windows.Forms.Label tbPatientDetailsOverviewName;
+        private System.Windows.Forms.Label lPatientDetailsOverviewPhone;
+        private System.Windows.Forms.Label lPatientDetailsOverviewMPhone;
+        private System.Windows.Forms.Label lPatientDetailsOverviewEMail;
+        private System.Windows.Forms.Label lPatientDetailsOverviewName;
+        private System.Windows.Forms.Label lPatientDetailsOverviewInsuranceNumber;
+        private System.Windows.Forms.Label lPatientDetailsOverviewAge;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label lPatientDetailsOverviewGender;
+        private System.Windows.Forms.Label lPatientDetailsOverviewDoB;
         private System.Windows.Forms.Label lbOverview;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.TabControl tabs;

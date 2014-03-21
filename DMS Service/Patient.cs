@@ -8,7 +8,7 @@ namespace DMS_Service
     [Serializable]
     public class Patient : Person
     {
-        public int PatientID {get ;  set;}//comit Torben
+        public int PatientID {get ;  set;}
         public int DiagnosisId { get; set; }
         public int ConsultationId { get; set; }
         public int PrescriptionId { get; set; }

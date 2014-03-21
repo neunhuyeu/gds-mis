@@ -12,9 +12,12 @@ namespace Doctor_Client
 {
     public partial class PatientDetails : Form
     {
-        public PatientDetails()
+        //Patent patient;
+        public PatientDetails( /*Patient patient*/)
         {
             InitializeComponent();
+            //patient= this.patient;
+            //
         }
 
         private void tabPage1_Click(object sender, EventArgs e)
@@ -38,6 +41,11 @@ namespace Doctor_Client
         }
 
         private void label12_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void PatientDetails_Load(object sender, EventArgs e)
         {
 
         }

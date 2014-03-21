@@ -7,12 +7,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+//using DMS_Service;
 
 namespace Doctor_Client
 {
     public partial class Login : Form
     {
-        //test
+
         private MyDoctorService.DoctorClient proxy;
 
         public Login()
@@ -29,6 +30,28 @@ namespace Doctor_Client
         private void Login_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnLogin_Click(object sender, EventArgs e)
+        {
+            if (tbEmail.Text.Length>7&& tbPassword.Text.Length>2)
+            {
+                string  Email = tbEmail.Text;
+                string Password = tbPassword.Text;
+            //  Staff User
+                if(/*User=todo:function to bussiness layer to log on*/true)
+                {
+
+                    this.Visible=false;
+                    Client doctorform= new Client(/*User*/); 
+                    this.Visible=true;
+                }
+            }
+            
+              
+
+          
+            
         }
     }
 }
