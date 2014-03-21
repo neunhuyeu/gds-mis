@@ -12,7 +12,7 @@ namespace Doctor_Client
 {
     public partial class Login : Form
     {
-
+        //test
         private MyDoctorService.DoctorClient proxy;
 
         public Login()
