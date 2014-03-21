@@ -20,5 +20,6 @@ namespace DMS_Service
         public int Dosage { get { return dosage; } set { dosage = value; } }
         public DateTime Date { get { return date; } set { date = value; } }
         public string Doctor { get { return doctor; } set { doctor = value; } }
-    }
+	// Changed something
+   }
 }
