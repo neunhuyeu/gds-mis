@@ -1,0 +1,8 @@
+# Below lines define the folders OR files
+# that git will ignore from adding them
+# into the versioned repo.
+/**/bin
+/**/obj
+/**/
+/*.suo
+
