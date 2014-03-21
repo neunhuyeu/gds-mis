@@ -1,6 +1,8 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2012
+# Visual Studio 2013
+VisualStudioVersion = 12.0.30110.0
+MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DMS Service", "DMS Service\DMS Service.csproj", "{8F931D1F-245D-4825-86BC-46FF23D06AC0}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Doctor Client", "Doctor Client\Doctor Client.csproj", "{81A7B23B-5C76-424E-9035-88B2142F1D28}"

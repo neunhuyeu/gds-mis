@@ -7,10 +7,10 @@ namespace DMS_Service
 {
     public struct Appointment
     {
-        public DateTime startTime { get; private set; }
-        public DateTime endTime { get; private set; }
+        public DateTime startTime { get; set; }
+        public DateTime endTime { get;  set; }
 
-        public bool canceled { get; private set; }
+        public bool canceled { get; set; }
 
         public string notes { get; private set; }
         public List<Perscription> perscriptions { get; private set; }
