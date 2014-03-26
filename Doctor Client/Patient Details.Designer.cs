@@ -53,6 +53,8 @@
             this.lbOverview = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.tabs = new System.Windows.Forms.TabControl();
+            this.PerscriptionLb = new System.Windows.Forms.ListBox();
+            this.tabCurrentMedication.SuspendLayout();
             this.tabOverview.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -61,6 +63,7 @@
             // 
             // tabCurrentMedication
             // 
+            this.tabCurrentMedication.Controls.Add(this.PerscriptionLb);
             this.tabCurrentMedication.Location = new System.Drawing.Point(4, 25);
             this.tabCurrentMedication.Margin = new System.Windows.Forms.Padding(4);
             this.tabCurrentMedication.Name = "tabCurrentMedication";
@@ -334,6 +337,16 @@
             this.tabs.Size = new System.Drawing.Size(845, 430);
             this.tabs.TabIndex = 0;
             // 
+            // PerscriptionLb
+            // 
+            this.PerscriptionLb.FormattingEnabled = true;
+            this.PerscriptionLb.ItemHeight = 16;
+            this.PerscriptionLb.Location = new System.Drawing.Point(20, 13);
+            this.PerscriptionLb.Name = "PerscriptionLb";
+            this.PerscriptionLb.Size = new System.Drawing.Size(794, 372);
+            this.PerscriptionLb.TabIndex = 0;
+            this.PerscriptionLb.SelectedIndexChanged += new System.EventHandler(this.PerscriptionLb_SelectedIndexChanged);
+            // 
             // PatientDetails
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -346,6 +359,7 @@
             this.Name = "PatientDetails";
             this.Text = "Patient Details";
             this.Load += new System.EventHandler(this.PatientDetails_Load);
+            this.tabCurrentMedication.ResumeLayout(false);
             this.tabOverview.ResumeLayout(false);
             this.tabOverview.PerformLayout();
             this.panel1.ResumeLayout(false);
@@ -382,6 +396,7 @@
         private System.Windows.Forms.Label lbOverview;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.TabControl tabs;
+        private System.Windows.Forms.ListBox PerscriptionLb;
 
     }
 }
