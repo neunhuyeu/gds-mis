@@ -8,12 +8,20 @@ namespace DMS_Service
     [Serializable]
     public class Patient : Person
     {
-        public int PatientID {get ; private set;}
-        public int Height { get; private set; }
-        public int Weight { get; private set; }
-        public int BloodType { get; private set; }
-        public int Smoker { get; private set; }
-        public int InsuranceNumber { get; private set; }
+        public int PatientID {get ;  set;}
+        public int DiagnosisId { get; set; }
+        public int ConsultationId { get; set; }
+        public int PrescriptionId { get; set; }
+
+        public int Height { get;  set; }
+        public int Weight { get;  set; }
+
+        //smoker should be a bool, not an int
+        //InsuranceNumber was not in the database design, it should be in the table patient. or person table
+        //bloodtype should be char not int.
+        public char BloodType { get;  set; }
+        public bool Smoker { get;  set; }
+        public int InsuranceNumber { get;  set; }
 
     }
 }

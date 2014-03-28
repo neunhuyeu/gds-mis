@@ -15,7 +15,9 @@ namespace DMS_Service
         public string Email { get; set; }
         public int MobileNumber { get; set; }
         public string Address { get; set; }
-        public int Gender { get; set; }
+
+        //this is type char in the database...so I changed it from int to char.
+        public char Gender { get; set; }
 
     }
 
