@@ -5,6 +5,16 @@ Model: MIS
 Database: MySQL 5.5
 */
 
+-- Create DB Section-----------------------------------
+
+CREATE DATABASE gds_mis;
+
+CREATE User 'gds'@'%' IDENTIFIED BY 'gds-m1s-r00t!';
+
+GRANT ALL PRIVILEGES on gds_mis.* to 'gds'@'%';
+
+FLUSH PRIVILEGES;
+
 -- Create tables section -------------------------------------------------
 
 -- Table person
@@ -63,6 +73,7 @@ CREATE TABLE prescribtion
 CREATE TABLE diagnosis
 (
   diagnosis_id Int NOT NULL AUTO_INCREMENT,
+  consultation_id Int NOT NULL,
   symptoms Char(250) NOT NULL,
   diagnosis Char(250) NOT NULL,
  PRIMARY KEY (diagnosis_id),
@@ -107,7 +118,7 @@ CREATE TABLE Staff_members
 ALTER TABLE patients ADD CONSTRAINT Relationship2 FOREIGN KEY (person_id) REFERENCES person (person_id) ON DELETE NO ACTION ON UPDATE NO ACTION
 ;
 
-ALTER TABLE consultations ADD CONSTRAINT Relationship3 FOREIGN KEY (diagnosis_id) REFERENCES diagnosis (diagnosis_id) ON DELETE NO ACTION ON UPDATE NO ACTION
+ALTER TABLE diagnosis ADD CONSTRAINT Relationship3 FOREIGN KEY (consultation_id) REFERENCES consultations (consultation_id) ON DELETE NO ACTION ON UPDATE NO ACTION
 ;
 
 ALTER TABLE consultations ADD CONSTRAINT Relationship6 FOREIGN KEY (patient_id) REFERENCES patients (patient_id) ON DELETE NO ACTION ON UPDATE NO ACTION
@@ -158,21 +169,21 @@ INSERT INTO patients (patient_id,gender,height_cm,weight_kg,blood_type,smoking,s
 
 -- consultations
 
-INSERT INTO consultations (consultation_id,start_date,end_date,patient_id,consultation_id,Staff_id) VALUES
-(1 ,'2014-01-20 09:30:00','2014-01-20 10:00:00',1,1,1),
-(2 ,'2014-01-20 09:30:00','2014-01-20 10:00:00',2,2,2),
-(3 ,'2014-01-20 10:00:00','2014-01-20 10:30:00',3,3,1),
-(4 ,'2014-01-21 10:30:00','2014-01-21 11:00:00',4,4,1),
-(5 ,'2014-01-21 10:30:00','2014-01-21 11:00:00',5,5,2);
+INSERT INTO consultations (consultation_id,start_date,end_date,patient_id,Staff_id) VALUES
+(1 ,'2014-01-20 09:30:00','2014-01-20 10:00:00',1,1),
+(2 ,'2014-01-20 09:30:00','2014-01-20 10:00:00',2,2),
+(3 ,'2014-01-20 10:00:00','2014-01-20 10:30:00',3,1),
+(4 ,'2014-01-21 10:30:00','2014-01-21 11:00:00',4,1),
+(5 ,'2014-01-21 10:30:00','2014-01-21 11:00:00',5,2);
 
 -- diagnosis
 
-INSERT INTO diagnosis (diagnosis_id,symptoms,diagnosis) VALUES
-(1,'head aches, facial swelling','allergic reaction'),
-(2,'fever, light-headed','scarlet fever'),
-(3,'cronic sneezing','snifflelys'),
-(4,'nausia, headaches, vomitting','immenent death'),
-(5,'constant fatigue, low apitite','nutrition deficiency');
+INSERT INTO diagnosis (diagnosis_id,consultation_id,symptoms,diagnosis) VALUES
+(1,1,'head aches, facial swelling','allergic reaction'),
+(2,2,'fever, light-headed','scarlet fever'),
+(3,3,'cronic sneezing','snifflelys'),
+(4,4,'nausia, headaches, vomitting','immenent death'),
+(5,5,'constant fatigue, low apitite','nutrition deficiency');
 
 -- prescribtion
 
@@ -183,3 +194,7 @@ INSERT INTO prescribtion (prescribtion_id,medicine,strength_mg,amount_pills,ammo
 (4,'sinus disinfectus',100,21,NULL,3),
 (5,'resurection tablets',10000,1,NULL,4),
 (6,'vitamens',1000,60,NULL,5);
+
+select pp.first_name, d.diagnosis, s.function, ppp.medicine  from diagnosis d , consultations c, patients p, person pp , Staff_members s, prescribtion ppp
+where c.patient_id = p.patient_id and d.consultation_id = c.consultation_id 
+and pp.person_id = p.person_id and c.Staff_id = s.Staff_id and ppp.consultation_id = c.consultation_id;
