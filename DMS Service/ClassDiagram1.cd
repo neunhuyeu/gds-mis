@@ -1,78 +1,108 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1">
   <Class Name="DMS_Service.CSynchronise" BaseTypeListCollapsed="true">
-    <Position X="10.75" Y="1.75" Width="1.75" />
+    <Position X="7.75" Y="3.5" Width="2" />
     <TypeIdentifier>
-      <HashCode>AAAAAQAAAIAAAAEAAAAAQAABAAAAABBAAAAAAAAAAgA=</HashCode>
+      <HashCode>AAAAAQAAAIAAAAEAAAAAQAABAAAABBBAAAAAQAAAAgA=</HashCode>
       <FileName>CSynchronise.cs</FileName>
     </TypeIdentifier>
-    <ShowAsAssociation>
-      <Property Name="DatabaseManager1" />
-    </ShowAsAssociation>
     <Lollipop Position="0.2" Collapsed="true" />
   </Class>
-  <Class Name="DMS_Service.DatabaseManager">
-    <Position X="11.75" Y="5.25" Width="2.25" />
+  <Class Name="DMSService.DatabaseManager">
+    <Position X="7.25" Y="7" Width="2.25" />
     <TypeIdentifier>
       <HashCode>AABAMAAABAAAAAkAAAACAAAAAAAAAABAAAAAAAAAAAQ=</HashCode>
       <FileName>DatabaseManager.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="DMS_Service.Patient">
-    <Position X="0.5" Y="3.5" Width="1.5" />
+    <Position X="0.5" Y="3.5" Width="1.75" />
     <TypeIdentifier>
-      <HashCode>AgAJAAAAAAAAAAQAAAAACAAAAEAAAAAgBAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAADQAAAAACAAAAQAAAACAAAAAAAAAAAAQAQAQ=</HashCode>
       <FileName>Patient.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="DMS_Service.Person">
     <Position X="1.75" Y="0.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>EAAAAAAAAAAAAAAAAAAAiAAAAAIAAABCAAAACAAAAAA=</HashCode>
+      <HashCode>AAAACEAAACAAAACAAAAAAAAAAAAQAAACAAAAAAAAAAg=</HashCode>
       <FileName>Person.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="DMS_Service.Staff">
     <Position X="2.75" Y="3.5" Width="1.5" />
+    <NestedTypes>
+      <Enum Name="DMS_Service.Staff.StaffType" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Staff.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Enum>
+    </NestedTypes>
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAgAgAAAAAAAAAAAAACAAAAAAQAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAIAIAAAAAAAAAAAAAAgAAAEA=</HashCode>
       <FileName>Staff.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="DMS_Service.CDoctor">
-    <Position X="12.75" Y="1.75" Width="2" />
+    <Position X="10.25" Y="3.25" Width="2" />
     <TypeIdentifier>
-      <HashCode>AAACIEAAAAAAAAAAAEAAAAACACACAAIAgCAAAAAAEAA=</HashCode>
+      <HashCode>IAACIEAAAAAAAAAAAEAAAAACAAACACYAgCAAAAAAEAA=</HashCode>
       <FileName>CDoctor.cs</FileName>
     </TypeIdentifier>
-    <ShowAsAssociation>
-      <Property Name="DatabaseManager" />
-    </ShowAsAssociation>
     <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="DMS_Service.BusinessLayer" Collapsed="true">
+    <Position X="3" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAEAAAAAAAoAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>BusinessLayer.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DMS_Service.UserToken" Collapsed="true">
+    <Position X="6.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAEAAAAAAAAAAA=</HashCode>
+      <FileName>CSynchronise.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DMS_Service.DbAccessLayer" Collapsed="true">
+    <Position X="6.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IAAAIAAAAAAAAAAAAAACAAAIAAAAACBAAAAAAAABAAA=</HashCode>
+      <FileName>DbAccessLayer.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DMS_Service.DbConnection" Collapsed="true">
+    <Position X="3" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IAABAAAAAAAAAAAAAAABAAAAAAQAAAgAAAAIAAAAAAA=</HashCode>
+      <FileName>DbConnection.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DMS_Service.CompositeType" Collapsed="true">
+    <Position X="4.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABAAAAAAAAAAAAAgAAAAAAAAAAAAAAAgAAAAAAAQAAA=</HashCode>
+      <FileName>ISynchronise.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DMS_Service.MySynchroniseService.SynchroniseClient" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="4.75" Y="1.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>BAAIAAAAAAAAAAEAAAAAAAAAAAAAAABAAAAAAAAAAAA=</HashCode>
+      <FileName>Service References\MySynchroniseService\Reference.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
   </Class>
   <Struct Name="DMS_Service.Perscription">
     <Position X="4.25" Y="6.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAACAAAAgAAABAAAAAAAAAAAAQAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAIAAAACAAAAgAAABIAAAAQBAAAAAQAAAAA=</HashCode>
       <FileName>Perscription.cs</FileName>
     </TypeIdentifier>
   </Struct>
   <Struct Name="DMS_Service.Appointment">
     <Position X="1.75" Y="6.5" Width="1.5" />
-    <AssociationLine Name="Patient" Type="DMS_Service.Patient" FixedFromPoint="true" FixedToPoint="true">
-      <Path>
-        <Point X="1.75" Y="6.688" />
-        <Point X="1.25" Y="6.688" />
-        <Point X="1.25" Y="6.079" />
-      </Path>
-    </AssociationLine>
-    <AssociationLine Name="Staff" Type="DMS_Service.Staff" FixedFromPoint="true" FixedToPoint="true">
-      <Path>
-        <Point X="3.25" Y="6.726" />
-        <Point X="3.5" Y="6.726" />
-        <Point X="3.5" Y="5.761" />
-      </Path>
-    </AssociationLine>
     <TypeIdentifier>
       <HashCode>AEAAAAAAAAAAQBAAAAAgAKAAACAAAAAAAAAAAAAAKIA=</HashCode>
       <FileName>Appointment.cs</FileName>
@@ -84,17 +114,31 @@
     </ShowAsAssociation>
   </Struct>
   <Interface Name="DMS_Service.ISynchronise" Collapsed="true">
-    <Position X="10.75" Y="1" Width="1.5" />
+    <Position X="7.75" Y="2.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAEAAAAAAAAAAAAAAABAAAAAAAAAAAA=</HashCode>
       <FileName>ISynchronise.cs</FileName>
     </TypeIdentifier>
   </Interface>
   <Interface Name="DMS_Service.IDoctor" Collapsed="true">
-    <Position X="12.75" Y="1" Width="1.5" />
+    <Position X="10.25" Y="1.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAACAAAAEAAAAAAAAEAAAAACAAACAAIAgCAAAAAAEAA=</HashCode>
+      <HashCode>AAACAAAAAAAAAAAAAEAAAAACAAACAAIAgCAAAAAAEAA=</HashCode>
       <FileName>IDoctor.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="DMS_Service.MySynchroniseService.ISynchronise" Collapsed="true">
+    <Position X="0.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BAAIAAAAAAAAAAEAAAAAAAAAAAAAAABAAAAAAAAAAAA=</HashCode>
+      <FileName>Service References\MySynchroniseService\Reference.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="DMS_Service.MySynchroniseService.ISynchroniseChannel" Collapsed="true">
+    <Position X="0.5" Y="1.75" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Service References\MySynchroniseService\Reference.cs</FileName>
     </TypeIdentifier>
   </Interface>
   <Font Name="Segoe UI" Size="9" />
