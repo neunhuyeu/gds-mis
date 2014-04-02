@@ -91,7 +91,7 @@ namespace DMS_Service
             throw new System.NotImplementedException();
         }
 
-        public bool addStaff()
+        public void addStaff(Staff staff)
         {
             throw new System.NotImplementedException();
         }
