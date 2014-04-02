@@ -64,7 +64,8 @@ namespace DMS_Service
         public void addPatient(Patient patient)
         {
             //query for person table
-            string query = "INSERT INTO person(first_name, last_name, date_of_birth, email_address, mobile_number, landline_number, home_addres) VALUES ('@first_name', '@last_name', @date_of_birth, '@email_address', '@mobile_number', '@landline_number', '@home_address')";
+            string query = "INSERT INTO person(first_name, last_name, date_of_birth, email_address, mobile_number, landline_number, home_addres)" +
+                           "VALUES ('@first_name', '@last_name', @date_of_birth, '@email_address', '@mobile_number', '@landline_number', '@home_address')";
 
             //parameters for person table
             SqlParameter[] sqlParameters = new SqlParameter[7];
@@ -87,7 +88,8 @@ namespace DMS_Service
             dbConnection.InsertQuery(query, sqlParameters);
 
             //query for patient table
-            query = "INSERT INTO patients (gender, height_cm, weight_kg, blood_type, smoking, smoking_frequency, hard_drugs, hard_drugs_frequency, person_id) VALUES ('@gender', @height_cm, @weight_kg, '@blood_type', @smoking Bool, @smoking_frequency, @hard_drugs, @hard_drugs_frequency, (SELECT MAX(person_ID) FROM person))";
+            query = "INSERT INTO patients (gender, height_cm, weight_kg, blood_type, smoking, smoking_frequency, hard_drugs, hard_drugs_frequency, person_id)" +
+                    "VALUES ('@gender', @height_cm, @weight_kg, '@blood_type', @smoking Bool, @smoking_frequency, @hard_drugs, @hard_drugs_frequency, (SELECT MAX(person_ID) FROM person))";
 
 
             //parameters for patient table
@@ -113,6 +115,35 @@ namespace DMS_Service
             sqlParameters[7].Value = 0;
 
             //execute query on patient table
+            dbConnection.InsertQuery(query, sqlParameters);
+
+            return;
+        }
+
+        /// <summary>
+        /// JP.
+        /// Adds consultation to the conusltation table.
+        /// </summary>
+        /// <param name="patient">patient to be added</param>
+        public void addConsultation(Appointment appointment)
+        {
+            //query
+            string query = "INSERT INTO consultation(start_date, end_date, patient_id, staff_id)" + 
+                           "VALUES (@start_date, @end_date, @patient_id, '@staff_id',)";
+
+            //parameters
+            SqlParameter[] sqlParameters = new SqlParameter[4];
+            sqlParameters[0] = new SqlParameter("@start_date", SqlDbType.DateTime);
+            sqlParameters[0].Value = Convert.ToString(appointment.startTime );
+            sqlParameters[1] = new SqlParameter("@end_date", SqlDbType.DateTime);
+            sqlParameters[1].Value = Convert.ToString(appointment.endTime);
+            sqlParameters[2] = new SqlParameter("@patient_id", SqlDbType.Int);
+            sqlParameters[2].Value = Convert.ToString(appointment.Patient.PatientID);
+            sqlParameters[3] = new SqlParameter("@staff_id", SqlDbType.Int);
+            sqlParameters[3].Value = Convert.ToString(appointment.Staff.StaffID);
+            
+
+            //execute query on appointment table
             dbConnection.InsertQuery(query, sqlParameters);
 
             return;
