@@ -16,14 +16,16 @@ namespace DMS_Service
 
         public DbAccessLayer()
         {
-            dbConnection = new DbConnection(cred);
+            dbConnection = new DbConnection();
         }
         
         //Kirolos
         public DataTable SearchPatient_lastName_dateOfBirth(string lastName, DateTime dateOfBirth)
         {
-            string query = string.Format("SELECT * FROM person" + 
-                      "WHERE last_name = @lastName AND date_of_birth = @dateOfBirth");
+            string query = string.Format("SELECT *" +
+                                        "FROM person" + 
+                                        "WHERE last_name = @lastName" +
+                                        "AND date_of_birth = @dateOfBirth");
             SqlParameter[] sqlParameters = new SqlParameter[2];
             sqlParameters[0] = new SqlParameter("@lastName", SqlDbType.Char);
             sqlParameters[0].Value = Convert.ToString(lastName);
@@ -32,29 +34,28 @@ namespace DMS_Service
             return dbConnection.SelectQuery(query, sqlParameters);
         }
 
-        public DataTable getPatient()
+        public DataTable SearchPatientById(int id)
         {
-            throw new System.NotImplementedException();
-        }
-
-        public void addPatient()
-        {
-            throw new System.NotImplementedException();
+            string query = string.Format("SELECT *" +
+                                          "FROM person" +
+                                          "JOIN patients" +
+                                          "ON person.person_id = patient.person_id");
+            SqlParameter[] sqlParameters = new SqlParameter[1];
+            sqlParameters[0] = new SqlParameter("@id", SqlDbType.Int);
+            sqlParameters[0].Value = id.ToString();
+            return dbConnection.SelectQuery(query, sqlParameters);
         }
 
         //Kirolos
-        public DataTable GetStaff_byId(int id)
+        public DataTable SearchStaffById(int id)
         {
-            string query = "SELECT * FROM Staff_members WHERE Staff_id = @id";
+            string query = "SELECT * FROM Staff_members WHERE person_id = @id";
             SqlParameter[] sqlParameters = new SqlParameter[1];
             sqlParameters[0] = new SqlParameter("@id", SqlDbType.Int);
             sqlParameters[0].Value = Convert.ToString(id);
             return dbConnection.SelectQuery(query, sqlParameters);
         }
 
-        public DataTable getStaff()
-        {
-            throw new System.NotImplementedException();
-        }
+        
     }
 }

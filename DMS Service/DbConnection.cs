@@ -4,6 +4,7 @@ using System.Text;
 using System.Data;
 using System.Data.SqlClient;
 using System.Configuration;
+using System.Security;
 
 namespace DMS_Service
 {   
@@ -12,11 +13,12 @@ namespace DMS_Service
     {
         SqlDataAdapter myAdapter;
         SqlConnection conn;
+        string provider = "SERVER=" + "92.109.173.161" + ";" + "Port=5055;" + "DATABASE=gds_mis;" + "UID=gds;" + "PASSWORD=gds-m1s-r00t!;";
 
-        public DbConnection(SqlCredential cred)
+        public DbConnection()
         {
             myAdapter = new SqlDataAdapter();
-            conn = new SqlConnection("", cred);
+            conn = new SqlConnection(provider);
         }
 
         //Kirolos

@@ -48,7 +48,6 @@
     <Compile Include="Appointment.cs" />
     <Compile Include="BusinessLayer.cs" />
     <Compile Include="DbAccessLayer.cs" />
-    <Compile Include="CDoctor.cs" />
     <Compile Include="DbConnection.cs" />
     <Compile Include="IDoctor.cs" />
     <Compile Include="ISynchronise.cs" />
