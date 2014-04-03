@@ -44,15 +44,15 @@ namespace DMS_Service
                 myCommand.Connection = openConnection();
                 myCommand.CommandText = query;
                 myCommand.Parameters.AddRange(sqlParameter);
-                myCommand.ExecuteNonQuery();         
+                myCommand.ExecuteNonQuery();           
                 myAdapter.SelectCommand = myCommand;
                 myAdapter.Fill(ds);
                 dataTable = ds.Tables[0];
             }
             catch (MySqlException e)
             {
-               string temp =  "Error - SelectQuery - Query: " + 
-                    query + " \nException: " + e.StackTrace.ToString();
+                Console.Write("Error - SelectQuery - Query: " + 
+                    query + " \nException: " + e.StackTrace.ToString());
                 return null;
             }
             finally
@@ -79,6 +79,10 @@ namespace DMS_Service
                 Console.Write("Error - InsertQuery - Query: " 
                     + query + " \nException: \n" + e.StackTrace.ToString());
                 return false;
+            }
+            catch
+            {
+
             }
             finally
             {

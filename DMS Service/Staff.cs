@@ -19,9 +19,9 @@ namespace DMS_Service
             assistant,
             secretary
         };
-
+        
         //changed spezialization to string, it was int...
-        public int StaffID { get; private set; }
+        public int StaffID { get; set; }
         public StaffType Function { get;  set; }
         public string Specialization { get;  set; }
         public int RoomNumber { get;  set; }

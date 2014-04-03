@@ -30,21 +30,23 @@ namespace DMS_Service
         {
             get
             {
-                throw new System.NotImplementedException();
+                return Patient;
             }
             set
             {
+                Patient = value;
             }
         }
-           [DataMember]
+        [DataMember]
         public Staff Staff
         {
             get
             {
-                throw new System.NotImplementedException();
+                return Staff;
             }
             set
             {
+                Staff = value;
             }
         }
 

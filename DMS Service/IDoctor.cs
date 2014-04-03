@@ -30,13 +30,16 @@ namespace DMS_Service
         List<Perscription> getPatientPerscriptions(int patientID);
 
         [OperationContract]
-        List<Patient> search(string first, string last, string dateOfBirth, int insurance);
+        List<Patient> search(string name, string dateOfBirth, string insuranceNumber);
 
         [OperationContract]
         string setPerscription(int appointmentID, Perscription perscription);
 
+        //Methods for testing Synchronization
         [OperationContract]
-        Staff login(string email, string password);
+        void addTestPatient();
 
+        [OperationContract]
+        void addTestAppointment();
     }
 }

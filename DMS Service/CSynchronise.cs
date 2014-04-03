@@ -70,9 +70,14 @@ namespace DMS_Service
         /// JP.
         /// Adds new patient from the parameter to the database
         /// </summary>
-        public void addPatient(Patient patient)
+        public void addPatient(object patient)
         {
-            this.dbManager.addPatient(patient);
+            this.dbManager.addPatient((Patient)patient);
+        }
+
+        public void addAppointment(object appointment)
+        {
+            this.dbManager.addAppointment((Appointment)appointment);
         }
 
         public void removePatient()
