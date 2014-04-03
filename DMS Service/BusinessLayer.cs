@@ -196,10 +196,26 @@ namespace DMS_Service
         }
 
 
-        public List<Patient> search(string name, string dateOfBirth, string insuranceNumber)
+        public List<Patient> search(string first, string last, string dateOfBirth, int insurance)
         {
-            throw new NotImplementedException();
+            List<Patient> patients = new List<Patient>();
+            DataTable dataTable = new DataTable();
+            dataTable = dbAcess.SearchPatientsList(first, last, dateOfBirth);
 
+            foreach (DataRow dr in dataTable.Rows)
+            {
+                Patient p = new Patient();
+                p.FirstName = dr["first_name"].ToString();
+                p.LastName = dr["last_name"].ToString();
+                p.DateOfBirth = dr["date_of_birth"].ToString();
+                p.Gender = 'M';
+                p.Email = dr["email_address"].ToString();
+                p.MobileNumber = dr["mobile_number"].ToString();
+                p.LandLineNumber = dr["landline_number"].ToString();
+                p.InsuranceNumber = insurance;
+                patients.Add(p);
+            }
+            return patients;
         }
 
         public string setPerscription(int appointmentID, Perscription perscription)
