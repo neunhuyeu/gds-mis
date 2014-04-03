@@ -11,24 +11,30 @@ namespace DMS_Service
 {
     public class CSynchronise : ISynchronise
     {
-        // public event PingCompletedEventHandler PingCompleted;
-        public DbAccessLayer DatabaseManager1
-        {
-            get
-            {
-                throw new System.NotImplementedException();
-            }
-            set
-            {
-
-            }
-        }
+        
+        /// <summary>
+        /// JP.
+        /// DbAccessLayer object for saving changes to the database.
+        /// </summary>
+        private DbAccessLayer dbManager;
 
         /// <summary>
+        /// JP.
+        /// Constructor
+        /// </summary>
+        public CSynchronise()
+        {
+            this.dbManager = new DbAccessLayer();
+        }
+
+
+        /// <summary>
+        /// JP.
         /// Checks wether the server is alive and responds fast enough.
         /// </summary>
-        public void checkServerStatus()
+        public bool checkServerStatus()
         {
+            return true;
         }
 
         /// <summary>
@@ -60,9 +66,13 @@ namespace DMS_Service
             Debug.Assert(true, string.Format("Reply from {0} with the status {1}", token.Destination, e.Reply.Status));
         }
 
-        public bool addPatient()
+        /// <summary>
+        /// JP.
+        /// Adds new patient from the parameter to the database
+        /// </summary>
+        public void addPatient(Patient patient)
         {
-            throw new System.NotImplementedException();
+            this.dbManager.addPatient(patient);
         }
 
         public void removePatient()
@@ -81,7 +91,7 @@ namespace DMS_Service
             throw new System.NotImplementedException();
         }
 
-        public bool addStaff()
+        public void addStaff(Staff staff)
         {
             throw new System.NotImplementedException();
         }

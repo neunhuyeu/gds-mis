@@ -12,10 +12,10 @@ namespace DMS_Service
     public interface ISynchronise
     {
         [OperationContract]
-        bool addPatient();
+        void addPatient(Patient patient);
 
         [OperationContract]
-        bool addStaff();
+        void addStaff(Staff staff);
 
         // TODO: Add your service operations here
     }
