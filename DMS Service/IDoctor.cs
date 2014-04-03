@@ -44,7 +44,6 @@ namespace DMS_Service
         void addTestPatient();
 
         [OperationContract]
-        Staff login(string email, string password);
-
+        void addTestAppointment();
     }
 }

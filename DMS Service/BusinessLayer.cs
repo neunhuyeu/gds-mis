@@ -5,6 +5,7 @@ using System.Text;
 using System.Data;
 using System.Threading.Tasks;
 using System.ServiceModel;
+using System.Windows.Forms;
 
 namespace DMS_Service
 {
@@ -40,7 +41,7 @@ namespace DMS_Service
                 patient.PersonId = Convert.ToInt32(dr["person_id"]);
                 patient.FirstName = dr["first_name"].ToString();
                 patient.LastName = dr["last_name"].ToString();
-                patient.DateOfBirth = dr["date_of_birth"].ToString();
+                //patient.DateOfBirth = dr["date_of_birth"].ToString();
                 patient.Email = dr["email_address"].ToString();
                 patient.MobileNumber = dr["mobile_number"].ToString();
                 patient.LandLineNumber = dr["landline_number"].ToString();
@@ -80,7 +81,7 @@ namespace DMS_Service
                 staff.PersonId = Convert.ToInt32(dr["person_id"]);
                 staff.FirstName = dr["first_name"].ToString();
                 staff.LastName = dr["last_name"].ToString();
-                staff.DateOfBirth = dr["date_of_birth"].ToString();
+                //staff.DateOfBirth = dr["date_of_birth"].ToString();
                 staff.Email = dr["email_address"].ToString();
                 staff.MobileNumber = dr["mobile_number"].ToString();
                 staff.LandLineNumber = dr["landline_number"].ToString();
@@ -208,6 +209,89 @@ namespace DMS_Service
         public string setPerscription(int appointmentID, Perscription perscription)
         {
             throw new NotImplementedException();
+        }
+
+        public void addTestPatient()
+        {
+            
+            DMS_Service.MySynchroniseService.SynchroniseClient proxy;
+
+            Patient dude = new Patient();
+
+            dude.FirstName = "Homer";
+            dude.LastName = "Simpson";
+            dude.Height = 180;
+            dude.Weight = 100;
+            dude.Smoker = false;
+            dude.SmokingFrequency = 0;
+            dude.MobileNumber = "12345";
+            dude.LandLineNumber = "54321";
+            dude.InsuranceNumber = 222222;
+            dude.DateOfBirth = new DateTime(1960, 5, 5, 5, 15,0);
+            dude.Email = "Homer@lol.com";
+            dude.Address = "springfield";
+
+
+
+
+            //add to own database
+            dbAcess.addPatient(dude);
+            
+            //add tot he other server
+            try
+            {
+                proxy = new DMS_Service.MySynchroniseService.SynchroniseClient();
+                proxy.addPatient(dude);
+            }
+            catch(TimeoutException)
+            {
+                MessageBox.Show("couldn't connect to other server");
+            }
+            catch
+            {
+
+            }
+            
+            
+            
+
+
+        }
+
+        
+        public void addTestAppointment()
+        {
+            //create the sync proxy
+            DMS_Service.MySynchroniseService.SynchroniseClient proxy;
+           
+            //create the the test appointment
+            Appointment appoinment = new Appointment();
+            appoinment.startTime = new DateTime(2014, 1, 1, 13, 0, 0);
+            appoinment.endTime = new DateTime(2014, 1, 1, 13, 30, 0);
+            appoinment.Staff = new Staff();
+            appoinment.Staff.StaffID = 1;
+            appoinment.Patient = new Patient();
+            appoinment.Patient.PatientID = 1;
+
+            //Add appointment to own database   
+            dbAcess.addAppointment(appoinment);
+
+            //Add appointment to other server
+            try
+            {
+                proxy = new DMS_Service.MySynchroniseService.SynchroniseClient("BasicHttpBinding_ISynchronise", "http://145.93.72.173:8733/Design_Time_Addresses/DMS_Service/IDoctor/");
+                proxy.addAppointment(appoinment);
+                
+            }
+            catch(TimeoutException)
+            {
+                MessageBox.Show("couldn't connect to other server");
+            }
+            catch
+            {
+
+            }
+            
         }
     }
 }
