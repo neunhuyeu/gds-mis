@@ -33,7 +33,7 @@ namespace Doctor_Client
             perscription = proxy.getPatientPerscriptions(patient.PatientIDk__BackingField);
             foreach (ServerConnection.Perscription persrip in perscription )
             {
-                PerscriptionLb.Items.Add(persrip.Drug);
+                PerscriptionLb.Items.Add(persrip.drug);
             }
         }
         private int DOBtoAge(string DOB)
@@ -97,7 +97,7 @@ namespace Doctor_Client
         {
             if (PerscriptionLb.SelectedIndex > -1)
             {
-                MessageBox.Show(this, "Drug Name : " + perscription[PerscriptionLb.SelectedIndex].Drug.ToString() + "\nDate :  " + perscription[PerscriptionLb.SelectedIndex].Date.ToString() + "\nDoctor :  " + perscription[PerscriptionLb.SelectedIndex].Doctor.ToString() + "\nDosage" + perscription[PerscriptionLb.SelectedIndex].Dosage.ToString(), patient.FirstName + " " + patient.LastName + " takes" + perscription[PerscriptionLb.SelectedIndex].Drug.ToString());
+                MessageBox.Show(this, "Drug Name : " + perscription[PerscriptionLb.SelectedIndex].drug.ToString() + "\nDate :  " + perscription[PerscriptionLb.SelectedIndex].date.ToString() + "\nDoctor :  " + perscription[PerscriptionLb.SelectedIndex].doctor.ToString() + "\nDosage" + perscription[PerscriptionLb.SelectedIndex].dosage.ToString(), patient.FirstNamek__BackingField + " " + patient.LastNamek__BackingField + " takes" + perscription[PerscriptionLb.SelectedIndex].drug.ToString());
             }
         }
     }

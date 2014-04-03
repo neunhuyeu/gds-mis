@@ -20,30 +20,30 @@ namespace Doctor_Client
         {
             InitializeComponent();
             currentUser = user;
-            userNamelb.Text =  " Welcome Mr. "+user.FirstNamek__BackingField + user.LastNamek__BackingField;
-            
-        
+            userNamelb.Text = " Welcome Mr. " + user.FirstNamek__BackingField + user.LastNamek__BackingField;
+
+
         }
 
-        private void textBox1_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            
-            if (tbSearchName.Text.Length + tbInsuranceSearch.Text.Length + tbDOBSearch.Text.Length > 0)
-            {
-              ServerConnection.DoctorClient  proxy = new ServerConnection.DoctorClient();
-                
-                if (((potentualPatients=proxy.search(tbSearchName.Text ,tbDOBSearch.Text,tbInsuranceSearch.Text))!=null) )
-                {
-                    foreach (Patient patient in potentualPatients)
-                    {
-                        searchListLB.Items.Add(String.Format("{0,-11}  {1,-11}   {2,8} {0,25}",patient.FirstNamek__BackingField ,patient.LastNamek__BackingField, patient.DateOfBirthk__BackingField,patient.InsuranceNumberk__BackingField));
+        //private void textBox1_KeyPress(object sender, KeyPressEventArgs e)
+        //{
 
-                    }
-                }
-                
-              
-            }
-        }
+        //    if (tbSearchFirstName.Text.Length + tbInsuranceSearch.Text.Length + tbDOBSearch.Text.Length+ tbSearchLastName.Text.Length > 0)
+        //    {
+        //      ServerConnection.DoctorClient  proxy = new ServerConnection.DoctorClient();
+
+        //        if (((potentualPatients=proxy.search(tbSearchFirstName.Text, tbSearchLastName.Text ,tbDOBSearch.Text, Convert.ToInt32(tbInsuranceSearch.Text)))!=null) )
+        //        {
+        //            foreach (Patient patient in potentualPatients)
+        //            {
+        //                searchListLB.Items.Add(String.Format("{0,-11}  {1,-11}   {2,8} {0,25}",patient.FirstNamek__BackingField ,patient.LastNamek__BackingField, patient.DateOfBirthk__BackingField,patient.InsuranceNumberk__BackingField));
+
+        //            }
+        //        }
+
+
+        //    }
+        //}
 
         private void Client_Load(object sender, EventArgs e)
         {
@@ -59,8 +59,27 @@ namespace Doctor_Client
         private void searchListLB_SelectedIndexChanged(object sender, EventArgs e)
         {
             PatientDetails Patient = new PatientDetails(potentualPatients[searchListLB.SelectedIndex]);
+
+            Patient.ShowDialog();
         }
 
- 
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btn_searchPatients_Click(object sender, EventArgs e)
+        {
+            ServerConnection.DoctorClient proxy = new ServerConnection.DoctorClient();
+
+            if (((potentualPatients = proxy.search(tbSearchFirstName.Text, tbSearchLastName.Text, tbDOBSearch.Text, Convert.ToInt32(tbInsuranceSearch.Text))) != null))
+            {
+                foreach (Patient patient in potentualPatients)
+                {
+                    searchListLB.Items.Add(String.Format("{0,-11}  {1,-11}   {2,8} {3,25}", patient.FirstNamek__BackingField, patient.LastNamek__BackingField, patient.DateOfBirthk__BackingField, Convert.ToInt32(tbInsuranceSearch.Text)));
+
+                }
+            }
+        }
     }
 }
