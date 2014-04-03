@@ -12,11 +12,7 @@ namespace DMS_Service
     public interface IDoctor
     {
         [OperationContract]
-        Patient GetPatient_by_lastName_DateOfBirth(string lastName, DateTime dateOfBirth);
-
-        [OperationContract]
-        Staff Login(string Email, string Passward );
-
+        Patient GetPatient_by_lastName_DateOfBirth(string lastName, string dateOfBirth);
 
         [OperationContract]
         Patient GetPatientOverview(int personID);
@@ -34,17 +30,13 @@ namespace DMS_Service
         List<Perscription> getPatientPerscriptions(int patientID);
 
         [OperationContract]
-        List<Patient> search(string firstName, string lastName, string dateOfBirth, int insuranceNumber);
+        List<Patient> SearchPatients(string first, string last, string dateOfBirth, int insurance);
 
         [OperationContract]
         string setPerscription(int appointmentID, Perscription perscription);
 
-        //Methods for testing Synchronization
         [OperationContract]
-        void addTestPatient();
-
-        [OperationContract]
-        void addTestAppointment();
+        Staff login(string email, string password);
 
     }
 }
