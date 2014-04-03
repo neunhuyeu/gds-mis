@@ -4,13 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Data;
 using System.Threading.Tasks;
-using System.ServiceModel;
-
 
 namespace DMS_Service
 {
+[Serializable]
     // Kirolos
-    [ServiceBehavior(InstanceContextMode = InstanceContextMode.Single)]
     public class BusinessLayer : IDoctor
     {
         private DbAccessLayer dbAcess;

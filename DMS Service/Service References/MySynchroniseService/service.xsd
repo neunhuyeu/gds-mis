@@ -1,27 +1,28 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import namespace="http://schemas.datacontract.org/2004/07/DMS_Service" />
   <xs:element name="addPatient">
     <xs:complexType>
-      <xs:sequence />
+      <xs:sequence>
+        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/DMS_Service" minOccurs="0" name="patient" nillable="true" type="q1:Patient" />
+      </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="addPatientResponse">
     <xs:complexType>
-      <xs:sequence>
-        <xs:element minOccurs="0" name="addPatientResult" type="xs:boolean" />
-      </xs:sequence>
+      <xs:sequence />
     </xs:complexType>
   </xs:element>
   <xs:element name="addStaff">
     <xs:complexType>
-      <xs:sequence />
+      <xs:sequence>
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/DMS_Service" minOccurs="0" name="staff" nillable="true" type="q2:Staff" />
+      </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="addStaffResponse">
     <xs:complexType>
-      <xs:sequence>
-        <xs:element minOccurs="0" name="addStaffResult" type="xs:boolean" />
-      </xs:sequence>
+      <xs:sequence />
     </xs:complexType>
   </xs:element>
 </xs:schema>

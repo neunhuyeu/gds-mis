@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using DMS_Service;
+using DMS_Service.MySynchroniseService;
 
 
 namespace Doctor_Client
@@ -16,11 +16,11 @@ namespace Doctor_Client
     {
 
         private MyDoctorService.DoctorClient proxy;
-        private CDoctor Doc;
+        //private CDoctor Doc;
         public Login()
         {
             proxy = new MyDoctorService.DoctorClient();
-            Doc = new CDoctor();
+            //Doc = new CDoctor();
             InitializeComponent();
         }
 
@@ -41,12 +41,14 @@ namespace Doctor_Client
                 string  Email = tbEmail.Text;
                 string Password = tbPassword.Text;
                  Staff currentUser;
+                /*
                 if((currentUser=Doc.login(Email,Password))!=null)
                 {
                     this.Visible=false;
-                    Client doctorform= new Client(currentUser); 
+                    Client doctorform =new Client(currentUser);
                     this.Visible=true;
                 }
+                 */ 
             }
             
               

@@ -7,17 +7,20 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using DMS_Service.MySynchroniseService;
 using DMS_Service;
 
 namespace Doctor_Client
 {
     public partial class PatientDetails : Form
     {
-        Patient patient;
-       List< Perscription> perscription;
-        public PatientDetails(Patient Pateint)
+      Patient patient;
+      MyDoctorService.DoctorClient proxy;
+      MyDoctorService.Perscription[] perscription;
+       public PatientDetails(Patient Pateint)
         {
             InitializeComponent();
+          proxy= new MyDoctorService.DoctorClient();
             //overview filler
             patient = Pateint;
             tbPatientDetailsOverviewName.Text = patient.FirstName + " " + patient.LastName;
@@ -28,7 +31,8 @@ namespace Doctor_Client
             tbPatientDetailsOverviewEMail.Text=patient.Email;
             tbPatientDetailsOverviewMPhone.Text = patient.MobileNumber.ToString();
             //percriptions
-            foreach (Perscription persrip in perscription= new CDoctor().getPatientPerscriptions(patient.PatientID))
+            perscription = proxy.getPatientPerscriptions(patient.PatientID);
+            foreach (MyDoctorService.Perscription persrip in perscription )
             {
                 PerscriptionLb.Items.Add(persrip.Drug);
             }
