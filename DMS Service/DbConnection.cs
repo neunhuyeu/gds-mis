@@ -51,8 +51,8 @@ namespace DMS_Service
             }
             catch (MySqlException e)
             {
-                Console.Write("Error - SelectQuery - Query: " + 
-                    query + " \nException: " + e.StackTrace.ToString());
+               string temp =  "Error - SelectQuery - Query: " + 
+                    query + " \nException: " + e.StackTrace.ToString();
                 return null;
             }
             finally

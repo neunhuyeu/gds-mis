@@ -46,17 +46,19 @@ namespace DMS_Service
             return dbConnection.SelectQuery(query, sqlParameters);
         }
 
-        public DataTable SearchPatientsList(string firstName, string lastName, string dateOfBirth)
+        //TODO -> retrieve date
+        public DataTable SearchPatientsList(string firstName, string lastName) //, string dateOfBirth)
         {
+            //DateTime date = DateTime.ParseExact(dateOfBirth, "yyyy-MM-dd", null);
             string query = string.Format("Select * from person where first_name"
-                + " = @firstName AND last_name = @lastName AND data_of_birth = @dateOfBirth");
-            MySqlParameter[] sqlParameters = new MySqlParameter[3];
+                + " = @firstName AND last_name = @lastName"); // AND data_of_birth = @date");
+            MySqlParameter[] sqlParameters = new MySqlParameter[2];
             sqlParameters[0] = new MySqlParameter("@firstName", MySqlDbType.String);
             sqlParameters[0].Value = Convert.ToString(firstName);
-            sqlParameters[0] = new MySqlParameter("@lastName", MySqlDbType.String);
-            sqlParameters[0].Value = Convert.ToString(lastName);
-            sqlParameters[0] = new MySqlParameter("@dateOfBirth", MySqlDbType.Date);
-            sqlParameters[0].Value = Convert.ToString(dateOfBirth);
+            sqlParameters[1] = new MySqlParameter("@lastName", MySqlDbType.String);
+            sqlParameters[1].Value = Convert.ToString(lastName);
+            //sqlParameters[2] = new MySqlParameter("@date", MySqlDbType.Date);
+            //sqlParameters[2].Value = Convert.ToString(dateOfBirth);
             return dbConnection.SelectQuery(query, sqlParameters);
         }
 

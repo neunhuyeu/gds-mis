@@ -200,14 +200,14 @@ namespace DMS_Service
         {
             List<Patient> patients = new List<Patient>();
             DataTable dataTable = new DataTable();
-            dataTable = dbAcess.SearchPatientsList(first, last, dateOfBirth);
+            dataTable = dbAcess.SearchPatientsList(first, last); //, dateOfBirth);
 
             foreach (DataRow dr in dataTable.Rows)
             {
                 Patient p = new Patient();
                 p.FirstName = dr["first_name"].ToString();
                 p.LastName = dr["last_name"].ToString();
-                p.DateOfBirth = dr["date_of_birth"].ToString();
+                p.DateOfBirth = dateOfBirth;
                 p.Gender = 'M';
                 p.Email = dr["email_address"].ToString();
                 p.MobileNumber = dr["mobile_number"].ToString();
