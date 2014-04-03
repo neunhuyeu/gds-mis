@@ -80,6 +80,10 @@ namespace DMS_Service
                     + query + " \nException: \n" + e.StackTrace.ToString());
                 return false;
             }
+            catch
+            {
+
+            }
             finally
             {
             }

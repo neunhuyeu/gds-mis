@@ -41,7 +41,7 @@ namespace DMS_Service
                 patient.PersonId = Convert.ToInt32(dr["person_id"]);
                 patient.FirstName = dr["first_name"].ToString();
                 patient.LastName = dr["last_name"].ToString();
-                patient.DateOfBirth = dr["date_of_birth"].ToString();
+                //patient.DateOfBirth = dr["date_of_birth"].ToString();
                 patient.Email = dr["email_address"].ToString();
                 patient.MobileNumber = dr["mobile_number"].ToString();
                 patient.LandLineNumber = dr["landline_number"].ToString();
@@ -81,7 +81,7 @@ namespace DMS_Service
                 staff.PersonId = Convert.ToInt32(dr["person_id"]);
                 staff.FirstName = dr["first_name"].ToString();
                 staff.LastName = dr["last_name"].ToString();
-                staff.DateOfBirth = dr["date_of_birth"].ToString();
+                //staff.DateOfBirth = dr["date_of_birth"].ToString();
                 staff.Email = dr["email_address"].ToString();
                 staff.MobileNumber = dr["mobile_number"].ToString();
                 staff.LandLineNumber = dr["landline_number"].ToString();
@@ -226,6 +226,9 @@ namespace DMS_Service
             dude.MobileNumber = "12345";
             dude.LandLineNumber = "54321";
             dude.InsuranceNumber = 222222;
+            dude.DateOfBirth = new DateTime(1960, 5, 5, 5, 15,0);
+            dude.Email = "Homer@lol.com";
+            dude.Address = "springfield";
 
 
 
