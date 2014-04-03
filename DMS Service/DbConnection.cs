@@ -44,7 +44,7 @@ namespace DMS_Service
                 myCommand.Connection = openConnection();
                 myCommand.CommandText = query;
                 myCommand.Parameters.AddRange(sqlParameter);
-                myCommand.ExecuteNonQuery();           
+                myCommand.ExecuteNonQuery();         
                 myAdapter.SelectCommand = myCommand;
                 myAdapter.Fill(ds);
                 dataTable = ds.Tables[0];

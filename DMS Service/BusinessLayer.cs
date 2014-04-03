@@ -179,9 +179,9 @@ namespace DMS_Service
                 {
                     staff.FirstName = row["first_name"].ToString();
                     staff.LastName = row["last_name"].ToString();
-                    staff.Function = (Staff.StaffType)Enum.Parse(typeof(Staff.StaffType), row["function"].ToString());
-                    staff.RoomNumber = Convert.ToInt32(row["room_number"]);
-                    staff.Specialization = row["specialization"].ToString();
+                    //staff.Function = (Staff.StaffType)Enum.Parse(typeof(Staff.StaffType), row["function"].ToString());
+                    //staff.RoomNumber = Convert.ToInt32(row["room_number"]);
+                    //staff.Specialization = row["specialization"].ToString();
                 }
 
                 return staff;

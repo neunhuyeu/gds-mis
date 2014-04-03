@@ -60,8 +60,7 @@ namespace DMS_Service
         {
             try
             {
-                string query = "SELECT * FROM person JOIN Staff_members ON person.person_id = Staff_members.person_id" +
-                    "HAVING person.email_address = '@email'";
+                string query = "SELECT * FROM person where email_address = @email";
                 MySqlParameter[] sqlParameters = new MySqlParameter[1];
                 sqlParameters[0] = new MySqlParameter("@email", MySqlDbType.String);
                 sqlParameters[0].Value = Convert.ToString(email);
