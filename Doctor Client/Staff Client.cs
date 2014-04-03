@@ -52,13 +52,15 @@ namespace Doctor_Client
 
         private void logoubtn_Click(object sender, EventArgs e)
         {
-            Environment.Exit(0);
+          this.Close();
 
         }
 
         private void searchListLB_SelectedIndexChanged(object sender, EventArgs e)
         {
             PatientDetails Patient = new PatientDetails(potentualPatients[searchListLB.SelectedIndex]);
+
+            Patient.ShowDialog();
         }
 
  

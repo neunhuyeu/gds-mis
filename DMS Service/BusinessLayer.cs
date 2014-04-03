@@ -199,6 +199,7 @@ namespace DMS_Service
         public List<Patient> search(string name, string dateOfBirth, string insuranceNumber)
         {
             throw new NotImplementedException();
+
         }
 
         public string setPerscription(int appointmentID, Perscription perscription)
