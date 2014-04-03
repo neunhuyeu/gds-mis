@@ -28,7 +28,7 @@ namespace DMS_Service
         /// <param name="lastName"></param>
         /// <param name="dateOfBirth"></param>
         /// <returns>return patient object</returns>
-        public Patient GetPatient_by_lastName_DateOfBirth(string lastName, DateTime dateOfBirth)
+        public Patient GetPatient_by_lastName_DateOfBirth(string lastName, string dateOfBirth)
         {
             Patient patient = new Patient();
             DataTable dataTable = new DataTable();

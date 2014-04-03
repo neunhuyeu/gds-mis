@@ -20,7 +20,7 @@ namespace DMS_Service
         }
         
         //Kirolos
-        public DataTable SearchPatient_lastName_dateOfBirth(string lastName, DateTime dateOfBirth)
+        public DataTable SearchPatient_lastName_dateOfBirth(string lastName, string dateOfBirth)
         {
             string query = string.Format("SELECT *" +
                                         "FROM person" + 

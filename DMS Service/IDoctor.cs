@@ -12,7 +12,7 @@ namespace DMS_Service
     public interface IDoctor
     {
         [OperationContract]
-        Patient GetPatient_by_lastName_DateOfBirth(string lastName, DateTime dateOfBirth);
+        Patient GetPatient_by_lastName_DateOfBirth(string lastName, string dateOfBirth);
 
         [OperationContract]
         Staff Login(string Email, string Passward );
