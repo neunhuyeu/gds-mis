@@ -17,6 +17,21 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+  <xs:element name="Login">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Email" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Passward" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="LoginResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/DMS_Service" minOccurs="0" name="LoginResult" nillable="true" type="q2:Staff" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
   <xs:element name="GetPatientOverview">
     <xs:complexType>
       <xs:sequence>
@@ -27,7 +42,7 @@
   <xs:element name="GetPatientOverviewResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/DMS_Service" minOccurs="0" name="GetPatientOverviewResult" nillable="true" type="q2:Patient" />
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/DMS_Service" minOccurs="0" name="GetPatientOverviewResult" nillable="true" type="q3:Patient" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -41,7 +56,7 @@
   <xs:element name="GetStaff_by_idResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/DMS_Service" minOccurs="0" name="GetStaff_by_idResult" nillable="true" type="q3:Staff" />
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/DMS_Service" minOccurs="0" name="GetStaff_by_idResult" nillable="true" type="q4:Staff" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -55,7 +70,7 @@
   <xs:element name="GetPatientDiseasesResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q4="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="GetPatientDiseasesResult" nillable="true" type="q4:ArrayOfstring" />
+        <xs:element xmlns:q5="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="GetPatientDiseasesResult" nillable="true" type="q5:ArrayOfstring" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -69,7 +84,7 @@
   <xs:element name="getPatientAppointmentsResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/DMS_Service" minOccurs="0" name="getPatientAppointmentsResult" nillable="true" type="q5:ArrayOfAppointment" />
+        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/DMS_Service" minOccurs="0" name="getPatientAppointmentsResult" nillable="true" type="q6:ArrayOfAppointment" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -83,23 +98,24 @@
   <xs:element name="getPatientPerscriptionsResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/DMS_Service" minOccurs="0" name="getPatientPerscriptionsResult" nillable="true" type="q6:ArrayOfPerscription" />
+        <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/DMS_Service" minOccurs="0" name="getPatientPerscriptionsResult" nillable="true" type="q7:ArrayOfPerscription" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="search">
     <xs:complexType>
       <xs:sequence>
-        <xs:element minOccurs="0" name="name" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="firstName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="lastName" nillable="true" type="xs:string" />
         <xs:element minOccurs="0" name="dateOfBirth" nillable="true" type="xs:string" />
-        <xs:element minOccurs="0" name="insuranceNumber" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="insuranceNumber" type="xs:int" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="searchResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/DMS_Service" minOccurs="0" name="searchResult" nillable="true" type="q7:ArrayOfPatient" />
+        <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/DMS_Service" minOccurs="0" name="searchResult" nillable="true" type="q8:ArrayOfPatient" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -107,7 +123,7 @@
     <xs:complexType>
       <xs:sequence>
         <xs:element minOccurs="0" name="appointmentID" type="xs:int" />
-        <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/DMS_Service" minOccurs="0" name="perscription" type="q8:Perscription" />
+        <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/DMS_Service" minOccurs="0" name="perscription" type="q9:Perscription" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
