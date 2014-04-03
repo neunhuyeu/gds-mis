@@ -37,15 +37,17 @@
             this.label1 = new System.Windows.Forms.Label();
             this.tabAgenda = new System.Windows.Forms.TabPage();
             this.tabPatientSearch = new System.Windows.Forms.TabPage();
+            this.searchListLB = new System.Windows.Forms.ListBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.tbInsuranceSearch = new System.Windows.Forms.TextBox();
             this.tbDOBSearch = new System.Windows.Forms.TextBox();
-            this.tbSearchName = new System.Windows.Forms.TextBox();
+            this.tbSearchFirstName = new System.Windows.Forms.TextBox();
             this.userNamelb = new System.Windows.Forms.Label();
             this.logoubtn = new System.Windows.Forms.Button();
-            this.searchListLB = new System.Windows.Forms.ListBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.tbSearchLastName = new System.Windows.Forms.TextBox();
             this.tabs.SuspendLayout();
             this.tabHome.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -135,13 +137,15 @@
             // 
             // tabPatientSearch
             // 
+            this.tabPatientSearch.Controls.Add(this.tbSearchLastName);
+            this.tabPatientSearch.Controls.Add(this.label6);
             this.tabPatientSearch.Controls.Add(this.searchListLB);
             this.tabPatientSearch.Controls.Add(this.label4);
             this.tabPatientSearch.Controls.Add(this.label3);
             this.tabPatientSearch.Controls.Add(this.label2);
             this.tabPatientSearch.Controls.Add(this.tbInsuranceSearch);
             this.tabPatientSearch.Controls.Add(this.tbDOBSearch);
-            this.tabPatientSearch.Controls.Add(this.tbSearchName);
+            this.tabPatientSearch.Controls.Add(this.tbSearchFirstName);
             this.tabPatientSearch.Location = new System.Drawing.Point(4, 25);
             this.tabPatientSearch.Margin = new System.Windows.Forms.Padding(4);
             this.tabPatientSearch.Name = "tabPatientSearch";
@@ -151,10 +155,21 @@
             this.tabPatientSearch.Text = "Patient Search";
             this.tabPatientSearch.UseVisualStyleBackColor = true;
             // 
+            // searchListLB
+            // 
+            this.searchListLB.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.searchListLB.FormattingEnabled = true;
+            this.searchListLB.ItemHeight = 16;
+            this.searchListLB.Location = new System.Drawing.Point(14, 154);
+            this.searchListLB.Name = "searchListLB";
+            this.searchListLB.Size = new System.Drawing.Size(843, 244);
+            this.searchListLB.TabIndex = 7;
+            this.searchListLB.SelectedIndexChanged += new System.EventHandler(this.searchListLB_SelectedIndexChanged);
+            // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(11, 108);
+            this.label4.Location = new System.Drawing.Point(9, 106);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(128, 17);
@@ -164,7 +179,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(11, 69);
+            this.label3.Location = new System.Drawing.Point(9, 79);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(91, 17);
@@ -175,16 +190,17 @@
             // 
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(11, 33);
+            this.label2.Location = new System.Drawing.Point(9, 25);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(45, 17);
+            this.label2.Size = new System.Drawing.Size(72, 17);
             this.label2.TabIndex = 4;
-            this.label2.Text = "Name";
+            this.label2.Text = "FirtsName";
+            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // tbInsuranceSearch
             // 
-            this.tbInsuranceSearch.Location = new System.Drawing.Point(148, 105);
+            this.tbInsuranceSearch.Location = new System.Drawing.Point(148, 101);
             this.tbInsuranceSearch.Margin = new System.Windows.Forms.Padding(4);
             this.tbInsuranceSearch.Name = "tbInsuranceSearch";
             this.tbInsuranceSearch.Size = new System.Drawing.Size(132, 22);
@@ -193,26 +209,26 @@
             // 
             // tbDOBSearch
             // 
-            this.tbDOBSearch.Location = new System.Drawing.Point(148, 65);
+            this.tbDOBSearch.Location = new System.Drawing.Point(148, 74);
             this.tbDOBSearch.Margin = new System.Windows.Forms.Padding(4);
             this.tbDOBSearch.Name = "tbDOBSearch";
             this.tbDOBSearch.Size = new System.Drawing.Size(132, 22);
             this.tbDOBSearch.TabIndex = 2;
             this.tbDOBSearch.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox1_KeyPress);
             // 
-            // tbSearchName
+            // tbSearchFirstName
             // 
-            this.tbSearchName.Location = new System.Drawing.Point(148, 25);
-            this.tbSearchName.Margin = new System.Windows.Forms.Padding(4);
-            this.tbSearchName.Name = "tbSearchName";
-            this.tbSearchName.Size = new System.Drawing.Size(132, 22);
-            this.tbSearchName.TabIndex = 1;
-            this.tbSearchName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox1_KeyPress);
+            this.tbSearchFirstName.Location = new System.Drawing.Point(148, 20);
+            this.tbSearchFirstName.Margin = new System.Windows.Forms.Padding(4);
+            this.tbSearchFirstName.Name = "tbSearchFirstName";
+            this.tbSearchFirstName.Size = new System.Drawing.Size(132, 22);
+            this.tbSearchFirstName.TabIndex = 1;
+            this.tbSearchFirstName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox1_KeyPress);
             // 
             // userNamelb
             // 
             this.userNamelb.AutoSize = true;
-            this.userNamelb.Location = new System.Drawing.Point(591, 2);
+            this.userNamelb.Location = new System.Drawing.Point(12, 2);
             this.userNamelb.Name = "userNamelb";
             this.userNamelb.Size = new System.Drawing.Size(70, 17);
             this.userNamelb.TabIndex = 4;
@@ -228,16 +244,22 @@
             this.logoubtn.UseVisualStyleBackColor = true;
             this.logoubtn.Click += new System.EventHandler(this.logoubtn_Click);
             // 
-            // searchListLB
+            // label6
             // 
-            this.searchListLB.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.searchListLB.FormattingEnabled = true;
-            this.searchListLB.ItemHeight = 16;
-            this.searchListLB.Location = new System.Drawing.Point(14, 154);
-            this.searchListLB.Name = "searchListLB";
-            this.searchListLB.Size = new System.Drawing.Size(843, 244);
-            this.searchListLB.TabIndex = 7;
-            this.searchListLB.SelectedIndexChanged += new System.EventHandler(this.searchListLB_SelectedIndexChanged);
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(9, 52);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(76, 17);
+            this.label6.TabIndex = 8;
+            this.label6.Text = "Last Name";
+            // 
+            // tbSearchLastName
+            // 
+            this.tbSearchLastName.Location = new System.Drawing.Point(148, 49);
+            this.tbSearchLastName.Name = "tbSearchLastName";
+            this.tbSearchLastName.Size = new System.Drawing.Size(132, 22);
+            this.tbSearchLastName.TabIndex = 9;
+            this.tbSearchLastName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox1_KeyPress);
             // 
             // Client
             // 
@@ -276,12 +298,14 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox tbInsuranceSearch;
         private System.Windows.Forms.TextBox tbDOBSearch;
-        private System.Windows.Forms.TextBox tbSearchName;
+        private System.Windows.Forms.TextBox tbSearchFirstName;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.DataGridView dataGridView2;
         private System.Windows.Forms.Label userNamelb;
         private System.Windows.Forms.Button logoubtn;
         private System.Windows.Forms.ListBox searchListLB;
+        private System.Windows.Forms.TextBox tbSearchLastName;
+        private System.Windows.Forms.Label label6;
     }
 }
