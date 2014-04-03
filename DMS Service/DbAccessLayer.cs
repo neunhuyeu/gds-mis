@@ -5,6 +5,7 @@ using System.Text;
 using System.Data;
 using System.Data.SqlClient;
 using System.Configuration;
+using MySql.Data.MySqlClient;
 
 namespace DMS_Service
 {
@@ -12,7 +13,6 @@ namespace DMS_Service
     public class DbAccessLayer
     {
         DbConnection dbConnection;
-        SqlCredential cred;
 
         public DbAccessLayer()
         {
@@ -26,10 +26,10 @@ namespace DMS_Service
                                         "FROM person" + 
                                         "WHERE last_name = @lastName" +
                                         "AND date_of_birth = @dateOfBirth");
-            SqlParameter[] sqlParameters = new SqlParameter[2];
-            sqlParameters[0] = new SqlParameter("@lastName", SqlDbType.Char);
+            MySqlParameter[] sqlParameters = new MySqlParameter[2];
+            sqlParameters[0] = new MySqlParameter("@lastName", MySqlDbType.VarChar);
             sqlParameters[0].Value = Convert.ToString(lastName);
-            sqlParameters[1] = new SqlParameter("@dateOfBirth", SqlDbType.Date);
+            sqlParameters[1] = new MySqlParameter("@dateOfBirth", MySqlDbType.Date);
             sqlParameters[1].Value = Convert.ToString(dateOfBirth);
             return dbConnection.SelectQuery(query, sqlParameters);
         }
@@ -40,8 +40,8 @@ namespace DMS_Service
                                           "FROM person" +
                                           "JOIN patients" +
                                           "ON person.person_id = patient.person_id");
-            SqlParameter[] sqlParameters = new SqlParameter[1];
-            sqlParameters[0] = new SqlParameter("@id", SqlDbType.Int);
+            MySqlParameter[] sqlParameters = new MySqlParameter[1];
+            sqlParameters[0] = new MySqlParameter("@id", MySqlDbType.Int32);
             sqlParameters[0].Value = id.ToString();
             return dbConnection.SelectQuery(query, sqlParameters);
         }
@@ -50,8 +50,8 @@ namespace DMS_Service
         public DataTable SearchStaffById(int id)
         {
             string query = "SELECT * FROM Staff_members WHERE person_id = @id";
-            SqlParameter[] sqlParameters = new SqlParameter[1];
-            sqlParameters[0] = new SqlParameter("@id", SqlDbType.Int);
+            MySqlParameter[] sqlParameters = new MySqlParameter[1];
+            sqlParameters[0] = new MySqlParameter("@id", MySqlDbType.Int32);
             sqlParameters[0].Value = Convert.ToString(id);
             return dbConnection.SelectQuery(query, sqlParameters);
         }
@@ -68,20 +68,20 @@ namespace DMS_Service
                            "VALUES ('@first_name', '@last_name', @date_of_birth, '@email_address', '@mobile_number', '@landline_number', '@home_address')";
 
             //parameters for person table
-            SqlParameter[] sqlParameters = new SqlParameter[7];
-            sqlParameters[0] = new SqlParameter("@first_name", SqlDbType.Char);
+            MySqlParameter[] sqlParameters = new MySqlParameter[7];
+            sqlParameters[0] = new MySqlParameter("@first_name", MySqlDbType.VarChar);
             sqlParameters[0].Value = Convert.ToString(patient.FirstName);
-            sqlParameters[1] = new SqlParameter("@last_name", SqlDbType.Char);
+            sqlParameters[1] = new MySqlParameter("@last_name", MySqlDbType.VarChar);
             sqlParameters[1].Value = Convert.ToString(patient.LastName);
-            sqlParameters[2] = new SqlParameter("@date_of_birth", SqlDbType.Date);
+            sqlParameters[2] = new MySqlParameter("@date_of_birth", MySqlDbType.Date);
             sqlParameters[2].Value = Convert.ToString(patient.DateOfBirth);
-            sqlParameters[3] = new SqlParameter("@email_address", SqlDbType.Char);
+            sqlParameters[3] = new MySqlParameter("@email_address", MySqlDbType.VarChar);
             sqlParameters[3].Value = Convert.ToString(patient.Email);
-            sqlParameters[4] = new SqlParameter("@mobile_number", SqlDbType.Char);
+            sqlParameters[4] = new MySqlParameter("@mobile_number", MySqlDbType.VarChar);
             sqlParameters[4].Value = Convert.ToString(patient.MobileNumber);
-            sqlParameters[5] = new SqlParameter("@landline_number", SqlDbType.Char);
+            sqlParameters[5] = new MySqlParameter("@landline_number", MySqlDbType.VarChar);
             sqlParameters[5].Value = Convert.ToString(patient.LandLineNumber);
-            sqlParameters[6] = new SqlParameter("@home_address", SqlDbType.Char);
+            sqlParameters[6] = new MySqlParameter("@home_address", MySqlDbType.VarChar);
             sqlParameters[6].Value = Convert.ToString(patient.Address);
 
             //execute query on person table
@@ -94,24 +94,24 @@ namespace DMS_Service
 
             //parameters for patient table
             sqlParameters = null;
-            sqlParameters = new SqlParameter[9];
-            sqlParameters[0] = new SqlParameter("@gender", SqlDbType.Char);
+            sqlParameters = new MySqlParameter[9];
+            sqlParameters[0] = new MySqlParameter("@gender", MySqlDbType.VarChar);
             sqlParameters[0].Value = Convert.ToString(patient.Gender);
-            sqlParameters[1] = new SqlParameter("@height_cm", SqlDbType.Int);
+            sqlParameters[1] = new MySqlParameter("@height_cm", MySqlDbType.Int32);
             sqlParameters[1].Value = Convert.ToString(patient.Height);
-            sqlParameters[2] = new SqlParameter("@weight_kg", SqlDbType.Int);
+            sqlParameters[2] = new MySqlParameter("@weight_kg", MySqlDbType.Int32);
             sqlParameters[2].Value = Convert.ToString(patient.Weight);
-            sqlParameters[3] = new SqlParameter("@blood_type", SqlDbType.Char);
+            sqlParameters[3] = new MySqlParameter("@blood_type", MySqlDbType.VarChar);
             sqlParameters[3].Value = Convert.ToString(patient.BloodType);
-            sqlParameters[4] = new SqlParameter("@smoking", SqlDbType.Bit);
+            sqlParameters[4] = new MySqlParameter("@smoking", MySqlDbType.Bit);
             sqlParameters[4].Value = Convert.ToString(patient.Smoker);
-            sqlParameters[5] = new SqlParameter("@smoking_frequency", SqlDbType.Int);
+            sqlParameters[5] = new MySqlParameter("@smoking_frequency", MySqlDbType.Int32);
             sqlParameters[5].Value = Convert.ToString(patient.SmokingFrequency);
 
             //TODO: Add correct paameters
-            sqlParameters[6] = new SqlParameter("@hard_drugs", SqlDbType.Bit);
+            sqlParameters[6] = new MySqlParameter("@hard_drugs", MySqlDbType.Bit);
             sqlParameters[6].Value = false;
-            sqlParameters[7] = new SqlParameter("@smoking_frequency", SqlDbType.Int);
+            sqlParameters[7] = new MySqlParameter("@smoking_frequency", MySqlDbType.Int32);
             sqlParameters[7].Value = 0;
 
             //execute query on patient table
@@ -132,14 +132,14 @@ namespace DMS_Service
                            "VALUES (@start_date, @end_date, @patient_id, '@staff_id',)";
 
             //parameters
-            SqlParameter[] sqlParameters = new SqlParameter[4];
-            sqlParameters[0] = new SqlParameter("@start_date", SqlDbType.DateTime);
+            MySqlParameter[] sqlParameters = new MySqlParameter[4];
+            sqlParameters[0] = new MySqlParameter("@start_date", MySqlDbType.DateTime);
             sqlParameters[0].Value = Convert.ToString(appointment.startTime );
-            sqlParameters[1] = new SqlParameter("@end_date", SqlDbType.DateTime);
+            sqlParameters[1] = new MySqlParameter("@end_date", MySqlDbType.DateTime);
             sqlParameters[1].Value = Convert.ToString(appointment.endTime);
-            sqlParameters[2] = new SqlParameter("@patient_id", SqlDbType.Int);
+            sqlParameters[2] = new MySqlParameter("@patient_id", MySqlDbType.Int32);
             sqlParameters[2].Value = Convert.ToString(appointment.Patient.PatientID);
-            sqlParameters[3] = new SqlParameter("@staff_id", SqlDbType.Int);
+            sqlParameters[3] = new MySqlParameter("@staff_id", MySqlDbType.Int32);
             sqlParameters[3].Value = Convert.ToString(appointment.Staff.StaffID);
             
 

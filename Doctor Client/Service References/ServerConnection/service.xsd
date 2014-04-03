@@ -1,0 +1,121 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import namespace="http://schemas.datacontract.org/2004/07/DMS_Service" />
+  <xs:import namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:element name="GetPatient_by_lastName_DateOfBirth">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="lastName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="dateOfBirth" type="xs:dateTime" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPatient_by_lastName_DateOfBirthResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/DMS_Service" minOccurs="0" name="GetPatient_by_lastName_DateOfBirthResult" nillable="true" type="q1:Patient" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPatientOverview">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="personID" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPatientOverviewResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/DMS_Service" minOccurs="0" name="GetPatientOverviewResult" nillable="true" type="q2:Patient" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetStaff_by_id">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="id" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetStaff_by_idResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/DMS_Service" minOccurs="0" name="GetStaff_by_idResult" nillable="true" type="q3:Staff" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPatientDiseases">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="patientID" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPatientDiseasesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q4="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="GetPatientDiseasesResult" nillable="true" type="q4:ArrayOfstring" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getPatientAppointments">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="patientID" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getPatientAppointmentsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/DMS_Service" minOccurs="0" name="getPatientAppointmentsResult" nillable="true" type="q5:ArrayOfAppointment" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getPatientPerscriptions">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="patientID" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getPatientPerscriptionsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/DMS_Service" minOccurs="0" name="getPatientPerscriptionsResult" nillable="true" type="q6:ArrayOfPerscription" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="search">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="name" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="dateOfBirth" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="insuranceNumber" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="searchResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/DMS_Service" minOccurs="0" name="searchResult" nillable="true" type="q7:ArrayOfPatient" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="setPerscription">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="appointmentID" type="xs:int" />
+        <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/DMS_Service" minOccurs="0" name="perscription" type="q8:Perscription" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="setPerscriptionResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="setPerscriptionResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

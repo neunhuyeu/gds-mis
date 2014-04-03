@@ -20,7 +20,7 @@ namespace Doctor_Client
         {
             InitializeComponent();
             currentUser = user;
-            userNamelb.Text =  " Welcome Mr. "+user.firstName+user.lastName;
+            userNamelb.Text =  " Welcome Mr. "+user.firstName + user.lastName;
             
         
         }

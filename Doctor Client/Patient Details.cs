@@ -7,23 +7,22 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using DMS_Service.MySynchroniseService;
-using DMS_Service;
+using Doctor_Client.ServerConnection;
 
 namespace Doctor_Client
 {
     public partial class PatientDetails : Form
     {
       Patient patient;
-      MyDoctorService.DoctorClient proxy;
-      MyDoctorService.Perscription[] perscription;
+      DoctorClient proxy;
+      Perscription[] perscription;
        public PatientDetails(Patient Pateint)
         {
             InitializeComponent();
-          proxy= new MyDoctorService.DoctorClient();
+          proxy= new DoctorClient();
             //overview filler
             patient = Pateint;
-            tbPatientDetailsOverviewName.Text = patient.FirstName + " " + patient.LastName;
+            tbPatientDetailsOverviewName.Text = patient.FirstNamek__BackingField + " " + patient.LastName;
             tbPatientDetailsOverviewAge.Text = DOBtoAge(Pateint.DateOfBirth).ToString();
             tbPatientDetailsOverviewDoB.Text = patient.DateOfBirth.ToString();
             tbPatientDetailsOverviewGender.Text = fixGender(patient.Gender);

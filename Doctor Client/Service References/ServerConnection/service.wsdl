@@ -1,0 +1,173 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="BusinessLayer" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import namespace="http://tempuri.org/" />
+      <xsd:import namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import namespace="http://schemas.datacontract.org/2004/07/DMS_Service" />
+      <xsd:import namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IDoctor_GetPatient_by_lastName_DateOfBirth_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPatient_by_lastName_DateOfBirth" />
+  </wsdl:message>
+  <wsdl:message name="IDoctor_GetPatient_by_lastName_DateOfBirth_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPatient_by_lastName_DateOfBirthResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDoctor_GetPatientOverview_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPatientOverview" />
+  </wsdl:message>
+  <wsdl:message name="IDoctor_GetPatientOverview_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPatientOverviewResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDoctor_GetStaff_by_id_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetStaff_by_id" />
+  </wsdl:message>
+  <wsdl:message name="IDoctor_GetStaff_by_id_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetStaff_by_idResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDoctor_GetPatientDiseases_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPatientDiseases" />
+  </wsdl:message>
+  <wsdl:message name="IDoctor_GetPatientDiseases_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPatientDiseasesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDoctor_getPatientAppointments_InputMessage">
+    <wsdl:part name="parameters" element="tns:getPatientAppointments" />
+  </wsdl:message>
+  <wsdl:message name="IDoctor_getPatientAppointments_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getPatientAppointmentsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDoctor_getPatientPerscriptions_InputMessage">
+    <wsdl:part name="parameters" element="tns:getPatientPerscriptions" />
+  </wsdl:message>
+  <wsdl:message name="IDoctor_getPatientPerscriptions_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getPatientPerscriptionsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDoctor_search_InputMessage">
+    <wsdl:part name="parameters" element="tns:search" />
+  </wsdl:message>
+  <wsdl:message name="IDoctor_search_OutputMessage">
+    <wsdl:part name="parameters" element="tns:searchResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDoctor_setPerscription_InputMessage">
+    <wsdl:part name="parameters" element="tns:setPerscription" />
+  </wsdl:message>
+  <wsdl:message name="IDoctor_setPerscription_OutputMessage">
+    <wsdl:part name="parameters" element="tns:setPerscriptionResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IDoctor">
+    <wsdl:operation name="GetPatient_by_lastName_DateOfBirth">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDoctor/GetPatient_by_lastName_DateOfBirth" message="tns:IDoctor_GetPatient_by_lastName_DateOfBirth_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDoctor/GetPatient_by_lastName_DateOfBirthResponse" message="tns:IDoctor_GetPatient_by_lastName_DateOfBirth_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPatientOverview">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDoctor/GetPatientOverview" message="tns:IDoctor_GetPatientOverview_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDoctor/GetPatientOverviewResponse" message="tns:IDoctor_GetPatientOverview_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetStaff_by_id">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDoctor/GetStaff_by_id" message="tns:IDoctor_GetStaff_by_id_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDoctor/GetStaff_by_idResponse" message="tns:IDoctor_GetStaff_by_id_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPatientDiseases">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDoctor/GetPatientDiseases" message="tns:IDoctor_GetPatientDiseases_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDoctor/GetPatientDiseasesResponse" message="tns:IDoctor_GetPatientDiseases_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getPatientAppointments">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDoctor/getPatientAppointments" message="tns:IDoctor_getPatientAppointments_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDoctor/getPatientAppointmentsResponse" message="tns:IDoctor_getPatientAppointments_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getPatientPerscriptions">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDoctor/getPatientPerscriptions" message="tns:IDoctor_getPatientPerscriptions_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDoctor/getPatientPerscriptionsResponse" message="tns:IDoctor_getPatientPerscriptions_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="search">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDoctor/search" message="tns:IDoctor_search_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDoctor/searchResponse" message="tns:IDoctor_search_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="setPerscription">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDoctor/setPerscription" message="tns:IDoctor_setPerscription_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDoctor/setPerscriptionResponse" message="tns:IDoctor_setPerscription_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IDoctor" type="tns:IDoctor">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetPatient_by_lastName_DateOfBirth">
+      <soap:operation soapAction="http://tempuri.org/IDoctor/GetPatient_by_lastName_DateOfBirth" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPatientOverview">
+      <soap:operation soapAction="http://tempuri.org/IDoctor/GetPatientOverview" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetStaff_by_id">
+      <soap:operation soapAction="http://tempuri.org/IDoctor/GetStaff_by_id" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPatientDiseases">
+      <soap:operation soapAction="http://tempuri.org/IDoctor/GetPatientDiseases" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getPatientAppointments">
+      <soap:operation soapAction="http://tempuri.org/IDoctor/getPatientAppointments" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getPatientPerscriptions">
+      <soap:operation soapAction="http://tempuri.org/IDoctor/getPatientPerscriptions" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="search">
+      <soap:operation soapAction="http://tempuri.org/IDoctor/search" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="setPerscription">
+      <soap:operation soapAction="http://tempuri.org/IDoctor/setPerscription" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="BusinessLayer">
+    <wsdl:port name="BasicHttpBinding_IDoctor" binding="tns:BasicHttpBinding_IDoctor">
+      <soap:address location="http://localhost:8733/Design_Time_Addresses/DMS_Service/IDoctor/" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
