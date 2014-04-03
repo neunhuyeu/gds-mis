@@ -168,7 +168,7 @@ namespace DMS_Service
         }
 
         //how do I do the login? I found the staff with the email, and it will return this one....but WHERE do I login?
-        public Staff login(string email, string password)
+        public Staff Login(string email, string password)
         {
             Staff staff = new Staff();
             DataTable dataTable = new DataTable();
@@ -240,7 +240,7 @@ namespace DMS_Service
             dude.MobileNumber = "12345";
             dude.LandLineNumber = "54321";
             dude.InsuranceNumber = 222222;
-            dude.DateOfBirth = new DateTime(1960, 5, 5, 5, 15,0);
+            dude.DateOfBirth = "1960-05-05";
             dude.Email = "Homer@lol.com";
             dude.Address = "springfield";
 

@@ -15,6 +15,10 @@ namespace DMS_Service
         Patient GetPatient_by_lastName_DateOfBirth(string lastName, DateTime dateOfBirth);
 
         [OperationContract]
+        Staff Login(string Email, string Passward );
+
+
+        [OperationContract]
         Patient GetPatientOverview(int personID);
 
         [OperationContract]
@@ -30,7 +34,7 @@ namespace DMS_Service
         List<Perscription> getPatientPerscriptions(int patientID);
 
         [OperationContract]
-        List<Patient> search(string name, string dateOfBirth, string insuranceNumber);
+        List<Patient> search(string firstName, string lastName, string dateOfBirth, int insuranceNumber);
 
         [OperationContract]
         string setPerscription(int appointmentID, Perscription perscription);
@@ -41,5 +45,6 @@ namespace DMS_Service
 
         [OperationContract]
         void addTestAppointment();
+
     }
 }

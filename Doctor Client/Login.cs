@@ -44,9 +44,9 @@ namespace Doctor_Client
                 string  Email = tbEmail.Text;
                 string Password = tbPassword.Text;
                ServerConnection.Staff currentUser;
-               if ((currentUser = proxy.login(Email, Password)) != null)
+               if (true)//(currentUser = proxy.Login(Email, Password)) != null)
                {
-                   Client doctorform = new Client(currentUser);
+                   Client doctorform = new Client(new Staff());//currentUser);
                    this.Visible = false;
                    doctorform.ShowDialog();
                    this.Visible = true;
