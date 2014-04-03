@@ -169,28 +169,25 @@ namespace DMS_Service
         //how do I do the login? I found the staff with the email, and it will return this one....but WHERE do I login?
         public Staff login(string email, string password)
         {
-            throw new System.NotImplementedException();
-            //Staff staff = new Staff();
+            Staff staff = new Staff();
+            DataTable dataTable = new DataTable();
+            dataTable = dbAcess.SearchStaffByEmail(email);
 
-            //DataTable dataTable = new DataTable();
-            //string query = string.Format("SELECT * FROM person p,staff_members s ON p.person_id = s.person_id  WHERE p.email_address = @email");
+            if (dataTable != null)
+            {
+                foreach (DataRow row in dataTable.Rows)
+                {
+                    staff.FirstName = row["first_name"].ToString();
+                    staff.LastName = row["last_name"].ToString();
+                    staff.Function = (Staff.StaffType)Enum.Parse(typeof(Staff.StaffType), row["function"].ToString());
+                    staff.RoomNumber = Convert.ToInt32(row["room_number"]);
+                    staff.Specialization = row["specialization"].ToString();
+                }
 
-            //SqlParameter[] Parameter = new SqlParameter[1];
-            //Parameter[1] = new SqlParameter("@email", SqlDbType.Char);
-            //Parameter[1].Value = Convert.ToString(email);
-
-            //dataTable = dbConnection.SelectQuery(query, Parameter);
-
-            //foreach (DataRow row in dataTable.Rows)
-            //{
-            //    staff.FirstName = row["first_name"].ToString();
-            //    staff.LastName = row["last_name"].ToString();
-            //    staff.Function = (Staff.StaffType)Enum.Parse(typeof(Staff.StaffType), row["function"].ToString());
-            //    staff.RoomNumber = Convert.ToInt32(row["room_number"]);
-            //    staff.Specialization = row["specialization"].ToString();
-            //}
-
-            //return staff;
+                return staff;
+            }
+            else
+                return null;
         }
 
         public DataTable getStaff()

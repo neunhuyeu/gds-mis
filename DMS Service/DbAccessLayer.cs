@@ -56,6 +56,24 @@ namespace DMS_Service
             return dbConnection.SelectQuery(query, sqlParameters);
         }
 
+        public DataTable SearchStaffByEmail(string email)
+        {
+            try
+            {
+                string query = "SELECT * FROM person JOIN Staff_members ON person.person_id = Staff_members.person_id" +
+                    "HAVING person.email_address = '@email'";
+                MySqlParameter[] sqlParameters = new MySqlParameter[1];
+                sqlParameters[0] = new MySqlParameter("@email", MySqlDbType.String);
+                sqlParameters[0].Value = Convert.ToString(email);
+                return dbConnection.SelectQuery(query, sqlParameters);
+            }
+            catch
+            {
+                return null;
+            }
+
+        }
+
         /// <summary>
         /// JP.
         /// Adds patient to the database by first adding record to person table and then patient table.

@@ -34,6 +34,7 @@ namespace DMS_Service
 
         [OperationContract]
         string setPerscription(int appointmentID, Perscription perscription);
+
         [OperationContract]
         Staff login(string email, string password);
 
