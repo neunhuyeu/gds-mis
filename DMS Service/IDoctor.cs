@@ -43,6 +43,7 @@ namespace DMS_Service
        // [OperationContract]
        // void addTestPatient();
 
-       
+        [OperationContract]
+        void addTestAppointment();
     }
 }

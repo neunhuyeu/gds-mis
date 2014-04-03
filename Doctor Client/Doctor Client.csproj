@@ -85,6 +85,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SyncTester.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SyncTester.Designer.cs">
+      <DependentUpon>SyncTester.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Appointment.resx">
       <DependentUpon>Appointment.cs</DependentUpon>
     </EmbeddedResource>
@@ -101,6 +107,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Staff Client.resx">
       <DependentUpon>Staff Client.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SyncTester.resx">
+      <DependentUpon>SyncTester.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
