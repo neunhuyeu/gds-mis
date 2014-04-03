@@ -40,11 +40,9 @@ namespace DMS_Service
         string setPerscription(int appointmentID, Perscription perscription);
 
         //Methods for testing Synchronization
-        [OperationContract]
-        void addTestPatient();
+       // [OperationContract]
+       // void addTestPatient();
 
-        [OperationContract]
-        Staff login(string email, string password);
-
+       
     }
 }

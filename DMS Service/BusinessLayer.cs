@@ -126,33 +126,30 @@ namespace DMS_Service
         //it should be "prescription"
         public List<Perscription> getPatientPerscriptions(int patientID)
         {
-            throw new System.NotImplementedException();
-            //Patient patient = this.GetPatientOverview(patientID);
-            //Perscription prescription = new Perscription();
-            //List<Perscription> prescriptionlist = new List<Perscription>();
-            //DataTable dataTable = new DataTable();
-            //string query = string.Format("SELECT * FROM prescribtion WHERE prescribtion_id = @PrescId");
+         
 
-            //SqlParameter[] Parameter = new SqlParameter[1];
-            //Parameter[1] = new SqlParameter("@PrescId", SqlDbType.Int);
-            //Parameter[1].Value = Convert.ToString(patient.PrescriptionId);
+           
 
-            //dataTable = dbConnection.SelectQuery(query, Parameter);
+            Patient patient = this.GetPatientOverview(patientID);
+            Perscription prescription = new Perscription();
+            List<Perscription> prescriptionlist = new List<Perscription>();
+            DataTable dataTable = new DataTable();
+            dataTable = dbAcess.SearchprescriptionListByID(patientID);
+           
+            foreach (DataRow row in dataTable.Rows)
+            {
+                prescription.Drug = row["medicine"].ToString();
+                prescription.Dosage = Convert.ToInt32(row["dosage"]);
+                prescription.Doctor = row["doctor"].ToString();
+                prescription.Date = Convert.ToDateTime(row["date_prescribed"]);
 
-            //foreach (DataRow row in dataTable.Rows)
-            //{
-            //    prescription.Drug = row["medicine"].ToString();
-            //    prescription.Dosage = Convert.ToInt32(row["dosage"]);
-            //    prescription.Doctor = row["doctor"].ToString();
-            //    prescription.Date = Convert.ToDateTime(row["date_prescribed"]);
-
-            //    prescriptionlist.Add(prescription);
-            //}
-            //return prescriptionlist;
+                prescriptionlist.Add(prescription);
+            }
+            return prescriptionlist;
         }
 
         //how do I do the login? I found the staff with the email, and it will return this one....but WHERE do I login?
-        public Staff login(string email, string password)
+        public Staff Login(string email, string password)
         {
             Staff staff = new Staff();
             DataTable dataTable = new DataTable();

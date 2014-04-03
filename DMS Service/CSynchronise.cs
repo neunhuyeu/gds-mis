@@ -77,7 +77,7 @@ namespace DMS_Service
 
         public void addAppointment(object appointment)
         {
-            this.dbManager.addAppointment((Appointment)appointment);
+           // this.dbManager.addAppointment((Appointment)appointment);
         }
 
         public void removePatient()

@@ -61,7 +61,15 @@ namespace DMS_Service
             //sqlParameters[2].Value = Convert.ToString(dateOfBirth);
             return dbConnection.SelectQuery(query, sqlParameters);
         }
-
+        public DataTable SearchprescriptionListByID(int id)
+        {
+            MySqlParameter[] sqlParameters = new MySqlParameter[1];
+            sqlParameters[0] = new MySqlParameter("@PrescId", MySqlDbType.String);
+            sqlParameters[0].Value = Convert.ToString(id);
+             string query = string.Format("SELECT * FROM prescribtion WHERE prescribtion_id = @PrescId");
+             return dbConnection.SelectQuery(query, sqlParameters);
+        
+        }
         //Kirolos
         public DataTable SearchStaffById(int id)
         {
