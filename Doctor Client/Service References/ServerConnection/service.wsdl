@@ -14,6 +14,12 @@
   <wsdl:message name="IDoctor_GetPatient_by_lastName_DateOfBirth_OutputMessage">
     <wsdl:part name="parameters" element="tns:GetPatient_by_lastName_DateOfBirthResponse" />
   </wsdl:message>
+  <wsdl:message name="IDoctor_Login_InputMessage">
+    <wsdl:part name="parameters" element="tns:Login" />
+  </wsdl:message>
+  <wsdl:message name="IDoctor_Login_OutputMessage">
+    <wsdl:part name="parameters" element="tns:LoginResponse" />
+  </wsdl:message>
   <wsdl:message name="IDoctor_GetPatientOverview_InputMessage">
     <wsdl:part name="parameters" element="tns:GetPatientOverview" />
   </wsdl:message>
@@ -73,6 +79,10 @@
       <wsdl:input wsaw:Action="http://tempuri.org/IDoctor/GetPatient_by_lastName_DateOfBirth" message="tns:IDoctor_GetPatient_by_lastName_DateOfBirth_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IDoctor/GetPatient_by_lastName_DateOfBirthResponse" message="tns:IDoctor_GetPatient_by_lastName_DateOfBirth_OutputMessage" />
     </wsdl:operation>
+    <wsdl:operation name="Login">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDoctor/Login" message="tns:IDoctor_Login_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDoctor/LoginResponse" message="tns:IDoctor_Login_OutputMessage" />
+    </wsdl:operation>
     <wsdl:operation name="GetPatientOverview">
       <wsdl:input wsaw:Action="http://tempuri.org/IDoctor/GetPatientOverview" message="tns:IDoctor_GetPatientOverview_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IDoctor/GetPatientOverviewResponse" message="tns:IDoctor_GetPatientOverview_OutputMessage" />
@@ -114,6 +124,15 @@
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
     <wsdl:operation name="GetPatient_by_lastName_DateOfBirth">
       <soap:operation soapAction="http://tempuri.org/IDoctor/GetPatient_by_lastName_DateOfBirth" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Login">
+      <soap:operation soapAction="http://tempuri.org/IDoctor/Login" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
