@@ -278,7 +278,7 @@ namespace DMS_Service
             //Add appointment to other server
             try
             {
-                proxy = new DMS_Service.MySynchroniseService.SynchroniseClient();
+                proxy = new DMS_Service.MySynchroniseService.SynchroniseClient("BasicHttpBinding_ISynchronise", "http://145.93.72.173:8733/Design_Time_Addresses/DMS_Service/IDoctor/");
                 proxy.addAppointment(appoinment);
                 
             }
