@@ -16,11 +16,11 @@ namespace Doctor_Client
     {
 
         private MyDoctorService.DoctorClient proxy;
-        private CDoctor Doc;
+        //private CDoctor Doc;
         public Login()
         {
             proxy = new MyDoctorService.DoctorClient();
-            Doc = new CDoctor();
+            //Doc = new CDoctor();
             InitializeComponent();
         }
 
