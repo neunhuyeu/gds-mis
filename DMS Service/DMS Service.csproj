@@ -68,6 +68,9 @@
       <SubType>Designer</SubType>
     </None>
     <None Include="ClassDiagram1.cd" />
+    <None Include="Service References\MySynchroniseService\DMS_Service.xsd">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Service References\MySynchroniseService\service.wsdl" />
     <None Include="Service References\MySynchroniseService\service.xsd">
       <SubType>Designer</SubType>
