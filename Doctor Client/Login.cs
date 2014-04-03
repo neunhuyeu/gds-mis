@@ -16,11 +16,11 @@ namespace Doctor_Client
     {
 
         private ServerConnection.DoctorClient proxy;
-        //private CDoctor Doc;
+      
         public Login()
         {
             proxy = new ServerConnection.DoctorClient();
-            //Doc = new CDoctor();
+   
             InitializeComponent();
         }
 
@@ -41,14 +41,15 @@ namespace Doctor_Client
                 string  Email = tbEmail.Text;
                 string Password = tbPassword.Text;
                 Staff currentUser;
-                /*
-                if((currentUser=Doc.login(Email,Password))!=null)
+                
+                if((currentUser=proxy.
+                    (Email,Password))!=null)
                 {
                     this.Visible=false;
                     Client doctorform =new Client(currentUser);
                     this.Visible=true;
                 }
-                 */ 
+                 
             }
             
               
