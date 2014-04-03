@@ -41,12 +41,14 @@ namespace Doctor_Client
                 string  Email = tbEmail.Text;
                 string Password = tbPassword.Text;
                  Staff currentUser;
+                /*
                 if((currentUser=Doc.login(Email,Password))!=null)
                 {
                     this.Visible=false;
                     Client doctorform= new Client(currentUser); 
                     this.Visible=true;
                 }
+                 */ 
             }
             
               
