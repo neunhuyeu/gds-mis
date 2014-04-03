@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 
 namespace DMS_Service
 {
+[Serializable]
     // Kirolos
     public class BusinessLayer : IDoctor
     {
