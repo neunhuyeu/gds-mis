@@ -38,18 +38,27 @@ namespace Doctor_Client
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
+            LoginErrorlb.Text = "";
             if (tbEmail.Text.Length>7&& tbPassword.Text.Length>2)
             {
                 string  Email = tbEmail.Text;
                 string Password = tbPassword.Text;
                ServerConnection.Staff currentUser;
-                              if((currentUser=proxy.login(Email,Password))!=null)
-                {
-                    this.Visible=false;
-                   Client doctorform =new Client(currentUser);
-                    this.Visible=true;
-                }
-                 
+               if ((currentUser = proxy.login(Email, Password)) != null)
+               {
+                   Client doctorform = new Client(currentUser);
+                   this.Visible = false;
+                   doctorform.ShowDialog();
+                   this.Visible = true;
+               }
+               else {
+                   LoginErrorlb.Text = "Error: login were unsucessfull";
+               }
+
+            }
+            else
+            {
+                LoginErrorlb.Text = "Error: username and/or password is incorrect";
             }
             
               

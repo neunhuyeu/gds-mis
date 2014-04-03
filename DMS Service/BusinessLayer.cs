@@ -169,7 +169,8 @@ namespace DMS_Service
         //how do I do the login? I found the staff with the email, and it will return this one....but WHERE do I login?
         public Staff login(string email, string password)
         {
-            throw new System.NotImplementedException();
+            return new Staff();
+          
             //Staff staff = new Staff();
 
             //DataTable dataTable = new DataTable();
@@ -202,6 +203,7 @@ namespace DMS_Service
         public List<Patient> search(string name, string dateOfBirth, string insuranceNumber)
         {
             throw new NotImplementedException();
+
         }
 
         public string setPerscription(int appointmentID, Perscription perscription)
