@@ -2,27 +2,27 @@
 using System.Collections.Generic;
 using System.Text;
 using System.Data;
-using System.Data.SqlClient;
 using System.Configuration;
 using System.Security;
+using MySql.Data.MySqlClient;
 
 namespace DMS_Service
 {   
     // Kirolos
     public class DbConnection
     {
-        SqlDataAdapter myAdapter;
-        SqlConnection conn;
+        MySqlDataAdapter myAdapter;
+        MySqlConnection conn;
         string provider = "SERVER=" + "92.109.173.161" + ";" + "Port=5055;" + "DATABASE=gds_mis;" + "UID=gds;" + "PASSWORD=gds-m1s-r00t!;";
 
         public DbConnection()
         {
-            myAdapter = new SqlDataAdapter();
-            conn = new SqlConnection(provider);
+            myAdapter = new MySqlDataAdapter();
+            conn = new MySqlConnection(provider);
         }
 
         //Kirolos
-        SqlConnection openConnection()
+        MySqlConnection openConnection()
         {
             if (conn.State == ConnectionState.Closed || conn.State == 
 						ConnectionState.Broken)
@@ -33,9 +33,9 @@ namespace DMS_Service
         }
 
         //Kirolos
-        public DataTable SelectQuery(String query, SqlParameter[] sqlParameter)
+        public DataTable SelectQuery(String query, MySqlParameter[] sqlParameter)
         {
-            SqlCommand myCommand = new SqlCommand();
+            MySqlCommand myCommand = new MySqlCommand();
             DataTable dataTable = new DataTable();
             dataTable = null;
             DataSet ds = new DataSet();
@@ -49,7 +49,7 @@ namespace DMS_Service
                 myAdapter.Fill(ds);
                 dataTable = ds.Tables[0];
             }
-            catch (SqlException e)
+            catch (MySqlException e)
             {
                 Console.Write("Error - SelectQuery - Query: " + 
                     query + " \nException: " + e.StackTrace.ToString());
@@ -63,9 +63,9 @@ namespace DMS_Service
         }
 
         //Kirolos
-        public bool InsertQuery(String query, SqlParameter[] sqlParameter)
+        public bool InsertQuery(String query, MySqlParameter[] sqlParameter)
         {
-            SqlCommand myCommand = new SqlCommand();
+            MySqlCommand myCommand = new MySqlCommand();
             try
             {
                 myCommand.Connection = openConnection();
@@ -74,7 +74,7 @@ namespace DMS_Service
                 myAdapter.InsertCommand = myCommand;
                 myCommand.ExecuteNonQuery();
             }
-            catch (SqlException e)
+            catch (MySqlException e)
             {
                 Console.Write("Error - InsertQuery - Query: " 
                     + query + " \nException: \n" + e.StackTrace.ToString());
@@ -87,9 +87,9 @@ namespace DMS_Service
         }
 
         //Kirolos
-        public bool UpdateQuery(String query, SqlParameter[] sqlParameter)
+        public bool UpdateQuery(String query, MySqlParameter[] sqlParameter)
         {
-            SqlCommand myCommand = new SqlCommand();
+            MySqlCommand myCommand = new MySqlCommand();
             try
             {
                 myCommand.Connection = openConnection();
@@ -98,7 +98,7 @@ namespace DMS_Service
                 myAdapter.UpdateCommand = myCommand;
                 myCommand.ExecuteNonQuery();
             }
-            catch (SqlException e)
+            catch (MySqlException e)
             {
                 Console.Write("Error - UpdateQuery - Query: " 
                     + query + " \nException: " + e.StackTrace.ToString());
