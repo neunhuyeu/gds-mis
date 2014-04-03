@@ -75,6 +75,11 @@ namespace DMS_Service
             this.dbManager.addPatient((Patient)patient);
         }
 
+        public void addAppointment(object appointment)
+        {
+            this.dbManager.addAppointment((Appointment)appointment);
+        }
+
         public void removePatient()
         {
             throw new System.NotImplementedException();

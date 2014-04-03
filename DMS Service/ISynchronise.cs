@@ -15,6 +15,9 @@ namespace DMS_Service
         void addPatient(object patient);
 
         [OperationContract]
+        void addAppointment(object appointment);
+
+        [OperationContract]
         void addStaff(Staff staff);
 
         // TODO: Add your service operations here

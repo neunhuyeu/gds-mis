@@ -5,6 +5,7 @@ using System.Text;
 using System.Data;
 using System.Threading.Tasks;
 using System.ServiceModel;
+using System.Windows.Forms;
 
 namespace DMS_Service
 {
@@ -211,7 +212,8 @@ namespace DMS_Service
 
         public void addTestPatient()
         {
-            DMS_Service.MySynchroniseService.SynchroniseClient proxy = new DMS_Service.MySynchroniseService.SynchroniseClient();
+            
+            DMS_Service.MySynchroniseService.SynchroniseClient proxy;
 
             Patient dude = new Patient();
 
@@ -230,9 +232,24 @@ namespace DMS_Service
 
             //add to own database
             dbAcess.addPatient(dude);
+            
+            //add tot he other server
+            try
+            {
+                proxy = new DMS_Service.MySynchroniseService.SynchroniseClient();
+                proxy.addPatient(dude);
+            }
+            catch(TimeoutException)
+            {
+                MessageBox.Show("couldn't connect to other server");
+            }
+            catch
+            {
 
-            //add to ther server
-            proxy.addPatient(dude);
+            }
+            
+            
+            
 
 
         }
@@ -240,7 +257,37 @@ namespace DMS_Service
         
         public void addTestAppointment()
         {
-           // dbAcess.addConsultation();
+            //create the sync proxy
+            DMS_Service.MySynchroniseService.SynchroniseClient proxy;
+           
+            //create the the test appointment
+            Appointment appoinment = new Appointment();
+            appoinment.startTime = new DateTime(2014, 1, 1, 13, 0, 0);
+            appoinment.endTime = new DateTime(2014, 1, 1, 13, 30, 0);
+            appoinment.Staff = new Staff();
+            appoinment.Staff.StaffID = 1;
+            appoinment.Patient = new Patient();
+            appoinment.Patient.PatientID = 1;
+
+            //Add appointment to own database   
+            dbAcess.addAppointment(appoinment);
+
+            //Add appointment to other server
+            try
+            {
+                proxy = new DMS_Service.MySynchroniseService.SynchroniseClient();
+                proxy.addAppointment(appoinment);
+                
+            }
+            catch(TimeoutException)
+            {
+                MessageBox.Show("couldn't connect to other server");
+            }
+            catch
+            {
+
+            }
+            
         }
     }
 }

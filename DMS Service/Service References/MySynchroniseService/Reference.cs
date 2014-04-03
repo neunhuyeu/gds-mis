@@ -272,6 +272,15 @@ namespace DMS_Service.MySynchroniseService {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISynchronise/addPatient", ReplyAction="http://tempuri.org/ISynchronise/addPatientResponse")]
         System.Threading.Tasks.Task addPatientAsync(object patient);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISynchronise/addAppointment", ReplyAction="http://tempuri.org/ISynchronise/addAppointmentResponse")]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DMS_Service.MySynchroniseService.Staff))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DMS_Service.MySynchroniseService.Person))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DMS_Service.MySynchroniseService.Staff.StaffType))]
+        void addAppointment(object appointment);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISynchronise/addAppointment", ReplyAction="http://tempuri.org/ISynchronise/addAppointmentResponse")]
+        System.Threading.Tasks.Task addAppointmentAsync(object appointment);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISynchronise/addStaff", ReplyAction="http://tempuri.org/ISynchronise/addStaffResponse")]
         void addStaff(DMS_Service.MySynchroniseService.Staff staff);
         
@@ -312,6 +321,14 @@ namespace DMS_Service.MySynchroniseService {
         
         public System.Threading.Tasks.Task addPatientAsync(object patient) {
             return base.Channel.addPatientAsync(patient);
+        }
+        
+        public void addAppointment(object appointment) {
+            base.Channel.addAppointment(appointment);
+        }
+        
+        public System.Threading.Tasks.Task addAppointmentAsync(object appointment) {
+            return base.Channel.addAppointmentAsync(appointment);
         }
         
         public void addStaff(DMS_Service.MySynchroniseService.Staff staff) {

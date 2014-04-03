@@ -13,6 +13,18 @@
       <xs:sequence />
     </xs:complexType>
   </xs:element>
+  <xs:element name="addAppointment">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="appointment" nillable="true" type="xs:anyType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="addAppointmentResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
   <xs:element name="addStaff">
     <xs:complexType>
       <xs:sequence>
