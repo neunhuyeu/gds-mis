@@ -208,5 +208,39 @@ namespace DMS_Service
         {
             throw new NotImplementedException();
         }
+
+        public void addTestPatient()
+        {
+            DMS_Service.MySynchroniseService.SynchroniseClient proxy = new DMS_Service.MySynchroniseService.SynchroniseClient();
+
+            Patient dude = new Patient();
+
+            dude.FirstName = "Homer";
+            dude.LastName = "Simpson";
+            dude.Height = 180;
+            dude.Weight = 100;
+            dude.Smoker = false;
+            dude.SmokingFrequency = 0;
+            dude.MobileNumber = "12345";
+            dude.LandLineNumber = "54321";
+            dude.InsuranceNumber = 222222;
+
+
+
+
+            //add to own database
+            dbAcess.addPatient(dude);
+
+            //add to ther server
+            proxy.addPatient(dude);
+
+
+        }
+
+        
+        public void addTestAppointment()
+        {
+           // dbAcess.addConsultation();
+        }
     }
 }

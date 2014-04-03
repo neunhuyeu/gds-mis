@@ -4,7 +4,7 @@
   <xs:element name="addPatient">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/DMS_Service" minOccurs="0" name="patient" nillable="true" type="q1:Patient" />
+        <xs:element minOccurs="0" name="patient" nillable="true" type="xs:anyType" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -16,7 +16,7 @@
   <xs:element name="addStaff">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/DMS_Service" minOccurs="0" name="staff" nillable="true" type="q2:Staff" />
+        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/DMS_Service" minOccurs="0" name="staff" nillable="true" type="q1:Staff" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>

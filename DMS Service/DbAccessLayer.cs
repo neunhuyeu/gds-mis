@@ -125,7 +125,7 @@ namespace DMS_Service
         /// Adds consultation to the conusltation table.
         /// </summary>
         /// <param name="patient">patient to be added</param>
-        public void addConsultation(Appointment appointment)
+        public void addAppointment(Appointment appointment)
         {
             //query
             string query = "INSERT INTO consultation(start_date, end_date, patient_id, staff_id)" + 

@@ -56,6 +56,18 @@
   <wsdl:message name="IDoctor_setPerscription_OutputMessage">
     <wsdl:part name="parameters" element="tns:setPerscriptionResponse" />
   </wsdl:message>
+  <wsdl:message name="IDoctor_addTestPatient_InputMessage">
+    <wsdl:part name="parameters" element="tns:addTestPatient" />
+  </wsdl:message>
+  <wsdl:message name="IDoctor_addTestPatient_OutputMessage">
+    <wsdl:part name="parameters" element="tns:addTestPatientResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDoctor_addTestAppointment_InputMessage">
+    <wsdl:part name="parameters" element="tns:addTestAppointment" />
+  </wsdl:message>
+  <wsdl:message name="IDoctor_addTestAppointment_OutputMessage">
+    <wsdl:part name="parameters" element="tns:addTestAppointmentResponse" />
+  </wsdl:message>
   <wsdl:portType name="IDoctor">
     <wsdl:operation name="GetPatient_by_lastName_DateOfBirth">
       <wsdl:input wsaw:Action="http://tempuri.org/IDoctor/GetPatient_by_lastName_DateOfBirth" message="tns:IDoctor_GetPatient_by_lastName_DateOfBirth_InputMessage" />
@@ -88,6 +100,14 @@
     <wsdl:operation name="setPerscription">
       <wsdl:input wsaw:Action="http://tempuri.org/IDoctor/setPerscription" message="tns:IDoctor_setPerscription_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IDoctor/setPerscriptionResponse" message="tns:IDoctor_setPerscription_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="addTestPatient">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDoctor/addTestPatient" message="tns:IDoctor_addTestPatient_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDoctor/addTestPatientResponse" message="tns:IDoctor_addTestPatient_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="addTestAppointment">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDoctor/addTestAppointment" message="tns:IDoctor_addTestAppointment_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDoctor/addTestAppointmentResponse" message="tns:IDoctor_addTestAppointment_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_IDoctor" type="tns:IDoctor">
@@ -157,6 +177,24 @@
     </wsdl:operation>
     <wsdl:operation name="setPerscription">
       <soap:operation soapAction="http://tempuri.org/IDoctor/setPerscription" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="addTestPatient">
+      <soap:operation soapAction="http://tempuri.org/IDoctor/addTestPatient" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="addTestAppointment">
+      <soap:operation soapAction="http://tempuri.org/IDoctor/addTestAppointment" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
