@@ -90,10 +90,9 @@
   <xs:element name="search">
     <xs:complexType>
       <xs:sequence>
-        <xs:element minOccurs="0" name="first" nillable="true" type="xs:string" />
-        <xs:element minOccurs="0" name="last" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="name" nillable="true" type="xs:string" />
         <xs:element minOccurs="0" name="dateOfBirth" nillable="true" type="xs:string" />
-        <xs:element minOccurs="0" name="insurance" type="xs:int" />
+        <xs:element minOccurs="0" name="insuranceNumber" nillable="true" type="xs:string" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -119,19 +118,24 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="login">
+  <xs:element name="addTestPatient">
     <xs:complexType>
-      <xs:sequence>
-        <xs:element minOccurs="0" name="email" nillable="true" type="xs:string" />
-        <xs:element minOccurs="0" name="password" nillable="true" type="xs:string" />
-      </xs:sequence>
+      <xs:sequence />
     </xs:complexType>
   </xs:element>
-  <xs:element name="loginResponse">
+  <xs:element name="addTestPatientResponse">
     <xs:complexType>
-      <xs:sequence>
-        <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/DMS_Service" minOccurs="0" name="loginResult" nillable="true" type="q9:Staff" />
-      </xs:sequence>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="addTestAppointment">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="addTestAppointmentResponse">
+    <xs:complexType>
+      <xs:sequence />
     </xs:complexType>
   </xs:element>
 </xs:schema>

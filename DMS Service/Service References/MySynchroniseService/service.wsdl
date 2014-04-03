@@ -13,6 +13,12 @@
   <wsdl:message name="ISynchronise_addPatient_OutputMessage">
     <wsdl:part name="parameters" element="tns:addPatientResponse" />
   </wsdl:message>
+  <wsdl:message name="ISynchronise_addAppointment_InputMessage">
+    <wsdl:part name="parameters" element="tns:addAppointment" />
+  </wsdl:message>
+  <wsdl:message name="ISynchronise_addAppointment_OutputMessage">
+    <wsdl:part name="parameters" element="tns:addAppointmentResponse" />
+  </wsdl:message>
   <wsdl:message name="ISynchronise_addStaff_InputMessage">
     <wsdl:part name="parameters" element="tns:addStaff" />
   </wsdl:message>
@@ -24,6 +30,10 @@
       <wsdl:input wsaw:Action="http://tempuri.org/ISynchronise/addPatient" message="tns:ISynchronise_addPatient_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/ISynchronise/addPatientResponse" message="tns:ISynchronise_addPatient_OutputMessage" />
     </wsdl:operation>
+    <wsdl:operation name="addAppointment">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISynchronise/addAppointment" message="tns:ISynchronise_addAppointment_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISynchronise/addAppointmentResponse" message="tns:ISynchronise_addAppointment_OutputMessage" />
+    </wsdl:operation>
     <wsdl:operation name="addStaff">
       <wsdl:input wsaw:Action="http://tempuri.org/ISynchronise/addStaff" message="tns:ISynchronise_addStaff_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/ISynchronise/addStaffResponse" message="tns:ISynchronise_addStaff_OutputMessage" />
@@ -33,6 +43,15 @@
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
     <wsdl:operation name="addPatient">
       <soap:operation soapAction="http://tempuri.org/ISynchronise/addPatient" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="addAppointment">
+      <soap:operation soapAction="http://tempuri.org/ISynchronise/addAppointment" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
