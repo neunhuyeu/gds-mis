@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using DMS_Service.MySynchroniseService;
+using Doctor_Client.ServerConnection;
 
 
 namespace Doctor_Client
@@ -15,11 +15,11 @@ namespace Doctor_Client
     public partial class Login : Form
     {
 
-        private MyDoctorService.DoctorClient proxy;
+        private ServerConnection.DoctorClient proxy;
         //private CDoctor Doc;
         public Login()
         {
-            proxy = new MyDoctorService.DoctorClient();
+            proxy = new ServerConnection.DoctorClient();
             //Doc = new CDoctor();
             InitializeComponent();
         }
@@ -40,7 +40,7 @@ namespace Doctor_Client
             {
                 string  Email = tbEmail.Text;
                 string Password = tbPassword.Text;
-                 Staff currentUser;
+                Staff currentUser;
                 /*
                 if((currentUser=Doc.login(Email,Password))!=null)
                 {

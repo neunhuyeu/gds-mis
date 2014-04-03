@@ -22,16 +22,16 @@ namespace Doctor_Client
           proxy= new DoctorClient();
             //overview filler
             patient = Pateint;
-            tbPatientDetailsOverviewName.Text = patient.FirstNamek__BackingField + " " + patient.LastName;
-            tbPatientDetailsOverviewAge.Text = DOBtoAge(Pateint.DateOfBirth).ToString();
-            tbPatientDetailsOverviewDoB.Text = patient.DateOfBirth.ToString();
-            tbPatientDetailsOverviewGender.Text = fixGender(patient.Gender);
-            tbPatientDetailsOverviewIsuranceNumber.Text = patient.InsuranceNumber.ToString();
-            tbPatientDetailsOverviewEMail.Text=patient.Email;
-            tbPatientDetailsOverviewMPhone.Text = patient.MobileNumber.ToString();
+            tbPatientDetailsOverviewName.Text = patient.FirstNamek__BackingField + " " + patient.LastNamek__BackingField;
+            tbPatientDetailsOverviewAge.Text = DOBtoAge(Pateint.DateOfBirthk__BackingField).ToString();
+            tbPatientDetailsOverviewDoB.Text = patient.DateOfBirthk__BackingField.ToString();
+            tbPatientDetailsOverviewGender.Text = fixGender(patient.Genderk__BackingField);
+            tbPatientDetailsOverviewIsuranceNumber.Text = patient.InsuranceNumberk__BackingField.ToString();
+            tbPatientDetailsOverviewEMail.Text = patient.Emailk__BackingField;
+            tbPatientDetailsOverviewMPhone.Text = patient.MobileNumberk__BackingField.ToString();
             //percriptions
-            perscription = proxy.getPatientPerscriptions(patient.PatientID);
-            foreach (MyDoctorService.Perscription persrip in perscription )
+            perscription = proxy.getPatientPerscriptions(patient.PatientIDk__BackingField);
+            foreach (ServerConnection.Perscription persrip in perscription )
             {
                 PerscriptionLb.Items.Add(persrip.Drug);
             }

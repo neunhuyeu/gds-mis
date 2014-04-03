@@ -7,20 +7,20 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using  DMS_Service.MySynchroniseService;
+using Doctor_Client.ServerConnection;
 
 namespace Doctor_Client
 {
     public partial class Client : Form
     {
-        MyDoctorService.Staff currentUser;
-        MyDoctorService.Patient[] potentualPatients;
+        ServerConnection.Staff currentUser;
+        ServerConnection.Patient[] potentualPatients;
 
-        public Client(MyDoctorService.Staff user)
+        public Client(Staff user)
         {
             InitializeComponent();
             currentUser = user;
-            userNamelb.Text =  " Welcome Mr. "+user.firstName + user.lastName;
+            userNamelb.Text =  " Welcome Mr. "+user.FirstNamek__BackingField + user.LastNamek__BackingField;
             
         
         }
@@ -30,13 +30,13 @@ namespace Doctor_Client
             
             if (tbSearchName.Text.Length + tbInsuranceSearch.Text.Length + tbDOBSearch.Text.Length > 0)
             {
-              MyDoctorService.DoctorClient  proxy = new MyDoctorService.DoctorClient();
+              ServerConnection.DoctorClient  proxy = new ServerConnection.DoctorClient();
                 
                 if (((potentualPatients=proxy.search(tbSearchName.Text ,tbDOBSearch.Text,tbInsuranceSearch.Text))!=null) )
                 {
-                    foreach (MyDoctorService.Patient patient in potentualPatients)
+                    foreach (Patient patient in potentualPatients)
                     {
-                        searchListLB.Items.Add(String.Format("{0,-11}  {1,-11}   {2,8} {0,25}",patient.FirstName ,patient.LastName, patient.DateOfBirth,patient.InsuranceNumber));
+                        searchListLB.Items.Add(String.Format("{0,-11}  {1,-11}   {2,8} {0,25}",patient.FirstNamek__BackingField ,patient.LastNamek__BackingField, patient.DateOfBirthk__BackingField,patient.InsuranceNumberk__BackingField));
 
                     }
                 }
