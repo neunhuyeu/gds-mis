@@ -20,7 +20,7 @@ namespace Doctor_Client
         {
             InitializeComponent();
             currentUser = user;
-            userNamelb.Text =  " Welcome Mr. "+user.FirstNamek__BackingField + user.LastNamek__BackingField;
+            userNamelb.Text =  " Welcome: "+user.FirstNamek__BackingField + " "+user.LastNamek__BackingField;
             
         
         }
@@ -28,11 +28,11 @@ namespace Doctor_Client
         private void textBox1_KeyPress(object sender, KeyPressEventArgs e)
         {
             
-            if (tbSearchName.Text.Length + tbInsuranceSearch.Text.Length + tbDOBSearch.Text.Length > 0)
+            if (tbSearchFirstName.Text.Length + tbInsuranceSearch.Text.Length + tbDOBSearch.Text.Length+ tbSearchLastName.Text.Length > 0)
             {
               ServerConnection.DoctorClient  proxy = new ServerConnection.DoctorClient();
                 
-                if (((potentualPatients=proxy.search(tbSearchName.Text, ,tbDOBSearch.Text, Convert.ToInt32(tbInsuranceSearch.Text)))!=null) )
+                if (((potentualPatients=proxy.search(tbSearchFirstName.Text,tbSearchLastName ,tbDOBSearch.Text,tbInsuranceSearch.Text))!=null) )
                 {
                     foreach (Patient patient in potentualPatients)
                     {
@@ -61,6 +61,11 @@ namespace Doctor_Client
             PatientDetails Patient = new PatientDetails(potentualPatients[searchListLB.SelectedIndex]);
 
             Patient.ShowDialog();
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
         }
 
  
