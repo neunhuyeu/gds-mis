@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace DMS_Service
 {
+    [Serializable]
     public struct Perscription
     {
         //why has prescription date? do mean when the medicine is prescribed to the patient? then it needs to be added to the database design also.
