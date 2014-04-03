@@ -40,13 +40,13 @@ namespace Doctor_Client
             {
                 string  Email = tbEmail.Text;
                 string Password = tbPassword.Text;
-                Staff currentUser;
+              //  Staff currentUser;
                 
-                if((currentUser=proxy.
-                    (Email,Password))!=null)
+ //               if((currentUser=proxy.
+  //                  (Email,Password))!=null)
                 {
                     this.Visible=false;
-                    Client doctorform =new Client(currentUser);
+              //      Client doctorform =new Client(currentUser);
                     this.Visible=true;
                 }
                  
