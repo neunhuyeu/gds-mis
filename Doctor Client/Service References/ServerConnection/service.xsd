@@ -118,4 +118,19 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+  <xs:element name="login">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="email" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="password" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="loginResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/DMS_Service" minOccurs="0" name="loginResult" nillable="true" type="q9:Staff" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
 </xs:schema>

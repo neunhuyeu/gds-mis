@@ -19,7 +19,9 @@ namespace Doctor_Client
       
         public Login()
         {
-            proxy = new ServerConnection.DoctorClient();
+            
+                proxy = new ServerConnection.DoctorClient();
+         
    
             InitializeComponent();
         }
@@ -40,13 +42,11 @@ namespace Doctor_Client
             {
                 string  Email = tbEmail.Text;
                 string Password = tbPassword.Text;
-              //  Staff currentUser;
-                
- //               if((currentUser=proxy.
-  //                  (Email,Password))!=null)
+               ServerConnection.Staff currentUser;
+                              if((currentUser=proxy.login(Email,Password))!=null)
                 {
                     this.Visible=false;
-              //      Client doctorform =new Client(currentUser);
+                   Client doctorform =new Client(currentUser);
                     this.Visible=true;
                 }
                  
