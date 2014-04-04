@@ -224,7 +224,7 @@ namespace DMS_Service
             dude.MobileNumber = "12345";
             dude.LandLineNumber = "54321";
             dude.InsuranceNumber = 222222;
-            dude.DateOfBirth = new DateTime(1960, 5, 5, 5, 15,0);
+            dude.DateOfBirth = "1960-05-05";
             dude.Email = "Homer@lol.com";
             dude.Address = "springfield";
 
