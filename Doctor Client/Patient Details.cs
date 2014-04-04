@@ -30,7 +30,7 @@ namespace Doctor_Client
             tbPatientDetailsOverviewEMail.Text = patient.Emailk__BackingField;
             tbPatientDetailsOverviewMPhone.Text = patient.MobileNumberk__BackingField.ToString();
             //percriptions
-            perscription = proxy.getPatientPerscriptions(patient.PatientIDk__BackingField);
+            perscription = proxy.getPatientPerscriptions(patient.PersonIdk__BackingField);
             foreach (ServerConnection.Perscription persrip in perscription )
             {
                 PerscriptionLb.Items.Add(persrip.drug);

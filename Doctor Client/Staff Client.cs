@@ -76,7 +76,7 @@ namespace Doctor_Client
              {
                  foreach (Patient patient in potentualPatients)
                  {
-                     searchListLB.Items.Add(String.Format("{0,-11}  {1,-11}   {2,8} {3,25}", patient.FirstNamek__BackingField, patient.LastNamek__BackingField, patient.DateOfBirthk__BackingField, Convert.ToInt32(tbInsuranceSearch.Text)));
+                     searchListLB.Items.Add(String.Format("{4,30}{0,-11}  {1,-11}   {2,8} {3,25}", patient.FirstNamek__BackingField, patient.LastNamek__BackingField, patient.DateOfBirthk__BackingField, Convert.ToInt32(tbInsuranceSearch.Text),patient.PersonIdk__BackingField));
 
                  }
              }

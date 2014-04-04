@@ -59,10 +59,10 @@ namespace DMS_Service
             foreach (DataRow row in dataTable.Rows)
             {
                 patient.PatientID = Convert.ToInt32(row["patient_id"]);
-                patient.Gender = Convert.ToChar(row["gender"]);
+                patient.Gender = Convert.ToString(row["gender"])[0];
                 patient.Height = Convert.ToInt32(row["height_cm"]);
                 patient.Weight = Convert.ToInt32(row["weight_kg"]);
-                patient.BloodType = Convert.ToChar(row["blood_type"]);
+                patient.BloodType = Convert.ToString(row["blood_type"])[0];
                 patient.Smoker = Convert.ToBoolean(row["smoking"]);
                 //patient.InsuranceNumber = Convert.ToInt32(row["InsuranceNumber"]);
             }

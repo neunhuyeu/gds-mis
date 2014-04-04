@@ -36,10 +36,9 @@ namespace DMS_Service
 
         public DataTable SearchPatientById(int id)
         {
-            string query = string.Format("SELECT *" +
-                                          "FROM person" +
-                                          "JOIN patients" +
-                                          "ON person.person_id = patient.person_id");
+            string query = string.Format("SELECT * " +
+                                          "FROM patients " +
+                                          "Where person_id = @id");
             MySqlParameter[] sqlParameters = new MySqlParameter[1];
             sqlParameters[0] = new MySqlParameter("@id", MySqlDbType.Int32);
             sqlParameters[0].Value = id.ToString();
@@ -50,8 +49,8 @@ namespace DMS_Service
         public DataTable SearchPatientsList(string firstName, string lastName) //, string dateOfBirth)
         {
             //DateTime date = DateTime.ParseExact(dateOfBirth, "yyyy-MM-dd", null);
-            string query = string.Format("Select * from person where first_name"
-                + " = @firstName AND last_name = @lastName"); // AND data_of_birth = @date");
+            string query = string.Format("Select * from person per, patients pt where per.first_name"
+                + " = @firstName AND per.last_name = @lastName and per.person_id = pt.person_id"); // AND data_of_birth = @date");
             MySqlParameter[] sqlParameters = new MySqlParameter[2];
             sqlParameters[0] = new MySqlParameter("@firstName", MySqlDbType.String);
             sqlParameters[0].Value = Convert.ToString(firstName);
