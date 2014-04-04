@@ -191,7 +191,7 @@ namespace DMS_Service
                 p.PersonId = Convert.ToInt32(dr["person_id"]);
                 p.FirstName = dr["first_name"].ToString();
                 p.LastName = dr["last_name"].ToString();
-                p.DateOfBirth = Convert.ToDateTime(dateOfBirth);
+                p.DateOfBirth = dateOfBirth;
                 p.Email = dr["email_address"].ToString();
                 p.MobileNumber = dr["mobile_number"].ToString();
                 p.LandLineNumber = dr["landline_number"].ToString();

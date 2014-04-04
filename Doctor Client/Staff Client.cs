@@ -72,7 +72,7 @@ namespace Doctor_Client
         {
             ServerConnection.DoctorClient proxy = new ServerConnection.DoctorClient();
 
-             if (((potentualPatients=proxy.search(tbSearchFirstName.Text, tbSearchLastName.Text , DOBSearch.Value.ToString("yyyy-MM-dd"), Convert.ToInt32(tbInsuranceSearch.Text)))!=null) )
+             if (((potentualPatients=proxy.SearchPatients(tbSearchFirstName.Text, tbSearchLastName.Text , DOBSearch.Value.ToString("yyyy-MM-dd"), Convert.ToInt32(tbInsuranceSearch.Text)))!=null) )
              {
                  foreach (Patient patient in potentualPatients)
                  {

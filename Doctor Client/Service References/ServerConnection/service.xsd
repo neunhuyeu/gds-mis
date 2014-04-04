@@ -6,7 +6,7 @@
     <xs:complexType>
       <xs:sequence>
         <xs:element minOccurs="0" name="lastName" nillable="true" type="xs:string" />
-        <xs:element minOccurs="0" name="dateOfBirth" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="dateOfBirth" nillable="true" type="xs:string" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -102,20 +102,20 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="search">
+  <xs:element name="SearchPatients">
     <xs:complexType>
       <xs:sequence>
-        <xs:element minOccurs="0" name="firstName" nillable="true" type="xs:string" />
-        <xs:element minOccurs="0" name="lastName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="first" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="last" nillable="true" type="xs:string" />
         <xs:element minOccurs="0" name="dateOfBirth" nillable="true" type="xs:string" />
-        <xs:element minOccurs="0" name="insuranceNumber" type="xs:int" />
+        <xs:element minOccurs="0" name="insurance" type="xs:int" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="searchResponse">
+  <xs:element name="SearchPatientsResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/DMS_Service" minOccurs="0" name="searchResult" nillable="true" type="q8:ArrayOfPatient" />
+        <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/DMS_Service" minOccurs="0" name="SearchPatientsResult" nillable="true" type="q8:ArrayOfPatient" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -132,16 +132,6 @@
       <xs:sequence>
         <xs:element minOccurs="0" name="setPerscriptionResult" nillable="true" type="xs:string" />
       </xs:sequence>
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="addTestPatient">
-    <xs:complexType>
-      <xs:sequence />
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="addTestPatientResponse">
-    <xs:complexType>
-      <xs:sequence />
     </xs:complexType>
   </xs:element>
   <xs:element name="addTestAppointment">
