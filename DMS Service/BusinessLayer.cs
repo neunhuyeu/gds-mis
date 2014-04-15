@@ -233,7 +233,21 @@ namespace DMS_Service
             dude.Address = "springfield";
 
 
+            DMS_Service.MySynchroniseService.Patient sameDude;
+            sameDude = new DMS_Service.MySynchroniseService.Patient();
 
+            sameDude.FirstNamek__BackingField = dude.FirstName;
+            sameDude.LastNamek__BackingField = dude.LastName;
+            sameDude.Heightk__BackingField = dude.Height;
+            sameDude.Weightk__BackingField = dude.Weight;
+            sameDude.Smokerk__BackingField = dude.Smoker;
+            sameDude.SmokingFrequencyk__BackingField = dude.SmokingFrequency;
+            sameDude.MobileNumberk__BackingField = dude.MobileNumber;
+            sameDude.LandLineNumberk__BackingField = dude.LandLineNumber;
+            sameDude.InsuranceNumberk__BackingField = dude.InsuranceNumber;
+            sameDude.DateOfBirthk__BackingField = dude.DateOfBirth;
+            sameDude.Emailk__BackingField = dude.Email;
+            sameDude.Addressk__BackingField = dude.Address;
 
             //add to own database
             dbAcess.addPatient(dude);
@@ -242,7 +256,7 @@ namespace DMS_Service
             try
             {
                 proxy = new DMS_Service.MySynchroniseService.SynchroniseClient();
-                proxy.addPatient(dude);
+                proxy.addPatient(sameDude);
             }
             catch(TimeoutException)
             {
@@ -280,7 +294,7 @@ namespace DMS_Service
             //Add appointment to other server
             try
             {
-                proxy = new DMS_Service.MySynchroniseService.SynchroniseClient("BasicHttpBinding_ISynchronise", "http://145.93.72.173:8733/Design_Time_Addresses/DMS_Service/IDoctor/");
+                proxy = new DMS_Service.MySynchroniseService.SynchroniseClient();
                 proxy.addAppointment(appoinment);
                 
             }

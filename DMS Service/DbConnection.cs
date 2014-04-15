@@ -13,7 +13,7 @@ namespace DMS_Service
     {
         MySqlDataAdapter myAdapter;
         MySqlConnection conn;
-        string provider = "SERVER=" + "92.109.173.161" + ";" + "Port=5055;" + "DATABASE=gds_mis;" + "UID=gds;" + "PASSWORD=gds-m1s-r00t!;";
+        string provider = "SERVER=" + "localhost" + ";" + "Port=3306;" + "DATABASE=gds_mis;" + "UID=root;" + "PASSWORD=";
 
         public DbConnection()
         {
