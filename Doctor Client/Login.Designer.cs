@@ -44,6 +44,7 @@
             this.tbEmail.Name = "tbEmail";
             this.tbEmail.Size = new System.Drawing.Size(132, 22);
             this.tbEmail.TabIndex = 0;
+            this.tbEmail.Text = "name_one@mail.com";
             // 
             // tbPassword
             // 
