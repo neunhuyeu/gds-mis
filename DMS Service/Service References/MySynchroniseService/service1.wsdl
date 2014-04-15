@@ -71,7 +71,7 @@
   </wsdl:binding>
   <wsdl:service name="CSynchronise">
     <wsdl:port name="BasicHttpBinding_ISynchronise" binding="tns:BasicHttpBinding_ISynchronise">
-      <soap:address location="http://localhost:8733/Design_Time_Addresses/DMS_Service/CSynchronise/" />
+      <soap:address location="http://192.168.1.5:8733/Design_Time_Addresses/DMS_Service/CSynchronise/" />
     </wsdl:port>
   </wsdl:service>
 </wsdl:definitions>

@@ -12,7 +12,7 @@ namespace DMS_Service
     public interface ISynchronise
     {
         [OperationContract]
-        void addPatient(object patient);
+        void addPatient(Patient patient);
 
         [OperationContract]
         void addAppointment(object appointment);
