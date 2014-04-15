@@ -37,6 +37,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.tabAgenda = new System.Windows.Forms.TabPage();
             this.tabPatientSearch = new System.Windows.Forms.TabPage();
+            this.DOBSearch = new System.Windows.Forms.DateTimePicker();
             this.btn_searchPatients = new System.Windows.Forms.Button();
             this.tbSearchLastName = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
@@ -48,7 +49,6 @@
             this.tbSearchFirstName = new System.Windows.Forms.TextBox();
             this.userNamelb = new System.Windows.Forms.Label();
             this.logoubtn = new System.Windows.Forms.Button();
-            this.DOBSearch = new System.Windows.Forms.DateTimePicker();
             this.tabs.SuspendLayout();
             this.tabHome.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -62,7 +62,7 @@
             this.tabs.Controls.Add(this.tabAgenda);
             this.tabs.Controls.Add(this.tabPatientSearch);
             this.tabs.Location = new System.Drawing.Point(0, 32);
-            this.tabs.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabs.Margin = new System.Windows.Forms.Padding(4);
             this.tabs.Name = "tabs";
             this.tabs.SelectedIndex = 0;
             this.tabs.Size = new System.Drawing.Size(920, 441);
@@ -73,9 +73,9 @@
             this.tabHome.Controls.Add(this.panel1);
             this.tabHome.Controls.Add(this.label1);
             this.tabHome.Location = new System.Drawing.Point(4, 25);
-            this.tabHome.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabHome.Margin = new System.Windows.Forms.Padding(4);
             this.tabHome.Name = "tabHome";
-            this.tabHome.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabHome.Padding = new System.Windows.Forms.Padding(4);
             this.tabHome.Size = new System.Drawing.Size(912, 412);
             this.tabHome.TabIndex = 0;
             this.tabHome.Text = "Home";
@@ -86,7 +86,7 @@
             this.panel1.Controls.Add(this.label5);
             this.panel1.Controls.Add(this.dataGridView2);
             this.panel1.Location = new System.Drawing.Point(11, 43);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(895, 348);
             this.panel1.TabIndex = 3;
@@ -107,7 +107,7 @@
             this.dataGridView2.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
             this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView2.Location = new System.Drawing.Point(7, 42);
-            this.dataGridView2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dataGridView2.Margin = new System.Windows.Forms.Padding(4);
             this.dataGridView2.Name = "dataGridView2";
             this.dataGridView2.Size = new System.Drawing.Size(883, 309);
             this.dataGridView2.TabIndex = 1;
@@ -128,9 +128,9 @@
             this.tabAgenda.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("tabAgenda.BackgroundImage")));
             this.tabAgenda.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.tabAgenda.Location = new System.Drawing.Point(4, 25);
-            this.tabAgenda.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabAgenda.Margin = new System.Windows.Forms.Padding(4);
             this.tabAgenda.Name = "tabAgenda";
-            this.tabAgenda.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabAgenda.Padding = new System.Windows.Forms.Padding(4);
             this.tabAgenda.Size = new System.Drawing.Size(912, 412);
             this.tabAgenda.TabIndex = 1;
             this.tabAgenda.Text = "Agenda";
@@ -149,18 +149,27 @@
             this.tabPatientSearch.Controls.Add(this.tbInsuranceSearch);
             this.tabPatientSearch.Controls.Add(this.tbSearchFirstName);
             this.tabPatientSearch.Location = new System.Drawing.Point(4, 25);
-            this.tabPatientSearch.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabPatientSearch.Margin = new System.Windows.Forms.Padding(4);
             this.tabPatientSearch.Name = "tabPatientSearch";
-            this.tabPatientSearch.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabPatientSearch.Padding = new System.Windows.Forms.Padding(4);
             this.tabPatientSearch.Size = new System.Drawing.Size(912, 412);
             this.tabPatientSearch.TabIndex = 2;
             this.tabPatientSearch.Text = "Patient Search";
             this.tabPatientSearch.UseVisualStyleBackColor = true;
             // 
+            // DOBSearch
+            // 
+            this.DOBSearch.Location = new System.Drawing.Point(148, 74);
+            this.DOBSearch.Name = "DOBSearch";
+            this.DOBSearch.Size = new System.Drawing.Size(137, 22);
+            this.DOBSearch.TabIndex = 11;
+            this.DOBSearch.Value = new System.DateTime(2014, 4, 15, 16, 19, 9, 0);
+            this.DOBSearch.KeyUp += new System.Windows.Forms.KeyEventHandler(this.tbSearchFirstName_KeyUp);
+            // 
             // btn_searchPatients
             // 
             this.btn_searchPatients.Location = new System.Drawing.Point(757, 100);
-            this.btn_searchPatients.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btn_searchPatients.Margin = new System.Windows.Forms.Padding(4);
             this.btn_searchPatients.Name = "btn_searchPatients";
             this.btn_searchPatients.Size = new System.Drawing.Size(100, 28);
             this.btn_searchPatients.TabIndex = 10;
@@ -175,6 +184,7 @@
             this.tbSearchLastName.Name = "tbSearchLastName";
             this.tbSearchLastName.Size = new System.Drawing.Size(132, 22);
             this.tbSearchLastName.TabIndex = 9;
+            this.tbSearchLastName.KeyUp += new System.Windows.Forms.KeyEventHandler(this.tbSearchFirstName_KeyUp);
             // 
             // label6
             // 
@@ -232,18 +242,21 @@
             // tbInsuranceSearch
             // 
             this.tbInsuranceSearch.Location = new System.Drawing.Point(148, 101);
-            this.tbInsuranceSearch.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tbInsuranceSearch.Margin = new System.Windows.Forms.Padding(4);
             this.tbInsuranceSearch.Name = "tbInsuranceSearch";
             this.tbInsuranceSearch.Size = new System.Drawing.Size(132, 22);
             this.tbInsuranceSearch.TabIndex = 3;
+            this.tbInsuranceSearch.Text = "0";
+            this.tbInsuranceSearch.KeyUp += new System.Windows.Forms.KeyEventHandler(this.tbSearchFirstName_KeyUp);
             // 
             // tbSearchFirstName
             // 
             this.tbSearchFirstName.Location = new System.Drawing.Point(148, 20);
-            this.tbSearchFirstName.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tbSearchFirstName.Margin = new System.Windows.Forms.Padding(4);
             this.tbSearchFirstName.Name = "tbSearchFirstName";
             this.tbSearchFirstName.Size = new System.Drawing.Size(132, 22);
             this.tbSearchFirstName.TabIndex = 1;
+            this.tbSearchFirstName.KeyUp += new System.Windows.Forms.KeyEventHandler(this.tbSearchFirstName_KeyUp);
             // 
             // userNamelb
             // 
@@ -265,14 +278,6 @@
             this.logoubtn.UseVisualStyleBackColor = true;
             this.logoubtn.Click += new System.EventHandler(this.logoubtn_Click);
             // 
-            // DOBSearch
-            // 
-            this.DOBSearch.Location = new System.Drawing.Point(148, 74);
-            this.DOBSearch.Name = "DOBSearch";
-            this.DOBSearch.Size = new System.Drawing.Size(137, 22);
-            this.DOBSearch.TabIndex = 11;
-            this.DOBSearch.Value = new System.DateTime(2014, 4, 3, 22, 5, 58, 0);
-            // 
             // Client
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -281,7 +286,7 @@
             this.Controls.Add(this.logoubtn);
             this.Controls.Add(this.userNamelb);
             this.Controls.Add(this.tabs);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Client";
             this.Text = "Staff Client";
             this.Load += new System.EventHandler(this.Client_Load);

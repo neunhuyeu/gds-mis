@@ -31,7 +31,31 @@ namespace DMS_Service
             }
             return conn;
         }
+        public DataTable SelectQuery(String query)
+        {
+            MySqlCommand myCommand = new MySqlCommand();
+            DataTable dataTable = new DataTable();
+            dataTable = null;
+            DataSet ds = new DataSet();
+            try
+            {
+                myCommand.Connection = openConnection();
+                myCommand.CommandText = query;
+                myCommand.ExecuteNonQuery();
+                myAdapter.SelectCommand = myCommand;
+                myAdapter.Fill(ds);
+                dataTable = ds.Tables[0];
+            }
+            catch (MySqlException e)
+            {
+                Console.Write("Error - SelectQuery - Query: " +
+                    query + " \nException: " + e.StackTrace.ToString());
+                return null;
+            }
+            
+            return dataTable;
 
+        }
         //Kirolos
         public DataTable SelectQuery(String query, MySqlParameter[] sqlParameter)
         {

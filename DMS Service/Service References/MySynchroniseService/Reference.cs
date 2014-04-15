@@ -25,7 +25,7 @@ namespace DMS_Service.MySynchroniseService {
         
         private string Addressk__BackingFieldField;
         
-        private string DateOfBirthk__BackingFieldField;
+        private System.DateTime DateOfBirthk__BackingFieldField;
         
         private string Emailk__BackingFieldField;
         
@@ -65,12 +65,12 @@ namespace DMS_Service.MySynchroniseService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute(Name="<DateOfBirth>k__BackingField", IsRequired=true)]
-        public string DateOfBirthk__BackingField {
+        public System.DateTime DateOfBirthk__BackingField {
             get {
                 return this.DateOfBirthk__BackingFieldField;
             }
             set {
-                if ((object.ReferenceEquals(this.DateOfBirthk__BackingFieldField, value) != true)) {
+                if ((this.DateOfBirthk__BackingFieldField.Equals(value) != true)) {
                     this.DateOfBirthk__BackingFieldField = value;
                     this.RaisePropertyChanged("DateOfBirthk__BackingField");
                 }

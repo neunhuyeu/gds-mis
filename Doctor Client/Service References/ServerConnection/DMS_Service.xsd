@@ -24,7 +24,7 @@
   <xs:complexType name="Person">
     <xs:sequence>
       <xs:element name="_x003C_Address_x003E_k__BackingField" nillable="true" type="xs:string" />
-      <xs:element name="_x003C_DateOfBirth_x003E_k__BackingField" nillable="true" type="xs:string" />
+      <xs:element name="_x003C_DateOfBirth_x003E_k__BackingField" type="xs:dateTime" />
       <xs:element name="_x003C_Email_x003E_k__BackingField" nillable="true" type="xs:string" />
       <xs:element name="_x003C_FirstName_x003E_k__BackingField" nillable="true" type="xs:string" />
       <xs:element name="_x003C_Gender_x003E_k__BackingField" type="ser:char" />

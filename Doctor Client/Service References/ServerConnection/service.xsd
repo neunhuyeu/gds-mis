@@ -107,7 +107,7 @@
       <xs:sequence>
         <xs:element minOccurs="0" name="first" nillable="true" type="xs:string" />
         <xs:element minOccurs="0" name="last" nillable="true" type="xs:string" />
-        <xs:element minOccurs="0" name="dateOfBirth" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="dateOfBirth" type="xs:dateTime" />
         <xs:element minOccurs="0" name="insurance" type="xs:int" />
       </xs:sequence>
     </xs:complexType>

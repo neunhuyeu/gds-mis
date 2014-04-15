@@ -25,29 +25,43 @@ namespace Doctor_Client
         
         }
 
-        //private void textBox1_KeyPress(object sender, KeyPressEventArgs e)
-        //{
-            
-        //    if (tbSearchFirstName.Text.Length + tbInsuranceSearch.Text.Length + tbDOBSearch.Text.Length+ tbSearchLastName.Text.Length > 0)
-        //    {
-        //      ServerConnection.DoctorClient  proxy = new ServerConnection.DoctorClient();
-                
-        //        if (((potentualPatients=proxy.search(tbSearchFirstName.Text, tbSearchLastName.Text ,tbDOBSearch.Text, Convert.ToInt32(tbInsuranceSearch.Text)))!=null) )
-        //        {
-        //            foreach (Patient patient in potentualPatients)
-        //            {
-        //                searchListLB.Items.Add(String.Format("{0,-11}  {1,-11}   {2,8} {0,25}",patient.FirstNamek__BackingField ,patient.LastNamek__BackingField, patient.DateOfBirthk__BackingField,patient.InsuranceNumberk__BackingField));
+        private void searchPatients()
+        {
+            searchListLB.Items.Clear();
+            if (tbSearchFirstName.Text.Length + tbInsuranceSearch.Text.Length + DOBSearch.Text.Length + tbSearchLastName.Text.Length > 0)
+            {
+                ServerConnection.DoctorClient proxy = new ServerConnection.DoctorClient();
+               
+                if (((potentualPatients = proxy.SearchPatients(tbSearchFirstName.Text, tbSearchLastName.Text, DOBSearch.Value,insurancenumberFormater())) != null))
+                {
+                    foreach (Patient patient in potentualPatients)
+                    {
+                        searchListLB.Items.Add(String.Format("{0,-11}  {1,-11}   {2,8} {0,25}", patient.FirstNamek__BackingField, patient.LastNamek__BackingField, patient.DateOfBirthk__BackingField, patient.InsuranceNumberk__BackingField));
 
-        //            }
-        //        }
-                
-              
-        //    }
-        //}
+                    }
+                }
+
+
+            }
+        }
+
+        private int insurancenumberFormater()
+        {
+            int insurancenr;
+            if (tbInsuranceSearch.Text == "")
+            {
+                insurancenr = 0;
+            }
+            else
+            {
+                insurancenr = Convert.ToInt32(tbInsuranceSearch.Text);
+            }
+            return insurancenr;
+        }
 
         private void Client_Load(object sender, EventArgs e)
         {
-
+            searchPatients();
         }
 
         private void logoubtn_Click(object sender, EventArgs e)
@@ -70,16 +84,12 @@ namespace Doctor_Client
 
         private void btn_searchPatients_Click(object sender, EventArgs e)
         {
-            ServerConnection.DoctorClient proxy = new ServerConnection.DoctorClient();
+            searchPatients();
+        }
 
-             if (((potentualPatients=proxy.SearchPatients(tbSearchFirstName.Text, tbSearchLastName.Text , DOBSearch.Value.ToString("yyyy-MM-dd"), Convert.ToInt32(tbInsuranceSearch.Text)))!=null) )
-             {
-                 foreach (Patient patient in potentualPatients)
-                 {
-                     searchListLB.Items.Add(String.Format("{4,30}{0,-11}  {1,-11}   {2,8} {3,25}", patient.FirstNamek__BackingField, patient.LastNamek__BackingField, patient.DateOfBirthk__BackingField, Convert.ToInt32(tbInsuranceSearch.Text),patient.PersonIdk__BackingField));
-
-                 }
-             }
+        private void tbSearchFirstName_KeyUp(object sender, KeyEventArgs e)
+        {
+            searchPatients();
         }
 
  

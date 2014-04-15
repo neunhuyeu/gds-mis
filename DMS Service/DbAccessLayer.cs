@@ -46,19 +46,73 @@ namespace DMS_Service
         }
 
         //TODO -> retrieve date
-        public DataTable SearchPatientsList(string firstName, string lastName) //, string dateOfBirth)
+        public DataTable SearchPatientsList(string firstName, string lastName, DateTime dateOfBirth)
         {
-            //DateTime date = DateTime.ParseExact(dateOfBirth, "yyyy-MM-dd", null);
-            string query = string.Format("Select * from person per, patients pt where per.first_name"
-                + " = @firstName AND per.last_name = @lastName and per.person_id = pt.person_id"); // AND data_of_birth = @date");
-            MySqlParameter[] sqlParameters = new MySqlParameter[2];
-            sqlParameters[0] = new MySqlParameter("@firstName", MySqlDbType.String);
-            sqlParameters[0].Value = Convert.ToString(firstName);
-            sqlParameters[1] = new MySqlParameter("@lastName", MySqlDbType.String);
-            sqlParameters[1].Value = Convert.ToString(lastName);
-            //sqlParameters[2] = new MySqlParameter("@date", MySqlDbType.Date);
-            //sqlParameters[2].Value = Convert.ToString(dateOfBirth);
-            return dbConnection.SelectQuery(query, sqlParameters);
+
+            
+       
+                
+                string parameters="";
+            string query = "Select * from person per, patients pt where per.person_id = pt.person_id";
+            if(firstName.Length>0)
+            {
+                query+=" AND per.first_name Like '@firstName%'";
+             
+                parameters += "f";
+                
+            }
+              if(lastName.Length>0)
+            {
+                  
+                query+="AND per.last_name LIKE '@lastName%'";
+              
+                parameters += "l";
+               
+            }
+             if(dateOfBirth.GetDateTimeFormats('d')[0]!=DateTime.Now.GetDateTimeFormats('d')[0])
+            {
+                  
+                query+="per.date_of_birth LIKE '@date'";
+
+                parameters += "d";
+               
+            }
+             MySqlParameter[] sqlParameters= null;
+             if (parameters.Length > 0)
+             {
+                 int index = 0;
+                
+                 sqlParameters = new MySqlParameter[parameters.Length];
+                parameters= parameters.PadRight(3, '#');
+
+                 if (parameters[index] == 'f')
+                 {
+                     index++;
+                     sqlParameters[index-1] = new MySqlParameter("@firstName", MySqlDbType.String);
+                     sqlParameters[index-1].Value = Convert.ToString(firstName);
+                     
+                 }
+                 if (parameters[index] == 'l')
+                 {
+                     index++;
+                     sqlParameters[index-1] = new MySqlParameter("@lastName", MySqlDbType.String);
+                     sqlParameters[index-1].Value = Convert.ToString(lastName);
+
+                 }
+                 if (parameters[index] == 'd')
+                 {
+                     index++;
+                     sqlParameters[index-1] = new MySqlParameter("@date", MySqlDbType.Date);
+                     sqlParameters[index-1].Value = Convert.ToDateTime(dateOfBirth);
+                 }
+                 query = string.Format(query);
+
+
+
+                 return dbConnection.SelectQuery(query, sqlParameters);
+             }
+             return dbConnection.SelectQuery(query);
+
         }
         public DataTable SearchprescriptionListByID(int id)
         {

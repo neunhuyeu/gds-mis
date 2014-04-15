@@ -26,7 +26,7 @@ namespace Doctor_Client.ServerConnection {
         
         private string Addressk__BackingFieldField;
         
-        private string DateOfBirthk__BackingFieldField;
+        private System.DateTime DateOfBirthk__BackingFieldField;
         
         private string Emailk__BackingFieldField;
         
@@ -66,12 +66,12 @@ namespace Doctor_Client.ServerConnection {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute(Name="<DateOfBirth>k__BackingField", IsRequired=true)]
-        public string DateOfBirthk__BackingField {
+        public System.DateTime DateOfBirthk__BackingField {
             get {
                 return this.DateOfBirthk__BackingFieldField;
             }
             set {
-                if ((object.ReferenceEquals(this.DateOfBirthk__BackingFieldField, value) != true)) {
+                if ((this.DateOfBirthk__BackingFieldField.Equals(value) != true)) {
                     this.DateOfBirthk__BackingFieldField = value;
                     this.RaisePropertyChanged("DateOfBirthk__BackingField");
                 }
@@ -728,10 +728,10 @@ namespace Doctor_Client.ServerConnection {
         System.Threading.Tasks.Task<Doctor_Client.ServerConnection.Perscription[]> getPatientPerscriptionsAsync(int patientID);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IDoctor/SearchPatients", ReplyAction="http://tempuri.org/IDoctor/SearchPatientsResponse")]
-        Doctor_Client.ServerConnection.Patient[] SearchPatients(string first, string last, string dateOfBirth, int insurance);
+        Doctor_Client.ServerConnection.Patient[] SearchPatients(string first, string last, System.DateTime dateOfBirth, int insurance);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IDoctor/SearchPatients", ReplyAction="http://tempuri.org/IDoctor/SearchPatientsResponse")]
-        System.Threading.Tasks.Task<Doctor_Client.ServerConnection.Patient[]> SearchPatientsAsync(string first, string last, string dateOfBirth, int insurance);
+        System.Threading.Tasks.Task<Doctor_Client.ServerConnection.Patient[]> SearchPatientsAsync(string first, string last, System.DateTime dateOfBirth, int insurance);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IDoctor/setPerscription", ReplyAction="http://tempuri.org/IDoctor/setPerscriptionResponse")]
         string setPerscription(int appointmentID, Doctor_Client.ServerConnection.Perscription perscription);
@@ -829,11 +829,11 @@ namespace Doctor_Client.ServerConnection {
             return base.Channel.getPatientPerscriptionsAsync(patientID);
         }
         
-        public Doctor_Client.ServerConnection.Patient[] SearchPatients(string first, string last, string dateOfBirth, int insurance) {
+        public Doctor_Client.ServerConnection.Patient[] SearchPatients(string first, string last, System.DateTime dateOfBirth, int insurance) {
             return base.Channel.SearchPatients(first, last, dateOfBirth, insurance);
         }
         
-        public System.Threading.Tasks.Task<Doctor_Client.ServerConnection.Patient[]> SearchPatientsAsync(string first, string last, string dateOfBirth, int insurance) {
+        public System.Threading.Tasks.Task<Doctor_Client.ServerConnection.Patient[]> SearchPatientsAsync(string first, string last, System.DateTime dateOfBirth, int insurance) {
             return base.Channel.SearchPatientsAsync(first, last, dateOfBirth, insurance);
         }
         

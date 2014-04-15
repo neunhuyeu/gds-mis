@@ -140,7 +140,7 @@ namespace DMS_Service
             foreach (DataRow row in dataTable.Rows)
             {
                 prescription.Drug = row["medicine"].ToString();
-                prescription.Dosage = Convert.ToInt32(row["dosage"]);
+                prescription.Dosage = Convert.ToInt32(row["strength_mg"]);
                 prescription.Doctor = row["doctor"].ToString();
                 prescription.Date = Convert.ToDateTime(row["date_prescribed"]);
 
@@ -179,24 +179,28 @@ namespace DMS_Service
         }
 
 
-        public List<Patient> SearchPatients(string first, string last, string dateOfBirth, int insurance)
+        public List<Patient> SearchPatients(string first, string last, DateTime dateOfBirth, int insurance)
         {
             List<Patient> patients = new List<Patient>();
             DataTable dataTable = new DataTable();
-            dataTable = dbAcess.SearchPatientsList(first, last);
-
+            dataTable = dbAcess.SearchPatientsList(first, last,dateOfBirth);
+            if (dataTable==null)
+            {
+                return null;
+            }
             foreach (DataRow dr in dataTable.Rows)
             {
                 Patient p = new Patient();
                 p.PersonId = Convert.ToInt32(dr["person_id"]);
                 p.FirstName = dr["first_name"].ToString();
                 p.LastName = dr["last_name"].ToString();
-                p.DateOfBirth = dateOfBirth;
+                p.DateOfBirth = Convert.ToDateTime(dr["date_of_birth"]);
                 p.Email = dr["email_address"].ToString();
+                p.Gender = dr["gender"].ToString()[0];
                 p.MobileNumber = dr["mobile_number"].ToString();
                 p.LandLineNumber = dr["landline_number"].ToString();
                 p.Address = dr["home_address"].ToString();
-                p.InsuranceNumber = insurance;
+                p.InsuranceNumber = 0;
                 patients.Add(p);
             }
 
@@ -224,7 +228,7 @@ namespace DMS_Service
             dude.MobileNumber = "12345";
             dude.LandLineNumber = "54321";
             dude.InsuranceNumber = 222222;
-            dude.DateOfBirth = "1960-05-05";
+            dude.DateOfBirth = new DateTime(1960,5,5);
             dude.Email = "Homer@lol.com";
             dude.Address = "springfield";
 

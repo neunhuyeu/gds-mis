@@ -24,11 +24,12 @@ namespace Doctor_Client
             patient = Pateint;
             tbPatientDetailsOverviewName.Text = patient.FirstNamek__BackingField + " " + patient.LastNamek__BackingField;
             tbPatientDetailsOverviewAge.Text = DOBtoAge(Pateint.DateOfBirthk__BackingField).ToString();
-            tbPatientDetailsOverviewDoB.Text = patient.DateOfBirthk__BackingField.ToString();
+            tbPatientDetailsOverviewDoB.Text = patient.DateOfBirthk__BackingField.GetDateTimeFormats('d')[0];
             tbPatientDetailsOverviewGender.Text = fixGender(patient.Genderk__BackingField);
             tbPatientDetailsOverviewIsuranceNumber.Text = patient.InsuranceNumberk__BackingField.ToString();
             tbPatientDetailsOverviewEMail.Text = patient.Emailk__BackingField;
             tbPatientDetailsOverviewMPhone.Text = patient.MobileNumberk__BackingField.ToString();
+            tbPatientDetailsOverviewPhone.Text = patient.LandLineNumberk__BackingField.ToString();
             //percriptions
             perscription = proxy.getPatientPerscriptions(patient.PersonIdk__BackingField);
             foreach (ServerConnection.Perscription persrip in perscription )
@@ -36,12 +37,11 @@ namespace Doctor_Client
                 PerscriptionLb.Items.Add(persrip.drug);
             }
         }
-        private int DOBtoAge(string DOB)
+        private int DOBtoAge(DateTime DOB)
         {
-           DateTime formatedDOB=  Convert.ToDateTime(DOB);
             DateTime Now=DateTime.Now;
-           int Age = Now.Year - formatedDOB.Year;
-           if ((Now.Month * 100 + Now.Day) < (formatedDOB.Month * 100 + formatedDOB.Day))
+           int Age = Now.Year - DOB.Year;
+           if ((Now.Month * 100 + Now.Day) < (DOB.Month * 100 + DOB.Day))
            {
                Age--;
            }

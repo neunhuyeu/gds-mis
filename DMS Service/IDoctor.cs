@@ -34,7 +34,7 @@ namespace DMS_Service
         List<Perscription> getPatientPerscriptions(int patientID);
 
         [OperationContract]
-        List<Patient> SearchPatients(string first, string last, string dateOfBirth, int insurance);
+        List<Patient> SearchPatients(string first, string last, DateTime dateOfBirth, int insurance);
 
         [OperationContract]
         string setPerscription(int appointmentID, Perscription perscription);
