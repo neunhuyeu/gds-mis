@@ -10,39 +10,89 @@ namespace DMS_Service
 {   
     public class DbConnection
     {
-        MySqlDataAdapter myAdapter;
-        MySqlConnection conn;
-        string provider = "SERVER=" + "localhost" + ";" + "Port=3306;" + "DATABASE=gds_mis;" + "UID=root;" + "PASSWORD=";
-
+        //full connection string
+        private string db_connection_string = "";
+        
+        //constructor
         public DbConnection()
         {
-            myAdapter = new MySqlDataAdapter();
-            conn = new MySqlConnection(provider);
+            if (db_connection_string.Equals("")) set_connection_values();
         }
 
-        MySqlConnection openConnection()
+        //set the connections string values
+        public string set_connection_values(string server_ip = "localhost", string server_port = "3306", string db_name = "gds_mis", string user_id = "root", string user_passw = "")
         {
-            if (conn.State == ConnectionState.Closed || conn.State == 
-						ConnectionState.Broken)
-            {
-                conn.Open();
-            }
-            return conn;
+            //Database full connection string
+            db_connection_string =   " SERVER=" + server_ip + ";" +
+                                            " PORT=" + server_port + ";" +
+                                            " DATABASE=" + db_name + ";" +
+                                            " UID=" + user_id + ";" +
+                                            " PASSWORD=" + user_passw + ";";
+            return db_connection_string;
         }
+
         public DataTable SelectQuery(String query)
         {
-            MySqlCommand myCommand = new MySqlCommand();
-            DataTable dataTable = new DataTable();
-            dataTable = null;
-            DataSet ds = new DataSet();
+            DataSet dt_set = new DataSet();
+            DataTable dt_table = new DataTable();
             try
             {
-                myCommand.Connection = openConnection();
-                myCommand.CommandText = query;
-                myCommand.ExecuteNonQuery();
-                myAdapter.SelectCommand = myCommand;
-                myAdapter.Fill(ds);
-                dataTable = ds.Tables[0];
+                using (MySqlConnection con = new MySqlConnection(db_connection_string))
+                {
+                    con.Open();
+
+                    using (MySqlCommand cmd = new MySqlCommand())
+                    {
+                        cmd.Connection = con;
+                        cmd.CommandText = query;
+                        cmd.ExecuteNonQuery();
+
+                        using (MySqlDataAdapter dt_adapter = new MySqlDataAdapter())
+                        {
+                            dt_adapter.SelectCommand = cmd;
+                            dt_adapter.Fill(dt_set);
+                            dt_table = dt_set.Tables[0];
+                        }
+
+                    }
+                }
+            }
+            catch (MySqlException e)
+            {
+                Console.Write("Error - SelectQuery - Query: " +
+                    query + " \nException: " + e.StackTrace.ToString());
+                return null;
+            }
+
+            return dt_table;
+        }
+
+        public DataTable SelectQuery(String query, MySqlParameter[] sqlParameter)
+        {
+            DataSet dt_set = new DataSet();
+            DataTable dt_table = new DataTable();
+            try
+            {
+                using (MySqlConnection con = new MySqlConnection(db_connection_string))
+                {
+                    con.Open();
+
+                    using (MySqlCommand cmd = new MySqlCommand())
+                    {
+                        cmd.Connection = con;
+                        cmd.CommandText = query;
+                        cmd.Parameters.AddRange(sqlParameter);
+                        cmd.ExecuteNonQuery();
+
+                        using (MySqlDataAdapter dt_adapter = new MySqlDataAdapter())
+                        {
+                            dt_adapter.SelectCommand = cmd;
+                            dt_adapter.Fill(dt_set);
+                            dt_table = dt_set.Tables[0];
+                        }
+
+                    }
+                }
             }
             catch (MySqlException e)
             {
@@ -51,88 +101,74 @@ namespace DMS_Service
                 return null;
             }
             
-            return dataTable;
-
+            return dt_table;
         }
-        
-        public DataTable SelectQuery(String query, MySqlParameter[] sqlParameter)
-        {
-            MySqlCommand myCommand = new MySqlCommand();
-            DataTable dataTable = new DataTable();
-            dataTable = null;
-            DataSet ds = new DataSet();
-            try
-            {
-                myCommand.Connection = openConnection();
-                myCommand.CommandText = query;
-                myCommand.Parameters.AddRange(sqlParameter);
-                myCommand.ExecuteNonQuery();           
-                myAdapter.SelectCommand = myCommand;
-                myAdapter.Fill(ds);
-                dataTable = ds.Tables[0];
-            }
-            catch (MySqlException e)
-            {
-                Console.Write("Error - SelectQuery - Query: " + 
-                    query + " \nException: " + e.StackTrace.ToString());
-                return null;
-            }
-            finally
-            {
-
-            }
-            return dataTable;
-        }
-
+    
 
         public bool InsertQuery(String query, MySqlParameter[] sqlParameter)
         {
-            MySqlCommand myCommand = new MySqlCommand();
             try
             {
-                myCommand.Connection = openConnection();
-                myCommand.CommandText = query;
-                myCommand.Parameters.AddRange(sqlParameter);
-                myAdapter.InsertCommand = myCommand;
-                myCommand.ExecuteNonQuery();
+                using (MySqlConnection con = new MySqlConnection(db_connection_string))
+                {
+                    con.Open();
+
+                    using (MySqlCommand cmd = new MySqlCommand())
+                    {
+                        cmd.Connection = con;
+                        cmd.CommandText = query;
+                        cmd.Parameters.AddRange(sqlParameter);
+
+                        using (MySqlDataAdapter dt_adapter = new MySqlDataAdapter())
+                        {
+                            dt_adapter.InsertCommand = cmd;
+                        }
+
+                        cmd.ExecuteNonQuery();
+                    }
+                }
             }
             catch (MySqlException e)
             {
-                Console.Write("Error - InsertQuery - Query: " 
-                    + query + " \nException: \n" + e.StackTrace.ToString());
+                Console.Write("Error - SelectQuery - Query: " +
+                    query + " \nException: " + e.StackTrace.ToString());
                 return false;
             }
-            catch
-            {
 
-            }
-            finally
-            {
-            }
             return true;
         }
 
 
         public bool UpdateQuery(String query, MySqlParameter[] sqlParameter)
         {
-            MySqlCommand myCommand = new MySqlCommand();
             try
             {
-                myCommand.Connection = openConnection();
-                myCommand.CommandText = query;
-                myCommand.Parameters.AddRange(sqlParameter);
-                myAdapter.UpdateCommand = myCommand;
-                myCommand.ExecuteNonQuery();
+                using (MySqlConnection con = new MySqlConnection(db_connection_string))
+                {
+                    con.Open();
+
+                    using (MySqlCommand cmd = new MySqlCommand())
+                    {
+                        cmd.Connection = con;
+                        cmd.CommandText = query;
+                        cmd.Parameters.AddRange(sqlParameter);
+
+                        using (MySqlDataAdapter dt_adapter = new MySqlDataAdapter())
+                        {
+                            dt_adapter.UpdateCommand = cmd;
+                        }
+
+                        cmd.ExecuteNonQuery();
+                    }
+                }
             }
             catch (MySqlException e)
             {
-                Console.Write("Error - UpdateQuery - Query: " 
-                    + query + " \nException: " + e.StackTrace.ToString());
+                Console.Write("Error - SelectQuery - Query: " +
+                    query + " \nException: " + e.StackTrace.ToString());
                 return false;
             }
-            finally
-            {
-            }
+
             return true;
         }
 

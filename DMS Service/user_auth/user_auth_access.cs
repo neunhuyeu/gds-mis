@@ -18,19 +18,19 @@ namespace DMS_Service.user_auth
             db_connection = new user_auth_db_connection();
         }
 
-        public DataTable user_login(string e_mail, string passw)
+        public DataTable user_login(string email, string passw)
         {
-            string query = string.Format("SELECT email, password" + " " +
-                                         "From user_auth" + " " +
+            string query = string.Format("SELECT email_address, password" + " " +
+                                         "From 'user_auth'" + " " +
                                          "WHERE password = '@passw'" + " " +
-                                         "AND email = '@e_mail'"
+                                         "AND email_address = '@email'"
                                         );
 
             MySqlParameter[] query_parameters = new MySqlParameter[2];
             query_parameters[0] = new MySqlParameter("@passw", MySqlDbType.VarChar);
             query_parameters[0].Value = Convert.ToString(passw);
-            query_parameters[1] = new MySqlParameter("@e_mail", MySqlDbType.VarChar);
-            query_parameters[1].Value = Convert.ToString(e_mail);
+            query_parameters[1] = new MySqlParameter("@email", MySqlDbType.VarChar);
+            query_parameters[1].Value = Convert.ToString(email);
             return db_connection.SelectQuery(query,query_parameters);
         }
 

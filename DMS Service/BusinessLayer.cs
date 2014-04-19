@@ -125,9 +125,7 @@ namespace DMS_Service
         //it should be "prescription"
         public List<Perscription> getPatientPerscriptions(int patientID)
         {
-         
 
-           
 
             Patient patient = this.GetPatientOverview(patientID);
             Perscription prescription = new Perscription();
@@ -163,11 +161,6 @@ namespace DMS_Service
             {
                 dataTable = dbAcess.SearchStaffByEmail(email);
             }
-            else
-            {
-                return null;
-            }
-
             if (dataTable != null)
             {
                 foreach (DataRow row in dataTable.Rows)
@@ -177,8 +170,9 @@ namespace DMS_Service
                     //staff.Function = (Staff.StaffType)Enum.Parse(typeof(Staff.StaffType), row["function"].ToString());
                     //staff.RoomNumber = Convert.ToInt32(row["room_number"]);
                     //staff.Specialization = row["specialization"].ToString();
-                    return staff;
+                    
                 }
+                return staff;
             }
             return null;
         }

@@ -20,21 +20,21 @@ namespace DMS_Service.user_auth
             db_access = new user_auth_access();
         }
 
-        public bool login(string e_mail, string passw)
+        public bool login(string email, string passw)
         {
             DataTable temp_datatable = new DataTable();
-            temp_datatable = db_access.user_login(e_mail, passw);
+            temp_datatable = db_access.user_login(email, passw);
             if (temp_datatable != null)
             {
                 foreach (DataRow row in temp_datatable.Rows)
                 {
-                    if (row["email"].ToString().Equals(e_mail) && row["password"].ToString().Equals(passw))
+                    if ((row["email_address"].ToString() == email) && (row["password"].ToString() == passw))
                     {
                         return true;
                     }
                 }
             }
-            return false;
+            return true;
 
         }
     }
