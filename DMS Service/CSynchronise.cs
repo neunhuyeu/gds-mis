@@ -106,6 +106,11 @@ namespace DMS_Service
             throw new System.NotImplementedException();
         }
 
+
+        public void addPatient(Patient patient)
+        {
+            throw new NotImplementedException();
+        }
     }
 
     /// <summary>

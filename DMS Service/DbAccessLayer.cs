@@ -9,7 +9,6 @@ using MySql.Data.MySqlClient;
 
 namespace DMS_Service
 {
-    // Kirolos
     public class DbAccessLayer
     {
         DbConnection dbConnection;
@@ -19,7 +18,6 @@ namespace DMS_Service
             dbConnection = new DbConnection();
         }
         
-        //Kirolos
         public DataTable SearchPatient_lastName_dateOfBirth(string lastName, string dateOfBirth)
         {
             string query = string.Format("SELECT *" +

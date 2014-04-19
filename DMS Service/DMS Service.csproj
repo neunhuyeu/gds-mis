@@ -66,6 +66,9 @@
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
     <Compile Include="Staff.cs" />
+    <Compile Include="user_auth\user_auth_access.cs" />
+    <Compile Include="user_auth\user_auth_business.cs" />
+    <Compile Include="user_auth\user_auth_db_connection.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config">

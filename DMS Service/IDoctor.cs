@@ -17,7 +17,6 @@ namespace DMS_Service
         [OperationContract]
         Staff Login(string Email, string Passward );
 
-
         [OperationContract]
         Patient GetPatientOverview(int personID);
 

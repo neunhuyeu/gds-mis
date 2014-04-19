@@ -6,10 +6,10 @@ using System.Data;
 using System.Threading.Tasks;
 using System.ServiceModel;
 using System.Windows.Forms;
+using DMS_Service.user_auth;
 
 namespace DMS_Service
 {
-    // Kirolos
     [ServiceBehavior(InstanceContextMode = InstanceContextMode.Single)]
     public class BusinessLayer : IDoctor
     {
@@ -20,7 +20,6 @@ namespace DMS_Service
             dbAcess = new DbAccessLayer();
         }
 
-        //Kirolos
         /// <summary>
         /// To get the patient as a person. This function could be used by the secratery to get the contact info
         /// of a  person without having access to see his medical private info.
@@ -69,7 +68,6 @@ namespace DMS_Service
             return patient;
         }
 
-        //Kirolos
         public Staff GetStaff_by_id(int id)
         {
             Staff staff = new Staff();
@@ -154,7 +152,21 @@ namespace DMS_Service
         {
             Staff staff = new Staff();
             DataTable dataTable = new DataTable();
-            dataTable = dbAcess.SearchStaffByEmail(email);
+
+            //Business layer for the user authentication
+            user_auth_business user_auth = new user_auth_business();
+            
+            //if the user credentails are correct then the search by mail is done to find the staff member
+            //if no staff member is found matching the credentails provided the user will still not be 
+            //logged in.  a failsafe of sorts is in place
+            if (user_auth.login(email, password))
+            {
+                dataTable = dbAcess.SearchStaffByEmail(email);
+            }
+            else
+            {
+                return null;
+            }
 
             if (dataTable != null)
             {
@@ -165,12 +177,10 @@ namespace DMS_Service
                     //staff.Function = (Staff.StaffType)Enum.Parse(typeof(Staff.StaffType), row["function"].ToString());
                     //staff.RoomNumber = Convert.ToInt32(row["room_number"]);
                     //staff.Specialization = row["specialization"].ToString();
+                    return staff;
                 }
-
-                return staff;
             }
-            else
-                return null;
+            return null;
         }
 
         public DataTable getStaff()
