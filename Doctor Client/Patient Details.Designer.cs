@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PatientDetails));
             this.tabCurrentMedication = new System.Windows.Forms.TabPage();
+            this.PerscriptionLb = new System.Windows.Forms.ListBox();
             this.tabPastAppointments = new System.Windows.Forms.TabPage();
             this.tabOverview = new System.Windows.Forms.TabPage();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -53,7 +54,7 @@
             this.lbOverview = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.tabs = new System.Windows.Forms.TabControl();
-            this.PerscriptionLb = new System.Windows.Forms.ListBox();
+            this.button2 = new System.Windows.Forms.Button();
             this.tabCurrentMedication.SuspendLayout();
             this.tabOverview.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -63,6 +64,7 @@
             // 
             // tabCurrentMedication
             // 
+            this.tabCurrentMedication.Controls.Add(this.button2);
             this.tabCurrentMedication.Controls.Add(this.PerscriptionLb);
             this.tabCurrentMedication.Location = new System.Drawing.Point(4, 25);
             this.tabCurrentMedication.Margin = new System.Windows.Forms.Padding(4);
@@ -72,6 +74,16 @@
             this.tabCurrentMedication.TabIndex = 2;
             this.tabCurrentMedication.Text = "Perscriptions";
             this.tabCurrentMedication.UseVisualStyleBackColor = true;
+            // 
+            // PerscriptionLb
+            // 
+            this.PerscriptionLb.FormattingEnabled = true;
+            this.PerscriptionLb.ItemHeight = 16;
+            this.PerscriptionLb.Location = new System.Drawing.Point(20, 13);
+            this.PerscriptionLb.Name = "PerscriptionLb";
+            this.PerscriptionLb.Size = new System.Drawing.Size(794, 324);
+            this.PerscriptionLb.TabIndex = 0;
+            this.PerscriptionLb.SelectedIndexChanged += new System.EventHandler(this.PerscriptionLb_SelectedIndexChanged);
             // 
             // tabPastAppointments
             // 
@@ -337,15 +349,15 @@
             this.tabs.Size = new System.Drawing.Size(845, 430);
             this.tabs.TabIndex = 0;
             // 
-            // PerscriptionLb
+            // button2
             // 
-            this.PerscriptionLb.FormattingEnabled = true;
-            this.PerscriptionLb.ItemHeight = 16;
-            this.PerscriptionLb.Location = new System.Drawing.Point(20, 13);
-            this.PerscriptionLb.Name = "PerscriptionLb";
-            this.PerscriptionLb.Size = new System.Drawing.Size(794, 372);
-            this.PerscriptionLb.TabIndex = 0;
-            this.PerscriptionLb.SelectedIndexChanged += new System.EventHandler(this.PerscriptionLb_SelectedIndexChanged);
+            this.button2.Location = new System.Drawing.Point(20, 352);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.TabIndex = 2;
+            this.button2.Text = "Print";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // PatientDetails
             // 
@@ -397,6 +409,7 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.TabControl tabs;
         private System.Windows.Forms.ListBox PerscriptionLb;
+        private System.Windows.Forms.Button button2;
 
     }
 }

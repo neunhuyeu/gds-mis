@@ -100,5 +100,10 @@ namespace Doctor_Client
                 MessageBox.Show(this, "Drug Name : " + perscription[PerscriptionLb.SelectedIndex].drug.ToString() + "\nDate :  " + perscription[PerscriptionLb.SelectedIndex].date.ToString() + "\nDoctor :  " + perscription[PerscriptionLb.SelectedIndex].doctor.ToString() + "\nDosage" + perscription[PerscriptionLb.SelectedIndex].dosage.ToString(), patient.FirstNamek__BackingField + " " + patient.LastNamek__BackingField + " takes" + perscription[PerscriptionLb.SelectedIndex].drug.ToString());
             }
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            easyPrint PerscriptionPrint = new easyPrint("\tMedical prescription \n"+"the following drug is issued to:/n"+patient.FirstNamek__BackingField + " " + patient.LastNamek__BackingField +"\nname of medicine:" + perscription[PerscriptionLb.SelectedIndex].drug.ToString() + "\nDosage" + perscription[PerscriptionLb.SelectedIndex].dosage.ToString() + "\nDoctor: ___________________________________ " + perscription[PerscriptionLb.SelectedIndex].doctor.ToString());
+        }
     }
 }
