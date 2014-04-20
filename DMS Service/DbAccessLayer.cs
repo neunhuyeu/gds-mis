@@ -20,9 +20,9 @@ namespace DMS_Service
         
         public DataTable SearchPatient_lastName_dateOfBirth(string lastName, string dateOfBirth)
         {
-            string query = string.Format("SELECT *" +
-                                        "FROM person" + 
-                                        "WHERE last_name = @lastName" +
+            string query = string.Format("SELECT * " +
+                                        "FROM person " + 
+                                        "WHERE last_name = @lastName " +
                                         "AND date_of_birth = @dateOfBirth");
             MySqlParameter[] sqlParameters = new MySqlParameter[2];
             sqlParameters[0] = new MySqlParameter("@lastName", MySqlDbType.VarChar);
@@ -62,7 +62,7 @@ namespace DMS_Service
               if(lastName.Length>0)
             {
                   
-                query+="AND per.last_name LIKE '@lastName%'";
+                query+=" AND per.last_name LIKE '@lastName%'";
               
                 parameters += "l";
                
@@ -70,7 +70,7 @@ namespace DMS_Service
              if(dateOfBirth.GetDateTimeFormats('d')[0]!=DateTime.Now.GetDateTimeFormats('d')[0])
             {
                   
-                query+="per.date_of_birth LIKE '@date'";
+                query+=" per.date_of_birth LIKE '@date'";
 
                 parameters += "d";
                

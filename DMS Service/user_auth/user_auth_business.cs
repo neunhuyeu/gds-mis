@@ -24,17 +24,21 @@ namespace DMS_Service.user_auth
         {
             DataTable temp_datatable = new DataTable();
             temp_datatable = db_access.user_login(email, passw);
+            string temp_mail = "";
+            string temp_passw = "";
             if (temp_datatable != null)
             {
                 foreach (DataRow row in temp_datatable.Rows)
                 {
-                    if ((row["email_address"].ToString() == email) && (row["password"].ToString() == passw))
-                    {
-                        return true;
-                    }
+                    temp_mail = row["email_address"].ToString();
+                    temp_passw = row["password"].ToString();    
+                }
+                if ((temp_mail == email) && (temp_passw == passw))
+                {
+                    return true;
                 }
             }
-            return true;
+            return false;
 
         }
     }
