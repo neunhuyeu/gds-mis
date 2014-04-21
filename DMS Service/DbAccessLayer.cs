@@ -104,9 +104,9 @@ namespace DMS_Service
         public DataTable SearchprescriptionListByID(int id)
         {
             MySqlParameter[] sqlParameters = new MySqlParameter[1];
-            sqlParameters[0] = new MySqlParameter("@pt_id", MySqlDbType.String);
-            sqlParameters[0].Value = Convert.ToString(id);
-            string query = string.Format("SELECT medicine " + 
+            sqlParameters[0] = new MySqlParameter("@pt_id", MySqlDbType.Int32);
+            sqlParameters[0].Value = id;
+            string query = string.Format("SELECT pre.medicine, pre.strength_mg, con.end_date as date_prescribed " + 
                                          "FROM prescribtion pre " +
                                          "JOIN consultations con " +
                                          "ON pre.consultation_id = con.consultation_id " + 

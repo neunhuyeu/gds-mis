@@ -34,7 +34,7 @@ namespace Doctor_Client
             perscription = proxy.getPatientPerscriptions(patient.PersonIdk__BackingField);
             foreach (ServerConnection.Perscription persrip in perscription )
             {
-                PerscriptionLb.Items.Add(persrip.drug);
+                PerscriptionLb.Items.Add("Date: " + persrip.date.ToShortDateString() + "\t" + "Drug: " + persrip.drug + "\t" + "Dosage: " + persrip.dosage); 
             }
         }
         private int DOBtoAge(DateTime DOB)
@@ -97,7 +97,7 @@ namespace Doctor_Client
         {
             if (PerscriptionLb.SelectedIndex > -1)
             {
-                MessageBox.Show(this, "Drug Name : " + perscription[PerscriptionLb.SelectedIndex].drug.ToString() + "\nDate :  " + perscription[PerscriptionLb.SelectedIndex].date.ToString() + "\nDoctor :  " + perscription[PerscriptionLb.SelectedIndex].doctor.ToString() + "\nDosage" + perscription[PerscriptionLb.SelectedIndex].dosage.ToString(), patient.FirstNamek__BackingField + " " + patient.LastNamek__BackingField + " takes" + perscription[PerscriptionLb.SelectedIndex].drug.ToString());
+                MessageBox.Show(this, "Drug Name : " + perscription[PerscriptionLb.SelectedIndex].drug.ToString() + "\nDate :  " + perscription[PerscriptionLb.SelectedIndex].date.ToString() +  "\nDosage" + perscription[PerscriptionLb.SelectedIndex].dosage.ToString(), patient.FirstNamek__BackingField + " " + patient.LastNamek__BackingField + " takes" + perscription[PerscriptionLb.SelectedIndex].drug.ToString());
             }
         }
 

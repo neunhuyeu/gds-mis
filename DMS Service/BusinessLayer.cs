@@ -136,9 +136,9 @@ namespace DMS_Service
             foreach (DataRow row in dataTable.Rows)
             {
                 prescription.Drug = row["medicine"].ToString();
-                //prescription.Dosage = Convert.ToInt32(row["strength_mg"]);
+                prescription.Dosage = Convert.ToInt32(row["strength_mg"]);
                 //prescription.Doctor = row["doctor"].ToString();
-               // prescription.Date = Convert.ToDateTime(row["date_prescribed"]);
+                prescription.Date = Convert.ToDateTime(row["date_prescribed"]);
 
                 prescriptionlist.Add(prescription);
             }

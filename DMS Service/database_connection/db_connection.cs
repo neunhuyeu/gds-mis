@@ -59,8 +59,8 @@ namespace DMS_Service.database_connection
             }
             catch (MySqlException e)
             {
-                Console.Write("Error - SelectQuery - Query: " +
-                    query + " \nException: " + e.StackTrace.ToString());
+                string[] lines = { "Error - SelectQuery - Query: ", query, "Exception: " + e.Message + e.StackTrace.ToString() };
+                System.IO.File.WriteAllLines(AppDomain.CurrentDomain.BaseDirectory + "\\errorlog.txt", lines);
                 return null;
             }
 
@@ -96,8 +96,8 @@ namespace DMS_Service.database_connection
             }
             catch (MySqlException e)
             {
-                Console.Write("Error - SelectQuery - Query: " +
-                    query + " \nException: " + e.StackTrace.ToString());
+                string[] lines = { "Error - SelectQuery - Query: ", query, "Exception: " + e.Message + e.StackTrace.ToString() };
+                    System.IO.File.WriteAllLines(AppDomain.CurrentDomain.BaseDirectory + "\\errorlog.txt",lines);
                 return null;
             }
             
@@ -130,8 +130,8 @@ namespace DMS_Service.database_connection
             }
             catch (MySqlException e)
             {
-                Console.Write("Error - SelectQuery - Query: " +
-                    query + " \nException: " + e.StackTrace.ToString());
+                string[] lines = { "Error - SelectQuery - Query: ", query, "Exception: " + e.Message + e.StackTrace.ToString() };
+                System.IO.File.WriteAllLines(AppDomain.CurrentDomain.BaseDirectory + "\\errorlog.txt", lines);
                 return false;
             }
 
@@ -168,8 +168,8 @@ namespace DMS_Service.database_connection
             }
             catch (MySqlException e)
             {
-                Console.Write("Error - SelectQuery - Query: " +
-                    query + " \nException: " + e.StackTrace.ToString());
+                string[] lines = { "Error - SelectQuery - Query: ", query, "Exception: " + e.Message + e.StackTrace.ToString() };
+                System.IO.File.WriteAllLines(AppDomain.CurrentDomain.BaseDirectory + "\\errorlog.txt", lines);
                 return false;
             }
 
