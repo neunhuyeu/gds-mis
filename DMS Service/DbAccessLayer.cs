@@ -49,20 +49,25 @@ namespace DMS_Service
         {
 
             string parameters="";
-            string query = "Select * from person per, patients pt where per.person_id = pt.person_id";
-            if(firstName.Length>0)
+            string query = "Select * from patients pt join person per on per.person_id = pt.person_id ";
+            if (firstName.Length > 0 || lastName.Length > 0 || dateOfBirth.GetDateTimeFormats('d')[0] != DateTime.Now.GetDateTimeFormats('d')[0])
             {
-                query+=" AND per.first_name = '@firstName'";
-                parameters += "f";
-                
+                query += " WHERE";
+            }
+            if (firstName.Length > 0)
+            {
+                query+=" per.first_name like @firstName";
+                parameters += "f";  
             }
             if(lastName.Length>0)
             {
-                query+=" AND per.last_name = '@lastName'";
+                if (!parameters.Equals("")) query += " AND";
+                query += " per.last_name like @lastName";
                 parameters += "l";
             }
             if(dateOfBirth.GetDateTimeFormats('d')[0]!=DateTime.Now.GetDateTimeFormats('d')[0])
             {
+                if (!parameters.Equals("")) query += " AND";
                 query+=" per.date_of_birth = @date";
                 parameters += "d";
             }
@@ -78,19 +83,19 @@ namespace DMS_Service
                 if (parameters[index] == 'f')
                 {
                     index++;
-                    sqlParameters[index-1] = new MySqlParameter("@firstName", MySqlDbType.String);
-                    sqlParameters[index - 1].Value = Convert.ToString(firstName);    
+                    sqlParameters[index-1] = new MySqlParameter("@firstName", MySqlDbType.VarChar);
+                    sqlParameters[index - 1].Value = Convert.ToString(firstName + "%");    
                 }
                 if (parameters[index] == 'l')
                 {
                     index++;
-                    sqlParameters[index-1] = new MySqlParameter("@lastName", MySqlDbType.String);
-                    sqlParameters[index-1].Value = Convert.ToString(lastName);
+                    sqlParameters[index - 1] = new MySqlParameter("@lastName", MySqlDbType.VarChar);
+                    sqlParameters[index-1].Value = Convert.ToString(lastName + "%");
                 }
                 if (parameters[index] == 'd')
                 {
                     index++;
-                    sqlParameters[index-1] = new MySqlParameter("@date", MySqlDbType.Date);
+                    sqlParameters[index-1] = new MySqlParameter("@date", MySqlDbType.DateTime);
                     sqlParameters[index-1].Value = Convert.ToDateTime(dateOfBirth);
                 }
                 query = string.Format(query);
