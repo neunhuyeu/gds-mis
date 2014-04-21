@@ -107,10 +107,7 @@ namespace DMS_Service
         }
 
 
-        public void addPatient(Patient patient)
-        {
-            throw new NotImplementedException();
-        }
+        
     }
 
     /// <summary>
