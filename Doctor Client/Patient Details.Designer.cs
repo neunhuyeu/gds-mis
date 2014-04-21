@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PatientDetails));
             this.tabCurrentMedication = new System.Windows.Forms.TabPage();
+            this.printSelectedPersription = new System.Windows.Forms.Button();
             this.PerscriptionLb = new System.Windows.Forms.ListBox();
             this.tabPastAppointments = new System.Windows.Forms.TabPage();
             this.tabOverview = new System.Windows.Forms.TabPage();
@@ -54,7 +55,6 @@
             this.lbOverview = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.tabs = new System.Windows.Forms.TabControl();
-            this.button2 = new System.Windows.Forms.Button();
             this.tabCurrentMedication.SuspendLayout();
             this.tabOverview.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -64,7 +64,7 @@
             // 
             // tabCurrentMedication
             // 
-            this.tabCurrentMedication.Controls.Add(this.button2);
+            this.tabCurrentMedication.Controls.Add(this.printSelectedPersription);
             this.tabCurrentMedication.Controls.Add(this.PerscriptionLb);
             this.tabCurrentMedication.Location = new System.Drawing.Point(4, 25);
             this.tabCurrentMedication.Margin = new System.Windows.Forms.Padding(4);
@@ -74,6 +74,16 @@
             this.tabCurrentMedication.TabIndex = 2;
             this.tabCurrentMedication.Text = "Perscriptions";
             this.tabCurrentMedication.UseVisualStyleBackColor = true;
+            // 
+            // printSelectedPersription
+            // 
+            this.printSelectedPersription.Location = new System.Drawing.Point(20, 343);
+            this.printSelectedPersription.Name = "printSelectedPersription";
+            this.printSelectedPersription.Size = new System.Drawing.Size(140, 51);
+            this.printSelectedPersription.TabIndex = 2;
+            this.printSelectedPersription.Text = "Print";
+            this.printSelectedPersription.UseVisualStyleBackColor = true;
+            this.printSelectedPersription.Click += new System.EventHandler(this.button2_Click);
             // 
             // PerscriptionLb
             // 
@@ -349,16 +359,6 @@
             this.tabs.Size = new System.Drawing.Size(845, 430);
             this.tabs.TabIndex = 0;
             // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(20, 352);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 2;
-            this.button2.Text = "Print";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
-            // 
             // PatientDetails
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -409,7 +409,7 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.TabControl tabs;
         private System.Windows.Forms.ListBox PerscriptionLb;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button printSelectedPersription;
 
     }
 }

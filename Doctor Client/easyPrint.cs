@@ -37,10 +37,16 @@ public class easyPrint : System.Drawing.Printing.PrintDocument
     /// Constructor to initialize our printing object
     /// and the text it's supposed to be printing
     /// </summary>
-    /// <param name=str>Text that will be printed</param>
     /// <remarks></remarks>
-    public easyPrint(string str)
+    public easyPrint()
         : base()
+    {
+    }
+   /// <summary>
+   /// these method prints the string 
+   /// </summary>
+   /// <param name="str">Text that will be printed</param>
+    public void  PrintString(string str)
     {
 
         printDialog1 = new PrintDialog();
@@ -49,8 +55,8 @@ public class easyPrint : System.Drawing.Printing.PrintDocument
             //Set the file stream
             //Set our Text property value
             text = str;
-            this.Print();
         }
+        this.Print();
     }
 
     /// <summary>
@@ -154,7 +160,7 @@ public class easyPrint : System.Drawing.Printing.PrintDocument
     /// <param name=value>Value to check</param>
     /// <returns></returns>
     /// <remarks></remarks>
-    public int RemoveZeros(int value)
+    protected int RemoveZeros(int value)
     {
         //Check the value passed into the function,
         //if the value is a 0 (zero) then return a 1,

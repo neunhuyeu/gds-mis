@@ -103,7 +103,8 @@ namespace Doctor_Client
 
         private void button2_Click(object sender, EventArgs e)
         {
-            easyPrint PerscriptionPrint = new easyPrint("\tMedical prescription \n"+"the following drug is issued to:/n"+patient.FirstNamek__BackingField + " " + patient.LastNamek__BackingField +"\nname of medicine:" + perscription[PerscriptionLb.SelectedIndex].drug.ToString() + "\nDosage" + perscription[PerscriptionLb.SelectedIndex].dosage.ToString() + "\nDoctor: ___________________________________ " + perscription[PerscriptionLb.SelectedIndex].doctor.ToString());
+            easyPrint PerscriptionPrint = new easyPrint();
+            PerscriptionPrint.PrintString("\tMedical prescription \n" + "the following drug is issued to:/n" + patient.FirstNamek__BackingField + " " + patient.LastNamek__BackingField + "\nname of medicine:" + perscription[PerscriptionLb.SelectedIndex].drug.ToString() + "\nDosage" + perscription[PerscriptionLb.SelectedIndex].dosage.ToString() + "\nDoctor: ___________________________________ " + perscription[PerscriptionLb.SelectedIndex].doctor.ToString());
         }
     }
 }
