@@ -55,7 +55,7 @@ namespace Doctor_Client
             }
             else
             {
-                insurancenr = Convert.ToInt32(tbInsuranceSearch.Text);
+insurancenr = Convert.ToInt32(tbInsuranceSearch.Text);
             }
             return insurancenr;
         }

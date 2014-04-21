@@ -1,27 +1,27 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 using System.Data;
-using System.Configuration;
-using System.Security;
+using System.Threading.Tasks;
 using MySql.Data.MySqlClient;
 
-namespace DMS_Service
-{   
-    public class DbConnection
+namespace DMS_Service.database_connection
+{
+    public class db_connection
     {
         //full connection string
         private string db_connection_string = "";
         
         //constructor
-        public DbConnection()
+        public db_connection(string database_name)
         {
-            if (db_connection_string.Equals("")) set_connection_values();
+            set_connection_values(database_name);
         }
 
         //set the connections string values
-        public string set_connection_values(string server_ip = "localhost", string server_port = "3306", string db_name = "gds_mis", string user_id = "root", string user_passw = "")
-        {http://localhost/phpmyadmin/server_sql.php?db=&table=&server=1&target=&token=9fb50d553b467d4f6810cfc230146ce5#
+        public string set_connection_values(string db_name, string server_ip = "localhost", string server_port = "3306", string user_id = "root", string user_passw = "")
+        {
             //Database full connection string
             db_connection_string =   " SERVER=" + server_ip + ";" +
                                             " PORT=" + server_port + ";" +
@@ -141,6 +141,8 @@ namespace DMS_Service
 
         public bool UpdateQuery(String query, MySqlParameter[] sqlParameter)
         {
+            DataSet dt_set = new DataSet();
+            DataTable dt_table = new DataTable();
             try
             {
                 using (MySqlConnection con = new MySqlConnection(db_connection_string))
@@ -155,7 +157,9 @@ namespace DMS_Service
 
                         using (MySqlDataAdapter dt_adapter = new MySqlDataAdapter())
                         {
-                            dt_adapter.UpdateCommand = cmd;
+                            dt_adapter.SelectCommand = cmd;
+                            dt_adapter.Fill(dt_set);
+                            dt_table = dt_set.Tables[0];
                         }
 
                         cmd.ExecuteNonQuery();

@@ -54,7 +54,6 @@
     <Compile Include="Appointment.cs" />
     <Compile Include="BusinessLayer.cs" />
     <Compile Include="DbAccessLayer.cs" />
-    <Compile Include="DbConnection.cs" />
     <Compile Include="IDoctor.cs" />
     <Compile Include="ISynchronise.cs" />
     <Compile Include="Patient.cs" />
@@ -68,9 +67,9 @@
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
     <Compile Include="Staff.cs" />
-    <Compile Include="user_auth\user_auth_access.cs" />
-    <Compile Include="user_auth\user_auth_business.cs" />
-    <Compile Include="user_auth\user_auth_db_connection.cs" />
+    <Compile Include="user_authentication\user_auth_access.cs" />
+    <Compile Include="user_authentication\user_auth_business.cs" />
+    <Compile Include="database_connection\db_connection.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config">
@@ -107,9 +106,7 @@
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="State\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
     <VSToolsPath Condition="'$(VSToolsPath)' == '' and '$(VisualStudioVersion)' != '' and '$(VisualStudioVersion)' != '11.0'">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

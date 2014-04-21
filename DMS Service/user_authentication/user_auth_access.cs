@@ -6,16 +6,17 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Configuration;
 using MySql.Data.MySqlClient;
+using DMS_Service.database_connection;
 
 namespace DMS_Service.user_auth
 {
     class user_auth_access
     {
-        private user_auth_db_connection db_connection;
+        private db_connection db_con;
 
         public user_auth_access()
         {
-            db_connection = new user_auth_db_connection();
+            db_con = new db_connection("gds_mis_auth");
         }
 
         public DataTable user_login(string email, string passw)
@@ -30,12 +31,7 @@ namespace DMS_Service.user_auth
             query_parameters[0].Value = Convert.ToString(passw);
             query_parameters[1] = new MySqlParameter("@email", MySqlDbType.VarChar);
             query_parameters[1].Value = Convert.ToString(email);
-            return db_connection.SelectQuery(query,query_parameters);
+            return db_con.SelectQuery(query, query_parameters);
         }
-
-        //public DataTable get_users(string name, string passw)
-        //{
-            
-        //}
     }
 }

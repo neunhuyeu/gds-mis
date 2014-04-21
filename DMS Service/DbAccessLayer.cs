@@ -6,16 +6,17 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Configuration;
 using MySql.Data.MySqlClient;
+using DMS_Service.database_connection;
 
 namespace DMS_Service
 {
     public class DbAccessLayer
     {
-        DbConnection dbConnection;
+        private db_connection dbConnection;
 
         public DbAccessLayer()
         {
-            dbConnection = new DbConnection();
+            dbConnection = new db_connection("gds_mis");
         }
         
         public DataTable SearchPatient_lastName_dateOfBirth(string lastName, string dateOfBirth)
@@ -47,81 +48,72 @@ namespace DMS_Service
         public DataTable SearchPatientsList(string firstName, string lastName, DateTime dateOfBirth)
         {
 
-            
-       
-                
-                string parameters="";
+            string parameters="";
             string query = "Select * from person per, patients pt where per.person_id = pt.person_id";
             if(firstName.Length>0)
             {
                 query+=" AND per.first_name = '@firstName'";
-             
                 parameters += "f";
                 
             }
-              if(lastName.Length>0)
+            if(lastName.Length>0)
             {
-                  
                 query+=" AND per.last_name = '@lastName'";
-              
                 parameters += "l";
-               
             }
-             if(dateOfBirth.GetDateTimeFormats('d')[0]!=DateTime.Now.GetDateTimeFormats('d')[0])
+            if(dateOfBirth.GetDateTimeFormats('d')[0]!=DateTime.Now.GetDateTimeFormats('d')[0])
             {
-                  
                 query+=" per.date_of_birth = @date";
-
                 parameters += "d";
-               
             }
-             MySqlParameter[] sqlParameters= null;
-             if (parameters.Length > 0)
-             {
-                 int index = 0;
+
+            MySqlParameter[] sqlParameters= null;
+            if (parameters.Length > 0)
+            {
+                int index = 0;
                 
-                 sqlParameters = new MySqlParameter[parameters.Length];
+                sqlParameters = new MySqlParameter[parameters.Length];
                 parameters= parameters.PadRight(3, '#');
 
-                 if (parameters[index] == 'f')
-                 {
-                     index++;
-                     sqlParameters[index-1] = new MySqlParameter("@firstName", MySqlDbType.String);
-                     sqlParameters[index-1].Value = Convert.ToString(firstName);
-                     
-                 }
-                 if (parameters[index] == 'l')
-                 {
-                     index++;
-                     sqlParameters[index-1] = new MySqlParameter("@lastName", MySqlDbType.String);
-                     sqlParameters[index-1].Value = Convert.ToString(lastName);
-
-                 }
-                 if (parameters[index] == 'd')
-                 {
-                     index++;
-                     sqlParameters[index-1] = new MySqlParameter("@date", MySqlDbType.Date);
-                     sqlParameters[index-1].Value = Convert.ToDateTime(dateOfBirth);
-                 }
-                 query = string.Format(query);
-
-
-
-                 return dbConnection.SelectQuery(query, sqlParameters);
+                if (parameters[index] == 'f')
+                {
+                    index++;
+                    sqlParameters[index-1] = new MySqlParameter("@firstName", MySqlDbType.String);
+                    sqlParameters[index - 1].Value = Convert.ToString(firstName);    
+                }
+                if (parameters[index] == 'l')
+                {
+                    index++;
+                    sqlParameters[index-1] = new MySqlParameter("@lastName", MySqlDbType.String);
+                    sqlParameters[index-1].Value = Convert.ToString(lastName);
+                }
+                if (parameters[index] == 'd')
+                {
+                    index++;
+                    sqlParameters[index-1] = new MySqlParameter("@date", MySqlDbType.Date);
+                    sqlParameters[index-1].Value = Convert.ToDateTime(dateOfBirth);
+                }
+                query = string.Format(query);
+                 
+                return dbConnection.SelectQuery(query, sqlParameters);
              }
              return dbConnection.SelectQuery(query);
-
         }
+
+
         public DataTable SearchprescriptionListByID(int id)
         {
             MySqlParameter[] sqlParameters = new MySqlParameter[1];
-            sqlParameters[0] = new MySqlParameter("@PrescId", MySqlDbType.String);
+            sqlParameters[0] = new MySqlParameter("@pt_id", MySqlDbType.String);
             sqlParameters[0].Value = Convert.ToString(id);
-            string query = string.Format("SELECT medicine FROM prescribtion pre JOIN consultations con ON pre.consultation_id =con.consultation_id WHERE patient_id= 9");
+            string query = string.Format("SELECT medicine " + 
+                                         "FROM prescribtion pre " +
+                                         "JOIN consultations con " +
+                                         "ON pre.consultation_id = con.consultation_id " + 
+                                         "WHERE con.patient_id = (select patient_id from patients where person_id = @pt_id)");
              return dbConnection.SelectQuery(query, sqlParameters);
-        
         }
-        //Kirolos
+        
         public DataTable SearchStaffById(int id)
         {
             string query = "SELECT * FROM Staff_members WHERE person_id = @id";
