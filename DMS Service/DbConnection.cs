@@ -21,7 +21,7 @@ namespace DMS_Service
 
         //set the connections string values
         public string set_connection_values(string server_ip = "localhost", string server_port = "3306", string db_name = "gds_mis", string user_id = "root", string user_passw = "")
-        {
+        {http://localhost/phpmyadmin/server_sql.php?db=&table=&server=1&target=&token=9fb50d553b467d4f6810cfc230146ce5#
             //Database full connection string
             db_connection_string =   " SERVER=" + server_ip + ";" +
                                             " PORT=" + server_port + ";" +

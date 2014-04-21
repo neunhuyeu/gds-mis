@@ -127,7 +127,7 @@ namespace DMS_Service
         {
 
 
-            Patient patient = this.GetPatientOverview(patientID);
+            //Patient patient = this.GetPatientOverview(patientID);
             Perscription prescription = new Perscription();
             List<Perscription> prescriptionlist = new List<Perscription>();
             DataTable dataTable = new DataTable();
@@ -136,9 +136,9 @@ namespace DMS_Service
             foreach (DataRow row in dataTable.Rows)
             {
                 prescription.Drug = row["medicine"].ToString();
-                prescription.Dosage = Convert.ToInt32(row["strength_mg"]);
-                prescription.Doctor = row["doctor"].ToString();
-                prescription.Date = Convert.ToDateTime(row["date_prescribed"]);
+                //prescription.Dosage = Convert.ToInt32(row["strength_mg"]);
+                //prescription.Doctor = row["doctor"].ToString();
+               // prescription.Date = Convert.ToDateTime(row["date_prescribed"]);
 
                 prescriptionlist.Add(prescription);
             }
@@ -312,5 +312,6 @@ namespace DMS_Service
             }
             
         }
+        
     }
 }

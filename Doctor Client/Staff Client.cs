@@ -21,6 +21,7 @@ namespace Doctor_Client
             InitializeComponent();
             currentUser = user;
             userNamelb.Text =  " Welcome: "+user.FirstNamek__BackingField + " "+user.LastNamek__BackingField;
+            DOBSearch.Value = DateTime.Now.Date;
             
         
         }
@@ -36,7 +37,7 @@ namespace Doctor_Client
                 {
                     foreach (Patient patient in potentualPatients)
                     {
-                        searchListLB.Items.Add(String.Format("{0,-11}  {1,-11}   {2,8} {0,25}", patient.FirstNamek__BackingField, patient.LastNamek__BackingField, patient.DateOfBirthk__BackingField, patient.InsuranceNumberk__BackingField));
+                        searchListLB.Items.Add(String.Format("{0,-11}  {1,-11}   {2,8} {0,25}", patient.FirstNamek__BackingField, patient.LastNamek__BackingField, patient.DateOfBirthk__BackingField.GetDateTimeFormats('d')[1], patient.InsuranceNumberk__BackingField));
 
                     }
                 }

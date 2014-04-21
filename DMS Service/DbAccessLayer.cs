@@ -54,7 +54,7 @@ namespace DMS_Service
             string query = "Select * from person per, patients pt where per.person_id = pt.person_id";
             if(firstName.Length>0)
             {
-                query+=" AND per.first_name Like '@firstName%'";
+                query+=" AND per.first_name = '@firstName'";
              
                 parameters += "f";
                 
@@ -62,7 +62,7 @@ namespace DMS_Service
               if(lastName.Length>0)
             {
                   
-                query+=" AND per.last_name LIKE '@lastName%'";
+                query+=" AND per.last_name = '@lastName'";
               
                 parameters += "l";
                
@@ -70,7 +70,7 @@ namespace DMS_Service
              if(dateOfBirth.GetDateTimeFormats('d')[0]!=DateTime.Now.GetDateTimeFormats('d')[0])
             {
                   
-                query+=" per.date_of_birth LIKE '@date'";
+                query+=" per.date_of_birth = @date";
 
                 parameters += "d";
                
@@ -117,7 +117,7 @@ namespace DMS_Service
             MySqlParameter[] sqlParameters = new MySqlParameter[1];
             sqlParameters[0] = new MySqlParameter("@PrescId", MySqlDbType.String);
             sqlParameters[0].Value = Convert.ToString(id);
-             string query = string.Format("SELECT * FROM prescribtion WHERE prescribtion_id = @PrescId");
+            string query = string.Format("SELECT medicine FROM prescribtion pre JOIN consultations con ON pre.consultation_id =con.consultation_id WHERE patient_id= 9");
              return dbConnection.SelectQuery(query, sqlParameters);
         
         }

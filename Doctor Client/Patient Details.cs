@@ -103,8 +103,16 @@ namespace Doctor_Client
 
         private void button2_Click(object sender, EventArgs e)
         {
-            easyPrint PerscriptionPrint = new easyPrint();
-            PerscriptionPrint.PrintString("\tMedical prescription \n" + "the following drug is issued to:/n" + patient.FirstNamek__BackingField + " " + patient.LastNamek__BackingField + "\nname of medicine:" + perscription[PerscriptionLb.SelectedIndex].drug.ToString() + "\nDosage" + perscription[PerscriptionLb.SelectedIndex].dosage.ToString() + "\nDoctor: ___________________________________ " + perscription[PerscriptionLb.SelectedIndex].doctor.ToString());
-        }
+            if (PerscriptionLb.SelectedIndex!=-1)
+            {
+                easyPrint PerscriptionPrint = new easyPrint();
+                PerscriptionPrint.PrintString("\tMedical prescription \n" + "the following drug is issued to:/n" + patient.FirstNamek__BackingField + " " + patient.LastNamek__BackingField + "\nname of medicine:" + perscription[PerscriptionLb.SelectedIndex].drug.ToString() + "\nDosage" + perscription[PerscriptionLb.SelectedIndex].dosage.ToString() + "\nDoctor: ___________________________________ " + perscription[PerscriptionLb.SelectedIndex].doctor.ToString());
+            }
+            else
+            {
+                MessageBox.Show("No Prescription selected to print", "Print Error", MessageBoxButtons.OK);
+
+            }
+            }
     }
 }

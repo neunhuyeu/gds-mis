@@ -159,12 +159,15 @@
             // 
             // DOBSearch
             // 
+            this.DOBSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 7F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DOBSearch.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.DOBSearch.Location = new System.Drawing.Point(148, 74);
             this.DOBSearch.Name = "DOBSearch";
-            this.DOBSearch.Size = new System.Drawing.Size(137, 22);
+            this.DOBSearch.Size = new System.Drawing.Size(132, 21);
             this.DOBSearch.TabIndex = 11;
-            this.DOBSearch.Value = new System.DateTime(2014, 4, 15, 16, 19, 9, 0);
+            this.DOBSearch.Value = new System.DateTime(2013, 1, 28, 0, 0, 0, 0);
             this.DOBSearch.KeyUp += new System.Windows.Forms.KeyEventHandler(this.tbSearchFirstName_KeyUp);
+            this.DOBSearch.MouseLeave += new System.EventHandler(this.btn_searchPatients_Click);
             // 
             // btn_searchPatients
             // 
