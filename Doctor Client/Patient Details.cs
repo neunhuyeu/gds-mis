@@ -16,7 +16,7 @@ namespace Doctor_Client
       Patient patient;
       DoctorClient proxy;
       Perscription[] perscription;
-      int[] consultationsIDs;
+      List<Int32> consultationsIDs;
       Staff CurrentUser;
       Consultation currentConsultation;
       bool newConsultation;
@@ -35,12 +35,28 @@ namespace Doctor_Client
             tbPatientDetailsOverviewEMail.Text = patient.Emailk__BackingField;
             tbPatientDetailsOverviewMPhone.Text = patient.MobileNumberk__BackingField.ToString();
             tbPatientDetailsOverviewPhone.Text = patient.LandLineNumberk__BackingField.ToString();
+            //Diagnosis
+               foreach (Diagnosis item in    proxy.getDiagnosisHistoryByPersionID(patient.PatientIDk__BackingField))
+            {
+                
+                DiagnosisHistory.Items.Add("Diagnosis" + item.diagnosis + "upon symptoms" + item.symptoms);
+	        }
+          
+
             //current Consultation
             currentConsultation.start_date = DateTime.Now;
             currentConsultation.patient_id = patient.PatientIDk__BackingField;
             currentConsultation.consultationID = proxy.getnextConsultationID();
             currentConsultation.staff_id = currentUser.StaffIDk__BackingField;
-            newConsultation = true;
+            newConsultation = false;
+            consultationsIDs = new List<int>();
+            foreach (Consultation item in proxy.getConsultationHistorybyPatient(currentConsultation.patient_id))
+            {
+                consultationsIDs.Add(item.consultationID);
+
+                comboBox1.Items.Add(item.start_date.GetDateTimeFormats('D')[0]);
+
+            }
                 //percriptions
             perscription = proxy.getPatientPerscriptions(patient.PersonIdk__BackingField);
             foreach (ServerConnection.Perscription persrip in perscription )

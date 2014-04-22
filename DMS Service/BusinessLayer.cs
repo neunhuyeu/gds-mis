@@ -224,10 +224,44 @@ namespace DMS_Service
             DataTable dt= dbAcess.getLatestConsultationID();
             return Convert.ToInt32( dt.Rows[0])+1;
         }
-       public List<Consultation> getConsultationHistory()
+       public List<Consultation> getConsultationHistorybyPatient(int Patientid)
        {
-           return null;
+           List<Consultation> myconsultions= new List<Consultation>();
+           DataTable dataTable = dbAcess.SearchconsultionHistoryByPersionID(Patientid);
+
+           foreach (DataRow row in dataTable.Rows)
+           {
+               Consultation consultation = new Consultation();
+
+               consultation.Start_date =Convert.ToDateTime( row["start_date"]);
+               consultation.ConsultationID = Convert.ToInt32(row["consultation_id"]);
+
+               myconsultions.Add(consultation);
+           }
+           return myconsultions;
        }
+       public List<Diagnosis> getDiagnosisHistoryByPersionID(int Patientid)
+       {
+           List<Diagnosis> myDiagnosis = new List<Diagnosis>();
+           DataTable dataTable = dbAcess.SearchDiagnosisHistoryByPersionID(Patientid);
+           foreach (DataRow row in dataTable.Rows)
+           {
+               Diagnosis diagnosis = new Diagnosis();
+              
+               diagnosis.Consultation_id = Convert.ToInt32(row["consultation_id"]);
+               diagnosis.Diagnosises = row["diagnosis"].ToString();
+
+               diagnosis.Symptoms = row["symptoms"].ToString();
+               diagnosis.Diagnosis_id = Convert.ToInt32(row["diagnosis_id"]);
+               
+
+
+               myDiagnosis.Add(diagnosis);
+           }
+           return myDiagnosis;
+
+       }
+
         public void addTestPatient()
         {
             

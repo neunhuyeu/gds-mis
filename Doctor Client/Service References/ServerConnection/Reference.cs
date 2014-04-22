@@ -527,6 +527,98 @@ namespace Doctor_Client.ServerConnection {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="Diagnosis", Namespace="http://schemas.datacontract.org/2004/07/DMS_Service")]
+    [System.SerializableAttribute()]
+    public partial struct Diagnosis : System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int consultation_idField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string diagnosisField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int diagnosis_idField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string symptomsField;
+        
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int consultation_id {
+            get {
+                return this.consultation_idField;
+            }
+            set {
+                if ((this.consultation_idField.Equals(value) != true)) {
+                    this.consultation_idField = value;
+                    this.RaisePropertyChanged("consultation_id");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string diagnosis {
+            get {
+                return this.diagnosisField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.diagnosisField, value) != true)) {
+                    this.diagnosisField = value;
+                    this.RaisePropertyChanged("diagnosis");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int diagnosis_id {
+            get {
+                return this.diagnosis_idField;
+            }
+            set {
+                if ((this.diagnosis_idField.Equals(value) != true)) {
+                    this.diagnosis_idField = value;
+                    this.RaisePropertyChanged("diagnosis_id");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string symptoms {
+            get {
+                return this.symptomsField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.symptomsField, value) != true)) {
+                    this.symptomsField = value;
+                    this.RaisePropertyChanged("symptoms");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="Appointment", Namespace="http://schemas.datacontract.org/2004/07/DMS_Service")]
     [System.SerializableAttribute()]
     public partial struct Appointment : System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
@@ -853,11 +945,17 @@ namespace Doctor_Client.ServerConnection {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IDoctor/getnextConsultationID", ReplyAction="http://tempuri.org/IDoctor/getnextConsultationIDResponse")]
         System.Threading.Tasks.Task<int> getnextConsultationIDAsync();
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IDoctor/getConsultationHistory", ReplyAction="http://tempuri.org/IDoctor/getConsultationHistoryResponse")]
-        Doctor_Client.ServerConnection.Consultation[] getConsultationHistory();
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IDoctor/getConsultationHistorybyPatient", ReplyAction="http://tempuri.org/IDoctor/getConsultationHistorybyPatientResponse")]
+        Doctor_Client.ServerConnection.Consultation[] getConsultationHistorybyPatient(int Patientid);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IDoctor/getConsultationHistory", ReplyAction="http://tempuri.org/IDoctor/getConsultationHistoryResponse")]
-        System.Threading.Tasks.Task<Doctor_Client.ServerConnection.Consultation[]> getConsultationHistoryAsync();
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IDoctor/getConsultationHistorybyPatient", ReplyAction="http://tempuri.org/IDoctor/getConsultationHistorybyPatientResponse")]
+        System.Threading.Tasks.Task<Doctor_Client.ServerConnection.Consultation[]> getConsultationHistorybyPatientAsync(int Patientid);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IDoctor/getDiagnosisHistoryByPersionID", ReplyAction="http://tempuri.org/IDoctor/getDiagnosisHistoryByPersionIDResponse")]
+        Doctor_Client.ServerConnection.Diagnosis[] getDiagnosisHistoryByPersionID(int Patientid);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IDoctor/getDiagnosisHistoryByPersionID", ReplyAction="http://tempuri.org/IDoctor/getDiagnosisHistoryByPersionIDResponse")]
+        System.Threading.Tasks.Task<Doctor_Client.ServerConnection.Diagnosis[]> getDiagnosisHistoryByPersionIDAsync(int Patientid);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IDoctor/Login", ReplyAction="http://tempuri.org/IDoctor/LoginResponse")]
         Doctor_Client.ServerConnection.Staff Login(string Email, string Passward);
@@ -981,12 +1079,20 @@ namespace Doctor_Client.ServerConnection {
             return base.Channel.getnextConsultationIDAsync();
         }
         
-        public Doctor_Client.ServerConnection.Consultation[] getConsultationHistory() {
-            return base.Channel.getConsultationHistory();
+        public Doctor_Client.ServerConnection.Consultation[] getConsultationHistorybyPatient(int Patientid) {
+            return base.Channel.getConsultationHistorybyPatient(Patientid);
         }
         
-        public System.Threading.Tasks.Task<Doctor_Client.ServerConnection.Consultation[]> getConsultationHistoryAsync() {
-            return base.Channel.getConsultationHistoryAsync();
+        public System.Threading.Tasks.Task<Doctor_Client.ServerConnection.Consultation[]> getConsultationHistorybyPatientAsync(int Patientid) {
+            return base.Channel.getConsultationHistorybyPatientAsync(Patientid);
+        }
+        
+        public Doctor_Client.ServerConnection.Diagnosis[] getDiagnosisHistoryByPersionID(int Patientid) {
+            return base.Channel.getDiagnosisHistoryByPersionID(Patientid);
+        }
+        
+        public System.Threading.Tasks.Task<Doctor_Client.ServerConnection.Diagnosis[]> getDiagnosisHistoryByPersionIDAsync(int Patientid) {
+            return base.Channel.getDiagnosisHistoryByPersionIDAsync(Patientid);
         }
         
         public Doctor_Client.ServerConnection.Staff Login(string Email, string Passward) {

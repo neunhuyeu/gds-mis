@@ -55,6 +55,7 @@
     <Compile Include="BusinessLayer.cs" />
     <Compile Include="Consultation.cs" />
     <Compile Include="DbAccessLayer.cs" />
+    <Compile Include="Diagnosis.cs" />
     <Compile Include="IDoctor.cs" />
     <Compile Include="ISynchronise.cs" />
     <Compile Include="Patient.cs" />

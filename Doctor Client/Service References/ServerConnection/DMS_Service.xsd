@@ -56,6 +56,26 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="Consultation" nillable="true" type="tns:Consultation" />
+  <xs:complexType name="ArrayOfDiagnosis">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Diagnosis" type="tns:Diagnosis" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfDiagnosis" nillable="true" type="tns:ArrayOfDiagnosis" />
+  <xs:complexType name="Diagnosis">
+    <xs:annotation>
+      <xs:appinfo>
+        <IsValueType xmlns="http://schemas.microsoft.com/2003/10/Serialization/">true</IsValueType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" name="consultation_id" type="xs:int" />
+      <xs:element minOccurs="0" name="diagnosis" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="diagnosis_id" type="xs:int" />
+      <xs:element minOccurs="0" name="symptoms" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Diagnosis" nillable="true" type="tns:Diagnosis" />
   <xs:complexType name="Staff">
     <xs:complexContent mixed="false">
       <xs:extension base="tns:Person">

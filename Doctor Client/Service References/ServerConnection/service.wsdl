@@ -20,11 +20,17 @@
   <wsdl:message name="IDoctor_getnextConsultationID_OutputMessage">
     <wsdl:part name="parameters" element="tns:getnextConsultationIDResponse" />
   </wsdl:message>
-  <wsdl:message name="IDoctor_getConsultationHistory_InputMessage">
-    <wsdl:part name="parameters" element="tns:getConsultationHistory" />
+  <wsdl:message name="IDoctor_getConsultationHistorybyPatient_InputMessage">
+    <wsdl:part name="parameters" element="tns:getConsultationHistorybyPatient" />
   </wsdl:message>
-  <wsdl:message name="IDoctor_getConsultationHistory_OutputMessage">
-    <wsdl:part name="parameters" element="tns:getConsultationHistoryResponse" />
+  <wsdl:message name="IDoctor_getConsultationHistorybyPatient_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getConsultationHistorybyPatientResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDoctor_getDiagnosisHistoryByPersionID_InputMessage">
+    <wsdl:part name="parameters" element="tns:getDiagnosisHistoryByPersionID" />
+  </wsdl:message>
+  <wsdl:message name="IDoctor_getDiagnosisHistoryByPersionID_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getDiagnosisHistoryByPersionIDResponse" />
   </wsdl:message>
   <wsdl:message name="IDoctor_Login_InputMessage">
     <wsdl:part name="parameters" element="tns:Login" />
@@ -113,9 +119,13 @@
       <wsdl:input wsaw:Action="http://tempuri.org/IDoctor/getnextConsultationID" message="tns:IDoctor_getnextConsultationID_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IDoctor/getnextConsultationIDResponse" message="tns:IDoctor_getnextConsultationID_OutputMessage" />
     </wsdl:operation>
-    <wsdl:operation name="getConsultationHistory">
-      <wsdl:input wsaw:Action="http://tempuri.org/IDoctor/getConsultationHistory" message="tns:IDoctor_getConsultationHistory_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IDoctor/getConsultationHistoryResponse" message="tns:IDoctor_getConsultationHistory_OutputMessage" />
+    <wsdl:operation name="getConsultationHistorybyPatient">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDoctor/getConsultationHistorybyPatient" message="tns:IDoctor_getConsultationHistorybyPatient_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDoctor/getConsultationHistorybyPatientResponse" message="tns:IDoctor_getConsultationHistorybyPatient_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getDiagnosisHistoryByPersionID">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDoctor/getDiagnosisHistoryByPersionID" message="tns:IDoctor_getDiagnosisHistoryByPersionID_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDoctor/getDiagnosisHistoryByPersionIDResponse" message="tns:IDoctor_getDiagnosisHistoryByPersionID_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="Login">
       <wsdl:input wsaw:Action="http://tempuri.org/IDoctor/Login" message="tns:IDoctor_Login_InputMessage" />
@@ -190,8 +200,17 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="getConsultationHistory">
-      <soap:operation soapAction="http://tempuri.org/IDoctor/getConsultationHistory" style="document" />
+    <wsdl:operation name="getConsultationHistorybyPatient">
+      <soap:operation soapAction="http://tempuri.org/IDoctor/getConsultationHistorybyPatient" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getDiagnosisHistoryByPersionID">
+      <soap:operation soapAction="http://tempuri.org/IDoctor/getDiagnosisHistoryByPersionID" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

@@ -69,12 +69,15 @@
             this.lbOverview = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.tabs = new System.Windows.Forms.TabControl();
+            this.consultationsTap = new System.Windows.Forms.TabPage();
+            this.DiagnosisHistory = new System.Windows.Forms.ListBox();
             this.tabCurrentMedication.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.tabOverview.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.tabs.SuspendLayout();
+            this.consultationsTap.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabCurrentMedication
@@ -123,6 +126,7 @@
             // 
             // comboBox1
             // 
+            this.comboBox1.Enabled = false;
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Location = new System.Drawing.Point(715, 86);
             this.comboBox1.Name = "comboBox1";
@@ -154,7 +158,7 @@
             // rbCurrent
             // 
             this.rbCurrent.AutoSize = true;
-            this.rbCurrent.Location = new System.Drawing.Point(3, 16);
+            this.rbCurrent.Location = new System.Drawing.Point(0, 16);
             this.rbCurrent.Name = "rbCurrent";
             this.rbCurrent.Size = new System.Drawing.Size(182, 21);
             this.rbCurrent.TabIndex = 0;
@@ -503,12 +507,33 @@
             this.tabs.Controls.Add(this.tabOverview);
             this.tabs.Controls.Add(this.tabPastAppointments);
             this.tabs.Controls.Add(this.tabCurrentMedication);
+            this.tabs.Controls.Add(this.consultationsTap);
             this.tabs.Location = new System.Drawing.Point(13, 13);
             this.tabs.Margin = new System.Windows.Forms.Padding(4);
             this.tabs.Name = "tabs";
             this.tabs.SelectedIndex = 0;
-            this.tabs.Size = new System.Drawing.Size(845, 430);
+            this.tabs.Size = new System.Drawing.Size(845, 370);
             this.tabs.TabIndex = 0;
+            // 
+            // consultationsTap
+            // 
+            this.consultationsTap.Controls.Add(this.DiagnosisHistory);
+            this.consultationsTap.Location = new System.Drawing.Point(4, 25);
+            this.consultationsTap.Name = "consultationsTap";
+            this.consultationsTap.Padding = new System.Windows.Forms.Padding(3);
+            this.consultationsTap.Size = new System.Drawing.Size(837, 341);
+            this.consultationsTap.TabIndex = 3;
+            this.consultationsTap.Text = "Consultations";
+            this.consultationsTap.UseVisualStyleBackColor = true;
+            // 
+            // DiagnosisHistory
+            // 
+            this.DiagnosisHistory.FormattingEnabled = true;
+            this.DiagnosisHistory.ItemHeight = 16;
+            this.DiagnosisHistory.Location = new System.Drawing.Point(23, 18);
+            this.DiagnosisHistory.Name = "DiagnosisHistory";
+            this.DiagnosisHistory.Size = new System.Drawing.Size(777, 292);
+            this.DiagnosisHistory.TabIndex = 0;
             // 
             // PatientDetails
             // 
@@ -532,6 +557,7 @@
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.tabs.ResumeLayout(false);
+            this.consultationsTap.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -578,6 +604,8 @@
         private System.Windows.Forms.TextBox tbMedicine;
         private System.Windows.Forms.Label lbMedicne;
         private System.Windows.Forms.Button btAddPrescription;
+        private System.Windows.Forms.TabPage consultationsTap;
+        private System.Windows.Forms.ListBox DiagnosisHistory;
 
     }
 }

@@ -16,7 +16,9 @@ namespace DMS_Service
         [OperationContract]
         int getnextConsultationID();
         [OperationContract]
-        List<Consultation>getConsultationHistory();
+        List<Consultation> getConsultationHistorybyPatient(int Patientid);
+         [OperationContract]
+        List<Diagnosis> getDiagnosisHistoryByPersionID(int Patientid);
         [OperationContract]
         Staff Login(string Email, string Passward );
 
