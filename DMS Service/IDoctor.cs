@@ -13,13 +13,19 @@ namespace DMS_Service
     {
         [OperationContract]
         Patient GetPatient_by_lastName_DateOfBirth(string lastName, string dateOfBirth);
-
+        [OperationContract]
+        int getnextConsultationID();
+        [OperationContract]
+        List<Consultation>getConsultationHistory();
         [OperationContract]
         Staff Login(string Email, string Passward );
 
         [OperationContract]
         Patient GetPatientOverview(int personID);
-
+        [OperationContract]
+        bool updateConsultion_End_Date(Consultation currentConultion);
+        [OperationContract]
+        bool addConsultion(Consultation currentConsultation);
         [OperationContract]
         Staff GetStaff_by_id(int id);
 
@@ -37,7 +43,8 @@ namespace DMS_Service
 
         [OperationContract]
         string setPerscription(int appointmentID, Perscription perscription);
-
+        [OperationContract]
+         bool addPerscription(int appointmentID, Perscription perscription);
         //Methods for testing Synchronization
         [OperationContract]
         void addTestPatient();

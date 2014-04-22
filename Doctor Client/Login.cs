@@ -44,16 +44,17 @@ namespace Doctor_Client
                 string  Email = tbEmail.Text;
                 string Password = tbPassword.Text;
                     ServerConnection.Staff currentUser;
-                if ((currentUser = proxy.Login(Email, Password)).FirstNamek__BackingField!= null)
-                  {
-                      Client doctorform = new Client(currentUser);
-                      this.Visible = false;
-                      doctorform.ShowDialog();
-                      this.Visible = true;
-                  }
-                  else {
-                LoginErrorlb.Text = "Error: login were unsucessfull";
-                 }
+                    if ((currentUser = proxy.Login(Email, Password)).FirstNamek__BackingField != null)
+                    {
+                        Client doctorform = new Client(currentUser);
+                        this.Visible = false;
+                        doctorform.ShowDialog();
+                        this.Visible = true;
+                    }
+                    else
+                    {
+                        LoginErrorlb.Text = "Error: login were unsucessfull";
+                    }
 
             }
             else

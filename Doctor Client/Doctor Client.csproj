@@ -124,6 +124,9 @@
     <None Include="Service References\ServerConnection\Doctor_Client.ServerConnection.Appointment.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
+    <None Include="Service References\ServerConnection\Doctor_Client.ServerConnection.Consultation.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Service References\ServerConnection\Doctor_Client.ServerConnection.Patient.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>

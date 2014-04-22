@@ -237,7 +237,112 @@ namespace DMS_Service
 
             return;
         }
+        public bool addPrescrption(Perscription perscription, int consultationId)
+        {
+            //query
+            string query = "INSERT INTO prescription(medicine, amount_pills, amount_ml, staff_id,consultation_id)" +
+                           "VALUES (@medicine, @amount_pills, @amount_ml, @staff_id,@consultation_id)";
 
+            //parameters
+            MySqlParameter[] sqlParameters = new MySqlParameter[5];
+            sqlParameters[0] = new MySqlParameter("@medicine", MySqlDbType.VarChar);
+            sqlParameters[0].Value = Convert.ToString(perscription.Medicine);
+            sqlParameters[1] = new MySqlParameter("@amount_pills", MySqlDbType.Int32);
+            sqlParameters[1].Value = Convert.ToString(perscription.Amount_pills);
+            sqlParameters[2] = new MySqlParameter("@amount_ml", MySqlDbType.Int32);
+            sqlParameters[2].Value = Convert.ToString(perscription.Amount_ml);
+            sqlParameters[3] = new MySqlParameter("@staff_id", MySqlDbType.Int32);
+            sqlParameters[3].Value = Convert.ToString(perscription.DoctorId);
+            sqlParameters[4] = new MySqlParameter("@consultation_id", MySqlDbType.Int32);
+            sqlParameters[4].Value = Convert.ToString(consultationId);
+            try
+            {
+                //execute query on appointment table
+                dbConnection.InsertQuery(query, sqlParameters);
+                return true;
+            }
+            catch
+            {
+
+                return false;
+            }
+        }
+        public DataTable getLatestConsultationID()
+        {
+            try
+            {
+                string query = "SELECT MAX(consultation_id) FROM consultations;";
+                
+                
+                return dbConnection.SelectQuery(query);
+                
+            }
+            catch
+            {
+                return null;
+            }
         
+        }
+       public bool updateConsultionEnd_date(Consultation currentConultion)
+        {
+            //query
+            string query = "Update  consultations" +
+                            "SET end_date =@end_date" +
+                            "WHERE consultation_id = @consultation_id";
+
+                           
+
+            //parameters
+            MySqlParameter[] sqlParameters = new MySqlParameter[2];
+            sqlParameters[0] = new MySqlParameter("@end_date", MySqlDbType.Date);
+            sqlParameters[0].Value = Convert.ToString(currentConultion.End_date);
+            sqlParameters[1] = new MySqlParameter("@consultation_id", MySqlDbType.Int32);
+            sqlParameters[1].Value = Convert.ToString(currentConultion.ConsultationID);
+            
+
+
+            try
+            {
+                //execute query on appointment table
+                dbConnection.InsertQuery(query, sqlParameters);
+                return true;
+            }
+            catch
+            {
+
+                return false;
+            }
+        
+        
+        }
+        public bool addConsultion(Consultation Consultation)
+        {
+            //query
+            string query = "INSERT INTO consultations( start_date, Staff_id, patient_id)" +
+                           "VALUES ( @start_date, @Staff_id, @patient_id)";
+
+            //parameters
+            MySqlParameter[] sqlParameters = new MySqlParameter[3];
+            sqlParameters[0] = new MySqlParameter("@start_date", MySqlDbType.Date);
+            sqlParameters[0].Value = Convert.ToString(Consultation.Start_date);
+            sqlParameters[1] = new MySqlParameter("@Staff_id", MySqlDbType.Int32);
+            sqlParameters[1].Value = Convert.ToString(Consultation.Staff_id);
+            sqlParameters[2] = new MySqlParameter("@patient_id", MySqlDbType.Int32);
+            sqlParameters[2].Value = Convert.ToString(Consultation.Patient_id);
+           
+
+            try
+            {
+                //execute query on appointment table
+                dbConnection.InsertQuery(query, sqlParameters);
+                return true;
+            }
+            catch
+            {
+
+                return false;
+            }
+        
+        }
     }
 }

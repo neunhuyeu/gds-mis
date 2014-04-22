@@ -35,6 +35,27 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="Person" nillable="true" type="tns:Person" />
+  <xs:complexType name="ArrayOfConsultation">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Consultation" type="tns:Consultation" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfConsultation" nillable="true" type="tns:ArrayOfConsultation" />
+  <xs:complexType name="Consultation">
+    <xs:annotation>
+      <xs:appinfo>
+        <IsValueType xmlns="http://schemas.microsoft.com/2003/10/Serialization/">true</IsValueType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" name="consultationID" type="xs:int" />
+      <xs:element minOccurs="0" name="end_date" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="patient_id" type="xs:int" />
+      <xs:element minOccurs="0" name="staff_id" type="xs:int" />
+      <xs:element minOccurs="0" name="start_date" type="xs:dateTime" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Consultation" nillable="true" type="tns:Consultation" />
   <xs:complexType name="Staff">
     <xs:complexContent mixed="false">
       <xs:extension base="tns:Person">
@@ -94,10 +115,13 @@
       </xs:appinfo>
     </xs:annotation>
     <xs:sequence>
+      <xs:element minOccurs="0" name="amount_ml" type="xs:int" />
+      <xs:element minOccurs="0" name="amount_pills" type="xs:int" />
       <xs:element minOccurs="0" name="date" type="xs:dateTime" />
       <xs:element minOccurs="0" name="doctor" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="dosage" type="xs:int" />
-      <xs:element minOccurs="0" name="drug" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="doctorId" type="xs:int" />
+      <xs:element minOccurs="0" name="medicine" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="strength" type="xs:int" />
     </xs:sequence>
   </xs:complexType>
   <xs:element name="Perscription" nillable="true" type="tns:Perscription" />

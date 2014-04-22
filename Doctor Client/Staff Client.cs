@@ -73,7 +73,7 @@ insurancenr = Convert.ToInt32(tbInsuranceSearch.Text);
 
         private void searchListLB_SelectedIndexChanged(object sender, EventArgs e)
         {
-            PatientDetails Patient = new PatientDetails(potentualPatients[searchListLB.SelectedIndex]);
+            PatientDetails Patient = new PatientDetails(potentualPatients[searchListLB.SelectedIndex],currentUser);
 
             Patient.ShowDialog();
         }

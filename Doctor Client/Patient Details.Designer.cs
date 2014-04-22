@@ -30,6 +30,20 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PatientDetails));
             this.tabCurrentMedication = new System.Windows.Forms.TabPage();
+            this.btAddPrescription = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.pastConsultations = new System.Windows.Forms.RadioButton();
+            this.rbCurrent = new System.Windows.Forms.RadioButton();
+            this.lbvolume = new System.Windows.Forms.Label();
+            this.lbnumPils = new System.Windows.Forms.Label();
+            this.lbStrength = new System.Windows.Forms.Label();
+            this.tbVolume = new System.Windows.Forms.TextBox();
+            this.tbNumPills = new System.Windows.Forms.TextBox();
+            this.tbstrength = new System.Windows.Forms.TextBox();
+            this.tbMedicine = new System.Windows.Forms.TextBox();
+            this.lbMedicne = new System.Windows.Forms.Label();
             this.printSelectedPersription = new System.Windows.Forms.Button();
             this.PerscriptionLb = new System.Windows.Forms.ListBox();
             this.tabPastAppointments = new System.Windows.Forms.TabPage();
@@ -56,6 +70,7 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.tabs = new System.Windows.Forms.TabControl();
             this.tabCurrentMedication.SuspendLayout();
+            this.groupBox1.SuspendLayout();
             this.tabOverview.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -64,6 +79,18 @@
             // 
             // tabCurrentMedication
             // 
+            this.tabCurrentMedication.Controls.Add(this.btAddPrescription);
+            this.tabCurrentMedication.Controls.Add(this.label1);
+            this.tabCurrentMedication.Controls.Add(this.comboBox1);
+            this.tabCurrentMedication.Controls.Add(this.groupBox1);
+            this.tabCurrentMedication.Controls.Add(this.lbvolume);
+            this.tabCurrentMedication.Controls.Add(this.lbnumPils);
+            this.tabCurrentMedication.Controls.Add(this.lbStrength);
+            this.tabCurrentMedication.Controls.Add(this.tbVolume);
+            this.tabCurrentMedication.Controls.Add(this.tbNumPills);
+            this.tabCurrentMedication.Controls.Add(this.tbstrength);
+            this.tabCurrentMedication.Controls.Add(this.tbMedicine);
+            this.tabCurrentMedication.Controls.Add(this.lbMedicne);
             this.tabCurrentMedication.Controls.Add(this.printSelectedPersription);
             this.tabCurrentMedication.Controls.Add(this.PerscriptionLb);
             this.tabCurrentMedication.Location = new System.Drawing.Point(4, 25);
@@ -75,11 +102,135 @@
             this.tabCurrentMedication.Text = "Perscriptions";
             this.tabCurrentMedication.UseVisualStyleBackColor = true;
             // 
+            // btAddPrescription
+            // 
+            this.btAddPrescription.Location = new System.Drawing.Point(719, 266);
+            this.btAddPrescription.Name = "btAddPrescription";
+            this.btAddPrescription.Size = new System.Drawing.Size(96, 76);
+            this.btAddPrescription.TabIndex = 26;
+            this.btAddPrescription.Text = "Add";
+            this.btAddPrescription.UseVisualStyleBackColor = true;
+            this.btAddPrescription.Click += new System.EventHandler(this.btAddPrescription_Click);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(605, 93);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(103, 17);
+            this.label1.TabIndex = 25;
+            this.label1.Text = "Consultation ID";
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(715, 86);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(100, 24);
+            this.comboBox1.TabIndex = 24;
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.pastConsultations);
+            this.groupBox1.Controls.Add(this.rbCurrent);
+            this.groupBox1.Location = new System.Drawing.Point(608, 10);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(200, 70);
+            this.groupBox1.TabIndex = 23;
+            this.groupBox1.TabStop = false;
+            // 
+            // pastConsultations
+            // 
+            this.pastConsultations.AutoSize = true;
+            this.pastConsultations.Location = new System.Drawing.Point(0, 43);
+            this.pastConsultations.Name = "pastConsultations";
+            this.pastConsultations.Size = new System.Drawing.Size(164, 21);
+            this.pastConsultations.TabIndex = 1;
+            this.pastConsultations.TabStop = true;
+            this.pastConsultations.Text = "for past consultations";
+            this.pastConsultations.UseVisualStyleBackColor = true;
+            this.pastConsultations.CheckedChanged += new System.EventHandler(this.pastConsultations_CheckedChanged);
+            // 
+            // rbCurrent
+            // 
+            this.rbCurrent.AutoSize = true;
+            this.rbCurrent.Location = new System.Drawing.Point(3, 16);
+            this.rbCurrent.Name = "rbCurrent";
+            this.rbCurrent.Size = new System.Drawing.Size(182, 21);
+            this.rbCurrent.TabIndex = 0;
+            this.rbCurrent.TabStop = true;
+            this.rbCurrent.Text = "for current consultations";
+            this.rbCurrent.UseVisualStyleBackColor = true;
+            // 
+            // lbvolume
+            // 
+            this.lbvolume.AutoSize = true;
+            this.lbvolume.Location = new System.Drawing.Point(608, 233);
+            this.lbvolume.Name = "lbvolume";
+            this.lbvolume.Size = new System.Drawing.Size(83, 17);
+            this.lbvolume.TabIndex = 22;
+            this.lbvolume.Text = "Volume(ml):";
+            // 
+            // lbnumPils
+            // 
+            this.lbnumPils.AutoSize = true;
+            this.lbnumPils.Location = new System.Drawing.Point(608, 198);
+            this.lbnumPils.Name = "lbnumPils";
+            this.lbnumPils.Size = new System.Drawing.Size(106, 17);
+            this.lbnumPils.TabIndex = 21;
+            this.lbnumPils.Text = "Number of pills:";
+            // 
+            // lbStrength
+            // 
+            this.lbStrength.AutoSize = true;
+            this.lbStrength.Location = new System.Drawing.Point(605, 163);
+            this.lbStrength.Name = "lbStrength";
+            this.lbStrength.Size = new System.Drawing.Size(95, 17);
+            this.lbStrength.TabIndex = 20;
+            this.lbStrength.Text = "Strength(mg):";
+            // 
+            // tbVolume
+            // 
+            this.tbVolume.Location = new System.Drawing.Point(715, 228);
+            this.tbVolume.Name = "tbVolume";
+            this.tbVolume.Size = new System.Drawing.Size(100, 22);
+            this.tbVolume.TabIndex = 19;
+            // 
+            // tbNumPills
+            // 
+            this.tbNumPills.Location = new System.Drawing.Point(715, 193);
+            this.tbNumPills.Name = "tbNumPills";
+            this.tbNumPills.Size = new System.Drawing.Size(100, 22);
+            this.tbNumPills.TabIndex = 18;
+            // 
+            // tbstrength
+            // 
+            this.tbstrength.Location = new System.Drawing.Point(715, 158);
+            this.tbstrength.Name = "tbstrength";
+            this.tbstrength.Size = new System.Drawing.Size(100, 22);
+            this.tbstrength.TabIndex = 17;
+            // 
+            // tbMedicine
+            // 
+            this.tbMedicine.Location = new System.Drawing.Point(715, 123);
+            this.tbMedicine.Name = "tbMedicine";
+            this.tbMedicine.Size = new System.Drawing.Size(100, 22);
+            this.tbMedicine.TabIndex = 16;
+            // 
+            // lbMedicne
+            // 
+            this.lbMedicne.AutoSize = true;
+            this.lbMedicne.Location = new System.Drawing.Point(605, 128);
+            this.lbMedicne.Name = "lbMedicne";
+            this.lbMedicne.Size = new System.Drawing.Size(68, 17);
+            this.lbMedicne.TabIndex = 15;
+            this.lbMedicne.Text = "Medicine:";
+            // 
             // printSelectedPersription
             // 
-            this.printSelectedPersription.Location = new System.Drawing.Point(20, 343);
+            this.printSelectedPersription.Location = new System.Drawing.Point(608, 266);
             this.printSelectedPersription.Name = "printSelectedPersription";
-            this.printSelectedPersription.Size = new System.Drawing.Size(140, 51);
+            this.printSelectedPersription.Size = new System.Drawing.Size(96, 76);
             this.printSelectedPersription.TabIndex = 2;
             this.printSelectedPersription.Text = "Print";
             this.printSelectedPersription.UseVisualStyleBackColor = true;
@@ -89,9 +240,9 @@
             // 
             this.PerscriptionLb.FormattingEnabled = true;
             this.PerscriptionLb.ItemHeight = 16;
-            this.PerscriptionLb.Location = new System.Drawing.Point(20, 13);
+            this.PerscriptionLb.Location = new System.Drawing.Point(24, 18);
             this.PerscriptionLb.Name = "PerscriptionLb";
-            this.PerscriptionLb.Size = new System.Drawing.Size(794, 324);
+            this.PerscriptionLb.Size = new System.Drawing.Size(559, 324);
             this.PerscriptionLb.TabIndex = 0;
             this.PerscriptionLb.SelectedIndexChanged += new System.EventHandler(this.PerscriptionLb_SelectedIndexChanged);
             // 
@@ -365,13 +516,16 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Window;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.ClientSize = new System.Drawing.Size(880, 446);
+            this.ClientSize = new System.Drawing.Size(880, 396);
             this.Controls.Add(this.tabs);
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "PatientDetails";
             this.Text = "Patient Details";
             this.Load += new System.EventHandler(this.PatientDetails_Load);
             this.tabCurrentMedication.ResumeLayout(false);
+            this.tabCurrentMedication.PerformLayout();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.tabOverview.ResumeLayout(false);
             this.tabOverview.PerformLayout();
             this.panel1.ResumeLayout(false);
@@ -410,6 +564,20 @@
         private System.Windows.Forms.TabControl tabs;
         private System.Windows.Forms.ListBox PerscriptionLb;
         private System.Windows.Forms.Button printSelectedPersription;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.RadioButton pastConsultations;
+        private System.Windows.Forms.RadioButton rbCurrent;
+        private System.Windows.Forms.Label lbvolume;
+        private System.Windows.Forms.Label lbnumPils;
+        private System.Windows.Forms.Label lbStrength;
+        private System.Windows.Forms.TextBox tbVolume;
+        private System.Windows.Forms.TextBox tbNumPills;
+        private System.Windows.Forms.TextBox tbstrength;
+        private System.Windows.Forms.TextBox tbMedicine;
+        private System.Windows.Forms.Label lbMedicne;
+        private System.Windows.Forms.Button btAddPrescription;
 
     }
 }

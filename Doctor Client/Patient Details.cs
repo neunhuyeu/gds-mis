@@ -16,10 +16,15 @@ namespace Doctor_Client
       Patient patient;
       DoctorClient proxy;
       Perscription[] perscription;
-       public PatientDetails(Patient Pateint)
+      int[] consultationsIDs;
+      Staff CurrentUser;
+      Consultation currentConsultation;
+      bool newConsultation;
+            public PatientDetails(Patient Pateint,Staff currentUser)
         {
             InitializeComponent();
           proxy= new DoctorClient();
+          CurrentUser = currentUser;
             //overview filler
             patient = Pateint;
             tbPatientDetailsOverviewName.Text = patient.FirstNamek__BackingField + " " + patient.LastNamek__BackingField;
@@ -30,11 +35,17 @@ namespace Doctor_Client
             tbPatientDetailsOverviewEMail.Text = patient.Emailk__BackingField;
             tbPatientDetailsOverviewMPhone.Text = patient.MobileNumberk__BackingField.ToString();
             tbPatientDetailsOverviewPhone.Text = patient.LandLineNumberk__BackingField.ToString();
-            //percriptions
+            //current Consultation
+            currentConsultation.start_date = DateTime.Now;
+            currentConsultation.patient_id = patient.PatientIDk__BackingField;
+            currentConsultation.consultationID = proxy.getnextConsultationID();
+            currentConsultation.staff_id = currentUser.StaffIDk__BackingField;
+            newConsultation = true;
+                //percriptions
             perscription = proxy.getPatientPerscriptions(patient.PersonIdk__BackingField);
             foreach (ServerConnection.Perscription persrip in perscription )
             {
-                PerscriptionLb.Items.Add("Date: " + persrip.date.ToShortDateString() + "\t" + "Drug: " + persrip.drug + "\t" + "Dosage: " + persrip.dosage); 
+                PerscriptionLb.Items.Add("Date: " + persrip.date.ToShortDateString() + "\t" + "Drug: " + persrip.medicine + "\t" + "Dosage: " + persrip.strength); 
             }
         }
         private int DOBtoAge(DateTime DOB)
@@ -97,7 +108,7 @@ namespace Doctor_Client
         {
             if (PerscriptionLb.SelectedIndex > -1)
             {
-                MessageBox.Show(this, "Drug Name : " + perscription[PerscriptionLb.SelectedIndex].drug.ToString() + "\nDate :  " + perscription[PerscriptionLb.SelectedIndex].date.ToString() +  "\nDosage" + perscription[PerscriptionLb.SelectedIndex].dosage.ToString(), patient.FirstNamek__BackingField + " " + patient.LastNamek__BackingField + " takes" + perscription[PerscriptionLb.SelectedIndex].drug.ToString());
+                MessageBox.Show(this, "Drug Name : " + perscription[PerscriptionLb.SelectedIndex].medicine.ToString() + "\nDate :  " + perscription[PerscriptionLb.SelectedIndex].date.ToString() +  "\nDosage" + perscription[PerscriptionLb.SelectedIndex].strength.ToString(), patient.FirstNamek__BackingField + " " + patient.LastNamek__BackingField + " takes" + perscription[PerscriptionLb.SelectedIndex].medicine.ToString());
             }
         }
 
@@ -106,7 +117,7 @@ namespace Doctor_Client
             if (PerscriptionLb.SelectedIndex!=-1)
             {
                 easyPrint PerscriptionPrint = new easyPrint();
-                PerscriptionPrint.PrintString("\tMedical prescription \n" + "the following drug is issued to:/n" + patient.FirstNamek__BackingField + " " + patient.LastNamek__BackingField + "\nname of medicine:" + perscription[PerscriptionLb.SelectedIndex].drug.ToString() + "\nDosage" + perscription[PerscriptionLb.SelectedIndex].dosage.ToString() + "\nDoctor: ___________________________________ " + perscription[PerscriptionLb.SelectedIndex].doctor.ToString());
+                PerscriptionPrint.PrintString("\tMedical prescription \n" + "the following drug is issued to:/n" + patient.FirstNamek__BackingField + " " + patient.LastNamek__BackingField + "\nname of medicine:" + perscription[PerscriptionLb.SelectedIndex].medicine.ToString() + "\nDosage" + perscription[PerscriptionLb.SelectedIndex].strength.ToString() + "\nDoctor: ___________________________________ " + perscription[PerscriptionLb.SelectedIndex].doctor.ToString());
             }
             else
             {
@@ -114,5 +125,56 @@ namespace Doctor_Client
 
             }
             }
+
+        private void btAddPrescription_Click(object sender, EventArgs e)
+        {
+            Perscription perscription = new Perscription();
+            perscription.doctorId = CurrentUser.StaffIDk__BackingField;
+            perscription.amount_ml = Convert.ToInt32(this.lbvolume.Text);
+            perscription.amount_pills = Convert.ToInt32(this.lbnumPils.Text);
+            perscription.medicine = this.lbMedicne.Text;
+            perscription.strength = Convert.ToInt32(this.tbstrength.Text);
+            int choosenConsultationID;
+            if (comboBox1.Enabled)
+            {
+                choosenConsultationID = consultationsIDs[comboBox1.SelectedIndex];
+            }
+            else 
+            {
+                if (newConsultation)
+                {
+                    newConsultation = false;
+                    
+                    proxy.addConsultion( currentConsultation);
+                   
+                }
+                choosenConsultationID = currentConsultation.consultationID;
+
+            }
+             proxy.addPerscription(choosenConsultationID, perscription );
+
+        }
+
+        private void pastConsultations_CheckedChanged(object sender, EventArgs e)
+        {
+            if (pastConsultations.Checked)
+            {
+                comboBox1.Enabled = true;
+            }
+            else
+            {
+                comboBox1.Enabled = false;
+            }
+        }
+         ~PatientDetails()
+        {
+            if (!newConsultation)
+            {
+                currentConsultation.end_date = DateTime.Now;
+                proxy.updateConsultion_End_Date( currentConsultation);
+            
+            }
+        
+        }
     }
 }

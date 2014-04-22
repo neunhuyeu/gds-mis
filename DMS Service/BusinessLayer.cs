@@ -135,8 +135,8 @@ namespace DMS_Service
            
             foreach (DataRow row in dataTable.Rows)
             {
-                prescription.Drug = row["medicine"].ToString();
-                prescription.Dosage = Convert.ToInt32(row["strength_mg"]);
+                prescription.Medicine = row["medicine"].ToString();
+                prescription.Strength = Convert.ToInt32(row["strength_mg"]);
                 //prescription.Doctor = row["doctor"].ToString();
                 prescription.Date = Convert.ToDateTime(row["date_prescribed"]);
 
@@ -215,7 +215,19 @@ namespace DMS_Service
         {
             throw new NotImplementedException();
         }
-
+        public bool addPerscription(int appointmentID, Perscription perscription)
+        {
+            return dbAcess.addPrescrption(perscription, appointmentID);
+        }
+       public int getnextConsultationID()
+        {
+            DataTable dt= dbAcess.getLatestConsultationID();
+            return Convert.ToInt32( dt.Rows[0])+1;
+        }
+       public List<Consultation> getConsultationHistory()
+       {
+           return null;
+       }
         public void addTestPatient()
         {
             
@@ -312,6 +324,15 @@ namespace DMS_Service
             }
             
         }
+        public bool updateConsultion_End_Date(Consultation currentConultion)
+       {
+           return dbAcess.updateConsultionEnd_date(currentConultion);
+       }
+
+       public bool addConsultion(Consultation currentConsultation)
+       {
+         return  dbAcess.addConsultion(currentConsultation);
+       }
         
     }
 }

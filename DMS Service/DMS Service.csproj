@@ -53,6 +53,7 @@
   <ItemGroup>
     <Compile Include="Appointment.cs" />
     <Compile Include="BusinessLayer.cs" />
+    <Compile Include="Consultation.cs" />
     <Compile Include="DbAccessLayer.cs" />
     <Compile Include="IDoctor.cs" />
     <Compile Include="ISynchronise.cs" />
