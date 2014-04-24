@@ -79,14 +79,17 @@
     </None>
     <None Include="ClassDiagram1.cd" />
     <None Include="packages.config" />
-    <None Include="Service References\MySynchroniseService\DMS_Service1.xsd">
+    <None Include="Service References\MySynchroniseService\Arrays.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\MySynchroniseService\service1.wsdl" />
-    <None Include="Service References\MySynchroniseService\service2.xsd">
+    <None Include="Service References\MySynchroniseService\DMS_Service.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\MySynchroniseService\service21.xsd">
+    <None Include="Service References\MySynchroniseService\service.wsdl" />
+    <None Include="Service References\MySynchroniseService\service.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\MySynchroniseService\service1.xsd">
       <SubType>Designer</SubType>
     </None>
   </ItemGroup>

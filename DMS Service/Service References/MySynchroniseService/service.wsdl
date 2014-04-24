@@ -5,6 +5,7 @@
       <xsd:import namespace="http://tempuri.org/" />
       <xsd:import namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
       <xsd:import namespace="http://schemas.datacontract.org/2004/07/DMS_Service" />
+      <xsd:import namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
     </xsd:schema>
   </wsdl:types>
   <wsdl:message name="ISynchronise_addPatient_InputMessage">
@@ -71,7 +72,7 @@
   </wsdl:binding>
   <wsdl:service name="CSynchronise">
     <wsdl:port name="BasicHttpBinding_ISynchronise" binding="tns:BasicHttpBinding_ISynchronise">
-      <soap:address location="http://192.168.1.5:8733/Design_Time_Addresses/DMS_Service/CSynchronise/" />
+      <soap:address location="http://192.168.1.8:8733/Design_Time_Addresses/DMS_Service/CSynchronise/" />
     </wsdl:port>
   </wsdl:service>
 </wsdl:definitions>

@@ -227,10 +227,26 @@ namespace DMS_Service
             sqlParameters[1] = new MySqlParameter("@end_date", MySqlDbType.DateTime);
             sqlParameters[1].Value = Convert.ToString(appointment.endTime);
             sqlParameters[2] = new MySqlParameter("@patient_id", MySqlDbType.Int32);
-            sqlParameters[2].Value = Convert.ToString(appointment.Patient.PatientID);
+
+            //if conditions are for temporary hardcoding
+            if (appointment.Patient != null)
+            {
+                sqlParameters[2].Value = Convert.ToString(appointment.Patient.PatientID);
+            }
+            else
+            {
+                sqlParameters[2].Value = "-1";
+            }
             sqlParameters[3] = new MySqlParameter("@staff_id", MySqlDbType.Int32);
-            sqlParameters[3].Value = Convert.ToString(appointment.Staff.StaffID);
-            
+
+            if (appointment.Staff != null)
+            {
+                sqlParameters[3].Value = Convert.ToString(appointment.Staff.StaffID);
+            }
+            else
+            {
+                sqlParameters[3].Value = "1";
+            }
 
             //execute query on appointment table
             dbConnection.InsertQuery(query, sqlParameters);

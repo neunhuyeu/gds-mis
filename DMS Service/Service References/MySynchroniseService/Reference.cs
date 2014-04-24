@@ -417,6 +417,279 @@ namespace DMS_Service.MySynchroniseService {
         }
     }
     
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="Appointment", Namespace="http://schemas.datacontract.org/2004/07/DMS_Service")]
+    [System.SerializableAttribute()]
+    public partial struct Appointment : System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        private string[] Diagnosisk__BackingFieldField;
+        
+        private bool canceledk__BackingFieldField;
+        
+        private System.DateTime endTimek__BackingFieldField;
+        
+        private string notesk__BackingFieldField;
+        
+        private DMS_Service.MySynchroniseService.Perscription[] perscriptionsk__BackingFieldField;
+        
+        private System.DateTime startTimek__BackingFieldField;
+        
+        private string[] symptomsk__BackingFieldField;
+        
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Name="<Diagnosis>k__BackingField", IsRequired=true)]
+        public string[] Diagnosisk__BackingField {
+            get {
+                return this.Diagnosisk__BackingFieldField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.Diagnosisk__BackingFieldField, value) != true)) {
+                    this.Diagnosisk__BackingFieldField = value;
+                    this.RaisePropertyChanged("Diagnosisk__BackingField");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Name="<canceled>k__BackingField", IsRequired=true)]
+        public bool canceledk__BackingField {
+            get {
+                return this.canceledk__BackingFieldField;
+            }
+            set {
+                if ((this.canceledk__BackingFieldField.Equals(value) != true)) {
+                    this.canceledk__BackingFieldField = value;
+                    this.RaisePropertyChanged("canceledk__BackingField");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Name="<endTime>k__BackingField", IsRequired=true)]
+        public System.DateTime endTimek__BackingField {
+            get {
+                return this.endTimek__BackingFieldField;
+            }
+            set {
+                if ((this.endTimek__BackingFieldField.Equals(value) != true)) {
+                    this.endTimek__BackingFieldField = value;
+                    this.RaisePropertyChanged("endTimek__BackingField");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Name="<notes>k__BackingField", IsRequired=true)]
+        public string notesk__BackingField {
+            get {
+                return this.notesk__BackingFieldField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.notesk__BackingFieldField, value) != true)) {
+                    this.notesk__BackingFieldField = value;
+                    this.RaisePropertyChanged("notesk__BackingField");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Name="<perscriptions>k__BackingField", IsRequired=true)]
+        public DMS_Service.MySynchroniseService.Perscription[] perscriptionsk__BackingField {
+            get {
+                return this.perscriptionsk__BackingFieldField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.perscriptionsk__BackingFieldField, value) != true)) {
+                    this.perscriptionsk__BackingFieldField = value;
+                    this.RaisePropertyChanged("perscriptionsk__BackingField");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Name="<startTime>k__BackingField", IsRequired=true)]
+        public System.DateTime startTimek__BackingField {
+            get {
+                return this.startTimek__BackingFieldField;
+            }
+            set {
+                if ((this.startTimek__BackingFieldField.Equals(value) != true)) {
+                    this.startTimek__BackingFieldField = value;
+                    this.RaisePropertyChanged("startTimek__BackingField");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Name="<symptoms>k__BackingField", IsRequired=true)]
+        public string[] symptomsk__BackingField {
+            get {
+                return this.symptomsk__BackingFieldField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.symptomsk__BackingFieldField, value) != true)) {
+                    this.symptomsk__BackingFieldField = value;
+                    this.RaisePropertyChanged("symptomsk__BackingField");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="Perscription", Namespace="http://schemas.datacontract.org/2004/07/DMS_Service")]
+    [System.SerializableAttribute()]
+    public partial struct Perscription : System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int amount_mlField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int amount_pillsField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.DateTime dateField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string doctorField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int doctorIdField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string medicineField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int strengthField;
+        
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int amount_ml {
+            get {
+                return this.amount_mlField;
+            }
+            set {
+                if ((this.amount_mlField.Equals(value) != true)) {
+                    this.amount_mlField = value;
+                    this.RaisePropertyChanged("amount_ml");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int amount_pills {
+            get {
+                return this.amount_pillsField;
+            }
+            set {
+                if ((this.amount_pillsField.Equals(value) != true)) {
+                    this.amount_pillsField = value;
+                    this.RaisePropertyChanged("amount_pills");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.DateTime date {
+            get {
+                return this.dateField;
+            }
+            set {
+                if ((this.dateField.Equals(value) != true)) {
+                    this.dateField = value;
+                    this.RaisePropertyChanged("date");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string doctor {
+            get {
+                return this.doctorField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.doctorField, value) != true)) {
+                    this.doctorField = value;
+                    this.RaisePropertyChanged("doctor");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int doctorId {
+            get {
+                return this.doctorIdField;
+            }
+            set {
+                if ((this.doctorIdField.Equals(value) != true)) {
+                    this.doctorIdField = value;
+                    this.RaisePropertyChanged("doctorId");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string medicine {
+            get {
+                return this.medicineField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.medicineField, value) != true)) {
+                    this.medicineField = value;
+                    this.RaisePropertyChanged("medicine");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int strength {
+            get {
+                return this.strengthField;
+            }
+            set {
+                if ((this.strengthField.Equals(value) != true)) {
+                    this.strengthField = value;
+                    this.RaisePropertyChanged("strength");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="MySynchroniseService.ISynchronise")]
     public interface ISynchronise {
@@ -428,14 +701,10 @@ namespace DMS_Service.MySynchroniseService {
         System.Threading.Tasks.Task addPatientAsync(DMS_Service.MySynchroniseService.Patient patient);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISynchronise/addAppointment", ReplyAction="http://tempuri.org/ISynchronise/addAppointmentResponse")]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DMS_Service.MySynchroniseService.Patient))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DMS_Service.MySynchroniseService.Person))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DMS_Service.MySynchroniseService.Staff))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DMS_Service.MySynchroniseService.Staff.StaffType))]
-        void addAppointment(object appointment);
+        void addAppointment(DMS_Service.MySynchroniseService.Appointment appointment);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISynchronise/addAppointment", ReplyAction="http://tempuri.org/ISynchronise/addAppointmentResponse")]
-        System.Threading.Tasks.Task addAppointmentAsync(object appointment);
+        System.Threading.Tasks.Task addAppointmentAsync(DMS_Service.MySynchroniseService.Appointment appointment);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISynchronise/addStaff", ReplyAction="http://tempuri.org/ISynchronise/addStaffResponse")]
         void addStaff(DMS_Service.MySynchroniseService.Staff staff);
@@ -479,11 +748,11 @@ namespace DMS_Service.MySynchroniseService {
             return base.Channel.addPatientAsync(patient);
         }
         
-        public void addAppointment(object appointment) {
+        public void addAppointment(DMS_Service.MySynchroniseService.Appointment appointment) {
             base.Channel.addAppointment(appointment);
         }
         
-        public System.Threading.Tasks.Task addAppointmentAsync(object appointment) {
+        public System.Threading.Tasks.Task addAppointmentAsync(DMS_Service.MySynchroniseService.Appointment appointment) {
             return base.Channel.addAppointmentAsync(appointment);
         }
         

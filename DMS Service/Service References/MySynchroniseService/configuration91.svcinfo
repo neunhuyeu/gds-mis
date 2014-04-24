@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<SavedWcfConfigurationInformation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Version="9.1" CheckSum="Xq8x/EGvbt031Yp9Ye8XLZD/IHY=">
+<SavedWcfConfigurationInformation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Version="9.1" CheckSum="+IE8s7djP/7HhdTHWI45xSQIgOE=">
   <bindingConfigurations>
     <bindingConfiguration bindingType="basicHttpBinding" name="BasicHttpBinding_ISynchronise">
       <properties>
@@ -112,10 +112,10 @@
     </bindingConfiguration>
   </bindingConfigurations>
   <endpoints>
-    <endpoint name="BasicHttpBinding_ISynchronise" contract="MySynchroniseService.ISynchronise" bindingType="basicHttpBinding" address="http://192.168.1.5:8733/Design_Time_Addresses/DMS_Service/CSynchronise/" bindingConfiguration="BasicHttpBinding_ISynchronise">
+    <endpoint name="BasicHttpBinding_ISynchronise" contract="MySynchroniseService.ISynchronise" bindingType="basicHttpBinding" address="http://192.168.1.8:8733/Design_Time_Addresses/DMS_Service/CSynchronise/" bindingConfiguration="BasicHttpBinding_ISynchronise">
       <properties>
         <property path="/address" isComplexType="false" isExplicitlyDefined="true" clrType="System.Uri, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>http://192.168.1.5:8733/Design_Time_Addresses/DMS_Service/CSynchronise/</serializedValue>
+          <serializedValue>http://192.168.1.8:8733/Design_Time_Addresses/DMS_Service/CSynchronise/</serializedValue>
         </property>
         <property path="/behaviorConfiguration" isComplexType="false" isExplicitlyDefined="false" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue />

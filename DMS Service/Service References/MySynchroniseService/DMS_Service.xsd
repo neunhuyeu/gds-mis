@@ -1,6 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <xs:schema xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:tns="http://schemas.datacontract.org/2004/07/DMS_Service" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/DMS_Service" xmlns:xs="http://www.w3.org/2001/XMLSchema">
   <xs:import namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:import namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
   <xs:complexType name="Patient">
     <xs:complexContent mixed="false">
       <xs:extension base="tns:Person">
@@ -34,6 +35,46 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="Person" nillable="true" type="tns:Person" />
+  <xs:complexType name="Appointment">
+    <xs:annotation>
+      <xs:appinfo>
+        <IsValueType xmlns="http://schemas.microsoft.com/2003/10/Serialization/">true</IsValueType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element xmlns:q1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" name="_x003C_Diagnosis_x003E_k__BackingField" nillable="true" type="q1:ArrayOfstring" />
+      <xs:element name="_x003C_canceled_x003E_k__BackingField" type="xs:boolean" />
+      <xs:element name="_x003C_endTime_x003E_k__BackingField" type="xs:dateTime" />
+      <xs:element name="_x003C_notes_x003E_k__BackingField" nillable="true" type="xs:string" />
+      <xs:element name="_x003C_perscriptions_x003E_k__BackingField" nillable="true" type="tns:ArrayOfPerscription" />
+      <xs:element name="_x003C_startTime_x003E_k__BackingField" type="xs:dateTime" />
+      <xs:element xmlns:q2="http://schemas.microsoft.com/2003/10/Serialization/Arrays" name="_x003C_symptoms_x003E_k__BackingField" nillable="true" type="q2:ArrayOfstring" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Appointment" nillable="true" type="tns:Appointment" />
+  <xs:complexType name="ArrayOfPerscription">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Perscription" type="tns:Perscription" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfPerscription" nillable="true" type="tns:ArrayOfPerscription" />
+  <xs:complexType name="Perscription">
+    <xs:annotation>
+      <xs:appinfo>
+        <IsValueType xmlns="http://schemas.microsoft.com/2003/10/Serialization/">true</IsValueType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" name="amount_ml" type="xs:int" />
+      <xs:element minOccurs="0" name="amount_pills" type="xs:int" />
+      <xs:element minOccurs="0" name="date" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="doctor" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="doctorId" type="xs:int" />
+      <xs:element minOccurs="0" name="medicine" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="strength" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Perscription" nillable="true" type="tns:Perscription" />
   <xs:complexType name="Staff">
     <xs:complexContent mixed="false">
       <xs:extension base="tns:Person">

@@ -338,10 +338,14 @@ namespace DMS_Service
             appoinment.Patient = new Patient();
             appoinment.Patient.PatientID = 1;
 
+            DMS_Service.MySynchroniseService.Appointment sameAppointment;
+            sameAppointment= new DMS_Service.MySynchroniseService.Appointment();
 
-            DMS_Service.MySynchroniseService.Patient sameDude;
-            sameDude = new DMS_Service.MySynchroniseService.Patient();
-
+            
+            sameAppointment.startTimek__BackingField = new DateTime(2014, 1, 1, 13, 0, 0);
+            sameAppointment.endTimek__BackingField = new DateTime(2014, 1, 1, 13, 30, 0);
+            
+            
             //Add appointment to own database   
             dbAcess.addAppointment(appoinment);
 
@@ -349,7 +353,7 @@ namespace DMS_Service
             try
             {
                 proxy = new DMS_Service.MySynchroniseService.SynchroniseClient();
-                proxy.addAppointment(appoinment);
+                proxy.addAppointment(sameAppointment);
                 
             }
             catch(TimeoutException)
