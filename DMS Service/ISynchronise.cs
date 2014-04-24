@@ -15,7 +15,7 @@ namespace DMS_Service
         void addPatient(Patient patient);
 
         [OperationContract]
-        void addAppointment(object appointment);
+        void addAppointment(Appointment appointment);
 
         [OperationContract]
         void addStaff(Staff staff);

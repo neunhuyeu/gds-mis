@@ -7,25 +7,24 @@ using System.Runtime.Serialization;
 
 namespace DMS_Service
 {
-
-       [DataContract]
+    [Serializable]
     public struct Appointment
     {
-           [DataMember]
+           
         public DateTime startTime { get; set; }
-           [DataMember]
+          
         public DateTime endTime { get;  set; }
-           [DataMember]
+           
         public bool canceled { get; set; }
-           [DataMember]
+           
         public string notes { get; private set; }
-           [DataMember]
+           
         public List<Perscription> perscriptions { get; private set; }
-          [DataMember]
+         
         public List<String> symptoms { get; private set; }
-           [DataMember]
+           
         public List<String> Diagnosis { get; private set; }
-        [DataMember]
+        
         public Patient Patient
         {
             get
@@ -37,7 +36,7 @@ namespace DMS_Service
                 Patient = value;
             }
         }
-        [DataMember]
+        
         public Staff Staff
         {
             get

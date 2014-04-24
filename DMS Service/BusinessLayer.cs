@@ -338,6 +338,10 @@ namespace DMS_Service
             appoinment.Patient = new Patient();
             appoinment.Patient.PatientID = 1;
 
+
+            DMS_Service.MySynchroniseService.Patient sameDude;
+            sameDude = new DMS_Service.MySynchroniseService.Patient();
+
             //Add appointment to own database   
             dbAcess.addAppointment(appoinment);
 
