@@ -229,24 +229,25 @@ namespace DMS_Service
             sqlParameters[2] = new MySqlParameter("@patient_id", MySqlDbType.Int32);
 
             //if conditions are for temporary hardcoding
-            if (appointment.Patient != null)
-            {
-                sqlParameters[2].Value = Convert.ToString(appointment.Patient.PatientID);
-            }
-            else
-            {
+            //if (appointment.Patient != null)
+            //{
+                //sqlParameters[2].Value = Convert.ToString(appointment.Patient.PatientID);
+            //}
+            //else
+            //{
                 sqlParameters[2].Value = "-1";
-            }
+            //}
+
             sqlParameters[3] = new MySqlParameter("@staff_id", MySqlDbType.Int32);
 
-            if (appointment.Staff != null)
-            {
+            //if (appointment.Staff != null)
+            //{
                 sqlParameters[3].Value = Convert.ToString(appointment.Staff.StaffID);
-            }
-            else
-            {
+            //}
+            //else
+            //{
                 sqlParameters[3].Value = "1";
-            }
+            //}
 
             //execute query on appointment table
             dbConnection.InsertQuery(query, sqlParameters);
