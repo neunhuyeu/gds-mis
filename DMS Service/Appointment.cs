@@ -29,11 +29,12 @@ namespace DMS_Service
         {
             get
             {
-                return Patient;
+                return null;
+                //return Patient;
             }
             set
             {
-                Patient = value;
+                //Patient = value;
             }
         }
         
@@ -41,11 +42,12 @@ namespace DMS_Service
         {
             get
             {
-                return Staff;
+                return null;
+                //return Staff;
             }
             set
             {
-                Staff = value;
+                //Staff = value;
             }
         }
 

@@ -333,10 +333,10 @@ namespace DMS_Service
             Appointment appoinment = new Appointment();
             appoinment.startTime = new DateTime(2014, 1, 1, 13, 0, 0);
             appoinment.endTime = new DateTime(2014, 1, 1, 13, 30, 0);
-            appoinment.Staff = new Staff();
-            appoinment.Staff.StaffID = 1;
-            appoinment.Patient = new Patient();
-            appoinment.Patient.PatientID = 1;
+            //appoinment.Staff = new Staff();
+            //appoinment.Staff.StaffID = 1;
+            //appoinment.Patient = new Patient();
+            //appoinment.Patient.PatientID = 1;
 
             DMS_Service.MySynchroniseService.Appointment sameAppointment;
             sameAppointment= new DMS_Service.MySynchroniseService.Appointment();

@@ -213,20 +213,20 @@ namespace DMS_Service
         /// JP.
         /// Adds consultation to the conusltation table.
         /// </summary>
-        /// <param name="patient">patient to be added</param>
+        /// <param name="appointment">appointment to be added</param>
         public void addAppointment(Appointment appointment)
         {
             //query
-            string query = "INSERT INTO consultation(start_date, end_date, patient_id, staff_id)" + 
-                           "VALUES (@start_date, @end_date, @patient_id, '@staff_id',)";
+            string query = "INSERT INTO consultations(start_date, end_date, patient_id, staff_id)" +
+                           "VALUES (?start_date, ?end_date, ?patient_id, ?staff_id)";
 
             //parameters
             MySqlParameter[] sqlParameters = new MySqlParameter[4];
-            sqlParameters[0] = new MySqlParameter("@start_date", MySqlDbType.DateTime);
-            sqlParameters[0].Value = Convert.ToString(appointment.startTime );
-            sqlParameters[1] = new MySqlParameter("@end_date", MySqlDbType.DateTime);
-            sqlParameters[1].Value = Convert.ToString(appointment.endTime);
-            sqlParameters[2] = new MySqlParameter("@patient_id", MySqlDbType.Int32);
+            sqlParameters[0] = new MySqlParameter("?start_date", MySqlDbType.DateTime);
+            sqlParameters[0].Value = appointment.startTime;
+            sqlParameters[1] = new MySqlParameter("?end_date", MySqlDbType.DateTime);
+            sqlParameters[1].Value = appointment.endTime;
+            sqlParameters[2] = new MySqlParameter("?patient_id", MySqlDbType.Int32);
 
             //if conditions are for temporary hardcoding
             //if (appointment.Patient != null)
@@ -235,18 +235,18 @@ namespace DMS_Service
             //}
             //else
             //{
-                sqlParameters[2].Value = "-1";
+                sqlParameters[2].Value = 1;
             //}
 
-            sqlParameters[3] = new MySqlParameter("@staff_id", MySqlDbType.Int32);
+            sqlParameters[3] = new MySqlParameter("?staff_id", MySqlDbType.Int32);
 
             //if (appointment.Staff != null)
             //{
-                sqlParameters[3].Value = Convert.ToString(appointment.Staff.StaffID);
+                //sqlParameters[3].Value = Convert.ToString(appointment.Staff.StaffID);
             //}
             //else
             //{
-                sqlParameters[3].Value = "1";
+                sqlParameters[3].Value = 1;
             //}
 
             //execute query on appointment table
