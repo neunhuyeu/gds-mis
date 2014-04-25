@@ -50,12 +50,12 @@ namespace Doctor_Client
             currentConsultation.staff_id = currentUser.StaffIDk__BackingField;
             newConsultation = false;
             consultationsIDs = new List<int>();
-            foreach (Consultation item in proxy.getConsultationHistorybyPatient(currentConsultation.patient_id))
+            foreach (Consultation item in proxy.getConsultationHistorybyPatient(patient.PersonIdk__BackingField))
             {
                 consultationsIDs.Add(item.consultationID);
 
                 comboBox1.Items.Add(item.start_date.GetDateTimeFormats('D')[0]);
-
+                DiagnosisHistory.Items.Add(item.start_date.GetDateTimeFormats('D')[0]);
             }
                 //percriptions
             perscription = proxy.getPatientPerscriptions(patient.PersonIdk__BackingField);

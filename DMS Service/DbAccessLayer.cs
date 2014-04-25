@@ -145,6 +145,7 @@ namespace DMS_Service
 
         }
 
+
         /// <summary>
         /// JP.
         /// Adds patient to the database by first adding record to person table and then patient table.
@@ -381,7 +382,7 @@ namespace DMS_Service
 
             string query = string.Format("SELECT * " +
                                         "FROM consultations  " +
-                                        "WHERE  patient_id= @patient_id");
+                                        "WHERE  patient_id=(select patient_id from patients where person_id = @patient_id)");
 
             MySqlParameter[] sqlParameters = new MySqlParameter[1];
             sqlParameters[0] = new MySqlParameter("@patient_id", MySqlDbType.Int32);
