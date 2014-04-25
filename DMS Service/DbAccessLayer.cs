@@ -288,7 +288,7 @@ namespace DMS_Service
         {
             try
             {
-                string query = "SELECT MAX(consultation_id) FROM consultations;";
+                string query = "SELECT MAX(consultation_id) As latest FROM consultations;";
                 
                 
                 return dbConnection.SelectQuery(query);
@@ -368,8 +368,8 @@ namespace DMS_Service
             string query = string.Format("SELECT * " +
                                         "FROM diagnosis " +
                                         "Where consultation_id in (select consultation_id" +
-                                                                   "From consultations"+
-                                                                   "Where patient_id=@patient_id)");
+                                                                   " From consultations"+
+                                                                   " Where patient_id = @patient_id)");
             MySqlParameter[] sqlParameters = new MySqlParameter[1];
             sqlParameters[0] = new MySqlParameter("@patient_id", MySqlDbType.Int32);
             sqlParameters[0].Value = Convert.ToString(personID);

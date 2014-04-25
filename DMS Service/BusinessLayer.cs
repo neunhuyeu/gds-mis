@@ -222,7 +222,12 @@ namespace DMS_Service
        public int getnextConsultationID()
         {
             DataTable dt= dbAcess.getLatestConsultationID();
-            return Convert.ToInt32( dt.Rows[0])+1;
+           foreach(DataRow dr in dt.Rows)
+           {
+               return Convert.ToInt32(dr["latest"]) + 1;
+           }
+           
+           return Convert.ToInt32( dt.Rows[0])+1;
         }
        public List<Consultation> getConsultationHistorybyPatient(int Patientid)
        {
