@@ -40,7 +40,7 @@ namespace DMS_Service
                 patient.PersonId = Convert.ToInt32(dr["person_id"]);
                 patient.FirstName = dr["first_name"].ToString();
                 patient.LastName = dr["last_name"].ToString();
-                //patient.DateOfBirth = dr["date_of_birth"].ToString();
+                patient.DateOfBirth = Convert.ToDateTime(dr["date_of_birth"]);
                 patient.Email = dr["email_address"].ToString();
                 patient.MobileNumber = dr["mobile_number"].ToString();
                 patient.LandLineNumber = dr["landline_number"].ToString();
@@ -64,22 +64,41 @@ namespace DMS_Service
                 patient.BloodType = Convert.ToString(row["blood_type"])[0];
                 patient.Smoker = Convert.ToBoolean(row["smoking"]);
                 //patient.InsuranceNumber = Convert.ToInt32(row["InsuranceNumber"]);
-            }
+            }  
             return patient;
         }
 
-        public Staff GetStaff_by_id(int id)
+        public Staff GetStaff_by_Personid(int id)
         {
             Staff staff = new Staff();
             DataTable dataTable = new DataTable();
-            dataTable = dbAcess.SearchStaffById(id);
+            dataTable = dbAcess.SearchStaffByPersonId(id);
 
             foreach (DataRow dr in dataTable.Rows)
             {
                 staff.PersonId = Convert.ToInt32(dr["person_id"]);
                 staff.FirstName = dr["first_name"].ToString();
                 staff.LastName = dr["last_name"].ToString();
-                //staff.DateOfBirth = dr["date_of_birth"].ToString();
+                staff.DateOfBirth = Convert.ToDateTime(dr["date_of_birth"].ToString());
+                staff.Email = dr["email_address"].ToString();
+                staff.MobileNumber = dr["mobile_number"].ToString();
+                staff.LandLineNumber = dr["landline_number"].ToString();
+                staff.Address = dr["home_address"].ToString();
+            }
+            return staff;
+        }
+        public Staff GetStaff_by_staff_id(int id)
+        {
+            Staff staff = new Staff();
+            DataTable dataTable = new DataTable();
+            dataTable = dbAcess.SearchStaffByStaffId(id);
+
+            foreach (DataRow dr in dataTable.Rows)
+            {
+                staff.PersonId = Convert.ToInt32(dr["person_id"]);
+                staff.FirstName = dr["first_name"].ToString();
+                staff.LastName = dr["last_name"].ToString();
+                staff.DateOfBirth = Convert.ToDateTime( dr["date_of_birth"]);
                 staff.Email = dr["email_address"].ToString();
                 staff.MobileNumber = dr["mobile_number"].ToString();
                 staff.LandLineNumber = dr["landline_number"].ToString();
@@ -196,6 +215,7 @@ namespace DMS_Service
             {
                 Patient p = new Patient();
                 p.PersonId = Convert.ToInt32(dr["person_id"]);
+                p.PatientID = Convert.ToInt32(dr["patient_id"]);
                 p.FirstName = dr["first_name"].ToString();
                 p.LastName = dr["last_name"].ToString();
                 p.DateOfBirth = Convert.ToDateTime(dr["date_of_birth"]);
@@ -255,11 +275,10 @@ namespace DMS_Service
               
                diagnosis.Consultation_id = Convert.ToInt32(row["consultation_id"]);
                diagnosis.Diagnosises = row["diagnosis"].ToString();
-
-               diagnosis.Symptoms = row["symptoms"].ToString();
-               diagnosis.Diagnosis_id = Convert.ToInt32(row["diagnosis_id"]);
+               diagnosis.Date = Convert.ToDateTime(row["start_date"]);
+               Staff doc =GetStaff_by_staff_id(Convert.ToInt32(row["Staff_id"]));
+               diagnosis.DoctorName = doc.FirstName + " " + doc.LastName;
                
-
 
                myDiagnosis.Add(diagnosis);
            }

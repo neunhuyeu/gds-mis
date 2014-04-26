@@ -54,6 +54,7 @@
             this.tbPassword.PasswordChar = '*';
             this.tbPassword.Size = new System.Drawing.Size(132, 22);
             this.tbPassword.TabIndex = 1;
+            this.tbPassword.Text = "name_one";
             // 
             // label1
             // 

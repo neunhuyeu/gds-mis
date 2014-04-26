@@ -29,7 +29,10 @@ namespace DMS_Service
         [OperationContract]
         bool addConsultion(Consultation currentConsultation);
         [OperationContract]
-        Staff GetStaff_by_id(int id);
+        Staff GetStaff_by_staff_id(int id);
+        
+        [OperationContract]
+        Staff GetStaff_by_Personid(int id);
 
         [OperationContract]
         List<string> GetPatientDiseases(int patientID);

@@ -119,11 +119,21 @@ namespace DMS_Service
              return dbConnection.SelectQuery(query, sqlParameters);
         }
         
-        public DataTable SearchStaffById(int id)
+        public DataTable SearchStaffByPersonId(int id)
         {
             string query = "SELECT * FROM Staff_members WHERE person_id = @id";
             MySqlParameter[] sqlParameters = new MySqlParameter[1];
             sqlParameters[0] = new MySqlParameter("@id", MySqlDbType.Int32);
+            sqlParameters[0].Value = Convert.ToString(id);
+            return dbConnection.SelectQuery(query, sqlParameters);
+        }
+        public DataTable SearchStaffByStaffId(int id)
+        {
+            string query ="SELECT * " + 
+                          " FROM person " +
+                          " WHERE person_id = (select person_id from Staff_members where Staff_id = @Staff_id)"; 
+            MySqlParameter[] sqlParameters = new MySqlParameter[1];
+            sqlParameters[0] = new MySqlParameter("@Staff_id", MySqlDbType.Int32);
             sqlParameters[0].Value = Convert.ToString(id);
             return dbConnection.SelectQuery(query, sqlParameters);
         }
@@ -258,8 +268,8 @@ namespace DMS_Service
         public bool addPrescrption(Perscription perscription, int consultationId)
         {
             //query
-            string query = "INSERT INTO prescription(medicine, amount_pills, amount_ml, staff_id,consultation_id)" +
-                           "VALUES (@medicine, @amount_pills, @amount_ml, @staff_id,@consultation_id)";
+            string query = "INSERT INTO prescription(medicine, amount_pills, amount_ml, staff_id,consultation_id,strength_mg)" +
+                           "VALUES (@medicine, @amount_pills, @amount_ml, @staff_id,@consultation_id,@strength_mg)";
 
             //parameters
             MySqlParameter[] sqlParameters = new MySqlParameter[5];
@@ -273,6 +283,8 @@ namespace DMS_Service
             sqlParameters[3].Value = Convert.ToString(perscription.DoctorId);
             sqlParameters[4] = new MySqlParameter("@consultation_id", MySqlDbType.Int32);
             sqlParameters[4].Value = Convert.ToString(consultationId);
+            sqlParameters[5] = new MySqlParameter("@strength_mg", MySqlDbType.Int32);
+            sqlParameters[5].Value = Convert.ToString(perscription.Strength);
             try
             {
                 //execute query on appointment table
@@ -363,17 +375,24 @@ namespace DMS_Service
             }
         
         }
-        public DataTable SearchDiagnosisHistoryByPersionID(int personID)
+        public DataTable SearchDiagnosisHistoryByPersionID(int patientID)
         {
   
+            //string query = string.Format("SELECT * " +
+            //                            "FROM diagnosis " +
+            //                            "Where consultation_id in (select consultation_id" +
+            //                                                       " From consultations"+
+            //                                                       " Where patient_id = @patient_id)");
             string query = string.Format("SELECT * " +
-                                        "FROM diagnosis " +
-                                        "Where consultation_id in (select consultation_id" +
-                                                                   " From consultations"+
-                                                                   " Where patient_id = @patient_id)");
+                                         "FROM diagnosis dia " +
+                                         "JOIN consultations con " +
+                                         "ON dia.consultation_id = con.consultation_id " +
+                                         "WHERE con.patient_id = patient_id "+
+                                         "ORDER BY start_date");
+
             MySqlParameter[] sqlParameters = new MySqlParameter[1];
             sqlParameters[0] = new MySqlParameter("@patient_id", MySqlDbType.Int32);
-            sqlParameters[0].Value = Convert.ToString(personID);
+            sqlParameters[0].Value = Convert.ToString(patientID);
 
             return dbConnection.SelectQuery(query, sqlParameters);
         }
@@ -382,7 +401,8 @@ namespace DMS_Service
 
             string query = string.Format("SELECT * " +
                                         "FROM consultations  " +
-                                        "WHERE  patient_id=(select patient_id from patients where person_id = @patient_id)");
+                                        "WHERE  patient_id=(select patient_id from patients where person_id = @patient_id)  "+
+                                       " ORDER BY start_date");
 
             MySqlParameter[] sqlParameters = new MySqlParameter[1];
             sqlParameters[0] = new MySqlParameter("@patient_id", MySqlDbType.Int32);

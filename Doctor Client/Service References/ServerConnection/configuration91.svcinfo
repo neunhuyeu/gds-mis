@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<SavedWcfConfigurationInformation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Version="9.1" CheckSum="EfbggfDmgNXGxUDBHgthF457Za0=">
+<SavedWcfConfigurationInformation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Version="9.1" CheckSum="OBlcRiC64jt02TurBQsjClACYCk=">
   <bindingConfigurations>
     <bindingConfiguration bindingType="basicHttpBinding" name="BasicHttpBinding_IDoctor">
       <properties>
@@ -112,10 +112,10 @@
     </bindingConfiguration>
   </bindingConfigurations>
   <endpoints>
-    <endpoint name="BasicHttpBinding_IDoctor" contract="ServerConnection.IDoctor" bindingType="basicHttpBinding" address="http://192.168.1.2:8733/Design_Time_Addresses/DMS_Service/IDoctor/" bindingConfiguration="BasicHttpBinding_IDoctor">
+    <endpoint name="BasicHttpBinding_IDoctor" contract="ServerConnection.IDoctor" bindingType="basicHttpBinding" address="http://145.93.83.117:8733/Design_Time_Addresses/DMS_Service/IDoctor/" bindingConfiguration="BasicHttpBinding_IDoctor">
       <properties>
         <property path="/address" isComplexType="false" isExplicitlyDefined="true" clrType="System.Uri, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>http://192.168.1.2:8733/Design_Time_Addresses/DMS_Service/IDoctor/</serializedValue>
+          <serializedValue>http://145.93.83.117:8733/Design_Time_Addresses/DMS_Service/IDoctor/</serializedValue>
         </property>
         <property path="/behaviorConfiguration" isComplexType="false" isExplicitlyDefined="false" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue />

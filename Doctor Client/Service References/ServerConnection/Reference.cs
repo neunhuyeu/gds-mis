@@ -538,10 +538,16 @@ namespace Doctor_Client.ServerConnection {
         private int consultation_idField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.DateTime dateField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string diagnosisField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private int diagnosis_idField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string doctorNameField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string symptomsField;
@@ -569,6 +575,19 @@ namespace Doctor_Client.ServerConnection {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.DateTime date {
+            get {
+                return this.dateField;
+            }
+            set {
+                if ((this.dateField.Equals(value) != true)) {
+                    this.dateField = value;
+                    this.RaisePropertyChanged("date");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
         public string diagnosis {
             get {
                 return this.diagnosisField;
@@ -590,6 +609,19 @@ namespace Doctor_Client.ServerConnection {
                 if ((this.diagnosis_idField.Equals(value) != true)) {
                     this.diagnosis_idField = value;
                     this.RaisePropertyChanged("diagnosis_id");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string doctorName {
+            get {
+                return this.doctorNameField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.doctorNameField, value) != true)) {
+                    this.doctorNameField = value;
+                    this.RaisePropertyChanged("doctorName");
                 }
             }
         }
@@ -626,32 +658,19 @@ namespace Doctor_Client.ServerConnection {
         [System.NonSerializedAttribute()]
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string[] DiagnosisField;
+        private string[] Diagnosisk__BackingFieldField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private Doctor_Client.ServerConnection.Patient PatientField;
+        private bool canceledk__BackingFieldField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private Doctor_Client.ServerConnection.Staff StaffField;
+        private System.DateTime endTimek__BackingFieldField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private bool canceledField;
+        private string notesk__BackingFieldField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.DateTime endTimeField;
+        private Doctor_Client.ServerConnection.Perscription[] perscriptionsk__BackingFieldField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string notesField;
+        private System.DateTime startTimek__BackingFieldField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private Doctor_Client.ServerConnection.Perscription[] perscriptionsField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.DateTime startTimeField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string[] symptomsField;
+        private string[] symptomsk__BackingFieldField;
         
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
             get {
@@ -662,119 +681,93 @@ namespace Doctor_Client.ServerConnection {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string[] Diagnosis {
+        [System.Runtime.Serialization.DataMemberAttribute(Name="<Diagnosis>k__BackingField", IsRequired=true)]
+        public string[] Diagnosisk__BackingField {
             get {
-                return this.DiagnosisField;
+                return this.Diagnosisk__BackingFieldField;
             }
             set {
-                if ((object.ReferenceEquals(this.DiagnosisField, value) != true)) {
-                    this.DiagnosisField = value;
-                    this.RaisePropertyChanged("Diagnosis");
+                if ((object.ReferenceEquals(this.Diagnosisk__BackingFieldField, value) != true)) {
+                    this.Diagnosisk__BackingFieldField = value;
+                    this.RaisePropertyChanged("Diagnosisk__BackingField");
                 }
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public Doctor_Client.ServerConnection.Patient Patient {
+        [System.Runtime.Serialization.DataMemberAttribute(Name="<canceled>k__BackingField", IsRequired=true)]
+        public bool canceledk__BackingField {
             get {
-                return this.PatientField;
+                return this.canceledk__BackingFieldField;
             }
             set {
-                if ((object.ReferenceEquals(this.PatientField, value) != true)) {
-                    this.PatientField = value;
-                    this.RaisePropertyChanged("Patient");
+                if ((this.canceledk__BackingFieldField.Equals(value) != true)) {
+                    this.canceledk__BackingFieldField = value;
+                    this.RaisePropertyChanged("canceledk__BackingField");
                 }
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public Doctor_Client.ServerConnection.Staff Staff {
+        [System.Runtime.Serialization.DataMemberAttribute(Name="<endTime>k__BackingField", IsRequired=true)]
+        public System.DateTime endTimek__BackingField {
             get {
-                return this.StaffField;
+                return this.endTimek__BackingFieldField;
             }
             set {
-                if ((object.ReferenceEquals(this.StaffField, value) != true)) {
-                    this.StaffField = value;
-                    this.RaisePropertyChanged("Staff");
+                if ((this.endTimek__BackingFieldField.Equals(value) != true)) {
+                    this.endTimek__BackingFieldField = value;
+                    this.RaisePropertyChanged("endTimek__BackingField");
                 }
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public bool canceled {
+        [System.Runtime.Serialization.DataMemberAttribute(Name="<notes>k__BackingField", IsRequired=true)]
+        public string notesk__BackingField {
             get {
-                return this.canceledField;
+                return this.notesk__BackingFieldField;
             }
             set {
-                if ((this.canceledField.Equals(value) != true)) {
-                    this.canceledField = value;
-                    this.RaisePropertyChanged("canceled");
+                if ((object.ReferenceEquals(this.notesk__BackingFieldField, value) != true)) {
+                    this.notesk__BackingFieldField = value;
+                    this.RaisePropertyChanged("notesk__BackingField");
                 }
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.DateTime endTime {
+        [System.Runtime.Serialization.DataMemberAttribute(Name="<perscriptions>k__BackingField", IsRequired=true)]
+        public Doctor_Client.ServerConnection.Perscription[] perscriptionsk__BackingField {
             get {
-                return this.endTimeField;
+                return this.perscriptionsk__BackingFieldField;
             }
             set {
-                if ((this.endTimeField.Equals(value) != true)) {
-                    this.endTimeField = value;
-                    this.RaisePropertyChanged("endTime");
+                if ((object.ReferenceEquals(this.perscriptionsk__BackingFieldField, value) != true)) {
+                    this.perscriptionsk__BackingFieldField = value;
+                    this.RaisePropertyChanged("perscriptionsk__BackingField");
                 }
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string notes {
+        [System.Runtime.Serialization.DataMemberAttribute(Name="<startTime>k__BackingField", IsRequired=true)]
+        public System.DateTime startTimek__BackingField {
             get {
-                return this.notesField;
+                return this.startTimek__BackingFieldField;
             }
             set {
-                if ((object.ReferenceEquals(this.notesField, value) != true)) {
-                    this.notesField = value;
-                    this.RaisePropertyChanged("notes");
+                if ((this.startTimek__BackingFieldField.Equals(value) != true)) {
+                    this.startTimek__BackingFieldField = value;
+                    this.RaisePropertyChanged("startTimek__BackingField");
                 }
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public Doctor_Client.ServerConnection.Perscription[] perscriptions {
+        [System.Runtime.Serialization.DataMemberAttribute(Name="<symptoms>k__BackingField", IsRequired=true)]
+        public string[] symptomsk__BackingField {
             get {
-                return this.perscriptionsField;
+                return this.symptomsk__BackingFieldField;
             }
             set {
-                if ((object.ReferenceEquals(this.perscriptionsField, value) != true)) {
-                    this.perscriptionsField = value;
-                    this.RaisePropertyChanged("perscriptions");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.DateTime startTime {
-            get {
-                return this.startTimeField;
-            }
-            set {
-                if ((this.startTimeField.Equals(value) != true)) {
-                    this.startTimeField = value;
-                    this.RaisePropertyChanged("startTime");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string[] symptoms {
-            get {
-                return this.symptomsField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.symptomsField, value) != true)) {
-                    this.symptomsField = value;
-                    this.RaisePropertyChanged("symptoms");
+                if ((object.ReferenceEquals(this.symptomsk__BackingFieldField, value) != true)) {
+                    this.symptomsk__BackingFieldField = value;
+                    this.RaisePropertyChanged("symptomsk__BackingField");
                 }
             }
         }

@@ -74,8 +74,9 @@ insurancenr = Convert.ToInt32(tbInsuranceSearch.Text);
         private void searchListLB_SelectedIndexChanged(object sender, EventArgs e)
         {
             PatientDetails Patient = new PatientDetails(potentualPatients[searchListLB.SelectedIndex],currentUser);
-
+            this.Visible = false;
             Patient.ShowDialog();
+            this.Visible=true;
         }
 
         private void label2_Click(object sender, EventArgs e)

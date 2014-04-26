@@ -38,7 +38,6 @@
             this.tabAgenda = new System.Windows.Forms.TabPage();
             this.tabPatientSearch = new System.Windows.Forms.TabPage();
             this.DOBSearch = new System.Windows.Forms.DateTimePicker();
-            this.btn_searchPatients = new System.Windows.Forms.Button();
             this.tbSearchLastName = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.searchListLB = new System.Windows.Forms.ListBox();
@@ -139,7 +138,6 @@
             // tabPatientSearch
             // 
             this.tabPatientSearch.Controls.Add(this.DOBSearch);
-            this.tabPatientSearch.Controls.Add(this.btn_searchPatients);
             this.tabPatientSearch.Controls.Add(this.tbSearchLastName);
             this.tabPatientSearch.Controls.Add(this.label6);
             this.tabPatientSearch.Controls.Add(this.searchListLB);
@@ -168,17 +166,6 @@
             this.DOBSearch.Value = new System.DateTime(2013, 1, 28, 0, 0, 0, 0);
             this.DOBSearch.KeyUp += new System.Windows.Forms.KeyEventHandler(this.tbSearchFirstName_KeyUp);
             this.DOBSearch.MouseLeave += new System.EventHandler(this.btn_searchPatients_Click);
-            // 
-            // btn_searchPatients
-            // 
-            this.btn_searchPatients.Location = new System.Drawing.Point(757, 100);
-            this.btn_searchPatients.Margin = new System.Windows.Forms.Padding(4);
-            this.btn_searchPatients.Name = "btn_searchPatients";
-            this.btn_searchPatients.Size = new System.Drawing.Size(100, 28);
-            this.btn_searchPatients.TabIndex = 10;
-            this.btn_searchPatients.Text = "Search";
-            this.btn_searchPatients.UseVisualStyleBackColor = true;
-            this.btn_searchPatients.Click += new System.EventHandler(this.btn_searchPatients_Click);
             // 
             // tbSearchLastName
             // 
@@ -326,7 +313,6 @@
         private System.Windows.Forms.ListBox searchListLB;
         private System.Windows.Forms.TextBox tbSearchLastName;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Button btn_searchPatients;
         private System.Windows.Forms.DateTimePicker DOBSearch;
     }
 }

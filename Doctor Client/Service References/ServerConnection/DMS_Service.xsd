@@ -70,8 +70,10 @@
     </xs:annotation>
     <xs:sequence>
       <xs:element minOccurs="0" name="consultation_id" type="xs:int" />
+      <xs:element minOccurs="0" name="date" type="xs:dateTime" />
       <xs:element minOccurs="0" name="diagnosis" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="diagnosis_id" type="xs:int" />
+      <xs:element minOccurs="0" name="doctorName" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="symptoms" nillable="true" type="xs:string" />
     </xs:sequence>
   </xs:complexType>
@@ -110,15 +112,13 @@
       </xs:appinfo>
     </xs:annotation>
     <xs:sequence>
-      <xs:element xmlns:q1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="Diagnosis" nillable="true" type="q1:ArrayOfstring" />
-      <xs:element minOccurs="0" name="Patient" nillable="true" type="tns:Patient" />
-      <xs:element minOccurs="0" name="Staff" nillable="true" type="tns:Staff" />
-      <xs:element minOccurs="0" name="canceled" type="xs:boolean" />
-      <xs:element minOccurs="0" name="endTime" type="xs:dateTime" />
-      <xs:element minOccurs="0" name="notes" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="perscriptions" nillable="true" type="tns:ArrayOfPerscription" />
-      <xs:element minOccurs="0" name="startTime" type="xs:dateTime" />
-      <xs:element xmlns:q2="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="symptoms" nillable="true" type="q2:ArrayOfstring" />
+      <xs:element xmlns:q1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" name="_x003C_Diagnosis_x003E_k__BackingField" nillable="true" type="q1:ArrayOfstring" />
+      <xs:element name="_x003C_canceled_x003E_k__BackingField" type="xs:boolean" />
+      <xs:element name="_x003C_endTime_x003E_k__BackingField" type="xs:dateTime" />
+      <xs:element name="_x003C_notes_x003E_k__BackingField" nillable="true" type="xs:string" />
+      <xs:element name="_x003C_perscriptions_x003E_k__BackingField" nillable="true" type="tns:ArrayOfPerscription" />
+      <xs:element name="_x003C_startTime_x003E_k__BackingField" type="xs:dateTime" />
+      <xs:element xmlns:q2="http://schemas.microsoft.com/2003/10/Serialization/Arrays" name="_x003C_symptoms_x003E_k__BackingField" nillable="true" type="q2:ArrayOfstring" />
     </xs:sequence>
   </xs:complexType>
   <xs:element name="Appointment" nillable="true" type="tns:Appointment" />

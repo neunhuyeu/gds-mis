@@ -338,7 +338,7 @@
   </wsdl:binding>
   <wsdl:service name="BusinessLayer">
     <wsdl:port name="BasicHttpBinding_IDoctor" binding="tns:BasicHttpBinding_IDoctor">
-      <soap:address location="http://192.168.1.2:8733/Design_Time_Addresses/DMS_Service/IDoctor/" />
+      <soap:address location="http://145.93.83.117:8733/Design_Time_Addresses/DMS_Service/IDoctor/" />
     </wsdl:port>
   </wsdl:service>
 </wsdl:definitions>

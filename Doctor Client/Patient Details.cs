@@ -18,6 +18,7 @@ namespace Doctor_Client
       Perscription[] perscription;
       List<Int32> consultationsIDs;
       Staff CurrentUser;
+        
       Consultation currentConsultation;
       bool newConsultation;
             public PatientDetails(Patient Pateint,Staff currentUser)
@@ -36,11 +37,7 @@ namespace Doctor_Client
             tbPatientDetailsOverviewMPhone.Text = patient.MobileNumberk__BackingField.ToString();
             tbPatientDetailsOverviewPhone.Text = patient.LandLineNumberk__BackingField.ToString();
             //Diagnosis
-               foreach (Diagnosis item in    proxy.getDiagnosisHistoryByPersionID(patient.PatientIDk__BackingField))
-            {
-                
-                DiagnosisHistory.Items.Add("Diagnosis" + item.diagnosis + "upon symptoms" + item.symptoms);
-	        }
+            RefrashDiagnosis();
           
 
             //current Consultation
@@ -48,22 +45,46 @@ namespace Doctor_Client
             currentConsultation.patient_id = patient.PatientIDk__BackingField;
             currentConsultation.consultationID = proxy.getnextConsultationID();
             currentConsultation.staff_id = currentUser.StaffIDk__BackingField;
-            newConsultation = false;
-            consultationsIDs = new List<int>();
-            foreach (Consultation item in proxy.getConsultationHistorybyPatient(patient.PersonIdk__BackingField))
-            {
-                consultationsIDs.Add(item.consultationID);
+            newConsultation = true;
 
-                comboBox1.Items.Add(item.start_date.GetDateTimeFormats('D')[0]);
-                DiagnosisHistory.Items.Add(item.start_date.GetDateTimeFormats('D')[0]);
-            }
+            RefreashConsultations();
                 //percriptions
-            perscription = proxy.getPatientPerscriptions(patient.PersonIdk__BackingField);
-            foreach (ServerConnection.Perscription persrip in perscription )
-            {
-                PerscriptionLb.Items.Add("Date: " + persrip.date.ToShortDateString() + "\t" + "Drug: " + persrip.medicine + "\t" + "Dosage: " + persrip.strength); 
-            }
+            RefreashPrescription();
         }
+
+            private void RefrashDiagnosis()
+            {
+                DiagnosisHistory.Items.Clear();
+                foreach (Diagnosis diagnose in proxy.getDiagnosisHistoryByPersionID(patient.PatientIDk__BackingField))
+                {
+
+                    DiagnosisHistory.Items.Add(diagnose.date.GetDateTimeFormats('d')[0]+"- Doctor "+diagnose.doctorName+" diagnosed " + diagnose.diagnosis + " upon symptoms" + diagnose.symptoms);
+                }
+            }
+
+            private void RefreashPrescription()
+            {
+                PerscriptionLb.Items.Clear();
+                perscription = proxy.getPatientPerscriptions(patient.PersonIdk__BackingField);
+                foreach (ServerConnection.Perscription persrip in perscription)
+                {
+                    PerscriptionLb.Items.Add("Date: " + persrip.date.ToShortDateString() + "\t" + "Drug: " + persrip.medicine + "\t" + "Dosage: " + persrip.strength);
+                }
+            }
+
+            private void RefreashConsultations()
+            {
+                cBconsultationID.Items.Clear();
+            
+                consultationsIDs = new List<int>();
+                foreach (Consultation item in proxy.getConsultationHistorybyPatient(patient.PersonIdk__BackingField))
+                {
+                    consultationsIDs.Add(item.consultationID);
+
+                    cBconsultationID.Items.Add(item.start_date.GetDateTimeFormats('d')[0]);
+              
+                }
+            }
         private int DOBtoAge(DateTime DOB)
         {
             DateTime Now=DateTime.Now;
@@ -144,43 +165,50 @@ namespace Doctor_Client
 
         private void btAddPrescription_Click(object sender, EventArgs e)
         {
-            Perscription perscription = new Perscription();
-            perscription.doctorId = CurrentUser.StaffIDk__BackingField;
-            perscription.amount_ml = Convert.ToInt32(this.lbvolume.Text);
-            perscription.amount_pills = Convert.ToInt32(this.lbnumPils.Text);
-            perscription.medicine = this.lbMedicne.Text;
-            perscription.strength = Convert.ToInt32(this.tbstrength.Text);
-            int choosenConsultationID;
-            if (comboBox1.Enabled)
+            try
             {
-                choosenConsultationID = consultationsIDs[comboBox1.SelectedIndex];
+                Perscription aperscription = new Perscription();
+                aperscription.doctorId = CurrentUser.StaffIDk__BackingField;
+                aperscription.amount_ml = Convert.ToInt32(this.tbVolume.Text);
+                aperscription.amount_pills = Convert.ToInt32(this.tbNumPills.Text);
+                aperscription.medicine = this.tbMedicine.Text;
+                aperscription.strength = Convert.ToInt32(this.tbstrength.Text);
+            
+            int choosenConsultationID;
+            if (cBconsultationID.Enabled)
+            {
+                choosenConsultationID = consultationsIDs[cBconsultationID.SelectedIndex];
             }
             else 
             {
-                if (newConsultation)
-                {
-                    newConsultation = false;
-                    
-                    proxy.addConsultion( currentConsultation);
-                   
-                }
+                consultationEvent();
                 choosenConsultationID = currentConsultation.consultationID;
 
             }
-             proxy.addPerscription(choosenConsultationID, perscription );
+            proxy.addPerscription(choosenConsultationID, aperscription);
+            }
+            catch (FormatException) 
+            {
+                MessageBox.Show(this, "Same fields in the imput area are empty or contain wrong information", "Invaled Input add prescription",MessageBoxButtons.OK);
+            }
+             RefreashPrescription();
+        }
 
+        private void consultationEvent()
+        {
+             
+            if (newConsultation)
+            {
+             newConsultation = false;
+
+                proxy.addConsultion(currentConsultation);
+
+            }
         }
 
         private void pastConsultations_CheckedChanged(object sender, EventArgs e)
         {
-            if (pastConsultations.Checked)
-            {
-                comboBox1.Enabled = true;
-            }
-            else
-            {
-                comboBox1.Enabled = false;
-            }
+
         }
          ~PatientDetails()
         {
@@ -190,7 +218,19 @@ namespace Doctor_Client
                 proxy.updateConsultion_End_Date( currentConsultation);
             
             }
-        
+
         }
+
+         private void pastConsultations_CheckedChanged_1(object sender, EventArgs e)
+         {
+             if (pastConsultations.Checked)
+             {
+                 cBconsultationID.Enabled = true;
+             }
+             else
+             {
+                 cBconsultationID.Enabled = false;
+             }
+         }
     }
 }

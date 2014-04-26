@@ -32,7 +32,7 @@
             this.tabCurrentMedication = new System.Windows.Forms.TabPage();
             this.btAddPrescription = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cBconsultationID = new System.Windows.Forms.ComboBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.pastConsultations = new System.Windows.Forms.RadioButton();
             this.rbCurrent = new System.Windows.Forms.RadioButton();
@@ -84,7 +84,7 @@
             // 
             this.tabCurrentMedication.Controls.Add(this.btAddPrescription);
             this.tabCurrentMedication.Controls.Add(this.label1);
-            this.tabCurrentMedication.Controls.Add(this.comboBox1);
+            this.tabCurrentMedication.Controls.Add(this.cBconsultationID);
             this.tabCurrentMedication.Controls.Add(this.groupBox1);
             this.tabCurrentMedication.Controls.Add(this.lbvolume);
             this.tabCurrentMedication.Controls.Add(this.lbnumPils);
@@ -100,7 +100,7 @@
             this.tabCurrentMedication.Margin = new System.Windows.Forms.Padding(4);
             this.tabCurrentMedication.Name = "tabCurrentMedication";
             this.tabCurrentMedication.Padding = new System.Windows.Forms.Padding(4);
-            this.tabCurrentMedication.Size = new System.Drawing.Size(837, 401);
+            this.tabCurrentMedication.Size = new System.Drawing.Size(837, 341);
             this.tabCurrentMedication.TabIndex = 2;
             this.tabCurrentMedication.Text = "Perscriptions";
             this.tabCurrentMedication.UseVisualStyleBackColor = true;
@@ -124,14 +124,14 @@
             this.label1.TabIndex = 25;
             this.label1.Text = "Consultation ID";
             // 
-            // comboBox1
+            // cBconsultationID
             // 
-            this.comboBox1.Enabled = false;
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(715, 86);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(100, 24);
-            this.comboBox1.TabIndex = 24;
+            this.cBconsultationID.Enabled = false;
+            this.cBconsultationID.FormattingEnabled = true;
+            this.cBconsultationID.Location = new System.Drawing.Point(715, 86);
+            this.cBconsultationID.Name = "cBconsultationID";
+            this.cBconsultationID.Size = new System.Drawing.Size(100, 24);
+            this.cBconsultationID.TabIndex = 24;
             // 
             // groupBox1
             // 
@@ -148,23 +148,23 @@
             this.pastConsultations.AutoSize = true;
             this.pastConsultations.Location = new System.Drawing.Point(0, 43);
             this.pastConsultations.Name = "pastConsultations";
-            this.pastConsultations.Size = new System.Drawing.Size(164, 21);
+            this.pastConsultations.Size = new System.Drawing.Size(152, 21);
             this.pastConsultations.TabIndex = 1;
-            this.pastConsultations.TabStop = true;
-            this.pastConsultations.Text = "for past consultations";
+            this.pastConsultations.Text = "Other consultations";
             this.pastConsultations.UseVisualStyleBackColor = true;
-            this.pastConsultations.CheckedChanged += new System.EventHandler(this.pastConsultations_CheckedChanged);
             // 
             // rbCurrent
             // 
             this.rbCurrent.AutoSize = true;
+            this.rbCurrent.Checked = true;
             this.rbCurrent.Location = new System.Drawing.Point(0, 16);
             this.rbCurrent.Name = "rbCurrent";
-            this.rbCurrent.Size = new System.Drawing.Size(182, 21);
+            this.rbCurrent.Size = new System.Drawing.Size(163, 21);
             this.rbCurrent.TabIndex = 0;
             this.rbCurrent.TabStop = true;
-            this.rbCurrent.Text = "for current consultations";
+            this.rbCurrent.Text = "Current consultations";
             this.rbCurrent.UseVisualStyleBackColor = true;
+            this.rbCurrent.CheckedChanged += new System.EventHandler(this.pastConsultations_CheckedChanged_1);
             // 
             // lbvolume
             // 
@@ -256,7 +256,7 @@
             this.tabPastAppointments.Margin = new System.Windows.Forms.Padding(4);
             this.tabPastAppointments.Name = "tabPastAppointments";
             this.tabPastAppointments.Padding = new System.Windows.Forms.Padding(4);
-            this.tabPastAppointments.Size = new System.Drawing.Size(837, 401);
+            this.tabPastAppointments.Size = new System.Drawing.Size(837, 341);
             this.tabPastAppointments.TabIndex = 1;
             this.tabPastAppointments.Text = "Appointments";
             this.tabPastAppointments.UseVisualStyleBackColor = true;
@@ -273,7 +273,7 @@
             this.tabOverview.Margin = new System.Windows.Forms.Padding(4);
             this.tabOverview.Name = "tabOverview";
             this.tabOverview.Padding = new System.Windows.Forms.Padding(4);
-            this.tabOverview.Size = new System.Drawing.Size(837, 401);
+            this.tabOverview.Size = new System.Drawing.Size(837, 341);
             this.tabOverview.TabIndex = 0;
             this.tabOverview.Text = "Overview";
             this.tabOverview.Click += new System.EventHandler(this.tabPage1_Click);
@@ -591,7 +591,7 @@
         private System.Windows.Forms.ListBox PerscriptionLb;
         private System.Windows.Forms.Button printSelectedPersription;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cBconsultationID;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.RadioButton pastConsultations;
         private System.Windows.Forms.RadioButton rbCurrent;
