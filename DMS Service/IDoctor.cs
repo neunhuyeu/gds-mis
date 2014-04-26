@@ -50,6 +50,9 @@ namespace DMS_Service
         string setPerscription(int appointmentID, Perscription perscription);
         [OperationContract]
          bool addPerscription(int appointmentID, Perscription perscription);
+       [OperationContract]
+        bool addDiagnosis(Diagnosis diagnosis);
+
         //Methods for testing Synchronization
         [OperationContract]
         void addTestPatient();

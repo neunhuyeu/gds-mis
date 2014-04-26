@@ -974,11 +974,17 @@ namespace Doctor_Client.ServerConnection {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IDoctor/addConsultion", ReplyAction="http://tempuri.org/IDoctor/addConsultionResponse")]
         System.Threading.Tasks.Task<bool> addConsultionAsync(Doctor_Client.ServerConnection.Consultation currentConsultation);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IDoctor/GetStaff_by_id", ReplyAction="http://tempuri.org/IDoctor/GetStaff_by_idResponse")]
-        Doctor_Client.ServerConnection.Staff GetStaff_by_id(int id);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IDoctor/GetStaff_by_staff_id", ReplyAction="http://tempuri.org/IDoctor/GetStaff_by_staff_idResponse")]
+        Doctor_Client.ServerConnection.Staff GetStaff_by_staff_id(int id);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IDoctor/GetStaff_by_id", ReplyAction="http://tempuri.org/IDoctor/GetStaff_by_idResponse")]
-        System.Threading.Tasks.Task<Doctor_Client.ServerConnection.Staff> GetStaff_by_idAsync(int id);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IDoctor/GetStaff_by_staff_id", ReplyAction="http://tempuri.org/IDoctor/GetStaff_by_staff_idResponse")]
+        System.Threading.Tasks.Task<Doctor_Client.ServerConnection.Staff> GetStaff_by_staff_idAsync(int id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IDoctor/GetStaff_by_Personid", ReplyAction="http://tempuri.org/IDoctor/GetStaff_by_PersonidResponse")]
+        Doctor_Client.ServerConnection.Staff GetStaff_by_Personid(int id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IDoctor/GetStaff_by_Personid", ReplyAction="http://tempuri.org/IDoctor/GetStaff_by_PersonidResponse")]
+        System.Threading.Tasks.Task<Doctor_Client.ServerConnection.Staff> GetStaff_by_PersonidAsync(int id);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IDoctor/GetPatientDiseases", ReplyAction="http://tempuri.org/IDoctor/GetPatientDiseasesResponse")]
         string[] GetPatientDiseases(int patientID);
@@ -1015,6 +1021,12 @@ namespace Doctor_Client.ServerConnection {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IDoctor/addPerscription", ReplyAction="http://tempuri.org/IDoctor/addPerscriptionResponse")]
         System.Threading.Tasks.Task<bool> addPerscriptionAsync(int appointmentID, Doctor_Client.ServerConnection.Perscription perscription);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IDoctor/addDiagnosis", ReplyAction="http://tempuri.org/IDoctor/addDiagnosisResponse")]
+        bool addDiagnosis(Doctor_Client.ServerConnection.Diagnosis diagnosis);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IDoctor/addDiagnosis", ReplyAction="http://tempuri.org/IDoctor/addDiagnosisResponse")]
+        System.Threading.Tasks.Task<bool> addDiagnosisAsync(Doctor_Client.ServerConnection.Diagnosis diagnosis);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IDoctor/addTestPatient", ReplyAction="http://tempuri.org/IDoctor/addTestPatientResponse")]
         void addTestPatient();
@@ -1120,12 +1132,20 @@ namespace Doctor_Client.ServerConnection {
             return base.Channel.addConsultionAsync(currentConsultation);
         }
         
-        public Doctor_Client.ServerConnection.Staff GetStaff_by_id(int id) {
-            return base.Channel.GetStaff_by_id(id);
+        public Doctor_Client.ServerConnection.Staff GetStaff_by_staff_id(int id) {
+            return base.Channel.GetStaff_by_staff_id(id);
         }
         
-        public System.Threading.Tasks.Task<Doctor_Client.ServerConnection.Staff> GetStaff_by_idAsync(int id) {
-            return base.Channel.GetStaff_by_idAsync(id);
+        public System.Threading.Tasks.Task<Doctor_Client.ServerConnection.Staff> GetStaff_by_staff_idAsync(int id) {
+            return base.Channel.GetStaff_by_staff_idAsync(id);
+        }
+        
+        public Doctor_Client.ServerConnection.Staff GetStaff_by_Personid(int id) {
+            return base.Channel.GetStaff_by_Personid(id);
+        }
+        
+        public System.Threading.Tasks.Task<Doctor_Client.ServerConnection.Staff> GetStaff_by_PersonidAsync(int id) {
+            return base.Channel.GetStaff_by_PersonidAsync(id);
         }
         
         public string[] GetPatientDiseases(int patientID) {
@@ -1174,6 +1194,14 @@ namespace Doctor_Client.ServerConnection {
         
         public System.Threading.Tasks.Task<bool> addPerscriptionAsync(int appointmentID, Doctor_Client.ServerConnection.Perscription perscription) {
             return base.Channel.addPerscriptionAsync(appointmentID, perscription);
+        }
+        
+        public bool addDiagnosis(Doctor_Client.ServerConnection.Diagnosis diagnosis) {
+            return base.Channel.addDiagnosis(diagnosis);
+        }
+        
+        public System.Threading.Tasks.Task<bool> addDiagnosisAsync(Doctor_Client.ServerConnection.Diagnosis diagnosis) {
+            return base.Channel.addDiagnosisAsync(diagnosis);
         }
         
         public void addTestPatient() {

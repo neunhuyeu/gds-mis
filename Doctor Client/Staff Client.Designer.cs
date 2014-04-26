@@ -227,7 +227,6 @@
             this.label2.Size = new System.Drawing.Size(72, 17);
             this.label2.TabIndex = 4;
             this.label2.Text = "FirtsName";
-         
             // 
             // tbInsuranceSearch
             // 
@@ -276,6 +275,7 @@
             this.Controls.Add(this.logoubtn);
             this.Controls.Add(this.userNamelb);
             this.Controls.Add(this.tabs);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Client";
             this.Text = "Staff Client";

@@ -397,7 +397,10 @@ namespace DMS_Service
        {
            return dbAcess.updateConsultionEnd_date(currentConultion);
        }
-
+        public bool addDiagnosis(Diagnosis diagnosis)
+        {
+            return dbAcess.addDiagnosis(diagnosis);
+        }
        public bool addConsultion(Consultation currentConsultation)
        {
          return  dbAcess.addConsultion(currentConsultation);

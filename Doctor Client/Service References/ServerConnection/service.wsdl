@@ -56,11 +56,17 @@
   <wsdl:message name="IDoctor_addConsultion_OutputMessage">
     <wsdl:part name="parameters" element="tns:addConsultionResponse" />
   </wsdl:message>
-  <wsdl:message name="IDoctor_GetStaff_by_id_InputMessage">
-    <wsdl:part name="parameters" element="tns:GetStaff_by_id" />
+  <wsdl:message name="IDoctor_GetStaff_by_staff_id_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetStaff_by_staff_id" />
   </wsdl:message>
-  <wsdl:message name="IDoctor_GetStaff_by_id_OutputMessage">
-    <wsdl:part name="parameters" element="tns:GetStaff_by_idResponse" />
+  <wsdl:message name="IDoctor_GetStaff_by_staff_id_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetStaff_by_staff_idResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDoctor_GetStaff_by_Personid_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetStaff_by_Personid" />
+  </wsdl:message>
+  <wsdl:message name="IDoctor_GetStaff_by_Personid_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetStaff_by_PersonidResponse" />
   </wsdl:message>
   <wsdl:message name="IDoctor_GetPatientDiseases_InputMessage">
     <wsdl:part name="parameters" element="tns:GetPatientDiseases" />
@@ -97,6 +103,12 @@
   </wsdl:message>
   <wsdl:message name="IDoctor_addPerscription_OutputMessage">
     <wsdl:part name="parameters" element="tns:addPerscriptionResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDoctor_addDiagnosis_InputMessage">
+    <wsdl:part name="parameters" element="tns:addDiagnosis" />
+  </wsdl:message>
+  <wsdl:message name="IDoctor_addDiagnosis_OutputMessage">
+    <wsdl:part name="parameters" element="tns:addDiagnosisResponse" />
   </wsdl:message>
   <wsdl:message name="IDoctor_addTestPatient_InputMessage">
     <wsdl:part name="parameters" element="tns:addTestPatient" />
@@ -143,9 +155,13 @@
       <wsdl:input wsaw:Action="http://tempuri.org/IDoctor/addConsultion" message="tns:IDoctor_addConsultion_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IDoctor/addConsultionResponse" message="tns:IDoctor_addConsultion_OutputMessage" />
     </wsdl:operation>
-    <wsdl:operation name="GetStaff_by_id">
-      <wsdl:input wsaw:Action="http://tempuri.org/IDoctor/GetStaff_by_id" message="tns:IDoctor_GetStaff_by_id_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IDoctor/GetStaff_by_idResponse" message="tns:IDoctor_GetStaff_by_id_OutputMessage" />
+    <wsdl:operation name="GetStaff_by_staff_id">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDoctor/GetStaff_by_staff_id" message="tns:IDoctor_GetStaff_by_staff_id_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDoctor/GetStaff_by_staff_idResponse" message="tns:IDoctor_GetStaff_by_staff_id_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetStaff_by_Personid">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDoctor/GetStaff_by_Personid" message="tns:IDoctor_GetStaff_by_Personid_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDoctor/GetStaff_by_PersonidResponse" message="tns:IDoctor_GetStaff_by_Personid_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="GetPatientDiseases">
       <wsdl:input wsaw:Action="http://tempuri.org/IDoctor/GetPatientDiseases" message="tns:IDoctor_GetPatientDiseases_InputMessage" />
@@ -170,6 +186,10 @@
     <wsdl:operation name="addPerscription">
       <wsdl:input wsaw:Action="http://tempuri.org/IDoctor/addPerscription" message="tns:IDoctor_addPerscription_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IDoctor/addPerscriptionResponse" message="tns:IDoctor_addPerscription_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="addDiagnosis">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDoctor/addDiagnosis" message="tns:IDoctor_addDiagnosis_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDoctor/addDiagnosisResponse" message="tns:IDoctor_addDiagnosis_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="addTestPatient">
       <wsdl:input wsaw:Action="http://tempuri.org/IDoctor/addTestPatient" message="tns:IDoctor_addTestPatient_InputMessage" />
@@ -254,8 +274,17 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="GetStaff_by_id">
-      <soap:operation soapAction="http://tempuri.org/IDoctor/GetStaff_by_id" style="document" />
+    <wsdl:operation name="GetStaff_by_staff_id">
+      <soap:operation soapAction="http://tempuri.org/IDoctor/GetStaff_by_staff_id" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetStaff_by_Personid">
+      <soap:operation soapAction="http://tempuri.org/IDoctor/GetStaff_by_Personid" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -310,6 +339,15 @@
     </wsdl:operation>
     <wsdl:operation name="addPerscription">
       <soap:operation soapAction="http://tempuri.org/IDoctor/addPerscription" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="addDiagnosis">
+      <soap:operation soapAction="http://tempuri.org/IDoctor/addDiagnosis" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

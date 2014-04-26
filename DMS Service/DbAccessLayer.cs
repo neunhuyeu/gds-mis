@@ -224,7 +224,33 @@ namespace DMS_Service
 
             return;
         }
+      public bool addDiagnosis(Diagnosis Diagnosis)
+      {
+          //query
+          string query = "INSERT INTO prescribtion(diagnosis, consultation_id, symptoms) " +
+                         "VALUES (@diagnosis, @consultation_id, @symptoms) ";
 
+          //parameters
+          MySqlParameter[] sqlParameters = new MySqlParameter[3];
+          sqlParameters[0] = new MySqlParameter("@diagnosis", MySqlDbType.VarChar);
+          sqlParameters[0].Value = Convert.ToString(Diagnosis.Diagnosises);
+          sqlParameters[1] = new MySqlParameter("@consultation_id", MySqlDbType.Int32);
+          sqlParameters[1].Value = Convert.ToString(Diagnosis.Consultation_id);
+          sqlParameters[2] = new MySqlParameter("@symptoms", MySqlDbType.Int32);
+          sqlParameters[2].Value = Convert.ToString(Diagnosis.Symptoms);
+
+          try
+          {
+              //execute query on appointment table
+              dbConnection.InsertQuery(query, sqlParameters);
+              return true;
+          }
+          catch
+          {
+
+              return false;
+          }
+      }
         /// <summary>
         /// JP.
         /// Adds consultation to the conusltation table.
@@ -391,7 +417,7 @@ namespace DMS_Service
                                          "JOIN consultations con " +
                                          "ON dia.consultation_id = con.consultation_id " +
                                          "WHERE con.patient_id = patient_id "+
-                                         "ORDER BY start_date");
+                                         "ORDER BY start_date DESC");
 
             MySqlParameter[] sqlParameters = new MySqlParameter[1];
             sqlParameters[0] = new MySqlParameter("@patient_id", MySqlDbType.Int32);

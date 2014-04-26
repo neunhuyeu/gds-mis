@@ -111,8 +111,20 @@ namespace Doctor_Client
                             return "";
             }
         }
-     
 
+        private int currentconsultationID
+        {
+            get 
+            {
+                if (newConsultation)
+                 {
+                newConsultation = false;
+                proxy.addConsultion(currentConsultation);
+                }
+                return currentConsultation.consultationID;
+                }
+            }
+        
         private void PerscriptionLb_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (PerscriptionLb.SelectedIndex > -1)
@@ -153,8 +165,8 @@ namespace Doctor_Client
             }
             else 
             {
-                consultationEvent();
-                choosenConsultationID = currentConsultation.consultationID;
+
+                choosenConsultationID = currentconsultationID;
 
             }
             proxy.addPerscription(choosenConsultationID, aperscription);
@@ -166,22 +178,9 @@ namespace Doctor_Client
              RefreashPrescription();
         }
 
-        private void consultationEvent()
-        {
-             
-            if (newConsultation)
-            {
-             newConsultation = false;
+       
 
-                proxy.addConsultion(currentConsultation);
-
-            }
-        }
-
-        private void pastConsultations_CheckedChanged(object sender, EventArgs e)
-        {
-
-        }
+        
          ~PatientDetails()
         {
             if (!newConsultation)
@@ -204,5 +203,32 @@ namespace Doctor_Client
                  cBconsultationID.Enabled = false;
              }
          }
+
+         private void button3_Click(object sender, EventArgs e)
+         {
+
+             clearDiagnoseEditor();
+         }
+
+         private void clearDiagnoseEditor()
+         {
+             tbinputSyntoms.Text = "";
+             tbInputDiagnosis.Text = "";
+         }
+
+         private void btSave_Click(object sender, EventArgs e)
+         {
+             Diagnosis diagnosis= new Diagnosis();
+             diagnosis.consultation_id = currentconsultationID;
+             diagnosis.diagnosis = tbInputDiagnosis.Text.Replace("/n", " ");
+             diagnosis.symptoms = tbinputSyntoms.Text.Replace("/n", ",");
+             proxy.addDiagnosis(diagnosis);
+         }
+
+         
+
+         
+
+         
     }
 }

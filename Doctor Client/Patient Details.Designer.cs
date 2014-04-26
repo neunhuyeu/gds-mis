@@ -70,6 +70,12 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.tabs = new System.Windows.Forms.TabControl();
             this.consultationsTap = new System.Windows.Forms.TabPage();
+            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.diagnosishead = new System.Windows.Forms.TextBox();
+            this.btClear = new System.Windows.Forms.Button();
+            this.btSave = new System.Windows.Forms.Button();
+            this.tbinputSyntoms = new System.Windows.Forms.TextBox();
+            this.tbInputDiagnosis = new System.Windows.Forms.TextBox();
             this.DiagnosisHistory = new System.Windows.Forms.ListBox();
             this.tabCurrentMedication.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -256,7 +262,7 @@
             this.tabPastAppointments.Margin = new System.Windows.Forms.Padding(4);
             this.tabPastAppointments.Name = "tabPastAppointments";
             this.tabPastAppointments.Padding = new System.Windows.Forms.Padding(4);
-            this.tabPastAppointments.Size = new System.Drawing.Size(837, 341);
+            this.tabPastAppointments.Size = new System.Drawing.Size(846, 361);
             this.tabPastAppointments.TabIndex = 1;
             this.tabPastAppointments.Text = "Appointments";
             this.tabPastAppointments.UseVisualStyleBackColor = true;
@@ -273,7 +279,7 @@
             this.tabOverview.Margin = new System.Windows.Forms.Padding(4);
             this.tabOverview.Name = "tabOverview";
             this.tabOverview.Padding = new System.Windows.Forms.Padding(4);
-            this.tabOverview.Size = new System.Drawing.Size(837, 341);
+            this.tabOverview.Size = new System.Drawing.Size(846, 361);
             this.tabOverview.TabIndex = 0;
             this.tabOverview.Text = "Overview";
             // 
@@ -515,14 +521,76 @@
             // 
             // consultationsTap
             // 
+            this.consultationsTap.Controls.Add(this.textBox3);
+            this.consultationsTap.Controls.Add(this.diagnosishead);
+            this.consultationsTap.Controls.Add(this.btClear);
+            this.consultationsTap.Controls.Add(this.btSave);
+            this.consultationsTap.Controls.Add(this.tbinputSyntoms);
+            this.consultationsTap.Controls.Add(this.tbInputDiagnosis);
             this.consultationsTap.Controls.Add(this.DiagnosisHistory);
             this.consultationsTap.Location = new System.Drawing.Point(4, 25);
             this.consultationsTap.Name = "consultationsTap";
             this.consultationsTap.Padding = new System.Windows.Forms.Padding(3);
-            this.consultationsTap.Size = new System.Drawing.Size(837, 341);
+            this.consultationsTap.Size = new System.Drawing.Size(846, 361);
             this.consultationsTap.TabIndex = 3;
             this.consultationsTap.Text = "Consultations";
             this.consultationsTap.UseVisualStyleBackColor = true;
+            // 
+            // textBox3
+            // 
+            this.textBox3.Enabled = false;
+            this.textBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox3.Location = new System.Drawing.Point(203, 154);
+            this.textBox3.Name = "textBox3";
+            this.textBox3.Size = new System.Drawing.Size(205, 30);
+            this.textBox3.TabIndex = 7;
+            this.textBox3.Text = "       Symptoms";
+            // 
+            // diagnosishead
+            // 
+            this.diagnosishead.Enabled = false;
+            this.diagnosishead.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.diagnosishead.Location = new System.Drawing.Point(437, 154);
+            this.diagnosishead.Name = "diagnosishead";
+            this.diagnosishead.Size = new System.Drawing.Size(390, 30);
+            this.diagnosishead.TabIndex = 6;
+            this.diagnosishead.Text = "                      Diagnosis";
+            // 
+            // btClear
+            // 
+            this.btClear.Location = new System.Drawing.Point(23, 250);
+            this.btClear.Name = "btClear";
+            this.btClear.Size = new System.Drawing.Size(155, 83);
+            this.btClear.TabIndex = 5;
+            this.btClear.Text = "Clear";
+            this.btClear.UseVisualStyleBackColor = true;
+            this.btClear.Click += new System.EventHandler(this.button3_Click);
+            // 
+            // btSave
+            // 
+            this.btSave.Location = new System.Drawing.Point(23, 154);
+            this.btSave.Name = "btSave";
+            this.btSave.Size = new System.Drawing.Size(155, 75);
+            this.btSave.TabIndex = 3;
+            this.btSave.Text = "Save  ";
+            this.btSave.UseVisualStyleBackColor = true;
+            this.btSave.Click += new System.EventHandler(this.btSave_Click);
+            // 
+            // tbinputSyntoms
+            // 
+            this.tbinputSyntoms.Location = new System.Drawing.Point(203, 183);
+            this.tbinputSyntoms.Multiline = true;
+            this.tbinputSyntoms.Name = "tbinputSyntoms";
+            this.tbinputSyntoms.Size = new System.Drawing.Size(205, 150);
+            this.tbinputSyntoms.TabIndex = 2;
+            // 
+            // tbInputDiagnosis
+            // 
+            this.tbInputDiagnosis.Location = new System.Drawing.Point(437, 183);
+            this.tbInputDiagnosis.Multiline = true;
+            this.tbInputDiagnosis.Name = "tbInputDiagnosis";
+            this.tbInputDiagnosis.Size = new System.Drawing.Size(390, 150);
+            this.tbInputDiagnosis.TabIndex = 1;
             // 
             // DiagnosisHistory
             // 
@@ -530,7 +598,7 @@
             this.DiagnosisHistory.ItemHeight = 16;
             this.DiagnosisHistory.Location = new System.Drawing.Point(23, 18);
             this.DiagnosisHistory.Name = "DiagnosisHistory";
-            this.DiagnosisHistory.Size = new System.Drawing.Size(777, 292);
+            this.DiagnosisHistory.Size = new System.Drawing.Size(804, 100);
             this.DiagnosisHistory.TabIndex = 0;
             // 
             // PatientDetails
@@ -541,6 +609,7 @@
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.ClientSize = new System.Drawing.Size(880, 416);
             this.Controls.Add(this.tabs);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "PatientDetails";
             this.Text = "Patient Details";
@@ -555,6 +624,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.tabs.ResumeLayout(false);
             this.consultationsTap.ResumeLayout(false);
+            this.consultationsTap.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -603,6 +673,12 @@
         private System.Windows.Forms.Button btAddPrescription;
         private System.Windows.Forms.TabPage consultationsTap;
         private System.Windows.Forms.ListBox DiagnosisHistory;
+        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox diagnosishead;
+        private System.Windows.Forms.Button btClear;
+        private System.Windows.Forms.Button btSave;
+        private System.Windows.Forms.TextBox tbinputSyntoms;
+        private System.Windows.Forms.TextBox tbInputDiagnosis;
 
     }
 }
