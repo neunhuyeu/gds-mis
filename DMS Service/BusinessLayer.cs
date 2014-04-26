@@ -156,7 +156,7 @@ namespace DMS_Service
             {
                 prescription.Medicine = row["medicine"].ToString();
                 prescription.Strength = Convert.ToInt32(row["strength_mg"]);
-                //prescription.Doctor = row["doctor"].ToString();
+                prescription.Doctor = GetStaff_by_staff_id( Convert.ToInt32( row["Staff_id"])).LastName;
                 prescription.Date = Convert.ToDateTime(row["date_prescribed"]);
 
                 prescriptionlist.Add(prescription);
@@ -186,6 +186,8 @@ namespace DMS_Service
                 {
                     staff.FirstName = row["first_name"].ToString();
                     staff.LastName = row["last_name"].ToString();
+                    staff.StaffID = Convert.ToInt32(row["Staff_id"]);
+
                     //staff.Function = (Staff.StaffType)Enum.Parse(typeof(Staff.StaffType), row["function"].ToString());
                     //staff.RoomNumber = Convert.ToInt32(row["room_number"]);
                     //staff.Specialization = row["specialization"].ToString();
@@ -275,6 +277,7 @@ namespace DMS_Service
               
                diagnosis.Consultation_id = Convert.ToInt32(row["consultation_id"]);
                diagnosis.Diagnosises = row["diagnosis"].ToString();
+               diagnosis.Symptoms = row["symptoms"].ToString();
                diagnosis.Date = Convert.ToDateTime(row["start_date"]);
                Staff doc =GetStaff_by_staff_id(Convert.ToInt32(row["Staff_id"]));
                diagnosis.DoctorName = doc.FirstName + " " + doc.LastName;

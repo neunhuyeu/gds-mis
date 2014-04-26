@@ -100,7 +100,7 @@
             this.tabCurrentMedication.Margin = new System.Windows.Forms.Padding(4);
             this.tabCurrentMedication.Name = "tabCurrentMedication";
             this.tabCurrentMedication.Padding = new System.Windows.Forms.Padding(4);
-            this.tabCurrentMedication.Size = new System.Drawing.Size(837, 341);
+            this.tabCurrentMedication.Size = new System.Drawing.Size(846, 361);
             this.tabCurrentMedication.TabIndex = 2;
             this.tabCurrentMedication.Text = "Perscriptions";
             this.tabCurrentMedication.UseVisualStyleBackColor = true;
@@ -276,7 +276,6 @@
             this.tabOverview.Size = new System.Drawing.Size(837, 341);
             this.tabOverview.TabIndex = 0;
             this.tabOverview.Text = "Overview";
-            this.tabOverview.Click += new System.EventHandler(this.tabPage1_Click);
             // 
             // panel1
             // 
@@ -491,7 +490,6 @@
             this.lbOverview.Size = new System.Drawing.Size(236, 31);
             this.lbOverview.TabIndex = 1;
             this.lbOverview.Text = "Patient Overview";
-            this.lbOverview.Click += new System.EventHandler(this.label1_Click);
             // 
             // pictureBox1
             // 
@@ -512,7 +510,7 @@
             this.tabs.Margin = new System.Windows.Forms.Padding(4);
             this.tabs.Name = "tabs";
             this.tabs.SelectedIndex = 0;
-            this.tabs.Size = new System.Drawing.Size(845, 370);
+            this.tabs.Size = new System.Drawing.Size(854, 390);
             this.tabs.TabIndex = 0;
             // 
             // consultationsTap
@@ -541,12 +539,11 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Window;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.ClientSize = new System.Drawing.Size(880, 396);
+            this.ClientSize = new System.Drawing.Size(880, 416);
             this.Controls.Add(this.tabs);
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "PatientDetails";
             this.Text = "Patient Details";
-            this.Load += new System.EventHandler(this.PatientDetails_Load);
             this.tabCurrentMedication.ResumeLayout(false);
             this.tabCurrentMedication.PerformLayout();
             this.groupBox1.ResumeLayout(false);

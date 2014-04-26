@@ -79,10 +79,7 @@ insurancenr = Convert.ToInt32(tbInsuranceSearch.Text);
             this.Visible=true;
         }
 
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
+      
 
         private void btn_searchPatients_Click(object sender, EventArgs e)
         {

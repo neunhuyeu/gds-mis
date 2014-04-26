@@ -36,7 +36,7 @@ namespace DMS_Service
         public DateTime Date { get { return date; } set { date = value; } }
         public string Doctor { get { return doctor; } set { doctor = value; } }
         public int DoctorId { get { return doctorId; } set { doctorId = value; } }
-        public int Strength { get { return doctorId; } set { doctorId = value; } }
+        public int Strength { get { return strength; } set { strength = value; } }
 
         // Changed something
     }

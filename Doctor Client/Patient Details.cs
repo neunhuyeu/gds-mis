@@ -68,7 +68,7 @@ namespace Doctor_Client
                 perscription = proxy.getPatientPerscriptions(patient.PersonIdk__BackingField);
                 foreach (ServerConnection.Perscription persrip in perscription)
                 {
-                    PerscriptionLb.Items.Add("Date: " + persrip.date.ToShortDateString() + "\t" + "Drug: " + persrip.medicine + "\t" + "Dosage: " + persrip.strength);
+                    PerscriptionLb.Items.Add("Date: " + persrip.date.ToShortDateString() + "\t" + "Drug: " + persrip.medicine + "\t" + "Dosage: " + persrip.strength+ " Perscriber: "+ persrip.doctor);
                 }
             }
 
@@ -111,35 +111,7 @@ namespace Doctor_Client
                             return "";
             }
         }
-        private void tabPage1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label10_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label11_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label12_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void PatientDetails_Load(object sender, EventArgs e)
-        {
-
-        }
+     
 
         private void PerscriptionLb_SelectedIndexChanged(object sender, EventArgs e)
         {

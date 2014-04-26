@@ -111,7 +111,7 @@ namespace DMS_Service
             MySqlParameter[] sqlParameters = new MySqlParameter[1];
             sqlParameters[0] = new MySqlParameter("@pt_id", MySqlDbType.Int32);
             sqlParameters[0].Value = id;
-            string query = string.Format("SELECT pre.medicine, pre.strength_mg, con.end_date as date_prescribed " + 
+            string query = string.Format("SELECT con.Staff_id, pre.medicine, pre.strength_mg, con.end_date as date_prescribed " + 
                                          "FROM prescribtion pre " +
                                          "JOIN consultations con " +
                                          "ON pre.consultation_id = con.consultation_id " + 
@@ -142,7 +142,12 @@ namespace DMS_Service
         {
             try
             {
-                string query = "SELECT * FROM person where email_address = @email";
+                
+                string query = "SELECT * "+
+                                "FROM person per "+
+                                "JOIN staff_members staf " +
+                                "ON per.person_id = staf.person_id "+
+                                "WHERE email_address = @email";
                 MySqlParameter[] sqlParameters = new MySqlParameter[1];
                 sqlParameters[0] = new MySqlParameter("@email", MySqlDbType.String);
                 sqlParameters[0].Value = Convert.ToString(email);
@@ -268,8 +273,8 @@ namespace DMS_Service
         public bool addPrescrption(Perscription perscription, int consultationId)
         {
             //query
-            string query = "INSERT INTO prescription(medicine, amount_pills, amount_ml, staff_id,consultation_id,strength_mg)" +
-                           "VALUES (@medicine, @amount_pills, @amount_ml, @staff_id,@consultation_id,@strength_mg)";
+            string query = "INSERT INTO prescribtion(medicine, amount_pills, ammount_ml,consultation_id,strength_mg)" +
+                           "VALUES (@medicine, @amount_pills, @amount_ml,@consultation_id,@strength_mg)";
 
             //parameters
             MySqlParameter[] sqlParameters = new MySqlParameter[5];
@@ -279,12 +284,10 @@ namespace DMS_Service
             sqlParameters[1].Value = Convert.ToString(perscription.Amount_pills);
             sqlParameters[2] = new MySqlParameter("@amount_ml", MySqlDbType.Int32);
             sqlParameters[2].Value = Convert.ToString(perscription.Amount_ml);
-            sqlParameters[3] = new MySqlParameter("@staff_id", MySqlDbType.Int32);
-            sqlParameters[3].Value = Convert.ToString(perscription.DoctorId);
-            sqlParameters[4] = new MySqlParameter("@consultation_id", MySqlDbType.Int32);
-            sqlParameters[4].Value = Convert.ToString(consultationId);
-            sqlParameters[5] = new MySqlParameter("@strength_mg", MySqlDbType.Int32);
-            sqlParameters[5].Value = Convert.ToString(perscription.Strength);
+            sqlParameters[3] = new MySqlParameter("@consultation_id", MySqlDbType.Int32);
+            sqlParameters[3].Value = Convert.ToString(consultationId);
+            sqlParameters[4] = new MySqlParameter("@strength_mg", MySqlDbType.Int32);
+            sqlParameters[4].Value = Convert.ToString(perscription.Strength);
             try
             {
                 //execute query on appointment table
