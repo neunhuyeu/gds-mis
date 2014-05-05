@@ -26,6 +26,18 @@
   <wsdl:message name="IDoctor_getConsultationHistorybyPatient_OutputMessage">
     <wsdl:part name="parameters" element="tns:getConsultationHistorybyPatientResponse" />
   </wsdl:message>
+  <wsdl:message name="IDoctor_getConsultationOfToday_InputMessage">
+    <wsdl:part name="parameters" element="tns:getConsultationOfToday" />
+  </wsdl:message>
+  <wsdl:message name="IDoctor_getConsultationOfToday_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getConsultationOfTodayResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDoctor_SearchConsultationsbyDate_InputMessage">
+    <wsdl:part name="parameters" element="tns:SearchConsultationsbyDate" />
+  </wsdl:message>
+  <wsdl:message name="IDoctor_SearchConsultationsbyDate_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SearchConsultationsbyDateResponse" />
+  </wsdl:message>
   <wsdl:message name="IDoctor_getDiagnosisHistoryByPersionID_InputMessage">
     <wsdl:part name="parameters" element="tns:getDiagnosisHistoryByPersionID" />
   </wsdl:message>
@@ -135,6 +147,14 @@
       <wsdl:input wsaw:Action="http://tempuri.org/IDoctor/getConsultationHistorybyPatient" message="tns:IDoctor_getConsultationHistorybyPatient_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IDoctor/getConsultationHistorybyPatientResponse" message="tns:IDoctor_getConsultationHistorybyPatient_OutputMessage" />
     </wsdl:operation>
+    <wsdl:operation name="getConsultationOfToday">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDoctor/getConsultationOfToday" message="tns:IDoctor_getConsultationOfToday_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDoctor/getConsultationOfTodayResponse" message="tns:IDoctor_getConsultationOfToday_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SearchConsultationsbyDate">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDoctor/SearchConsultationsbyDate" message="tns:IDoctor_SearchConsultationsbyDate_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDoctor/SearchConsultationsbyDateResponse" message="tns:IDoctor_SearchConsultationsbyDate_OutputMessage" />
+    </wsdl:operation>
     <wsdl:operation name="getDiagnosisHistoryByPersionID">
       <wsdl:input wsaw:Action="http://tempuri.org/IDoctor/getDiagnosisHistoryByPersionID" message="tns:IDoctor_getDiagnosisHistoryByPersionID_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IDoctor/getDiagnosisHistoryByPersionIDResponse" message="tns:IDoctor_getDiagnosisHistoryByPersionID_OutputMessage" />
@@ -222,6 +242,24 @@
     </wsdl:operation>
     <wsdl:operation name="getConsultationHistorybyPatient">
       <soap:operation soapAction="http://tempuri.org/IDoctor/getConsultationHistorybyPatient" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getConsultationOfToday">
+      <soap:operation soapAction="http://tempuri.org/IDoctor/getConsultationOfToday" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SearchConsultationsbyDate">
+      <soap:operation soapAction="http://tempuri.org/IDoctor/SearchConsultationsbyDate" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

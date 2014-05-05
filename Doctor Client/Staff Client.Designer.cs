@@ -37,6 +37,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.tabAgenda = new System.Windows.Forms.TabPage();
             this.tabPatientSearch = new System.Windows.Forms.TabPage();
+            this.btn_editPatient = new System.Windows.Forms.Button();
             this.DOBSearch = new System.Windows.Forms.DateTimePicker();
             this.tbSearchLastName = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
@@ -48,11 +49,13 @@
             this.tbSearchFirstName = new System.Windows.Forms.TextBox();
             this.userNamelb = new System.Windows.Forms.Label();
             this.logoubtn = new System.Windows.Forms.Button();
-            this.btn_editPatient = new System.Windows.Forms.Button();
+            this.monthCalendar1 = new System.Windows.Forms.MonthCalendar();
+            this.agendaList = new System.Windows.Forms.ListBox();
             this.tabs.SuspendLayout();
             this.tabHome.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+            this.tabAgenda.SuspendLayout();
             this.tabPatientSearch.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -73,7 +76,7 @@
             this.tabHome.Controls.Add(this.label1);
             this.tabHome.Location = new System.Drawing.Point(4, 22);
             this.tabHome.Name = "tabHome";
-            this.tabHome.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tabHome.Padding = new System.Windows.Forms.Padding(3);
             this.tabHome.Size = new System.Drawing.Size(682, 332);
             this.tabHome.TabIndex = 0;
             this.tabHome.Text = "Home";
@@ -121,9 +124,11 @@
             // 
             this.tabAgenda.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("tabAgenda.BackgroundImage")));
             this.tabAgenda.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.tabAgenda.Controls.Add(this.agendaList);
+            this.tabAgenda.Controls.Add(this.monthCalendar1);
             this.tabAgenda.Location = new System.Drawing.Point(4, 22);
             this.tabAgenda.Name = "tabAgenda";
-            this.tabAgenda.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tabAgenda.Padding = new System.Windows.Forms.Padding(3);
             this.tabAgenda.Size = new System.Drawing.Size(682, 332);
             this.tabAgenda.TabIndex = 1;
             this.tabAgenda.Text = "Agenda";
@@ -143,18 +148,28 @@
             this.tabPatientSearch.Controls.Add(this.tbSearchFirstName);
             this.tabPatientSearch.Location = new System.Drawing.Point(4, 22);
             this.tabPatientSearch.Name = "tabPatientSearch";
-            this.tabPatientSearch.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tabPatientSearch.Padding = new System.Windows.Forms.Padding(3);
             this.tabPatientSearch.Size = new System.Drawing.Size(682, 332);
             this.tabPatientSearch.TabIndex = 2;
             this.tabPatientSearch.Text = "Patient Search";
             this.tabPatientSearch.UseVisualStyleBackColor = true;
+            // 
+            // btn_editPatient
+            // 
+            this.btn_editPatient.Enabled = false;
+            this.btn_editPatient.Location = new System.Drawing.Point(591, 172);
+            this.btn_editPatient.Name = "btn_editPatient";
+            this.btn_editPatient.Size = new System.Drawing.Size(75, 23);
+            this.btn_editPatient.TabIndex = 12;
+            this.btn_editPatient.Text = "Edit Patient";
+            this.btn_editPatient.UseVisualStyleBackColor = true;
             // 
             // DOBSearch
             // 
             this.DOBSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 7F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.DOBSearch.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.DOBSearch.Location = new System.Drawing.Point(111, 60);
-            this.DOBSearch.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.DOBSearch.Margin = new System.Windows.Forms.Padding(2);
             this.DOBSearch.Name = "DOBSearch";
             this.DOBSearch.Size = new System.Drawing.Size(100, 18);
             this.DOBSearch.TabIndex = 11;
@@ -165,7 +180,7 @@
             // tbSearchLastName
             // 
             this.tbSearchLastName.Location = new System.Drawing.Point(111, 40);
-            this.tbSearchLastName.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tbSearchLastName.Margin = new System.Windows.Forms.Padding(2);
             this.tbSearchLastName.Name = "tbSearchLastName";
             this.tbSearchLastName.Size = new System.Drawing.Size(100, 20);
             this.tbSearchLastName.TabIndex = 9;
@@ -177,7 +192,7 @@
             this.label6.Location = new System.Drawing.Point(7, 42);
             this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(57, 13);
+            this.label6.Size = new System.Drawing.Size(58, 13);
             this.label6.TabIndex = 8;
             this.label6.Text = "Last Name";
             // 
@@ -186,7 +201,7 @@
             this.searchListLB.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.searchListLB.FormattingEnabled = true;
             this.searchListLB.Location = new System.Drawing.Point(10, 125);
-            this.searchListLB.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.searchListLB.Margin = new System.Windows.Forms.Padding(2);
             this.searchListLB.Name = "searchListLB";
             this.searchListLB.Size = new System.Drawing.Size(576, 199);
             this.searchListLB.TabIndex = 7;
@@ -197,7 +212,7 @@
             this.label4.AutoSize = true;
             this.label4.Location = new System.Drawing.Point(7, 86);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(99, 13);
+            this.label4.Size = new System.Drawing.Size(97, 13);
             this.label4.TabIndex = 6;
             this.label4.Text = "Insurance Number:";
             // 
@@ -206,7 +221,7 @@
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(7, 64);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(72, 13);
+            this.label3.Size = new System.Drawing.Size(69, 13);
             this.label3.TabIndex = 5;
             this.label3.Text = "Date of Birth:";
             // 
@@ -216,7 +231,7 @@
             this.label2.BackColor = System.Drawing.Color.White;
             this.label2.Location = new System.Drawing.Point(7, 20);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(55, 13);
+            this.label2.Size = new System.Drawing.Size(54, 13);
             this.label2.TabIndex = 4;
             this.label2.Text = "FirtsName";
             // 
@@ -243,14 +258,14 @@
             this.userNamelb.Location = new System.Drawing.Point(9, 2);
             this.userNamelb.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.userNamelb.Name = "userNamelb";
-            this.userNamelb.Size = new System.Drawing.Size(54, 13);
+            this.userNamelb.Size = new System.Drawing.Size(55, 13);
             this.userNamelb.TabIndex = 4;
             this.userNamelb.Text = "Welcome:";
             // 
             // logoubtn
             // 
             this.logoubtn.Location = new System.Drawing.Point(582, 2);
-            this.logoubtn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.logoubtn.Margin = new System.Windows.Forms.Padding(2);
             this.logoubtn.Name = "logoubtn";
             this.logoubtn.Size = new System.Drawing.Size(56, 28);
             this.logoubtn.TabIndex = 6;
@@ -258,15 +273,24 @@
             this.logoubtn.UseVisualStyleBackColor = true;
             this.logoubtn.Click += new System.EventHandler(this.logoubtn_Click);
             // 
-            // btn_editPatient
+            // monthCalendar1
             // 
-            this.btn_editPatient.Enabled = false;
-            this.btn_editPatient.Location = new System.Drawing.Point(591, 172);
-            this.btn_editPatient.Name = "btn_editPatient";
-            this.btn_editPatient.Size = new System.Drawing.Size(75, 23);
-            this.btn_editPatient.TabIndex = 12;
-            this.btn_editPatient.Text = "Edit Patient";
-            this.btn_editPatient.UseVisualStyleBackColor = true;
+            this.monthCalendar1.CalendarDimensions = new System.Drawing.Size(2, 2);
+            this.monthCalendar1.Location = new System.Drawing.Point(-4, 16);
+            this.monthCalendar1.MaxSelectionCount = 1;
+            this.monthCalendar1.Name = "monthCalendar1";
+            this.monthCalendar1.TabIndex = 0;
+            this.monthCalendar1.DateChanged += new System.Windows.Forms.DateRangeEventHandler(this.monthCalendar1_DateChanged);
+            // 
+            // agendaList
+            // 
+            this.agendaList.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.agendaList.FormattingEnabled = true;
+            this.agendaList.Location = new System.Drawing.Point(341, 11);
+            this.agendaList.Margin = new System.Windows.Forms.Padding(2);
+            this.agendaList.Name = "agendaList";
+            this.agendaList.Size = new System.Drawing.Size(339, 316);
+            this.agendaList.TabIndex = 8;
             // 
             // Client
             // 
@@ -286,6 +310,7 @@
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+            this.tabAgenda.ResumeLayout(false);
             this.tabPatientSearch.ResumeLayout(false);
             this.tabPatientSearch.PerformLayout();
             this.ResumeLayout(false);
@@ -315,5 +340,7 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.DateTimePicker DOBSearch;
         private System.Windows.Forms.Button btn_editPatient;
+        private System.Windows.Forms.ListBox agendaList;
+        private System.Windows.Forms.MonthCalendar monthCalendar1;
     }
 }

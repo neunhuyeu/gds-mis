@@ -10,7 +10,7 @@
           <xs:element name="_x003C_ConsultationId_x003E_k__BackingField" type="xs:int" />
           <xs:element name="_x003C_DiagnosisId_x003E_k__BackingField" type="xs:int" />
           <xs:element name="_x003C_Height_x003E_k__BackingField" type="xs:int" />
-          <xs:element name="_x003C_InsuranceNumber_x003E_k__BackingField" type="xs:int" />
+          <xs:element name="_x003C_InsuranceNumber_x003E_k__BackingField" nillable="true" type="xs:string" />
           <xs:element name="_x003C_PatientID_x003E_k__BackingField" type="xs:int" />
           <xs:element name="_x003C_PrescriptionId_x003E_k__BackingField" type="xs:int" />
           <xs:element name="_x003C_Smoker_x003E_k__BackingField" type="xs:boolean" />
@@ -56,6 +56,12 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="Consultation" nillable="true" type="tns:Consultation" />
+  <xs:complexType name="ArrayOfPatient">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Patient" nillable="true" type="tns:Patient" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfPatient" nillable="true" type="tns:ArrayOfPatient" />
   <xs:complexType name="ArrayOfDiagnosis">
     <xs:sequence>
       <xs:element minOccurs="0" maxOccurs="unbounded" name="Diagnosis" type="tns:Diagnosis" />
@@ -145,10 +151,4 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="Perscription" nillable="true" type="tns:Perscription" />
-  <xs:complexType name="ArrayOfPatient">
-    <xs:sequence>
-      <xs:element minOccurs="0" maxOccurs="unbounded" name="Patient" nillable="true" type="tns:Patient" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="ArrayOfPatient" nillable="true" type="tns:ArrayOfPatient" />
 </xs:schema>

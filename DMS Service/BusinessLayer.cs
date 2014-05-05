@@ -251,6 +251,8 @@ namespace DMS_Service
            
            return Convert.ToInt32( dt.Rows[0])+1;
         }
+
+
        public List<Consultation> getConsultationHistorybyPatient(int Patientid)
        {
            List<Consultation> myconsultions= new List<Consultation>();
@@ -267,6 +269,51 @@ namespace DMS_Service
            }
            return myconsultions;
        }
+
+
+       public List<Consultation> getConsultationOfToday(int staffID)
+       {
+           List<Consultation> myconsultions = new List<Consultation>();
+           DataTable dataTable = dbAcess.SearchconsultationsOfToday(staffID);
+
+           foreach (DataRow row in dataTable.Rows)
+           {
+               Consultation consultation = new Consultation();
+
+               consultation.Start_date = Convert.ToDateTime(row["start_date"]);
+               consultation.ConsultationID = Convert.ToInt32(row["consultation_id"]);
+               consultation.End_date = Convert.ToDateTime(row["end_date"]);
+               consultation.Staff_id = Convert.ToInt32(row["Staff_id"]);
+               consultation.Patient_id = Convert.ToInt32(row["patient_id"]);
+
+               myconsultions.Add(consultation);
+           }
+           return myconsultions;
+       }
+
+       public List<Patient> SearchConsultationsbyDate(DateTime date)
+       {
+           List<Patient> mypersons = new List<Patient>();
+           DataTable dataTable = dbAcess.SearchConsultationsbyDate(date);
+
+           foreach (DataRow row in dataTable.Rows)
+           {
+               Patient person = new Patient();
+
+               person.PersonId = Convert.ToInt32(row["person_id"]);
+               person.FirstName = Convert.ToString(row["first_name"]);
+               person.LastName = Convert.ToString(row["last_name"]);
+               person.DateOfBirth = Convert.ToDateTime(row["date_of_birth"]);
+              
+               mypersons.Add(person);
+           }
+           return mypersons;
+       }
+        
+
+
+
+
        public List<Diagnosis> getDiagnosisHistoryByPersionID(int Patientid)
        {
            List<Diagnosis> myDiagnosis = new List<Diagnosis>();
