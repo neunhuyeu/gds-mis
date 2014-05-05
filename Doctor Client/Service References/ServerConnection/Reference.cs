@@ -1005,10 +1005,10 @@ namespace Doctor_Client.ServerConnection {
         System.Threading.Tasks.Task<Doctor_Client.ServerConnection.Perscription[]> getPatientPerscriptionsAsync(int patientID);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IDoctor/SearchPatients", ReplyAction="http://tempuri.org/IDoctor/SearchPatientsResponse")]
-        Doctor_Client.ServerConnection.Patient[] SearchPatients(string first, string last, System.DateTime dateOfBirth, int insurance);
+        Doctor_Client.ServerConnection.Patient[] SearchPatients(string first, string last, System.DateTime dateOfBirth, string insurance);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IDoctor/SearchPatients", ReplyAction="http://tempuri.org/IDoctor/SearchPatientsResponse")]
-        System.Threading.Tasks.Task<Doctor_Client.ServerConnection.Patient[]> SearchPatientsAsync(string first, string last, System.DateTime dateOfBirth, int insurance);
+        System.Threading.Tasks.Task<Doctor_Client.ServerConnection.Patient[]> SearchPatientsAsync(string first, string last, System.DateTime dateOfBirth, string insurance);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IDoctor/setPerscription", ReplyAction="http://tempuri.org/IDoctor/setPerscriptionResponse")]
         string setPerscription(int appointmentID, Doctor_Client.ServerConnection.Perscription perscription);
@@ -1172,11 +1172,11 @@ namespace Doctor_Client.ServerConnection {
             return base.Channel.getPatientPerscriptionsAsync(patientID);
         }
         
-        public Doctor_Client.ServerConnection.Patient[] SearchPatients(string first, string last, System.DateTime dateOfBirth, int insurance) {
+        public Doctor_Client.ServerConnection.Patient[] SearchPatients(string first, string last, System.DateTime dateOfBirth, string insurance) {
             return base.Channel.SearchPatients(first, last, dateOfBirth, insurance);
         }
         
-        public System.Threading.Tasks.Task<Doctor_Client.ServerConnection.Patient[]> SearchPatientsAsync(string first, string last, System.DateTime dateOfBirth, int insurance) {
+        public System.Threading.Tasks.Task<Doctor_Client.ServerConnection.Patient[]> SearchPatientsAsync(string first, string last, System.DateTime dateOfBirth, string insurance) {
             return base.Channel.SearchPatientsAsync(first, last, dateOfBirth, insurance);
         }
         

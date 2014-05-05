@@ -32,8 +32,8 @@ namespace Doctor_Client
             if (tbSearchFirstName.Text.Length + tbInsuranceSearch.Text.Length + DOBSearch.Text.Length + tbSearchLastName.Text.Length > 0)
             {
                 ServerConnection.DoctorClient proxy = new ServerConnection.DoctorClient();
-               
-                if (((potentualPatients = proxy.SearchPatients(tbSearchFirstName.Text, tbSearchLastName.Text, DOBSearch.Value,insurancenumberFormater())) != null))
+
+                if (((potentualPatients = proxy.SearchPatients(tbSearchFirstName.Text, tbSearchLastName.Text, DOBSearch.Value, tbInsuranceSearch.Text)) != null))
                 {
                     foreach (Patient patient in potentualPatients)
                     {
@@ -46,19 +46,6 @@ namespace Doctor_Client
             }
         }
 
-        private int insurancenumberFormater()
-        {
-            int insurancenr;
-            if (tbInsuranceSearch.Text == "")
-            {
-                insurancenr = 0;
-            }
-            else
-            {
-insurancenr = Convert.ToInt32(tbInsuranceSearch.Text);
-            }
-            return insurancenr;
-        }
 
         private void Client_Load(object sender, EventArgs e)
         {

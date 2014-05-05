@@ -274,7 +274,7 @@ namespace DMS_Service.MySynchroniseService {
         
         private int Heightk__BackingFieldField;
         
-        private int InsuranceNumberk__BackingFieldField;
+        private string InsuranceNumberk__BackingFieldField;
         
         private int PatientIDk__BackingFieldField;
         
@@ -339,7 +339,7 @@ namespace DMS_Service.MySynchroniseService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute(Name="<InsuranceNumber>k__BackingField", IsRequired=true)]
-        public int InsuranceNumberk__BackingField {
+        public string InsuranceNumberk__BackingField {
             get {
                 return this.InsuranceNumberk__BackingFieldField;
             }

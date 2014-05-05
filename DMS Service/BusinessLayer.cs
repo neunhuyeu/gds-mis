@@ -63,7 +63,7 @@ namespace DMS_Service
                 patient.Weight = Convert.ToInt32(row["weight_kg"]);
                 patient.BloodType = Convert.ToString(row["blood_type"])[0];
                 patient.Smoker = Convert.ToBoolean(row["smoking"]);
-                //patient.InsuranceNumber = Convert.ToInt32(row["InsuranceNumber"]);
+                patient.InsuranceNumber = Convert.ToString(row["insurance_number"]);
             }  
             return patient;
         }
@@ -204,11 +204,11 @@ namespace DMS_Service
         }
 
 
-        public List<Patient> SearchPatients(string first, string last, DateTime dateOfBirth, int insurance)
+        public List<Patient> SearchPatients(string first, string last, DateTime dateOfBirth, string insurance)
         {
             List<Patient> patients = new List<Patient>();
             DataTable dataTable = new DataTable();
-            dataTable = dbAcess.SearchPatientsList(first, last,dateOfBirth);
+            dataTable = dbAcess.SearchPatientsList(first, last,dateOfBirth , insurance);
             if (dataTable==null)
             {
                 return null;
@@ -226,7 +226,7 @@ namespace DMS_Service
                 p.MobileNumber = dr["mobile_number"].ToString();
                 p.LandLineNumber = dr["landline_number"].ToString();
                 p.Address = dr["home_address"].ToString();
-                p.InsuranceNumber = 0;
+                p.InsuranceNumber = dr["insurance_number"].ToString();
                 patients.Add(p);
             }
 
@@ -304,7 +304,7 @@ namespace DMS_Service
             dude.SmokingFrequency = 0;
             dude.MobileNumber = "12345";
             dude.LandLineNumber = "54321";
-            dude.InsuranceNumber = 222222;
+            dude.InsuranceNumber = "222222";
             dude.DateOfBirth = new DateTime(1960,5,5);
             dude.Email = "Homer@lol.com";
             dude.Address = "springfield";

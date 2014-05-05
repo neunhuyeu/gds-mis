@@ -22,7 +22,7 @@ namespace DMS_Service
         public char BloodType { get;  set; }
         public bool Smoker { get;  set; }
         public int SmokingFrequency { get; set; }
-        public int InsuranceNumber { get;  set; }
+        public string InsuranceNumber { get;  set; }
 
     }
 }
