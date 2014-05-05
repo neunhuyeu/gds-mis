@@ -29,6 +29,7 @@ CREATE TABLE  IF NOT EXISTS person
   mobile_number Char(25),
   landline_number Char(25),
   home_address Char(50) NOT NULL,
+  insurance_number Char(10) NOT NULL,
  PRIMARY KEY (person_id),
  UNIQUE person_id (person_id)
 )
@@ -93,7 +94,7 @@ CREATE TABLE consultations
 )
 ;
 
-ALTER TABLE consultations ADD PRIMARY KEY (consultation_id,diagnosis_id,patient_id,Staff_id)
+ALTER TABLE consultations ADD PRIMARY KEY (consultation_id,patient_id,Staff_id)
 ;
 
 ALTER TABLE consultations ADD UNIQUE Key8 (consultation_id)
@@ -115,39 +116,39 @@ CREATE TABLE Staff_members
 
 -- Create relationships section ------------------------------------------------- 
 
-ALTER TABLE patients ADD CONSTRAINT Relationship2 FOREIGN KEY (person_id) REFERENCES person (person_id) ON DELETE NO ACTION ON UPDATE NO ACTION
+ALTER TABLE patients ADD CONSTRAINT patients_personID_fk FOREIGN KEY (person_id) REFERENCES person (person_id) ON DELETE NO ACTION ON UPDATE NO ACTION
 ;
 
-ALTER TABLE diagnosis ADD CONSTRAINT Relationship3 FOREIGN KEY (consultation_id) REFERENCES consultations (consultation_id) ON DELETE NO ACTION ON UPDATE NO ACTION
+ALTER TABLE diagnosis ADD CONSTRAINT diagnosis_consultationID_fk FOREIGN KEY (consultation_id) REFERENCES consultations (consultation_id) ON DELETE NO ACTION ON UPDATE NO ACTION
 ;
 
-ALTER TABLE consultations ADD CONSTRAINT Relationship6 FOREIGN KEY (patient_id) REFERENCES patients (patient_id) ON DELETE NO ACTION ON UPDATE NO ACTION
+ALTER TABLE consultations ADD CONSTRAINT consultations_patientID_fk FOREIGN KEY (patient_id) REFERENCES patients (patient_id) ON DELETE NO ACTION ON UPDATE NO ACTION
 ;
 
-ALTER TABLE Staff_members ADD CONSTRAINT Relationship7 FOREIGN KEY (person_id) REFERENCES person (person_id) ON DELETE NO ACTION ON UPDATE NO ACTION
+ALTER TABLE Staff_members ADD CONSTRAINT Staff_members_personID_fk FOREIGN KEY (person_id) REFERENCES person (person_id) ON DELETE NO ACTION ON UPDATE NO ACTION
 ;
 
-ALTER TABLE consultations ADD CONSTRAINT Relationship9 FOREIGN KEY (Staff_id) REFERENCES Staff_members (Staff_id) ON DELETE NO ACTION ON UPDATE NO ACTION
+ALTER TABLE consultations ADD CONSTRAINT consultations_staffID_fk FOREIGN KEY (Staff_id) REFERENCES Staff_members (Staff_id) ON DELETE NO ACTION ON UPDATE NO ACTION
 ;
 
-ALTER TABLE prescribtion ADD CONSTRAINT Relationship10 FOREIGN KEY (consultation_id) REFERENCES consultations (consultation_id) ON DELETE NO ACTION ON UPDATE NO ACTION
+ALTER TABLE prescribtion ADD CONSTRAINT prescribtion_consultationID_fk FOREIGN KEY (consultation_id) REFERENCES consultations (consultation_id) ON DELETE NO ACTION ON UPDATE NO ACTION
 ;
 
 -- Populate tables section ------------------------------------------------------ 
 
 -- person
 
-INSERT INTO person (person_id, first_name, last_name, date_of_birth,email_address,mobile_number,landline_number,home_address) VALUES
-(1 ,'name_one','last_one','1990-01-01','name_one@mail.com','1234567890','0987654321','12a home_street 1234PC town_name'),
-(2 ,'name_two','last_two','1990-02-01','name_two@mail.com','1234567890','0987654321','13a home_street 1234PC town_name'),
-(3 ,'name_three','last_three','1990-03-01','name_three@mail.com','1234567890','0987654321','14a home_street 1234PC town_name'),
-(4 ,'name_four','last_four','1990-04-01','name_four@mail.com','1234567890','0987654321','15a home_street 1234PC town_name'),
-(5 ,'name_five','last_five','1990-05-01','name_five@mail.com','1234567890','0987654321','16a home_street 1234PC town_name'),
-(6 ,'name_six','last_six','1990-06-01','name_six@mail.com','1234567890','0987654321','17a home_street 1234PC town_name'),
-(7 ,'name_seven','last_seven','1990-07-01','name_seven@mail.com','1234567890','0987654321','18a home_street 1234PC town_name'),
-(8 ,'name_eight','last_eight','1990-08-01','name_eight@mail.com','1234567890','0987654321','19a home_street 1234PC town_name'),
-(9 ,'name_nine','last_nine','1990-09-01','name_nine@mail.com','1234567890','0987654321','20a home_street 1234PC town_name'),
-(10 ,'name_ten','last_ten','1990-10-01','name_ten@mail.com','1234567890','0987654321','21a home_street 1234PC town_name');
+INSERT INTO person (person_id, first_name, last_name, date_of_birth,email_address,mobile_number,landline_number,home_address, insurance_number) VALUES
+(1 ,'name_one','last_one','1990-01-01','name_one@mail.com','1234567890','0987654321','12a home_street 1234PC town_name','1234567890'),
+(2 ,'name_two','last_two','1990-02-01','name_two@mail.com','1234567890','0987654321','13a home_street 1234PC town_name','1234567891'),
+(3 ,'name_three','last_three','1990-03-01','name_three@mail.com','1234567890','0987654321','14a home_street 1234PC town_name','1234567892'),
+(4 ,'name_four','last_four','1990-04-01','name_four@mail.com','1234567890','0987654321','15a home_street 1234PC town_name','1234567893'),
+(5 ,'name_five','last_five','1990-05-01','name_five@mail.com','1234567890','0987654321','16a home_street 1234PC town_name','1234567894'),
+(6 ,'name_six','last_six','1990-06-01','name_six@mail.com','1234567890','0987654321','17a home_street 1234PC town_name','1234567895'),
+(7 ,'name_seven','last_seven','1990-07-01','name_seven@mail.com','1234567890','0987654321','18a home_street 1234PC town_name','1234567896'),
+(8 ,'name_eight','last_eight','1990-08-01','name_eight@mail.com','1234567890','0987654321','19a home_street 1234PC town_name','1234567897'),
+(9 ,'name_nine','last_nine','1990-09-01','name_nine@mail.com','1234567890','0987654321','20a home_street 1234PC town_name','1234567898'),
+(10 ,'name_ten','last_ten','1990-10-01','name_ten@mail.com','1234567890','0987654321','21a home_street 1234PC town_name','1234567899');
 
 -- Staff_members
 
@@ -195,6 +196,17 @@ INSERT INTO prescribtion (prescribtion_id,medicine,strength_mg,amount_pills,ammo
 (5,'resurection tablets',10000,1,NULL,4),
 (6,'vitamens',1000,60,NULL,5);
 
+-- Test queries section --------------------------------------------------
+
 select pp.first_name, d.diagnosis, s.function, ppp.medicine  from diagnosis d , consultations c, patients p, person pp , Staff_members s, prescribtion ppp
 where c.patient_id = p.patient_id and d.consultation_id = c.consultation_id 
 and pp.person_id = p.person_id and c.Staff_id = s.Staff_id and ppp.consultation_id = c.consultation_id;
+
+-- Drop tables section ---------------------------------------------------
+
+Drop table prescribtion;
+Drop table diagnosis;
+Drop table consultations;
+Drop table patients;
+Drop table Staff_members;
+Drop table person;
