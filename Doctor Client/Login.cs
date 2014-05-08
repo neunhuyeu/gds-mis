@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Doctor_Client.ServerConnection;
+using Doctor_Client.ServerConnectionMedicalInformation;
 
 
 namespace Doctor_Client
@@ -15,12 +15,12 @@ namespace Doctor_Client
     public partial class Login : Form
     {
 
-        private ServerConnection.DoctorClient proxy;
+        private ServerConnectionMedicalInformation.DoctorClient proxy;
       
         public Login()
         {
             
-                proxy = new ServerConnection.DoctorClient();
+                proxy = new ServerConnectionMedicalInformation.DoctorClient();
          
    
             InitializeComponent();
@@ -43,7 +43,7 @@ namespace Doctor_Client
             {
                 string  Email = tbEmail.Text;
                 string Password = tbPassword.Text;
-                    ServerConnection.Staff currentUser;
+                    ServerConnectionMedicalInformation.Staff currentUser;
                     if ((currentUser = proxy.Login(Email, Password)).FirstNamek__BackingField != null)
                     {
                         Client doctorform = new Client(currentUser);

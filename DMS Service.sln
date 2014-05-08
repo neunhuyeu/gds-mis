@@ -8,6 +8,7 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Doctor Client", "Doctor Client\Doctor Client.csproj", "{81A7B23B-5C76-424E-9035-88B2142F1D28}"
 	ProjectSection(ProjectDependencies) = postProject
 		{8F931D1F-245D-4825-86BC-46FF23D06AC0} = {8F931D1F-245D-4825-86BC-46FF23D06AC0}
+		{F255738B-ED96-4876-8BC2-9EAC6FEF2745} = {F255738B-ED96-4876-8BC2-9EAC6FEF2745}
 	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Appointment Service", "Appointment Serves\Appointment Service.csproj", "{F255738B-ED96-4876-8BC2-9EAC6FEF2745}"

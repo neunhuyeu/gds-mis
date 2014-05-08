@@ -7,15 +7,16 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Doctor_Client.ServerConnection;
+using Doctor_Client.ServerConnectionMedicalInformation;
+using Doctor_Client.ServerConnectionAgenda;
 
 namespace Doctor_Client
 {
     public partial class Client : Form
     {
-        ServerConnection.Staff currentUser;
-        ServerConnection.Patient[] potentualPatients;
-        ServerConnection.Consultation[] consultations;
+        ServerConnectionMedicalInformation.Staff currentUser;
+        ServerConnectionMedicalInformation.Patient[] potentualPatients;
+        ServerConnectionMedicalInformation.Consultation[] consultations;
         List<string[]> stringList;
         string[] Appoint;
         DateTime[] DatetimeBold;
@@ -35,11 +36,11 @@ namespace Doctor_Client
             searchListLB.Items.Clear();
             if (tbSearchFirstName.Text.Length + tbInsuranceSearch.Text.Length + DOBSearch.Text.Length + tbSearchLastName.Text.Length > 0)
             {
-                ServerConnection.DoctorClient proxy = new ServerConnection.DoctorClient();
+                ServerConnectionMedicalInformation.DoctorClient proxy = new ServerConnectionMedicalInformation.DoctorClient();
 
                 if (((potentualPatients = proxy.SearchPatients(tbSearchFirstName.Text, tbSearchLastName.Text, DOBSearch.Value, tbInsuranceSearch.Text)) != null))
                 { 
-                    foreach (Patient patient in potentualPatients)
+                    foreach (ServerConnectionMedicalInformation.Patient patient in potentualPatients)
                     {
                         searchListLB.Items.Add(String.Format("{0,-11}  {1,-11}   {2,8} {0,25}", patient.FirstNamek__BackingField, patient.LastNamek__BackingField, patient.DateOfBirthk__BackingField.GetDateTimeFormats('d')[1], patient.InsuranceNumberk__BackingField));
 
@@ -49,11 +50,11 @@ namespace Doctor_Client
 
             }
         }
-
+      //check
         private void getConsultationsoftheDay()
         {
             stringList = new List<string[]>();
-            ServerConnection.DoctorClient proxy = new ServerConnection.DoctorClient();
+            ServerConnectionMedicalInformation.DoctorClient proxy = new ServerConnectionMedicalInformation.DoctorClient();
             if (((consultations = proxy.getConsultationOfToday(currentUser.StaffIDk__BackingField)) != null))
             {
                 foreach (Consultation consul in consultations)
@@ -64,11 +65,15 @@ namespace Doctor_Client
             }
            
         }
-
+        //check
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
         private DateTime[] getConsultationsHistorybyStaffid()
         {
             
-            ServerConnection.DoctorClient proxy = new ServerConnection.DoctorClient();
+            ServerConnectionMedicalInformation.DoctorClient proxy = new ServerConnectionMedicalInformation.DoctorClient();
             if (((consultations = proxy.SearchconsultionHistoryByStaffID(currentUser.StaffIDk__BackingField)) != null))
             {
                 DatetimeBold = new DateTime[consultations.Length];
@@ -118,7 +123,7 @@ namespace Doctor_Client
 
         private void searchListLB_SelectedIndexChanged(object sender, EventArgs e)
         {
-            PatientDetails Patient = new PatientDetails(potentualPatients[searchListLB.SelectedIndex],currentUser);
+           PatientDetails Patient = new PatientDetails(potentualPatients[searchListLB.SelectedIndex],currentUser);
             this.Visible = false;
             Patient.ShowDialog();
             this.Visible=true;
@@ -140,11 +145,14 @@ namespace Doctor_Client
         {
             int i = 0;
            
-            ServerConnection.DoctorClient proxy = new ServerConnection.DoctorClient();
-            if (((potentualPatients = proxy.SearchConsultationsbyDate(date,currentUser.StaffIDk__BackingField)) != null))
+            ServerConnectionAgenda.AppointmentClient proxy = new ServerConnectionAgenda.AppointmentClient();
+            ServerConnectionAgenda.Patient[] agendaPatients;
+            if (((agendaPatients = proxy.SearchappointmentsbyDate(date, currentUser.StaffIDk__BackingField)) != null))
             {
+               
+
                 Appoint = new string[potentualPatients.Length];
-                foreach (Patient patient in potentualPatients)
+                foreach (ServerConnectionMedicalInformation.Patient patient in potentualPatients)
                 {
                     
                     Appoint[i] = ("PersonId: " + patient.PersonIdk__BackingField.ToString() + " Name: " + patient.FirstNamek__BackingField +" " + patient.LastNamek__BackingField + " born:" + patient.DateOfBirthk__BackingField.ToString());

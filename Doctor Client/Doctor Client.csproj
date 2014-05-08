@@ -66,7 +66,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <Compile Include="Service References\ServerConnection\Reference.cs">
+    <Compile Include="Service References\ServerConnectionAgenda\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\ServerConnectionMedicalInformation\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
@@ -118,35 +123,48 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <None Include="Service References\ServerConnection\Arrays.xsd">
+    <None Include="Service References\ServerConnectionAgenda\Appointment_Serves.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\ServerConnection\DMS_Service.xsd">
+    <None Include="Service References\ServerConnectionAgenda\Doctor_Client.ServerConnectionAgenda.Patient.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServerConnectionAgenda\service.wsdl" />
+    <None Include="Service References\ServerConnectionAgenda\service.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\ServerConnection\Doctor_Client.ServerConnection.Appointment.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\ServerConnection\Doctor_Client.ServerConnection.Consultation.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\ServerConnection\Doctor_Client.ServerConnection.Diagnosis.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\ServerConnection\Doctor_Client.ServerConnection.Patient.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\ServerConnection\Doctor_Client.ServerConnection.Perscription.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\ServerConnection\Doctor_Client.ServerConnection.Staff.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\ServerConnection\service.wsdl" />
-    <None Include="Service References\ServerConnection\service.xsd">
+    <None Include="Service References\ServerConnectionAgenda\service1.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\ServerConnection\service1.xsd">
+    <None Include="Service References\ServerConnectionMedicalInformation\Arrays.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ServerConnectionMedicalInformation\DMS_Service.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ServerConnectionMedicalInformation\Doctor_Client.ServerConnectionMedicalInformation.Appointment.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServerConnectionMedicalInformation\Doctor_Client.ServerConnectionMedicalInformation.Consultation.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServerConnectionMedicalInformation\Doctor_Client.ServerConnectionMedicalInformation.Diagnosis.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServerConnectionMedicalInformation\Doctor_Client.ServerConnectionMedicalInformation.Patient.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServerConnectionMedicalInformation\Doctor_Client.ServerConnectionMedicalInformation.Perscription.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServerConnectionMedicalInformation\Doctor_Client.ServerConnectionMedicalInformation.Staff.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServerConnectionMedicalInformation\service.wsdl" />
+    <None Include="Service References\ServerConnectionMedicalInformation\service.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ServerConnectionMedicalInformation\service1.xsd">
       <SubType>Designer</SubType>
     </None>
   </ItemGroup>
@@ -160,22 +178,29 @@
     <None Include="Resources\backgroundGDS.png" />
   </ItemGroup>
   <ItemGroup>
-    <WCFMetadataStorage Include="Service References\ServerConnection\" />
+    <WCFMetadataStorage Include="Service References\ServerConnectionAgenda\" />
+    <WCFMetadataStorage Include="Service References\ServerConnectionMedicalInformation\" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Service References\ServerConnection\configuration91.svcinfo" />
+    <None Include="Service References\ServerConnectionMedicalInformation\configuration91.svcinfo" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Service References\ServerConnection\configuration.svcinfo" />
+    <None Include="Service References\ServerConnectionMedicalInformation\configuration.svcinfo" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Service References\ServerConnection\Reference.svcmap">
+    <None Include="Service References\ServerConnectionMedicalInformation\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
   </ItemGroup>
   <ItemGroup>
     <Content Include="Resources\paramedic-logo.ico" />
+    <None Include="Service References\ServerConnectionAgenda\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Service References\ServerConnectionAgenda\configuration.svcinfo" />
+    <None Include="Service References\ServerConnectionAgenda\configuration91.svcinfo" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

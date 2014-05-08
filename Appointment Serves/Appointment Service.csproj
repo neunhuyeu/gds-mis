@@ -48,6 +48,7 @@
     <Reference Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Appointment_database_acess.cs" />
     <Compile Include="Appointment_database_connection.cs" />
     <Compile Include="IAppointment.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

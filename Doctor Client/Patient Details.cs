@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Doctor_Client.ServerConnection;
+using Doctor_Client.ServerConnectionMedicalInformation;
 
 namespace Doctor_Client
 {
@@ -66,7 +66,7 @@ namespace Doctor_Client
             {
                 PerscriptionLb.Items.Clear();
                 perscription = proxy.getPatientPerscriptions(patient.PersonIdk__BackingField);
-                foreach (ServerConnection.Perscription persrip in perscription)
+                foreach (ServerConnectionMedicalInformation.Perscription persrip in perscription)
                 {
                     PerscriptionLb.Items.Add("Date: " + persrip.date.ToShortDateString() + "\t" + "Drug: " + persrip.medicine + "\t" + "Dosage: " + persrip.strength+ " Perscriber: "+ persrip.doctor);
                 }

@@ -308,24 +308,24 @@ namespace DMS_Service
            return myconsultions;
        }
 
-       public List<Patient> SearchConsultationsbyDate(DateTime date, int staffId)
-       {
-           List<Patient> mypersons = new List<Patient>();
-           DataTable dataTable = dbAcess.SearchConsultationsbyDate(date, staffId);
+       //public List<Patient> SearchConsultationsbyDate(DateTime date, int staffId)
+       //{
+       //    List<Patient> mypersons = new List<Patient>();
+       //    DataTable dataTable = dbAcess.SearchConsultationsbyDate(date, staffId);
 
-           foreach (DataRow row in dataTable.Rows)
-           {
-               Patient person = new Patient();
+       //    foreach (DataRow row in dataTable.Rows)
+       //    {
+       //        Patient person = new Patient();
 
-               person.PersonId = Convert.ToInt32(row["person_id"]);
-               person.FirstName = Convert.ToString(row["first_name"]);
-               person.LastName = Convert.ToString(row["last_name"]);
-               person.DateOfBirth = Convert.ToDateTime(row["date_of_birth"]);
-              
-               mypersons.Add(person);
-           }
-           return mypersons;
-       }
+       //        person.PersonId = Convert.ToInt32(row["person_id"]);
+       //        person.FirstName = Convert.ToString(row["first_name"]);
+       //        person.LastName = Convert.ToString(row["last_name"]);
+       //        person.DateOfBirth = Convert.ToDateTime(row["date_of_birth"]);
+
+       //        mypersons.Add(person);
+       //    }
+       //    return mypersons;
+       //}
         
 
 

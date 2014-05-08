@@ -12,6 +12,6 @@ namespace Appointment_Serves
     public interface IAppointment
     {
         [OperationContract]
-        List<Patient> SearchConsultationsbyDate(DateTime date);
+        List<Patient> SearchappointmentsbyDate(DateTime date,int staffId);
     }
 }
