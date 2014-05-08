@@ -453,6 +453,22 @@ namespace DMS_Service
             return dbConnection.SelectQuery(query, sqlParameters);
         }
 
+
+        public DataTable SearchconsultionHistoryByStaffID(int staffId)
+        {
+
+            string query = string.Format("SELECT * " +
+                                        "FROM consultations  " +
+                                        "WHERE  Staff_id = @StaffID  " +
+                                       " ORDER BY start_date");
+
+            MySqlParameter[] sqlParameters = new MySqlParameter[1];
+            sqlParameters[0] = new MySqlParameter("@StaffID", MySqlDbType.Int32);
+            sqlParameters[0].Value = Convert.ToString(staffId);
+
+            return dbConnection.SelectQuery(query, sqlParameters);
+        }
+
         public DataTable SearchconsultationsOfToday(int staffID)
         {
             string query = string.Format("SELECT * " +
@@ -469,16 +485,18 @@ namespace DMS_Service
             return dbConnection.SelectQuery(query, sqlParameters);
         }
 
-        public DataTable SearchConsultationsbyDate(DateTime date)
+        public DataTable SearchConsultationsbyDate(DateTime date, int staffId)
         {
             string query = string.Format("SELECT * " +
                                           "FROM person " +
-                                          "WHERE person_id IN (SELECT person_id FROM patients WHERE patient_id IN (SELECT patient_id FROM consultations WHERE DATE(start_date)= @datetime))");
+                                          "WHERE person_id IN (SELECT person_id FROM patients WHERE patient_id IN (SELECT patient_id FROM consultations WHERE DATE(start_date)= @datetime AND Staff_id = @StaffID))");
             
-            MySqlParameter[] sqlParameters = new MySqlParameter[1];
+            MySqlParameter[] sqlParameters = new MySqlParameter[2];
             sqlParameters[0] = new MySqlParameter("@datetime", MySqlDbType.Date);
             string caseTime = date.ToString("yyyy/MM/dd");
             sqlParameters[0].Value = caseTime;
+            sqlParameters[1] = new MySqlParameter("@StaffID", MySqlDbType.Int32);
+            sqlParameters[1].Value = Convert.ToString(staffId);
 
             return dbConnection.SelectQuery(query, sqlParameters);
         }
