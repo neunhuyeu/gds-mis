@@ -18,6 +18,7 @@ namespace Doctor_Client
         ServerConnection.Consultation[] consultations;
         List<string[]> stringList;
         string[] Appoint;
+        DateTime[] DatetimeBold;
 
         public Client(Staff user)
         {
@@ -64,8 +65,35 @@ namespace Doctor_Client
            
         }
 
+        private DateTime[] getConsultationsHistorybyStaffid()
+        {
+            
+            ServerConnection.DoctorClient proxy = new ServerConnection.DoctorClient();
+            if (((consultations = proxy.SearchconsultionHistoryByStaffID(currentUser.StaffIDk__BackingField)) != null))
+            {
+                DatetimeBold = new DateTime[consultations.Length];
+
+                for (int i = 0; i < consultations.Length; i++)
+                {
+                    DatetimeBold[i] = consultations[i].start_date;
+                }
+
+            }
+
+            return DatetimeBold;
+
+        }
+
         private void Client_Load(object sender, EventArgs e)
         {
+
+
+
+            this.monthCalendar1.AnnuallyBoldedDates = getConsultationsHistorybyStaffid();
+
+
+
+
             
             searchPatients();
             getConsultationsoftheDay();
@@ -113,7 +141,7 @@ namespace Doctor_Client
             int i = 0;
            
             ServerConnection.DoctorClient proxy = new ServerConnection.DoctorClient();
-            if (((potentualPatients = proxy.SearchConsultationsbyDate(date)) != null))
+            if (((potentualPatients = proxy.SearchConsultationsbyDate(date,currentUser.StaffIDk__BackingField)) != null))
             {
                 Appoint = new string[potentualPatients.Length];
                 foreach (Patient patient in potentualPatients)

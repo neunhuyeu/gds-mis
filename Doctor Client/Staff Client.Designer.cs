@@ -36,6 +36,8 @@
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
             this.tabAgenda = new System.Windows.Forms.TabPage();
+            this.agendaList = new System.Windows.Forms.ListBox();
+            this.monthCalendar1 = new System.Windows.Forms.MonthCalendar();
             this.tabPatientSearch = new System.Windows.Forms.TabPage();
             this.btn_editPatient = new System.Windows.Forms.Button();
             this.DOBSearch = new System.Windows.Forms.DateTimePicker();
@@ -49,8 +51,6 @@
             this.tbSearchFirstName = new System.Windows.Forms.TextBox();
             this.userNamelb = new System.Windows.Forms.Label();
             this.logoubtn = new System.Windows.Forms.Button();
-            this.monthCalendar1 = new System.Windows.Forms.MonthCalendar();
-            this.agendaList = new System.Windows.Forms.ListBox();
             this.tabs.SuspendLayout();
             this.tabHome.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -133,6 +133,24 @@
             this.tabAgenda.TabIndex = 1;
             this.tabAgenda.Text = "Agenda";
             this.tabAgenda.UseVisualStyleBackColor = true;
+            // 
+            // agendaList
+            // 
+            this.agendaList.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.agendaList.FormattingEnabled = true;
+            this.agendaList.Location = new System.Drawing.Point(196, 11);
+            this.agendaList.Margin = new System.Windows.Forms.Padding(2);
+            this.agendaList.Name = "agendaList";
+            this.agendaList.Size = new System.Drawing.Size(484, 316);
+            this.agendaList.TabIndex = 8;
+            // 
+            // monthCalendar1
+            // 
+            this.monthCalendar1.Location = new System.Drawing.Point(14, 83);
+            this.monthCalendar1.MaxSelectionCount = 1;
+            this.monthCalendar1.Name = "monthCalendar1";
+            this.monthCalendar1.TabIndex = 0;
+            this.monthCalendar1.DateChanged += new System.Windows.Forms.DateRangeEventHandler(this.monthCalendar1_DateChanged);
             // 
             // tabPatientSearch
             // 
@@ -272,25 +290,6 @@
             this.logoubtn.Text = "Log Out";
             this.logoubtn.UseVisualStyleBackColor = true;
             this.logoubtn.Click += new System.EventHandler(this.logoubtn_Click);
-            // 
-            // monthCalendar1
-            // 
-            this.monthCalendar1.CalendarDimensions = new System.Drawing.Size(2, 2);
-            this.monthCalendar1.Location = new System.Drawing.Point(-4, 16);
-            this.monthCalendar1.MaxSelectionCount = 1;
-            this.monthCalendar1.Name = "monthCalendar1";
-            this.monthCalendar1.TabIndex = 0;
-            this.monthCalendar1.DateChanged += new System.Windows.Forms.DateRangeEventHandler(this.monthCalendar1_DateChanged);
-            // 
-            // agendaList
-            // 
-            this.agendaList.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.agendaList.FormattingEnabled = true;
-            this.agendaList.Location = new System.Drawing.Point(341, 11);
-            this.agendaList.Margin = new System.Windows.Forms.Padding(2);
-            this.agendaList.Name = "agendaList";
-            this.agendaList.Size = new System.Drawing.Size(339, 316);
-            this.agendaList.TabIndex = 8;
             // 
             // Client
             // 
