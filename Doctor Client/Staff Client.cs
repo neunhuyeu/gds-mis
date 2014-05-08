@@ -144,6 +144,11 @@ namespace Doctor_Client
            
         }
 
+        private void btn_editPatient_Click(object sender, EventArgs e)
+        {
+            //should the Doctor add a patient or should the administration  could be doing that.
+        }
+
  
     }
 }

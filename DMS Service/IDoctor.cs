@@ -19,8 +19,7 @@ namespace DMS_Service
         List<Consultation> getConsultationHistorybyPatient(int Patientid);
         [OperationContract]
         List<Consultation> getConsultationOfToday(int staffID);
-        [OperationContract]
-        List<Patient> SearchConsultationsbyDate(DateTime date);
+        
          [OperationContract]
         List<Diagnosis> getDiagnosisHistoryByPersionID(int Patientid);
         [OperationContract]
