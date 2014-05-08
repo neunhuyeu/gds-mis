@@ -270,6 +270,23 @@ namespace DMS_Service
            return myconsultions;
        }
 
+       public List<Consultation> SearchconsultionHistoryByStaffID(int staffId)
+       {
+           List<Consultation> myconsultions = new List<Consultation>();
+           DataTable dataTable = dbAcess.SearchconsultionHistoryByStaffID(staffId);
+
+           foreach (DataRow row in dataTable.Rows)
+           {
+               Consultation consultation = new Consultation();
+
+               consultation.Start_date = Convert.ToDateTime(row["start_date"]);
+               consultation.ConsultationID = Convert.ToInt32(row["consultation_id"]);
+
+               myconsultions.Add(consultation);
+           }
+           return myconsultions;
+       }
+
 
        public List<Consultation> getConsultationOfToday(int staffID)
        {
@@ -291,10 +308,10 @@ namespace DMS_Service
            return myconsultions;
        }
 
-       public List<Patient> SearchConsultationsbyDate(DateTime date)
+       public List<Patient> SearchConsultationsbyDate(DateTime date, int staffId)
        {
            List<Patient> mypersons = new List<Patient>();
-           DataTable dataTable = dbAcess.SearchConsultationsbyDate(date);
+           DataTable dataTable = dbAcess.SearchConsultationsbyDate(date, staffId);
 
            foreach (DataRow row in dataTable.Rows)
            {

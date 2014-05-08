@@ -944,6 +944,12 @@ namespace Doctor_Client.ServerConnection {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IDoctor/getConsultationHistorybyPatient", ReplyAction="http://tempuri.org/IDoctor/getConsultationHistorybyPatientResponse")]
         System.Threading.Tasks.Task<Doctor_Client.ServerConnection.Consultation[]> getConsultationHistorybyPatientAsync(int Patientid);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IDoctor/SearchconsultionHistoryByStaffID", ReplyAction="http://tempuri.org/IDoctor/SearchconsultionHistoryByStaffIDResponse")]
+        Doctor_Client.ServerConnection.Consultation[] SearchconsultionHistoryByStaffID(int staffId);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IDoctor/SearchconsultionHistoryByStaffID", ReplyAction="http://tempuri.org/IDoctor/SearchconsultionHistoryByStaffIDResponse")]
+        System.Threading.Tasks.Task<Doctor_Client.ServerConnection.Consultation[]> SearchconsultionHistoryByStaffIDAsync(int staffId);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IDoctor/getConsultationOfToday", ReplyAction="http://tempuri.org/IDoctor/getConsultationOfTodayResponse")]
         Doctor_Client.ServerConnection.Consultation[] getConsultationOfToday(int staffID);
         
@@ -951,10 +957,10 @@ namespace Doctor_Client.ServerConnection {
         System.Threading.Tasks.Task<Doctor_Client.ServerConnection.Consultation[]> getConsultationOfTodayAsync(int staffID);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IDoctor/SearchConsultationsbyDate", ReplyAction="http://tempuri.org/IDoctor/SearchConsultationsbyDateResponse")]
-        Doctor_Client.ServerConnection.Patient[] SearchConsultationsbyDate(System.DateTime date);
+        Doctor_Client.ServerConnection.Patient[] SearchConsultationsbyDate(System.DateTime date, int staffId);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IDoctor/SearchConsultationsbyDate", ReplyAction="http://tempuri.org/IDoctor/SearchConsultationsbyDateResponse")]
-        System.Threading.Tasks.Task<Doctor_Client.ServerConnection.Patient[]> SearchConsultationsbyDateAsync(System.DateTime date);
+        System.Threading.Tasks.Task<Doctor_Client.ServerConnection.Patient[]> SearchConsultationsbyDateAsync(System.DateTime date, int staffId);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IDoctor/getDiagnosisHistoryByPersionID", ReplyAction="http://tempuri.org/IDoctor/getDiagnosisHistoryByPersionIDResponse")]
         Doctor_Client.ServerConnection.Diagnosis[] getDiagnosisHistoryByPersionID(int Patientid);
@@ -1104,6 +1110,14 @@ namespace Doctor_Client.ServerConnection {
             return base.Channel.getConsultationHistorybyPatientAsync(Patientid);
         }
         
+        public Doctor_Client.ServerConnection.Consultation[] SearchconsultionHistoryByStaffID(int staffId) {
+            return base.Channel.SearchconsultionHistoryByStaffID(staffId);
+        }
+        
+        public System.Threading.Tasks.Task<Doctor_Client.ServerConnection.Consultation[]> SearchconsultionHistoryByStaffIDAsync(int staffId) {
+            return base.Channel.SearchconsultionHistoryByStaffIDAsync(staffId);
+        }
+        
         public Doctor_Client.ServerConnection.Consultation[] getConsultationOfToday(int staffID) {
             return base.Channel.getConsultationOfToday(staffID);
         }
@@ -1112,12 +1126,12 @@ namespace Doctor_Client.ServerConnection {
             return base.Channel.getConsultationOfTodayAsync(staffID);
         }
         
-        public Doctor_Client.ServerConnection.Patient[] SearchConsultationsbyDate(System.DateTime date) {
-            return base.Channel.SearchConsultationsbyDate(date);
+        public Doctor_Client.ServerConnection.Patient[] SearchConsultationsbyDate(System.DateTime date, int staffId) {
+            return base.Channel.SearchConsultationsbyDate(date, staffId);
         }
         
-        public System.Threading.Tasks.Task<Doctor_Client.ServerConnection.Patient[]> SearchConsultationsbyDateAsync(System.DateTime date) {
-            return base.Channel.SearchConsultationsbyDateAsync(date);
+        public System.Threading.Tasks.Task<Doctor_Client.ServerConnection.Patient[]> SearchConsultationsbyDateAsync(System.DateTime date, int staffId) {
+            return base.Channel.SearchConsultationsbyDateAsync(date, staffId);
         }
         
         public Doctor_Client.ServerConnection.Diagnosis[] getDiagnosisHistoryByPersionID(int Patientid) {
