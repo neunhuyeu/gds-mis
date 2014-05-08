@@ -11,7 +11,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Doctor Client", "Doctor Cli
 		{F255738B-ED96-4876-8BC2-9EAC6FEF2745} = {F255738B-ED96-4876-8BC2-9EAC6FEF2745}
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Appointment Service", "Appointment Serves\Appointment Service.csproj", "{F255738B-ED96-4876-8BC2-9EAC6FEF2745}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Agenda Service", "Appointment Serves\Agenda Service.csproj", "{F255738B-ED96-4876-8BC2-9EAC6FEF2745}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

@@ -13,7 +13,7 @@ namespace Appointment_Serves
     public class Appointment : IAppointment
     {
         private Appointment_database_acess dbAcess;
-        int staffId;
+        
         public Appointment()
         {
             dbAcess = new Appointment_database_acess();
