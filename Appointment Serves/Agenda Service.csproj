@@ -55,6 +55,8 @@
     <Compile Include="Appointment.cs" />
     <Compile Include="structs\Patient.cs" />
     <Compile Include="structs\Person.cs" />
+    <Compile Include="user_authentication\user_auth_access.cs" />
+    <Compile Include="user_authentication\user_auth_business.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
