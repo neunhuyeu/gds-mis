@@ -176,6 +176,7 @@ CREATE TABLE  IF NOT EXISTS gds_mis_agenda.staff_info
 ;
 
 -- appointments
+
 CREATE TABLE  IF NOT EXISTS gds_mis_agenda.appointments
 (
  appointment_id Int NOT NULL,
@@ -188,6 +189,16 @@ CREATE TABLE  IF NOT EXISTS gds_mis_agenda.appointments
 )
 ;
 
+-- Table patient_user_auth
+
+CREATE TABLE IF NOT EXISTS gds_mis_auth.patient_user_auth
+(
+  email_address Char(50) NOT NULL,
+  password Char(25) NOT NULL,
+  user_name Char(25) NOT NULL,
+  PRIMARY KEY (email_address),
+  UNIQUE email_address (email_address)
+);
 -- Create relationships section ------------------------------------------------- 
 
 ALTER TABLE gds_mis.patients ADD 
@@ -342,6 +353,15 @@ INSERT INTO gds_mis_agenda.appointments (appointment_id,start_date,end_date,pati
 (3 ,'2014-01-20 10:00:00','2014-01-20 10:30:00',3,1),
 (4 ,'2014-01-21 10:30:00','2014-01-21 11:00:00',4,1),
 (5 ,'2014-01-21 10:30:00','2014-01-21 11:00:00',5,2);
+
+-- patient_user_auth
+
+INSERT INTO gds_mis_agenda.patient_user_auth (email_address, password, user_name) VALUES
+('name_six@mail.com', 'name_six', 'name_six'),
+('name_seven@mail.com', 'name_seven', 'name_seven'),
+('name_eight@mail.com', 'name_eight', 'name_eight'),
+('name_nine@mail.com', 'name_nine', 'name_nine'),
+('name_ten@mail.com', 'name_ten', 'name_ten');
 
 -- user_auth
 
