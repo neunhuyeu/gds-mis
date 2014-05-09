@@ -5,7 +5,7 @@ using System.Text;
 using System.Data;
 using System.Threading.Tasks;
 using System.ServiceModel;
-using System.Windows.Forms;
+using System.Windows;
 using DMS_Service;
 
 

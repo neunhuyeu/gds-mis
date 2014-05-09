@@ -6,17 +6,17 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Configuration;
 using MySql.Data.MySqlClient;
-using DMS_Service.database_connection;
+using Appointment_Serves;
 
 namespace DMS_Service.user_auth
 {
     class user_auth_access
     {
-        private db_connection db_con;
+        private Appointment_database_connection db_con;
 
         public user_auth_access()
         {
-            db_con = new db_connection("gds_mis_auth");
+            db_con = new Appointment_database_connection("gds_mis_auth");
         }
 
         public DataTable user_login(string email, string passw)
