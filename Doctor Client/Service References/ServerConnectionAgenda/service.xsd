@@ -16,4 +16,46 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+  <xs:element name="getAppointmnetsOfToday">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="staffID" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getAppointmnetsOfTodayResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/Appointment_Serves" minOccurs="0" name="getAppointmnetsOfTodayResult" nillable="true" type="q2:ArrayOfPatient" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SearchAppointmentsByStaffID">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="staffId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SearchAppointmentsByStaffIDResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/Appointment_Serves" minOccurs="0" name="SearchAppointmentsByStaffIDResult" nillable="true" type="q3:ArrayOfAppointment" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getAppointmentsHistorybyPatient">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="personId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getAppointmentsHistorybyPatientResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/Appointment_Serves" minOccurs="0" name="getAppointmentsHistorybyPatientResult" nillable="true" type="q4:ArrayOfAppointment" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
 </xs:schema>

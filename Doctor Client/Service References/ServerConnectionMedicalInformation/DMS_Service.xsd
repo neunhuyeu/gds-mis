@@ -56,12 +56,6 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="Consultation" nillable="true" type="tns:Consultation" />
-  <xs:complexType name="ArrayOfPatient">
-    <xs:sequence>
-      <xs:element minOccurs="0" maxOccurs="unbounded" name="Patient" nillable="true" type="tns:Patient" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="ArrayOfPatient" nillable="true" type="tns:ArrayOfPatient" />
   <xs:complexType name="ArrayOfDiagnosis">
     <xs:sequence>
       <xs:element minOccurs="0" maxOccurs="unbounded" name="Diagnosis" type="tns:Diagnosis" />
@@ -151,4 +145,10 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="Perscription" nillable="true" type="tns:Perscription" />
+  <xs:complexType name="ArrayOfPatient">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Patient" nillable="true" type="tns:Patient" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfPatient" nillable="true" type="tns:ArrayOfPatient" />
 </xs:schema>

@@ -20,11 +20,11 @@ namespace Appointment_Serves
         {
             dbConnection = new Appointment_database_connection(" gds_mis_agenda");
         }
-        public DataTable SearchConsultationsbyDate(DateTime date, int staffId)
+         public DataTable SearchAppointmentsbyDate(DateTime date, int staffId)
         {
             string query = string.Format("SELECT * " +
                                           "FROM patient_info " +
-                                          "WHERE 	patient_id IN (SELECT 	patient_id FROM appointments WHERE patient_id IN (SELECT patient_id FROM consultations WHERE DATE(start_date)= @datetime AND staff_id = @StaffID))");
+                                          "WHERE 	patient_id IN (SELECT patient_id FROM appointments WHERE DATE(start_date)= @datetime AND staff_id = @StaffID)");
 
             MySqlParameter[] sqlParameters = new MySqlParameter[2];
             sqlParameters[0] = new MySqlParameter("@datetime", MySqlDbType.Date);
@@ -35,5 +35,53 @@ namespace Appointment_Serves
 
             return dbConnection.SelectQuery(query, sqlParameters);
         }
+
+        //We need to add person_id to the patient_info table in the gsd_mis_agenda database
+         public DataTable SearchAppointmentsByPersionID(int personID)
+         {
+
+             string query = string.Format("SELECT * " +
+                                         "FROM appointments  " +
+                                         "WHERE  patient_id=(select patient_id from patient_info where person_id = @patient_id)  " +
+                                        " ORDER BY start_date");
+
+             MySqlParameter[] sqlParameters = new MySqlParameter[1];
+             sqlParameters[0] = new MySqlParameter("@patient_id", MySqlDbType.Int32);
+             sqlParameters[0].Value = Convert.ToString(personID);
+
+             return dbConnection.SelectQuery(query, sqlParameters);
+         }
+
+
+         public DataTable SearchAppointmentsByStaffID(int staffId)
+         {
+
+             string query = string.Format("SELECT * " +
+                                         "FROM appointments  " +
+                                         "WHERE  Staff_id = @StaffID  " +
+                                        " ORDER BY start_date");
+
+             MySqlParameter[] sqlParameters = new MySqlParameter[1];
+             sqlParameters[0] = new MySqlParameter("@StaffID", MySqlDbType.Int32);
+             sqlParameters[0].Value = Convert.ToString(staffId);
+
+             return dbConnection.SelectQuery(query, sqlParameters);
+         }
+
+         public DataTable SearchAppointmentsOfToday(int staffID)
+         {
+             string query = string.Format("SELECT * " +
+                                           "FROM patient_info " +
+                                           "Where patient_id IN (SELECT patient_id FROM appointments WHERE DATE(start_date) = @today AND Staff_id = @StaffID)");
+
+             MySqlParameter[] sqlParameters = new MySqlParameter[2];
+             sqlParameters[0] = new MySqlParameter("@today", MySqlDbType.Date);
+             string caseTime = DateTime.Now.ToString("yyyy/MM/dd");
+             sqlParameters[0].Value = caseTime;
+             sqlParameters[1] = new MySqlParameter("@StaffID", MySqlDbType.Int32);
+             sqlParameters[1].Value = Convert.ToString(staffID);
+
+             return dbConnection.SelectQuery(query, sqlParameters);
+         }
     }
 }

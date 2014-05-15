@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Doctor_Client.ServerConnectionMedicalInformation;
-using Doctor_Client.ServerConnectionAgenda;
+using Doctor_Client.ServerConnectionagenda;
 
 namespace Doctor_Client
 {
@@ -16,7 +16,8 @@ namespace Doctor_Client
     {
         ServerConnectionMedicalInformation.Staff currentUser;
         ServerConnectionMedicalInformation.Patient[] potentualPatients;
-        ServerConnectionMedicalInformation.Consultation[] consultations;
+        ServerConnectionagenda.Appointment[] agendaAppointments;
+        ServerConnectionagenda.Patient[] appointments;
         List<string[]> stringList;
         string[] Appoint;
         DateTime[] DatetimeBold;
@@ -25,10 +26,10 @@ namespace Doctor_Client
         {
             InitializeComponent();
             currentUser = user;
-            userNamelb.Text =  " Welcome: "+user.FirstNamek__BackingField + " "+user.LastNamek__BackingField;
+            userNamelb.Text = " Welcome: " + user.FirstNamek__BackingField + " " + user.LastNamek__BackingField;
             DOBSearch.Value = DateTime.Now.Date;
-            
-        
+
+
         }
 
         private void searchPatients()
@@ -39,7 +40,7 @@ namespace Doctor_Client
                 ServerConnectionMedicalInformation.DoctorClient proxy = new ServerConnectionMedicalInformation.DoctorClient();
 
                 if (((potentualPatients = proxy.SearchPatients(tbSearchFirstName.Text, tbSearchLastName.Text, DOBSearch.Value, tbInsuranceSearch.Text)) != null))
-                { 
+                {
                     foreach (ServerConnectionMedicalInformation.Patient patient in potentualPatients)
                     {
                         searchListLB.Items.Add(String.Format("{0,-11}  {1,-11}   {2,8} {0,25}", patient.FirstNamek__BackingField, patient.LastNamek__BackingField, patient.DateOfBirthk__BackingField.GetDateTimeFormats('d')[1], patient.InsuranceNumberk__BackingField));
@@ -50,37 +51,38 @@ namespace Doctor_Client
 
             }
         }
-      //check
-        private void getConsultationsoftheDay()
+
+
+        private void getAppointmentsoftheDay()
         {
             stringList = new List<string[]>();
-            ServerConnectionMedicalInformation.DoctorClient proxy = new ServerConnectionMedicalInformation.DoctorClient();
-            if (((consultations = proxy.getConsultationOfToday(currentUser.StaffIDk__BackingField)) != null))
+            ServerConnectionagenda.AppointmentClient proxy = new ServerConnectionagenda.AppointmentClient();
+            if ((appointments = proxy.getAppointmnetsOfToday(currentUser.StaffIDk__BackingField)) != null)
             {
-                foreach (Consultation consul in consultations)
+                foreach (ServerConnectionagenda.Patient appoint in appointments)
                 {
-                    stringList.Add(new string[] { Convert.ToString(consul.start_date), Convert.ToString(consul.end_date), Convert.ToString(consul.patient_id) });
+                    stringList.Add(new string[] { Convert.ToString(appoint.PatientIDk__BackingField), Convert.ToString(appoint.InsuranceNumberk__BackingField), Convert.ToString(appoint.FirstNamek__BackingField), Convert.ToString(appoint.LastNamek__BackingField), Convert.ToString(appoint.DateOfBirthk__BackingField), Convert.ToString(appoint.MobileNumberk__BackingField) });
 
                 }
             }
-           
+
         }
-        //check
-        private DateTime[] getConsultationsHistorybyStaffid()
-        {
-            
-            ServerConnectionMedicalInformation.DoctorClient proxy = new ServerConnectionMedicalInformation.DoctorClient();
-            if (((consultations = proxy.SearchconsultionHistoryByStaffID(currentUser.StaffIDk__BackingField)) != null))
-            {
-                DatetimeBold = new DateTime[consultations.Length];
 
-                for (int i = 0; i < consultations.Length; i++)
+
+        private DateTime[] getAppointmentsHistorybyStaffid()
+        {
+
+            ServerConnectionagenda.AppointmentClient proxy = new ServerConnectionagenda.AppointmentClient();
+            if (((agendaAppointments = proxy.SearchAppointmentsByStaffID(currentUser.StaffIDk__BackingField)) != null))
+            {
+                DatetimeBold = new DateTime[agendaAppointments.Length];
+
+                for (int i = 0; i < agendaAppointments.Length; i++)
                 {
-                    DatetimeBold[i] = consultations[i].start_date;
+                    DatetimeBold[i] = agendaAppointments[i].start_date;
                 }
 
             }
-
             return DatetimeBold;
 
         }
@@ -90,42 +92,41 @@ namespace Doctor_Client
 
 
 
-            this.monthCalendar1.AnnuallyBoldedDates = getConsultationsHistorybyStaffid();
+           this.monthCalendar1.AnnuallyBoldedDates = getAppointmentsHistorybyStaffid();
 
 
-
-
-            
             searchPatients();
-            getConsultationsoftheDay();
+            getAppointmentsoftheDay();
 
-            dataGridView2.ColumnCount = 3;
-            dataGridView2.Columns[0].Name = "start date";
-            dataGridView2.Columns[1].Name = "end date";
-            dataGridView2.Columns[2].Name = "patient ID";         
-
+            dataGridView2.ColumnCount = 6;
+            dataGridView2.Columns[0].Name = "Patient ID";
+            dataGridView2.Columns[1].Name = "Insurance Number";
+            dataGridView2.Columns[2].Name = "First Name";
+            dataGridView2.Columns[3].Name = "Last Name";
+            dataGridView2.Columns[4].Name = "Date of Birth";
+            dataGridView2.Columns[5].Name = "Phone Number";
             foreach (string[] item in stringList)
             {
                 dataGridView2.Rows.Add(item);
             }
-                     
+
         }
 
         private void logoubtn_Click(object sender, EventArgs e)
         {
-          this.Close();
+            this.Close();
 
         }
 
         private void searchListLB_SelectedIndexChanged(object sender, EventArgs e)
         {
-           PatientDetails Patient = new PatientDetails(potentualPatients[searchListLB.SelectedIndex],currentUser);
+            PatientDetails Patient = new PatientDetails(potentualPatients[searchListLB.SelectedIndex], currentUser);
             this.Visible = false;
             Patient.ShowDialog();
-            this.Visible=true;
+            this.Visible = true;
         }
 
-      
+
 
         private void btn_searchPatients_Click(object sender, EventArgs e)
         {
@@ -137,46 +138,51 @@ namespace Doctor_Client
             searchPatients();
         }
 
-        private void getConsultationsbyspecificDate(DateTime date)
+        private void getAppointmentsbyspecificDate(DateTime date)
         {
             int i = 0;
-           
-            ServerConnectionAgenda.AppointmentClient proxy = new ServerConnectionAgenda.AppointmentClient();
-            ServerConnectionAgenda.Patient[] agendaPatients;
+
+            ServerConnectionagenda.AppointmentClient proxy = new ServerConnectionagenda.AppointmentClient();
+            ServerConnectionagenda.Patient[] agendaPatients;
             if (((agendaPatients = proxy.SearchappointmentsbyDate(date, currentUser.StaffIDk__BackingField)) != null))
             {
-               
-
-                Appoint = new string[potentualPatients.Length];
-                foreach (ServerConnectionMedicalInformation.Patient patient in potentualPatients)
+                Appoint = new string[agendaPatients.Length];
+                foreach (ServerConnectionagenda.Patient patient in agendaPatients)
                 {
-                    
-                    Appoint[i] = ("PersonId: " + patient.PersonIdk__BackingField.ToString() + " Name: " + patient.FirstNamek__BackingField +" " + patient.LastNamek__BackingField + " born:" + patient.DateOfBirthk__BackingField.ToString());
+
+                    Appoint[i] = ("PatientID: " + patient.PatientIDk__BackingField.ToString() + " InsuranceNumber: " + patient.InsuranceNumberk__BackingField + " Name: " + patient.FirstNamek__BackingField + " " + patient.LastNamek__BackingField + " born:" + patient.DateOfBirthk__BackingField.ToString());
                     i++;
-                    
+
 
                 }
             }
 
         }
 
-        private void monthCalendar1_DateChanged(object sender, DateRangeEventArgs e)
+        
+
+        private void monthCalendar1_DateChanged_1(object sender, DateRangeEventArgs e)
         {
             agendaList.Items.Clear();
-            getConsultationsbyspecificDate(monthCalendar1.SelectionRange.Start);
-            if (Appoint != null)
-            {
-                agendaList.Items.Clear();
-                foreach (string item in Appoint)
-                {
-                    agendaList.Items.Add(item);
-                }
-                Appoint = null;
-            }
-           
+             getAppointmentsbyspecificDate(monthCalendar1.SelectionRange.Start);
+             if (Appoint != null)
+             {
+                 agendaList.Items.Clear();
+                 foreach (string item in Appoint)
+                 {
+                     agendaList.Items.Add(item);
+                 }
+                 Appoint = null;
+             }
         }
 
+
+
        
- 
+
+
+
+
+        }
     }
-}
+
