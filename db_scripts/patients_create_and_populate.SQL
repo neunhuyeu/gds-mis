@@ -356,7 +356,7 @@ INSERT INTO gds_mis_agenda.appointments (appointment_id,start_date,end_date,pati
 
 -- patient_user_auth
 
-INSERT INTO gds_mis_agenda.patient_user_auth (email_address, password, user_name) VALUES
+INSERT INTO gds_mis_auth.patient_user_auth (email_address, password, user_name) VALUES
 ('name_six@mail.com', 'name_six', 'name_six'),
 ('name_seven@mail.com', 'name_seven', 'name_seven'),
 ('name_eight@mail.com', 'name_eight', 'name_eight'),

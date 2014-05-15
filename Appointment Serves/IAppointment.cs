@@ -13,5 +13,11 @@ namespace Appointment_Serves
     {
         [OperationContract]
         List<Patient> SearchappointmentsbyDate(DateTime date,int staffId);
+        [OperationContract]
+        List<Patient> getAppointmnetsOfToday(int staffID);
+        [OperationContract]
+        List<Appointment> SearchAppointmentsByStaffID(int staffId);
+        [OperationContract]
+        List<Appointment> getAppointmentsHistorybyPatient(int personId);
     }
 }
