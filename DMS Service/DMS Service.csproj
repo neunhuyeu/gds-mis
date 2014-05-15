@@ -58,6 +58,8 @@
     <Compile Include="Structs\Diagnosis.cs" />
     <Compile Include="IDoctor.cs" />
     <Compile Include="ISynchronise.cs" />
+    <Compile Include="Structs\Disease.cs" />
+    <Compile Include="Structs\Medicine.cs" />
     <Compile Include="Structs\Patient.cs" />
     <Compile Include="Structs\Perscription.cs" />
     <Compile Include="Structs\Person.cs" />
@@ -72,6 +74,8 @@
     <Compile Include="user_authentication\user_auth_access.cs" />
     <Compile Include="user_authentication\user_auth_business.cs" />
     <Compile Include="database_connection\db_connection.cs" />
+    <Compile Include="wiki\wiki_access.cs" />
+    <Compile Include="wiki\wiki_business.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config">

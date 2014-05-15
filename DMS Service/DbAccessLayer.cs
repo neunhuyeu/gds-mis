@@ -91,13 +91,13 @@ namespace DMS_Service
                 {
                     index++;
                     sqlParameters[index - 1] = new MySqlParameter("@firstName", MySqlDbType.VarChar);
-                    sqlParameters[index - 1].Value = Convert.ToString(firstName + "%");
+                    sqlParameters[index - 1].Value = Convert.ToString("%" + firstName + "%");
                 }
                 if (parameters[index] == 'l')
                 {
                     index++;
                     sqlParameters[index - 1] = new MySqlParameter("@lastName", MySqlDbType.VarChar);
-                    sqlParameters[index - 1].Value = Convert.ToString(lastName + "%");
+                    sqlParameters[index - 1].Value = Convert.ToString("%" + lastName + "%");
                 }
                 if (parameters[index] == 'd')
                 {
@@ -109,7 +109,7 @@ namespace DMS_Service
                 {
                     index++;
                     sqlParameters[index - 1] = new MySqlParameter("@insurance", MySqlDbType.VarChar);
-                    sqlParameters[index - 1].Value = Convert.ToString(insurance + "%");
+                    sqlParameters[index - 1].Value = Convert.ToString("%" + insurance + "%");
                 }
                 query = string.Format(query);
 
