@@ -10,6 +10,7 @@ Database: MySQL 5.5
 CREATE DATABASE gds_mis;
 CREATE DATABASE gds_mis_auth;
 CREATE DATABASE gds_mis_agenda;
+CREATE DATABASE gds_wiki;
 
 -- Create user Section --------------------------------------------------
 
@@ -33,6 +34,9 @@ DROP TABLE IF EXISTS gds_mis_auth.user_auth;
 DROP TABLE IF EXISTS gds_mis_agenda.appointments;
 DROP TABLE IF EXISTS gds_mis_agenda.patient_info;
 DROP TABLE IF EXISTS gds_mis_agenda.staff_info;
+DROP TABLE IF EXISTS gds_mis_auth.patient_user_auth;
+DROP TABLE IF EXISTS gds_wiki.diseases;
+DROP TABLE IF EXISTS gds_wiki.medicine;
 
 -- Create tables section -------------------------------------------------
 
@@ -191,7 +195,7 @@ CREATE TABLE  IF NOT EXISTS gds_mis_agenda.appointments
 
 -- Table patient_user_auth
 
-CREATE TABLE IF NOT EXISTS gds_mis_auth.patient_user_auth
+CREATE TABLE IF NOT EXISTS gds_mis_agenda.patient_user_auth
 (
   email_address Char(50) NOT NULL,
   password Char(25) NOT NULL,
@@ -199,6 +203,36 @@ CREATE TABLE IF NOT EXISTS gds_mis_auth.patient_user_auth
   PRIMARY KEY (email_address),
   UNIQUE email_address (email_address)
 );
+
+-- table diseases
+
+CREATE TABLE IF NOT EXISTS gds_wiki.diseases
+(
+  disease_id Int NOT NULL,
+  name Char(100) NOT NULL,
+  description Char(255) NOT NULL,
+  classification Char(100),
+  causes char(100) NOT NULL,
+  symptoms Char(100) NOT NULL,
+  treatments Char(100) NOT NULL,
+  PRIMARY KEY (disease_id),
+  UNIQUE disease_id (disease_id)
+);
+
+-- table medicine
+
+CREATE TABLE IF NOT EXISTS gds_wiki.medicine
+(
+  medicine_id Int NOT NULL,
+  name Char(100) NOT NULL,
+  description Char(255) NOT NULL,
+  classification Char(100) NOT NULL,
+  side_effects Char(255) NOT NULL,
+  strength_mg Int NOT NULL,
+  PRIMARY KEY (medicine_id),
+  UNIQUE medicine_id (medicine_id)
+);
+
 -- Create relationships section ------------------------------------------------- 
 
 ALTER TABLE gds_mis.patients ADD 
@@ -368,6 +402,24 @@ INSERT INTO gds_mis_agenda.patient_user_auth (email_address, password, user_name
 INSERT INTO gds_mis_auth.user_auth (email_address, password, user_name) VALUES
 ('name_one@mail.com', 'name_one', 'name_one'),
 ('name_two@mail.com', 'name_two', 'name_tow');
+
+-- diseases
+
+INSERT INTO gds_wiki.diseases (disease_id,name,description,classification,causes,symptoms,treatments) VALUES
+(1,"headaches","a normal everyday occorunce of pain","temporary discomfort","injury|stress|diet|noise","pain|nausia|fatigue","apsrin|sleep|water"),
+(2,"flu","a normal everyday cold","viral_infection","exposure|diet|vitamen_deficiency","congested_nose|coughing","sleep|vitamin_supplement"),
+(3,"pnumonia","dangerous loung infection","bacterial_infection","exposure|injury","coughing|fatigue|nausia|death","anti_biotics|sleep|vitamin_supplement"),
+(4,"malaria","an uncommen viral infection","viral_infection","mosquito_bite","fever|coughing|fatigue|death","anti_viral_antidote"),
+(5,"cholesterol","a common genetic disorder","genetic_disorder","inheritance|diet","heart_failure|cardio_arrest|fatigue|weight_gain","lipitor");
+
+-- medicine
+
+INSERT INTO gds_wiki.medicine (medicine_id,name,description,classification,side_effects,strength_mg) VALUES
+(1,"asprin","a small disovable pill used for treating headaches","anti_inflamatory","none",500),
+(2,"neurophen","a painkiller used for the treatment of ain and fever","pain_killer","fatigue|nausia",200),
+(3,"bioplus","a dietary supplement used for improved energy levels","dietary_supplement","none",200),
+(4,"lipitor","a pill used for the treatment of cholosterol","chronic_medicine","none",250),
+(5,"vitamin_supplement","a dietary supplement used for increasing the daily vitamin intake","dietary_supplement","none",500);
 
 -- Test queries section --------------------------------------------------
 
