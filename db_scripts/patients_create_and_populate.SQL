@@ -145,6 +145,17 @@ CREATE TABLE IF NOT EXISTS gds_mis_auth.user_auth
   UNIQUE email_address (email_address)
 );
 
+-- Table patient_user_auth
+
+CREATE TABLE IF NOT EXISTS gds_mis_auth.patient_user_auth
+(
+  email_address Char(50) NOT NULL,
+  password Char(25) NOT NULL,
+  user_name Char(25) NOT NULL,
+  PRIMARY KEY (email_address),
+  UNIQUE email_address (email_address)
+);
+
 -- patient_info
 
 CREATE TABLE  IF NOT EXISTS gds_mis_agenda.patient_info
@@ -192,17 +203,6 @@ CREATE TABLE  IF NOT EXISTS gds_mis_agenda.appointments
  UNIQUE appointment_id (appointment_id)
 )
 ;
-
--- Table patient_user_auth
-
-CREATE TABLE IF NOT EXISTS gds_mis_agenda.patient_user_auth
-(
-  email_address Char(50) NOT NULL,
-  password Char(25) NOT NULL,
-  user_name Char(25) NOT NULL,
-  PRIMARY KEY (email_address),
-  UNIQUE email_address (email_address)
-);
 
 -- table diseases
 
