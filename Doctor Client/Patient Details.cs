@@ -97,19 +97,22 @@ namespace Doctor_Client
         }
         private string fixGender(char genval)
         {
+            string result;
             switch (genval)
             {
                 case 'm':
                 case 'M':
-                             return "Male";
+                             result = "Male";
                              break;
                 case 'f':
                 case 'F':
-                             return "Female";
+                             result = "Female";
                              break;
                 default: 
-                            return "";
+                            result = "";
+                            break;
             }
+            return result;
         }
 
         private int currentconsultationID

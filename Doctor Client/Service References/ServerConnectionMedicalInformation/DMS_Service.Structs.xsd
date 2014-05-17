@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/DMS_Service.Structs" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/DMS_Service.Structs" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:import namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:complexType name="ArrayOfDisease">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Disease" type="tns:Disease" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfDisease" nillable="true" type="tns:ArrayOfDisease" />
+  <xs:complexType name="Disease">
+    <xs:annotation>
+      <xs:appinfo>
+        <IsValueType xmlns="http://schemas.microsoft.com/2003/10/Serialization/">true</IsValueType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element xmlns:q1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" name="_x003C_causes_x003E_k__BackingField" nillable="true" type="q1:ArrayOfstring" />
+      <xs:element xmlns:q2="http://schemas.microsoft.com/2003/10/Serialization/Arrays" name="_x003C_classification_x003E_k__BackingField" nillable="true" type="q2:ArrayOfstring" />
+      <xs:element name="_x003C_description_x003E_k__BackingField" nillable="true" type="xs:string" />
+      <xs:element name="_x003C_name_x003E_k__BackingField" nillable="true" type="xs:string" />
+      <xs:element xmlns:q3="http://schemas.microsoft.com/2003/10/Serialization/Arrays" name="_x003C_symptoms_x003E_k__BackingField" nillable="true" type="q3:ArrayOfstring" />
+      <xs:element xmlns:q4="http://schemas.microsoft.com/2003/10/Serialization/Arrays" name="_x003C_treatments_x003E_k__BackingField" nillable="true" type="q4:ArrayOfstring" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Disease" nillable="true" type="tns:Disease" />
+  <xs:complexType name="ArrayOfMedicine">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Medicine" type="tns:Medicine" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfMedicine" nillable="true" type="tns:ArrayOfMedicine" />
+  <xs:complexType name="Medicine">
+    <xs:annotation>
+      <xs:appinfo>
+        <IsValueType xmlns="http://schemas.microsoft.com/2003/10/Serialization/">true</IsValueType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" name="description" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="strength_mg" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Medicine" nillable="true" type="tns:Medicine" />
+</xs:schema>

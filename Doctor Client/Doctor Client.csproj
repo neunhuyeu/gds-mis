@@ -35,9 +35,6 @@
     <Reference Include="Emgu.CV.UI">
       <HintPath>C:\Emgu\emgucv-windows-universal-cuda 2.9.0.1922\bin\Emgu.CV.UI.dll</HintPath>
     </Reference>
-    <Reference Include="MPK_Calendar">
-      <HintPath>..\..\..\Downloads\MPK_Calendar (1)\bin\Release\MPK_Calendar.dll</HintPath>
-    </Reference>
     <Reference Include="MySql.Data">
       <HintPath>..\packages\MySql.Data.6.8.3\lib\net45\MySql.Data.dll</HintPath>
     </Reference>
