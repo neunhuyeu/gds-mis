@@ -83,5 +83,15 @@ namespace Appointment_Serves
 
              return dbConnection.SelectQuery(query, sqlParameters);
          }
+
+         public DataTable SearchPatientByEmail(string email)
+         {
+             string query = string.Format("SELECT * FROM patient_info WHERE email_address = @email");
+             MySqlParameter[] sqlParameters = new MySqlParameter[1];
+             sqlParameters[0] = new MySqlParameter("@email", MySqlDbType.String);
+             sqlParameters[0].Value = Convert.ToString(email);
+
+             return dbConnection.SelectQuery(query, sqlParameters);
+         }
     }
 }

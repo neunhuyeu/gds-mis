@@ -4,8 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Data;
 using System.Threading.Tasks;
+using DMS_Service;
 using System.ServiceModel;
-
+using DMS_Service.user_auth;
 
 namespace Appointment_Serves
 {
@@ -21,8 +22,7 @@ namespace Appointment_Serves
         }
 
         public List<Patient> SearchappointmentsbyDate(DateTime date ,int staffId)
-        { 
-       
+        {
            List<Patient> mypersons = new List<Patient>();
            DataTable dataTable = dbAcess.SearchAppointmentsbyDate(date, staffId);
 
@@ -96,6 +96,29 @@ namespace Appointment_Serves
                 myappointments.Add(appointment);
             }
             return myappointments;
+        }
+
+        Patient IAppointment.Login(string Email, string Password)
+        {
+            Patient p = new Patient();
+            DataTable dataTable = new DataTable();
+
+            user_auth_business user_auth = new user_auth_business();
+
+            if (user_auth.login(Email, Password))
+            {
+                dataTable = dbAcess.SearchPatientByEmail(Email);
+            }
+            if (dataTable != null)
+            {
+                foreach (DataRow row in dataTable.Rows)
+                {
+                    p.FirstName = row["first_name"].ToString();
+                    p.LastName = row["last_name"].ToString();
+                }
+                return p;
+            }
+            return null;
         }
     }
 }

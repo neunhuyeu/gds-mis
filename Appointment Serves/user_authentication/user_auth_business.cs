@@ -11,7 +11,7 @@ using DMS_Service;
 
 namespace DMS_Service.user_auth
 {
-    class user_auth_business
+    public class user_auth_business
     {
         private user_auth_access db_access;
 

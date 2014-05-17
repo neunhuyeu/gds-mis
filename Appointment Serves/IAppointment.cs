@@ -12,6 +12,8 @@ namespace Appointment_Serves
     public interface IAppointment
     {
         [OperationContract]
+        Patient Login(string Email, string Password);
+        [OperationContract]
         List<Patient> SearchappointmentsbyDate(DateTime date,int staffId);
         [OperationContract]
         List<Patient> getAppointmnetsOfToday(int staffID);
