@@ -4,6 +4,8 @@ using System.Linq;
 using System.Runtime.Serialization;
 using System.ServiceModel;
 using System.Text;
+using DMS_Service.Structs;
+using DMS_Service.wiki;
 
 namespace DMS_Service
 {
@@ -21,9 +23,9 @@ namespace DMS_Service
         List<Consultation> SearchconsultionHistoryByStaffID(int staffId);
         [OperationContract]
         List<Consultation> getConsultationOfToday(int staffID);
-       // [OperationContract]
+        //[OperationContract]
         //List<Patient> SearchConsultationsbyDate(DateTime date, int staffId);
-         [OperationContract]
+        [OperationContract]
         List<Diagnosis> getDiagnosisHistoryByPersionID(int Patientid);
         [OperationContract]
         Staff Login(string Email, string Passward );
@@ -55,9 +57,19 @@ namespace DMS_Service
         [OperationContract]
         string setPerscription(int appointmentID, Perscription perscription);
         [OperationContract]
-         bool addPerscription(int appointmentID, Perscription perscription);
-       [OperationContract]
+        bool addPerscription(int appointmentID, Perscription perscription);
+        [OperationContract]
         bool addDiagnosis(Diagnosis diagnosis);
+
+        //methods for interacting with the wiki
+        [OperationContract]
+        List<Disease> get_all_diseases();
+        [OperationContract]
+        List<Disease> search_disease(string name, string symptoms, string classification);
+        [OperationContract]
+        List<Medicine> get_all_medicines();
+        [OperationContract]
+        List<Medicine> search_medicine(string name, string side_effects, string classification);
 
         //Methods for testing Synchronization
         [OperationContract]

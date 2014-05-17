@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using System.ServiceModel;
 using System.Windows.Forms;
 using DMS_Service.user_auth;
+using DMS_Service.wiki;
 
 namespace DMS_Service
 {
@@ -14,10 +15,12 @@ namespace DMS_Service
     public class BusinessLayer : IDoctor
     {
         private DbAccessLayer dbAcess;
+        private wiki_business wiki_access;
 
         public BusinessLayer()
         {
             dbAcess = new DbAccessLayer();
+            wiki_access = new wiki_business();
         }
 
         /// <summary>
@@ -469,6 +472,25 @@ namespace DMS_Service
        {
          return  dbAcess.addConsultion(currentConsultation);
        }
-        
+
+       public List<Structs.Disease> get_all_diseases()
+       {
+           return wiki_access.get_all_diseases();
+       }
+
+       public List<Structs.Disease> search_disease(string name, string symptoms, string classification)
+       {
+           return wiki_access.search_disease(name, symptoms, classification);
+       }
+
+       public List<Structs.Medicine> get_all_medicines()
+       {
+           return wiki_access.get_all_medicines();
+       }
+
+       public List<Structs.Medicine> search_medicine(string name, string side_effects, string classification)
+       {
+           return wiki_access.search_medicine(name, side_effects, classification);
+       }
     }
 }
