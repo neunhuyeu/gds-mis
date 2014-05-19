@@ -32,7 +32,7 @@ namespace Doctor_Client
             tbPatientDetailsOverviewAge.Text = DOBtoAge(Pateint.DateOfBirthk__BackingField).ToString();
             tbPatientDetailsOverviewDoB.Text = patient.DateOfBirthk__BackingField.GetDateTimeFormats('d')[0];
             tbPatientDetailsOverviewGender.Text = fixGender(patient.Genderk__BackingField);
-            tbPatientDetailsOverviewIsuranceNumber.Text = patient.InsuranceNumberk__BackingField.ToString();
+            tbPatientDetailsOverviewIsuranceNumber.Text = patient.InsuranceNumberk__BackingField1.ToString();
             tbPatientDetailsOverviewEMail.Text = patient.Emailk__BackingField;
             tbPatientDetailsOverviewMPhone.Text = patient.MobileNumberk__BackingField.ToString();
             tbPatientDetailsOverviewPhone.Text = patient.LandLineNumberk__BackingField.ToString();
