@@ -397,9 +397,7 @@ namespace DMS_Service
             string query = "UPDATE  patients" +
                             "SET gender=?gender, height_cm=?height_cm, weight_kg=?weight_kg, blood_type=?blood_type, smoking=?smoking, smoking_frequency=?smoking_frequency, hard_drugs=?hard_drugs, hard_drugs_frequency=?hard_drugs_frequency, person_id=?person_id" +
                             "WHERE patient_id=?patient_id";
-            MySqlParameter[] sqlParameters = new MySqlParameter[0];
-            sqlParameters[0] = new MySqlParameter("?first_name", MySqlDbType.VarChar);
-            sqlParameters[0].Value = p.FirstName;
+            MySqlParameter[] sqlParameters = getPatientParams(ref p);
 
             try
             {
