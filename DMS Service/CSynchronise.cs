@@ -6,6 +6,7 @@ using System.Net.NetworkInformation;
 using System.Runtime.Serialization;
 using System.ServiceModel;
 using System.Text;
+using DMS_Service.Structs;
 
 namespace DMS_Service
 {

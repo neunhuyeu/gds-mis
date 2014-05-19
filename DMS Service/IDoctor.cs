@@ -28,7 +28,7 @@ namespace DMS_Service
         [OperationContract]
         List<Diagnosis> getDiagnosisHistoryByPersionID(int Patientid);
         [OperationContract]
-        Staff Login(string Email, string Passward );
+        Staff Login(string Email, string Passward);
 
         [OperationContract]
         Patient GetPatientOverview(int personID);
@@ -38,7 +38,7 @@ namespace DMS_Service
         bool addConsultion(Consultation currentConsultation);
         [OperationContract]
         Staff GetStaff_by_staff_id(int id);
-        
+
         [OperationContract]
         Staff GetStaff_by_Personid(int id);
 

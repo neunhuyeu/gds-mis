@@ -142,7 +142,7 @@
     <None Include="Service References\ServerConnectionMedicalInformation\Arrays.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\ServerConnectionMedicalInformation\DMS_Service.xsd">
+    <None Include="Service References\ServerConnectionMedicalInformation\DMS_Service.Structs1.xsd">
       <SubType>Designer</SubType>
     </None>
     <None Include="Service References\ServerConnectionMedicalInformation\Doctor_Client.ServerConnectionMedicalInformation.Appointment.datasource">
@@ -152,6 +152,12 @@
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Service References\ServerConnectionMedicalInformation\Doctor_Client.ServerConnectionMedicalInformation.Diagnosis.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServerConnectionMedicalInformation\Doctor_Client.ServerConnectionMedicalInformation.Disease.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServerConnectionMedicalInformation\Doctor_Client.ServerConnectionMedicalInformation.Medicine.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Service References\ServerConnectionMedicalInformation\Doctor_Client.ServerConnectionMedicalInformation.Patient.datasource">

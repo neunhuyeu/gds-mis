@@ -15,7 +15,7 @@ namespace Doctor_Client.ServerConnectionMedicalInformation {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="Person", Namespace="http://schemas.datacontract.org/2004/07/DMS_Service")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="Person", Namespace="http://schemas.datacontract.org/2004/07/DMS_Service.Structs")]
     [System.SerializableAttribute()]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(Doctor_Client.ServerConnectionMedicalInformation.Staff))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(Doctor_Client.ServerConnectionMedicalInformation.Patient))]
@@ -33,6 +33,8 @@ namespace Doctor_Client.ServerConnectionMedicalInformation {
         private string FirstNamek__BackingFieldField;
         
         private char Genderk__BackingFieldField;
+        
+        private string InsuranceNumberk__BackingFieldField;
         
         private string LandLineNumberk__BackingFieldField;
         
@@ -117,6 +119,19 @@ namespace Doctor_Client.ServerConnectionMedicalInformation {
             }
         }
         
+        [System.Runtime.Serialization.DataMemberAttribute(Name="<InsuranceNumber>k__BackingField", IsRequired=true)]
+        public string InsuranceNumberk__BackingField {
+            get {
+                return this.InsuranceNumberk__BackingFieldField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.InsuranceNumberk__BackingFieldField, value) != true)) {
+                    this.InsuranceNumberk__BackingFieldField = value;
+                    this.RaisePropertyChanged("InsuranceNumberk__BackingField");
+                }
+            }
+        }
+        
         [System.Runtime.Serialization.DataMemberAttribute(Name="<LandLineNumber>k__BackingField", IsRequired=true)]
         public string LandLineNumberk__BackingField {
             get {
@@ -181,7 +196,7 @@ namespace Doctor_Client.ServerConnectionMedicalInformation {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="Staff", Namespace="http://schemas.datacontract.org/2004/07/DMS_Service")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="Staff", Namespace="http://schemas.datacontract.org/2004/07/DMS_Service.Structs")]
     [System.SerializableAttribute()]
     public partial class Staff : Doctor_Client.ServerConnectionMedicalInformation.Person {
         
@@ -246,7 +261,7 @@ namespace Doctor_Client.ServerConnectionMedicalInformation {
         }
         
         [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-        [System.Runtime.Serialization.DataContractAttribute(Name="Staff.StaffType", Namespace="http://schemas.datacontract.org/2004/07/DMS_Service")]
+        [System.Runtime.Serialization.DataContractAttribute(Name="Staff.StaffType", Namespace="http://schemas.datacontract.org/2004/07/DMS_Service.Structs")]
         public enum StaffType : int {
             
             [System.Runtime.Serialization.EnumMemberAttribute()]
@@ -262,7 +277,7 @@ namespace Doctor_Client.ServerConnectionMedicalInformation {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="Patient", Namespace="http://schemas.datacontract.org/2004/07/DMS_Service")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="Patient", Namespace="http://schemas.datacontract.org/2004/07/DMS_Service.Structs")]
     [System.SerializableAttribute()]
     public partial class Patient : Doctor_Client.ServerConnectionMedicalInformation.Person {
         
@@ -274,7 +289,7 @@ namespace Doctor_Client.ServerConnectionMedicalInformation {
         
         private int Heightk__BackingFieldField;
         
-        private string InsuranceNumberk__BackingFieldField;
+        private string InsuranceNumberk__BackingField1Field;
         
         private int PatientIDk__BackingFieldField;
         
@@ -285,6 +300,10 @@ namespace Doctor_Client.ServerConnectionMedicalInformation {
         private int SmokingFrequencyk__BackingFieldField;
         
         private int Weightk__BackingFieldField;
+        
+        private int hard_drugs_frequencyk__BackingFieldField;
+        
+        private bool hard_drugsk__BackingFieldField;
         
         [System.Runtime.Serialization.DataMemberAttribute(Name="<BloodType>k__BackingField", IsRequired=true)]
         public char BloodTypek__BackingField {
@@ -339,14 +358,14 @@ namespace Doctor_Client.ServerConnectionMedicalInformation {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute(Name="<InsuranceNumber>k__BackingField", IsRequired=true)]
-        public string InsuranceNumberk__BackingField {
+        public string InsuranceNumberk__BackingField1 {
             get {
-                return this.InsuranceNumberk__BackingFieldField;
+                return this.InsuranceNumberk__BackingField1Field;
             }
             set {
-                if ((object.ReferenceEquals(this.InsuranceNumberk__BackingFieldField, value) != true)) {
-                    this.InsuranceNumberk__BackingFieldField = value;
-                    this.RaisePropertyChanged("InsuranceNumberk__BackingField");
+                if ((object.ReferenceEquals(this.InsuranceNumberk__BackingField1Field, value) != true)) {
+                    this.InsuranceNumberk__BackingField1Field = value;
+                    this.RaisePropertyChanged("InsuranceNumberk__BackingField1");
                 }
             }
         }
@@ -415,11 +434,37 @@ namespace Doctor_Client.ServerConnectionMedicalInformation {
                 }
             }
         }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Name="<hard_drugs_frequency>k__BackingField", IsRequired=true)]
+        public int hard_drugs_frequencyk__BackingField {
+            get {
+                return this.hard_drugs_frequencyk__BackingFieldField;
+            }
+            set {
+                if ((this.hard_drugs_frequencyk__BackingFieldField.Equals(value) != true)) {
+                    this.hard_drugs_frequencyk__BackingFieldField = value;
+                    this.RaisePropertyChanged("hard_drugs_frequencyk__BackingField");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Name="<hard_drugs>k__BackingField", IsRequired=true)]
+        public bool hard_drugsk__BackingField {
+            get {
+                return this.hard_drugsk__BackingFieldField;
+            }
+            set {
+                if ((this.hard_drugsk__BackingFieldField.Equals(value) != true)) {
+                    this.hard_drugsk__BackingFieldField = value;
+                    this.RaisePropertyChanged("hard_drugsk__BackingField");
+                }
+            }
+        }
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="Consultation", Namespace="http://schemas.datacontract.org/2004/07/DMS_Service")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="Consultation", Namespace="http://schemas.datacontract.org/2004/07/DMS_Service.Structs")]
     [System.SerializableAttribute()]
     public partial struct Consultation : System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
@@ -527,7 +572,7 @@ namespace Doctor_Client.ServerConnectionMedicalInformation {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="Diagnosis", Namespace="http://schemas.datacontract.org/2004/07/DMS_Service")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="Diagnosis", Namespace="http://schemas.datacontract.org/2004/07/DMS_Service.Structs")]
     [System.SerializableAttribute()]
     public partial struct Diagnosis : System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
@@ -651,7 +696,7 @@ namespace Doctor_Client.ServerConnectionMedicalInformation {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="Appointment", Namespace="http://schemas.datacontract.org/2004/07/DMS_Service")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="Appointment", Namespace="http://schemas.datacontract.org/2004/07/DMS_Service.Structs")]
     [System.SerializableAttribute()]
     public partial struct Appointment : System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
@@ -784,7 +829,7 @@ namespace Doctor_Client.ServerConnectionMedicalInformation {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="Perscription", Namespace="http://schemas.datacontract.org/2004/07/DMS_Service")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="Perscription", Namespace="http://schemas.datacontract.org/2004/07/DMS_Service.Structs")]
     [System.SerializableAttribute()]
     public partial struct Perscription : System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
@@ -922,6 +967,200 @@ namespace Doctor_Client.ServerConnectionMedicalInformation {
         }
     }
     
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="Disease", Namespace="http://schemas.datacontract.org/2004/07/DMS_Service.Structs")]
+    [System.SerializableAttribute()]
+    public partial struct Disease : System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        private string[] causesk__BackingFieldField;
+        
+        private string[] classificationk__BackingFieldField;
+        
+        private string descriptionk__BackingFieldField;
+        
+        private string namek__BackingFieldField;
+        
+        private string[] symptomsk__BackingFieldField;
+        
+        private string[] treatmentsk__BackingFieldField;
+        
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Name="<causes>k__BackingField", IsRequired=true)]
+        public string[] causesk__BackingField {
+            get {
+                return this.causesk__BackingFieldField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.causesk__BackingFieldField, value) != true)) {
+                    this.causesk__BackingFieldField = value;
+                    this.RaisePropertyChanged("causesk__BackingField");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Name="<classification>k__BackingField", IsRequired=true)]
+        public string[] classificationk__BackingField {
+            get {
+                return this.classificationk__BackingFieldField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.classificationk__BackingFieldField, value) != true)) {
+                    this.classificationk__BackingFieldField = value;
+                    this.RaisePropertyChanged("classificationk__BackingField");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Name="<description>k__BackingField", IsRequired=true)]
+        public string descriptionk__BackingField {
+            get {
+                return this.descriptionk__BackingFieldField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.descriptionk__BackingFieldField, value) != true)) {
+                    this.descriptionk__BackingFieldField = value;
+                    this.RaisePropertyChanged("descriptionk__BackingField");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Name="<name>k__BackingField", IsRequired=true)]
+        public string namek__BackingField {
+            get {
+                return this.namek__BackingFieldField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.namek__BackingFieldField, value) != true)) {
+                    this.namek__BackingFieldField = value;
+                    this.RaisePropertyChanged("namek__BackingField");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Name="<symptoms>k__BackingField", IsRequired=true)]
+        public string[] symptomsk__BackingField {
+            get {
+                return this.symptomsk__BackingFieldField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.symptomsk__BackingFieldField, value) != true)) {
+                    this.symptomsk__BackingFieldField = value;
+                    this.RaisePropertyChanged("symptomsk__BackingField");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Name="<treatments>k__BackingField", IsRequired=true)]
+        public string[] treatmentsk__BackingField {
+            get {
+                return this.treatmentsk__BackingFieldField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.treatmentsk__BackingFieldField, value) != true)) {
+                    this.treatmentsk__BackingFieldField = value;
+                    this.RaisePropertyChanged("treatmentsk__BackingField");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="Medicine", Namespace="http://schemas.datacontract.org/2004/07/DMS_Service.Structs")]
+    [System.SerializableAttribute()]
+    public partial struct Medicine : System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string descriptionField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string nameField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int strength_mgField;
+        
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string description {
+            get {
+                return this.descriptionField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.descriptionField, value) != true)) {
+                    this.descriptionField = value;
+                    this.RaisePropertyChanged("description");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string name {
+            get {
+                return this.nameField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.nameField, value) != true)) {
+                    this.nameField = value;
+                    this.RaisePropertyChanged("name");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int strength_mg {
+            get {
+                return this.strength_mgField;
+            }
+            set {
+                if ((this.strength_mgField.Equals(value) != true)) {
+                    this.strength_mgField = value;
+                    this.RaisePropertyChanged("strength_mg");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="ServerConnectionMedicalInformation.IDoctor")]
     public interface IDoctor {
@@ -1039,6 +1278,30 @@ namespace Doctor_Client.ServerConnectionMedicalInformation {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IDoctor/addDiagnosis", ReplyAction="http://tempuri.org/IDoctor/addDiagnosisResponse")]
         System.Threading.Tasks.Task<bool> addDiagnosisAsync(Doctor_Client.ServerConnectionMedicalInformation.Diagnosis diagnosis);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IDoctor/get_all_diseases", ReplyAction="http://tempuri.org/IDoctor/get_all_diseasesResponse")]
+        Doctor_Client.ServerConnectionMedicalInformation.Disease[] get_all_diseases();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IDoctor/get_all_diseases", ReplyAction="http://tempuri.org/IDoctor/get_all_diseasesResponse")]
+        System.Threading.Tasks.Task<Doctor_Client.ServerConnectionMedicalInformation.Disease[]> get_all_diseasesAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IDoctor/search_disease", ReplyAction="http://tempuri.org/IDoctor/search_diseaseResponse")]
+        Doctor_Client.ServerConnectionMedicalInformation.Disease[] search_disease(string name, string symptoms, string classification);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IDoctor/search_disease", ReplyAction="http://tempuri.org/IDoctor/search_diseaseResponse")]
+        System.Threading.Tasks.Task<Doctor_Client.ServerConnectionMedicalInformation.Disease[]> search_diseaseAsync(string name, string symptoms, string classification);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IDoctor/get_all_medicines", ReplyAction="http://tempuri.org/IDoctor/get_all_medicinesResponse")]
+        Doctor_Client.ServerConnectionMedicalInformation.Medicine[] get_all_medicines();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IDoctor/get_all_medicines", ReplyAction="http://tempuri.org/IDoctor/get_all_medicinesResponse")]
+        System.Threading.Tasks.Task<Doctor_Client.ServerConnectionMedicalInformation.Medicine[]> get_all_medicinesAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IDoctor/search_medicine", ReplyAction="http://tempuri.org/IDoctor/search_medicineResponse")]
+        Doctor_Client.ServerConnectionMedicalInformation.Medicine[] search_medicine(string name, string side_effects, string classification);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IDoctor/search_medicine", ReplyAction="http://tempuri.org/IDoctor/search_medicineResponse")]
+        System.Threading.Tasks.Task<Doctor_Client.ServerConnectionMedicalInformation.Medicine[]> search_medicineAsync(string name, string side_effects, string classification);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IDoctor/addTestPatient", ReplyAction="http://tempuri.org/IDoctor/addTestPatientResponse")]
         void addTestPatient();
@@ -1230,6 +1493,38 @@ namespace Doctor_Client.ServerConnectionMedicalInformation {
         
         public System.Threading.Tasks.Task<bool> addDiagnosisAsync(Doctor_Client.ServerConnectionMedicalInformation.Diagnosis diagnosis) {
             return base.Channel.addDiagnosisAsync(diagnosis);
+        }
+        
+        public Doctor_Client.ServerConnectionMedicalInformation.Disease[] get_all_diseases() {
+            return base.Channel.get_all_diseases();
+        }
+        
+        public System.Threading.Tasks.Task<Doctor_Client.ServerConnectionMedicalInformation.Disease[]> get_all_diseasesAsync() {
+            return base.Channel.get_all_diseasesAsync();
+        }
+        
+        public Doctor_Client.ServerConnectionMedicalInformation.Disease[] search_disease(string name, string symptoms, string classification) {
+            return base.Channel.search_disease(name, symptoms, classification);
+        }
+        
+        public System.Threading.Tasks.Task<Doctor_Client.ServerConnectionMedicalInformation.Disease[]> search_diseaseAsync(string name, string symptoms, string classification) {
+            return base.Channel.search_diseaseAsync(name, symptoms, classification);
+        }
+        
+        public Doctor_Client.ServerConnectionMedicalInformation.Medicine[] get_all_medicines() {
+            return base.Channel.get_all_medicines();
+        }
+        
+        public System.Threading.Tasks.Task<Doctor_Client.ServerConnectionMedicalInformation.Medicine[]> get_all_medicinesAsync() {
+            return base.Channel.get_all_medicinesAsync();
+        }
+        
+        public Doctor_Client.ServerConnectionMedicalInformation.Medicine[] search_medicine(string name, string side_effects, string classification) {
+            return base.Channel.search_medicine(name, side_effects, classification);
+        }
+        
+        public System.Threading.Tasks.Task<Doctor_Client.ServerConnectionMedicalInformation.Medicine[]> search_medicineAsync(string name, string side_effects, string classification) {
+            return base.Channel.search_medicineAsync(name, side_effects, classification);
         }
         
         public void addTestPatient() {

@@ -9,7 +9,6 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Doctor_Client.ServerConnectionMedicalInformation;
 
-
 namespace Doctor_Client
 {
     public partial class Login : Form

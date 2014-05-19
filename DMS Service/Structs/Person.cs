@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.ServiceModel;
 
-namespace DMS_Service
+namespace DMS_Service.Structs
 {
     [Serializable]
     public abstract class Person
@@ -20,7 +20,8 @@ namespace DMS_Service
 
         //this is type char in the database...so I changed it from int to char.
         public char Gender { get; set; }
-
+        public string InsuranceNumber { get; set; }
+        public Person() { }
     }
 
 }

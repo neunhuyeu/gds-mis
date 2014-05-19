@@ -1,10 +1,10 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="BusinessLayer" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="BusinessLayer" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
   <wsdl:types>
     <xsd:schema targetNamespace="http://tempuri.org/Imports">
       <xsd:import namespace="http://tempuri.org/" />
       <xsd:import namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
-      <xsd:import namespace="http://schemas.datacontract.org/2004/07/DMS_Service" />
+      <xsd:import namespace="http://schemas.datacontract.org/2004/07/DMS_Service.Structs" />
       <xsd:import namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
     </xsd:schema>
   </wsdl:types>
@@ -122,6 +122,30 @@
   <wsdl:message name="IDoctor_addDiagnosis_OutputMessage">
     <wsdl:part name="parameters" element="tns:addDiagnosisResponse" />
   </wsdl:message>
+  <wsdl:message name="IDoctor_get_all_diseases_InputMessage">
+    <wsdl:part name="parameters" element="tns:get_all_diseases" />
+  </wsdl:message>
+  <wsdl:message name="IDoctor_get_all_diseases_OutputMessage">
+    <wsdl:part name="parameters" element="tns:get_all_diseasesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDoctor_search_disease_InputMessage">
+    <wsdl:part name="parameters" element="tns:search_disease" />
+  </wsdl:message>
+  <wsdl:message name="IDoctor_search_disease_OutputMessage">
+    <wsdl:part name="parameters" element="tns:search_diseaseResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDoctor_get_all_medicines_InputMessage">
+    <wsdl:part name="parameters" element="tns:get_all_medicines" />
+  </wsdl:message>
+  <wsdl:message name="IDoctor_get_all_medicines_OutputMessage">
+    <wsdl:part name="parameters" element="tns:get_all_medicinesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDoctor_search_medicine_InputMessage">
+    <wsdl:part name="parameters" element="tns:search_medicine" />
+  </wsdl:message>
+  <wsdl:message name="IDoctor_search_medicine_OutputMessage">
+    <wsdl:part name="parameters" element="tns:search_medicineResponse" />
+  </wsdl:message>
   <wsdl:message name="IDoctor_addTestPatient_InputMessage">
     <wsdl:part name="parameters" element="tns:addTestPatient" />
   </wsdl:message>
@@ -210,6 +234,22 @@
     <wsdl:operation name="addDiagnosis">
       <wsdl:input wsaw:Action="http://tempuri.org/IDoctor/addDiagnosis" message="tns:IDoctor_addDiagnosis_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IDoctor/addDiagnosisResponse" message="tns:IDoctor_addDiagnosis_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="get_all_diseases">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDoctor/get_all_diseases" message="tns:IDoctor_get_all_diseases_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDoctor/get_all_diseasesResponse" message="tns:IDoctor_get_all_diseases_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="search_disease">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDoctor/search_disease" message="tns:IDoctor_search_disease_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDoctor/search_diseaseResponse" message="tns:IDoctor_search_disease_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="get_all_medicines">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDoctor/get_all_medicines" message="tns:IDoctor_get_all_medicines_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDoctor/get_all_medicinesResponse" message="tns:IDoctor_get_all_medicines_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="search_medicine">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDoctor/search_medicine" message="tns:IDoctor_search_medicine_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDoctor/search_medicineResponse" message="tns:IDoctor_search_medicine_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="addTestPatient">
       <wsdl:input wsaw:Action="http://tempuri.org/IDoctor/addTestPatient" message="tns:IDoctor_addTestPatient_InputMessage" />
@@ -393,6 +433,42 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="get_all_diseases">
+      <soap:operation soapAction="http://tempuri.org/IDoctor/get_all_diseases" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="search_disease">
+      <soap:operation soapAction="http://tempuri.org/IDoctor/search_disease" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="get_all_medicines">
+      <soap:operation soapAction="http://tempuri.org/IDoctor/get_all_medicines" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="search_medicine">
+      <soap:operation soapAction="http://tempuri.org/IDoctor/search_medicine" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="addTestPatient">
       <soap:operation soapAction="http://tempuri.org/IDoctor/addTestPatient" style="document" />
       <wsdl:input>
@@ -414,7 +490,7 @@
   </wsdl:binding>
   <wsdl:service name="BusinessLayer">
     <wsdl:port name="BasicHttpBinding_IDoctor" binding="tns:BasicHttpBinding_IDoctor">
-      <soap:address location="http://145.93.83.117:8733/Design_Time_Addresses/DMS_Service/IDoctor/" />
+      <soap:address location="http://localhost:8733/Design_Time_Addresses/DMS_Service/IDoctor/" />
     </wsdl:port>
   </wsdl:service>
 </wsdl:definitions>

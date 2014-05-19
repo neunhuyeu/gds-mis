@@ -8,6 +8,7 @@ using System.ServiceModel;
 using System.Windows.Forms;
 using DMS_Service.user_auth;
 using DMS_Service.wiki;
+using DMS_Service.Structs;
 
 namespace DMS_Service
 {

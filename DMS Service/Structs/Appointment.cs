@@ -5,7 +5,7 @@ using System.Text;
 using System.ServiceModel;
 using System.Runtime.Serialization;
 
-namespace DMS_Service
+namespace DMS_Service.Structs
 {
     [Serializable]
     public struct Appointment

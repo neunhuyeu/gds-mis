@@ -7,6 +7,7 @@ using System.Data.SqlClient;
 using System.Configuration;
 using MySql.Data.MySqlClient;
 using DMS_Service.database_connection;
+using DMS_Service.Structs;
 
 namespace DMS_Service
 {
@@ -18,11 +19,11 @@ namespace DMS_Service
         {
             dbConnection = new db_connection("gds_mis");
         }
-        
+
         public DataTable SearchPatient_lastName_dateOfBirth(string lastName, string dateOfBirth)
         {
             string query = string.Format("SELECT * " +
-                                        "FROM person " + 
+                                        "FROM person " +
                                         "WHERE last_name = @lastName " +
                                         "AND date_of_birth = @dateOfBirth");
             MySqlParameter[] sqlParameters = new MySqlParameter[2];
@@ -47,7 +48,6 @@ namespace DMS_Service
         //TODO -> retrieve date
         public DataTable SearchPatientsList(string firstName, string lastName, DateTime dateOfBirth, string insurance)
         {
-
             string parameters = "";
             string query = "Select * from patients pt join person per on per.person_id = pt.person_id ";
             if (firstName.Length > 0 || lastName.Length > 0 || dateOfBirth.GetDateTimeFormats('d')[0] != DateTime.Now.GetDateTimeFormats('d')[0] || (insurance.Length > 0 && insurance != "0"))
@@ -77,7 +77,6 @@ namespace DMS_Service
                     parameters += "i";
                 }
             }
-
 
             MySqlParameter[] sqlParameters = null;
             if (parameters.Length > 0)
@@ -118,20 +117,19 @@ namespace DMS_Service
             return dbConnection.SelectQuery(query);
         }
 
-
         public DataTable SearchprescriptionListByID(int id)
         {
             MySqlParameter[] sqlParameters = new MySqlParameter[1];
             sqlParameters[0] = new MySqlParameter("@pt_id", MySqlDbType.Int32);
             sqlParameters[0].Value = id;
-            string query = string.Format("SELECT con.Staff_id, pre.medicine, pre.strength_mg, con.end_date as date_prescribed " + 
+            string query = string.Format("SELECT con.Staff_id, pre.medicine, pre.strength_mg, con.end_date as date_prescribed " +
                                          "FROM prescribtion pre " +
                                          "JOIN consultations con " +
-                                         "ON pre.consultation_id = con.consultation_id " + 
+                                         "ON pre.consultation_id = con.consultation_id " +
                                          "WHERE con.patient_id = (select patient_id from patients where person_id = @pt_id)");
-             return dbConnection.SelectQuery(query, sqlParameters);
+            return dbConnection.SelectQuery(query, sqlParameters);
         }
-        
+
         public DataTable SearchStaffByPersonId(int id)
         {
             string query = "SELECT * FROM Staff_members WHERE person_id = @id";
@@ -140,11 +138,12 @@ namespace DMS_Service
             sqlParameters[0].Value = Convert.ToString(id);
             return dbConnection.SelectQuery(query, sqlParameters);
         }
+
         public DataTable SearchStaffByStaffId(int id)
         {
-            string query ="SELECT * " + 
+            string query = "SELECT * " +
                           " FROM person " +
-                          " WHERE person_id = (select person_id from Staff_members where Staff_id = @Staff_id)"; 
+                          " WHERE person_id = (select person_id from Staff_members where Staff_id = @Staff_id)";
             MySqlParameter[] sqlParameters = new MySqlParameter[1];
             sqlParameters[0] = new MySqlParameter("@Staff_id", MySqlDbType.Int32);
             sqlParameters[0].Value = Convert.ToString(id);
@@ -155,11 +154,10 @@ namespace DMS_Service
         {
             try
             {
-                
-                string query = "SELECT * "+
-                                "FROM person per "+
+                string query = "SELECT * " +
+                                "FROM person per " +
                                 "JOIN staff_members staf " +
-                                "ON per.person_id = staf.person_id "+
+                                "ON per.person_id = staf.person_id " +
                                 "WHERE email_address = @email";
                 MySqlParameter[] sqlParameters = new MySqlParameter[1];
                 sqlParameters[0] = new MySqlParameter("@email", MySqlDbType.String);
@@ -167,52 +165,186 @@ namespace DMS_Service
                 return dbConnection.SelectQuery(query, sqlParameters);
             }
             catch
-            {
-                return null;
-            }
-
+            { return null; }
         }
 
 
-        /// <summary>
-        /// JP.
-        /// Adds patient to the database by first adding record to person table and then patient table.
-        /// </summary>
-        /// <param name="patient">patient to be added</param>
-        public void addPatient(Patient patient)
+
+        public DataTable getPersonId(string firstName, string lastName, DateTime dob)
         {
-            //query for person table
-            string query = "INSERT INTO person(first_name, last_name, date_of_birth, email_address, mobile_number, landline_number, home_address)" +
-                           "VALUES (?first_name, ?last_name, ?date_of_birth, ?email_address, ?mobile_number, ?landline_number, ?home_address)";
+            string query = "SELECT person_id as id FROM person where first_name = ?fname AND last_name = ?lname AND date_of_birth = ?dob";
+            MySqlParameter[] sqlParameters = new MySqlParameter[3];
+            sqlParameters[0] = new MySqlParameter("?fname", MySqlDbType.VarChar);
+            sqlParameters[0].Value = firstName;
+            sqlParameters[1] = new MySqlParameter("?lname", MySqlDbType.VarChar);
+            sqlParameters[1].Value = lastName;
+            sqlParameters[2] = new MySqlParameter("?dob", MySqlDbType.Date);
+            sqlParameters[2].Value = dob;
+            DataTable result;
+            try
+            {
+                result = dbConnection.SelectQuery(query, sqlParameters);
+            }
+            catch
+            { return null; }
+            return result;
+        }
 
-            //parameters for person table
-            MySqlParameter[] sqlParameters = new MySqlParameter[7];
+        public DataTable getPersonIdFromPatientId(int patientId)
+        {
+            string query = "SELECT person_id as id FROM patients where patient_id=?patient_id";
+            MySqlParameter[] sqlParameters = new MySqlParameter[3];
+            sqlParameters[0] = new MySqlParameter("?patient_id", MySqlDbType.VarChar);
+            sqlParameters[0].Value = patientId;
+            DataTable result;
+            try
+            {
+                result = dbConnection.SelectQuery(query, sqlParameters);
+            }
+            catch
+            { return null; }
+            return result;
+        }
+
+        public DataTable getPersonIdFromStaffId(int staffId)
+        {
+            string query = "SELECT person_id as id FROM Staff_members where Staff_id=?Staff_id";
+            MySqlParameter[] sqlParameters = new MySqlParameter[3];
+            sqlParameters[0] = new MySqlParameter("?Staff_id", MySqlDbType.VarChar);
+            sqlParameters[0].Value = staffId;
+            DataTable result;
+            try
+            {
+                result = dbConnection.SelectQuery(query, sqlParameters);
+            }
+            catch
+            { return null; }
+            return result;
+        }
+
+        public DataTable getStaffIdFromPersonId(int personId)
+        {
+            string query = "SELECT Staff_id as id FROM Staff_members where person_id=?person_id";
+            MySqlParameter[] sqlParameters = new MySqlParameter[3];
+            sqlParameters[0] = new MySqlParameter("?person_id", MySqlDbType.VarChar);
+            sqlParameters[0].Value = personId;
+            DataTable result;
+            try
+            {
+                result = dbConnection.SelectQuery(query, sqlParameters);
+            }
+            catch
+            { return null; }
+            return result;
+        }
+
+        public DataTable getPatientIdFromPersonId(int personId)
+        {
+            string query = "SELECT patient_id as id FROM patients where person_id=?person_id";
+            MySqlParameter[] sqlParameters = new MySqlParameter[3];
+            sqlParameters[0] = new MySqlParameter("?person_id", MySqlDbType.VarChar);
+            sqlParameters[0].Value = personId;
+            DataTable result;
+            try
+            {
+                result = dbConnection.SelectQuery(query, sqlParameters);
+            }
+            catch
+            { return null; }
+            return result;
+        }
+
+        /// <summary>
+        /// Check whether a person with the given name, lastname and date of birth is stored in the database.
+        /// </summary>
+        /// <param name="person">A Person object</param>
+        /// <returns>Boolean</returns>
+        public bool personExists(Person person)
+        {
+            string query = "SELECT COUNT(*) as count FROM person where first_name=?first_name AND last_name=?last_name AND date_of_birth=?date_of_birth";
+            MySqlParameter[] sqlParameters = new MySqlParameter[3];
             sqlParameters[0] = new MySqlParameter("?first_name", MySqlDbType.VarChar);
-            sqlParameters[0].Value = Convert.ToString(patient.FirstName);
+            sqlParameters[0].Value = Convert.ToString(person.FirstName);
             sqlParameters[1] = new MySqlParameter("?last_name", MySqlDbType.VarChar);
-            sqlParameters[1].Value = Convert.ToString(patient.LastName);
+            sqlParameters[1].Value = Convert.ToString(person.LastName);
             sqlParameters[2] = new MySqlParameter("?date_of_birth", MySqlDbType.Date);
-            sqlParameters[2].Value = (patient.DateOfBirth);
+            sqlParameters[2].Value = person.DateOfBirth;
+
+            bool result = false;
+            try
+            {
+                // Execute query on person table.
+                result = (bool)dbConnection.SelectQuery(query, sqlParameters).Rows[0]["count"];
+            }
+            catch
+            { result = false; }
+
+            return result;
+        }
+
+        private MySqlParameter[] getPersonParams(ref Person person)
+        {
+            // Parameters for person table.
+            MySqlParameter[] sqlParameters = new MySqlParameter[8];
+            sqlParameters[0] = new MySqlParameter("?first_name", MySqlDbType.VarChar);
+            sqlParameters[0].Value = Convert.ToString(person.FirstName);
+            sqlParameters[1] = new MySqlParameter("?last_name", MySqlDbType.VarChar);
+            sqlParameters[1].Value = Convert.ToString(person.LastName);
+            sqlParameters[2] = new MySqlParameter("?date_of_birth", MySqlDbType.Date);
+            sqlParameters[2].Value = (person.DateOfBirth);
             sqlParameters[3] = new MySqlParameter("?email_address", MySqlDbType.VarChar);
-            sqlParameters[3].Value = Convert.ToString(patient.Email);
+            sqlParameters[3].Value = Convert.ToString(person.Email);
             sqlParameters[4] = new MySqlParameter("?mobile_number", MySqlDbType.VarChar);
-            sqlParameters[4].Value = Convert.ToString(patient.MobileNumber);
+            sqlParameters[4].Value = Convert.ToString(person.MobileNumber);
             sqlParameters[5] = new MySqlParameter("?landline_number", MySqlDbType.VarChar);
-            sqlParameters[5].Value = Convert.ToString(patient.LandLineNumber);
+            sqlParameters[5].Value = Convert.ToString(person.LandLineNumber);
             sqlParameters[6] = new MySqlParameter("?home_address", MySqlDbType.VarChar);
-            sqlParameters[6].Value = Convert.ToString(patient.Address);
+            sqlParameters[6].Value = Convert.ToString(person.Address);
+            sqlParameters[7] = new MySqlParameter("?insurance_number", MySqlDbType.VarChar);
+            sqlParameters[7].Value = Convert.ToString(person.InsuranceNumber);
+            return sqlParameters;
+        }
 
-            //execute query on person table
-            dbConnection.InsertQuery(query, sqlParameters);
+        public bool addPerson(Person person)
+        {
+            // Query for person table.
+            string query = "INSERT INTO person " +
+                           "(person_id, first_name, last_name, date_of_birth, email_address, mobile_number, landline_number, home_address, insurance_number) " +
+                           "VALUES ((SELECT MAX(person_id)+1 FROM person), ?first_name, ?last_name, ?date_of_birth, ?email_address, ?mobile_number, ?landline_number, ?home_address, ?insurance_number";
 
-            //query for patient table
-            query = "INSERT INTO patients(gender, height_cm, weight_kg, blood_type, smoking, smoking_frequency, hard_drugs, hard_drugs_frequency, person_id)" +
-                    "VALUES (?gender, ?height_cm, ?weight_kg, ?blood_type, ?smoking, ?smoking_frequency, ?hard_drugs, ?hard_drugs_frequency, (SELECT MAX(person_ID) FROM person))";
+            MySqlParameter[] sqlParameters = getPersonParams(ref person);
 
+            try
+            {
+                // Execute query on person table.
+                dbConnection.InsertQuery(query, sqlParameters);
+            }
+            catch { return false; }
+            return true;
+        }
 
-            //parameters for patient table
-            sqlParameters = null;
-            sqlParameters = new MySqlParameter[8];
+        public bool updatePerson(Person person)
+        {
+            string query = "UPDATE  person" +
+                            "SET first_name=?first_name, last_name=?last_name, date_of_birth=?date_of_birth," +
+                                "email_address=?email_address, mobile_number=?mobile_number, landline_number=?landline_number," +
+                                "home_address=?home_address,insurance_number=?insurance_number" +
+                            "WHERE person_id=person_id";
+
+            MySqlParameter[] sqlParameters = getPersonParams(ref person);
+
+            try
+            {
+                dbConnection.UpdateQuery(query, sqlParameters);
+            }
+            catch { return false; }
+            return true;
+        }
+
+        private MySqlParameter[] getPatientParams(ref Patient patient)
+        {
+            // Parameters for patient table.
+            MySqlParameter[] sqlParameters = new MySqlParameter[10];
             sqlParameters[0] = new MySqlParameter("?gender", MySqlDbType.VarChar);
             sqlParameters[0].Value = patient.Gender;
             sqlParameters[1] = new MySqlParameter("?height_cm", MySqlDbType.Int32);
@@ -225,45 +357,133 @@ namespace DMS_Service
             sqlParameters[4].Value = patient.Smoker;
             sqlParameters[5] = new MySqlParameter("?smoking_frequency", MySqlDbType.Int32);
             sqlParameters[5].Value = patient.SmokingFrequency;
-
-            //TODO: Add correct paameters
             sqlParameters[6] = new MySqlParameter("?hard_drugs", MySqlDbType.Bit);
-            sqlParameters[6].Value = false;
+            sqlParameters[6].Value = patient.hard_drugs;
             sqlParameters[7] = new MySqlParameter("?hard_drugs_frequency", MySqlDbType.Int32);
-            sqlParameters[7].Value = 0;
+            sqlParameters[7].Value = patient.hard_drugs_frequency;
+            sqlParameters[8] = new MySqlParameter("?person_id", MySqlDbType.Int32);
+            sqlParameters[8].Value = patient.PersonId;
+            sqlParameters[9] = new MySqlParameter("?patient_id", MySqlDbType.Int32);
+            sqlParameters[9].Value = patient.PatientID;
 
-            //execute query on patient table
-            dbConnection.InsertQuery(query, sqlParameters);
-
-            return;
+            return sqlParameters;
         }
-      public bool addDiagnosis(Diagnosis Diagnosis)
-      {
-          //query
-          string query = "INSERT INTO prescribtion(diagnosis, consultation_id, symptoms) " +
-                         "VALUES (@diagnosis, @consultation_id, @symptoms) ";
 
-          //parameters
-          MySqlParameter[] sqlParameters = new MySqlParameter[3];
-          sqlParameters[0] = new MySqlParameter("@diagnosis", MySqlDbType.VarChar);
-          sqlParameters[0].Value = Convert.ToString(Diagnosis.Diagnosises);
-          sqlParameters[1] = new MySqlParameter("@consultation_id", MySqlDbType.Int32);
-          sqlParameters[1].Value = Convert.ToString(Diagnosis.Consultation_id);
-          sqlParameters[2] = new MySqlParameter("@symptoms", MySqlDbType.Int32);
-          sqlParameters[2].Value = Convert.ToString(Diagnosis.Symptoms);
+        /// <summary>
+        /// Adds a patient record after it checks if the person record already exists.
+        /// If not it creates a person record first and then proceeds.
+        /// </summary>
+        /// <param name="patient">The patient object to add.</param>
+        public bool addPatient(Patient patient)
+        {
+            //query for patient table
+            string query = "INSERT INTO patients(patient_id, gender, height_cm, weight_kg, blood_type, smoking, smoking_frequency, hard_drugs, hard_drugs_frequency, person_id)" +
+                    "VALUES ((SELECT MAX(patient_id)+1 FROM patients), ?gender, ?height_cm, ?weight_kg, ?blood_type, ?smoking, ?smoking_frequency, ?hard_drugs, ?hard_drugs_frequency, ?person_id)";
 
-          try
-          {
-              //execute query on appointment table
-              dbConnection.InsertQuery(query, sqlParameters);
-              return true;
-          }
-          catch
-          {
+            //parameters for patient table
+            MySqlParameter[] sqlParameters = getPatientParams(ref patient);
 
-              return false;
-          }
-      }
+            try
+            {
+                // Execute query on person table.
+                dbConnection.InsertQuery(query, sqlParameters);
+            }
+            catch { return false; }
+            return true;
+        }
+
+        public bool updatePatient(Patient p)
+        {
+            string query = "UPDATE  patients" +
+                            "SET gender=?gender, height_cm=?height_cm, weight_kg=?weight_kg, blood_type=?blood_type, smoking=?smoking, smoking_frequency=?smoking_frequency, hard_drugs=?hard_drugs, hard_drugs_frequency=?hard_drugs_frequency, person_id=?person_id" +
+                            "WHERE patient_id=?patient_id";
+            MySqlParameter[] sqlParameters = new MySqlParameter[0];
+            sqlParameters[0] = new MySqlParameter("?first_name", MySqlDbType.VarChar);
+            sqlParameters[0].Value = p.FirstName;
+
+            try
+            {
+                dbConnection.UpdateQuery(query, sqlParameters);
+            }
+            catch { return false; }
+
+            return true;
+        }
+
+        private MySqlParameter[] getStaffParams(ref Staff staff)
+        {
+            // Parameters for Staff_members table.
+            MySqlParameter[] sqlParameters = new MySqlParameter[5];
+            sqlParameters[0] = new MySqlParameter("?function", MySqlDbType.VarChar);
+            sqlParameters[0].Value = staff.Gender;
+            sqlParameters[1] = new MySqlParameter("?specialization", MySqlDbType.Int32);
+            sqlParameters[1].Value = staff.Specialization;
+            sqlParameters[2] = new MySqlParameter("?room_number", MySqlDbType.Int32);
+            sqlParameters[2].Value = staff.RoomNumber;
+            sqlParameters[3] = new MySqlParameter("?person_id", MySqlDbType.VarChar);
+            sqlParameters[3].Value = staff.PersonId;
+            sqlParameters[4] = new MySqlParameter("?Staff_id", MySqlDbType.Int32);
+            sqlParameters[4].Value = staff.StaffID;
+            return sqlParameters;
+        }
+
+        public bool addStaff(Staff staff)
+        {
+            //query for patient table
+            string query = "INSERT INTO Staff_members (Staff_id,function,specialization,room_number,person_id)" +
+                    "VALUES ((SELECT MAX(Staff_id)+1 FROM Staff_members), ?function, ?specialization, ?room_number, ?person_id)";
+            //parameters for patient table
+            MySqlParameter[] sqlParameters = getStaffParams(ref staff);
+            try
+            {
+                // Execute query on person table.
+                dbConnection.InsertQuery(query, sqlParameters);
+            }
+            catch { return false; }
+            return true;
+
+        }
+
+        public bool updateStaff(Staff staff)
+        {
+            string query = "UPDATE Staff_members" +
+                            "SET function=?function,specialization=?specialization,room_number=?room_number,person_id=?person_id" +
+                            "WHERE Staff_id=?Staff_id";
+            MySqlParameter[] sqlParameters = getStaffParams(ref staff);
+
+            try
+            {
+                dbConnection.UpdateQuery(query, sqlParameters);
+            }
+            catch { return false; }
+            return true;
+        }
+
+        public bool addDiagnosis(Diagnosis Diagnosis)
+        {
+            //query
+            string query = "INSERT INTO prescribtion(diagnosis, consultation_id, symptoms) " +
+                           "VALUES (@diagnosis, @consultation_id, @symptoms) ";
+
+            //parameters
+            MySqlParameter[] sqlParameters = new MySqlParameter[3];
+            sqlParameters[0] = new MySqlParameter("@diagnosis", MySqlDbType.VarChar);
+            sqlParameters[0].Value = Convert.ToString(Diagnosis.Diagnosises);
+            sqlParameters[1] = new MySqlParameter("@consultation_id", MySqlDbType.Int32);
+            sqlParameters[1].Value = Convert.ToString(Diagnosis.Consultation_id);
+            sqlParameters[2] = new MySqlParameter("@symptoms", MySqlDbType.Int32);
+            sqlParameters[2].Value = Convert.ToString(Diagnosis.Symptoms);
+
+            try
+            {
+                //execute query on appointment table
+                dbConnection.InsertQuery(query, sqlParameters);
+                return true;
+            }
+            catch
+            { return false; }
+        }
+
         /// <summary>
         /// JP.
         /// Adds consultation to the conusltation table.
@@ -283,32 +503,14 @@ namespace DMS_Service
             sqlParameters[1].Value = appointment.endTime;
             sqlParameters[2] = new MySqlParameter("?patient_id", MySqlDbType.Int32);
 
-            //if conditions are for temporary hardcoding
-            //if (appointment.Patient != null)
-            //{
-                //sqlParameters[2].Value = Convert.ToString(appointment.Patient.PatientID);
-            //}
-            //else
-            //{
-                sqlParameters[2].Value = 1;
-            //}
-
+            sqlParameters[2].Value = 1;
             sqlParameters[3] = new MySqlParameter("?staff_id", MySqlDbType.Int32);
-
-            //if (appointment.Staff != null)
-            //{
-                //sqlParameters[3].Value = Convert.ToString(appointment.Staff.StaffID);
-            //}
-            //else
-            //{
-                sqlParameters[3].Value = 1;
-            //}
+            sqlParameters[3].Value = 1;
 
             //execute query on appointment table
             dbConnection.InsertQuery(query, sqlParameters);
-
-            return;
         }
+
         public bool addPrescrption(Perscription perscription, int consultationId)
         {
             //query
@@ -327,6 +529,7 @@ namespace DMS_Service
             sqlParameters[3].Value = Convert.ToString(consultationId);
             sqlParameters[4] = new MySqlParameter("@strength_mg", MySqlDbType.Int32);
             sqlParameters[4].Value = Convert.ToString(perscription.Strength);
+
             try
             {
                 //execute query on appointment table
@@ -334,36 +537,26 @@ namespace DMS_Service
                 return true;
             }
             catch
-            {
-
-                return false;
-            }
+            { return false; }
         }
+
         public DataTable getLatestConsultationID()
         {
             try
             {
                 string query = "SELECT MAX(consultation_id) As latest FROM consultations;";
-                
-                
                 return dbConnection.SelectQuery(query);
-                
             }
             catch
-            {
-                return null;
-            }
-        
+            { return null; }
         }
-     
-       public bool updateConsultionEnd_date(Consultation currentConultion)
+
+        public bool updateConsultionEnd_date(Consultation currentConultion)
         {
             //query
             string query = "Update  consultations" +
                             "SET end_date =@end_date" +
                             "WHERE consultation_id = @consultation_id";
-
-                           
 
             //parameters
             MySqlParameter[] sqlParameters = new MySqlParameter[2];
@@ -371,8 +564,6 @@ namespace DMS_Service
             sqlParameters[0].Value = Convert.ToString(currentConultion.End_date);
             sqlParameters[1] = new MySqlParameter("@consultation_id", MySqlDbType.Int32);
             sqlParameters[1].Value = Convert.ToString(currentConultion.ConsultationID);
-            
-
 
             try
             {
@@ -381,13 +572,9 @@ namespace DMS_Service
                 return true;
             }
             catch
-            {
-
-                return false;
-            }
-        
-        
+            { return false; }
         }
+
         public bool addConsultion(Consultation Consultation)
         {
             //query
@@ -402,7 +589,6 @@ namespace DMS_Service
             sqlParameters[1].Value = Convert.ToString(Consultation.Staff_id);
             sqlParameters[2] = new MySqlParameter("@patient_id", MySqlDbType.Int32);
             sqlParameters[2].Value = Convert.ToString(Consultation.Patient_id);
-           
 
             try
             {
@@ -411,25 +597,16 @@ namespace DMS_Service
                 return true;
             }
             catch
-            {
-
-                return false;
-            }
-        
+            { return false; }
         }
+
         public DataTable SearchDiagnosisHistoryByPersionID(int patientID)
         {
-  
-            //string query = string.Format("SELECT * " +
-            //                            "FROM diagnosis " +
-            //                            "Where consultation_id in (select consultation_id" +
-            //                                                       " From consultations"+
-            //                                                       " Where patient_id = @patient_id)");
             string query = string.Format("SELECT * " +
                                          "FROM diagnosis dia " +
                                          "JOIN consultations con " +
                                          "ON dia.consultation_id = con.consultation_id " +
-                                         "WHERE con.patient_id = patient_id "+
+                                         "WHERE con.patient_id = patient_id " +
                                          "ORDER BY start_date DESC");
 
             MySqlParameter[] sqlParameters = new MySqlParameter[1];
@@ -438,12 +615,12 @@ namespace DMS_Service
 
             return dbConnection.SelectQuery(query, sqlParameters);
         }
+
         public DataTable SearchconsultionHistoryByPersionID(int personID)
         {
-
             string query = string.Format("SELECT * " +
                                         "FROM consultations  " +
-                                        "WHERE  patient_id=(select patient_id from patients where person_id = @patient_id)  "+
+                                        "WHERE  patient_id=(select patient_id from patients where person_id = @patient_id)  " +
                                        " ORDER BY start_date");
 
             MySqlParameter[] sqlParameters = new MySqlParameter[1];
@@ -453,10 +630,8 @@ namespace DMS_Service
             return dbConnection.SelectQuery(query, sqlParameters);
         }
 
-
         public DataTable SearchconsultionHistoryByStaffID(int staffId)
         {
-
             string query = string.Format("SELECT * " +
                                         "FROM consultations  " +
                                         "WHERE  Staff_id = @StaffID  " +
@@ -484,7 +659,5 @@ namespace DMS_Service
 
             return dbConnection.SelectQuery(query, sqlParameters);
         }
-
-      
     }
 }
