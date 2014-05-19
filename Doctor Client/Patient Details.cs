@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Doctor_Client.ServerConnectionMedicalInformation;
+using System.Threading;
 
 namespace Doctor_Client
 {
@@ -18,12 +19,14 @@ namespace Doctor_Client
       Perscription[] perscription;
       List<Int32> consultationsIDs;
       Staff CurrentUser;
+      int lastTabIndex;
         
       Consultation currentConsultation;
       bool newConsultation;
             public PatientDetails(Patient Pateint,Staff currentUser)
         {
             InitializeComponent();
+            lastTabIndex = 0;
           proxy= new DoctorClient();
           CurrentUser = currentUser;
             //overview filler
@@ -228,6 +231,27 @@ namespace Doctor_Client
              proxy.addDiagnosis(diagnosis);
          }
 
+         private void tabs_SelectedIndexChanged(object sender, EventArgs e)
+         {
+             if (tabs.SelectedIndex == 3)
+             {
+                 tabs.SelectedIndex = lastTabIndex;
+                 Thread t1 = new Thread(NewWiki);
+                 t1.Name = "wiki Thread";
+                 t1.IsBackground = true;
+                 t1.Start();
+             }
+             else
+             {
+                 lastTabIndex = tabs.SelectedIndex;
+             }
+         }
+         public void NewWiki()
+         {
+
+             Wiki wiki = new Wiki();
+             wiki.Show();
+         }
          
 
          

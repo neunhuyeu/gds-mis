@@ -9,9 +9,11 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Doctor_Client.ServerConnectionMedicalInformation;
 using Doctor_Client.ServerConnectionagenda;
+using System.Threading;
 
 namespace Doctor_Client
 {
+    
     public partial class Client : Form
     {
         ServerConnectionMedicalInformation.Staff currentUser;
@@ -21,13 +23,14 @@ namespace Doctor_Client
         List<string[]> stringList;
         string[] Appoint;
         DateTime[] DatetimeBold;
-
+        int lastTabIndex;
         public Client(Staff user)
         {
             InitializeComponent();
             currentUser = user;
             userNamelb.Text = " Welcome: " + user.FirstNamek__BackingField + " " + user.LastNamek__BackingField;
             DOBSearch.Value = DateTime.Now.Date;
+            lastTabIndex = 0;
 
 
         }
@@ -175,6 +178,31 @@ namespace Doctor_Client
                  Appoint = null;
              }
         }
+
+        private void tabs_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (tabs.SelectedIndex == 3)
+            {
+                tabs.SelectedIndex = lastTabIndex;
+                Thread t1 = new Thread(NewWiki);
+                t1.Name = "wiki Thread";
+                t1.IsBackground = true;
+                t1.Start();
+            }
+            else 
+            {
+                lastTabIndex = tabs.SelectedIndex;
+            }
+        }
+       
+        public void NewWiki()
+        {
+         
+         Wiki wiki = new Wiki();
+         wiki.Show();
+        }
+
+     
 
 
 
