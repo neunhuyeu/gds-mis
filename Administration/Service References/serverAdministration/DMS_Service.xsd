@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/DMS_Service" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/DMS_Service" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:simpleType name="CAdministration.task">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="select" />
+      <xs:enumeration value="update" />
+      <xs:enumeration value="insert" />
+      <xs:enumeration value="delete" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="CAdministration.task" nillable="true" type="tns:CAdministration.task" />
+</xs:schema>

@@ -1,0 +1,211 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="CAdministration" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import namespace="http://tempuri.org/" />
+      <xsd:import namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import namespace="http://schemas.datacontract.org/2004/07/DMS_Service.Structs" />
+      <xsd:import namespace="http://schemas.datacontract.org/2004/07/DMS_Service" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IAdministration_addPerson_InputMessage">
+    <wsdl:part name="parameters" element="tns:addPerson" />
+  </wsdl:message>
+  <wsdl:message name="IAdministration_addPerson_OutputMessage">
+    <wsdl:part name="parameters" element="tns:addPersonResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAdministration_editPerson_InputMessage">
+    <wsdl:part name="parameters" element="tns:editPerson" />
+  </wsdl:message>
+  <wsdl:message name="IAdministration_editPerson_OutputMessage">
+    <wsdl:part name="parameters" element="tns:editPersonResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAdministration_removePerson_InputMessage">
+    <wsdl:part name="parameters" element="tns:removePerson" />
+  </wsdl:message>
+  <wsdl:message name="IAdministration_removePerson_OutputMessage">
+    <wsdl:part name="parameters" element="tns:removePersonResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAdministration_addPatient_InputMessage">
+    <wsdl:part name="parameters" element="tns:addPatient" />
+  </wsdl:message>
+  <wsdl:message name="IAdministration_addPatient_OutputMessage">
+    <wsdl:part name="parameters" element="tns:addPatientResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAdministration_editPatient_InputMessage">
+    <wsdl:part name="parameters" element="tns:editPatient" />
+  </wsdl:message>
+  <wsdl:message name="IAdministration_editPatient_OutputMessage">
+    <wsdl:part name="parameters" element="tns:editPatientResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAdministration_removePatient_InputMessage">
+    <wsdl:part name="parameters" element="tns:removePatient" />
+  </wsdl:message>
+  <wsdl:message name="IAdministration_removePatient_OutputMessage">
+    <wsdl:part name="parameters" element="tns:removePatientResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAdministration_addStaff_InputMessage">
+    <wsdl:part name="parameters" element="tns:addStaff" />
+  </wsdl:message>
+  <wsdl:message name="IAdministration_addStaff_OutputMessage">
+    <wsdl:part name="parameters" element="tns:addStaffResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAdministration_editStaff_InputMessage">
+    <wsdl:part name="parameters" element="tns:editStaff" />
+  </wsdl:message>
+  <wsdl:message name="IAdministration_editStaff_OutputMessage">
+    <wsdl:part name="parameters" element="tns:editStaffResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAdministration_removeStaff_InputMessage">
+    <wsdl:part name="parameters" element="tns:removeStaff" />
+  </wsdl:message>
+  <wsdl:message name="IAdministration_removeStaff_OutputMessage">
+    <wsdl:part name="parameters" element="tns:removeStaffResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAdministration_hasPermissions_InputMessage">
+    <wsdl:part name="parameters" element="tns:hasPermissions" />
+  </wsdl:message>
+  <wsdl:message name="IAdministration_hasPermissions_OutputMessage">
+    <wsdl:part name="parameters" element="tns:hasPermissionsResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IAdministration">
+    <wsdl:operation name="addPerson">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAdministration/addPerson" message="tns:IAdministration_addPerson_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAdministration/addPersonResponse" message="tns:IAdministration_addPerson_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="editPerson">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAdministration/editPerson" message="tns:IAdministration_editPerson_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAdministration/editPersonResponse" message="tns:IAdministration_editPerson_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="removePerson">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAdministration/removePerson" message="tns:IAdministration_removePerson_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAdministration/removePersonResponse" message="tns:IAdministration_removePerson_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="addPatient">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAdministration/addPatient" message="tns:IAdministration_addPatient_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAdministration/addPatientResponse" message="tns:IAdministration_addPatient_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="editPatient">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAdministration/editPatient" message="tns:IAdministration_editPatient_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAdministration/editPatientResponse" message="tns:IAdministration_editPatient_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="removePatient">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAdministration/removePatient" message="tns:IAdministration_removePatient_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAdministration/removePatientResponse" message="tns:IAdministration_removePatient_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="addStaff">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAdministration/addStaff" message="tns:IAdministration_addStaff_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAdministration/addStaffResponse" message="tns:IAdministration_addStaff_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="editStaff">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAdministration/editStaff" message="tns:IAdministration_editStaff_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAdministration/editStaffResponse" message="tns:IAdministration_editStaff_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="removeStaff">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAdministration/removeStaff" message="tns:IAdministration_removeStaff_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAdministration/removeStaffResponse" message="tns:IAdministration_removeStaff_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="hasPermissions">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAdministration/hasPermissions" message="tns:IAdministration_hasPermissions_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAdministration/hasPermissionsResponse" message="tns:IAdministration_hasPermissions_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IAdministration" type="tns:IAdministration">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="addPerson">
+      <soap:operation soapAction="http://tempuri.org/IAdministration/addPerson" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="editPerson">
+      <soap:operation soapAction="http://tempuri.org/IAdministration/editPerson" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="removePerson">
+      <soap:operation soapAction="http://tempuri.org/IAdministration/removePerson" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="addPatient">
+      <soap:operation soapAction="http://tempuri.org/IAdministration/addPatient" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="editPatient">
+      <soap:operation soapAction="http://tempuri.org/IAdministration/editPatient" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="removePatient">
+      <soap:operation soapAction="http://tempuri.org/IAdministration/removePatient" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="addStaff">
+      <soap:operation soapAction="http://tempuri.org/IAdministration/addStaff" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="editStaff">
+      <soap:operation soapAction="http://tempuri.org/IAdministration/editStaff" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="removeStaff">
+      <soap:operation soapAction="http://tempuri.org/IAdministration/removeStaff" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="hasPermissions">
+      <soap:operation soapAction="http://tempuri.org/IAdministration/hasPermissions" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="CAdministration">
+    <wsdl:port name="BasicHttpBinding_IAdministration" binding="tns:BasicHttpBinding_IAdministration">
+      <soap:address location="http://localhost:8733/Design_Time_Addresses/DMS_Service/CAdministration/" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
