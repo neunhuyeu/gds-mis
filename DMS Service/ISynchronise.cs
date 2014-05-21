@@ -8,7 +8,6 @@ using DMS_Service.Structs;
 
 namespace DMS_Service
 {
-    // NOTE: You can use the "Rename" command on the "Refactor" menu to change the interface name "IService1" in both code and config file together.
     [ServiceContract]
     public interface ISynchronise
     {
@@ -21,7 +20,18 @@ namespace DMS_Service
         [OperationContract]
         void addStaff(Staff staff);
 
-        // TODO: Add your service operations here
+        [OperationContract]
+        void adConsultation(Consultation consult);
+
+        [OperationContract]
+        void editPatient(Patient patient);
+
+        [OperationContract]
+        void editPatient(Appointment appointment);
+
+
+
+       
     }
 
     // Use a data contract as illustrated in the sample below to add composite types to service operations.

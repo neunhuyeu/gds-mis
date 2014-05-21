@@ -7,6 +7,7 @@ using System.Runtime.Serialization;
 using System.ServiceModel;
 using System.Text;
 using DMS_Service.Structs;
+using System.Timers;
 
 namespace DMS_Service
 {
@@ -18,7 +19,12 @@ namespace DMS_Service
         /// DbAccessLayer object for saving changes to the database.
         /// </summary>
         private DbAccessLayer dbManager;
+        private Timer timer;
 
+        
+
+        private List<Patient> unsynchedPatients;
+        private List<Appointment> unsynchedAppointments;
         /// <summary>
         /// JP.
         /// Constructor
@@ -26,6 +32,15 @@ namespace DMS_Service
         public CSynchronise()
         {
             this.dbManager = new DbAccessLayer();
+            unsynchedPatients = new List<Patient>();
+            unsynchedAppointments = new List<Appointment>();
+
+            timer.Elapsed += timer_Elapsed;
+            //Interval of Synchronise Timer is 15 mins * 60 seconds * 1000 miliseconds
+            timer.Interval = 15 * 60 * 1000;
+
+            timer.Start();
+            
         }
 
 
@@ -56,6 +71,7 @@ namespace DMS_Service
             pingy.SendAsync(domain, token);
 
         }
+       
         /// <summary>
         /// Callback of the ping function.
         /// </summary>
@@ -73,6 +89,7 @@ namespace DMS_Service
         /// </summary>
         public void addPatient(Patient patient)
         {
+            
             this.dbManager.addPatient(patient);
         }
 
@@ -107,10 +124,40 @@ namespace DMS_Service
             throw new System.NotImplementedException();
         }
 
+        /// <summary>
+        /// Event handler for periodically backup on timer elapse.+
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        void timer_Elapsed(object sender, ElapsedEventArgs e)
+        {
+
+
+        }
+        /// <summary>
+        /// Method to send unsynced changes to the other server
+        /// </summary>
+        /// <returns>true if backup went through</returns>
+        private bool backup()
+        {
+            //Add all unsynced appointments
+            foreach(Appointment app in this.unsynchedAppointments)
+            {
+                //synch app
+            }
+
+            foreach (Patient patient in this.unsynchedPatients)
+            {
+                //synch patient
+            }
+            
+            return true;
+        }
 
         
     }
 
+    
     /// <summary>
     /// Class to help with the ping mechanism.
     /// </summary>
