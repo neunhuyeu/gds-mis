@@ -30,7 +30,7 @@
                 <tr>
                     <td><img  id="logo" src="Images/FontysMedicalCenterLogo.png" /></td>
                     <td>
-                    <td><asp:Label ID="patientName" runat="server" Text=""></asp:Label>
+                    <asp:Label ID="patientName" runat="server" Text=""></asp:Label>
                     </td>
                  <form id="FormLogin" runat="server">
                     <div id="logform">
@@ -43,16 +43,12 @@
                         <asp:TextBox ID="txtPwd" runat="server" TextMode="Password" placeholder="Password"></asp:TextBox>
                         <fieldset id="actions">                                                                                
                         <asp:Button ID="btnLogin" runat="server" Text="Login" CssClass="submit" OnClick="btnLogin_Click"></asp:Button>                                                                            
-                        <%--<asp:CheckBox ID="chkRemember" runat="server" Checked="true"></asp:CheckBox>Remember me
-                                  </fieldset>
-                                <a href="#" style="float:right;">Forgot password?</a>--%>
                         </div>
                         </li>
                     </ul>
                     </nav>
                     </div>
                  </form>
-        </td>
         </tr>
             </table>
               <nav>

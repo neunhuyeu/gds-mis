@@ -154,10 +154,8 @@ namespace DMS_Service
             return true;
         }
 
-        
     }
 
-    
     /// <summary>
     /// Class to help with the ping mechanism.
     /// </summary>

@@ -42,22 +42,26 @@ namespace Appointment_Serves
        
         }
 
-        public List<Appointment> getAppointmentsHistorybyPatient(int personId)
-        {
-            List<Appointment> myappointments = new List<Appointment>();
-            DataTable dataTable = dbAcess.SearchAppointmentsByPersionID(personId);
 
-            foreach (DataRow row in dataTable.Rows)
-            {
-                Appointment appointment = new Appointment();
 
-                appointment.Start_date = Convert.ToDateTime(row["start_date"]);
-                appointment.AppointmentID = Convert.ToInt32(row["appointment_id"]);
+        //public List<Appointment> getAppointmentsHistorybyPatient(int personId)
+        //{
+        //    List<Appointment> myappointments = new List<Appointment>();
+        //    DataTable dataTable = dbAcess.SearchAppointmentsByPersionID(personId);
 
-                myappointments.Add(appointment);
-            }
-            return myappointments;
-        }
+        //    foreach (DataRow row in dataTable.Rows)
+        //    {
+        //        Appointment appointment = new Appointment();
+
+        //        appointment.Start_date = Convert.ToDateTime(row["start_date"]);
+        //        appointment.AppointmentID = Convert.ToInt32(row["appointment_id"]);
+
+        //        myappointments.Add(appointment);
+        //    }
+        //    return myappointments;
+        //}
+
+        // We don't need this function.
 
         public List<Appointment> SearchAppointmentsByStaffID(int staffId)
         {
@@ -98,16 +102,16 @@ namespace Appointment_Serves
             return myappointments;
         }
 
-        Patient IAppointment.Login(string Email, string Password)
+        Patient IAppointment.Login(string email, string password)
         {
             Patient p = new Patient();
             DataTable dataTable = new DataTable();
 
             user_auth_business user_auth = new user_auth_business();
 
-            if (user_auth.login(Email, Password))
+            if (user_auth.login(email, password))
             {
-                dataTable = dbAcess.SearchPatientByEmail(Email);
+                dataTable = dbAcess.SearchPatientByEmail(email);
             }
             if (dataTable != null)
             {
@@ -115,10 +119,19 @@ namespace Appointment_Serves
                 {
                     p.FirstName = row["first_name"].ToString();
                     p.LastName = row["last_name"].ToString();
+                    p.PersonId = Convert.ToInt32(row["patient_id"]);
                 }
                 return p;
             }
             return null;
+        }
+
+
+        public DataTable getAppointmentsHistorybyPatient(int personId)
+        {
+
+            DataTable dataTable = dbAcess.SearchAppointmentsByPersionID(personId);
+            return dataTable;
         }
     }
 }

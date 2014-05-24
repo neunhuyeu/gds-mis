@@ -16,11 +16,11 @@ namespace Appointment_Serves
     {
         private Appointment_database_connection dbConnection;
 
-         public Appointment_database_acess()
+        public Appointment_database_acess()
         {
             dbConnection = new Appointment_database_connection(" gds_mis_agenda");
         }
-         public DataTable SearchAppointmentsbyDate(DateTime date, int staffId)
+        public DataTable SearchAppointmentsbyDate(DateTime date, int staffId)
         {
             string query = string.Format("SELECT * " +
                                           "FROM patient_info " +
@@ -36,17 +36,16 @@ namespace Appointment_Serves
             return dbConnection.SelectQuery(query, sqlParameters);
         }
 
-        //We need to add person_id to the patient_info table in the gsd_mis_agenda database
          public DataTable SearchAppointmentsByPersionID(int personID)
          {
 
              string query = string.Format("SELECT * " +
-                                         "FROM appointments  " +
-                                         "WHERE  patient_id=(select patient_id from patient_info where person_id = @patient_id)  " +
-                                        " ORDER BY start_date");
+                                         "FROM appointments " +
+                                         "WHERE patient_id = (select patient_id from patient_info where patient_id = @personID) " +
+                                         "ORDER BY start_date");
 
              MySqlParameter[] sqlParameters = new MySqlParameter[1];
-             sqlParameters[0] = new MySqlParameter("@patient_id", MySqlDbType.Int32);
+             sqlParameters[0] = new MySqlParameter("@personID", MySqlDbType.Int32);
              sqlParameters[0].Value = Convert.ToString(personID);
 
              return dbConnection.SelectQuery(query, sqlParameters);

@@ -12,8 +12,7 @@ namespace WebApplication1
     {
 
         AppointmentClient proxy;
-        Patient patient;
-        Appointments[] appointments;
+        Patient patient { set; get; }
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -34,10 +33,9 @@ namespace WebApplication1
                     this.FormLogin.Visible = false;
                     this.patientName.Text = "Welcome, " + patient.FirstNamek__BackingField;
                 }
-                else
-                {
-                }
             }
+            Global.patient.PatientIDk__BackingField = patient.PersonIdk__BackingField;
+            Global.patient.FirstNamek__BackingField = patient.FirstNamek__BackingField;
         }
     }
 }

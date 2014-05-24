@@ -21,10 +21,10 @@ namespace DMS_Service.user_auth
 
         public DataTable user_login(string email, string passw)
         {
-            string query = string.Format("SELECT email_address, password " +
-                                         "From user_auth " + 
+            string query = string.Format("SELECT user_name " +
+                                         "From patient_user_auth " + 
                                          "WHERE email_address = @email " +
-                                         "AND password = @passw ");
+                                         "AND `password` = @passw");
 
             MySqlParameter[] query_parameters = new MySqlParameter[2];
             query_parameters[0] = new MySqlParameter("@passw", MySqlDbType.VarChar);

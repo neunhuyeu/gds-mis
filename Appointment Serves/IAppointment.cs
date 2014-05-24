@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Runtime.Serialization;
 using System.ServiceModel;
@@ -12,7 +13,7 @@ namespace Appointment_Serves
     public interface IAppointment
     {
         [OperationContract]
-        Patient Login(string Email, string Password);
+        Patient Login(string email, string password);
         [OperationContract]
         List<Patient> SearchappointmentsbyDate(DateTime date,int staffId);
         [OperationContract]
@@ -20,6 +21,6 @@ namespace Appointment_Serves
         [OperationContract]
         List<Appointment> SearchAppointmentsByStaffID(int staffId);
         [OperationContract]
-        List<Appointment> getAppointmentsHistorybyPatient(int personId);
+        DataTable getAppointmentsHistorybyPatient(int personId);
     }
 }
