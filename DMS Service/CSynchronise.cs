@@ -13,18 +13,16 @@ namespace DMS_Service
 {
     public class CSynchronise : ISynchronise
     {
-        
+
         /// <summary>
         /// JP.
         /// DbAccessLayer object for saving changes to the database.
         /// </summary>
         private DbAccessLayer dbManager;
-        private Timer timer;
-
-        
-
+        private Timer timer = new Timer();
         private List<Patient> unsynchedPatients;
         private List<Appointment> unsynchedAppointments;
+
         /// <summary>
         /// JP.
         /// Constructor
@@ -40,9 +38,7 @@ namespace DMS_Service
             timer.Interval = 15 * 60 * 1000;
 
             timer.Start();
-            
         }
-
 
         /// <summary>
         /// JP.
@@ -71,7 +67,7 @@ namespace DMS_Service
             pingy.SendAsync(domain, token);
 
         }
-       
+
         /// <summary>
         /// Callback of the ping function.
         /// </summary>
@@ -89,13 +85,12 @@ namespace DMS_Service
         /// </summary>
         public void addPatient(Patient patient)
         {
-            
             this.dbManager.addPatient(patient);
         }
 
         public void addAppointment(Appointment appointment)
         {
-           this.dbManager.addAppointment(appointment);
+            this.dbManager.addAppointment(appointment);
         }
 
         public void removePatient()
@@ -132,7 +127,6 @@ namespace DMS_Service
         void timer_Elapsed(object sender, ElapsedEventArgs e)
         {
 
-
         }
         /// <summary>
         /// Method to send unsynced changes to the other server
@@ -141,7 +135,7 @@ namespace DMS_Service
         private bool backup()
         {
             //Add all unsynced appointments
-            foreach(Appointment app in this.unsynchedAppointments)
+            foreach (Appointment app in this.unsynchedAppointments)
             {
                 //synch app
             }
@@ -150,10 +144,40 @@ namespace DMS_Service
             {
                 //synch patient
             }
-            
+
             return true;
         }
 
+
+        void ISynchronise.addPatient(Patient patient)
+        {
+            throw new NotImplementedException();
+        }
+
+        void ISynchronise.addAppointment(Appointment appointment)
+        {
+            throw new NotImplementedException();
+        }
+
+        void ISynchronise.addStaff(Staff staff)
+        {
+            throw new NotImplementedException();
+        }
+
+        void ISynchronise.addConsultation(Consultation consult)
+        {
+            throw new NotImplementedException();
+        }
+
+        void ISynchronise.editPatientByPatient(Patient patient)
+        {
+            throw new NotImplementedException();
+        }
+
+        void ISynchronise.editPatientByAppointment(Appointment appointment)
+        {
+            throw new NotImplementedException();
+        }
     }
 
     /// <summary>

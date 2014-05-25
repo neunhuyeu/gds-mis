@@ -12,21 +12,15 @@ namespace DMS_Service.Structs
         public int DiagnosisId { get; set; }
         public int ConsultationId { get; set; }
         public int PrescriptionId { get; set; }
-
         public int Height { get; set; }
         public int Weight { get; set; }
-
-        //smoker should be a bool, not an int
-        //InsuranceNumber was not in the database design, it should be in the table patient. or person table
-        //bloodtype should be char not int.
         public char BloodType { get; set; }
         public bool Smoker { get; set; }
         public int SmokingFrequency { get; set; }
         public bool hard_drugs { get; set; }
         public int hard_drugs_frequency { get; set; }
-        public string InsuranceNumber { get; set; }
 
-        public Patient(){ }
+        public Patient() { }
         public Patient(Person p)
         {
             base.Address = p.Address;

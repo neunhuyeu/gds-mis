@@ -17,9 +17,9 @@ namespace Appointment_Serves
         public string MobileNumber { get; set; }
         public string LandLineNumber { get; set; }
         public string Address { get; set; }
-
-        //this is type char in the database...so I changed it from int to char.
         public char Gender { get; set; }
+        public string InsuranceNumber { get; set; }
+        public Person() { }
 
     }
 

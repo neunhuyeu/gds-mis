@@ -21,21 +21,16 @@ namespace DMS_Service
         void addStaff(Staff staff);
 
         [OperationContract]
-        void adConsultation(Consultation consult);
+        void addConsultation(Consultation consult);
 
         [OperationContract]
-        void editPatient(Patient patient);
+        void editPatientByPatient(Patient patient);
 
         [OperationContract]
-        void editPatient(Appointment appointment);
+        void editPatientByAppointment(Appointment appointment);
 
-
-
-       
     }
 
-    // Use a data contract as illustrated in the sample below to add composite types to service operations.
-    // You can add XSD files into the project. After building the project, you can directly use the data types defined there, with the namespace "DMS_Service.ContractType".
     [DataContract]
     public class CompositeType
     {
