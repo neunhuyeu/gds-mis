@@ -32,22 +32,22 @@
             this.DiseaseSearch = new System.Windows.Forms.ListBox();
             this.InfoPanel = new System.Windows.Forms.TextBox();
             this.MedSearch = new System.Windows.Forms.GroupBox();
-            this.SearchForDiseas = new System.Windows.Forms.GroupBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.MedNameSearch = new System.Windows.Forms.TextBox();
+            this.btnMedSearch = new System.Windows.Forms.Button();
+            this.SideEffectSearch = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
             this.ClassificationSearch = new System.Windows.Forms.TextBox();
+            this.MedNameSearch = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.SearchForDiseas = new System.Windows.Forms.GroupBox();
+            this.btnDiseaseSearch = new System.Windows.Forms.Button();
             this.clasificationDeseasSearch = new System.Windows.Forms.TextBox();
             this.symtomsDeseasSearch = new System.Windows.Forms.TextBox();
             this.diseaseName = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.SideEffectSearch = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.btnMedSearch = new System.Windows.Forms.Button();
-            this.btnDiseaseSearch = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.MedSearch.SuspendLayout();
             this.SearchForDiseas.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -99,6 +99,70 @@
             this.MedSearch.TabStop = false;
             this.MedSearch.Text = "Search for Medicine";
             // 
+            // btnMedSearch
+            // 
+            this.btnMedSearch.Location = new System.Drawing.Point(-1, 214);
+            this.btnMedSearch.Name = "btnMedSearch";
+            this.btnMedSearch.Size = new System.Drawing.Size(268, 42);
+            this.btnMedSearch.TabIndex = 8;
+            this.btnMedSearch.Text = "Web Help";
+            this.btnMedSearch.UseVisualStyleBackColor = true;
+            this.btnMedSearch.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // SideEffectSearch
+            // 
+            this.SideEffectSearch.Location = new System.Drawing.Point(123, 118);
+            this.SideEffectSearch.Name = "SideEffectSearch";
+            this.SideEffectSearch.Size = new System.Drawing.Size(142, 22);
+            this.SideEffectSearch.TabIndex = 7;
+            this.SideEffectSearch.TextChanged += new System.EventHandler(this.SideEffectSearch_TextChanged);
+            this.SideEffectSearch.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.ClassificationSearch_KeyPress);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(3, 118);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(90, 17);
+            this.label2.TabIndex = 6;
+            this.label2.Text = "Side effects: ";
+            // 
+            // ClassificationSearch
+            // 
+            this.ClassificationSearch.Location = new System.Drawing.Point(126, 174);
+            this.ClassificationSearch.Name = "ClassificationSearch";
+            this.ClassificationSearch.Size = new System.Drawing.Size(142, 22);
+            this.ClassificationSearch.TabIndex = 5;
+            this.ClassificationSearch.TextChanged += new System.EventHandler(this.ClassificationSearch_TextChanged);
+            this.ClassificationSearch.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.ClassificationSearch_KeyPress);
+            // 
+            // MedNameSearch
+            // 
+            this.MedNameSearch.Location = new System.Drawing.Point(126, 68);
+            this.MedNameSearch.Name = "MedNameSearch";
+            this.MedNameSearch.Size = new System.Drawing.Size(141, 22);
+            this.MedNameSearch.TabIndex = 3;
+            this.MedNameSearch.TextChanged += new System.EventHandler(this.MedNameSearch_TextChanged);
+            this.MedNameSearch.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.ClassificationSearch_KeyPress);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(6, 174);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(102, 17);
+            this.label3.TabIndex = 2;
+            this.label3.Text = "Clasifications : ";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(6, 68);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(113, 17);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Medicine Name :";
+            // 
             // SearchForDiseas
             // 
             this.SearchForDiseas.Controls.Add(this.btnDiseaseSearch);
@@ -116,50 +180,15 @@
             this.SearchForDiseas.Text = "Search for Diseases";
             this.SearchForDiseas.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
-            // pictureBox1
+            // btnDiseaseSearch
             // 
-            this.pictureBox1.Image = global::Doctor_Client.Properties.Resources.backgroundGDS;
-            this.pictureBox1.Location = new System.Drawing.Point(37, -112);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(588, 502);
-            this.pictureBox1.TabIndex = 6;
-            this.pictureBox1.TabStop = false;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(6, 68);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(113, 17);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Medicine Name :";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(6, 174);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(102, 17);
-            this.label3.TabIndex = 2;
-            this.label3.Text = "Clasifications : ";
-            // 
-            // MedNameSearch
-            // 
-            this.MedNameSearch.Location = new System.Drawing.Point(126, 68);
-            this.MedNameSearch.Name = "MedNameSearch";
-            this.MedNameSearch.Size = new System.Drawing.Size(141, 22);
-            this.MedNameSearch.TabIndex = 3;
-            this.MedNameSearch.TextChanged += new System.EventHandler(this.MedNameSearch_TextChanged);
-            this.MedNameSearch.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.ClassificationSearch_KeyPress);
-            // 
-            // ClassificationSearch
-            // 
-            this.ClassificationSearch.Location = new System.Drawing.Point(126, 174);
-            this.ClassificationSearch.Name = "ClassificationSearch";
-            this.ClassificationSearch.Size = new System.Drawing.Size(142, 22);
-            this.ClassificationSearch.TabIndex = 5;
-            this.ClassificationSearch.TextChanged += new System.EventHandler(this.ClassificationSearch_TextChanged);
-            this.ClassificationSearch.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.ClassificationSearch_KeyPress);
+            this.btnDiseaseSearch.Location = new System.Drawing.Point(0, 199);
+            this.btnDiseaseSearch.Name = "btnDiseaseSearch";
+            this.btnDiseaseSearch.Size = new System.Drawing.Size(263, 56);
+            this.btnDiseaseSearch.TabIndex = 12;
+            this.btnDiseaseSearch.Text = "Web Help";
+            this.btnDiseaseSearch.UseVisualStyleBackColor = true;
+            this.btnDiseaseSearch.Click += new System.EventHandler(this.button2_Click);
             // 
             // clasificationDeseasSearch
             // 
@@ -212,43 +241,14 @@
             this.label6.TabIndex = 6;
             this.label6.Text = "Disease Name :";
             // 
-            // SideEffectSearch
+            // pictureBox1
             // 
-            this.SideEffectSearch.Location = new System.Drawing.Point(123, 118);
-            this.SideEffectSearch.Name = "SideEffectSearch";
-            this.SideEffectSearch.Size = new System.Drawing.Size(142, 22);
-            this.SideEffectSearch.TabIndex = 7;
-            this.SideEffectSearch.TextChanged += new System.EventHandler(this.SideEffectSearch_TextChanged);
-            this.SideEffectSearch.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.ClassificationSearch_KeyPress);
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(3, 118);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(90, 17);
-            this.label2.TabIndex = 6;
-            this.label2.Text = "Side effects: ";
-            // 
-            // btnMedSearch
-            // 
-            this.btnMedSearch.Location = new System.Drawing.Point(-1, 214);
-            this.btnMedSearch.Name = "btnMedSearch";
-            this.btnMedSearch.Size = new System.Drawing.Size(268, 42);
-            this.btnMedSearch.TabIndex = 8;
-            this.btnMedSearch.Text = "Web Help";
-            this.btnMedSearch.UseVisualStyleBackColor = true;
-            this.btnMedSearch.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // btnDiseaseSearch
-            // 
-            this.btnDiseaseSearch.Location = new System.Drawing.Point(0, 199);
-            this.btnDiseaseSearch.Name = "btnDiseaseSearch";
-            this.btnDiseaseSearch.Size = new System.Drawing.Size(263, 56);
-            this.btnDiseaseSearch.TabIndex = 12;
-            this.btnDiseaseSearch.Text = "Web Help";
-            this.btnDiseaseSearch.UseVisualStyleBackColor = true;
-            this.btnDiseaseSearch.Click += new System.EventHandler(this.button2_Click);
+            this.pictureBox1.Image = global::Doctor_Client.Properties.Resources.backgroundGDS;
+            this.pictureBox1.Location = new System.Drawing.Point(37, -112);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(588, 502);
+            this.pictureBox1.TabIndex = 6;
+            this.pictureBox1.TabStop = false;
             // 
             // Wiki
             // 
@@ -265,6 +265,7 @@
             this.Enabled = false;
             this.Name = "Wiki";
             this.Text = "Wiki";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Wiki_FormClosed);
             this.Load += new System.EventHandler(this.Wiki_Load);
             this.MedSearch.ResumeLayout(false);
             this.MedSearch.PerformLayout();

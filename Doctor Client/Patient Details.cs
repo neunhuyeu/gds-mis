@@ -248,9 +248,18 @@ namespace Doctor_Client
          }
          public void NewWiki()
          {
-
              Wiki wiki = new Wiki();
+             wiki.isclosed = false;
              wiki.Show();
+             while (!wiki.isclosed)
+             {
+                 Application.DoEvents();
+             }
+         }
+
+         private void PatientDetails_Load(object sender, EventArgs e)
+         {
+
          }
          
 

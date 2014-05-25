@@ -625,6 +625,7 @@
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "PatientDetails";
             this.Text = "Patient Details";
+            this.Load += new System.EventHandler(this.PatientDetails_Load);
             this.tabCurrentMedication.ResumeLayout(false);
             this.tabCurrentMedication.PerformLayout();
             this.groupBox1.ResumeLayout(false);

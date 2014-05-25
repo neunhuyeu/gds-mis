@@ -19,12 +19,13 @@ namespace Doctor_Client
         private ServerConnectionMedicalInformation.DoctorClient proxy;
         List<Disease> diseasList;
         List<Medicine> medicinelist;
+        public bool isclosed;
          public Wiki()
         {
 
             InitializeComponent();
              proxy = new ServerConnectionMedicalInformation.DoctorClient();
-    
+             isclosed = false;
         }
 
         private void Wiki_Load(object sender, EventArgs e)
@@ -119,6 +120,11 @@ namespace Doctor_Client
         private void GoogleSearch(string t)
         {
             Process.Start("http://google.com/search?q=" + t);
+        }
+
+        private void Wiki_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            isclosed = true;
         }
     }
 }
