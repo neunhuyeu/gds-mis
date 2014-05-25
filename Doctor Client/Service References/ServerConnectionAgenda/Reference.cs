@@ -15,163 +15,6 @@ namespace Doctor_Client.ServerConnectionagenda {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="Patient", Namespace="http://schemas.datacontract.org/2004/07/Appointment_Serves")]
-    [System.SerializableAttribute()]
-    public partial class Patient : Doctor_Client.ServerConnectionagenda.Person {
-        
-        private char BloodTypek__BackingFieldField;
-        
-        private int ConsultationIdk__BackingFieldField;
-        
-        private int DiagnosisIdk__BackingFieldField;
-        
-        private int Heightk__BackingFieldField;
-        
-        private string InsuranceNumberk__BackingFieldField;
-        
-        private int PatientIDk__BackingFieldField;
-        
-        private int PrescriptionIdk__BackingFieldField;
-        
-        private bool Smokerk__BackingFieldField;
-        
-        private int SmokingFrequencyk__BackingFieldField;
-        
-        private int Weightk__BackingFieldField;
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Name="<BloodType>k__BackingField", IsRequired=true)]
-        public char BloodTypek__BackingField {
-            get {
-                return this.BloodTypek__BackingFieldField;
-            }
-            set {
-                if ((this.BloodTypek__BackingFieldField.Equals(value) != true)) {
-                    this.BloodTypek__BackingFieldField = value;
-                    this.RaisePropertyChanged("BloodTypek__BackingField");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Name="<ConsultationId>k__BackingField", IsRequired=true)]
-        public int ConsultationIdk__BackingField {
-            get {
-                return this.ConsultationIdk__BackingFieldField;
-            }
-            set {
-                if ((this.ConsultationIdk__BackingFieldField.Equals(value) != true)) {
-                    this.ConsultationIdk__BackingFieldField = value;
-                    this.RaisePropertyChanged("ConsultationIdk__BackingField");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Name="<DiagnosisId>k__BackingField", IsRequired=true)]
-        public int DiagnosisIdk__BackingField {
-            get {
-                return this.DiagnosisIdk__BackingFieldField;
-            }
-            set {
-                if ((this.DiagnosisIdk__BackingFieldField.Equals(value) != true)) {
-                    this.DiagnosisIdk__BackingFieldField = value;
-                    this.RaisePropertyChanged("DiagnosisIdk__BackingField");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Name="<Height>k__BackingField", IsRequired=true)]
-        public int Heightk__BackingField {
-            get {
-                return this.Heightk__BackingFieldField;
-            }
-            set {
-                if ((this.Heightk__BackingFieldField.Equals(value) != true)) {
-                    this.Heightk__BackingFieldField = value;
-                    this.RaisePropertyChanged("Heightk__BackingField");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Name="<InsuranceNumber>k__BackingField", IsRequired=true)]
-        public string InsuranceNumberk__BackingField {
-            get {
-                return this.InsuranceNumberk__BackingFieldField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.InsuranceNumberk__BackingFieldField, value) != true)) {
-                    this.InsuranceNumberk__BackingFieldField = value;
-                    this.RaisePropertyChanged("InsuranceNumberk__BackingField");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Name="<PatientID>k__BackingField", IsRequired=true)]
-        public int PatientIDk__BackingField {
-            get {
-                return this.PatientIDk__BackingFieldField;
-            }
-            set {
-                if ((this.PatientIDk__BackingFieldField.Equals(value) != true)) {
-                    this.PatientIDk__BackingFieldField = value;
-                    this.RaisePropertyChanged("PatientIDk__BackingField");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Name="<PrescriptionId>k__BackingField", IsRequired=true)]
-        public int PrescriptionIdk__BackingField {
-            get {
-                return this.PrescriptionIdk__BackingFieldField;
-            }
-            set {
-                if ((this.PrescriptionIdk__BackingFieldField.Equals(value) != true)) {
-                    this.PrescriptionIdk__BackingFieldField = value;
-                    this.RaisePropertyChanged("PrescriptionIdk__BackingField");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Name="<Smoker>k__BackingField", IsRequired=true)]
-        public bool Smokerk__BackingField {
-            get {
-                return this.Smokerk__BackingFieldField;
-            }
-            set {
-                if ((this.Smokerk__BackingFieldField.Equals(value) != true)) {
-                    this.Smokerk__BackingFieldField = value;
-                    this.RaisePropertyChanged("Smokerk__BackingField");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Name="<SmokingFrequency>k__BackingField", IsRequired=true)]
-        public int SmokingFrequencyk__BackingField {
-            get {
-                return this.SmokingFrequencyk__BackingFieldField;
-            }
-            set {
-                if ((this.SmokingFrequencyk__BackingFieldField.Equals(value) != true)) {
-                    this.SmokingFrequencyk__BackingFieldField = value;
-                    this.RaisePropertyChanged("SmokingFrequencyk__BackingField");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Name="<Weight>k__BackingField", IsRequired=true)]
-        public int Weightk__BackingField {
-            get {
-                return this.Weightk__BackingFieldField;
-            }
-            set {
-                if ((this.Weightk__BackingFieldField.Equals(value) != true)) {
-                    this.Weightk__BackingFieldField = value;
-                    this.RaisePropertyChanged("Weightk__BackingField");
-                }
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="Person", Namespace="http://schemas.datacontract.org/2004/07/Appointment_Serves")]
     [System.SerializableAttribute()]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(Doctor_Client.ServerConnectionagenda.Patient))]
@@ -189,6 +32,8 @@ namespace Doctor_Client.ServerConnectionagenda {
         private string FirstNamek__BackingFieldField;
         
         private char Genderk__BackingFieldField;
+        
+        private string InsuranceNumberk__BackingFieldField;
         
         private string LandLineNumberk__BackingFieldField;
         
@@ -273,6 +118,19 @@ namespace Doctor_Client.ServerConnectionagenda {
             }
         }
         
+        [System.Runtime.Serialization.DataMemberAttribute(Name="<InsuranceNumber>k__BackingField", IsRequired=true)]
+        public string InsuranceNumberk__BackingField {
+            get {
+                return this.InsuranceNumberk__BackingFieldField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.InsuranceNumberk__BackingFieldField, value) != true)) {
+                    this.InsuranceNumberk__BackingFieldField = value;
+                    this.RaisePropertyChanged("InsuranceNumberk__BackingField");
+                }
+            }
+        }
+        
         [System.Runtime.Serialization.DataMemberAttribute(Name="<LandLineNumber>k__BackingField", IsRequired=true)]
         public string LandLineNumberk__BackingField {
             get {
@@ -331,6 +189,148 @@ namespace Doctor_Client.ServerConnectionagenda {
             System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
             if ((propertyChanged != null)) {
                 propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="Patient", Namespace="http://schemas.datacontract.org/2004/07/Appointment_Serves")]
+    [System.SerializableAttribute()]
+    public partial class Patient : Doctor_Client.ServerConnectionagenda.Person {
+        
+        private char BloodTypek__BackingFieldField;
+        
+        private int ConsultationIdk__BackingFieldField;
+        
+        private int DiagnosisIdk__BackingFieldField;
+        
+        private int Heightk__BackingFieldField;
+        
+        private int PatientIDk__BackingFieldField;
+        
+        private int PrescriptionIdk__BackingFieldField;
+        
+        private bool Smokerk__BackingFieldField;
+        
+        private int SmokingFrequencyk__BackingFieldField;
+        
+        private int Weightk__BackingFieldField;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Name="<BloodType>k__BackingField", IsRequired=true)]
+        public char BloodTypek__BackingField {
+            get {
+                return this.BloodTypek__BackingFieldField;
+            }
+            set {
+                if ((this.BloodTypek__BackingFieldField.Equals(value) != true)) {
+                    this.BloodTypek__BackingFieldField = value;
+                    this.RaisePropertyChanged("BloodTypek__BackingField");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Name="<ConsultationId>k__BackingField", IsRequired=true)]
+        public int ConsultationIdk__BackingField {
+            get {
+                return this.ConsultationIdk__BackingFieldField;
+            }
+            set {
+                if ((this.ConsultationIdk__BackingFieldField.Equals(value) != true)) {
+                    this.ConsultationIdk__BackingFieldField = value;
+                    this.RaisePropertyChanged("ConsultationIdk__BackingField");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Name="<DiagnosisId>k__BackingField", IsRequired=true)]
+        public int DiagnosisIdk__BackingField {
+            get {
+                return this.DiagnosisIdk__BackingFieldField;
+            }
+            set {
+                if ((this.DiagnosisIdk__BackingFieldField.Equals(value) != true)) {
+                    this.DiagnosisIdk__BackingFieldField = value;
+                    this.RaisePropertyChanged("DiagnosisIdk__BackingField");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Name="<Height>k__BackingField", IsRequired=true)]
+        public int Heightk__BackingField {
+            get {
+                return this.Heightk__BackingFieldField;
+            }
+            set {
+                if ((this.Heightk__BackingFieldField.Equals(value) != true)) {
+                    this.Heightk__BackingFieldField = value;
+                    this.RaisePropertyChanged("Heightk__BackingField");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Name="<PatientID>k__BackingField", IsRequired=true)]
+        public int PatientIDk__BackingField {
+            get {
+                return this.PatientIDk__BackingFieldField;
+            }
+            set {
+                if ((this.PatientIDk__BackingFieldField.Equals(value) != true)) {
+                    this.PatientIDk__BackingFieldField = value;
+                    this.RaisePropertyChanged("PatientIDk__BackingField");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Name="<PrescriptionId>k__BackingField", IsRequired=true)]
+        public int PrescriptionIdk__BackingField {
+            get {
+                return this.PrescriptionIdk__BackingFieldField;
+            }
+            set {
+                if ((this.PrescriptionIdk__BackingFieldField.Equals(value) != true)) {
+                    this.PrescriptionIdk__BackingFieldField = value;
+                    this.RaisePropertyChanged("PrescriptionIdk__BackingField");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Name="<Smoker>k__BackingField", IsRequired=true)]
+        public bool Smokerk__BackingField {
+            get {
+                return this.Smokerk__BackingFieldField;
+            }
+            set {
+                if ((this.Smokerk__BackingFieldField.Equals(value) != true)) {
+                    this.Smokerk__BackingFieldField = value;
+                    this.RaisePropertyChanged("Smokerk__BackingField");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Name="<SmokingFrequency>k__BackingField", IsRequired=true)]
+        public int SmokingFrequencyk__BackingField {
+            get {
+                return this.SmokingFrequencyk__BackingFieldField;
+            }
+            set {
+                if ((this.SmokingFrequencyk__BackingFieldField.Equals(value) != true)) {
+                    this.SmokingFrequencyk__BackingFieldField = value;
+                    this.RaisePropertyChanged("SmokingFrequencyk__BackingField");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Name="<Weight>k__BackingField", IsRequired=true)]
+        public int Weightk__BackingField {
+            get {
+                return this.Weightk__BackingFieldField;
+            }
+            set {
+                if ((this.Weightk__BackingFieldField.Equals(value) != true)) {
+                    this.Weightk__BackingFieldField = value;
+                    this.RaisePropertyChanged("Weightk__BackingField");
+                }
             }
         }
     }
@@ -442,6 +442,12 @@ namespace Doctor_Client.ServerConnectionagenda {
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="ServerConnectionagenda.IAppointment")]
     public interface IAppointment {
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAppointment/Login", ReplyAction="http://tempuri.org/IAppointment/LoginResponse")]
+        Doctor_Client.ServerConnectionagenda.Patient Login(string email, string password);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAppointment/Login", ReplyAction="http://tempuri.org/IAppointment/LoginResponse")]
+        System.Threading.Tasks.Task<Doctor_Client.ServerConnectionagenda.Patient> LoginAsync(string email, string password);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAppointment/SearchappointmentsbyDate", ReplyAction="http://tempuri.org/IAppointment/SearchappointmentsbyDateResponse")]
         Doctor_Client.ServerConnectionagenda.Patient[] SearchappointmentsbyDate(System.DateTime date, int staffId);
         
@@ -460,11 +466,11 @@ namespace Doctor_Client.ServerConnectionagenda {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAppointment/SearchAppointmentsByStaffID", ReplyAction="http://tempuri.org/IAppointment/SearchAppointmentsByStaffIDResponse")]
         System.Threading.Tasks.Task<Doctor_Client.ServerConnectionagenda.Appointment[]> SearchAppointmentsByStaffIDAsync(int staffId);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAppointment/getAppointmentsHistorybyPatient", ReplyAction="http://tempuri.org/IAppointment/getAppointmentsHistorybyPatientResponse")]
-        Doctor_Client.ServerConnectionagenda.Appointment[] getAppointmentsHistorybyPatient(int personId);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAppointment/getAppointmentsHistorybyPatientID", ReplyAction="http://tempuri.org/IAppointment/getAppointmentsHistorybyPatientIDResponse")]
+        System.Data.DataTable getAppointmentsHistorybyPatientID(int PatientId);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAppointment/getAppointmentsHistorybyPatient", ReplyAction="http://tempuri.org/IAppointment/getAppointmentsHistorybyPatientResponse")]
-        System.Threading.Tasks.Task<Doctor_Client.ServerConnectionagenda.Appointment[]> getAppointmentsHistorybyPatientAsync(int personId);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAppointment/getAppointmentsHistorybyPatientID", ReplyAction="http://tempuri.org/IAppointment/getAppointmentsHistorybyPatientIDResponse")]
+        System.Threading.Tasks.Task<System.Data.DataTable> getAppointmentsHistorybyPatientIDAsync(int PatientId);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -494,6 +500,14 @@ namespace Doctor_Client.ServerConnectionagenda {
                 base(binding, remoteAddress) {
         }
         
+        public Doctor_Client.ServerConnectionagenda.Patient Login(string email, string password) {
+            return base.Channel.Login(email, password);
+        }
+        
+        public System.Threading.Tasks.Task<Doctor_Client.ServerConnectionagenda.Patient> LoginAsync(string email, string password) {
+            return base.Channel.LoginAsync(email, password);
+        }
+        
         public Doctor_Client.ServerConnectionagenda.Patient[] SearchappointmentsbyDate(System.DateTime date, int staffId) {
             return base.Channel.SearchappointmentsbyDate(date, staffId);
         }
@@ -518,12 +532,12 @@ namespace Doctor_Client.ServerConnectionagenda {
             return base.Channel.SearchAppointmentsByStaffIDAsync(staffId);
         }
         
-        public Doctor_Client.ServerConnectionagenda.Appointment[] getAppointmentsHistorybyPatient(int personId) {
-            return base.Channel.getAppointmentsHistorybyPatient(personId);
+        public System.Data.DataTable getAppointmentsHistorybyPatientID(int PatientId) {
+            return base.Channel.getAppointmentsHistorybyPatientID(PatientId);
         }
         
-        public System.Threading.Tasks.Task<Doctor_Client.ServerConnectionagenda.Appointment[]> getAppointmentsHistorybyPatientAsync(int personId) {
-            return base.Channel.getAppointmentsHistorybyPatientAsync(personId);
+        public System.Threading.Tasks.Task<System.Data.DataTable> getAppointmentsHistorybyPatientIDAsync(int PatientId) {
+            return base.Channel.getAppointmentsHistorybyPatientIDAsync(PatientId);
         }
     }
 }

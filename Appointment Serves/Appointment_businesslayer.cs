@@ -89,7 +89,7 @@ namespace Appointment_Serves
             foreach (DataRow row in dataTable.Rows)
             {
                 Patient appointment = new Patient();
-
+                
                 appointment.FirstName = Convert.ToString(row["first_name"]);
                 appointment.LastName = Convert.ToString(row["last_name"]);
                 appointment.DateOfBirth = Convert.ToDateTime(row["date_of_birth"]);
@@ -127,11 +127,13 @@ namespace Appointment_Serves
         }
 
 
-        public DataTable getAppointmentsHistorybyPatient(int personId)
+        public DataTable getAppointmentsHistorybyPatientID(int PatientId)
         {
 
-            DataTable dataTable = dbAcess.SearchAppointmentsByPersionID(personId);
+            DataTable dataTable = dbAcess.SearchAppointmentsByPersonID(PatientId);
             return dataTable;
         }
     }
 }
+
+

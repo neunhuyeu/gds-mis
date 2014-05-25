@@ -21,6 +21,6 @@ namespace Appointment_Serves
         [OperationContract]
         List<Appointment> SearchAppointmentsByStaffID(int staffId);
         [OperationContract]
-        DataTable getAppointmentsHistorybyPatient(int personId);
+        DataTable getAppointmentsHistorybyPatientID(int PatientId);
     }
 }

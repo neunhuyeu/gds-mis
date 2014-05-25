@@ -14,21 +14,22 @@ namespace Doctor_Client
 {
     public partial class PatientDetails : Form
     {
-      Patient patient;
-      DoctorClient proxy;
-      Perscription[] perscription;
-      List<Int32> consultationsIDs;
-      Staff CurrentUser;
-      int lastTabIndex;
-        
-      Consultation currentConsultation;
-      bool newConsultation;
-            public PatientDetails(Patient Pateint,Staff currentUser)
+        Patient patient;
+        DoctorClient proxy;
+        Perscription[] perscription;
+        List<Int32> consultationsIDs;
+        Staff CurrentUser;
+        int lastTabIndex;
+        List<string> appointmentHistory;
+
+        Consultation currentConsultation;
+        bool newConsultation;
+        public PatientDetails(Patient Pateint, Staff currentUser)
         {
             InitializeComponent();
             lastTabIndex = 0;
-          proxy= new DoctorClient();
-          CurrentUser = currentUser;
+            proxy = new DoctorClient();
+            CurrentUser = currentUser;
             //overview filler
             patient = Pateint;
             tbPatientDetailsOverviewName.Text = patient.FirstNamek__BackingField + " " + patient.LastNamek__BackingField;
@@ -41,7 +42,8 @@ namespace Doctor_Client
             tbPatientDetailsOverviewPhone.Text = patient.LandLineNumberk__BackingField.ToString();
             //Diagnosis
             RefrashDiagnosis();
-          
+
+            FillAppointmentstab();
 
             //current Consultation
             currentConsultation.start_date = DateTime.Now;
@@ -51,52 +53,52 @@ namespace Doctor_Client
             newConsultation = true;
 
             RefreashConsultations();
-                //percriptions
+            //percriptions
             RefreashPrescription();
         }
 
-            private void RefrashDiagnosis()
+        private void RefrashDiagnosis()
+        {
+            DiagnosisHistory.Items.Clear();
+            foreach (Diagnosis diagnose in proxy.getDiagnosisHistoryByPersionID(patient.PatientIDk__BackingField))
             {
-                DiagnosisHistory.Items.Clear();
-                foreach (Diagnosis diagnose in proxy.getDiagnosisHistoryByPersionID(patient.PatientIDk__BackingField))
-                {
 
-                    DiagnosisHistory.Items.Add(diagnose.date.GetDateTimeFormats('d')[0]+"- Doctor "+diagnose.doctorName+" diagnosed " + diagnose.diagnosis + " upon symptoms" + diagnose.symptoms);
-                }
+                DiagnosisHistory.Items.Add(diagnose.date.GetDateTimeFormats('d')[0] + "- Doctor " + diagnose.doctorName + " diagnosed " + diagnose.diagnosis + " upon symptoms" + diagnose.symptoms);
             }
+        }
 
-            private void RefreashPrescription()
+        private void RefreashPrescription()
+        {
+            PerscriptionLb.Items.Clear();
+            perscription = proxy.getPatientPerscriptions(patient.PersonIdk__BackingField);
+            foreach (ServerConnectionMedicalInformation.Perscription persrip in perscription)
             {
-                PerscriptionLb.Items.Clear();
-                perscription = proxy.getPatientPerscriptions(patient.PersonIdk__BackingField);
-                foreach (ServerConnectionMedicalInformation.Perscription persrip in perscription)
-                {
-                    PerscriptionLb.Items.Add("Date: " + persrip.date.ToShortDateString() + "\t" + "Drug: " + persrip.medicine + "\t" + "Dosage: " + persrip.strength+ " Perscriber: "+ persrip.doctor);
-                }
+                PerscriptionLb.Items.Add("Date: " + persrip.date.ToShortDateString() + "\t" + "Drug: " + persrip.medicine + "\t" + "Dosage: " + persrip.strength + " Perscriber: " + persrip.doctor);
             }
+        }
 
-            private void RefreashConsultations()
+        private void RefreashConsultations()
+        {
+            cBconsultationID.Items.Clear();
+
+            consultationsIDs = new List<int>();
+            foreach (Consultation item in proxy.getConsultationHistorybyPatient(patient.PersonIdk__BackingField))
             {
-                cBconsultationID.Items.Clear();
-            
-                consultationsIDs = new List<int>();
-                foreach (Consultation item in proxy.getConsultationHistorybyPatient(patient.PersonIdk__BackingField))
-                {
-                    consultationsIDs.Add(item.consultationID);
+                consultationsIDs.Add(item.consultationID);
 
-                    cBconsultationID.Items.Add(item.start_date.GetDateTimeFormats('d')[0]);
-              
-                }
+                cBconsultationID.Items.Add(item.start_date.GetDateTimeFormats('d')[0]);
+
             }
+        }
         private int DOBtoAge(DateTime DOB)
         {
-            DateTime Now=DateTime.Now;
-           int Age = Now.Year - DOB.Year;
-           if ((Now.Month * 100 + Now.Day) < (DOB.Month * 100 + DOB.Day))
-           {
-               Age--;
-           }
-           return Age;
+            DateTime Now = DateTime.Now;
+            int Age = Now.Year - DOB.Year;
+            if ((Now.Month * 100 + Now.Day) < (DOB.Month * 100 + DOB.Day))
+            {
+                Age--;
+            }
+            return Age;
         }
         private string fixGender(char genval)
         {
@@ -105,43 +107,43 @@ namespace Doctor_Client
             {
                 case 'm':
                 case 'M':
-                             result = "Male";
-                             break;
+                    result = "Male";
+                    break;
                 case 'f':
                 case 'F':
-                             result = "Female";
-                             break;
-                default: 
-                            result = "";
-                            break;
+                    result = "Female";
+                    break;
+                default:
+                    result = "";
+                    break;
             }
             return result;
         }
 
         private int currentconsultationID
         {
-            get 
+            get
             {
                 if (newConsultation)
-                 {
-                newConsultation = false;
-                proxy.addConsultion(currentConsultation);
+                {
+                    newConsultation = false;
+                    proxy.addConsultion(currentConsultation);
                 }
                 return currentConsultation.consultationID;
-                }
             }
-        
+        }
+
         private void PerscriptionLb_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (PerscriptionLb.SelectedIndex > -1)
             {
-                MessageBox.Show(this, "Drug Name : " + perscription[PerscriptionLb.SelectedIndex].medicine.ToString() + "\nDate :  " + perscription[PerscriptionLb.SelectedIndex].date.ToString() +  "\nDosage" + perscription[PerscriptionLb.SelectedIndex].strength.ToString(), patient.FirstNamek__BackingField + " " + patient.LastNamek__BackingField + " takes" + perscription[PerscriptionLb.SelectedIndex].medicine.ToString());
+                MessageBox.Show(this, "Drug Name : " + perscription[PerscriptionLb.SelectedIndex].medicine.ToString() + "\nDate :  " + perscription[PerscriptionLb.SelectedIndex].date.ToString() + "\nDosage" + perscription[PerscriptionLb.SelectedIndex].strength.ToString(), patient.FirstNamek__BackingField + " " + patient.LastNamek__BackingField + " takes" + perscription[PerscriptionLb.SelectedIndex].medicine.ToString());
             }
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            if (PerscriptionLb.SelectedIndex!=-1)
+            if (PerscriptionLb.SelectedIndex != -1)
             {
                 easyPrint PerscriptionPrint = new easyPrint();
                 PerscriptionPrint.PrintString("\tMedical prescription \n" + "the following drug is issued to:/n" + patient.FirstNamek__BackingField + " " + patient.LastNamek__BackingField + "\nname of medicine:" + perscription[PerscriptionLb.SelectedIndex].medicine.ToString() + "\nDosage" + perscription[PerscriptionLb.SelectedIndex].strength.ToString() + "\nDoctor: ___________________________________ " + perscription[PerscriptionLb.SelectedIndex].doctor.ToString());
@@ -151,7 +153,7 @@ namespace Doctor_Client
                 MessageBox.Show("No Prescription selected to print", "Print Error", MessageBoxButtons.OK);
 
             }
-            }
+        }
 
         private void btAddPrescription_Click(object sender, EventArgs e)
         {
@@ -163,108 +165,131 @@ namespace Doctor_Client
                 aperscription.amount_pills = Convert.ToInt32(this.tbNumPills.Text);
                 aperscription.medicine = this.tbMedicine.Text;
                 aperscription.strength = Convert.ToInt32(this.tbstrength.Text);
-            
-            int choosenConsultationID;
-            if (cBconsultationID.Enabled)
-            {
-                choosenConsultationID = consultationsIDs[cBconsultationID.SelectedIndex];
-            }
-            else 
-            {
 
-                choosenConsultationID = currentconsultationID;
+                int choosenConsultationID;
+                if (cBconsultationID.Enabled)
+                {
+                    choosenConsultationID = consultationsIDs[cBconsultationID.SelectedIndex];
+                }
+                else
+                {
 
+                    choosenConsultationID = currentconsultationID;
+
+                }
+                proxy.addPerscription(choosenConsultationID, aperscription);
             }
-            proxy.addPerscription(choosenConsultationID, aperscription);
-            }
-            catch (FormatException) 
+            catch (FormatException)
             {
-                MessageBox.Show(this, "Same fields in the imput area are empty or contain wrong information", "Invaled Input add prescription",MessageBoxButtons.OK);
+                MessageBox.Show(this, "Same fields in the imput area are empty or contain wrong information", "Invaled Input add prescription", MessageBoxButtons.OK);
             }
-             RefreashPrescription();
+            RefreashPrescription();
         }
 
-       
 
-        
-         ~PatientDetails()
+
+
+        ~PatientDetails()
         {
             if (!newConsultation)
             {
                 currentConsultation.end_date = DateTime.Now;
-                proxy.updateConsultion_End_Date( currentConsultation);
-            
+                proxy.updateConsultion_End_Date(currentConsultation);
+
             }
 
         }
 
-         private void pastConsultations_CheckedChanged_1(object sender, EventArgs e)
-         {
-             if (pastConsultations.Checked)
-             {
-                 cBconsultationID.Enabled = true;
-             }
-             else
-             {
-                 cBconsultationID.Enabled = false;
-             }
-         }
+        private void pastConsultations_CheckedChanged_1(object sender, EventArgs e)
+        {
+            if (pastConsultations.Checked)
+            {
+                cBconsultationID.Enabled = true;
+            }
+            else
+            {
+                cBconsultationID.Enabled = false;
+            }
+        }
 
-         private void button3_Click(object sender, EventArgs e)
-         {
+        private void button3_Click(object sender, EventArgs e)
+        {
 
-             clearDiagnoseEditor();
-         }
+            clearDiagnoseEditor();
+        }
 
-         private void clearDiagnoseEditor()
-         {
-             tbinputSyntoms.Text = "";
-             tbInputDiagnosis.Text = "";
-         }
+        private void clearDiagnoseEditor()
+        {
+            tbinputSyntoms.Text = "";
+            tbInputDiagnosis.Text = "";
+        }
 
-         private void btSave_Click(object sender, EventArgs e)
-         {
-             Diagnosis diagnosis= new Diagnosis();
-             diagnosis.consultation_id = currentconsultationID;
-             diagnosis.diagnosis = tbInputDiagnosis.Text.Replace("/n", " ");
-             diagnosis.symptoms = tbinputSyntoms.Text.Replace("/n", ",");
-             proxy.addDiagnosis(diagnosis);
-         }
+        private void btSave_Click(object sender, EventArgs e)
+        {
+            Diagnosis diagnosis = new Diagnosis();
+            diagnosis.consultation_id = currentconsultationID;
+            diagnosis.diagnosis = tbInputDiagnosis.Text.Replace("/n", " ");
+            diagnosis.symptoms = tbinputSyntoms.Text.Replace("/n", ",");
+            proxy.addDiagnosis(diagnosis);
+        }
 
-         private void tabs_SelectedIndexChanged(object sender, EventArgs e)
-         {
-             if (tabs.SelectedIndex == 3)
-             {
-                 tabs.SelectedIndex = lastTabIndex;
-                 Thread t1 = new Thread(NewWiki);
-                 t1.Name = "wiki Thread";
-                 t1.IsBackground = true;
-                 t1.Start();
-             }
-             else
-             {
-                 lastTabIndex = tabs.SelectedIndex;
-             }
-         }
-         public void NewWiki()
-         {
-             Wiki wiki = new Wiki();
-             wiki.isclosed = false;
-             wiki.Show();
-             while (!wiki.isclosed)
-             {
-                 Application.DoEvents();
-             }
-         }
+        private void tabs_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (tabs.SelectedIndex == 3)
+            {
+                tabs.SelectedIndex = lastTabIndex;
+                Thread t1 = new Thread(NewWiki);
+                t1.Name = "wiki Thread";
+                t1.IsBackground = true;
+                t1.Start();
+            }
+            else
+            {
+                lastTabIndex = tabs.SelectedIndex;
+            }
+        }
+        public void NewWiki()
+        {
+            Wiki wiki = new Wiki();
+            wiki.isclosed = false;
+            wiki.Show();
+            while (!wiki.isclosed)
+            {
+                Application.DoEvents();
+            }
+        }
 
-         private void PatientDetails_Load(object sender, EventArgs e)
-         {
+        private void PatientDetails_Load(object sender, EventArgs e)
+        {
 
-         }
-         
+        }
 
-         
 
-         
+        private void getAppointmentsHistoryofPatient(int id)
+        {
+            
+            ServerConnectionagenda.AppointmentClient proxy = new ServerConnectionagenda.AppointmentClient();
+            DataTable table;
+            if (((table = proxy.getAppointmentsHistorybyPatientID(patient.PatientIDk__BackingField)) ) != null)
+            {
+                appointmentHistory = new List<string>();
+                foreach (DataRow row in table.Rows)
+            {
+                
+                    String appointment = "ID: " + row["appointment_id"].ToString() + " " + row["start_date"].ToString() + " " + row["end_date"].ToString() + " Docter: " + row["first_name"].ToString() + " " + row["last_name"].ToString() + " roomnumber: " + row["room_number"].ToString();
+                appointmentHistory.Add(appointment);
+            }
+              
+            }
+
+        }
+
+        private void FillAppointmentstab()
+        {
+            foreach (string item in appointmentHistory)
+            {
+                PatientDetailsListbox.Items.Add(item);
+            }
+        }
     }
 }

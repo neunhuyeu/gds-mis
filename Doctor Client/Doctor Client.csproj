@@ -123,6 +123,7 @@
       <DependentUpon>Wiki.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
+    <None Include="Properties\DataSources\System.Data.DataTable.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -146,6 +147,9 @@
       <SubType>Designer</SubType>
     </None>
     <None Include="Service References\ServerConnectionagenda\service1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ServerConnectionagenda\System.Data.xsd">
       <SubType>Designer</SubType>
     </None>
     <None Include="Service References\ServerConnectionMedicalInformation\Arrays.xsd">
