@@ -83,6 +83,8 @@ namespace DMS_Service
                 {
                     db.addPerson((Person)patient);
                     patient.PersonId = getpersonId((Person)patient);
+                    if (!Convert.ToBoolean(patient.PersonId))
+                        throw new Exception("Person id couldn't be retrieved.");
                     db.addPatient(patient);
                 }
             }

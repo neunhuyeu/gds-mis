@@ -208,8 +208,6 @@ namespace Administration.serverAdministration {
         
         private int Heightk__BackingFieldField;
         
-        private string InsuranceNumberk__BackingField1Field;
-        
         private int PatientIDk__BackingFieldField;
         
         private int PrescriptionIdk__BackingFieldField;
@@ -272,19 +270,6 @@ namespace Administration.serverAdministration {
                 if ((this.Heightk__BackingFieldField.Equals(value) != true)) {
                     this.Heightk__BackingFieldField = value;
                     this.RaisePropertyChanged("Heightk__BackingField");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Name="<InsuranceNumber>k__BackingField", IsRequired=true)]
-        public string InsuranceNumberk__BackingField1 {
-            get {
-                return this.InsuranceNumberk__BackingField1Field;
-            }
-            set {
-                if ((object.ReferenceEquals(this.InsuranceNumberk__BackingField1Field, value) != true)) {
-                    this.InsuranceNumberk__BackingField1Field = value;
-                    this.RaisePropertyChanged("InsuranceNumberk__BackingField1");
                 }
             }
         }

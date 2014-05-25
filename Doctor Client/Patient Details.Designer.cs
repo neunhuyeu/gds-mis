@@ -78,10 +78,8 @@
             this.tbInputDiagnosis = new System.Windows.Forms.TextBox();
             this.DiagnosisHistory = new System.Windows.Forms.ListBox();
             this.tabWiki = new System.Windows.Forms.TabPage();
-            this.PatientDetailsListbox = new System.Windows.Forms.ListBox();
             this.tabCurrentMedication.SuspendLayout();
             this.groupBox1.SuspendLayout();
-            this.tabPastAppointments.SuspendLayout();
             this.tabOverview.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -276,7 +274,6 @@
             // 
             // tabPastAppointments
             // 
-            this.tabPastAppointments.Controls.Add(this.PatientDetailsListbox);
             this.tabPastAppointments.Location = new System.Drawing.Point(4, 22);
             this.tabPastAppointments.Name = "tabPastAppointments";
             this.tabPastAppointments.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
@@ -510,7 +507,7 @@
             this.tabs.Controls.Add(this.tabCurrentMedication);
             this.tabs.Controls.Add(this.tapConsultations);
             this.tabs.Controls.Add(this.tabWiki);
-            this.tabs.Location = new System.Drawing.Point(10, 11);
+            this.tabs.Location = new System.Drawing.Point(8, 12);
             this.tabs.Name = "tabs";
             this.tabs.SelectedIndex = 0;
             this.tabs.Size = new System.Drawing.Size(640, 317);
@@ -616,14 +613,6 @@
             this.tabWiki.Text = "Wiki";
             this.tabWiki.UseVisualStyleBackColor = true;
             // 
-            // PatientDetailsListbox
-            // 
-            this.PatientDetailsListbox.FormattingEnabled = true;
-            this.PatientDetailsListbox.Location = new System.Drawing.Point(6, 6);
-            this.PatientDetailsListbox.Name = "PatientDetailsListbox";
-            this.PatientDetailsListbox.Size = new System.Drawing.Size(620, 277);
-            this.PatientDetailsListbox.TabIndex = 0;
-            // 
             // PatientDetails
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -640,7 +629,6 @@
             this.tabCurrentMedication.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            this.tabPastAppointments.ResumeLayout(false);
             this.tabOverview.ResumeLayout(false);
             this.tabOverview.PerformLayout();
             this.panel1.ResumeLayout(false);
@@ -704,7 +692,6 @@
         private System.Windows.Forms.TextBox tbinputSyntoms;
         private System.Windows.Forms.TextBox tbInputDiagnosis;
         private System.Windows.Forms.TabPage tabWiki;
-        private System.Windows.Forms.ListBox PatientDetailsListbox;
 
     }
 }

@@ -98,5 +98,6 @@ namespace Administration
             this.trck_druggy.Value = 0;
             this.tabControlPatients.SelectedTab = tb_searchPatients;
         }
+
     }
 }
