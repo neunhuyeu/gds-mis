@@ -154,3 +154,9 @@ $RECYCLE.BIN/
 
 # Mac desktop service store files
 .DS_Store
+
+# ServerReferences
+/**/Service References/*
+# Data Sources
+/**/Properties/DataSources/*
+
