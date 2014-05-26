@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<xs:schema xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:tns="http://schemas.datacontract.org/2004/07/DMS_Service" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/DMS_Service" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+<xs:schema xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:tns="http://schemas.datacontract.org/2004/07/DMS_Service.Structs" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/DMS_Service.Structs" xmlns:xs="http://www.w3.org/2001/XMLSchema">
   <xs:import namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
   <xs:import namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
   <xs:complexType name="Patient">
@@ -10,12 +10,13 @@
           <xs:element name="_x003C_ConsultationId_x003E_k__BackingField" type="xs:int" />
           <xs:element name="_x003C_DiagnosisId_x003E_k__BackingField" type="xs:int" />
           <xs:element name="_x003C_Height_x003E_k__BackingField" type="xs:int" />
-          <xs:element name="_x003C_InsuranceNumber_x003E_k__BackingField" type="xs:int" />
           <xs:element name="_x003C_PatientID_x003E_k__BackingField" type="xs:int" />
           <xs:element name="_x003C_PrescriptionId_x003E_k__BackingField" type="xs:int" />
           <xs:element name="_x003C_Smoker_x003E_k__BackingField" type="xs:boolean" />
           <xs:element name="_x003C_SmokingFrequency_x003E_k__BackingField" type="xs:int" />
           <xs:element name="_x003C_Weight_x003E_k__BackingField" type="xs:int" />
+          <xs:element name="_x003C_hard_drugs_frequency_x003E_k__BackingField" type="xs:int" />
+          <xs:element name="_x003C_hard_drugs_x003E_k__BackingField" type="xs:boolean" />
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
@@ -28,6 +29,7 @@
       <xs:element name="_x003C_Email_x003E_k__BackingField" nillable="true" type="xs:string" />
       <xs:element name="_x003C_FirstName_x003E_k__BackingField" nillable="true" type="xs:string" />
       <xs:element name="_x003C_Gender_x003E_k__BackingField" type="ser:char" />
+      <xs:element name="_x003C_InsuranceNumber_x003E_k__BackingField" nillable="true" type="xs:string" />
       <xs:element name="_x003C_LandLineNumber_x003E_k__BackingField" nillable="true" type="xs:string" />
       <xs:element name="_x003C_LastName_x003E_k__BackingField" nillable="true" type="xs:string" />
       <xs:element name="_x003C_MobileNumber_x003E_k__BackingField" nillable="true" type="xs:string" />
@@ -96,4 +98,19 @@
     </xs:restriction>
   </xs:simpleType>
   <xs:element name="Staff.StaffType" nillable="true" type="tns:Staff.StaffType" />
+  <xs:complexType name="Consultation">
+    <xs:annotation>
+      <xs:appinfo>
+        <IsValueType xmlns="http://schemas.microsoft.com/2003/10/Serialization/">true</IsValueType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" name="consultationID" type="xs:int" />
+      <xs:element minOccurs="0" name="end_date" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="patient_id" type="xs:int" />
+      <xs:element minOccurs="0" name="staff_id" type="xs:int" />
+      <xs:element minOccurs="0" name="start_date" type="xs:dateTime" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Consultation" nillable="true" type="tns:Consultation" />
 </xs:schema>

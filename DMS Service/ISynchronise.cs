@@ -29,6 +29,9 @@ namespace DMS_Service
         [OperationContract]
         void editPatientByAppointment(Appointment appointment);
 
+        [OperationContract]
+        bool ping();
+
     }
 
     [DataContract]

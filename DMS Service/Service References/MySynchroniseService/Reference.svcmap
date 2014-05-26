@@ -19,14 +19,14 @@
     <ServiceContractMappings />
   </ClientOptions>
   <MetadataSources>
-    <MetadataSource Address="http://192.168.1.8:8733/Design_Time_Addresses/DMS_Service/CSynchronise/mex" Protocol="mex" SourceId="1" />
+    <MetadataSource Address="http://localhost:8733/Design_Time_Addresses/DMS_Service/CSynchronise/mex" Protocol="mex" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="service.wsdl" MetadataType="Wsdl" ID="b98ca72f-5b41-4c21-bd95-7240ae8a64c8" SourceId="1" SourceUrl="http://192.168.1.8:8733/Design_Time_Addresses/DMS_Service/CSynchronise/mex" />
-    <MetadataFile FileName="service.xsd" MetadataType="Schema" ID="35896a23-7ba7-4148-bde8-916087d3f70f" SourceId="1" SourceUrl="http://192.168.1.8:8733/Design_Time_Addresses/DMS_Service/CSynchronise/mex" />
-    <MetadataFile FileName="service1.xsd" MetadataType="Schema" ID="e4f09ad4-7199-4bfe-9cbe-1f98b12ece14" SourceId="1" SourceUrl="http://192.168.1.8:8733/Design_Time_Addresses/DMS_Service/CSynchronise/mex" />
-    <MetadataFile FileName="DMS_Service.xsd" MetadataType="Schema" ID="ead8c31d-8d6f-47f0-8a56-185393096345" SourceId="1" SourceUrl="http://192.168.1.8:8733/Design_Time_Addresses/DMS_Service/CSynchronise/mex" />
-    <MetadataFile FileName="Arrays.xsd" MetadataType="Schema" ID="3de61892-0205-4fa0-bdf9-c9d8e10d409b" SourceId="1" SourceUrl="http://192.168.1.8:8733/Design_Time_Addresses/DMS_Service/CSynchronise/mex" />
+    <MetadataFile FileName="service1.wsdl" MetadataType="Wsdl" ID="3ecbe016-88d5-4c0a-a826-f23caf13b605" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses/DMS_Service/CSynchronise/mex" />
+    <MetadataFile FileName="service2.xsd" MetadataType="Schema" ID="c3065635-f065-42a5-ae1b-514bb2762435" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses/DMS_Service/CSynchronise/mex" />
+    <MetadataFile FileName="service21.xsd" MetadataType="Schema" ID="c61f9b42-fee2-439e-a4a7-574ed6a852b0" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses/DMS_Service/CSynchronise/mex" />
+    <MetadataFile FileName="DMS_Service.Structs.xsd" MetadataType="Schema" ID="523f1cd2-ef06-423f-8442-28c6d41f939a" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses/DMS_Service/CSynchronise/mex" />
+    <MetadataFile FileName="Arrays1.xsd" MetadataType="Schema" ID="bffd6c6f-3424-4310-bf30-5fc622848c28" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses/DMS_Service/CSynchronise/mex" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
