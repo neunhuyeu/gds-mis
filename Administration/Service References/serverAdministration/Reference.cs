@@ -200,15 +200,13 @@ namespace Administration.serverAdministration {
     [System.SerializableAttribute()]
     public partial class Patient : Administration.serverAdministration.Person {
         
-        private char BloodTypek__BackingFieldField;
+        private string BloodTypek__BackingFieldField;
         
         private int ConsultationIdk__BackingFieldField;
         
         private int DiagnosisIdk__BackingFieldField;
         
         private int Heightk__BackingFieldField;
-        
-        private string InsuranceNumberk__BackingField1Field;
         
         private int PatientIDk__BackingFieldField;
         
@@ -225,12 +223,12 @@ namespace Administration.serverAdministration {
         private bool hard_drugsk__BackingFieldField;
         
         [System.Runtime.Serialization.DataMemberAttribute(Name="<BloodType>k__BackingField", IsRequired=true)]
-        public char BloodTypek__BackingField {
+        public string BloodTypek__BackingField {
             get {
                 return this.BloodTypek__BackingFieldField;
             }
             set {
-                if ((this.BloodTypek__BackingFieldField.Equals(value) != true)) {
+                if ((object.ReferenceEquals(this.BloodTypek__BackingFieldField, value) != true)) {
                     this.BloodTypek__BackingFieldField = value;
                     this.RaisePropertyChanged("BloodTypek__BackingField");
                 }
@@ -272,19 +270,6 @@ namespace Administration.serverAdministration {
                 if ((this.Heightk__BackingFieldField.Equals(value) != true)) {
                     this.Heightk__BackingFieldField = value;
                     this.RaisePropertyChanged("Heightk__BackingField");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Name="<InsuranceNumber>k__BackingField", IsRequired=true)]
-        public string InsuranceNumberk__BackingField1 {
-            get {
-                return this.InsuranceNumberk__BackingField1Field;
-            }
-            set {
-                if ((object.ReferenceEquals(this.InsuranceNumberk__BackingField1Field, value) != true)) {
-                    this.InsuranceNumberk__BackingField1Field = value;
-                    this.RaisePropertyChanged("InsuranceNumberk__BackingField1");
                 }
             }
         }
@@ -542,6 +527,12 @@ namespace Administration.serverAdministration {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAdministration/hasPermissions", ReplyAction="http://tempuri.org/IAdministration/hasPermissionsResponse")]
         System.Threading.Tasks.Task<bool> hasPermissionsAsync(int id, Administration.serverAdministration.CAdministrationtask t);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAdministration/getStaff", ReplyAction="http://tempuri.org/IAdministration/getStaffResponse")]
+        Administration.serverAdministration.Staff[] getStaff();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAdministration/getStaff", ReplyAction="http://tempuri.org/IAdministration/getStaffResponse")]
+        System.Threading.Tasks.Task<Administration.serverAdministration.Staff[]> getStaffAsync();
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -649,6 +640,14 @@ namespace Administration.serverAdministration {
         
         public System.Threading.Tasks.Task<bool> hasPermissionsAsync(int id, Administration.serverAdministration.CAdministrationtask t) {
             return base.Channel.hasPermissionsAsync(id, t);
+        }
+        
+        public Administration.serverAdministration.Staff[] getStaff() {
+            return base.Channel.getStaff();
+        }
+        
+        public System.Threading.Tasks.Task<Administration.serverAdministration.Staff[]> getStaffAsync() {
+            return base.Channel.getStaffAsync();
         }
     }
 }

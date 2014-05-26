@@ -9,7 +9,6 @@
           <xs:element name="_x003C_ConsultationId_x003E_k__BackingField" type="xs:int" />
           <xs:element name="_x003C_DiagnosisId_x003E_k__BackingField" type="xs:int" />
           <xs:element name="_x003C_Height_x003E_k__BackingField" type="xs:int" />
-          <xs:element name="_x003C_InsuranceNumber_x003E_k__BackingField" nillable="true" type="xs:string" />
           <xs:element name="_x003C_PatientID_x003E_k__BackingField" type="xs:int" />
           <xs:element name="_x003C_PrescriptionId_x003E_k__BackingField" type="xs:int" />
           <xs:element name="_x003C_Smoker_x003E_k__BackingField" type="xs:boolean" />
@@ -27,6 +26,7 @@
       <xs:element name="_x003C_Email_x003E_k__BackingField" nillable="true" type="xs:string" />
       <xs:element name="_x003C_FirstName_x003E_k__BackingField" nillable="true" type="xs:string" />
       <xs:element name="_x003C_Gender_x003E_k__BackingField" type="ser:char" />
+      <xs:element name="_x003C_InsuranceNumber_x003E_k__BackingField" nillable="true" type="xs:string" />
       <xs:element name="_x003C_LandLineNumber_x003E_k__BackingField" nillable="true" type="xs:string" />
       <xs:element name="_x003C_LastName_x003E_k__BackingField" nillable="true" type="xs:string" />
       <xs:element name="_x003C_MobileNumber_x003E_k__BackingField" nillable="true" type="xs:string" />

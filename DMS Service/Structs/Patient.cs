@@ -14,7 +14,7 @@ namespace DMS_Service.Structs
         public int PrescriptionId { get; set; }
         public int Height { get; set; }
         public int Weight { get; set; }
-        public char BloodType { get; set; }
+        public string BloodType { get; set; }
         public bool Smoker { get; set; }
         public int SmokingFrequency { get; set; }
         public bool hard_drugs { get; set; }

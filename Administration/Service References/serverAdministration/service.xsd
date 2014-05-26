@@ -144,4 +144,16 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+  <xs:element name="getStaff">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getStaffResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q11="http://schemas.datacontract.org/2004/07/DMS_Service.Structs" minOccurs="0" name="getStaffResult" nillable="true" type="q11:ArrayOfStaff" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
 </xs:schema>

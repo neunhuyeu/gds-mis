@@ -158,9 +158,9 @@ namespace DMS_Service.database_connection
 
                         using (MySqlDataAdapter dt_adapter = new MySqlDataAdapter())
                         {
-                            dt_adapter.SelectCommand = cmd;
-                            dt_adapter.Fill(dt_set);
-                            dt_table = dt_set.Tables[0];
+                            dt_adapter.UpdateCommand = cmd;
+                            //dt_adapter.Fill(dt_set);
+                            //dt_table = dt_set.Tables[0];
                         }
 
                         cmd.ExecuteNonQuery();

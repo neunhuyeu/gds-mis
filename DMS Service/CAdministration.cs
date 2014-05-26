@@ -69,6 +69,7 @@ namespace DMS_Service
         /// <returns>True on success | False on failure</returns>
         public bool addPatient(Patient patient)
         {
+            bool result = false;
             // Check if a person with the same first+last name and d.o.b. exists.
             try
             {
@@ -77,19 +78,21 @@ namespace DMS_Service
                 if (id > 0)
                 {
                     patient.PersonId = id;
-                    db.addPatient(patient);
+                    result = db.addPatient(patient);
                 }
                 else
                 {
-                    db.addPerson((Person)patient);
+                    result = db.addPerson((Person)patient);
                     patient.PersonId = getpersonId((Person)patient);
-                    db.addPatient(patient);
+                    if (!result || patient.PersonId < 0)
+                        throw new Exception("Person id couldn't be retrieved.");
+                    result = db.addPatient(patient);
                 }
             }
             catch
             { return false; }
 
-            return true;
+            return result;
         }
 
         /// <summary>
@@ -99,8 +102,11 @@ namespace DMS_Service
         /// <returns>-1 if non existant person. | The id of the person.</returns>
         private int getpersonId(Person p)
         {
-            var result = db.getPersonId(p.FirstName, p.LastName, p.DateOfBirth).Rows[0]["id"];
-            return (result == null) ? -1 : (int)result;
+            System.Data.DataTable dt = db.getPersonId(p.FirstName, p.LastName, p.DateOfBirth);
+            int result = -1;
+            if (dt.Rows.Count > 0)
+                result = Convert.ToInt32(dt.Rows[0]["id"]);
+            return result;
         }
 
         /// <summary>
@@ -168,6 +174,41 @@ namespace DMS_Service
             // Go to the db, fetch the permissions for that id and test
             // them against the task (t) the user wants to perform.
             return true;
+        }
+
+        public List<Staff> getStaff()
+        {
+            System.Data.DataTable dt = db.getAllStaff();
+            List<Staff> staff = new List<Staff>();
+
+            if (dt == null || dt.Rows.Count <= 0)
+                return staff;
+
+            foreach (System.Data.DataRow dr in dt.Rows)
+            {
+                Staff s = new Staff();
+                s.StaffID = Convert.ToInt32(dr["Staff_id"]);
+                s.Specialization = dr["specialization"].ToString();
+                var rn = dr["room_number"];
+                try { s.RoomNumber = rn == "" ? 0 : Convert.ToInt32(rn.ToString()); }
+                catch { s.RoomNumber = 0; }
+                s.PersonId = Convert.ToInt32(dr["person_id"]);
+                s.MobileNumber = dr["mobile_number"].ToString();
+                s.LastName = dr["last_name"].ToString();
+                s.LandLineNumber = dr["landline_number"].ToString();
+                s.InsuranceNumber = dr["insurance_number"].ToString();
+                // TODO: gender is in patient?!?
+                //s.Gender = dr["gender"].ToString()[0];
+                // TODO: Make a function for the fucntion type.
+                s.Function = 0; //dr["function"].ToString();
+                s.FirstName = dr["first_name"].ToString();
+                s.Email = dr["email_address"].ToString();
+                s.DateOfBirth = Convert.ToDateTime(dr["date_of_birth"]);
+                s.Address = dr["home_address"].ToString();
+
+                staff.Add(s);
+            }
+            return staff;
         }
     }
 }

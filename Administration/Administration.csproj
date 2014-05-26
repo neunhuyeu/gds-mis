@@ -94,6 +94,7 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <None Include="Properties\DataSources\System.Data.DataTable.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -117,6 +118,9 @@
       <SubType>Designer</SubType>
     </None>
     <None Include="Service References\Appointments\service1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\Appointments\System.Data.xsd">
       <SubType>Designer</SubType>
     </None>
     <None Include="Service References\MedicalInformation\Administration.MedicalInformation.Appointment.datasource">
@@ -155,6 +159,9 @@
     </None>
     <None Include="Service References\MedicalInformation\service1.xsd">
       <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\serverAdministration\Administration.serverAdministration.Staff.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Service References\serverAdministration\DMS_Service.Structs.xsd">
       <SubType>Designer</SubType>

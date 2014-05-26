@@ -35,6 +35,9 @@ namespace DMS_Service
         [OperationContract]
         bool hasPermissions(int id, CAdministration.task t);
 
+        [OperationContract]
+        List<Staff> getStaff();
+
         /*
          * [OperationContract] 
          * Edit appointments
