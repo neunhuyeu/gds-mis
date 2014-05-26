@@ -149,13 +149,16 @@
     <None Include="Service References\ServerConnectionagenda\service1.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\ServerConnectionagenda\System.Data.xsd">
+    <None Include="Service References\ServerConnectionagenda\System.Data1.xsd">
       <SubType>Designer</SubType>
     </None>
     <None Include="Service References\ServerConnectionMedicalInformation\Arrays.xsd">
       <SubType>Designer</SubType>
     </None>
     <None Include="Service References\ServerConnectionMedicalInformation\DMS_Service.Structs1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ServerConnectionMedicalInformation\DMS_Service.Structs3.xsd">
       <SubType>Designer</SubType>
     </None>
     <None Include="Service References\ServerConnectionMedicalInformation\Doctor_Client.ServerConnectionMedicalInformation.Appointment.datasource">
@@ -191,7 +194,9 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Service References\" />

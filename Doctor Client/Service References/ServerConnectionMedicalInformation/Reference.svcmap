@@ -25,7 +25,7 @@
     <MetadataFile FileName="service.wsdl" MetadataType="Wsdl" ID="f92bc272-1dfe-4543-8ccf-73afb462114c" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses/DMS_Service/IDoctor/mex" />
     <MetadataFile FileName="service.xsd" MetadataType="Schema" ID="509941ee-e60c-4fef-a7d4-81b01f0cc35c" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses/DMS_Service/IDoctor/mex" />
     <MetadataFile FileName="service1.xsd" MetadataType="Schema" ID="ee7805c1-93a9-462d-b8ea-e7e4330285d9" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses/DMS_Service/IDoctor/mex" />
-    <MetadataFile FileName="DMS_Service.Structs2.xsd" MetadataType="Schema" ID="feee9cd7-c440-4ee6-8d9e-11367d405f46" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses/DMS_Service/IDoctor/mex" />
+    <MetadataFile FileName="DMS_Service.Structs3.xsd" MetadataType="Schema" ID="acaf0c95-4b23-4aa5-9ed9-274d9396a548" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses/DMS_Service/IDoctor/mex" />
     <MetadataFile FileName="Arrays.xsd" MetadataType="Schema" ID="8440c742-b975-4dc8-afc1-96b678eb19c5" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses/DMS_Service/IDoctor/mex" />
   </Metadata>
   <Extensions>
