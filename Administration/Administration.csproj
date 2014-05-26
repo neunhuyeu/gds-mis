@@ -160,6 +160,9 @@
     <None Include="Service References\MedicalInformation\service1.xsd">
       <SubType>Designer</SubType>
     </None>
+    <None Include="Service References\serverAdministration\Administration.serverAdministration.Staff.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Service References\serverAdministration\DMS_Service.Structs.xsd">
       <SubType>Designer</SubType>
     </None>

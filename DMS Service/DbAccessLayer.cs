@@ -130,6 +130,12 @@ namespace DMS_Service
             return dbConnection.SelectQuery(query, sqlParameters);
         }
 
+        public DataTable getAllStaff()
+        {
+            string query = "SELECT * FROM Staff_members sm join person per on per.person_id = sm.person_id ";
+            return dbConnection.SelectQuery(query);
+        }
+
         public DataTable SearchStaffByPersonId(int id)
         {
             string query = "SELECT * FROM Staff_members WHERE person_id = @id";
@@ -305,26 +311,51 @@ namespace DMS_Service
             return sqlParameters;
         }
 
-        public bool addPerson(Person person)
+        private int newPersonId()
         {
-            // Query for person table.
-            string query = "INSERT INTO person " +
-                           "(person_id, first_name, last_name, date_of_birth, email_address, mobile_number, landline_number, home_address, insurance_number) " +
-                           "VALUES ((SELECT MAX(person_id)+1 FROM person), ?first_name, ?last_name, ?date_of_birth, ?email_address, ?mobile_number, ?landline_number, ?home_address, ?insurance_number";
-
-            MySqlParameter[] sqlParameters = getPersonParams(ref person);
-
+            string query = "SELECT MAX(person_id)+1 as new FROM person";
+            int result;
             try
             {
                 // Execute query on person table.
-                dbConnection.InsertQuery(query, sqlParameters);
+                result = Convert.ToInt32(dbConnection.SelectQuery(query).Rows[0]["new"]);
+            }
+            catch { return -1; }
+            return result;
+        }
+
+        public bool addPerson(Person person)
+        {
+            bool result = false;
+            // Query for person table.
+            string query = "INSERT INTO person " +
+                           "(person_id, first_name, last_name, date_of_birth, email_address, mobile_number, landline_number, home_address, insurance_number) " +
+                           "VALUES (?person_id, ?first_name, ?last_name, ?date_of_birth, ?email_address, ?mobile_number, ?landline_number, ?home_address, ?insurance_number";
+
+            MySqlParameter[] sqlParameters;
+
+            try
+            {
+                int pid = this.newPersonId();
+                if (pid < 0)
+                {
+                    throw new Exception("Couldn't get new Id");
+                }
+                else
+                {
+                    person.PersonId = pid;
+                    sqlParameters = getPersonParams(ref person);
+                }
+                // Execute query on person table.
+                result = dbConnection.InsertQuery(query, sqlParameters);
             }
             catch { return false; }
-            return true;
+            return result;
         }
 
         public bool updatePerson(Person person)
         {
+            bool result = false;
             string query = "UPDATE  person" +
                             "SET first_name=?first_name, last_name=?last_name, date_of_birth=?date_of_birth," +
                                 "email_address=?email_address, mobile_number=?mobile_number, landline_number=?landline_number," +
@@ -335,10 +366,10 @@ namespace DMS_Service
 
             try
             {
-                dbConnection.UpdateQuery(query, sqlParameters);
+                result = dbConnection.UpdateQuery(query, sqlParameters);
             }
             catch { return false; }
-            return true;
+            return result;
         }
 
         private MySqlParameter[] getPatientParams(ref Patient patient)
@@ -369,6 +400,19 @@ namespace DMS_Service
             return sqlParameters;
         }
 
+        private int newPatientId()
+        {
+            string query = "SELECT MAX(patient_id)+1 as new FROM patients";
+            int result;
+            try
+            {
+                // Execute query on person table.
+                result = Convert.ToInt32(dbConnection.SelectQuery(query).Rows[0]["new"]);
+            }
+            catch { return -1; }
+            return result;
+        }
+
         /// <summary>
         /// Adds a patient record after it checks if the person record already exists.
         /// If not it creates a person record first and then proceeds.
@@ -376,36 +420,48 @@ namespace DMS_Service
         /// <param name="patient">The patient object to add.</param>
         public bool addPatient(Patient patient)
         {
+            bool result = false;
             //query for patient table
             string query = "INSERT INTO patients(patient_id, gender, height_cm, weight_kg, blood_type, smoking, smoking_frequency, hard_drugs, hard_drugs_frequency, person_id)" +
-                    "VALUES ((SELECT MAX(patient_id)+1 FROM patients), ?gender, ?height_cm, ?weight_kg, ?blood_type, ?smoking, ?smoking_frequency, ?hard_drugs, ?hard_drugs_frequency, ?person_id)";
+                    "VALUES (?patient_id, ?gender, ?height_cm, ?weight_kg, ?blood_type, ?smoking, ?smoking_frequency, ?hard_drugs, ?hard_drugs_frequency, ?person_id)";
+
 
             //parameters for patient table
-            MySqlParameter[] sqlParameters = getPatientParams(ref patient);
-
+            MySqlParameter[] sqlParameters;
             try
             {
+                int pid = this.newPatientId();
+                if (pid < 0)
+                {
+                    throw new Exception("Couldn't get new Id");
+                }
+                else
+                {
+                    patient.PatientID = pid;
+                    sqlParameters = getPatientParams(ref patient);
+                }
                 // Execute query on person table.
-                dbConnection.InsertQuery(query, sqlParameters);
+                result = dbConnection.InsertQuery(query, sqlParameters);
             }
             catch { return false; }
-            return true;
+            return result;
         }
 
         public bool updatePatient(Patient p)
         {
-            string query = "UPDATE  patients" +
-                            "SET gender=?gender, height_cm=?height_cm, weight_kg=?weight_kg, blood_type=?blood_type, smoking=?smoking, smoking_frequency=?smoking_frequency, hard_drugs=?hard_drugs, hard_drugs_frequency=?hard_drugs_frequency, person_id=?person_id" +
-                            "WHERE patient_id=?patient_id";
+            bool result = false;
+            string query = "UPDATE patients" +
+                            " SET gender=?gender, height_cm=?height_cm, weight_kg=?weight_kg, blood_type=?blood_type, smoking=?smoking, smoking_frequency=?smoking_frequency, hard_drugs=?hard_drugs, hard_drugs_frequency=?hard_drugs_frequency, person_id=?person_id" +
+                            " WHERE patient_id=?patient_id";
             MySqlParameter[] sqlParameters = getPatientParams(ref p);
 
             try
             {
-                dbConnection.UpdateQuery(query, sqlParameters);
+                result = dbConnection.UpdateQuery(query, sqlParameters);
             }
-            catch { return false; }
+            catch (Exception e) { return false; }
 
-            return true;
+            return result;
         }
 
         private MySqlParameter[] getStaffParams(ref Staff staff)
@@ -425,25 +481,50 @@ namespace DMS_Service
             return sqlParameters;
         }
 
-        public bool addStaff(Staff staff)
+        private int newStaffId()
         {
-            //query for patient table
-            string query = "INSERT INTO Staff_members (Staff_id,function,specialization,room_number,person_id)" +
-                    "VALUES ((SELECT MAX(Staff_id)+1 FROM Staff_members), ?function, ?specialization, ?room_number, ?person_id)";
-            //parameters for patient table
-            MySqlParameter[] sqlParameters = getStaffParams(ref staff);
+            string query = "SELECT MAX(Staff_id)+1 as new FROM Staff";
+            int result;
             try
             {
                 // Execute query on person table.
-                dbConnection.InsertQuery(query, sqlParameters);
+                result = Convert.ToInt32(dbConnection.SelectQuery(query).Rows[0]["new"]);
+            }
+            catch { return -1; }
+            return result;
+        }
+
+        public bool addStaff(Staff staff)
+        {
+            bool result = false;
+            //query for patient table
+            string query = "INSERT INTO Staff_members (Staff_id,function,specialization,room_number,person_id)" +
+                    "VALUES (?Staff_id, ?function, ?specialization, ?room_number, ?person_id)";
+            //parameters for patient table
+            MySqlParameter[] sqlParameters;
+            try
+            {
+                int sid = this.newStaffId();
+                if (sid < 0)
+                {
+                    throw new Exception("Couldn't get new Id");
+                }
+                else
+                {
+                    staff.StaffID = sid;
+                    sqlParameters = getStaffParams(ref staff);
+                }
+                // Execute query on person table.
+                result = dbConnection.InsertQuery(query, sqlParameters);
             }
             catch { return false; }
-            return true;
+            return result;
 
         }
 
         public bool updateStaff(Staff staff)
         {
+            bool result = false;
             string query = "UPDATE Staff_members" +
                             "SET function=?function,specialization=?specialization,room_number=?room_number,person_id=?person_id" +
                             "WHERE Staff_id=?Staff_id";
@@ -451,10 +532,10 @@ namespace DMS_Service
 
             try
             {
-                dbConnection.UpdateQuery(query, sqlParameters);
+                result = dbConnection.UpdateQuery(query, sqlParameters);
             }
             catch { return false; }
-            return true;
+            return result;
         }
 
         public bool addDiagnosis(Diagnosis Diagnosis)

@@ -281,7 +281,7 @@ namespace Administration.MedicalInformation {
     [System.SerializableAttribute()]
     public partial class Patient : Administration.MedicalInformation.Person {
         
-        private char BloodTypek__BackingFieldField;
+        private string BloodTypek__BackingFieldField;
         
         private int ConsultationIdk__BackingFieldField;
         
@@ -304,12 +304,12 @@ namespace Administration.MedicalInformation {
         private bool hard_drugsk__BackingFieldField;
         
         [System.Runtime.Serialization.DataMemberAttribute(Name="<BloodType>k__BackingField", IsRequired=true)]
-        public char BloodTypek__BackingField {
+        public string BloodTypek__BackingField {
             get {
                 return this.BloodTypek__BackingFieldField;
             }
             set {
-                if ((this.BloodTypek__BackingFieldField.Equals(value) != true)) {
+                if ((object.ReferenceEquals(this.BloodTypek__BackingFieldField, value) != true)) {
                     this.BloodTypek__BackingFieldField = value;
                     this.RaisePropertyChanged("BloodTypek__BackingField");
                 }

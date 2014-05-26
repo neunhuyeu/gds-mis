@@ -20,7 +20,7 @@
     <xs:complexContent mixed="false">
       <xs:extension base="tns:Person">
         <xs:sequence>
-          <xs:element name="_x003C_BloodType_x003E_k__BackingField" type="ser:char" />
+          <xs:element name="_x003C_BloodType_x003E_k__BackingField" nillable="true" type="xs:string" />
           <xs:element name="_x003C_ConsultationId_x003E_k__BackingField" type="xs:int" />
           <xs:element name="_x003C_DiagnosisId_x003E_k__BackingField" type="xs:int" />
           <xs:element name="_x003C_Height_x003E_k__BackingField" type="xs:int" />
@@ -57,4 +57,10 @@
     </xs:restriction>
   </xs:simpleType>
   <xs:element name="Staff.StaffType" nillable="true" type="tns:Staff.StaffType" />
+  <xs:complexType name="ArrayOfStaff">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Staff" nillable="true" type="tns:Staff" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfStaff" nillable="true" type="tns:ArrayOfStaff" />
 </xs:schema>

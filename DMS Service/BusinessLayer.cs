@@ -65,7 +65,7 @@ namespace DMS_Service
                 patient.Gender = Convert.ToString(row["gender"])[0];
                 patient.Height = Convert.ToInt32(row["height_cm"]);
                 patient.Weight = Convert.ToInt32(row["weight_kg"]);
-                patient.BloodType = Convert.ToString(row["blood_type"])[0];
+                patient.BloodType = Convert.ToString(row["blood_type"]);
                 patient.Smoker = Convert.ToBoolean(row["smoking"]);
                 patient.InsuranceNumber = Convert.ToString(row["insurance_number"]);
             }  
@@ -231,6 +231,18 @@ namespace DMS_Service
                 p.LandLineNumber = dr["landline_number"].ToString();
                 p.Address = dr["home_address"].ToString();
                 p.InsuranceNumber = dr["insurance_number"].ToString();
+                p.Smoker = Convert.ToBoolean(dr["smoking"]);
+                var sf = dr["smoking_frequency"];
+                try { p.SmokingFrequency = sf == "" ? 0 : Convert.ToInt32(sf.ToString()); }
+                catch { p.SmokingFrequency = 0; }
+                p.hard_drugs = Convert.ToBoolean(dr["hard_drugs"]);
+                var hdf = dr["hard_drugs_frequency"];
+                try { p.hard_drugs_frequency = hdf == "" ? 0 : Convert.ToInt32(hdf.ToString()); }
+                catch { p.hard_drugs_frequency = 0; }
+                p.Height = Convert.ToInt32(dr["height_cm"]);
+                p.Weight = Convert.ToInt32(dr["weight_kg"]);
+                p.BloodType = dr["blood_type"].ToString();
+
                 patients.Add(p);
             }
 

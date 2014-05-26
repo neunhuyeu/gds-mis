@@ -19,7 +19,7 @@ namespace Appointment_Serves
         //smoker should be a bool, not an int
         //InsuranceNumber was not in the database design, it should be in the table patient. or person table
         //bloodtype should be char not int.
-        public char BloodType { get;  set; }
+        public string BloodType { get;  set; }
         public bool Smoker { get;  set; }
         public int SmokingFrequency { get; set; }
 
