@@ -199,7 +199,7 @@ namespace Doctor_Client.ServerConnectionagenda {
     [System.SerializableAttribute()]
     public partial class Patient : Doctor_Client.ServerConnectionagenda.Person {
         
-        private char BloodTypek__BackingFieldField;
+        private string BloodTypek__BackingFieldField;
         
         private int ConsultationIdk__BackingFieldField;
         
@@ -218,12 +218,12 @@ namespace Doctor_Client.ServerConnectionagenda {
         private int Weightk__BackingFieldField;
         
         [System.Runtime.Serialization.DataMemberAttribute(Name="<BloodType>k__BackingField", IsRequired=true)]
-        public char BloodTypek__BackingField {
+        public string BloodTypek__BackingField {
             get {
                 return this.BloodTypek__BackingFieldField;
             }
             set {
-                if ((this.BloodTypek__BackingFieldField.Equals(value) != true)) {
+                if ((object.ReferenceEquals(this.BloodTypek__BackingFieldField, value) != true)) {
                     this.BloodTypek__BackingFieldField = value;
                     this.RaisePropertyChanged("BloodTypek__BackingField");
                 }

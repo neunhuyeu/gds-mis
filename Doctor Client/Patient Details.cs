@@ -69,11 +69,11 @@ namespace Doctor_Client
 
         private void RefreashPrescription()
         {
-            PerscriptionLb.Items.Clear();
+            PrescriptionLb.Items.Clear();
             perscription = proxy.getPatientPerscriptions(patient.PersonIdk__BackingField);
             foreach (ServerConnectionMedicalInformation.Perscription persrip in perscription)
             {
-                PerscriptionLb.Items.Add("Date: " + persrip.date.ToShortDateString() + "\t" + "Drug: " + persrip.medicine + "\t" + "Dosage: " + persrip.strength + " Perscriber: " + persrip.doctor);
+                PrescriptionLb.Items.Add("Date: " + persrip.date.ToShortDateString() + "\t" + "Drug: " + persrip.medicine + "\t" + "Dosage: " + persrip.strength + " Perscriber: " + persrip.doctor);
             }
         }
 
@@ -135,18 +135,18 @@ namespace Doctor_Client
 
         private void PerscriptionLb_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (PerscriptionLb.SelectedIndex > -1)
+            if (PrescriptionLb.SelectedIndex > -1)
             {
-                MessageBox.Show(this, "Drug Name : " + perscription[PerscriptionLb.SelectedIndex].medicine.ToString() + "\nDate :  " + perscription[PerscriptionLb.SelectedIndex].date.ToString() + "\nDosage" + perscription[PerscriptionLb.SelectedIndex].strength.ToString(), patient.FirstNamek__BackingField + " " + patient.LastNamek__BackingField + " takes" + perscription[PerscriptionLb.SelectedIndex].medicine.ToString());
+                MessageBox.Show(this, "Drug Name : " + perscription[PrescriptionLb.SelectedIndex].medicine.ToString() + "\nDate :  " + perscription[PrescriptionLb.SelectedIndex].date.ToString() + "\nDosage" + perscription[PrescriptionLb.SelectedIndex].strength.ToString(), patient.FirstNamek__BackingField + " " + patient.LastNamek__BackingField + " takes" + perscription[PrescriptionLb.SelectedIndex].medicine.ToString());
             }
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            if (PerscriptionLb.SelectedIndex != -1)
+            if (PrescriptionLb.SelectedIndex != -1)
             {
                 easyPrint PerscriptionPrint = new easyPrint();
-                PerscriptionPrint.PrintString("\tMedical prescription \n" + "the following drug is issued to:/n" + patient.FirstNamek__BackingField + " " + patient.LastNamek__BackingField + "\nname of medicine:" + perscription[PerscriptionLb.SelectedIndex].medicine.ToString() + "\nDosage" + perscription[PerscriptionLb.SelectedIndex].strength.ToString() + "\nDoctor: ___________________________________ " + perscription[PerscriptionLb.SelectedIndex].doctor.ToString());
+                PerscriptionPrint.PrintString("\tMedical prescription \n" + "the following drug is issued to:/n" + patient.FirstNamek__BackingField + " " + patient.LastNamek__BackingField + "\nname of medicine:" + perscription[PrescriptionLb.SelectedIndex].medicine.ToString() + "\nDosage" + perscription[PrescriptionLb.SelectedIndex].strength.ToString() + "\nDoctor: ___________________________________ " + perscription[PrescriptionLb.SelectedIndex].doctor.ToString());
             }
             else
             {
@@ -235,7 +235,7 @@ namespace Doctor_Client
 
         private void tabs_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (tabs.SelectedIndex == 3)
+            if (tabs.SelectedIndex == 4)
             {
                 tabs.SelectedIndex = lastTabIndex;
                 Thread t1 = new Thread(NewWiki);
@@ -255,7 +255,7 @@ namespace Doctor_Client
             wiki.Show();
             while (!wiki.isclosed)
             {
-                Application.DoEvents();
+                
             }
         }
 
