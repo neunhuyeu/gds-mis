@@ -15,12 +15,12 @@ namespace Appointment_Serves
         [OperationContract]
         Patient Login(string email, string password);
         [OperationContract]
-        List<Patient> SearchappointmentsbyDate(DateTime date,int staffId);
+        List<Patient> SearchappointmentsbyDate(DateTime date, int staffId);
         [OperationContract]
         List<Patient> getAppointmnetsOfToday(int staffID);
         [OperationContract]
         List<Appointment> SearchAppointmentsByStaffID(int staffId);
         [OperationContract]
-        DataTable getAppointmentsHistorybyPatientID(int PatientId);
+        DataTable getAppointmentsHistorybyPatient(string un);
     }
 }

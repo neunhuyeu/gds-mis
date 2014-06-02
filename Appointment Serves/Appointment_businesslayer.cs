@@ -14,32 +14,33 @@ namespace Appointment_Serves
     public class Appointment_businesslayer : IAppointment
     {
         private Appointment_database_acess dbAcess;
-        
+
+
         public Appointment_businesslayer()
         {
             dbAcess = new Appointment_database_acess();
-            
+
         }
 
-        public List<Patient> SearchappointmentsbyDate(DateTime date ,int staffId)
+        public List<Patient> SearchappointmentsbyDate(DateTime date, int staffId)
         {
-           List<Patient> mypersons = new List<Patient>();
-           DataTable dataTable = dbAcess.SearchAppointmentsbyDate(date, staffId);
+            List<Patient> mypersons = new List<Patient>();
+            DataTable dataTable = dbAcess.SearchAppointmentsbyDate(date, staffId);
 
-           foreach (DataRow row in dataTable.Rows)
-           {
-               Patient person = new Patient();
+            foreach (DataRow row in dataTable.Rows)
+            {
+                Patient person = new Patient();
 
-               person.FirstName = Convert.ToString(row["first_name"]);
-               person.LastName = Convert.ToString(row["last_name"]);
-               person.DateOfBirth = Convert.ToDateTime(row["date_of_birth"]);
-               person.InsuranceNumber = Convert.ToString(row["insurance_number"]);
-               person.PatientID = Convert.ToInt32(row["patient_id"]);
+                person.FirstName = Convert.ToString(row["first_name"]);
+                person.LastName = Convert.ToString(row["last_name"]);
+                person.DateOfBirth = Convert.ToDateTime(row["date_of_birth"]);
+                person.InsuranceNumber = Convert.ToString(row["insurance_number"]);
+                person.PatientID = Convert.ToInt32(row["patient_id"]);
 
-               mypersons.Add(person);
-           }
-           return mypersons;
-       
+                mypersons.Add(person);
+            }
+            return mypersons;
+
         }
 
 
@@ -89,7 +90,7 @@ namespace Appointment_Serves
             foreach (DataRow row in dataTable.Rows)
             {
                 Patient appointment = new Patient();
-                
+
                 appointment.FirstName = Convert.ToString(row["first_name"]);
                 appointment.LastName = Convert.ToString(row["last_name"]);
                 appointment.DateOfBirth = Convert.ToDateTime(row["date_of_birth"]);
@@ -113,7 +114,7 @@ namespace Appointment_Serves
             {
                 dataTable = dbAcess.SearchPatientByEmail(email);
             }
-            if (dataTable != null)
+            if (dataTable.Rows.Count > 0)
             {
                 foreach (DataRow row in dataTable.Rows)
                 {
@@ -126,14 +127,10 @@ namespace Appointment_Serves
             return null;
         }
 
-
-        public DataTable getAppointmentsHistorybyPatientID(int PatientId)
+        public DataTable getAppointmentsHistorybyPatient(string un)
         {
-
-            DataTable dataTable = dbAcess.SearchAppointmentsByPersonID(PatientId);
+            DataTable dataTable = dbAcess.SearchAppointmentsByPatientUsername(un);
             return dataTable;
         }
     }
 }
-
-
