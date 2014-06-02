@@ -108,5 +108,13 @@ namespace Appointment_Serves
 
             return dbConnection.SelectQuery(query, sqlParameters);
         }
+
+        public DataTable GetDoctors()
+        {
+            string query = string.Format("select last_name from staff_info");
+            return dbConnection.SelectQuery(query);
+        }
+
+
     }
 }

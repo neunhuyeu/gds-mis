@@ -43,66 +43,6 @@ namespace Appointment_Serves
 
         }
 
-
-
-        //public List<Appointment> getAppointmentsHistorybyPatient(int personId)
-        //{
-        //    List<Appointment> myappointments = new List<Appointment>();
-        //    DataTable dataTable = dbAcess.SearchAppointmentsByPersionID(personId);
-
-        //    foreach (DataRow row in dataTable.Rows)
-        //    {
-        //        Appointment appointment = new Appointment();
-
-        //        appointment.Start_date = Convert.ToDateTime(row["start_date"]);
-        //        appointment.AppointmentID = Convert.ToInt32(row["appointment_id"]);
-
-        //        myappointments.Add(appointment);
-        //    }
-        //    return myappointments;
-        //}
-
-        // We don't need this function.
-
-        public List<Appointment> SearchAppointmentsByStaffID(int staffId)
-        {
-            List<Appointment> myappointments = new List<Appointment>();
-            DataTable dataTable = dbAcess.SearchAppointmentsByStaffID(staffId);
-
-            foreach (DataRow row in dataTable.Rows)
-            {
-                Appointment appointment = new Appointment();
-
-                appointment.Start_date = Convert.ToDateTime(row["start_date"]);
-                appointment.AppointmentID = Convert.ToInt32(row["appointment_id"]);
-
-                myappointments.Add(appointment);
-            }
-            return myappointments;
-        }
-
-
-        public List<Patient> getAppointmnetsOfToday(int staffID)
-        {
-            List<Patient> myappointments = new List<Patient>();
-            DataTable dataTable = dbAcess.SearchAppointmentsOfToday(staffID);
-
-            foreach (DataRow row in dataTable.Rows)
-            {
-                Patient appointment = new Patient();
-
-                appointment.FirstName = Convert.ToString(row["first_name"]);
-                appointment.LastName = Convert.ToString(row["last_name"]);
-                appointment.DateOfBirth = Convert.ToDateTime(row["date_of_birth"]);
-                appointment.InsuranceNumber = Convert.ToString(row["insurance_number"]);
-                appointment.PatientID = Convert.ToInt32(row["patient_id"]);
-                appointment.MobileNumber = Convert.ToString(row["mobile_number"]);
-
-                myappointments.Add(appointment);
-            }
-            return myappointments;
-        }
-
         Patient IAppointment.Login(string email, string password)
         {
             Patient p = new Patient();
@@ -130,6 +70,12 @@ namespace Appointment_Serves
         public DataTable getAppointmentsHistorybyPatient(string un)
         {
             DataTable dataTable = dbAcess.SearchAppointmentsByPatientUsername(un);
+            return dataTable;
+        }
+
+        public DataTable getDoctorsList()
+        {
+            DataTable dataTable = dbAcess.GetDoctors();
             return dataTable;
         }
     }
