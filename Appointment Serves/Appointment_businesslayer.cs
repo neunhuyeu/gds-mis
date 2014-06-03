@@ -95,15 +95,13 @@ namespace Appointment_Serves
             DateTime date;
             IFormatProvider culture = new System.Globalization.CultureInfo("en-US", true);
             date = DateTime.Parse(startDate, culture);
-            DataTable dt = GetTodayAppointments(staffLastName, date);
+            
+            //DataTable dt = GetTodayAppointments(staffLastName, date);
 
             int staffId = dbAcess.GetStaffId(staffLastName);
             int patientId = dbAcess.GetPatientId(patientMail);
 
-            if (dt != null)
-                return dbAcess.addAppointmrnt(staffId, patientId, startDate, endDate);
-            else return
-                false;
+            return dbAcess.addAppointmrnt(staffId, patientId, startDate, endDate);
         }
     }
 }

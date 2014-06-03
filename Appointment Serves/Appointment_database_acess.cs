@@ -7,6 +7,7 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Configuration;
 using MySql.Data.MySqlClient;
+using System.Globalization;
 
 
 namespace Appointment_Serves
@@ -117,19 +118,19 @@ namespace Appointment_Serves
 
         public DataTable GetAppointmentsToday(string staffLastName, DateTime start_date)
         {
-            string query = string.Format("select appointment_id "
-                                        + "from appointments "
-                                        + "Where staff_id = (select staff_id "
-                                                           + "from staff_info "
-                                                           + "where last_name = @staffLastName) "
+            string query = string.Format("select appointment_id  "
+                                        + "from appointments  "
+                                        + "Where staff_id = (select staff_id  "
+                                                           + "from staff_info  "
+                                                           + "where last_name = @staffLastName)  "
                                         + "AND start_date = @start_date");
             MySqlParameter[] sqlParameters = new MySqlParameter[2];
             sqlParameters[0] = new MySqlParameter("@start_date", MySqlDbType.DateTime);
-            string caseTime = start_date.ToString("yyyy-MM-dd HH:mm:ss");
-            sqlParameters[0].Value = caseTime;
+            string dateString = start_date.ToString("yyyy-MM-dd HH:mm:ss");
+            sqlParameters[0].Value = dateString;
             sqlParameters[1] = new MySqlParameter("@StaffID", MySqlDbType.String);
-            sqlParameters[1].Value = Convert.ToString(staffLastName);
-            return dbConnection.SelectQuery(query);
+            sqlParameters[1].Value = staffLastName;
+            return dbConnection.SelectQuery(query, sqlParameters);
         }
 
         public bool addAppointmrnt(int staffId, int patientId, string startDate, string endDate)
@@ -186,7 +187,7 @@ namespace Appointment_Serves
             DataTable dt = dbConnection.SelectQuery(query, sqlParameters);
             if (dt.Rows.Count > 0)
             {
-                patientId = Convert.ToInt32(dt.Rows[0]);
+                patientId = Convert.ToInt32(dt.Rows[0][0]);
             }
             return patientId;
         }
@@ -205,7 +206,7 @@ namespace Appointment_Serves
             DataTable dt = dbConnection.SelectQuery(query, sqlParameters);
             if (dt.Rows.Count > 0)
             {
-                staffId = Convert.ToInt32(dt.Rows[0]);
+                staffId = Convert.ToInt32(dt.Rows[0][0]);
             }
             return staffId;
         }
