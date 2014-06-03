@@ -115,6 +115,99 @@ namespace Appointment_Serves
             return dbConnection.SelectQuery(query);
         }
 
+        public DataTable GetAppointmentsToday(string staffLastName, DateTime start_date)
+        {
+            string query = string.Format("select appointment_id "
+                                        + "from appointments "
+                                        + "Where staff_id = (select staff_id "
+                                                           + "from staff_info "
+                                                           + "where last_name = @staffLastName) "
+                                        + "AND start_date = @start_date");
+            MySqlParameter[] sqlParameters = new MySqlParameter[2];
+            sqlParameters[0] = new MySqlParameter("@start_date", MySqlDbType.DateTime);
+            string caseTime = start_date.ToString("yyyy-MM-dd HH:mm:ss");
+            sqlParameters[0].Value = caseTime;
+            sqlParameters[1] = new MySqlParameter("@StaffID", MySqlDbType.String);
+            sqlParameters[1].Value = Convert.ToString(staffLastName);
+            return dbConnection.SelectQuery(query);
+        }
 
+        public bool addAppointmrnt(int staffId, int patientId, string startDate, string endDate)
+        {
+            string query = string.Format("INSERT INTO appointments (appointment_id, staff_id, patient_id, start_date, end_date) "
+                                + "VALUES (@appId, @staffId, @patientId, @startDate, @endDate)");
+            MySqlParameter[] sqlParameters = new MySqlParameter[5];
+
+            IFormatProvider culture = new System.Globalization.CultureInfo("en-US", true);
+            DateTime date;
+
+            int appId = newAppointmentId();
+
+            sqlParameters[0] = new MySqlParameter("@appId", MySqlDbType.Int32);
+            sqlParameters[0].Value = appId;
+            sqlParameters[1] = new MySqlParameter("@staffId", MySqlDbType.Int32);
+            sqlParameters[1].Value = staffId;
+            sqlParameters[2] = new MySqlParameter("@patientId", MySqlDbType.Int32);
+            sqlParameters[2].Value = patientId;
+            sqlParameters[3] = new MySqlParameter("@startDate", MySqlDbType.DateTime);
+            date = DateTime.Parse(startDate, culture);
+            sqlParameters[3].Value = date;
+            sqlParameters[4] = new MySqlParameter("@endDate", MySqlDbType.DateTime);
+            date = DateTime.Parse(endDate, culture);
+            sqlParameters[4].Value = date;
+            
+            return dbConnection.InsertQuery(query, sqlParameters);
+        }
+
+        private int newAppointmentId()
+        {
+            string query = "SELECT MAX(appointment_id)+1 as new FROM appointments";
+            int result;
+            try
+            {
+                // Execute query on person table.
+                result = Convert.ToInt32(dbConnection.SelectQuery(query).Rows[0]["new"]);
+            }
+            catch { return -1; }
+            return result;
+        }
+
+        internal int GetPatientId(string patientMail)
+        {
+            int patientId = -1;
+            string query = string.Format("SELECT patient_id " +
+                                        "FROM patient_info " +
+                                        "WHERE email_address = @patientMail");
+
+            MySqlParameter[] sqlParameters = new MySqlParameter[1];
+            sqlParameters[0] = new MySqlParameter("@patientMail", MySqlDbType.String);
+            sqlParameters[0].Value = Convert.ToString(patientMail);
+
+            DataTable dt = dbConnection.SelectQuery(query, sqlParameters);
+            if (dt.Rows.Count > 0)
+            {
+                patientId = Convert.ToInt32(dt.Rows[0]);
+            }
+            return patientId;
+        }
+
+        internal int GetStaffId(string staffLastName)
+        {
+            int staffId = -1;
+            string query = string.Format("SELECT staff_id " +
+                                        "FROM staff_info " +
+                                        "WHERE last_name = @staffLastName");
+
+            MySqlParameter[] sqlParameters = new MySqlParameter[1];
+            sqlParameters[0] = new MySqlParameter("@staffLastName", MySqlDbType.String);
+            sqlParameters[0].Value = Convert.ToString(staffLastName);
+
+            DataTable dt = dbConnection.SelectQuery(query, sqlParameters);
+            if (dt.Rows.Count > 0)
+            {
+                staffId = Convert.ToInt32(dt.Rows[0]);
+            }
+            return staffId;
+        }
     }
 }

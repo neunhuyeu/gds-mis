@@ -78,5 +78,32 @@ namespace Appointment_Serves
             DataTable dataTable = dbAcess.GetDoctors();
             return dataTable;
         }
+
+        DataTable GetTodayAppointments(string staffLastName, DateTime start_date)
+        {
+            DataTable dt = dbAcess.GetAppointmentsToday(staffLastName, start_date);
+
+            if (dt.Rows.Count > 0)
+            {
+                return dt;
+            }
+            return null;
+        }
+
+        public bool AddAppointment(string staffLastName, string patientMail, string startDate, string endDate)
+        {
+            DateTime date;
+            IFormatProvider culture = new System.Globalization.CultureInfo("en-US", true);
+            date = DateTime.Parse(startDate, culture);
+            DataTable dt = GetTodayAppointments(staffLastName, date);
+
+            int staffId = dbAcess.GetStaffId(staffLastName);
+            int patientId = dbAcess.GetPatientId(patientMail);
+
+            if (dt != null)
+                return dbAcess.addAppointmrnt(staffId, patientId, startDate, endDate);
+            else return
+                false;
+        }
     }
 }

@@ -20,5 +20,7 @@ namespace Appointment_Serves
         DataTable getAppointmentsHistorybyPatient(string un);
         [OperationContract]
         DataTable getDoctorsList();
+        [OperationContract]
+        bool AddAppointment(string staffLastName, string patientMail, string startDate, string endDate);
     }
 }
