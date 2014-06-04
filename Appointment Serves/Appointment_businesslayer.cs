@@ -73,21 +73,17 @@ namespace Appointment_Serves
             return dataTable;
         }
 
-        public DataTable getDoctorsList()
+        bool ValidateAppointment(DateTime start_date)
         {
-            DataTable dataTable = dbAcess.GetDoctors();
-            return dataTable;
-        }
+            DataTable dt = dbAcess.GetAppointmentStartDates();
 
-        DataTable GetTodayAppointments(string staffLastName, DateTime start_date)
-        {
-            DataTable dt = dbAcess.GetAppointmentsToday(staffLastName, start_date);
-
-            if (dt.Rows.Count > 0)
+            foreach (DataRow dr in dt.Rows)
             {
-                return dt;
+                if (dr.ItemArray[0].ToString() == start_date.ToString())
+                    return false;
+
             }
-            return null;
+            return true;
         }
 
         public bool AddAppointment(string staffLastName, string patientMail, string startDate, string endDate)
@@ -95,13 +91,16 @@ namespace Appointment_Serves
             DateTime date;
             IFormatProvider culture = new System.Globalization.CultureInfo("en-US", true);
             date = DateTime.Parse(startDate, culture);
-            
-            //DataTable dt = GetTodayAppointments(staffLastName, date);
 
-            int staffId = dbAcess.GetStaffId(staffLastName);
-            int patientId = dbAcess.GetPatientId(patientMail);
+            if (ValidateAppointment(date))
+            {
+                int staffId = dbAcess.GetStaffId(staffLastName);
+                int patientId = dbAcess.GetPatientId(patientMail);
 
-            return dbAcess.addAppointmrnt(staffId, patientId, startDate, endDate);
+                return dbAcess.addAppointmrnt(staffId, patientId, startDate, endDate);
+            }
+            else
+                return false;
         }
     }
 }

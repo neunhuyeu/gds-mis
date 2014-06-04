@@ -116,21 +116,10 @@ namespace Appointment_Serves
             return dbConnection.SelectQuery(query);
         }
 
-        public DataTable GetAppointmentsToday(string staffLastName, DateTime start_date)
+        public DataTable GetAppointmentStartDates()
         {
-            string query = string.Format("select appointment_id  "
-                                        + "from appointments  "
-                                        + "Where staff_id = (select staff_id  "
-                                                           + "from staff_info  "
-                                                           + "where last_name = @staffLastName)  "
-                                        + "AND start_date = @start_date");
-            MySqlParameter[] sqlParameters = new MySqlParameter[2];
-            sqlParameters[0] = new MySqlParameter("@start_date", MySqlDbType.DateTime);
-            string dateString = start_date.ToString("yyyy-MM-dd HH:mm:ss");
-            sqlParameters[0].Value = dateString;
-            sqlParameters[1] = new MySqlParameter("@StaffID", MySqlDbType.String);
-            sqlParameters[1].Value = staffLastName;
-            return dbConnection.SelectQuery(query, sqlParameters);
+            string query = string.Format("select start_date from appointments");
+            return dbConnection.SelectQuery(query);
         }
 
         public bool addAppointmrnt(int staffId, int patientId, string startDate, string endDate)
