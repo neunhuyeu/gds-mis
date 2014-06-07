@@ -38,6 +38,18 @@
   <wsdl:message name="IAppointment_getAppointmentsHistorybyPatientID_OutputMessage">
     <wsdl:part name="parameters" element="tns:getAppointmentsHistorybyPatientIDResponse" />
   </wsdl:message>
+  <wsdl:message name="IAppointment_getAppointmentsHistorybyPatient_InputMessage">
+    <wsdl:part name="parameters" element="tns:getAppointmentsHistorybyPatient" />
+  </wsdl:message>
+  <wsdl:message name="IAppointment_getAppointmentsHistorybyPatient_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getAppointmentsHistorybyPatientResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAppointment_AddAppointment_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddAppointment" />
+  </wsdl:message>
+  <wsdl:message name="IAppointment_AddAppointment_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddAppointmentResponse" />
+  </wsdl:message>
   <wsdl:portType name="IAppointment">
     <wsdl:operation name="Login">
       <wsdl:input wsaw:Action="http://tempuri.org/IAppointment/Login" message="tns:IAppointment_Login_InputMessage" />
@@ -58,6 +70,14 @@
     <wsdl:operation name="getAppointmentsHistorybyPatientID">
       <wsdl:input wsaw:Action="http://tempuri.org/IAppointment/getAppointmentsHistorybyPatientID" message="tns:IAppointment_getAppointmentsHistorybyPatientID_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IAppointment/getAppointmentsHistorybyPatientIDResponse" message="tns:IAppointment_getAppointmentsHistorybyPatientID_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getAppointmentsHistorybyPatient">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAppointment/getAppointmentsHistorybyPatient" message="tns:IAppointment_getAppointmentsHistorybyPatient_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAppointment/getAppointmentsHistorybyPatientResponse" message="tns:IAppointment_getAppointmentsHistorybyPatient_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddAppointment">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAppointment/AddAppointment" message="tns:IAppointment_AddAppointment_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAppointment/AddAppointmentResponse" message="tns:IAppointment_AddAppointment_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_IAppointment" type="tns:IAppointment">
@@ -100,6 +120,24 @@
     </wsdl:operation>
     <wsdl:operation name="getAppointmentsHistorybyPatientID">
       <soap:operation soapAction="http://tempuri.org/IAppointment/getAppointmentsHistorybyPatientID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getAppointmentsHistorybyPatient">
+      <soap:operation soapAction="http://tempuri.org/IAppointment/getAppointmentsHistorybyPatient" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddAppointment">
+      <soap:operation soapAction="http://tempuri.org/IAppointment/AddAppointment" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

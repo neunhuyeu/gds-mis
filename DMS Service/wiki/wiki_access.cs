@@ -17,7 +17,7 @@ namespace DMS_Service.wiki
 
         public wiki_access()
         {
-            db_con = new db_connection("gds_mis_wiki");
+            db_con = new db_connection("gds_wiki");
         }
 
         public DataTable get_all_diseases()
@@ -38,7 +38,7 @@ namespace DMS_Service.wiki
         {
             string parameters = "";
             string query = "Select * from diseases ";
-            if (name.Length > 0 || symptoms.Length > 0 || classification.Length > 0 )
+            if (name.Length > 0 || symptoms.Length > 0 || classification.Length > 0)
             {
                 query += " WHERE";
                 if (name.Length > 0)
@@ -87,7 +87,7 @@ namespace DMS_Service.wiki
                 }
                 query = string.Format(query);
             }
-            return db_con.SelectQuery(query);
+            return (sqlParameters == null) ? db_con.SelectQuery(query) : db_con.SelectQuery(query, sqlParameters);
         }
 
         public DataTable search_medicine(string name, string side_effects, string classification)
@@ -99,7 +99,7 @@ namespace DMS_Service.wiki
                 query += " WHERE";
                 if (name.Length > 0)
                 {
-                    query += " name like @name";
+                    query += " name like ?name";
                     parameters += "n";
                 }
                 if (side_effects.Length > 0)
@@ -126,7 +126,7 @@ namespace DMS_Service.wiki
                 if (parameters[index] == 'n')
                 {
                     index++;
-                    sqlParameters[index - 1] = new MySqlParameter("@name", MySqlDbType.VarChar);
+                    sqlParameters[index - 1] = new MySqlParameter("?name", MySqlDbType.VarChar);
                     sqlParameters[index - 1].Value = Convert.ToString("%" + name + "%");
                 }
                 if (parameters[index] == 's')
@@ -143,7 +143,7 @@ namespace DMS_Service.wiki
                 }
                 query = string.Format(query);
             }
-            return db_con.SelectQuery(query);
+            return (sqlParameters == null) ? db_con.SelectQuery(query) : db_con.SelectQuery(query, sqlParameters);
         }
     }
 }

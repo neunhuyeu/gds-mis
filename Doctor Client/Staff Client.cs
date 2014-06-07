@@ -184,10 +184,13 @@ namespace Doctor_Client
             if (tabs.SelectedIndex == 3)
             {
                 tabs.SelectedIndex = lastTabIndex;
-                Thread t1 = new Thread(NewWiki);
-                t1.Name = "wiki Thread";
-                t1.IsBackground = true;
-                t1.Start();
+                Wiki wiki = new Wiki();
+                wiki.isclosed = false;
+                wiki.Show();
+                //Thread t1 = new Thread(NewWiki);
+                //t1.Name = "wiki Thread";
+                //t1.IsBackground = true;
+                //t1.Start();
             }
             else 
             {
@@ -203,7 +206,8 @@ namespace Doctor_Client
          wiki.Show();
            while(!wiki.isclosed)
             {
-                Application.DoEvents();
+                
+               Application.DoEvents();
             }
 }
         

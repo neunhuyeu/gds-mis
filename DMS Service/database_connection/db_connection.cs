@@ -46,7 +46,7 @@ namespace DMS_Service.database_connection
                     {
                         cmd.Connection = con;
                         cmd.CommandText = query;
-                        cmd.ExecuteNonQuery();
+                        cmd.ExecuteReader();
 
                         using (MySqlDataAdapter dt_adapter = new MySqlDataAdapter())
                         {

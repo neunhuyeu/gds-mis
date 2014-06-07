@@ -38,72 +38,40 @@ namespace Doctor_Client
             diseasList = new List<Disease>(proxy.get_all_diseases());
             foreach (Disease illness in diseasList)
             {
-                DiseaseSearch.Items.Add(illness);
+                DiseaseSearch.Items.Add(illness.namek__BackingField);
             }
 
             medicinelist = new List<Medicine>(proxy.get_all_medicines());
             foreach (Medicine drug in medicinelist)
             {
-                DiseaseSearch.Items.Add(drug);
+                MedicineSearch.Items.Add(drug.name);
             }
-        }
-
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void groupBox1_Enter(object sender, EventArgs e)
-        {
-
-        }
-
-        private void symtomsDeseasSearch_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            DiseaseSearch.Items.Clear();
-            proxy.search_disease(diseaseName.Text, symtomsDeseasSearch.Text, clasificationDeseasSearch.Text);
-            
-        }
-
-        private void ClassificationSearch_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            MedicineSearch.Items.Clear();
-            proxy.search_medicine(MedNameSearch.Text, SideEffectSearch.Text, ClassificationSearch.Text);
-            
-        }
-
-        private void MedNameSearch_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void SideEffectSearch_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void ClassificationSearch_TextChanged(object sender, EventArgs e)
-        {
-
         }
 
         private void MedicineSearch_SelectedIndexChanged(object sender, EventArgs e)
         {
-            DiseaseSearch.ClearSelected();
+            //DiseaseSearch.ClearSelected();
             Medicine Med = medicinelist[MedicineSearch.SelectedIndex];
-            InfoPanel.Text = "Medicine Name: " + Med.name + "\n Strength: " + Med.strength_mg + "\n Known Information" + Med.description;
+ 
+            info_box.Text = ("Medicine Name: " + Med.name);
+            info_box.Text += "\n" + ("--------------------------");
+            info_box.Text += "\n" + ("Strength: " + Med.strength_mg);
+            info_box.Text += "\n" + ("--------------------------");
+            info_box.Text += "\n" + ("Description: " + Med.description);
         }
 
         private void DiseaseSearch_SelectedIndexChanged(object sender, EventArgs e)
         {
-            MedicineSearch.ClearSelected();
-            Disease illness = diseasList[MedicineSearch.SelectedIndex];
-            InfoPanel.Text = "Diseas Name: " + illness.namek__BackingField + "\n symptoms: " + illness.symptomsk__BackingField + "\n Treatment" + illness.treatmentsk__BackingField;
+            //MedicineSearch.ClearSelected();
+            Disease illness = diseasList[DiseaseSearch.SelectedIndex];
+
+            info_box.Text = ("Diseas Name: " + illness.namek__BackingField);
+            info_box.Text += "\n" + ("--------------------------");
+            info_box.Text += "\n" + ("Symptoms: \n");
+            foreach (string str in illness.symptomsk__BackingField) { info_box.Text += "\t" + str + "\n"; }
+            info_box.Text += "\n" + ("--------------------------");
+            info_box.Text += "\n" + ("Treatments: \n");
+            foreach (string str in illness.treatmentsk__BackingField) { info_box.Text += "\t" + str + "\n"; }
   
         }
 
@@ -125,6 +93,35 @@ namespace Doctor_Client
         private void Wiki_FormClosed(object sender, FormClosedEventArgs e)
         {
             isclosed = true;
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        public void search_meds(object sender, EventArgs e)
+        {
+            MedicineSearch.Items.Clear();
+            medicinelist.Clear();
+            Medicine[] result = proxy.search_medicine(MedNameSearch.Text, SideEffectSearch.Text, ClassificationSearch.Text);
+            foreach(Medicine med in result)
+            {
+                medicinelist.Add(med);
+                MedicineSearch.Items.Add(med.name);
+            }
+        }
+
+        public void search_disease(object sender, EventArgs e)
+        {
+            DiseaseSearch.Items.Clear();
+            diseasList.Clear();
+            Disease[] result = proxy.search_disease(diseaseName.Text, symtomsDeseasSearch.Text, clasificationDeseasSearch.Text);
+            foreach (Disease dis in result)
+            {
+                diseasList.Add(dis);
+                DiseaseSearch.Items.Add(dis.namek__BackingField);
+            }
         }
     }
 }

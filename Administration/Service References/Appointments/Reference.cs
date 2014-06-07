@@ -199,7 +199,7 @@ namespace Administration.Appointments {
     [System.SerializableAttribute()]
     public partial class Patient : Administration.Appointments.Person {
         
-        private char BloodTypek__BackingFieldField;
+        private string BloodTypek__BackingFieldField;
         
         private int ConsultationIdk__BackingFieldField;
         
@@ -218,12 +218,12 @@ namespace Administration.Appointments {
         private int Weightk__BackingFieldField;
         
         [System.Runtime.Serialization.DataMemberAttribute(Name="<BloodType>k__BackingField", IsRequired=true)]
-        public char BloodTypek__BackingField {
+        public string BloodTypek__BackingField {
             get {
                 return this.BloodTypek__BackingFieldField;
             }
             set {
-                if ((this.BloodTypek__BackingFieldField.Equals(value) != true)) {
+                if ((object.ReferenceEquals(this.BloodTypek__BackingFieldField, value) != true)) {
                     this.BloodTypek__BackingFieldField = value;
                     this.RaisePropertyChanged("BloodTypek__BackingField");
                 }
@@ -466,11 +466,23 @@ namespace Administration.Appointments {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAppointment/SearchAppointmentsByStaffID", ReplyAction="http://tempuri.org/IAppointment/SearchAppointmentsByStaffIDResponse")]
         System.Threading.Tasks.Task<Administration.Appointments.Appointment[]> SearchAppointmentsByStaffIDAsync(int staffId);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAppointment/getAppointmentsHistorybyPatient", ReplyAction="http://tempuri.org/IAppointment/getAppointmentsHistorybyPatientResponse")]
-        System.Data.DataTable getAppointmentsHistorybyPatient(int personId);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAppointment/getAppointmentsHistorybyPatientID", ReplyAction="http://tempuri.org/IAppointment/getAppointmentsHistorybyPatientIDResponse")]
+        System.Data.DataTable getAppointmentsHistorybyPatientID(int ID);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAppointment/getAppointmentsHistorybyPatientID", ReplyAction="http://tempuri.org/IAppointment/getAppointmentsHistorybyPatientIDResponse")]
+        System.Threading.Tasks.Task<System.Data.DataTable> getAppointmentsHistorybyPatientIDAsync(int ID);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAppointment/getAppointmentsHistorybyPatient", ReplyAction="http://tempuri.org/IAppointment/getAppointmentsHistorybyPatientResponse")]
-        System.Threading.Tasks.Task<System.Data.DataTable> getAppointmentsHistorybyPatientAsync(int personId);
+        System.Data.DataTable getAppointmentsHistorybyPatient(string un);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAppointment/getAppointmentsHistorybyPatient", ReplyAction="http://tempuri.org/IAppointment/getAppointmentsHistorybyPatientResponse")]
+        System.Threading.Tasks.Task<System.Data.DataTable> getAppointmentsHistorybyPatientAsync(string un);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAppointment/AddAppointment", ReplyAction="http://tempuri.org/IAppointment/AddAppointmentResponse")]
+        bool AddAppointment(string staffLastName, string patientMail, string startDate, string endDate);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAppointment/AddAppointment", ReplyAction="http://tempuri.org/IAppointment/AddAppointmentResponse")]
+        System.Threading.Tasks.Task<bool> AddAppointmentAsync(string staffLastName, string patientMail, string startDate, string endDate);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -532,12 +544,28 @@ namespace Administration.Appointments {
             return base.Channel.SearchAppointmentsByStaffIDAsync(staffId);
         }
         
-        public System.Data.DataTable getAppointmentsHistorybyPatient(int personId) {
-            return base.Channel.getAppointmentsHistorybyPatient(personId);
+        public System.Data.DataTable getAppointmentsHistorybyPatientID(int ID) {
+            return base.Channel.getAppointmentsHistorybyPatientID(ID);
         }
         
-        public System.Threading.Tasks.Task<System.Data.DataTable> getAppointmentsHistorybyPatientAsync(int personId) {
-            return base.Channel.getAppointmentsHistorybyPatientAsync(personId);
+        public System.Threading.Tasks.Task<System.Data.DataTable> getAppointmentsHistorybyPatientIDAsync(int ID) {
+            return base.Channel.getAppointmentsHistorybyPatientIDAsync(ID);
+        }
+        
+        public System.Data.DataTable getAppointmentsHistorybyPatient(string un) {
+            return base.Channel.getAppointmentsHistorybyPatient(un);
+        }
+        
+        public System.Threading.Tasks.Task<System.Data.DataTable> getAppointmentsHistorybyPatientAsync(string un) {
+            return base.Channel.getAppointmentsHistorybyPatientAsync(un);
+        }
+        
+        public bool AddAppointment(string staffLastName, string patientMail, string startDate, string endDate) {
+            return base.Channel.AddAppointment(staffLastName, patientMail, startDate, endDate);
+        }
+        
+        public System.Threading.Tasks.Task<bool> AddAppointmentAsync(string staffLastName, string patientMail, string startDate, string endDate) {
+            return base.Channel.AddAppointmentAsync(staffLastName, patientMail, startDate, endDate);
         }
     }
 }
