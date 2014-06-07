@@ -32,6 +32,9 @@ namespace DMS_Service
         [OperationContract]
         bool ping();
 
+        [OperationContract]
+        bool setBackup(byte[] gds_mis, byte[] gds_mis_agenda, byte[] gds_mis_auth);
+
     }
 
     [DataContract]

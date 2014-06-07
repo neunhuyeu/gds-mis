@@ -8,6 +8,7 @@ using System.Configuration;
 using MySql.Data.MySqlClient;
 using DMS_Service.database_connection;
 using DMS_Service.Structs;
+using System.IO;
 
 namespace DMS_Service
 {
@@ -737,6 +738,20 @@ namespace DMS_Service
             sqlParameters[1].Value = Convert.ToString(staffID);
 
             return dbConnection.SelectQuery(query, sqlParameters);
+        }
+
+        public bool executeScript(string path)
+        {
+            bool result = false;
+            string contents = File.ReadAllText(path);
+
+            try
+            {
+                result = dbConnection.executeScript(contents);
+            }
+            catch (Exception e) { return false; }
+
+            return result;
         }
     }
 }

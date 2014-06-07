@@ -177,5 +177,27 @@ namespace DMS_Service.database_connection
             return true;
         }
 
+        public bool executeScript(string sqlscript)
+        {
+
+            try
+            {
+                using (MySqlConnection con = new MySqlConnection(db_connection_string))
+                {
+                    MySqlScript script = new MySqlScript(con, sqlscript);
+
+                    con.Open();
+                    script.Execute();
+                    con.Close();
+                }
+
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+        }
+
     }
 }
