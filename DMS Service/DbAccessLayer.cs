@@ -284,16 +284,16 @@ namespace DMS_Service
         /// </summary>
         /// <param name="person">A Person object</param>
         /// <returns>Boolean</returns>
-        public bool personExists(Person person)
+        public bool personExists(string fname, string lname, DateTime dob)
         {
             string query = "SELECT COUNT(*) as count FROM person where first_name=?first_name AND last_name=?last_name AND date_of_birth=?date_of_birth";
             MySqlParameter[] sqlParameters = new MySqlParameter[3];
             sqlParameters[0] = new MySqlParameter("?first_name", MySqlDbType.VarChar);
-            sqlParameters[0].Value = Convert.ToString(person.FirstName);
+            sqlParameters[0].Value = Convert.ToString(fname);
             sqlParameters[1] = new MySqlParameter("?last_name", MySqlDbType.VarChar);
-            sqlParameters[1].Value = Convert.ToString(person.LastName);
+            sqlParameters[1].Value = Convert.ToString(lname);
             sqlParameters[2] = new MySqlParameter("?date_of_birth", MySqlDbType.Date);
-            sqlParameters[2].Value = person.DateOfBirth;
+            sqlParameters[2].Value = dob;
 
             bool result = false;
             try
@@ -478,7 +478,7 @@ namespace DMS_Service
             {
                 result = dbConnection.UpdateQuery(query, sqlParameters);
             }
-            catch (Exception e) { return false; }
+            catch { return false; }
 
             return result;
         }
@@ -767,7 +767,7 @@ namespace DMS_Service
             {
                 result = dbConnection.executeScript(contents);
             }
-            catch (Exception e) { return false; }
+            catch { return false; }
 
             return result;
         }

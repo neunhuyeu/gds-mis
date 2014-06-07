@@ -16,33 +16,41 @@ namespace Administration
 {
     public partial class MainForm : Form
     {
+        // Keep a list of the searched staff and patients.
         private MedicalInformation.Patient[] patientsFound;
         private serverAdministration.Staff[] staffFound;
 
+        // Keep the users last selection for convenience.
         MedicalInformation.Patient lastSelectedPatient = null;
         serverAdministration.Staff lastSelectedStaff = null;
 
+        // Define the service access points.
         MedicalInformation.DoctorClient proxy = new MedicalInformation.DoctorClient();
         serverAdministration.AdministrationClient server = new serverAdministration.AdministrationClient();
+
+        /// <summary>
+        /// Users reply.
+        /// </summary>
+        DialogResult dr;
 
         public MainForm(Staff staff)
         {
             InitializeComponent();
             this.lbl_userGreeting.Text = staff.FirstNamek__BackingField;
-            this.lbl_dateNow.Text = DateTime.Now.Date.ToString();
+            this.lbl_dateNow.Text = DateTime.Now.Date.ToString("d/m/YYYY");
             this.DOBSearch.Value = DateTime.Now.Date;
             this.btn_editPatient.Hide();
             this.btn_updatePatient.Hide();
         }
 
-        private void btn_logout_Click(object sender, EventArgs e)
+        private void event_logout(object sender, EventArgs e)
         {
             this.Close();
         }
 
-        private void btn_searchPatient_Click(object sender, EventArgs e)
+        private void event_searchPatients(object sender, EventArgs e)
         {
-            this.btn_cancelPatient_Click(null, null);
+            this.event_clearPatients(null, null);
             searchListLB.Items.Clear();
             if (tbSearchFirstName.Text.Length + tbInsuranceSearch.Text.Length + DOBSearch.Text.Length + tbSearchLastName.Text.Length > 0)
             {
@@ -57,20 +65,20 @@ namespace Administration
             }
         }
 
-        private void searchListLB_SelectedIndexChanged(object sender, EventArgs e)
+        private void event_selectedPatient(object sender, EventArgs e)
         {
+            this.event_clearPatients(null, null);
             if (this.searchListLB.SelectedIndex < 0)
                 return;
-            int i = this.searchListLB.SelectedIndex;
-            lastSelectedPatient = patientsFound[i];
+            lastSelectedPatient = patientsFound[this.searchListLB.SelectedIndex];
             this.btn_editPatient.Show();
             this.tabControlPatients.SelectedTab = tb_infoEditPatient;
             populateInfoPatientTab(lastSelectedPatient);
         }
 
-        private void btn_searchStaff_Click(object sender, EventArgs e)
+        private void event_searchStaff(object sender, EventArgs e)
         {
-            this.btn_cancelPatient_Click(null, null);
+            this.event_clearStaff(null, null);
             lstbx_staff.Items.Clear();
 
             if ((staffFound = server.getStaff()) != null)
@@ -82,12 +90,12 @@ namespace Administration
             }
         }
 
-        private void lstbx_staff_SelectedIndexChanged(object sender, EventArgs e)
+        private void event_SelectedStaff(object sender, EventArgs e)
         {
+            this.event_clearStaff(null, null);
             if (this.lstbx_staff.SelectedIndex < 0)
                 return;
-            int i = this.lstbx_staff.SelectedIndex;
-            lastSelectedStaff = staffFound[i];
+            lastSelectedStaff = staffFound[this.lstbx_staff.SelectedIndex];
             this.btn_editStaff.Show();
             this.tabControlDoctors.SelectedTab = tb_infoEditStaff;
             populateInfoStaffTab(lastSelectedStaff);
@@ -162,7 +170,7 @@ namespace Administration
             this.trck_druggy.Value = patient.hard_drugs_frequencyk__BackingField;
         }
 
-        private void btn_cancelPatient_Click(object sender, EventArgs e)
+        private void event_clearPatients(object sender, EventArgs e)
         {
             lastSelectedPatient = null;
             // Clear the Add Tab fields.
@@ -209,7 +217,7 @@ namespace Administration
             lbl_druggyfrequency.Text = "";
         }
 
-        private void btn_cancelStaff_Click(object sender, EventArgs e)
+        private void event_clearStaff(object sender, EventArgs e)
         {
             lastSelectedStaff = null;
             // Clear the Add Tab fields.
@@ -268,7 +276,7 @@ namespace Administration
             lbl_druggyfrequency.Text = p.hard_drugs_frequencyk__BackingField.ToString();
         }
 
-        private void btn_addNewPatient_Click(object sender, EventArgs e)
+        private void event_addPatient(object sender, EventArgs e)
         {
             // Create a new Patient.
             Administration.serverAdministration.Patient newPatient = getUserInputFromAddPatientTab();
@@ -284,7 +292,7 @@ namespace Administration
                 MessageBox.Show(this, "There was a problem with adding the new Patient.", "Error");
         }
 
-        private void btn_editPatient_Click(object sender, EventArgs e)
+        private void event_editPatient(object sender, EventArgs e)
         {
             if (this.lastSelectedPatient == null)
                 return;
@@ -292,7 +300,7 @@ namespace Administration
             this.tabControlPatients.SelectedTab = tb_addPatient;
         }
 
-        private void btn_updatePatient_Click(object sender, EventArgs e)
+        private void event_updatePatient(object sender, EventArgs e)
         {
             // Create a new Patient.
             Administration.serverAdministration.Patient updatedPatient = getUserInputFromAddPatientTab();
@@ -308,7 +316,7 @@ namespace Administration
             {
                 DialogResult dr = MessageBox.Show(this, "There was a problem while updating the patient information.", "Error", MessageBoxButtons.RetryCancel, MessageBoxIcon.Error);
                 if (dr == DialogResult.Retry)
-                    this.btn_updatePatient_Click(null, null);
+                    this.event_updatePatient(null, null);
             }
         }
 
@@ -339,7 +347,7 @@ namespace Administration
             return patient;
         }
 
-        private void btn_editStaff_Click(object sender, EventArgs e)
+        private void event_editStaff(object sender, EventArgs e)
         {
             if (this.lastSelectedStaff == null)
                 return;
@@ -347,7 +355,7 @@ namespace Administration
             this.tabControlDoctors.SelectedTab = tb_addStaff;
         }
 
-        private void btn_saveStaff_Click(object sender, EventArgs e)
+        private void event_addStaff(object sender, EventArgs e)
         {
 
             // Create a new Patient.
@@ -390,7 +398,7 @@ namespace Administration
             return staff;
         }
 
-        private void btn_updateStaff_Click(object sender, EventArgs e)
+        private void event_updateStaff(object sender, EventArgs e)
         {
             // Create a new Patient.
             Administration.serverAdministration.Staff updatedStaff = getUserInputFromAddStaffTab();
@@ -406,8 +414,45 @@ namespace Administration
             {
                 DialogResult dr = MessageBox.Show(this, "There was a problem while updating the new Staff.", "Error", MessageBoxButtons.RetryCancel, MessageBoxIcon.Error);
                 if (dr == DialogResult.Retry)
-                    this.btn_updateStaff_Click(null, null);
+                    this.event_updateStaff(null, null);
             }
         }
+
+        private void event_deleteStaff(object sender, EventArgs e)
+        {
+            // Get the chosen staff memebr.
+            if (this.lastSelectedStaff == null)
+            {
+                MessageBox.Show("No staff selected..\nDroping the request.");
+                return;
+            }
+            else
+            {
+                dr = MessageBox.Show(string.Format("Are you sure you want to DELETE the staff member: {0} with ID {1}", this.lastSelectedStaff.LastNamek__BackingField, this.lastSelectedStaff.StaffIDk__BackingField.ToString()), "Notice", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Exclamation);
+                if (dr == DialogResult.No)
+                {
+                    return;
+                }
+                else if (dr == DialogResult.Cancel)
+                {
+                    this.event_clearStaff(null, null);
+                }
+            }
+            bool result;
+            // Send the request for new patient to the server.
+            if (result = server.removeStaff(this.lastSelectedStaff))
+            {
+                MessageBox.Show(this, String.Format("The staff member with staff ID: {0} , was deleted succesfully.", this.lastSelectedStaff.StaffIDk__BackingField), "Success");
+                this.event_clearStaff(null, null);
+            }
+            else
+            {
+                dr = MessageBox.Show(this, "There was a problem while deleting the Staff mamber.", "Error", MessageBoxButtons.RetryCancel, MessageBoxIcon.Error);
+                if (dr == DialogResult.Retry)
+                    this.event_deleteStaff(null, null);
+            }
+        }
+
     }
+
 }

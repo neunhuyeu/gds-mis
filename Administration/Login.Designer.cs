@@ -35,6 +35,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.btnLogin = new System.Windows.Forms.Button();
             this.LoginErrorlb = new System.Windows.Forms.Label();
+            this.lbl_adminBanner = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // tbEmail
@@ -97,6 +98,16 @@
             this.LoginErrorlb.Size = new System.Drawing.Size(0, 13);
             this.LoginErrorlb.TabIndex = 5;
             // 
+            // lbl_adminBanner
+            // 
+            this.lbl_adminBanner.AutoSize = true;
+            this.lbl_adminBanner.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_adminBanner.Location = new System.Drawing.Point(100, 9);
+            this.lbl_adminBanner.Name = "lbl_adminBanner";
+            this.lbl_adminBanner.Size = new System.Drawing.Size(175, 20);
+            this.lbl_adminBanner.TabIndex = 6;
+            this.lbl_adminBanner.Text = "Administration Client";
+            // 
             // Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -105,6 +116,7 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.ClientSize = new System.Drawing.Size(398, 291);
+            this.Controls.Add(this.lbl_adminBanner);
             this.Controls.Add(this.LoginErrorlb);
             this.Controls.Add(this.btnLogin);
             this.Controls.Add(this.label2);
@@ -130,6 +142,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button btnLogin;
         private System.Windows.Forms.Label LoginErrorlb;
+        private System.Windows.Forms.Label lbl_adminBanner;
     }
 }
 

@@ -36,7 +36,7 @@ namespace DMS_Service
         public bool addPerson(Person person)
         {
             // TODO: Add better handling if database fails to insert.
-            return db.personExists(person) ? false : db.addPerson(person);
+            return db.personExists(person.FirstName,person.LastName,person.DateOfBirth) ? false : db.addPerson(person);
         }
 
         /// <summary>
@@ -136,7 +136,7 @@ namespace DMS_Service
         /// <returns>True on success | False on failure</returns>
         public bool addStaff(Staff staff)
         {
-            return db.personExists(staff) ? false : db.addStaff(staff);
+            return db.personExists(staff.FirstName,staff.LastName,staff.DateOfBirth) ? false : db.addStaff(staff);
         }
 
         /// <summary>

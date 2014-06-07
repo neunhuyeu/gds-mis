@@ -120,7 +120,10 @@
     <None Include="Service References\Appointments\service1.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\Appointments\System.Data13.xsd">
+    <None Include="Service References\Appointments\System.Data1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\Appointments\System.Data2.xsd">
       <SubType>Designer</SubType>
     </None>
     <None Include="Service References\MedicalInformation\Administration.MedicalInformation.Appointment.datasource">

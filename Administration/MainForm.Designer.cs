@@ -43,7 +43,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.tbInsuranceSearch = new System.Windows.Forms.TextBox();
             this.tbSearchFirstName = new System.Windows.Forms.TextBox();
-            this.btn_searchPatient = new System.Windows.Forms.Button();
             this.tb_addPatient = new System.Windows.Forms.TabPage();
             this.btn_updatePatient = new System.Windows.Forms.Button();
             this.chk_druggy = new System.Windows.Forms.CheckBox();
@@ -84,6 +83,10 @@
             this.tbx_pfname = new System.Windows.Forms.TextBox();
             this.btn_addNewPatient = new System.Windows.Forms.Button();
             this.tb_infoEditPatient = new System.Windows.Forms.TabPage();
+            this.lbl_pPersonId = new System.Windows.Forms.Label();
+            this.label59 = new System.Windows.Forms.Label();
+            this.lbl_pPatientId = new System.Windows.Forms.Label();
+            this.label56 = new System.Windows.Forms.Label();
             this.btn_editPatient = new System.Windows.Forms.Button();
             this.lbl_pinsurance = new System.Windows.Forms.Label();
             this.lbl_paddrs = new System.Windows.Forms.Label();
@@ -119,27 +122,6 @@
             this.label43 = new System.Windows.Forms.Label();
             this.tb_patientDetails = new System.Windows.Forms.TabPage();
             this.tabs = new System.Windows.Forms.TabControl();
-            this.tabOverview = new System.Windows.Forms.TabPage();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.tbPatientDetailsOverviewPhone = new System.Windows.Forms.Label();
-            this.tbPatientDetailsOverviewMPhone = new System.Windows.Forms.Label();
-            this.tbPatientDetailsOverviewEMail = new System.Windows.Forms.Label();
-            this.tbPatientDetailsOverviewIsuranceNumber = new System.Windows.Forms.Label();
-            this.tbPatientDetailsOverviewGender = new System.Windows.Forms.Label();
-            this.tbPatientDetailsOverviewDoB = new System.Windows.Forms.Label();
-            this.tbPatientDetailsOverviewAge = new System.Windows.Forms.Label();
-            this.tbPatientDetailsOverviewName = new System.Windows.Forms.Label();
-            this.lPatientDetailsOverviewPhone = new System.Windows.Forms.Label();
-            this.lPatientDetailsOverviewMPhone = new System.Windows.Forms.Label();
-            this.lPatientDetailsOverviewEMail = new System.Windows.Forms.Label();
-            this.lPatientDetailsOverviewName = new System.Windows.Forms.Label();
-            this.lPatientDetailsOverviewInsuranceNumber = new System.Windows.Forms.Label();
-            this.lPatientDetailsOverviewAge = new System.Windows.Forms.Label();
-            this.label54 = new System.Windows.Forms.Label();
-            this.lPatientDetailsOverviewGender = new System.Windows.Forms.Label();
-            this.lPatientDetailsOverviewDoB = new System.Windows.Forms.Label();
-            this.lbOverview = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.tabPastAppointments = new System.Windows.Forms.TabPage();
             this.tabCurrentMedication = new System.Windows.Forms.TabPage();
             this.btAddPrescription = new System.Windows.Forms.Button();
@@ -166,7 +148,6 @@
             this.tbinputSyntoms = new System.Windows.Forms.TextBox();
             this.tbInputDiagnosis = new System.Windows.Forms.TextBox();
             this.DiagnosisHistory = new System.Windows.Forms.ListBox();
-            this.tabWiki = new System.Windows.Forms.TabPage();
             this.tb_staff = new System.Windows.Forms.TabPage();
             this.tabControlDoctors = new System.Windows.Forms.TabControl();
             this.tb_searchStaff = new System.Windows.Forms.TabPage();
@@ -177,8 +158,8 @@
             this.lbl_stc_staffId = new System.Windows.Forms.Label();
             this.lbl_stc_fname = new System.Windows.Forms.Label();
             this.tbx_fname = new System.Windows.Forms.TextBox();
-            this.btn_searchStaff = new System.Windows.Forms.Button();
             this.tb_addStaff = new System.Windows.Forms.TabPage();
+            this.btn_updateStaff = new System.Windows.Forms.Button();
             this.tbx_sspecialization = new System.Windows.Forms.TextBox();
             this.label17 = new System.Windows.Forms.Label();
             this.tbx_roomNo = new System.Windows.Forms.TextBox();
@@ -209,6 +190,18 @@
             this.tbx_sfname = new System.Windows.Forms.TextBox();
             this.btn_saveStaff = new System.Windows.Forms.Button();
             this.tb_infoEditStaff = new System.Windows.Forms.TabPage();
+            this.lbl_sPersonId = new System.Windows.Forms.Label();
+            this.label57 = new System.Windows.Forms.Label();
+            this.lbl_sStaffId = new System.Windows.Forms.Label();
+            this.label44 = new System.Windows.Forms.Label();
+            this.btn_deleteStaff = new System.Windows.Forms.Button();
+            this.lbl_sroomNmbr = new System.Windows.Forms.Label();
+            this.lbl_sspecialization = new System.Windows.Forms.Label();
+            this.lbl_sfunction = new System.Windows.Forms.Label();
+            this.label71 = new System.Windows.Forms.Label();
+            this.label72 = new System.Windows.Forms.Label();
+            this.label73 = new System.Windows.Forms.Label();
+            this.label74 = new System.Windows.Forms.Label();
             this.lbl_sinsurance = new System.Windows.Forms.Label();
             this.lbl_saddrs = new System.Windows.Forms.Label();
             this.lbl_smnmr = new System.Windows.Forms.Label();
@@ -227,30 +220,11 @@
             this.label69 = new System.Windows.Forms.Label();
             this.label70 = new System.Windows.Forms.Label();
             this.btn_editStaff = new System.Windows.Forms.Button();
-            this.tb_appointments = new System.Windows.Forms.TabPage();
-            this.tb_general = new System.Windows.Forms.TabPage();
             this.btn_logout = new System.Windows.Forms.Button();
             this.lbl_stc_welcome = new System.Windows.Forms.Label();
             this.lbl_userGreeting = new System.Windows.Forms.Label();
             this.lbl_stc_dateNow = new System.Windows.Forms.Label();
             this.lbl_dateNow = new System.Windows.Forms.Label();
-            this.label71 = new System.Windows.Forms.Label();
-            this.label72 = new System.Windows.Forms.Label();
-            this.label73 = new System.Windows.Forms.Label();
-            this.label74 = new System.Windows.Forms.Label();
-            this.lbl_sroomNmbr = new System.Windows.Forms.Label();
-            this.lbl_sspecialization = new System.Windows.Forms.Label();
-            this.lbl_sfunction = new System.Windows.Forms.Label();
-            this.btn_deleteStaff = new System.Windows.Forms.Button();
-            this.btn_updateStaff = new System.Windows.Forms.Button();
-            this.lbl_sStaffId = new System.Windows.Forms.Label();
-            this.label44 = new System.Windows.Forms.Label();
-            this.lbl_sPersonId = new System.Windows.Forms.Label();
-            this.label57 = new System.Windows.Forms.Label();
-            this.lbl_pPatientId = new System.Windows.Forms.Label();
-            this.label56 = new System.Windows.Forms.Label();
-            this.lbl_pPersonId = new System.Windows.Forms.Label();
-            this.label59 = new System.Windows.Forms.Label();
             this.tabControlMain.SuspendLayout();
             this.tb_patients.SuspendLayout();
             this.tabControlPatients.SuspendLayout();
@@ -262,9 +236,6 @@
             this.tb_infoEditPatient.SuspendLayout();
             this.tb_patientDetails.SuspendLayout();
             this.tabs.SuspendLayout();
-            this.tabOverview.SuspendLayout();
-            this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.tabCurrentMedication.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.tapConsultations.SuspendLayout();
@@ -282,8 +253,6 @@
             this.tabControlMain.Controls.Add(this.tb_main);
             this.tabControlMain.Controls.Add(this.tb_patients);
             this.tabControlMain.Controls.Add(this.tb_staff);
-            this.tabControlMain.Controls.Add(this.tb_appointments);
-            this.tabControlMain.Controls.Add(this.tb_general);
             this.tabControlMain.Multiline = true;
             this.tabControlMain.Name = "tabControlMain";
             this.tabControlMain.SelectedIndex = 0;
@@ -323,7 +292,6 @@
             this.tb_searchPatients.Controls.Add(this.label1);
             this.tb_searchPatients.Controls.Add(this.tbInsuranceSearch);
             this.tb_searchPatients.Controls.Add(this.tbSearchFirstName);
-            this.tb_searchPatients.Controls.Add(this.btn_searchPatient);
             resources.ApplyResources(this.tb_searchPatients, "tb_searchPatients");
             this.tb_searchPatients.Name = "tb_searchPatients";
             this.tb_searchPatients.UseVisualStyleBackColor = true;
@@ -334,7 +302,7 @@
             this.searchListLB.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.searchListLB.FormattingEnabled = true;
             this.searchListLB.Name = "searchListLB";
-            this.searchListLB.SelectedIndexChanged += new System.EventHandler(this.searchListLB_SelectedIndexChanged);
+            this.searchListLB.SelectedIndexChanged += new System.EventHandler(this.event_selectedPatient);
             // 
             // DOBSearch
             // 
@@ -342,11 +310,13 @@
             this.DOBSearch.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.DOBSearch.Name = "DOBSearch";
             this.DOBSearch.Value = new System.DateTime(2014, 5, 18, 19, 24, 35, 0);
+            this.DOBSearch.ValueChanged += new System.EventHandler(this.event_searchPatients);
             // 
             // tbSearchLastName
             // 
             resources.ApplyResources(this.tbSearchLastName, "tbSearchLastName");
             this.tbSearchLastName.Name = "tbSearchLastName";
+            this.tbSearchLastName.TextChanged += new System.EventHandler(this.event_searchPatients);
             // 
             // label6
             // 
@@ -373,18 +343,13 @@
             // 
             resources.ApplyResources(this.tbInsuranceSearch, "tbInsuranceSearch");
             this.tbInsuranceSearch.Name = "tbInsuranceSearch";
+            this.tbInsuranceSearch.TextChanged += new System.EventHandler(this.event_searchPatients);
             // 
             // tbSearchFirstName
             // 
             resources.ApplyResources(this.tbSearchFirstName, "tbSearchFirstName");
             this.tbSearchFirstName.Name = "tbSearchFirstName";
-            // 
-            // btn_searchPatient
-            // 
-            resources.ApplyResources(this.btn_searchPatient, "btn_searchPatient");
-            this.btn_searchPatient.Name = "btn_searchPatient";
-            this.btn_searchPatient.UseVisualStyleBackColor = true;
-            this.btn_searchPatient.Click += new System.EventHandler(this.btn_searchPatient_Click);
+            this.tbSearchFirstName.TextChanged += new System.EventHandler(this.event_searchPatients);
             // 
             // tb_addPatient
             // 
@@ -433,7 +398,7 @@
             resources.ApplyResources(this.btn_updatePatient, "btn_updatePatient");
             this.btn_updatePatient.Name = "btn_updatePatient";
             this.btn_updatePatient.UseVisualStyleBackColor = true;
-            this.btn_updatePatient.Click += new System.EventHandler(this.btn_updatePatient_Click);
+            this.btn_updatePatient.Click += new System.EventHandler(this.event_updatePatient);
             // 
             // chk_druggy
             // 
@@ -531,7 +496,7 @@
             resources.ApplyResources(this.btn_cancelPatient, "btn_cancelPatient");
             this.btn_cancelPatient.Name = "btn_cancelPatient";
             this.btn_cancelPatient.UseVisualStyleBackColor = true;
-            this.btn_cancelPatient.Click += new System.EventHandler(this.btn_cancelPatient_Click);
+            this.btn_cancelPatient.Click += new System.EventHandler(this.event_clearPatients);
             // 
             // grp_prd
             // 
@@ -644,7 +609,7 @@
             resources.ApplyResources(this.btn_addNewPatient, "btn_addNewPatient");
             this.btn_addNewPatient.Name = "btn_addNewPatient";
             this.btn_addNewPatient.UseVisualStyleBackColor = true;
-            this.btn_addNewPatient.Click += new System.EventHandler(this.btn_addNewPatient_Click);
+            this.btn_addNewPatient.Click += new System.EventHandler(this.event_addPatient);
             // 
             // tb_infoEditPatient
             // 
@@ -689,12 +654,36 @@
             this.tb_infoEditPatient.Name = "tb_infoEditPatient";
             this.tb_infoEditPatient.UseVisualStyleBackColor = true;
             // 
+            // lbl_pPersonId
+            // 
+            resources.ApplyResources(this.lbl_pPersonId, "lbl_pPersonId");
+            this.lbl_pPersonId.BackColor = System.Drawing.Color.White;
+            this.lbl_pPersonId.Name = "lbl_pPersonId";
+            // 
+            // label59
+            // 
+            resources.ApplyResources(this.label59, "label59");
+            this.label59.BackColor = System.Drawing.Color.White;
+            this.label59.Name = "label59";
+            // 
+            // lbl_pPatientId
+            // 
+            resources.ApplyResources(this.lbl_pPatientId, "lbl_pPatientId");
+            this.lbl_pPatientId.BackColor = System.Drawing.Color.White;
+            this.lbl_pPatientId.Name = "lbl_pPatientId";
+            // 
+            // label56
+            // 
+            resources.ApplyResources(this.label56, "label56");
+            this.label56.BackColor = System.Drawing.Color.White;
+            this.label56.Name = "label56";
+            // 
             // btn_editPatient
             // 
             resources.ApplyResources(this.btn_editPatient, "btn_editPatient");
             this.btn_editPatient.Name = "btn_editPatient";
             this.btn_editPatient.UseVisualStyleBackColor = true;
-            this.btn_editPatient.Click += new System.EventHandler(this.btn_editPatient_Click);
+            this.btn_editPatient.Click += new System.EventHandler(this.event_editPatient);
             // 
             // lbl_pinsurance
             // 
@@ -885,142 +874,12 @@
             // 
             // tabs
             // 
-            this.tabs.Controls.Add(this.tabOverview);
             this.tabs.Controls.Add(this.tabPastAppointments);
             this.tabs.Controls.Add(this.tabCurrentMedication);
             this.tabs.Controls.Add(this.tapConsultations);
-            this.tabs.Controls.Add(this.tabWiki);
             resources.ApplyResources(this.tabs, "tabs");
             this.tabs.Name = "tabs";
             this.tabs.SelectedIndex = 0;
-            // 
-            // tabOverview
-            // 
-            this.tabOverview.BackColor = System.Drawing.Color.White;
-            resources.ApplyResources(this.tabOverview, "tabOverview");
-            this.tabOverview.Controls.Add(this.panel1);
-            this.tabOverview.Controls.Add(this.lbOverview);
-            this.tabOverview.Controls.Add(this.pictureBox1);
-            this.tabOverview.Name = "tabOverview";
-            // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.Color.Transparent;
-            this.panel1.Controls.Add(this.tbPatientDetailsOverviewPhone);
-            this.panel1.Controls.Add(this.tbPatientDetailsOverviewMPhone);
-            this.panel1.Controls.Add(this.tbPatientDetailsOverviewEMail);
-            this.panel1.Controls.Add(this.tbPatientDetailsOverviewIsuranceNumber);
-            this.panel1.Controls.Add(this.tbPatientDetailsOverviewGender);
-            this.panel1.Controls.Add(this.tbPatientDetailsOverviewDoB);
-            this.panel1.Controls.Add(this.tbPatientDetailsOverviewAge);
-            this.panel1.Controls.Add(this.tbPatientDetailsOverviewName);
-            this.panel1.Controls.Add(this.lPatientDetailsOverviewPhone);
-            this.panel1.Controls.Add(this.lPatientDetailsOverviewMPhone);
-            this.panel1.Controls.Add(this.lPatientDetailsOverviewEMail);
-            this.panel1.Controls.Add(this.lPatientDetailsOverviewName);
-            this.panel1.Controls.Add(this.lPatientDetailsOverviewInsuranceNumber);
-            this.panel1.Controls.Add(this.lPatientDetailsOverviewAge);
-            this.panel1.Controls.Add(this.label54);
-            this.panel1.Controls.Add(this.lPatientDetailsOverviewGender);
-            this.panel1.Controls.Add(this.lPatientDetailsOverviewDoB);
-            resources.ApplyResources(this.panel1, "panel1");
-            this.panel1.Name = "panel1";
-            // 
-            // tbPatientDetailsOverviewPhone
-            // 
-            resources.ApplyResources(this.tbPatientDetailsOverviewPhone, "tbPatientDetailsOverviewPhone");
-            this.tbPatientDetailsOverviewPhone.Name = "tbPatientDetailsOverviewPhone";
-            // 
-            // tbPatientDetailsOverviewMPhone
-            // 
-            resources.ApplyResources(this.tbPatientDetailsOverviewMPhone, "tbPatientDetailsOverviewMPhone");
-            this.tbPatientDetailsOverviewMPhone.Name = "tbPatientDetailsOverviewMPhone";
-            // 
-            // tbPatientDetailsOverviewEMail
-            // 
-            resources.ApplyResources(this.tbPatientDetailsOverviewEMail, "tbPatientDetailsOverviewEMail");
-            this.tbPatientDetailsOverviewEMail.Name = "tbPatientDetailsOverviewEMail";
-            // 
-            // tbPatientDetailsOverviewIsuranceNumber
-            // 
-            resources.ApplyResources(this.tbPatientDetailsOverviewIsuranceNumber, "tbPatientDetailsOverviewIsuranceNumber");
-            this.tbPatientDetailsOverviewIsuranceNumber.Name = "tbPatientDetailsOverviewIsuranceNumber";
-            // 
-            // tbPatientDetailsOverviewGender
-            // 
-            resources.ApplyResources(this.tbPatientDetailsOverviewGender, "tbPatientDetailsOverviewGender");
-            this.tbPatientDetailsOverviewGender.Name = "tbPatientDetailsOverviewGender";
-            // 
-            // tbPatientDetailsOverviewDoB
-            // 
-            resources.ApplyResources(this.tbPatientDetailsOverviewDoB, "tbPatientDetailsOverviewDoB");
-            this.tbPatientDetailsOverviewDoB.Name = "tbPatientDetailsOverviewDoB";
-            // 
-            // tbPatientDetailsOverviewAge
-            // 
-            resources.ApplyResources(this.tbPatientDetailsOverviewAge, "tbPatientDetailsOverviewAge");
-            this.tbPatientDetailsOverviewAge.Name = "tbPatientDetailsOverviewAge";
-            // 
-            // tbPatientDetailsOverviewName
-            // 
-            resources.ApplyResources(this.tbPatientDetailsOverviewName, "tbPatientDetailsOverviewName");
-            this.tbPatientDetailsOverviewName.Name = "tbPatientDetailsOverviewName";
-            // 
-            // lPatientDetailsOverviewPhone
-            // 
-            resources.ApplyResources(this.lPatientDetailsOverviewPhone, "lPatientDetailsOverviewPhone");
-            this.lPatientDetailsOverviewPhone.Name = "lPatientDetailsOverviewPhone";
-            // 
-            // lPatientDetailsOverviewMPhone
-            // 
-            resources.ApplyResources(this.lPatientDetailsOverviewMPhone, "lPatientDetailsOverviewMPhone");
-            this.lPatientDetailsOverviewMPhone.Name = "lPatientDetailsOverviewMPhone";
-            // 
-            // lPatientDetailsOverviewEMail
-            // 
-            resources.ApplyResources(this.lPatientDetailsOverviewEMail, "lPatientDetailsOverviewEMail");
-            this.lPatientDetailsOverviewEMail.Name = "lPatientDetailsOverviewEMail";
-            // 
-            // lPatientDetailsOverviewName
-            // 
-            resources.ApplyResources(this.lPatientDetailsOverviewName, "lPatientDetailsOverviewName");
-            this.lPatientDetailsOverviewName.Name = "lPatientDetailsOverviewName";
-            // 
-            // lPatientDetailsOverviewInsuranceNumber
-            // 
-            resources.ApplyResources(this.lPatientDetailsOverviewInsuranceNumber, "lPatientDetailsOverviewInsuranceNumber");
-            this.lPatientDetailsOverviewInsuranceNumber.Name = "lPatientDetailsOverviewInsuranceNumber";
-            // 
-            // lPatientDetailsOverviewAge
-            // 
-            resources.ApplyResources(this.lPatientDetailsOverviewAge, "lPatientDetailsOverviewAge");
-            this.lPatientDetailsOverviewAge.Name = "lPatientDetailsOverviewAge";
-            // 
-            // label54
-            // 
-            resources.ApplyResources(this.label54, "label54");
-            this.label54.Name = "label54";
-            // 
-            // lPatientDetailsOverviewGender
-            // 
-            resources.ApplyResources(this.lPatientDetailsOverviewGender, "lPatientDetailsOverviewGender");
-            this.lPatientDetailsOverviewGender.Name = "lPatientDetailsOverviewGender";
-            // 
-            // lPatientDetailsOverviewDoB
-            // 
-            resources.ApplyResources(this.lPatientDetailsOverviewDoB, "lPatientDetailsOverviewDoB");
-            this.lPatientDetailsOverviewDoB.Name = "lPatientDetailsOverviewDoB";
-            // 
-            // lbOverview
-            // 
-            resources.ApplyResources(this.lbOverview, "lbOverview");
-            this.lbOverview.Name = "lbOverview";
-            // 
-            // pictureBox1
-            // 
-            resources.ApplyResources(this.pictureBox1, "pictureBox1");
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.TabStop = false;
             // 
             // tabPastAppointments
             // 
@@ -1190,12 +1049,6 @@
             this.DiagnosisHistory.FormattingEnabled = true;
             this.DiagnosisHistory.Name = "DiagnosisHistory";
             // 
-            // tabWiki
-            // 
-            resources.ApplyResources(this.tabWiki, "tabWiki");
-            this.tabWiki.Name = "tabWiki";
-            this.tabWiki.UseVisualStyleBackColor = true;
-            // 
             // tb_staff
             // 
             this.tb_staff.Controls.Add(this.tabControlDoctors);
@@ -1221,7 +1074,6 @@
             this.tb_searchStaff.Controls.Add(this.lbl_stc_staffId);
             this.tb_searchStaff.Controls.Add(this.lbl_stc_fname);
             this.tb_searchStaff.Controls.Add(this.tbx_fname);
-            this.tb_searchStaff.Controls.Add(this.btn_searchStaff);
             resources.ApplyResources(this.tb_searchStaff, "tb_searchStaff");
             this.tb_searchStaff.Name = "tb_searchStaff";
             this.tb_searchStaff.UseVisualStyleBackColor = true;
@@ -1230,6 +1082,7 @@
             // 
             resources.ApplyResources(this.tbx_staffId, "tbx_staffId");
             this.tbx_staffId.Name = "tbx_staffId";
+            this.tbx_staffId.TextChanged += new System.EventHandler(this.event_searchStaff);
             // 
             // lstbx_staff
             // 
@@ -1237,12 +1090,13 @@
             this.lstbx_staff.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.lstbx_staff.FormattingEnabled = true;
             this.lstbx_staff.Name = "lstbx_staff";
-            this.lstbx_staff.SelectedIndexChanged += new System.EventHandler(this.lstbx_staff_SelectedIndexChanged);
+            this.lstbx_staff.SelectedIndexChanged += new System.EventHandler(this.event_SelectedStaff);
             // 
             // tbx_lname
             // 
             resources.ApplyResources(this.tbx_lname, "tbx_lname");
             this.tbx_lname.Name = "tbx_lname";
+            this.tbx_lname.TextChanged += new System.EventHandler(this.event_searchStaff);
             // 
             // lbl_stc_lname
             // 
@@ -1264,13 +1118,7 @@
             // 
             resources.ApplyResources(this.tbx_fname, "tbx_fname");
             this.tbx_fname.Name = "tbx_fname";
-            // 
-            // btn_searchStaff
-            // 
-            resources.ApplyResources(this.btn_searchStaff, "btn_searchStaff");
-            this.btn_searchStaff.Name = "btn_searchStaff";
-            this.btn_searchStaff.UseVisualStyleBackColor = true;
-            this.btn_searchStaff.Click += new System.EventHandler(this.btn_searchStaff_Click);
+            this.tbx_fname.TextChanged += new System.EventHandler(this.event_searchStaff);
             // 
             // tb_addStaff
             // 
@@ -1305,6 +1153,13 @@
             resources.ApplyResources(this.tb_addStaff, "tb_addStaff");
             this.tb_addStaff.Name = "tb_addStaff";
             this.tb_addStaff.UseVisualStyleBackColor = true;
+            // 
+            // btn_updateStaff
+            // 
+            resources.ApplyResources(this.btn_updateStaff, "btn_updateStaff");
+            this.btn_updateStaff.Name = "btn_updateStaff";
+            this.btn_updateStaff.UseVisualStyleBackColor = true;
+            this.btn_updateStaff.Click += new System.EventHandler(this.event_updateStaff);
             // 
             // tbx_sspecialization
             // 
@@ -1365,7 +1220,7 @@
             resources.ApplyResources(this.btn_cancelStaff, "btn_cancelStaff");
             this.btn_cancelStaff.Name = "btn_cancelStaff";
             this.btn_cancelStaff.UseVisualStyleBackColor = true;
-            this.btn_cancelStaff.Click += new System.EventHandler(this.btn_cancelStaff_Click);
+            this.btn_cancelStaff.Click += new System.EventHandler(this.event_clearStaff);
             // 
             // groupBox1
             // 
@@ -1478,7 +1333,7 @@
             resources.ApplyResources(this.btn_saveStaff, "btn_saveStaff");
             this.btn_saveStaff.Name = "btn_saveStaff";
             this.btn_saveStaff.UseVisualStyleBackColor = true;
-            this.btn_saveStaff.Click += new System.EventHandler(this.btn_saveStaff_Click);
+            this.btn_saveStaff.Click += new System.EventHandler(this.event_addStaff);
             // 
             // tb_infoEditStaff
             // 
@@ -1515,6 +1370,79 @@
             resources.ApplyResources(this.tb_infoEditStaff, "tb_infoEditStaff");
             this.tb_infoEditStaff.Name = "tb_infoEditStaff";
             this.tb_infoEditStaff.UseVisualStyleBackColor = true;
+            // 
+            // lbl_sPersonId
+            // 
+            resources.ApplyResources(this.lbl_sPersonId, "lbl_sPersonId");
+            this.lbl_sPersonId.BackColor = System.Drawing.Color.White;
+            this.lbl_sPersonId.Name = "lbl_sPersonId";
+            // 
+            // label57
+            // 
+            resources.ApplyResources(this.label57, "label57");
+            this.label57.BackColor = System.Drawing.Color.White;
+            this.label57.Name = "label57";
+            // 
+            // lbl_sStaffId
+            // 
+            resources.ApplyResources(this.lbl_sStaffId, "lbl_sStaffId");
+            this.lbl_sStaffId.BackColor = System.Drawing.Color.White;
+            this.lbl_sStaffId.Name = "lbl_sStaffId";
+            // 
+            // label44
+            // 
+            resources.ApplyResources(this.label44, "label44");
+            this.label44.BackColor = System.Drawing.Color.White;
+            this.label44.Name = "label44";
+            // 
+            // btn_deleteStaff
+            // 
+            resources.ApplyResources(this.btn_deleteStaff, "btn_deleteStaff");
+            this.btn_deleteStaff.Name = "btn_deleteStaff";
+            this.btn_deleteStaff.UseVisualStyleBackColor = true;
+            this.btn_deleteStaff.Click += new System.EventHandler(this.event_deleteStaff);
+            // 
+            // lbl_sroomNmbr
+            // 
+            resources.ApplyResources(this.lbl_sroomNmbr, "lbl_sroomNmbr");
+            this.lbl_sroomNmbr.BackColor = System.Drawing.Color.White;
+            this.lbl_sroomNmbr.Name = "lbl_sroomNmbr";
+            // 
+            // lbl_sspecialization
+            // 
+            resources.ApplyResources(this.lbl_sspecialization, "lbl_sspecialization");
+            this.lbl_sspecialization.BackColor = System.Drawing.Color.White;
+            this.lbl_sspecialization.Name = "lbl_sspecialization";
+            // 
+            // lbl_sfunction
+            // 
+            resources.ApplyResources(this.lbl_sfunction, "lbl_sfunction");
+            this.lbl_sfunction.BackColor = System.Drawing.Color.White;
+            this.lbl_sfunction.Name = "lbl_sfunction";
+            // 
+            // label71
+            // 
+            resources.ApplyResources(this.label71, "label71");
+            this.label71.BackColor = System.Drawing.Color.White;
+            this.label71.Name = "label71";
+            // 
+            // label72
+            // 
+            resources.ApplyResources(this.label72, "label72");
+            this.label72.BackColor = System.Drawing.Color.White;
+            this.label72.Name = "label72";
+            // 
+            // label73
+            // 
+            resources.ApplyResources(this.label73, "label73");
+            this.label73.BackColor = System.Drawing.Color.White;
+            this.label73.Name = "label73";
+            // 
+            // label74
+            // 
+            resources.ApplyResources(this.label74, "label74");
+            this.label74.BackColor = System.Drawing.Color.White;
+            this.label74.Name = "label74";
             // 
             // lbl_sinsurance
             // 
@@ -1611,26 +1539,14 @@
             resources.ApplyResources(this.btn_editStaff, "btn_editStaff");
             this.btn_editStaff.Name = "btn_editStaff";
             this.btn_editStaff.UseVisualStyleBackColor = true;
-            this.btn_editStaff.Click += new System.EventHandler(this.btn_editStaff_Click);
-            // 
-            // tb_appointments
-            // 
-            resources.ApplyResources(this.tb_appointments, "tb_appointments");
-            this.tb_appointments.Name = "tb_appointments";
-            this.tb_appointments.UseVisualStyleBackColor = true;
-            // 
-            // tb_general
-            // 
-            resources.ApplyResources(this.tb_general, "tb_general");
-            this.tb_general.Name = "tb_general";
-            this.tb_general.UseVisualStyleBackColor = true;
+            this.btn_editStaff.Click += new System.EventHandler(this.event_editStaff);
             // 
             // btn_logout
             // 
             resources.ApplyResources(this.btn_logout, "btn_logout");
             this.btn_logout.Name = "btn_logout";
             this.btn_logout.UseVisualStyleBackColor = true;
-            this.btn_logout.Click += new System.EventHandler(this.btn_logout_Click);
+            this.btn_logout.Click += new System.EventHandler(this.event_logout);
             // 
             // lbl_stc_welcome
             // 
@@ -1651,109 +1567,6 @@
             // 
             resources.ApplyResources(this.lbl_dateNow, "lbl_dateNow");
             this.lbl_dateNow.Name = "lbl_dateNow";
-            // 
-            // label71
-            // 
-            resources.ApplyResources(this.label71, "label71");
-            this.label71.BackColor = System.Drawing.Color.White;
-            this.label71.Name = "label71";
-            // 
-            // label72
-            // 
-            resources.ApplyResources(this.label72, "label72");
-            this.label72.BackColor = System.Drawing.Color.White;
-            this.label72.Name = "label72";
-            // 
-            // label73
-            // 
-            resources.ApplyResources(this.label73, "label73");
-            this.label73.BackColor = System.Drawing.Color.White;
-            this.label73.Name = "label73";
-            // 
-            // label74
-            // 
-            resources.ApplyResources(this.label74, "label74");
-            this.label74.BackColor = System.Drawing.Color.White;
-            this.label74.Name = "label74";
-            // 
-            // lbl_sroomNmbr
-            // 
-            resources.ApplyResources(this.lbl_sroomNmbr, "lbl_sroomNmbr");
-            this.lbl_sroomNmbr.BackColor = System.Drawing.Color.White;
-            this.lbl_sroomNmbr.Name = "lbl_sroomNmbr";
-            // 
-            // lbl_sspecialization
-            // 
-            resources.ApplyResources(this.lbl_sspecialization, "lbl_sspecialization");
-            this.lbl_sspecialization.BackColor = System.Drawing.Color.White;
-            this.lbl_sspecialization.Name = "lbl_sspecialization";
-            // 
-            // lbl_sfunction
-            // 
-            resources.ApplyResources(this.lbl_sfunction, "lbl_sfunction");
-            this.lbl_sfunction.BackColor = System.Drawing.Color.White;
-            this.lbl_sfunction.Name = "lbl_sfunction";
-            // 
-            // btn_deleteStaff
-            // 
-            resources.ApplyResources(this.btn_deleteStaff, "btn_deleteStaff");
-            this.btn_deleteStaff.Name = "btn_deleteStaff";
-            this.btn_deleteStaff.UseVisualStyleBackColor = true;
-            // 
-            // btn_updateStaff
-            // 
-            resources.ApplyResources(this.btn_updateStaff, "btn_updateStaff");
-            this.btn_updateStaff.Name = "btn_updateStaff";
-            this.btn_updateStaff.UseVisualStyleBackColor = true;
-            this.btn_updateStaff.Click += new System.EventHandler(this.btn_updateStaff_Click);
-            // 
-            // lbl_sStaffId
-            // 
-            resources.ApplyResources(this.lbl_sStaffId, "lbl_sStaffId");
-            this.lbl_sStaffId.BackColor = System.Drawing.Color.White;
-            this.lbl_sStaffId.Name = "lbl_sStaffId";
-            // 
-            // label44
-            // 
-            resources.ApplyResources(this.label44, "label44");
-            this.label44.BackColor = System.Drawing.Color.White;
-            this.label44.Name = "label44";
-            // 
-            // lbl_sPersonId
-            // 
-            resources.ApplyResources(this.lbl_sPersonId, "lbl_sPersonId");
-            this.lbl_sPersonId.BackColor = System.Drawing.Color.White;
-            this.lbl_sPersonId.Name = "lbl_sPersonId";
-            // 
-            // label57
-            // 
-            resources.ApplyResources(this.label57, "label57");
-            this.label57.BackColor = System.Drawing.Color.White;
-            this.label57.Name = "label57";
-            // 
-            // lbl_pPatientId
-            // 
-            resources.ApplyResources(this.lbl_pPatientId, "lbl_pPatientId");
-            this.lbl_pPatientId.BackColor = System.Drawing.Color.White;
-            this.lbl_pPatientId.Name = "lbl_pPatientId";
-            // 
-            // label56
-            // 
-            resources.ApplyResources(this.label56, "label56");
-            this.label56.BackColor = System.Drawing.Color.White;
-            this.label56.Name = "label56";
-            // 
-            // lbl_pPersonId
-            // 
-            resources.ApplyResources(this.lbl_pPersonId, "lbl_pPersonId");
-            this.lbl_pPersonId.BackColor = System.Drawing.Color.White;
-            this.lbl_pPersonId.Name = "lbl_pPersonId";
-            // 
-            // label59
-            // 
-            resources.ApplyResources(this.label59, "label59");
-            this.label59.BackColor = System.Drawing.Color.White;
-            this.label59.Name = "label59";
             // 
             // MainForm
             // 
@@ -1783,11 +1596,6 @@
             this.tb_infoEditPatient.PerformLayout();
             this.tb_patientDetails.ResumeLayout(false);
             this.tabs.ResumeLayout(false);
-            this.tabOverview.ResumeLayout(false);
-            this.tabOverview.PerformLayout();
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.tabCurrentMedication.ResumeLayout(false);
             this.tabCurrentMedication.PerformLayout();
             this.groupBox2.ResumeLayout(false);
@@ -1823,14 +1631,11 @@
         private System.Windows.Forms.TabPage tb_searchStaff;
         private System.Windows.Forms.TabPage tb_addStaff;
         private System.Windows.Forms.TabPage tb_infoEditStaff;
-        private System.Windows.Forms.TabPage tb_appointments;
-        private System.Windows.Forms.TabPage tb_general;
         private System.Windows.Forms.Button btn_logout;
         private System.Windows.Forms.Label lbl_stc_welcome;
         private System.Windows.Forms.Label lbl_userGreeting;
         private System.Windows.Forms.Label lbl_stc_dateNow;
         private System.Windows.Forms.Label lbl_dateNow;
-        private System.Windows.Forms.Button btn_searchPatient;
         private System.Windows.Forms.DateTimePicker DOBSearch;
         private System.Windows.Forms.TextBox tbSearchLastName;
         private System.Windows.Forms.Label label6;
@@ -1847,7 +1652,6 @@
         private System.Windows.Forms.Label lbl_stc_staffId;
         private System.Windows.Forms.Label lbl_stc_fname;
         private System.Windows.Forms.TextBox tbx_fname;
-        private System.Windows.Forms.Button btn_searchStaff;
         private System.Windows.Forms.TextBox tbx_saddress;
         private System.Windows.Forms.TextBox tbx_slname;
         private System.Windows.Forms.Label label2;
@@ -1933,27 +1737,6 @@
         private System.Windows.Forms.Label label43;
         private System.Windows.Forms.TabPage tb_patientDetails;
         private System.Windows.Forms.TabControl tabs;
-        private System.Windows.Forms.TabPage tabOverview;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Label tbPatientDetailsOverviewPhone;
-        private System.Windows.Forms.Label tbPatientDetailsOverviewMPhone;
-        private System.Windows.Forms.Label tbPatientDetailsOverviewEMail;
-        private System.Windows.Forms.Label tbPatientDetailsOverviewIsuranceNumber;
-        private System.Windows.Forms.Label tbPatientDetailsOverviewGender;
-        private System.Windows.Forms.Label tbPatientDetailsOverviewDoB;
-        private System.Windows.Forms.Label tbPatientDetailsOverviewAge;
-        private System.Windows.Forms.Label tbPatientDetailsOverviewName;
-        private System.Windows.Forms.Label lPatientDetailsOverviewPhone;
-        private System.Windows.Forms.Label lPatientDetailsOverviewMPhone;
-        private System.Windows.Forms.Label lPatientDetailsOverviewEMail;
-        private System.Windows.Forms.Label lPatientDetailsOverviewName;
-        private System.Windows.Forms.Label lPatientDetailsOverviewInsuranceNumber;
-        private System.Windows.Forms.Label lPatientDetailsOverviewAge;
-        private System.Windows.Forms.Label label54;
-        private System.Windows.Forms.Label lPatientDetailsOverviewGender;
-        private System.Windows.Forms.Label lPatientDetailsOverviewDoB;
-        private System.Windows.Forms.Label lbOverview;
-        private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.TabPage tabPastAppointments;
         private System.Windows.Forms.TabPage tabCurrentMedication;
         private System.Windows.Forms.Button btAddPrescription;
@@ -1980,7 +1763,6 @@
         private System.Windows.Forms.TextBox tbinputSyntoms;
         private System.Windows.Forms.TextBox tbInputDiagnosis;
         private System.Windows.Forms.ListBox DiagnosisHistory;
-        private System.Windows.Forms.TabPage tabWiki;
         private System.Windows.Forms.Label lbl_pinsurance;
         private System.Windows.Forms.Label lbl_paddrs;
         private System.Windows.Forms.Label lbl_pmnmbr;
