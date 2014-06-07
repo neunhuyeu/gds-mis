@@ -19,6 +19,7 @@ namespace DMS_Service
         /// </summary>
         public enum task { select, update, insert, delete };
 
+
         /// <summary>
         /// Constructor.
         /// </summary>

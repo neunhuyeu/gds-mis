@@ -70,6 +70,7 @@ namespace DMS_Service
             throw new System.NotImplementedException();
         }
 
+
         /// <summary>
         /// Event handler for periodically backup on timer elapse.+
         /// </summary>
@@ -89,7 +90,7 @@ namespace DMS_Service
                 if(serverWasOffline)
                 {
                     //restore backup
-
+                    //proxy.setbackup();
                     serverWasOffline = false;
                 }
 
@@ -99,6 +100,7 @@ namespace DMS_Service
                 serverWasOffline = true;
             }
         }
+        
         /// <summary>
         /// Method to send unsynced changes to the other server
         /// </summary>
@@ -138,6 +140,36 @@ namespace DMS_Service
         void ISynchronise.editPatientByAppointment(Appointment appointment)
         {
             throw new NotImplementedException();
+        }
+
+        /// <summary>
+        /// Receives 3 sql files as aparameters, saves the files, then updates the database
+        /// </summary>
+        /// <param name="gds_mis">Byte array of the gds_mis database.</param>
+        /// <param name="gds_mis_agenda">Byte array of the gds_mis_agenda database.</param>
+        /// <param name="gds_mis_auth">Byte array of the gds_mis_agenda database.</param>
+        /// <returns></returns>
+        bool ISynchronise.setBackup(byte[] gds_mis, byte[] gds_mis_agenda, byte[] gds_mis_auth)
+        {
+            try
+            {
+                //Save received scripts into local files
+                System.IO.File.WriteAllBytes(@"received_backups\gds_mis.sql", gds_mis);
+                System.IO.File.WriteAllBytes(@"received_backups\gds_mis_agenda.sql", gds_mis_agenda);
+                System.IO.File.WriteAllBytes(@"received_backups\gds_mis_auth.sql", gds_mis_auth);
+
+                //execute saved scripts
+                this.dbManager.executeScript("received_backups\\gds_mis.sql");
+                this.dbManager.executeScript("received_backups\\gds_mis.sql");
+                this.dbManager.executeScript("received_backups\\gds_mis.sql");
+
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+            
         }
         
         /// <summary>
