@@ -191,22 +191,19 @@ namespace DMS_Service
                 s.StaffID = Convert.ToInt32(dr["Staff_id"]);
                 s.Specialization = dr["specialization"].ToString();
                 var rn = dr["room_number"];
-                try { s.RoomNumber = rn == "" ? 0 : Convert.ToInt32(rn.ToString()); }
+                try { s.RoomNumber = Convert.ToInt32(rn.ToString()); }
                 catch { s.RoomNumber = 0; }
                 s.PersonId = Convert.ToInt32(dr["person_id"]);
                 s.MobileNumber = dr["mobile_number"].ToString();
                 s.LastName = dr["last_name"].ToString();
                 s.LandLineNumber = dr["landline_number"].ToString();
                 s.InsuranceNumber = dr["insurance_number"].ToString();
-                // TODO: gender is in patient?!?
-                //s.Gender = dr["gender"].ToString()[0];
-                // TODO: Make a function for the fucntion type.
-                s.Function = 0; //dr["function"].ToString();
+                // TODO: Make a function for the function type.
+                s.Function = ((DMS_Service.Structs.Staff.StaffType)Convert.ToInt32(dr["function"]));
                 s.FirstName = dr["first_name"].ToString();
                 s.Email = dr["email_address"].ToString();
                 s.DateOfBirth = Convert.ToDateTime(dr["date_of_birth"]);
                 s.Address = dr["home_address"].ToString();
-
                 staff.Add(s);
             }
             return staff;

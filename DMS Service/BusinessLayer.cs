@@ -233,11 +233,11 @@ namespace DMS_Service
                 p.InsuranceNumber = dr["insurance_number"].ToString();
                 p.Smoker = Convert.ToBoolean(dr["smoking"]);
                 var sf = dr["smoking_frequency"];
-                try { p.SmokingFrequency = sf == "" ? 0 : Convert.ToInt32(sf.ToString()); }
+                try { p.SmokingFrequency = Convert.ToInt32(sf.ToString()); }
                 catch { p.SmokingFrequency = 0; }
                 p.hard_drugs = Convert.ToBoolean(dr["hard_drugs"]);
                 var hdf = dr["hard_drugs_frequency"];
-                try { p.hard_drugs_frequency = hdf == "" ? 0 : Convert.ToInt32(hdf.ToString()); }
+                try { p.hard_drugs_frequency = Convert.ToInt32(hdf.ToString()); }
                 catch { p.hard_drugs_frequency = 0; }
                 p.Height = Convert.ToInt32(dr["height_cm"]);
                 p.Weight = Convert.ToInt32(dr["weight_kg"]);
