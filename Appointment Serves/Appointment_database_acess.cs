@@ -37,6 +37,21 @@ namespace Appointment_Serves
             return dbConnection.SelectQuery(query, sqlParameters);
         }
 
+         public DataTable SearchAppointmentsByPersonID(int personID)
+         {
+             
+             string query = string.Format("SELECT a.appointment_id, a.start_date, a.end_date, s.first_name, s.last_name, s.room_number " +
+                                         "FROM appointments a, staff_info s " +
+                                         "WHERE a.patient_id =@patientID AND a.staff_id = s.staff_id " +
+                                         "ORDER BY a.start_date");
+
+             MySqlParameter[] sqlParameters = new MySqlParameter[1];
+             sqlParameters[0] = new MySqlParameter("@patientID", MySqlDbType.Int32);
+             sqlParameters[0].Value = Convert.ToString(personID);
+
+             return dbConnection.SelectQuery(query, sqlParameters);
+         }
+
         public DataTable SearchAppointmentsByPersionID(int personID)
         {
 

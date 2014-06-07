@@ -17,6 +17,12 @@ namespace Appointment_Serves
         [OperationContract]
         List<Patient> SearchappointmentsbyDate(DateTime date, int staffId);
         [OperationContract]
+        List<Patient> getAppointmnetsOfToday(int staffID);
+        [OperationContract]
+        List<Appointment> SearchAppointmentsByStaffID(int staffId);
+        [OperationContract]
+        DataTable getAppointmentsHistorybyPatientID(int ID);
+        [OperationContract]
         DataTable getAppointmentsHistorybyPatient(string un);
         [OperationContract]
         bool AddAppointment(string staffLastName, string patientMail, string startDate, string endDate);
