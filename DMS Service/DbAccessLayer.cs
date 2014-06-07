@@ -175,9 +175,7 @@ namespace DMS_Service
             { return null; }
         }
 
-
-
-        public DataTable getPersonId(string firstName, string lastName, DateTime dob)
+        public int getPersonId(string firstName, string lastName, DateTime dob)
         {
             string query = "SELECT person_id as id FROM person where first_name = ?fname AND last_name = ?lname AND date_of_birth = ?dob";
             MySqlParameter[] sqlParameters = new MySqlParameter[3];
@@ -191,13 +189,17 @@ namespace DMS_Service
             try
             {
                 result = dbConnection.SelectQuery(query, sqlParameters);
+                if (result.Rows.Count == 0)
+                {
+                    throw new DirectoryNotFoundException();
+                }
             }
             catch
-            { return null; }
-            return result;
+            { return -1; }
+            return Convert.ToInt32(result.Rows[0]["person_id"]);
         }
 
-        public DataTable getPersonIdFromPatientId(int patientId)
+        public int getPersonIdFromPatientId(int patientId)
         {
             string query = "SELECT person_id as id FROM patients where patient_id=?patient_id";
             MySqlParameter[] sqlParameters = new MySqlParameter[3];
@@ -207,13 +209,17 @@ namespace DMS_Service
             try
             {
                 result = dbConnection.SelectQuery(query, sqlParameters);
+                if (result.Rows.Count == 0)
+                {
+                    throw new DirectoryNotFoundException();
+                }
             }
             catch
-            { return null; }
-            return result;
+            { return -1; }
+            return Convert.ToInt32(result.Rows[0]["person_id"]);
         }
 
-        public DataTable getPersonIdFromStaffId(int staffId)
+        public int getPersonIdFromStaffId(int staffId)
         {
             string query = "SELECT person_id as id FROM Staff_members where Staff_id=?Staff_id";
             MySqlParameter[] sqlParameters = new MySqlParameter[3];
@@ -223,13 +229,17 @@ namespace DMS_Service
             try
             {
                 result = dbConnection.SelectQuery(query, sqlParameters);
+                if (result.Rows.Count == 0)
+                {
+                    throw new DirectoryNotFoundException();
+                }
             }
             catch
-            { return null; }
-            return result;
+            { return -1; }
+            return Convert.ToInt32(result.Rows[0]["person_id"]);
         }
 
-        public DataTable getStaffIdFromPersonId(int personId)
+        public int getStaffIdFromPersonId(int personId)
         {
             string query = "SELECT Staff_id as id FROM Staff_members where person_id=?person_id";
             MySqlParameter[] sqlParameters = new MySqlParameter[3];
@@ -239,13 +249,17 @@ namespace DMS_Service
             try
             {
                 result = dbConnection.SelectQuery(query, sqlParameters);
+                if (result.Rows.Count == 0)
+                {
+                    throw new DirectoryNotFoundException();
+                }
             }
             catch
-            { return null; }
-            return result;
+            { return -1; }
+            return Convert.ToInt32(result.Rows[0]["Staff_id"]);
         }
 
-        public DataTable getPatientIdFromPersonId(int personId)
+        public int getPatientIdFromPersonId(int personId)
         {
             string query = "SELECT patient_id as id FROM patients where person_id=?person_id";
             MySqlParameter[] sqlParameters = new MySqlParameter[3];
@@ -255,10 +269,14 @@ namespace DMS_Service
             try
             {
                 result = dbConnection.SelectQuery(query, sqlParameters);
+                if (result.Rows.Count == 0)
+                {
+                    throw new DirectoryNotFoundException();
+                }
             }
             catch
-            { return null; }
-            return result;
+            { return -1; }
+            return Convert.ToInt32(result.Rows[0]["patient_id"]);
         }
 
         /// <summary>
@@ -752,6 +770,62 @@ namespace DMS_Service
             catch (Exception e) { return false; }
 
             return result;
+        }
+
+        public bool deletePerson(int personId)
+        {
+            string query = "DELETE * FROM person WHERE person_id = ?person_id";
+            MySqlParameter[] sqlParameters = new MySqlParameter[1];
+            sqlParameters[0] = new MySqlParameter("?person_id_id", MySqlDbType.Int32);
+            sqlParameters[0].Value = Convert.ToString(personId);
+            bool result = false;
+            try
+            {
+                result = dbConnection.DeleteQuery(query, sqlParameters);
+            }
+            catch { return result; }
+            return result;
+        }
+
+        /// <summary>
+        /// Deletes a staff member record and then deletes the person record associated to it.
+        /// </summary>
+        /// <param name="personId">The person Id of the staff member to delete</param>
+        /// <param name="staffId">The staff Id of the staff member to delete</param>
+        /// <returns>
+        /// -3: Error occured.
+        /// -2: Staff and person weren't deleted.
+        /// -1: Person wasn't deleted but staff was.
+        /// =1: Successful deletion of both records.
+        ///  -: Any other value is considered abnormal.
+        /// </returns>
+        public int deleteStaff(int personId, int staffId)
+        {
+            string query = "DELETE * FROM Staff WHERE Staff_id = ?Staff_id";
+            MySqlParameter[] sqlParameters = new MySqlParameter[1];
+            sqlParameters[0] = new MySqlParameter("?Staff_id", MySqlDbType.Int32);
+            sqlParameters[0].Value = Convert.ToString(staffId);
+            bool result = false;
+            int returnable = -2;
+            try
+            {
+                result = dbConnection.DeleteQuery(query, sqlParameters);
+                if (result)
+                {
+                    returnable++; // -1
+                    result = deletePerson(personId);
+                    if (result)
+                    {
+                        returnable++; // 0
+                    }
+                }
+            }
+            catch { return -3; /* Error */}
+            if (returnable == 0) //Success.
+            {
+                return 1;
+            }
+            else return returnable; // Abnormality
         }
     }
 }

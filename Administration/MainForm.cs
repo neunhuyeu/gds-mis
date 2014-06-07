@@ -232,8 +232,8 @@ namespace Administration
             // Clear the info/edit tab labels.
             // Personal details.
             lbl_sPersonId.Text = "";
-            lbl_sfname.Text = "";;
-            lbl_slname.Text = "";;
+            lbl_sfname.Text = ""; ;
+            lbl_slname.Text = ""; ;
             lbl_sdob.Text = "";
             lbl_semail.Text = "";
             lbl_smnmr.Text = "";
@@ -245,7 +245,7 @@ namespace Administration
             lbl_sfunction.Text = "";
             lbl_sspecialization.Text = "";
             lbl_sroomNmbr.Text = "";
-          }
+        }
 
         public void populateInfoPatientTab(MedicalInformation.Patient p)
         {
@@ -306,11 +306,11 @@ namespace Administration
             }
             else
             {
-                DialogResult dr = MessageBox.Show(this, "There was a problem while updating the patient information.", "Error",MessageBoxButtons.RetryCancel, MessageBoxIcon.Error);
+                DialogResult dr = MessageBox.Show(this, "There was a problem while updating the patient information.", "Error", MessageBoxButtons.RetryCancel, MessageBoxIcon.Error);
                 if (dr == DialogResult.Retry)
                     this.btn_updatePatient_Click(null, null);
             }
-            }
+        }
 
         private serverAdministration.Patient getUserInputFromAddPatientTab()
         {
@@ -362,7 +362,7 @@ namespace Administration
             }
             else
                 MessageBox.Show(this, "There was a problem while adding the new Staff member.", "Error");
-        
+
         }
 
         private serverAdministration.Staff getUserInputFromAddStaffTab()
@@ -385,7 +385,7 @@ namespace Administration
             // TODO: Function has to be of type: Staff.Type
             // enumerator.staff.Functionk__BackingField = cmb_function;
             staff.Specializationk__BackingField = tbx_sspecialization.Text;
-            staff.RoomNumberk__BackingField = Convert.ToInt32(tbx_roomNo.Text);
+            staff.RoomNumberk__BackingField = tbx_roomNo.Text;
             // Send the object to the caller.
             return staff;
         }

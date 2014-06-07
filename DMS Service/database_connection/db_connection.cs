@@ -13,7 +13,7 @@ namespace DMS_Service.database_connection
     {
         //full connection string
         private string db_connection_string = "";
-        
+
         //constructor
         public db_connection(string database_name)
         {
@@ -24,7 +24,7 @@ namespace DMS_Service.database_connection
         public string set_connection_values(string db_name, string server_ip = "localhost", string server_port = "3306", string user_id = "root", string user_passw = "")
         {
             //Database full connection string
-            db_connection_string =   " SERVER=" + server_ip + ";" +
+            db_connection_string = " SERVER=" + server_ip + ";" +
                                             " PORT=" + server_port + ";" +
                                             " DATABASE=" + db_name + ";" +
                                             " UID=" + user_id + ";" +
@@ -46,7 +46,7 @@ namespace DMS_Service.database_connection
                     {
                         cmd.Connection = con;
                         cmd.CommandText = query;
-                        cmd.ExecuteReader();
+                        cmd.ExecuteNonQuery();
 
                         using (MySqlDataAdapter dt_adapter = new MySqlDataAdapter())
                         {
@@ -98,13 +98,13 @@ namespace DMS_Service.database_connection
             catch (MySqlException e)
             {
                 string[] lines = { "Error - SelectQuery - Query: ", query, "Exception: " + e.Message + e.StackTrace.ToString() };
-                    System.IO.File.WriteAllLines(AppDomain.CurrentDomain.BaseDirectory + "\\errorlog.txt",lines);
+                System.IO.File.WriteAllLines(AppDomain.CurrentDomain.BaseDirectory + "\\errorlog.txt", lines);
                 return null;
             }
-            
+
             return dt_table;
         }
-    
+
 
         public bool InsertQuery(String query, MySqlParameter[] sqlParameter)
         {
@@ -170,6 +170,41 @@ namespace DMS_Service.database_connection
             catch (MySqlException e)
             {
                 string[] lines = { "Error - SelectQuery - Query: ", query, "Exception: " + e.Message + e.StackTrace.ToString() };
+                System.IO.File.WriteAllLines(AppDomain.CurrentDomain.BaseDirectory + "\\errorlog.txt", lines);
+                return false;
+            }
+
+            return true;
+        }
+
+        public bool DeleteQuery(String query, MySqlParameter[] sqlParameter)
+        {
+            DataSet dt_set = new DataSet();
+            DataTable dt_table = new DataTable();
+            try
+            {
+                using (MySqlConnection con = new MySqlConnection(db_connection_string))
+                {
+                    con.Open();
+
+                    using (MySqlCommand cmd = new MySqlCommand())
+                    {
+                        cmd.Connection = con;
+                        cmd.CommandText = query;
+                        cmd.Parameters.AddRange(sqlParameter);
+
+                        using (MySqlDataAdapter dt_adapter = new MySqlDataAdapter())
+                        {
+                            dt_adapter.DeleteCommand = cmd;
+                        }
+
+                        cmd.ExecuteNonQuery();
+                    }
+                }
+            }
+            catch (MySqlException e)
+            {
+                string[] lines = { "Error - DeleteQuery - Query: ", query, "Exception: " + e.Message + e.StackTrace.ToString() };
                 System.IO.File.WriteAllLines(AppDomain.CurrentDomain.BaseDirectory + "\\errorlog.txt", lines);
                 return false;
             }

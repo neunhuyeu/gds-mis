@@ -103,11 +103,7 @@ namespace DMS_Service
         /// <returns>-1 if non existant person. | The id of the person.</returns>
         private int getpersonId(Person p)
         {
-            System.Data.DataTable dt = db.getPersonId(p.FirstName, p.LastName, p.DateOfBirth);
-            int result = -1;
-            if (dt.Rows.Count > 0)
-                result = Convert.ToInt32(dt.Rows[0]["id"]);
-            return result;
+            return db.getPersonId(p.FirstName, p.LastName, p.DateOfBirth);
         }
 
         /// <summary>
@@ -129,6 +125,7 @@ namespace DMS_Service
         public bool removePatient(Patient patient)
         {
             throw new NotImplementedException();
+            //return db.deletePatient(patient.PatientID);
         }
 
         /// <summary>
@@ -153,14 +150,19 @@ namespace DMS_Service
         }
 
         /// <summary>
-        /// Removes the given staff record from the db.
-        /// The person record of that member is not affected.
+        /// Function that removes the given staff record from the db.
+        /// The staff member is checked if it's also a patient,
+        /// if not it removes the person record as well.
         /// </summary>
         /// <param name="staff">The staff object to delete.</param>
         /// <returns>True on success | False on failure</returns>
         public bool removeStaff(Staff staff)
         {
-            throw new NotImplementedException();
+            if (db.deleteStaff(staff.PersonId, staff.StaffID) > 0)
+            {
+                return true;
+            }
+            else { return false; }
         }
 
         /// <summary>
@@ -191,15 +193,15 @@ namespace DMS_Service
                 s.StaffID = Convert.ToInt32(dr["Staff_id"]);
                 s.Specialization = dr["specialization"].ToString();
                 var rn = dr["room_number"];
-                try { s.RoomNumber = Convert.ToInt32(rn.ToString()); }
-                catch { s.RoomNumber = 0; }
+                try { s.RoomNumber = rn.ToString(); }
+                catch { s.RoomNumber = "unassigned"; }
                 s.PersonId = Convert.ToInt32(dr["person_id"]);
                 s.MobileNumber = dr["mobile_number"].ToString();
                 s.LastName = dr["last_name"].ToString();
                 s.LandLineNumber = dr["landline_number"].ToString();
                 s.InsuranceNumber = dr["insurance_number"].ToString();
                 // TODO: Make a function for the function type.
-                s.Function = ((DMS_Service.Structs.Staff.StaffType)Convert.ToInt32(dr["function"]));
+                s.Function = dr["function"].ToString();
                 s.FirstName = dr["first_name"].ToString();
                 s.Email = dr["email_address"].ToString();
                 s.DateOfBirth = Convert.ToDateTime(dr["date_of_birth"]);
