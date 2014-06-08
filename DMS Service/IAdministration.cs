@@ -36,7 +36,11 @@ namespace DMS_Service
         bool hasPermissions(int id, CAdministration.task t);
 
         [OperationContract]
-        List<Staff> getStaff();
+        List<Staff> getAllStaff();
+
+        [OperationContract]
+        Staff getStaffById(int staffId);
+
 
         /*
          * [OperationContract] 
