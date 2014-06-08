@@ -36,6 +36,15 @@ namespace Appointment_Serves
         [OperationContract]
         DataTable getAppointmentsHistorybyPatient(string un);
 
+        /// <summary>
+        /// Retrieves all the appointments of a Patient with a given patient ID.
+        /// </summary>
+        /// <param name="ID">The patient ID to look for appointments</param>
+        /// <param name="date">(Optional) If string representation is given, it will limit the appointments in that date.</param>
+        /// <returns>A list of patients (Actually an Array)</returns>
+        [OperationContract]
+        List<Appointment> getAppointmentsListbyPatientId(int ID, string date = "");
+
         //method for adding an appointment
         [OperationContract]
         bool AddAppointment(string staffLastName, string patientMail, string startDate, string endDate);
