@@ -15,11 +15,18 @@ namespace DMS_Service.user_auth
     {
         private user_auth_access db_access;
 
+        //constructor
         public user_auth_business()
         {
             db_access = new user_auth_access();
         }
 
+        /// <summary>
+        /// Method for logging in a user
+        /// </summary>
+        /// <param name="email">a specific email address</param>
+        /// <param name="passw">a specific password</param>
+        /// <returns>true if login was successfull, or else false</returns>
         public bool login(string email, string passw)
         {
             DataTable temp_datatable = new DataTable();

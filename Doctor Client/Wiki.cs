@@ -16,10 +16,19 @@ namespace Doctor_Client
     
     public partial class Wiki : Form
     {
+        //contains the doctor client proxy
         private ServerConnectionMedicalInformation.DoctorClient proxy;
+
+        //contains a list of diseases
         List<Disease> diseasList;
+
+        //contains a list of medicines
         List<Medicine> medicinelist;
+
+        //contains bool, for if it's closed or not
         public bool isclosed;
+
+        //constructor, creates a new proxy and sets bool isclosed to false
          public Wiki()
         {
 
@@ -28,11 +37,13 @@ namespace Doctor_Client
              isclosed = false;
         }
 
+        //method for when the wiki form loads, it calls the fillsearchboxes method and fills the searchboxes
         private void Wiki_Load(object sender, EventArgs e)
         {
             fillSearchboxes();
         }
 
+        //method loads the diseaselistbox with the diseases and fills the medicinelistbox with all the medicines
         private void fillSearchboxes()
         {
             diseasList = new List<Disease>(proxy.get_all_diseases());
@@ -48,6 +59,7 @@ namespace Doctor_Client
             }
         }
 
+        //method for when a medicine is selected. it shows information about it
         private void MedicineSearch_SelectedIndexChanged(object sender, EventArgs e)
         {
             //DiseaseSearch.ClearSelected();
@@ -60,6 +72,7 @@ namespace Doctor_Client
             info_box.Text += "\n" + ("Description: " + Med.description);
         }
 
+        //method for when a disease is selected, it shows information about it
         private void DiseaseSearch_SelectedIndexChanged(object sender, EventArgs e)
         {
             //MedicineSearch.ClearSelected();
@@ -75,21 +88,25 @@ namespace Doctor_Client
   
         }
 
+        //button method to search google for more information about the medicine
         private void button1_Click(object sender, EventArgs e)
         {
             GoogleSearch(MedNameSearch.Text);
         }
 
+        //button method to search google for more information about the disease
         private void button2_Click(object sender, EventArgs e)
         {
             GoogleSearch(diseaseName.Text);
         }
 
+        //method to open the google website, and search for the string parameter that is given
         private void GoogleSearch(string t)
         {
             Process.Start("http://google.com/search?q=" + t);
         }
 
+        //method for when the wiki form is closed. it sets the bool isclosed to true
         private void Wiki_FormClosed(object sender, FormClosedEventArgs e)
         {
             isclosed = true;
@@ -100,6 +117,7 @@ namespace Doctor_Client
 
         }
 
+        //method searches for medicines and fills the list variable with those medicines
         public void search_meds(object sender, EventArgs e)
         {
             MedicineSearch.Items.Clear();
@@ -112,6 +130,8 @@ namespace Doctor_Client
             }
         }
 
+
+        //method searches for diseases and fills the list variable with those diseases
         public void search_disease(object sender, EventArgs e)
         {
             DiseaseSearch.Items.Clear();

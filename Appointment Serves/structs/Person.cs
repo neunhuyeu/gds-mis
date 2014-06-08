@@ -37,10 +37,7 @@ namespace Appointment_Serves
         public char Gender { get; set; }
 
         //getter and setter for the insurance number of the person
-        public string InsuranceNumber { get; set; }
-
-
-       
+        public string InsuranceNumber { get; set; }    
 
     }
 

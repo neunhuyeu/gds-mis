@@ -14,16 +14,34 @@ namespace Doctor_Client
 {
     public partial class PatientDetails : Form
     {
+        //contains the patient
         Patient patient;
+
+        //contains the doctor client
         DoctorClient proxy;
+
+        //contains an array of prescriptions
         Perscription[] perscription;
+
+        //contains a list of consultation id's
         List<Int32> consultationsIDs;
+
+        //contains the current staff user
         Staff CurrentUser;
         int lastTabIndex;
+
+        //contains a list of appointments history
         List<string> appointmentHistory;
 
+        //contains current consultation
         Consultation currentConsultation;
         bool newConsultation;
+
+        /// <summary>
+        /// constructor, shows the details of a patient. sets the consultations,prescriptions and diagnosis
+        /// </summary>
+        /// <param name="pateint">a specific patient</param>
+        /// <param name="currentUser">the staff user</param>
         public PatientDetails(Patient Pateint, Staff currentUser)
         {
             InitializeComponent();
@@ -57,6 +75,7 @@ namespace Doctor_Client
             RefreashPrescription();
         }
 
+        //method refreshes the diagnosis list, and shows the diagnosis history of the patient
         private void RefrashDiagnosis()
         {
             DiagnosisHistory.Items.Clear();
@@ -67,6 +86,8 @@ namespace Doctor_Client
             }
         }
 
+
+        //method refreshes the prescription list, and shows the patient's prescription
         private void RefreashPrescription()
         {
             PrescriptionLb.Items.Clear();
@@ -77,6 +98,8 @@ namespace Doctor_Client
             }
         }
 
+
+        //method refreshes consultations list, and shows the consultations history of the patient
         private void RefreashConsultations()
         {
             cBconsultationID.Items.Clear();
@@ -90,6 +113,9 @@ namespace Doctor_Client
 
             }
         }
+
+        //method converts the date of birth of the patient to int age.
+        //returns int age of the patient
         private int DOBtoAge(DateTime DOB)
         {
             DateTime Now = DateTime.Now;
@@ -100,6 +126,9 @@ namespace Doctor_Client
             }
             return Age;
         }
+
+        //method correctly fixes gender of patient. m to male, f to female
+        //returns string gender
         private string fixGender(char genval)
         {
             string result;
@@ -120,6 +149,8 @@ namespace Doctor_Client
             return result;
         }
 
+
+        //method gets the current consultation id, and returns this
         private int currentconsultationID
         {
             get
@@ -133,6 +164,8 @@ namespace Doctor_Client
             }
         }
 
+
+        //method shows messagebox with prescription detail when a prescription is selected in the listbox
         private void PerscriptionLb_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (PrescriptionLb.SelectedIndex > -1)
@@ -141,6 +174,8 @@ namespace Doctor_Client
             }
         }
 
+
+        //method for print button to print the prescription
         private void button2_Click(object sender, EventArgs e)
         {
             if (PrescriptionLb.SelectedIndex != -1)
@@ -155,6 +190,8 @@ namespace Doctor_Client
             }
         }
 
+
+        //method for adding a prescription. gets data from the filled in inputs
         private void btAddPrescription_Click(object sender, EventArgs e)
         {
             try
@@ -200,6 +237,7 @@ namespace Doctor_Client
 
         }
 
+        //method for when you click past consultations it enables choosing consultation id, else it disables it
         private void pastConsultations_CheckedChanged_1(object sender, EventArgs e)
         {
             if (pastConsultations.Checked)
@@ -212,18 +250,21 @@ namespace Doctor_Client
             }
         }
 
+        //method for button to clear the diagnose editor
         private void button3_Click(object sender, EventArgs e)
         {
 
             clearDiagnoseEditor();
         }
 
+        //method clears the diagnose editor
         private void clearDiagnoseEditor()
         {
             tbinputSyntoms.Text = "";
             tbInputDiagnosis.Text = "";
         }
 
+        //method saves a new diagnosis of the patient and adds it to the database
         private void btSave_Click(object sender, EventArgs e)
         {
             Diagnosis diagnosis = new Diagnosis();
@@ -233,6 +274,7 @@ namespace Doctor_Client
             proxy.addDiagnosis(diagnosis);
         }
 
+        //opens the wiki form when clicked on the wiki tab
         private void tabs_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (tabs.SelectedIndex == 4)
@@ -248,6 +290,8 @@ namespace Doctor_Client
                 lastTabIndex = tabs.SelectedIndex;
             }
         }
+
+        //method makes a new wiki
         public void NewWiki()
         {
             Wiki wiki = new Wiki();
@@ -264,7 +308,7 @@ namespace Doctor_Client
 
         }
 
-
+        //method gets the appointment history of the patient by his/her patient id
         private void getAppointmentsHistoryofPatient(int id)
         {
             
@@ -284,6 +328,7 @@ namespace Doctor_Client
 
         }
 
+        //method fills the patientdetails listbox with the appointments history
         private void FillAppointmentstab()
         {
             foreach (string item in appointmentHistory)

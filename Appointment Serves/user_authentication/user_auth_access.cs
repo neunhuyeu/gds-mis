@@ -14,11 +14,19 @@ namespace DMS_Service.user_auth
     {
         private Appointment_database_connection db_con;
 
+        //constructor
         public user_auth_access()
         {
             db_con = new Appointment_database_connection("gds_mis_auth");
         }
 
+
+        /// <summary>
+        /// Method for loggin in a user
+        /// </summary>
+        /// <param name="email">a specific email address</param>
+        /// <param name="passw">a specific password</param>
+        /// <returns>datatable containing the user with that email and password</returns>
         public DataTable user_login(string email, string passw)
         {
             string query = string.Format("SELECT user_name " +
