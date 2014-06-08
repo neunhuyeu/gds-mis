@@ -17,10 +17,18 @@ namespace Appointment_Serves
     {
         private Appointment_database_connection dbConnection;
 
+        //constructor
         public Appointment_database_acess()
         {
             dbConnection = new Appointment_database_connection(" gds_mis_agenda");
         }
+
+        /// <summary>
+        /// Method for searching appointments by a given date and staffId
+        /// </summary>
+        /// <param name="date">a specific date</param>
+        /// <param name="staffId">a specific staff Id</param>
+        /// <returns>a datatable containing all appointments on a specific date and for a specific staff id</returns>
         public DataTable SearchAppointmentsbyDate(DateTime date, int staffId)
         {
             string query = string.Format("SELECT * " +
@@ -37,6 +45,11 @@ namespace Appointment_Serves
             return dbConnection.SelectQuery(query, sqlParameters);
         }
 
+        /// <summary>
+        /// Method for searching appointments of a certain patient
+        /// </summary>
+        /// <param name="personID">a specific patient ID</param>
+        /// <returns>a datatable containing all appointments of a certain patient</returns>
          public DataTable SearchAppointmentsByPersonID(int personID)
          {
              
@@ -52,21 +65,11 @@ namespace Appointment_Serves
              return dbConnection.SelectQuery(query, sqlParameters);
          }
 
-        public DataTable SearchAppointmentsByPersionID(int personID)
-        {
-
-            string query = string.Format("SELECT * " +
-                                        "FROM appointments " +
-                                        "WHERE patient_id = (select patient_id from patient_info where patient_id = @personID) " +
-                                        "ORDER BY start_date");
-
-            MySqlParameter[] sqlParameters = new MySqlParameter[1];
-            sqlParameters[0] = new MySqlParameter("@personID", MySqlDbType.Int32);
-            sqlParameters[0].Value = Convert.ToString(personID);
-
-            return dbConnection.SelectQuery(query, sqlParameters);
-        }
-
+         /// <summary>
+         /// Method for searching appointments by a given patient username
+         /// </summary>
+         /// <param name="username">a certain username</param>
+         /// <returns>a datatable containing all appointments of a patient with that username</returns>
         public DataTable SearchAppointmentsByPatientUsername(string username)
         {
 
@@ -84,6 +87,11 @@ namespace Appointment_Serves
             return dbConnection.SelectQuery(query, sqlParameters);
         }
 
+        /// <summary>
+        /// Method for searching appointments by staffId
+        /// </summary>
+        /// <param name="staffId">a specific staff id</param>
+        /// <returns>a datatable containing all appointments for a specific staff id</returns>
         public DataTable SearchAppointmentsByStaffID(int staffId)
         {
 
@@ -99,6 +107,11 @@ namespace Appointment_Serves
             return dbConnection.SelectQuery(query, sqlParameters);
         }
 
+        /// <summary>
+        /// Method for searching appointments of today by staffId
+        /// </summary>
+        /// <param name="staffID">a specific staff Id</param>
+        /// <returns>a datatable containing all appointments of today for a specific staff id</returns>
         public DataTable SearchAppointmentsOfToday(int staffID)
         {
             string query = string.Format("SELECT * " +
@@ -115,6 +128,11 @@ namespace Appointment_Serves
             return dbConnection.SelectQuery(query, sqlParameters);
         }
 
+        /// <summary>
+        /// Method for searching a patient by a given email
+        /// </summary>
+        /// <param name="email">a specific email address</param>
+        /// <returns>a datatable containing the patient with that specific email address</returns>
         public DataTable SearchPatientByEmail(string email)
         {
             string query = string.Format("SELECT * FROM patient_info WHERE email_address = @email");
@@ -125,18 +143,34 @@ namespace Appointment_Serves
             return dbConnection.SelectQuery(query, sqlParameters);
         }
 
+        /// <summary>
+        /// Method for getting doctors
+        /// </summary>
+        /// <returns>a datatable containing all doctors' last names</returns>
         public DataTable GetDoctors()
         {
             string query = string.Format("select last_name from staff_info");
             return dbConnection.SelectQuery(query);
         }
 
+        /// <summary>
+        /// Method for getting all the appointments start dates
+        /// </summary>
+        /// <returns>a datatable containing all appointments start dates</returns>
         public DataTable GetAppointmentStartDates()
         {
             string query = string.Format("select start_date from appointments");
             return dbConnection.SelectQuery(query);
         }
 
+        /// <summary>
+        /// Method for adding an appointment to the database
+        /// </summary>
+        /// <param name="staffId">a specific staff Id</param>
+        /// <param name="patientId">a specific patient Id</param>
+        /// <param name="startDate">a specific start date</param>
+        /// <param name="endDate">a specific end date</param>
+        /// <returns>true if the appointment has successfully been added. or else returns false</returns>
         public bool addAppointmrnt(int staffId, int patientId, string startDate, string endDate)
         {
             string query = string.Format("INSERT INTO appointments (appointment_id, staff_id, patient_id, start_date, end_date) "
@@ -164,6 +198,11 @@ namespace Appointment_Serves
             return dbConnection.InsertQuery(query, sqlParameters);
         }
 
+
+        /// <summary>
+        /// Method for returning the next new appointment id
+        /// </summary>
+        /// <returns>returns the new next appointment id</returns>
         private int newAppointmentId()
         {
             string query = "SELECT MAX(appointment_id)+1 as new FROM appointments";
@@ -177,6 +216,11 @@ namespace Appointment_Serves
             return result;
         }
 
+        /// <summary>
+        /// Method for getting the patient id by a certain email address
+        /// </summary>
+        /// <param name="patientMail">a specific email address</param>
+        /// <returns>the patient id of the patient who has that email</returns>
         internal int GetPatientId(string patientMail)
         {
             int patientId = -1;
@@ -196,6 +240,11 @@ namespace Appointment_Serves
             return patientId;
         }
 
+        /// <summary>
+        /// Method for getting the staff id by a certain last name
+        /// </summary>
+        /// <param name="staffLastName">a specific staff last name</param>
+        /// <returns>returns the staff id of the staff who has that last name</returns>
         internal int GetStaffId(string staffLastName)
         {
             int staffId = -1;

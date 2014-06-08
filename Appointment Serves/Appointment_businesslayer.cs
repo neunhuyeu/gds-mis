@@ -15,13 +15,19 @@ namespace Appointment_Serves
     {
         private Appointment_database_acess dbAcess;
 
-
+        //constructor
         public Appointment_businesslayer()
         {
             dbAcess = new Appointment_database_acess();
 
         }
 
+        /// <summary>
+        /// Method for searching appointments by a certain date and staff Id
+        /// </summary>
+        /// <param name="date">a specific date</param>
+        /// <param name="staffId">a specific staff Id</param>
+        /// <returns>List of patients with their details that have an appointment on that date with that staff Id </returns>
         public List<Patient> SearchappointmentsbyDate(DateTime date, int staffId)
         {
             List<Patient> mypersons = new List<Patient>();
@@ -43,27 +49,11 @@ namespace Appointment_Serves
 
         }
 
-
-
-        //public List<Appointment> getAppointmentsHistorybyPatient(int personId)
-        //{
-        //    List<Appointment> myappointments = new List<Appointment>();
-        //    DataTable dataTable = dbAcess.SearchAppointmentsByPersionID(personId);
-
-        //    foreach (DataRow row in dataTable.Rows)
-        //    {
-        //        Appointment appointment = new Appointment();
-
-        //        appointment.Start_date = Convert.ToDateTime(row["start_date"]);
-        //        appointment.AppointmentID = Convert.ToInt32(row["appointment_id"]);
-
-        //        myappointments.Add(appointment);
-        //    }
-        //    return myappointments;
-        //}
-
-        // We don't need this function.
-
+        /// <summary>
+        /// Method for getting all the appointments of a certain staff
+        /// </summary>
+        /// <param name="staffId">a specific staff Id</param>
+        /// <returns>List of appointments</returns>
         public List<Appointment> SearchAppointmentsByStaffID(int staffId)
         {
             List<Appointment> myappointments = new List<Appointment>();
@@ -81,7 +71,11 @@ namespace Appointment_Serves
             return myappointments;
         }
 
-
+        /// <summary>
+        /// Method for getting the appointments of today for a certain staff
+        /// </summary>
+        /// <param name="staffID">a specific staff Id</param>
+        /// <returns>List of patients with their details that have an appointment today with that staff</returns>
         public List<Patient> getAppointmnetsOfToday(int staffID)
         {
             List<Patient> myappointments = new List<Patient>();
@@ -127,18 +121,33 @@ namespace Appointment_Serves
             return null;
         }
 
+        /// <summary>
+        /// Method for getting the appointments history of a certain patient by username
+        /// </summary>
+        /// <param name="un">a specific username</param>
+        /// <returns>a datatable containing the appointments history of a certain patient</returns>
         public DataTable getAppointmentsHistorybyPatient(string un)
         {
             DataTable dataTable = dbAcess.SearchAppointmentsByPatientUsername(un);
             return dataTable;
         }
 
+        /// <summary>
+        /// Method for getting the appointments history of a certain patient by id
+        /// </summary>
+        /// <param name="ID">a specific patient ID</param>
+        /// <returns>a datatable containing the appointments history of a certain patient</returns>
         public DataTable getAppointmentsHistorybyPatientID(int ID)
         {
             DataTable dataTable = dbAcess.SearchAppointmentsByPersonID(ID);
             return dataTable;
         }
 
+        /// <summary>
+        /// Method for validating an appointment
+        /// </summary>
+        /// <param name="start_date">a specific start date</param>
+        /// <returns>true if the appointment has successfully been validated. or else returns false</returns>
         bool ValidateAppointment(DateTime start_date)
         {
             DataTable dt = dbAcess.GetAppointmentStartDates();
@@ -152,6 +161,14 @@ namespace Appointment_Serves
             return true;
         }
 
+        /// <summary>
+        /// Method for adding an appointment to the database
+        /// </summary>
+        /// <param name="staffLastName">a specific staff last name</param>
+        /// <param name="patientMail">a specific patient email</param>
+        /// <param name="startDate">a specific start date</param>
+        /// <param name="endDate">a specific end date</param>
+        /// <returns>true if the appointment has successfully been added. or else returns false</returns>
         public bool AddAppointment(string staffLastName, string patientMail, string startDate, string endDate)
         {
             DateTime date;

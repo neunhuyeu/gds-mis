@@ -15,14 +15,18 @@ namespace Administration
 {
     public partial class Login : Form
     {
+        //proxy to the doctor client
         private DoctorClient proxy;
 
+        //constructor, initializes components and makes a new proxy.
         public Login()
         {
             proxy = new DoctorClient();
             InitializeComponent();
         }
 
+        //login button, checks the input for email and password and tries to login the usser
+        //if successfull shows adminstration form, else gives a message accordingly
         private void btnLogin_Click(object sender, EventArgs e)
         {
             LoginErrorlb.Text = "";

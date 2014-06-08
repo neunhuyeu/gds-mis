@@ -16,14 +16,24 @@ namespace Doctor_Client
     
     public partial class Client : Form
     {
+        //contains the current logged in user
         ServerConnectionMedicalInformation.Staff currentUser;
+
+        //contains an arrary of patients
         ServerConnectionMedicalInformation.Patient[] potentualPatients;
+
+        //contains an array of appointments
         ServerConnectionagenda.Appointment[] agendaAppointments;
+
+        //contains an array of patients
         ServerConnectionagenda.Patient[] appointments;
+
         List<string[]> stringList;
         string[] Appoint;
         DateTime[] DatetimeBold;
         int lastTabIndex;
+
+        //constructor, initalizes components and changes welcome text in labe and shows current date
         public Client(Staff user)
         {
             InitializeComponent();
@@ -35,6 +45,7 @@ namespace Doctor_Client
 
         }
 
+        //method for searching patients by the given inputs
         private void searchPatients()
         {
             searchListLB.Items.Clear();
@@ -56,6 +67,7 @@ namespace Doctor_Client
         }
 
 
+        //method gets the appointments of today for this current user
         private void getAppointmentsoftheDay()
         {
             stringList = new List<string[]>();
@@ -71,7 +83,8 @@ namespace Doctor_Client
 
         }
 
-
+        //method gets the appointments history for the current user's staff id
+        //returns a array of date times (of the appointments)
         private DateTime[] getAppointmentsHistorybyStaffid()
         {
 
@@ -90,6 +103,8 @@ namespace Doctor_Client
 
         }
 
+        //method for when the client loads: it shows the appointments of today in a grid view on the start screen
+        //and in the tab appointments it makes the appointments dates bold in the calendar
         private void Client_Load(object sender, EventArgs e)
         {
 
@@ -115,12 +130,14 @@ namespace Doctor_Client
 
         }
 
+        //method for the logout button
         private void logoubtn_Click(object sender, EventArgs e)
         {
             this.Close();
 
         }
 
+        //opens the patient's details form when a patient is being selected in the patient search
         private void searchListLB_SelectedIndexChanged(object sender, EventArgs e)
         {
             PatientDetails Patient = new PatientDetails(potentualPatients[searchListLB.SelectedIndex], currentUser);
@@ -130,17 +147,19 @@ namespace Doctor_Client
         }
 
 
-
+        //method for the search patient button. calls the searchpatient method
         private void btn_searchPatients_Click(object sender, EventArgs e)
         {
             searchPatients();
         }
 
+        //on key change calls the method for searching a patient
         private void tbSearchFirstName_KeyUp(object sender, KeyEventArgs e)
         {
             searchPatients();
         }
 
+        //method gets the appointments by a specific date.
         private void getAppointmentsbyspecificDate(DateTime date)
         {
             int i = 0;
@@ -163,7 +182,7 @@ namespace Doctor_Client
         }
 
         
-
+        //method changes the list box to show the appointments everytime you click on a certain date in the calendar
         private void monthCalendar1_DateChanged_1(object sender, DateRangeEventArgs e)
         {
             agendaList.Items.Clear();
@@ -179,6 +198,7 @@ namespace Doctor_Client
              }
         }
 
+        //shows the wiki form when you click on the wiki tab
         private void tabs_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (tabs.SelectedIndex == 3)
@@ -198,6 +218,7 @@ namespace Doctor_Client
             }
         }
        
+        //creates a new wiki 
         public void NewWiki()
         {
       

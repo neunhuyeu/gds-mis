@@ -33,6 +33,11 @@ namespace Appointment_Serves
             return db_connection_string;
         }
 
+        /// <summary>
+        /// Method running a select query
+        /// </summary>
+        /// <param name="query">a specific query</param>
+        /// <returns>datatable containing the result of the query</returns>
         public DataTable SelectQuery(String query)
         {
             DataSet dt_set = new DataSet();
@@ -69,6 +74,12 @@ namespace Appointment_Serves
             return dt_table;
         }
 
+        /// <summary>
+        /// Method running a select query with parameters
+        /// </summary>
+        /// <param name="query">a specific query</param>
+        /// <param name="sqlParameter">array of MySqlParameters</param>
+        /// <returns>datatable containing the result of the query</returns>
         public DataTable SelectQuery(String query, MySqlParameter[] sqlParameter)
         {
             DataSet dt_set = new DataSet();
@@ -105,8 +116,14 @@ namespace Appointment_Serves
             
             return dt_table;
         }
-    
 
+
+        /// <summary>
+        /// Method running an insert query with parameters
+        /// </summary>
+        /// <param name="query">a specific query</param>
+        /// <param name="sqlParameter">array of MySqlParameters</param>
+        /// <returns>true if the query was successfull or else false</returns>
         public bool InsertQuery(String query, MySqlParameter[] sqlParameter)
         {
             try
@@ -140,7 +157,12 @@ namespace Appointment_Serves
             return true;
         }
 
-
+        /// <summary>
+        /// Method running an update query with parameters
+        /// </summary>
+        /// <param name="query">a specific query</param>
+        /// <param name="sqlParameter">array of MySqlParameters</param>
+        /// <returns>true if the query was successfull or else false</returns>
         public bool UpdateQuery(String query, MySqlParameter[] sqlParameter)
         {
             DataSet dt_set = new DataSet();
