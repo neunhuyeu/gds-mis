@@ -2793,817 +2793,469 @@
   <data name="&gt;&gt;tb_infoEditPatient.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
-  <data name="tabPastAppointments.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 24</value>
-  </data>
-  <data name="tabPastAppointments.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 3, 3, 3</value>
-  </data>
-  <data name="tabPastAppointments.Size" type="System.Drawing.Size, System.Drawing">
-    <value>759, 469</value>
-  </data>
-  <data name="tabPastAppointments.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="tabPastAppointments.Text" xml:space="preserve">
-    <value>Appointments</value>
-  </data>
-  <data name="&gt;&gt;tabPastAppointments.Name" xml:space="preserve">
-    <value>tabPastAppointments</value>
-  </data>
-  <data name="&gt;&gt;tabPastAppointments.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tabPastAppointments.Parent" xml:space="preserve">
-    <value>tabs</value>
-  </data>
-  <data name="&gt;&gt;tabPastAppointments.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="btAddPrescription.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Bottom, Left, Right</value>
-  </data>
-  <data name="btAddPrescription.Location" type="System.Drawing.Point, System.Drawing">
-    <value>592, 268</value>
-  </data>
-  <data name="btAddPrescription.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>2, 2, 2, 2</value>
-  </data>
-  <data name="btAddPrescription.Size" type="System.Drawing.Size, System.Drawing">
-    <value>162, 23</value>
-  </data>
-  <data name="btAddPrescription.TabIndex" type="System.Int32, mscorlib">
-    <value>26</value>
-  </data>
-  <data name="btAddPrescription.Text" xml:space="preserve">
-    <value>Add</value>
-  </data>
-  <data name="&gt;&gt;btAddPrescription.Name" xml:space="preserve">
-    <value>btAddPrescription</value>
-  </data>
-  <data name="&gt;&gt;btAddPrescription.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;btAddPrescription.Parent" xml:space="preserve">
-    <value>tabCurrentMedication</value>
-  </data>
-  <data name="&gt;&gt;btAddPrescription.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="label55.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Bottom, Left, Right</value>
-  </data>
-  <data name="label55.AutoSize" type="System.Boolean, mscorlib">
+  <data name="lbl_apDoctor.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="label55.Location" type="System.Drawing.Point, System.Drawing">
-    <value>460, 128</value>
+  <data name="lbl_apDoctor.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
-  <data name="label55.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>2, 0, 2, 0</value>
+  <data name="lbl_apDoctor.Location" type="System.Drawing.Point, System.Drawing">
+    <value>504, 41</value>
   </data>
-  <data name="label55.Size" type="System.Drawing.Size, System.Drawing">
-    <value>90, 15</value>
+  <data name="lbl_apDoctor.Size" type="System.Drawing.Size, System.Drawing">
+    <value>43, 15</value>
   </data>
-  <data name="label55.TabIndex" type="System.Int32, mscorlib">
-    <value>25</value>
-  </data>
-  <data name="label55.Text" xml:space="preserve">
-    <value>Consultation ID</value>
-  </data>
-  <data name="&gt;&gt;label55.Name" xml:space="preserve">
-    <value>label55</value>
-  </data>
-  <data name="&gt;&gt;label55.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label55.Parent" xml:space="preserve">
-    <value>tabCurrentMedication</value>
-  </data>
-  <data name="&gt;&gt;label55.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="cBconsultationID.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Bottom, Left, Right</value>
-  </data>
-  <data name="cBconsultationID.Enabled" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="cBconsultationID.Location" type="System.Drawing.Point, System.Drawing">
-    <value>544, 122</value>
-  </data>
-  <data name="cBconsultationID.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>2, 2, 2, 2</value>
-  </data>
-  <data name="cBconsultationID.Size" type="System.Drawing.Size, System.Drawing">
-    <value>208, 23</value>
-  </data>
-  <data name="cBconsultationID.TabIndex" type="System.Int32, mscorlib">
-    <value>24</value>
-  </data>
-  <data name="&gt;&gt;cBconsultationID.Name" xml:space="preserve">
-    <value>cBconsultationID</value>
-  </data>
-  <data name="&gt;&gt;cBconsultationID.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;cBconsultationID.Parent" xml:space="preserve">
-    <value>tabCurrentMedication</value>
-  </data>
-  <data name="&gt;&gt;cBconsultationID.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="groupBox2.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Bottom, Left, Right</value>
-  </data>
-  <data name="pastConsultations.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="pastConsultations.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 35</value>
-  </data>
-  <data name="pastConsultations.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>2, 2, 2, 2</value>
-  </data>
-  <data name="pastConsultations.Size" type="System.Drawing.Size, System.Drawing">
-    <value>130, 19</value>
-  </data>
-  <data name="pastConsultations.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="pastConsultations.Text" xml:space="preserve">
-    <value>Other consultations</value>
-  </data>
-  <data name="&gt;&gt;pastConsultations.Name" xml:space="preserve">
-    <value>pastConsultations</value>
-  </data>
-  <data name="&gt;&gt;pastConsultations.Type" xml:space="preserve">
-    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;pastConsultations.Parent" xml:space="preserve">
-    <value>groupBox2</value>
-  </data>
-  <data name="&gt;&gt;pastConsultations.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="rbCurrent.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="rbCurrent.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 13</value>
-  </data>
-  <data name="rbCurrent.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>2, 2, 2, 2</value>
-  </data>
-  <data name="rbCurrent.Size" type="System.Drawing.Size, System.Drawing">
-    <value>140, 19</value>
-  </data>
-  <data name="rbCurrent.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="rbCurrent.Text" xml:space="preserve">
-    <value>Current consultations</value>
-  </data>
-  <data name="&gt;&gt;rbCurrent.Name" xml:space="preserve">
-    <value>rbCurrent</value>
-  </data>
-  <data name="&gt;&gt;rbCurrent.Type" xml:space="preserve">
-    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;rbCurrent.Parent" xml:space="preserve">
-    <value>groupBox2</value>
-  </data>
-  <data name="&gt;&gt;rbCurrent.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="groupBox2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>464, 60</value>
-  </data>
-  <data name="groupBox2.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>2, 2, 2, 2</value>
-  </data>
-  <data name="groupBox2.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>2, 2, 2, 2</value>
-  </data>
-  <data name="groupBox2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>288, 58</value>
-  </data>
-  <data name="groupBox2.TabIndex" type="System.Int32, mscorlib">
-    <value>23</value>
-  </data>
-  <data name="&gt;&gt;groupBox2.Name" xml:space="preserve">
-    <value>groupBox2</value>
-  </data>
-  <data name="&gt;&gt;groupBox2.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;groupBox2.Parent" xml:space="preserve">
-    <value>tabCurrentMedication</value>
-  </data>
-  <data name="&gt;&gt;groupBox2.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="lbvolume.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Bottom, Left, Right</value>
-  </data>
-  <data name="lbvolume.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="lbvolume.Location" type="System.Drawing.Point, System.Drawing">
-    <value>462, 241</value>
-  </data>
-  <data name="lbvolume.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>2, 0, 2, 0</value>
-  </data>
-  <data name="lbvolume.Size" type="System.Drawing.Size, System.Drawing">
-    <value>74, 15</value>
-  </data>
-  <data name="lbvolume.TabIndex" type="System.Int32, mscorlib">
+  <data name="lbl_apDoctor.TabIndex" type="System.Int32, mscorlib">
     <value>22</value>
   </data>
-  <data name="lbvolume.Text" xml:space="preserve">
-    <value>Volume(ml):</value>
+  <data name="lbl_apDoctor.Text" xml:space="preserve">
+    <value>Doctor</value>
   </data>
-  <data name="&gt;&gt;lbvolume.Name" xml:space="preserve">
-    <value>lbvolume</value>
+  <data name="&gt;&gt;lbl_apDoctor.Name" xml:space="preserve">
+    <value>lbl_apDoctor</value>
   </data>
-  <data name="&gt;&gt;lbvolume.Type" xml:space="preserve">
+  <data name="&gt;&gt;lbl_apDoctor.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;lbvolume.Parent" xml:space="preserve">
-    <value>tabCurrentMedication</value>
+  <data name="&gt;&gt;lbl_apDoctor.Parent" xml:space="preserve">
+    <value>tabAppointments</value>
   </data>
-  <data name="&gt;&gt;lbvolume.ZOrder" xml:space="preserve">
-    <value>4</value>
+  <data name="&gt;&gt;lbl_apDoctor.ZOrder" xml:space="preserve">
+    <value>0</value>
   </data>
-  <data name="lbnumPils.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Bottom, Left, Right</value>
-  </data>
-  <data name="lbnumPils.AutoSize" type="System.Boolean, mscorlib">
+  <data name="label81.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="lbnumPils.Location" type="System.Drawing.Point, System.Drawing">
-    <value>462, 213</value>
+  <data name="label81.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 9pt, style=Bold</value>
   </data>
-  <data name="lbnumPils.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>2, 0, 2, 0</value>
+  <data name="label81.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
-  <data name="lbnumPils.Size" type="System.Drawing.Size, System.Drawing">
-    <value>93, 15</value>
+  <data name="label81.Location" type="System.Drawing.Point, System.Drawing">
+    <value>392, 41</value>
   </data>
-  <data name="lbnumPils.TabIndex" type="System.Int32, mscorlib">
+  <data name="label81.Size" type="System.Drawing.Size, System.Drawing">
+    <value>53, 15</value>
+  </data>
+  <data name="label81.TabIndex" type="System.Int32, mscorlib">
     <value>21</value>
   </data>
-  <data name="lbnumPils.Text" xml:space="preserve">
-    <value>Number of pills:</value>
+  <data name="label81.Text" xml:space="preserve">
+    <value>Doctor:</value>
   </data>
-  <data name="&gt;&gt;lbnumPils.Name" xml:space="preserve">
-    <value>lbnumPils</value>
+  <data name="&gt;&gt;label81.Name" xml:space="preserve">
+    <value>label81</value>
   </data>
-  <data name="&gt;&gt;lbnumPils.Type" xml:space="preserve">
+  <data name="&gt;&gt;label81.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;lbnumPils.Parent" xml:space="preserve">
-    <value>tabCurrentMedication</value>
+  <data name="&gt;&gt;label81.Parent" xml:space="preserve">
+    <value>tabAppointments</value>
   </data>
-  <data name="&gt;&gt;lbnumPils.ZOrder" xml:space="preserve">
-    <value>5</value>
+  <data name="&gt;&gt;label81.ZOrder" xml:space="preserve">
+    <value>1</value>
   </data>
-  <data name="lbStrength.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Bottom, Left, Right</value>
-  </data>
-  <data name="lbStrength.AutoSize" type="System.Boolean, mscorlib">
+  <data name="lbl_apSpecialization.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="lbStrength.Location" type="System.Drawing.Point, System.Drawing">
-    <value>460, 184</value>
+  <data name="lbl_apSpecialization.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
-  <data name="lbStrength.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>2, 0, 2, 0</value>
+  <data name="lbl_apSpecialization.Location" type="System.Drawing.Point, System.Drawing">
+    <value>504, 99</value>
   </data>
-  <data name="lbStrength.Size" type="System.Drawing.Size, System.Drawing">
-    <value>82, 15</value>
+  <data name="lbl_apSpecialization.Size" type="System.Drawing.Size, System.Drawing">
+    <value>87, 15</value>
   </data>
-  <data name="lbStrength.TabIndex" type="System.Int32, mscorlib">
+  <data name="lbl_apSpecialization.TabIndex" type="System.Int32, mscorlib">
     <value>20</value>
   </data>
-  <data name="lbStrength.Text" xml:space="preserve">
-    <value>Strength(mg):</value>
+  <data name="lbl_apSpecialization.Text" xml:space="preserve">
+    <value>Specialization:</value>
   </data>
-  <data name="&gt;&gt;lbStrength.Name" xml:space="preserve">
-    <value>lbStrength</value>
+  <data name="&gt;&gt;lbl_apSpecialization.Name" xml:space="preserve">
+    <value>lbl_apSpecialization</value>
   </data>
-  <data name="&gt;&gt;lbStrength.Type" xml:space="preserve">
+  <data name="&gt;&gt;lbl_apSpecialization.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;lbStrength.Parent" xml:space="preserve">
-    <value>tabCurrentMedication</value>
+  <data name="&gt;&gt;lbl_apSpecialization.Parent" xml:space="preserve">
+    <value>tabAppointments</value>
   </data>
-  <data name="&gt;&gt;lbStrength.ZOrder" xml:space="preserve">
-    <value>6</value>
+  <data name="&gt;&gt;lbl_apSpecialization.ZOrder" xml:space="preserve">
+    <value>2</value>
   </data>
-  <data name="tbVolume.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Bottom, Left, Right</value>
+  <data name="label79.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
   </data>
-  <data name="tbVolume.Location" type="System.Drawing.Point, System.Drawing">
-    <value>544, 237</value>
+  <data name="label79.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 9pt, style=Bold</value>
   </data>
-  <data name="tbVolume.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>2, 2, 2, 2</value>
+  <data name="label79.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
-  <data name="tbVolume.Size" type="System.Drawing.Size, System.Drawing">
-    <value>208, 21</value>
+  <data name="label79.Location" type="System.Drawing.Point, System.Drawing">
+    <value>392, 99</value>
   </data>
-  <data name="tbVolume.TabIndex" type="System.Int32, mscorlib">
+  <data name="label79.Size" type="System.Drawing.Size, System.Drawing">
+    <value>102, 15</value>
+  </data>
+  <data name="label79.TabIndex" type="System.Int32, mscorlib">
     <value>19</value>
   </data>
-  <data name="&gt;&gt;tbVolume.Name" xml:space="preserve">
-    <value>tbVolume</value>
+  <data name="label79.Text" xml:space="preserve">
+    <value>Specialization:</value>
   </data>
-  <data name="&gt;&gt;tbVolume.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;label79.Name" xml:space="preserve">
+    <value>label79</value>
   </data>
-  <data name="&gt;&gt;tbVolume.Parent" xml:space="preserve">
-    <value>tabCurrentMedication</value>
-  </data>
-  <data name="&gt;&gt;tbVolume.ZOrder" xml:space="preserve">
-    <value>7</value>
-  </data>
-  <data name="tbNumPills.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Bottom, Left, Right</value>
-  </data>
-  <data name="tbNumPills.Location" type="System.Drawing.Point, System.Drawing">
-    <value>544, 209</value>
-  </data>
-  <data name="tbNumPills.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>2, 2, 2, 2</value>
-  </data>
-  <data name="tbNumPills.Size" type="System.Drawing.Size, System.Drawing">
-    <value>208, 21</value>
-  </data>
-  <data name="tbNumPills.TabIndex" type="System.Int32, mscorlib">
-    <value>18</value>
-  </data>
-  <data name="&gt;&gt;tbNumPills.Name" xml:space="preserve">
-    <value>tbNumPills</value>
-  </data>
-  <data name="&gt;&gt;tbNumPills.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tbNumPills.Parent" xml:space="preserve">
-    <value>tabCurrentMedication</value>
-  </data>
-  <data name="&gt;&gt;tbNumPills.ZOrder" xml:space="preserve">
-    <value>8</value>
-  </data>
-  <data name="tbstrength.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Bottom, Left, Right</value>
-  </data>
-  <data name="tbstrength.Location" type="System.Drawing.Point, System.Drawing">
-    <value>544, 180</value>
-  </data>
-  <data name="tbstrength.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>2, 2, 2, 2</value>
-  </data>
-  <data name="tbstrength.Size" type="System.Drawing.Size, System.Drawing">
-    <value>208, 21</value>
-  </data>
-  <data name="tbstrength.TabIndex" type="System.Int32, mscorlib">
-    <value>17</value>
-  </data>
-  <data name="&gt;&gt;tbstrength.Name" xml:space="preserve">
-    <value>tbstrength</value>
-  </data>
-  <data name="&gt;&gt;tbstrength.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tbstrength.Parent" xml:space="preserve">
-    <value>tabCurrentMedication</value>
-  </data>
-  <data name="&gt;&gt;tbstrength.ZOrder" xml:space="preserve">
-    <value>9</value>
-  </data>
-  <data name="tbMedicine.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Bottom, Left, Right</value>
-  </data>
-  <data name="tbMedicine.Location" type="System.Drawing.Point, System.Drawing">
-    <value>544, 152</value>
-  </data>
-  <data name="tbMedicine.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>2, 2, 2, 2</value>
-  </data>
-  <data name="tbMedicine.Size" type="System.Drawing.Size, System.Drawing">
-    <value>208, 21</value>
-  </data>
-  <data name="tbMedicine.TabIndex" type="System.Int32, mscorlib">
-    <value>16</value>
-  </data>
-  <data name="&gt;&gt;tbMedicine.Name" xml:space="preserve">
-    <value>tbMedicine</value>
-  </data>
-  <data name="&gt;&gt;tbMedicine.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tbMedicine.Parent" xml:space="preserve">
-    <value>tabCurrentMedication</value>
-  </data>
-  <data name="&gt;&gt;tbMedicine.ZOrder" xml:space="preserve">
-    <value>10</value>
-  </data>
-  <data name="lbMedicne.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Bottom, Left, Right</value>
-  </data>
-  <data name="lbMedicne.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="lbMedicne.Location" type="System.Drawing.Point, System.Drawing">
-    <value>460, 156</value>
-  </data>
-  <data name="lbMedicne.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>2, 0, 2, 0</value>
-  </data>
-  <data name="lbMedicne.Size" type="System.Drawing.Size, System.Drawing">
-    <value>61, 15</value>
-  </data>
-  <data name="lbMedicne.TabIndex" type="System.Int32, mscorlib">
-    <value>15</value>
-  </data>
-  <data name="lbMedicne.Text" xml:space="preserve">
-    <value>Medicine:</value>
-  </data>
-  <data name="&gt;&gt;lbMedicne.Name" xml:space="preserve">
-    <value>lbMedicne</value>
-  </data>
-  <data name="&gt;&gt;lbMedicne.Type" xml:space="preserve">
+  <data name="&gt;&gt;label79.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;lbMedicne.Parent" xml:space="preserve">
-    <value>tabCurrentMedication</value>
+  <data name="&gt;&gt;label79.Parent" xml:space="preserve">
+    <value>tabAppointments</value>
   </data>
-  <data name="&gt;&gt;lbMedicne.ZOrder" xml:space="preserve">
-    <value>11</value>
-  </data>
-  <data name="printSelectedPersription.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Bottom, Left</value>
-  </data>
-  <data name="printSelectedPersription.Location" type="System.Drawing.Point, System.Drawing">
-    <value>464, 268</value>
-  </data>
-  <data name="printSelectedPersription.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>2, 2, 2, 2</value>
-  </data>
-  <data name="printSelectedPersription.Size" type="System.Drawing.Size, System.Drawing">
-    <value>83, 23</value>
-  </data>
-  <data name="printSelectedPersription.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="printSelectedPersription.Text" xml:space="preserve">
-    <value>Print</value>
-  </data>
-  <data name="&gt;&gt;printSelectedPersription.Name" xml:space="preserve">
-    <value>printSelectedPersription</value>
-  </data>
-  <data name="&gt;&gt;printSelectedPersription.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;printSelectedPersription.Parent" xml:space="preserve">
-    <value>tabCurrentMedication</value>
-  </data>
-  <data name="&gt;&gt;printSelectedPersription.ZOrder" xml:space="preserve">
-    <value>12</value>
-  </data>
-  <data name="PerscriptionLb.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Bottom, Left</value>
-  </data>
-  <data name="PerscriptionLb.ItemHeight" type="System.Int32, mscorlib">
-    <value>15</value>
-  </data>
-  <data name="PerscriptionLb.Location" type="System.Drawing.Point, System.Drawing">
-    <value>18, 66</value>
-  </data>
-  <data name="PerscriptionLb.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>2, 2, 2, 2</value>
-  </data>
-  <data name="PerscriptionLb.Size" type="System.Drawing.Size, System.Drawing">
-    <value>438, 214</value>
-  </data>
-  <data name="PerscriptionLb.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;PerscriptionLb.Name" xml:space="preserve">
-    <value>PerscriptionLb</value>
-  </data>
-  <data name="&gt;&gt;PerscriptionLb.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ListBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;PerscriptionLb.Parent" xml:space="preserve">
-    <value>tabCurrentMedication</value>
-  </data>
-  <data name="&gt;&gt;PerscriptionLb.ZOrder" xml:space="preserve">
-    <value>13</value>
-  </data>
-  <data name="tabCurrentMedication.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 24</value>
-  </data>
-  <data name="tabCurrentMedication.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 3, 3, 3</value>
-  </data>
-  <data name="tabCurrentMedication.Size" type="System.Drawing.Size, System.Drawing">
-    <value>759, 469</value>
-  </data>
-  <data name="tabCurrentMedication.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="tabCurrentMedication.Text" xml:space="preserve">
-    <value>Perscriptions</value>
-  </data>
-  <data name="&gt;&gt;tabCurrentMedication.Name" xml:space="preserve">
-    <value>tabCurrentMedication</value>
-  </data>
-  <data name="&gt;&gt;tabCurrentMedication.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tabCurrentMedication.Parent" xml:space="preserve">
-    <value>tabs</value>
-  </data>
-  <data name="&gt;&gt;tabCurrentMedication.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="textBox3.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Bottom, Left, Right</value>
-  </data>
-  <data name="textBox3.Enabled" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="textBox3.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 12pt, style=Bold</value>
-  </data>
-  <data name="textBox3.Location" type="System.Drawing.Point, System.Drawing">
-    <value>157, 88</value>
-  </data>
-  <data name="textBox3.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>2, 2, 2, 2</value>
-  </data>
-  <data name="textBox3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>307, 26</value>
-  </data>
-  <data name="textBox3.TabIndex" type="System.Int32, mscorlib">
-    <value>7</value>
-  </data>
-  <data name="textBox3.Text" xml:space="preserve">
-    <value>       Symptoms</value>
-  </data>
-  <data name="&gt;&gt;textBox3.Name" xml:space="preserve">
-    <value>textBox3</value>
-  </data>
-  <data name="&gt;&gt;textBox3.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;textBox3.Parent" xml:space="preserve">
-    <value>tapConsultations</value>
-  </data>
-  <data name="&gt;&gt;textBox3.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="diagnosishead.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Bottom, Right</value>
-  </data>
-  <data name="diagnosishead.Enabled" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="diagnosishead.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 12pt, style=Bold</value>
-  </data>
-  <data name="diagnosishead.Location" type="System.Drawing.Point, System.Drawing">
-    <value>485, 88</value>
-  </data>
-  <data name="diagnosishead.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>2, 2, 2, 2</value>
-  </data>
-  <data name="diagnosishead.Size" type="System.Drawing.Size, System.Drawing">
-    <value>269, 26</value>
-  </data>
-  <data name="diagnosishead.TabIndex" type="System.Int32, mscorlib">
-    <value>6</value>
-  </data>
-  <data name="diagnosishead.Text" xml:space="preserve">
-    <value>                      Diagnosis</value>
-  </data>
-  <data name="&gt;&gt;diagnosishead.Name" xml:space="preserve">
-    <value>diagnosishead</value>
-  </data>
-  <data name="&gt;&gt;diagnosishead.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;diagnosishead.Parent" xml:space="preserve">
-    <value>tapConsultations</value>
-  </data>
-  <data name="&gt;&gt;diagnosishead.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="btClear.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Bottom, Left</value>
-  </data>
-  <data name="btClear.Location" type="System.Drawing.Point, System.Drawing">
-    <value>17, 218</value>
-  </data>
-  <data name="btClear.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>2, 2, 2, 2</value>
-  </data>
-  <data name="btClear.Size" type="System.Drawing.Size, System.Drawing">
-    <value>119, 67</value>
-  </data>
-  <data name="btClear.TabIndex" type="System.Int32, mscorlib">
-    <value>5</value>
-  </data>
-  <data name="btClear.Text" xml:space="preserve">
-    <value>Clear</value>
-  </data>
-  <data name="&gt;&gt;btClear.Name" xml:space="preserve">
-    <value>btClear</value>
-  </data>
-  <data name="&gt;&gt;btClear.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;btClear.Parent" xml:space="preserve">
-    <value>tapConsultations</value>
-  </data>
-  <data name="&gt;&gt;btClear.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="btSave.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Bottom, Left</value>
-  </data>
-  <data name="btSave.Location" type="System.Drawing.Point, System.Drawing">
-    <value>17, 140</value>
-  </data>
-  <data name="btSave.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>2, 2, 2, 2</value>
-  </data>
-  <data name="btSave.Size" type="System.Drawing.Size, System.Drawing">
-    <value>119, 61</value>
-  </data>
-  <data name="btSave.TabIndex" type="System.Int32, mscorlib">
+  <data name="&gt;&gt;label79.ZOrder" xml:space="preserve">
     <value>3</value>
   </data>
-  <data name="btSave.Text" xml:space="preserve">
-    <value>Save  </value>
-  </data>
-  <data name="&gt;&gt;btSave.Name" xml:space="preserve">
-    <value>btSave</value>
-  </data>
-  <data name="&gt;&gt;btSave.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;btSave.Parent" xml:space="preserve">
-    <value>tapConsultations</value>
-  </data>
-  <data name="&gt;&gt;btSave.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="tbinputSyntoms.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Bottom, Left, Right</value>
-  </data>
-  <data name="tbinputSyntoms.Location" type="System.Drawing.Point, System.Drawing">
-    <value>157, 112</value>
-  </data>
-  <data name="tbinputSyntoms.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>2, 2, 2, 2</value>
-  </data>
-  <data name="tbinputSyntoms.Multiline" type="System.Boolean, mscorlib">
+  <data name="lbl_apFunction.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="tbinputSyntoms.Size" type="System.Drawing.Size, System.Drawing">
-    <value>307, 167</value>
+  <data name="lbl_apFunction.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
-  <data name="tbinputSyntoms.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
+  <data name="lbl_apFunction.Location" type="System.Drawing.Point, System.Drawing">
+    <value>504, 69</value>
   </data>
-  <data name="&gt;&gt;tbinputSyntoms.Name" xml:space="preserve">
-    <value>tbinputSyntoms</value>
+  <data name="lbl_apFunction.Size" type="System.Drawing.Size, System.Drawing">
+    <value>54, 15</value>
   </data>
-  <data name="&gt;&gt;tbinputSyntoms.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="lbl_apFunction.TabIndex" type="System.Int32, mscorlib">
+    <value>18</value>
   </data>
-  <data name="&gt;&gt;tbinputSyntoms.Parent" xml:space="preserve">
-    <value>tapConsultations</value>
+  <data name="lbl_apFunction.Text" xml:space="preserve">
+    <value>Function</value>
   </data>
-  <data name="&gt;&gt;tbinputSyntoms.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;lbl_apFunction.Name" xml:space="preserve">
+    <value>lbl_apFunction</value>
+  </data>
+  <data name="&gt;&gt;lbl_apFunction.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lbl_apFunction.Parent" xml:space="preserve">
+    <value>tabAppointments</value>
+  </data>
+  <data name="&gt;&gt;lbl_apFunction.ZOrder" xml:space="preserve">
     <value>4</value>
   </data>
-  <data name="tbInputDiagnosis.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Bottom, Right</value>
-  </data>
-  <data name="tbInputDiagnosis.Location" type="System.Drawing.Point, System.Drawing">
-    <value>485, 112</value>
-  </data>
-  <data name="tbInputDiagnosis.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>2, 2, 2, 2</value>
-  </data>
-  <data name="tbInputDiagnosis.Multiline" type="System.Boolean, mscorlib">
+  <data name="label77.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="tbInputDiagnosis.Size" type="System.Drawing.Size, System.Drawing">
-    <value>269, 167</value>
+  <data name="label77.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 9pt, style=Bold</value>
   </data>
-  <data name="tbInputDiagnosis.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
+  <data name="label77.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
-  <data name="&gt;&gt;tbInputDiagnosis.Name" xml:space="preserve">
-    <value>tbInputDiagnosis</value>
+  <data name="label77.Location" type="System.Drawing.Point, System.Drawing">
+    <value>392, 69</value>
   </data>
-  <data name="&gt;&gt;tbInputDiagnosis.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="label77.Size" type="System.Drawing.Size, System.Drawing">
+    <value>66, 15</value>
   </data>
-  <data name="&gt;&gt;tbInputDiagnosis.Parent" xml:space="preserve">
-    <value>tapConsultations</value>
+  <data name="label77.TabIndex" type="System.Int32, mscorlib">
+    <value>17</value>
   </data>
-  <data name="&gt;&gt;tbInputDiagnosis.ZOrder" xml:space="preserve">
+  <data name="label77.Text" xml:space="preserve">
+    <value>Function:</value>
+  </data>
+  <data name="&gt;&gt;label77.Name" xml:space="preserve">
+    <value>label77</value>
+  </data>
+  <data name="&gt;&gt;label77.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label77.Parent" xml:space="preserve">
+    <value>tabAppointments</value>
+  </data>
+  <data name="&gt;&gt;label77.ZOrder" xml:space="preserve">
     <value>5</value>
   </data>
-  <data name="DiagnosisHistory.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Left, Right</value>
+  <data name="lbl_apRoomNr.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
   </data>
-  <data name="DiagnosisHistory.ItemHeight" type="System.Int32, mscorlib">
-    <value>15</value>
+  <data name="lbl_apRoomNr.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
-  <data name="DiagnosisHistory.Location" type="System.Drawing.Point, System.Drawing">
-    <value>13, 1</value>
+  <data name="lbl_apRoomNr.Location" type="System.Drawing.Point, System.Drawing">
+    <value>504, 12</value>
   </data>
-  <data name="DiagnosisHistory.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>2, 2, 2, 2</value>
+  <data name="lbl_apRoomNr.Size" type="System.Drawing.Size, System.Drawing">
+    <value>57, 15</value>
   </data>
-  <data name="DiagnosisHistory.Size" type="System.Drawing.Size, System.Drawing">
-    <value>741, 64</value>
+  <data name="lbl_apRoomNr.TabIndex" type="System.Int32, mscorlib">
+    <value>16</value>
   </data>
-  <data name="DiagnosisHistory.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
+  <data name="lbl_apRoomNr.Text" xml:space="preserve">
+    <value>Room Nr</value>
   </data>
-  <data name="&gt;&gt;DiagnosisHistory.Name" xml:space="preserve">
-    <value>DiagnosisHistory</value>
+  <data name="&gt;&gt;lbl_apRoomNr.Name" xml:space="preserve">
+    <value>lbl_apRoomNr</value>
   </data>
-  <data name="&gt;&gt;DiagnosisHistory.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ListBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;lbl_apRoomNr.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;DiagnosisHistory.Parent" xml:space="preserve">
-    <value>tapConsultations</value>
+  <data name="&gt;&gt;lbl_apRoomNr.Parent" xml:space="preserve">
+    <value>tabAppointments</value>
   </data>
-  <data name="&gt;&gt;DiagnosisHistory.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;lbl_apRoomNr.ZOrder" xml:space="preserve">
     <value>6</value>
   </data>
-  <data name="tapConsultations.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 24</value>
+  <data name="label61.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
   </data>
-  <data name="tapConsultations.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+  <data name="label61.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 9pt, style=Bold</value>
+  </data>
+  <data name="label61.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="label61.Location" type="System.Drawing.Point, System.Drawing">
+    <value>392, 12</value>
+  </data>
+  <data name="label61.Size" type="System.Drawing.Size, System.Drawing">
+    <value>68, 15</value>
+  </data>
+  <data name="label61.TabIndex" type="System.Int32, mscorlib">
+    <value>15</value>
+  </data>
+  <data name="label61.Text" xml:space="preserve">
+    <value>Room Nr:</value>
+  </data>
+  <data name="&gt;&gt;label61.Name" xml:space="preserve">
+    <value>label61</value>
+  </data>
+  <data name="&gt;&gt;label61.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label61.Parent" xml:space="preserve">
+    <value>tabAppointments</value>
+  </data>
+  <data name="&gt;&gt;label61.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="label60.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label60.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="label60.Location" type="System.Drawing.Point, System.Drawing">
+    <value>399, 184</value>
+  </data>
+  <data name="label60.Size" type="System.Drawing.Size, System.Drawing">
+    <value>46, 15</value>
+  </data>
+  <data name="label60.TabIndex" type="System.Int32, mscorlib">
+    <value>14</value>
+  </data>
+  <data name="label60.Text" xml:space="preserve">
+    <value>Staff ID</value>
+  </data>
+  <data name="&gt;&gt;label60.Name" xml:space="preserve">
+    <value>label60</value>
+  </data>
+  <data name="&gt;&gt;label60.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label60.Parent" xml:space="preserve">
+    <value>tabAppointments</value>
+  </data>
+  <data name="&gt;&gt;label60.ZOrder" xml:space="preserve">
+    <value>8</value>
+  </data>
+  <data name="label58.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label58.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="label58.Location" type="System.Drawing.Point, System.Drawing">
+    <value>236, 184</value>
+  </data>
+  <data name="label58.Size" type="System.Drawing.Size, System.Drawing">
+    <value>59, 15</value>
+  </data>
+  <data name="label58.TabIndex" type="System.Int32, mscorlib">
+    <value>13</value>
+  </data>
+  <data name="label58.Text" xml:space="preserve">
+    <value>Ending at</value>
+  </data>
+  <data name="&gt;&gt;label58.Name" xml:space="preserve">
+    <value>label58</value>
+  </data>
+  <data name="&gt;&gt;label58.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label58.Parent" xml:space="preserve">
+    <value>tabAppointments</value>
+  </data>
+  <data name="&gt;&gt;label58.ZOrder" xml:space="preserve">
+    <value>9</value>
+  </data>
+  <data name="label54.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label54.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="label54.Location" type="System.Drawing.Point, System.Drawing">
+    <value>64, 184</value>
+  </data>
+  <data name="label54.Size" type="System.Drawing.Size, System.Drawing">
+    <value>62, 15</value>
+  </data>
+  <data name="label54.TabIndex" type="System.Int32, mscorlib">
+    <value>12</value>
+  </data>
+  <data name="label54.Text" xml:space="preserve">
+    <value>Starting at</value>
+  </data>
+  <data name="&gt;&gt;label54.Name" xml:space="preserve">
+    <value>label54</value>
+  </data>
+  <data name="&gt;&gt;label54.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label54.Parent" xml:space="preserve">
+    <value>tabAppointments</value>
+  </data>
+  <data name="&gt;&gt;label54.ZOrder" xml:space="preserve">
+    <value>10</value>
+  </data>
+  <data name="label35.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label35.Location" type="System.Drawing.Point, System.Drawing">
+    <value>13, 184</value>
+  </data>
+  <data name="label35.Size" type="System.Drawing.Size, System.Drawing">
+    <value>19, 15</value>
+  </data>
+  <data name="label35.TabIndex" type="System.Int32, mscorlib">
+    <value>11</value>
+  </data>
+  <data name="label35.Text" xml:space="preserve">
+    <value>ID</value>
+  </data>
+  <data name="&gt;&gt;label35.Name" xml:space="preserve">
+    <value>label35</value>
+  </data>
+  <data name="&gt;&gt;label35.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label35.Parent" xml:space="preserve">
+    <value>tabAppointments</value>
+  </data>
+  <data name="&gt;&gt;label35.ZOrder" xml:space="preserve">
+    <value>11</value>
+  </data>
+  <data name="clndr_appointments.Location" type="System.Drawing.Point, System.Drawing">
+    <value>10, 12</value>
+  </data>
+  <data name="clndr_appointments.TabIndex" type="System.Int32, mscorlib">
+    <value>10</value>
+  </data>
+  <data name="&gt;&gt;clndr_appointments.Name" xml:space="preserve">
+    <value>clndr_appointments</value>
+  </data>
+  <data name="&gt;&gt;clndr_appointments.Type" xml:space="preserve">
+    <value>System.Windows.Forms.MonthCalendar, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;clndr_appointments.Parent" xml:space="preserve">
+    <value>tabAppointments</value>
+  </data>
+  <data name="&gt;&gt;clndr_appointments.ZOrder" xml:space="preserve">
+    <value>12</value>
+  </data>
+  <data name="lstbx_patientAppointments.ItemHeight" type="System.Int32, mscorlib">
+    <value>15</value>
+  </data>
+  <data name="lstbx_patientAppointments.Location" type="System.Drawing.Point, System.Drawing">
+    <value>10, 204</value>
+  </data>
+  <data name="lstbx_patientAppointments.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>2, 2, 2, 2</value>
   </data>
-  <data name="tapConsultations.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>2, 2, 2, 2</value>
+  <data name="lstbx_patientAppointments.Size" type="System.Drawing.Size, System.Drawing">
+    <value>744, 259</value>
   </data>
-  <data name="tapConsultations.Size" type="System.Drawing.Size, System.Drawing">
-    <value>759, 469</value>
-  </data>
-  <data name="tapConsultations.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
-  </data>
-  <data name="tapConsultations.Text" xml:space="preserve">
-    <value>Consultations</value>
-  </data>
-  <data name="&gt;&gt;tapConsultations.Name" xml:space="preserve">
-    <value>tapConsultations</value>
-  </data>
-  <data name="&gt;&gt;tapConsultations.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tapConsultations.Parent" xml:space="preserve">
-    <value>tabs</value>
-  </data>
-  <data name="&gt;&gt;tapConsultations.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="tabs.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
-  <data name="tabs.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 3</value>
-  </data>
-  <data name="tabs.Size" type="System.Drawing.Size, System.Drawing">
-    <value>767, 497</value>
-  </data>
-  <data name="tabs.TabIndex" type="System.Int32, mscorlib">
+  <data name="lstbx_patientAppointments.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
   </data>
-  <data name="&gt;&gt;tabs.Name" xml:space="preserve">
-    <value>tabs</value>
+  <data name="&gt;&gt;lstbx_patientAppointments.Name" xml:space="preserve">
+    <value>lstbx_patientAppointments</value>
   </data>
-  <data name="&gt;&gt;tabs.Type" xml:space="preserve">
+  <data name="&gt;&gt;lstbx_patientAppointments.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ListBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lstbx_patientAppointments.Parent" xml:space="preserve">
+    <value>tabAppointments</value>
+  </data>
+  <data name="&gt;&gt;lstbx_patientAppointments.ZOrder" xml:space="preserve">
+    <value>13</value>
+  </data>
+  <data name="tabAppointments.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 24</value>
+  </data>
+  <data name="tabAppointments.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 3, 3, 3</value>
+  </data>
+  <data name="tabAppointments.Size" type="System.Drawing.Size, System.Drawing">
+    <value>759, 469</value>
+  </data>
+  <data name="tabAppointments.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="tabAppointments.Text" xml:space="preserve">
+    <value>Appointments</value>
+  </data>
+  <data name="&gt;&gt;tabAppointments.Name" xml:space="preserve">
+    <value>tabAppointments</value>
+  </data>
+  <data name="&gt;&gt;tabAppointments.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tabAppointments.Parent" xml:space="preserve">
+    <value>tabControlPatientsDetails</value>
+  </data>
+  <data name="&gt;&gt;tabAppointments.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="tabControlPatientsDetails.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="tabControlPatientsDetails.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 3</value>
+  </data>
+  <data name="tabControlPatientsDetails.Size" type="System.Drawing.Size, System.Drawing">
+    <value>767, 497</value>
+  </data>
+  <data name="tabControlPatientsDetails.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;tabControlPatientsDetails.Name" xml:space="preserve">
+    <value>tabControlPatientsDetails</value>
+  </data>
+  <data name="&gt;&gt;tabControlPatientsDetails.Type" xml:space="preserve">
     <value>System.Windows.Forms.TabControl, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;tabs.Parent" xml:space="preserve">
+  <data name="&gt;&gt;tabControlPatientsDetails.Parent" xml:space="preserve">
     <value>tb_patientDetails</value>
   </data>
-  <data name="&gt;&gt;tabs.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;tabControlPatientsDetails.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
   <data name="tb_patientDetails.Location" type="System.Drawing.Point, System.Drawing">
@@ -3907,7 +3559,7 @@
     <value>NoControl</value>
   </data>
   <data name="btn_updateStaff.Location" type="System.Drawing.Point, System.Drawing">
-    <value>637, 429</value>
+    <value>637, 464</value>
   </data>
   <data name="btn_updateStaff.Size" type="System.Drawing.Size, System.Drawing">
     <value>124, 29</value>
