@@ -5,6 +5,9 @@ using System.Text;
 
 namespace DMS_Service.Structs
 {
+    /// <summary>
+    /// class holding all information about patients
+    /// </summary>
     [Serializable]
     public class Patient : Person
     {
@@ -20,7 +23,14 @@ namespace DMS_Service.Structs
         public bool hard_drugs { get; set; }
         public int hard_drugs_frequency { get; set; }
 
+        /// <summary>
+        /// empty constructor
+        /// </summary>
         public Patient() { }
+        /// <summary>
+        /// constructor converts a person to an patient
+        /// </summary>
+        /// <param name="p"> person to be converted</param>
         public Patient(Person p)
         {
             base.Address = p.Address;

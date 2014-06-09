@@ -6,6 +6,9 @@ using System.ServiceModel;
 
 namespace DMS_Service.Structs
 {
+    /// <summary>
+    /// structure to store staff informations
+    /// </summary>
     [Serializable]
     public class Staff : Person
     {
@@ -14,8 +17,14 @@ namespace DMS_Service.Structs
         public string Function { get;  set; }
         public string Specialization { get;  set; }
         public string RoomNumber { get;  set; }
-
+        /// <summary>
+        /// empty constuctor
+        /// </summary>
         public Staff() { }
+        /// <summary>
+        /// constructor converting a person to a staff member
+        /// </summary>
+        /// <param name="p"> the person to be converted</param>
         public Staff(Person p)
         {
             base.Address = p.Address;

@@ -14,12 +14,19 @@ namespace DMS_Service.user_auth
     class user_auth_business
     {
         private user_auth_access db_access;
-
+        /// <summary>
+        /// constructor for the bussiness layer of the user authentication
+        /// </summary>
         public user_auth_business()
         {
             db_access = new user_auth_access();
         }
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="email">user e-mail act as username </param>
+        /// <param name="passw"> secreat password</param>
+        /// <returns> true = can precide to the normal login false= inserted credentials are wrong</returns>
         public bool login(string email, string passw)
         {
             DataTable temp_datatable = new DataTable();

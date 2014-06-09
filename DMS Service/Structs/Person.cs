@@ -6,6 +6,9 @@ using System.ServiceModel;
 
 namespace DMS_Service.Structs
 {
+    /// <summary>
+    /// structure to store person informations
+    /// </summary>
     [Serializable]
     public abstract class Person
     {

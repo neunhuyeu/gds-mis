@@ -34,7 +34,7 @@ namespace DMS_Service
         /// <returns>True on success | False on failure</returns>
         public bool addPerson(Person person)
         {
-            // TODO: Add better handling if database fails to insert.
+         
             return db.personExists(person.FirstName, person.LastName, person.DateOfBirth) ? false : db.addPerson(person);
         }
 
@@ -177,7 +177,10 @@ namespace DMS_Service
             // them against the task (t) the user wants to perform.
             return true;
         }
-
+        /// <summary>
+        /// gives all information about all staffmember
+        /// </summary>
+        /// <returns> a list with the information off all staffmembers</returns>
         public List<Staff> getAllStaff()
         {
             System.Data.DataTable dt = db.getAllStaff();

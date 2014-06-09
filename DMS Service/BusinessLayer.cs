@@ -17,7 +17,9 @@ namespace DMS_Service
     {
         private DbAccessLayer dbAcess;
         private wiki_business wiki_access;
-
+        /// <summary>
+        /// constructor for the bussinesslayer
+        /// </summary>
         public BusinessLayer()
         {
             dbAcess = new DbAccessLayer();
@@ -52,7 +54,11 @@ namespace DMS_Service
             }
             return patient;
         }
-
+        /// <summary>
+        /// gets the patients overview of the patient with the specified person id
+        /// </summary>
+        /// <param name="personID">the id of the person to get the pateinet overview from</param>
+        /// <returns> patient information</returns>
         public Patient GetPatientOverview(int personID)
         {
             Patient patient = new Patient();
@@ -71,7 +77,11 @@ namespace DMS_Service
             }  
             return patient;
         }
-
+        /// <summary>
+        /// gets all information stored on a staffmember how ownes the inputed person id
+        /// </summary>
+        /// <param name="id">person id of the target staff</param>
+        /// <returns> all stored staff information</returns>
         public Staff GetStaff_by_Personid(int id)
         {
             Staff staff = new Staff();
@@ -91,6 +101,11 @@ namespace DMS_Service
             }
             return staff;
         }
+        /// <summary>
+        /// gets all information stored on a staffmember how ownes the inputed staff id
+        /// </summary>
+        /// <param name="id">staff id of the target staff</param>
+        /// <returns> all stored staff information</returns
         public Staff GetStaff_by_staff_id(int id)
         {
             Staff staff = new Staff();
@@ -111,41 +126,34 @@ namespace DMS_Service
             return staff;
         }
 
-        //I have assumed, that the diagnosis column in the table contains the diseases, and they are seperated by a comma..hence the string.split()
+       /// <summary>
+       /// shows all dieses by the specified patient
+       /// </summary>
+       /// <param name="patientID">the patient id of the patient to get the diseases from</param>
+       /// <returns>a list of diseses in a string</returns>
         public List<string> GetPatientDiseases(int patientID)
         {
             throw new System.NotImplementedException();
         }
 
-        //couldn't find 'canceled' in the database design, should be added..
+       /// <summary>
+       ///  gets all appointments of a patient 
+       /// </summary>
+       /// <param name="patientID"> the patient id for wich all appointments are needed</param>
+       /// <returns> all appointments of the previous specified person</returns>
         public List<Appointment> getPatientAppointments(int patientID)
         {
             throw new System.NotImplementedException();
-            //Patient patient = this.GetPatientOverview(patientID);
-            //Appointment appointment = new Appointment();
-            //List<Appointment> appointments = new List<Appointment>();
-            //DataTable dataTable = new DataTable();
-            //string query = string.Format("SELECT * FROM consultation_details WHERE consultation_id = @ConsulId");
-
-            //SqlParameter[] Parameter = new SqlParameter[1];
-            //Parameter[1] = new SqlParameter("@ConsulId", SqlDbType.Int);
-            //Parameter[1].Value = Convert.ToString(patient.ConsultationId);
-
-            //dataTable = dbConnection.SelectQuery(query, Parameter);
-
-            //foreach (DataRow row in dataTable.Rows)
-            //{
-            //    appointment.startTime = Convert.ToDateTime(row["start"]);
-            //    appointment.endTime = Convert.ToDateTime(row["end"]);
-            //    appointment.canceled = Convert.ToBoolean(row["canceled"]);
-            //    appointments.Add(appointment);
-            //}
-            //return appointments;
+            
         }
 
-        //dosage and doctor needs to be added to the database design to the prescription table
-        //ALSO WE NEED TO BE CLEAR HOW WE SPELL THINGS..this method says "perscription"...in the database design it says "prescribtion"
-        //it should be "prescription"
+        
+
+        /// <summary>
+        /// get the prescription of a patient
+        /// </summary>
+        /// <param name="patientID">Patient id of the patient to get the prescription from</param>
+        /// <returns> all prescriptions of the selected patient</returns>
         public List<Perscription> getPatientPerscriptions(int patientID)
         {
 
@@ -168,7 +176,12 @@ namespace DMS_Service
             return prescriptionlist;
         }
 
-        //how do I do the login? I found the staff with the email, and it will return this one....but WHERE do I login?
+       /// <summary>
+       /// These funktion will loging the userinto the systhem
+       /// </summary>
+       /// <param name="email"> email as username to login</param>
+       /// <param name="password"> the passwort related to the username</param>
+       /// <returns>the staff information of the user</returns>
         public Staff Login(string email, string password)
         {
             Staff staff = new Staff();
@@ -192,22 +205,23 @@ namespace DMS_Service
                     staff.LastName = row["last_name"].ToString();
                     staff.StaffID = Convert.ToInt32(row["Staff_id"]);
 
-                    //staff.Function = (Staff.StaffType)Enum.Parse(typeof(Staff.StaffType), row["function"].ToString());
-                    //staff.RoomNumber = Convert.ToInt32(row["room_number"]);
-                    //staff.Specialization = row["specialization"].ToString();
+                   
                     
                 }
                 return staff;
             }
             return null;
         }
+       
 
-        public DataTable getStaff()
-        {
-            throw new System.NotImplementedException();
-        }
-
-
+        /// <summary>
+        /// these function will look for patients in the database
+        /// </summary>
+        /// <param name="first"> First name</param>
+        /// <param name="last">last name</param>
+        /// <param name="dateOfBirth">dateOfBirth</param>
+        /// <param name="insurance">insurance number</param>
+        /// <returns> a list of patients forfilling theabove specified requirements </returns>
         public List<Patient> SearchPatients(string first, string last, DateTime dateOfBirth, string insurance)
         {
             List<Patient> patients = new List<Patient>();
@@ -248,15 +262,31 @@ namespace DMS_Service
 
             return patients;
         }
-
+        /// <summary>
+        /// adds a new prescription to the database
+        /// </summary>
+        /// <param name="appointmentID"> the appointment ID of the prescription</param>
+        /// <param name="perscription"> the prescription information </param>
+        /// <returns> the name of the perscription</returns>
         public string setPerscription(int appointmentID, Perscription perscription)
         {
             throw new NotImplementedException();
         }
+
+         /// <summary>
+        /// adds a new prescription to the database
+        /// </summary>
+        /// <param name="appointmentID"> the appointment ID of the prescription</param>
+        /// <param name="perscription"> the prescription information </param>
+        /// <returns> true= perscription added into the database, false= perscription not added into the database </returns>
         public bool addPerscription(int appointmentID, Perscription perscription)
         {
             return dbAcess.addPrescrption(perscription, appointmentID);
         }
+        /// <summary>
+        /// gets the consultation id of the next added consultion
+        /// </summary>
+        /// <returns>the consultation id of the next added consultion</returns>
        public int getnextConsultationID()
         {
             DataTable dt= dbAcess.getLatestConsultationID();
@@ -268,7 +298,11 @@ namespace DMS_Service
            return Convert.ToInt32( dt.Rows[0])+1;
         }
 
-
+        /// <summary>
+        /// get the consultation history of the specified patient
+        /// </summary>
+        /// <param name="Patientid"> id of the patient </param>
+        /// <returns>consutation history of the patient</returns>
        public List<Consultation> getConsultationHistorybyPatient(int Patientid)
        {
            List<Consultation> myconsultions= new List<Consultation>();
@@ -285,7 +319,11 @@ namespace DMS_Service
            }
            return myconsultions;
        }
-
+        /// <summary>
+        /// gets the consation history of a specified staff member
+        /// </summary>
+        /// <param name="staffId"> Staff id</param>
+        /// <returns> consultation history</returns>
        public List<Consultation> SearchconsultionHistoryByStaffID(int staffId)
        {
            List<Consultation> myconsultions = new List<Consultation>();
@@ -303,7 +341,11 @@ namespace DMS_Service
            return myconsultions;
        }
 
-
+        /// <summary>
+        /// list of all conultation of today by the selected staff member
+        /// </summary>
+        /// <param name="staffID"> Staff id of the selected staff member</param>
+        /// <returns> all consultation of today</returns>
        public List<Consultation> getConsultationOfToday(int staffID)
        {
            List<Consultation> myconsultions = new List<Consultation>();
@@ -324,29 +366,11 @@ namespace DMS_Service
            return myconsultions;
        }
 
-       //public List<Patient> SearchConsultationsbyDate(DateTime date, int staffId)
-       //{
-       //    List<Patient> mypersons = new List<Patient>();
-       //    DataTable dataTable = dbAcess.SearchConsultationsbyDate(date, staffId);
-
-       //    foreach (DataRow row in dataTable.Rows)
-       //    {
-       //        Patient person = new Patient();
-
-       //        person.PersonId = Convert.ToInt32(row["person_id"]);
-       //        person.FirstName = Convert.ToString(row["first_name"]);
-       //        person.LastName = Convert.ToString(row["last_name"]);
-       //        person.DateOfBirth = Convert.ToDateTime(row["date_of_birth"]);
-
-       //        mypersons.Add(person);
-       //    }
-       //    return mypersons;
-       //}
-        
-
-
-
-
+        /// <summary>
+        /// gives the diagnisis history of an person
+        /// </summary>
+        /// <param name="Patientid">Patient id</param>
+       /// <returns>Diagnosis History of the patient</returns>
        public List<Diagnosis> getDiagnosisHistoryByPersionID(int Patientid)
        {
            List<Diagnosis> myDiagnosis = new List<Diagnosis>();
@@ -368,7 +392,9 @@ namespace DMS_Service
            return myDiagnosis;
 
        }
-
+        /// <summary>
+        /// a function to test the syncronasation
+        /// </summary>
         public void addTestPatient()
         {
             
@@ -429,7 +455,9 @@ namespace DMS_Service
 
 
         }
-
+        /// <summary>
+        /// syncronisation test functions
+        /// </summary>
         
         public void addTestAppointment()
         {
@@ -440,10 +468,7 @@ namespace DMS_Service
             Appointment appoinment = new Appointment();
             appoinment.startTime = new DateTime(2014, 1, 1, 13, 0, 0);
             appoinment.endTime = new DateTime(2014, 1, 1, 13, 30, 0);
-            //appoinment.Staff = new Staff();
-            //appoinment.Staff.StaffID = 1;
-            //appoinment.Patient = new Patient();
-            //appoinment.Patient.PatientID = 1;
+           
 
             DMS_Service.MySynchroniseService.Appointment sameAppointment;
             sameAppointment= new DMS_Service.MySynchroniseService.Appointment();
@@ -473,34 +498,69 @@ namespace DMS_Service
             }
             
         }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="currentConultion"></param>
+        /// <returns></returns>
         public bool updateConsultion_End_Date(Consultation currentConultion)
        {
            return dbAcess.updateConsultionEnd_date(currentConultion);
        }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="diagnosis"></param>
+        /// <returns></returns>
         public bool addDiagnosis(Diagnosis diagnosis)
         {
             return dbAcess.addDiagnosis(diagnosis);
         }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="currentConsultation"></param>
+        /// <returns></returns>
        public bool addConsultion(Consultation currentConsultation)
        {
          return  dbAcess.addConsultion(currentConsultation);
        }
-
+        /// <summary>
+       /// function to implement the getting of all disease for the wiki
+        /// </summary>
+        /// <returns> a list off all known diseases in the database </returns>
        public List<Structs.Disease> get_all_diseases()
        {
            return wiki_access.get_all_diseases();
        }
 
+        /// <summary>
+       /// function to implement the disease search in the wiki
+        /// </summary>
+        /// <param name="name"> diseas name</param>
+       /// <param name="symptoms">disease syntoms</param>
+       /// <param name="classification"> disease classification</param>
+        /// <returns></returns>
        public List<Structs.Disease> search_disease(string name, string symptoms, string classification)
        {
            return wiki_access.search_disease(name, symptoms, classification);
-       }
+       } 
 
+        /// <summary>
+       /// function to implement the medicine get all medicine function needed for the wiki
+        /// </summary>
+        /// <returns> a list of all medicines in the database</returns>
        public List<Structs.Medicine> get_all_medicines()
        {
            return wiki_access.get_all_medicines();
        }
-
+        /// <summary>
+        /// function to implement the medicine surch in the wiki
+        /// </summary>
+        /// <param name="name"> name of the medicine</param>
+        /// <param name="side_effects">Side effects of the medicine</param>
+        /// <param name="classification">classification of the medicine</param>
+        /// <returns> all possible medicines</returns>
        public List<Structs.Medicine> search_medicine(string name, string side_effects, string classification)
        {
            return wiki_access.search_medicine(name, side_effects, classification);

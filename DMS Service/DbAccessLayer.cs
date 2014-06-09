@@ -12,6 +12,9 @@ using System.IO;
 
 namespace DMS_Service
 {
+    /// <summary>
+    ///  a class containing functions to generate sql statements
+    /// </summary>
     public class DbAccessLayer
     {
         private db_connection dbConnection;
@@ -20,7 +23,12 @@ namespace DMS_Service
         {
             dbConnection = new db_connection("gds_mis");
         }
-
+        /// <summary>
+        /// finds informantions about persons containing parts of the Last name and date of birth, 
+        /// </summary>
+        /// <param name="lastName"></param>
+        /// <param name="dateOfBirth"></param>
+        /// <returns> all informations about persons which containspart of the passed lastname and date of birth  </returns>
         public DataTable SearchPatient_lastName_dateOfBirth(string lastName, string dateOfBirth)
         {
             string query = string.Format("SELECT * " +
@@ -34,7 +42,11 @@ namespace DMS_Service
             sqlParameters[1].Value = Convert.ToString(dateOfBirth);
             return dbConnection.SelectQuery(query, sqlParameters);
         }
-
+        /// <summary>
+        /// these funktion returns all personal information about person of a specified id
+        /// </summary>
+        /// <param name="id"> the id identifying the person</param>
+        /// <returns>all the information about the person</returns>
         public DataTable SearchPatientById(int id)
         {
             string query = string.Format("SELECT * " +
@@ -46,7 +58,15 @@ namespace DMS_Service
             return dbConnection.SelectQuery(query, sqlParameters);
         }
 
-        //TODO -> retrieve date
+        /// <summary>
+        /// these funktion is the query for the search functions and finds all people how could 
+        /// be related with the parameters
+        /// </summary>
+        /// <param name="firstName">contains the first name or parts of the first name to search in the database</param>
+        /// <param name="lastName">contains the last name or parts of the last name to search in the database</param>
+        /// <param name="dateOfBirth">contains the date of birth  or parts of the date of birth to search in the database<</param>
+        /// <param name="insurance">contains the insurance number or parts of the insurance number to search in the database<</param>
+        /// <returns> returns all people and there data which could be ment with the search parameters</returns>
         public DataTable SearchPatientsList(string firstName, string lastName, DateTime dateOfBirth, string insurance)
         {
             string parameters = "";
@@ -117,7 +137,11 @@ namespace DMS_Service
             }
             return dbConnection.SelectQuery(query);
         }
-
+        /// <summary>
+        /// displayes all information about a prescription regarding a prescription id
+        /// </summary>
+        /// <param name="id"> the prescription id of prescription to be searched</param>
+        /// <returns>all information about a prescription</returns>
         public DataTable SearchprescriptionListByID(int id)
         {
             MySqlParameter[] sqlParameters = new MySqlParameter[1];
@@ -130,13 +154,20 @@ namespace DMS_Service
                                          "WHERE con.patient_id = (select patient_id from patients where person_id = @pt_id)");
             return dbConnection.SelectQuery(query, sqlParameters);
         }
-
+        /// <summary>
+        /// returns all information about every employee
+        /// </summary>
+        /// <returns>all information about every employee </returns>
         public DataTable getAllStaff()
         {
             string query = "SELECT * FROM Staff_members sm join person per on per.person_id = sm.person_id ";
             return dbConnection.SelectQuery(query);
         }
-
+        /// <summary>
+        /// gets all information about a stuffmenber of a specific id
+        /// </summary>
+        /// <param name="id">the person identifcation number of the staff to look for</param>
+        /// <returns>the stored information about the stuff</returns>
         public DataTable SearchStaffByPersonId(int id)
         {
             string query = "SELECT * FROM Staff_members WHERE person_id = @id";
@@ -145,7 +176,11 @@ namespace DMS_Service
             sqlParameters[0].Value = Convert.ToString(id);
             return dbConnection.SelectQuery(query, sqlParameters);
         }
-
+        /// <summary>
+        /// gets all information about a stuffmenber of a specific id
+        /// </summary>
+        /// <param name="id">the staff identifcation number of the staff to look for</param>
+        /// <returns>the stored information about the staff member</returns>
         public DataTable SearchStaffByStaffId(int id)
         {
             string query = "SELECT * " +
@@ -157,6 +192,11 @@ namespace DMS_Service
             return dbConnection.SelectQuery(query, sqlParameters);
         }
 
+        /// <summary>
+        /// gets all information about a stuffmenber with a specific e-mail
+        /// </summary>
+        /// <param name="e-mail">the E-mail address of the staff to look for</param>
+        /// <returns>the stored information about the staff member</returns>
         public DataTable SearchStaffByEmail(string email)
         {
             try
@@ -175,6 +215,13 @@ namespace DMS_Service
             { return null; }
         }
 
+        /// <summary>
+        /// gets the person id of of a person with a specified name and date of birth
+        /// </summary>
+        /// <param name="firstName">the first name of the person to find the person if from</param>
+        /// <param name="lastName">the Last name of the person to find the person if from</param>
+        /// <param name="dob">the date of birth of the person to find the person if from</param>
+        /// <returns></returns>
         public int getPersonId(string firstName, string lastName, DateTime dob)
         {
             string query = "SELECT person_id as id FROM person where first_name = ?fname AND last_name = ?lname AND date_of_birth = ?dob";
@@ -199,6 +246,11 @@ namespace DMS_Service
             return Convert.ToInt32(result.Rows[0]["person_id"]);
         }
 
+        /// <summary>
+        /// converts person id to patient id
+        /// </summary>
+        /// <param name="patientId">patientid to be converted to personid</param>
+        /// <returns> person id of the target person</returns>
         public int getPersonIdFromPatientId(int patientId)
         {
             string query = "SELECT person_id as id FROM patients where patient_id=?patient_id";
@@ -219,6 +271,11 @@ namespace DMS_Service
             return Convert.ToInt32(result.Rows[0]["person_id"]);
         }
 
+        /// <summary>
+        /// gets the related person id of a staff id
+        /// </summary>
+        /// <param name="staffId"> Staff id</param>
+        /// <returns> Person id</returns>
         public int getPersonIdFromStaffId(int staffId)
         {
             string query = "SELECT person_id as id FROM Staff_members where Staff_id=?Staff_id";
@@ -239,6 +296,11 @@ namespace DMS_Service
             return Convert.ToInt32(result.Rows[0]["person_id"]);
         }
 
+        /// <summary>
+        /// converts personid to staff id
+        /// </summary>
+        /// <param name="personId">person id to be converted</param>
+        /// <returns>Staff id of the specified person id</returns>
         public int getStaffIdFromPersonId(int personId)
         {
             string query = "SELECT Staff_id as id FROM Staff_members where person_id=?person_id";
@@ -259,6 +321,11 @@ namespace DMS_Service
             return Convert.ToInt32(result.Rows[0]["Staff_id"]);
         }
 
+        /// <summary>
+        /// converts PatientID to person id
+        /// </summary>
+        /// <param name="personId"> person id to find the patient id from</param>
+        /// <returns>returns the patient id of the related patient id</returns>
         public int getPatientIdFromPersonId(int personId)
         {
             string query = "SELECT patient_id as id FROM patients where person_id=?person_id";
@@ -283,7 +350,7 @@ namespace DMS_Service
         /// Check whether a person with the given name, lastname and date of birth is stored in the database.
         /// </summary>
         /// <param name="person">A Person object</param>
-        /// <returns>Boolean</returns>
+        /// <returns>ture = person exists in the database, false= person doesn't exist in the database </returns>
         public bool personExists(string fname, string lname, DateTime dob)
         {
             string query = "SELECT COUNT(*) as count FROM person where first_name=?first_name AND last_name=?last_name AND date_of_birth=?date_of_birth";
@@ -307,6 +374,11 @@ namespace DMS_Service
             return result;
         }
 
+        /// <summary>
+        /// generates the array of all sql parameters needed for dealing with personal data in a database
+        /// </summary>
+        /// <param name="person"> the person to input into the database</param>
+        /// <returns> generates the array of all sql parameters needed for dealing with personal data in a database</returns>
         private MySqlParameter[] getPersonParams(ref Person person)
         {
             // Parameters for person table.
@@ -329,7 +401,10 @@ namespace DMS_Service
             sqlParameters[7].Value = Convert.ToString(person.InsuranceNumber);
             return sqlParameters;
         }
-
+        /// <summary>
+        /// findes the next person id which will get generated
+        /// </summary>
+        /// <returns> returns the highest personit plus one</returns>
         private int newPersonId()
         {
             string query = "SELECT MAX(person_id)+1 as new FROM person";
@@ -342,7 +417,12 @@ namespace DMS_Service
             catch { return -1; }
             return result;
         }
-
+        /// <summary>
+        /// these funkion adds a person to the database
+        /// </summary>
+        /// <param name="person"> all the information to be added to the database</param>
+        /// <returns>true= the sql statement was executed , false = the sql statement was not propper executed </returns>
+       
         public bool addPerson(Person person)
         {
             bool result = false;
@@ -371,7 +451,12 @@ namespace DMS_Service
             catch { return false; }
             return result;
         }
-
+        /// <summary>
+        /// updates the information about a person
+        /// </summary>
+        /// <param name="person"> the class containing all new infromationa bout a person</param>
+        /// <returns>true= the sql statement was executed , false = the sql statement was not propper executed </returns>
+       
         public bool updatePerson(Person person)
         {
             bool result = false;
@@ -390,7 +475,11 @@ namespace DMS_Service
             catch { return false; }
             return result;
         }
-
+        /// <summary>
+        /// function to genrate a parameter array for an sql stament regarding a patient
+        /// </summary>
+        /// <param name="patient">class which contains all information about a patient</param>
+        /// <returns> an array with all parameters</returns>
         private MySqlParameter[] getPatientParams(ref Patient patient)
         {
             // Parameters for patient table.
@@ -418,7 +507,10 @@ namespace DMS_Service
 
             return sqlParameters;
         }
-
+        /// <summary>
+        /// gets the next  paient id to be genrated 
+        /// </summary>
+        /// <returns> gets the next generated paient id </returns>
         private int newPatientId()
         {
             string query = "SELECT MAX(patient_id)+1 as new FROM patients";
@@ -437,6 +529,8 @@ namespace DMS_Service
         /// If not it creates a person record first and then proceeds.
         /// </summary>
         /// <param name="patient">The patient object to add.</param>
+        ///<return> true= the sql statement was executed , false = the sql statement was not propper executed </returns>
+       
         public bool addPatient(Patient patient)
         {
             bool result = false;
@@ -466,6 +560,12 @@ namespace DMS_Service
             return result;
         }
 
+        /// <summary>
+        /// function to update patients in the database
+        /// </summary>
+        /// <param name="p">the patient information to replace the old with</param>
+        /// <returns>true= the sql statement was executed , false = the sql statement was not propper executed </returns>
+       
         public bool updatePatient(Patient p)
         {
             bool result = false;
@@ -483,6 +583,11 @@ namespace DMS_Service
             return result;
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="staff"></param>
+        /// <returns></returns>
         private MySqlParameter[] getStaffParams(ref Staff staff)
         {
             // Parameters for Staff_members table.
@@ -499,7 +604,10 @@ namespace DMS_Service
             sqlParameters[4].Value = staff.StaffID;
             return sqlParameters;
         }
-
+        /// <summary>
+        /// gets the next staff id to be generated
+        /// </summary>
+        /// <returns>the next staff id to be generated</returns>
         private int newStaffId()
         {
             string query = "SELECT MAX(Staff_id)+1 as new FROM Staff";
@@ -512,7 +620,12 @@ namespace DMS_Service
             catch { return -1; }
             return result;
         }
-
+        /// <summary>
+        /// creates a new stuff member in the database
+        /// </summary>
+        /// <param name="staff"> contains all the information about the to beadded staffmember</param>
+        /// <returns>true= the sql statement was executed , false = the sql statement was not propper executed </returns>
+       
         public bool addStaff(Staff staff)
         {
             bool result = false;
@@ -541,6 +654,12 @@ namespace DMS_Service
 
         }
 
+        /// <summary>
+        /// replaces the old staff information with new once
+        /// </summary>
+        /// <param name="staff"> holds the new staff informations</param>
+        /// <returns>true= the sql statement was executed , false = the sql statement was not propper executed </returns>
+       
         public bool updateStaff(Staff staff)
         {
             bool result = false;
@@ -557,6 +676,12 @@ namespace DMS_Service
             return result;
         }
 
+        /// <summary>
+        /// creates a new diagnisis in the database
+        /// </summary>
+        /// <param name="Diagnosis"> object holding all information about the new diagnosis</param>
+        /// <returns>true= the sql statement was executed , false = the sql statement was not propper executed </returns>
+       
         public bool addDiagnosis(Diagnosis Diagnosis)
         {
             //query
@@ -583,7 +708,6 @@ namespace DMS_Service
         }
 
         /// <summary>
-        /// JP.
         /// Adds consultation to the conusltation table.
         /// </summary>
         /// <param name="appointment">appointment to be added</param>
@@ -609,6 +733,13 @@ namespace DMS_Service
             dbConnection.InsertQuery(query, sqlParameters);
         }
 
+        /// <summary>
+        /// prescription to be added
+        /// </summary>
+        /// <param name="perscription"> the perscription information of the to be added prescripion</param>
+        /// <param name="consultationId">the consultationid of the time when the prescription were prescriped </param>
+        /// <returns>true= the sql statement was executed , false = the sql statement was not propper executed </returns>
+  
         public bool addPrescrption(Perscription perscription, int consultationId)
         {
             //query
@@ -638,6 +769,10 @@ namespace DMS_Service
             { return false; }
         }
 
+        /// <summary>
+        /// gets the next to be generated consultationid
+        /// </summary>
+        /// <returns> the next to be generated consultationid </returns>
         public DataTable getLatestConsultationID()
         {
             try
@@ -649,6 +784,12 @@ namespace DMS_Service
             { return null; }
         }
 
+        /// <summary>
+        ///  updates consultaion to add an end date
+        /// </summary>
+        /// <param name="currentConultion">the object holding all information about the current consultation</param>
+        /// <returns>true= the sql statement was executed , false = the sql statement was not propper executed </returns>
+       
         public bool updateConsultionEnd_date(Consultation currentConultion)
         {
             //query
@@ -673,6 +814,11 @@ namespace DMS_Service
             { return false; }
         }
 
+        /// <summary>
+        /// adds a consultation to the database
+        /// </summary>
+        /// <param name="Consultation"> a class containg all information about the consultations</param>
+        /// <returns>true= the sql statement was executed , false = the sql statement was not propper executed </returns>
         public bool addConsultion(Consultation Consultation)
         {
             //query
@@ -698,6 +844,11 @@ namespace DMS_Service
             { return false; }
         }
 
+        /// <summary>
+        /// These function gets the past diagnosis of a specified person
+        /// </summary>
+        /// <param name="patientID">personID to search the diagnosis history from</param>
+        /// <returns> all information about the diagnosis history of the specified person</returns>
         public DataTable SearchDiagnosisHistoryByPersionID(int patientID)
         {
             string query = string.Format("SELECT * " +
@@ -714,6 +865,11 @@ namespace DMS_Service
             return dbConnection.SelectQuery(query, sqlParameters);
         }
 
+        /// <summary>
+        /// these function returns a table of all past consultions of a specified person 
+        /// </summary>
+        /// <param name="personID"> the id of the person to get the consulting history from</param>
+        /// <returns> all the consultions history of the specified person</returns>
         public DataTable SearchconsultionHistoryByPersionID(int personID)
         {
             string query = string.Format("SELECT * " +
@@ -728,6 +884,11 @@ namespace DMS_Service
             return dbConnection.SelectQuery(query, sqlParameters);
         }
 
+        /// <summary>
+        /// these function returns a table of all past consultions of a specified person 
+        /// </summary>
+        /// <param name="staffId"> the id of the staffmember </param>
+        /// <returns> a table of all consultions</returns>
         public DataTable SearchconsultionHistoryByStaffID(int staffId)
         {
             string query = string.Format("SELECT * " +
@@ -742,6 +903,11 @@ namespace DMS_Service
             return dbConnection.SelectQuery(query, sqlParameters);
         }
 
+        /// <summary>
+        /// these function  gets   all the informations regarding the appointments of this day and the specified user
+        /// </summary>
+        /// <param name="staffID"> the staff id of the person to get the appointments from</param>
+        /// <returns> all the informations regarding the appointmentsof this day  </returns>
         public DataTable SearchconsultationsOfToday(int staffID)
         {
             string query = string.Format("SELECT * " +
@@ -757,7 +923,12 @@ namespace DMS_Service
 
             return dbConnection.SelectQuery(query, sqlParameters);
         }
-
+        
+        /// <summary>
+        ///reads changes in the databases from a file and executes it in the database, for syncronation
+        /// </summary>
+        /// <param name="path"> the path of the file to load into the databae</param>
+        /// <returns>true = scriped executed sucessfull false =scriped executed unsucessfull</returns>
         public bool executeScript(string path)
         {
             bool result = false;
@@ -772,6 +943,11 @@ namespace DMS_Service
             return result;
         }
 
+        /// <summary>
+        /// function to delete a person by there id
+        /// </summary>
+        /// <param name="personId">the id of the person to delete</param>
+        /// <returns>true= the person was deleted, false = person was not deleted </returns>
         public bool deletePerson(int personId)
         {
             string query = "DELETE * FROM person WHERE person_id = ?person_id";

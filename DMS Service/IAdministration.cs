@@ -8,6 +8,9 @@ using DMS_Service.Structs;
 
 namespace DMS_Service
 {
+    /// <summary>
+    /// an interface for the communication with he adminestration client
+    /// </summary>
     [ServiceContract]
     public interface IAdministration
     {

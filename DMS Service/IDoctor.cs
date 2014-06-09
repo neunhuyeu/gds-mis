@@ -9,7 +9,9 @@ using DMS_Service.wiki;
 
 namespace DMS_Service
 {
-    // NOTE: You can use the "Rename" command on the "Refactor" menu to change the interface name "IService1" in both code and config file together.
+    /// <summary>
+    /// stucture for the storage of informations about a doctor
+    /// </summary>
     [ServiceContract]
     public interface IDoctor
     {
@@ -23,8 +25,7 @@ namespace DMS_Service
         List<Consultation> SearchconsultionHistoryByStaffID(int staffId);
         [OperationContract]
         List<Consultation> getConsultationOfToday(int staffID);
-        //[OperationContract]
-        //List<Patient> SearchConsultationsbyDate(DateTime date, int staffId);
+        
         [OperationContract]
         List<Diagnosis> getDiagnosisHistoryByPersionID(int Patientid);
         [OperationContract]

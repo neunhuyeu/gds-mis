@@ -8,6 +8,9 @@ using System.ServiceModel;
 
 namespace DMS_Service.Structs
 {
+   /// <summary>
+   /// a struct holding consultion informations
+   /// </summary>
 [DataContract]
    public struct Consultation
     {

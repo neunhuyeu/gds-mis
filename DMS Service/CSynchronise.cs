@@ -12,6 +12,7 @@ using System.Timers;
 namespace DMS_Service
 {
     [ServiceBehavior(InstanceContextMode = InstanceContextMode.Single)]
+    
     public class CSynchronise : ISynchronise
     {
         /// DbAccessLayer object for saving changes to the database.
@@ -115,33 +116,51 @@ namespace DMS_Service
             //runs batch file which backs up databases
             System.Diagnostics.Process.Start("..\\..\\backup.bat");
         }
-
+        /// <summary>
+        /// dummy funktion to satisfy the interface
+        /// </summary>
+        /// <param name="patient"></param>
 
         void ISynchronise.addPatient(Patient patient)
         {
             throw new NotImplementedException();
         }
-
+        /// <summary>
+        /// dummy funktion to satisfy the interface
+        /// </summary>
+        /// <param name="appointment"></param>
         void ISynchronise.addAppointment(Appointment appointment)
         {
             throw new NotImplementedException();
         }
-
+        /// <summary>
+        /// dummy funktion to satisfy the interface
+        /// </summary>
+        /// <param name="staff"> saff to be edit</param>
         void ISynchronise.addStaff(Staff staff)
         {
             throw new NotImplementedException();
         }
-
+        /// <summary>
+        /// dummy funktion to satisfy the interface
+        /// </summary>
+        /// <param name="consult">consultation to be edit</param>
         void ISynchronise.addConsultation(Consultation consult)
         {
             throw new NotImplementedException();
         }
-
+        /// <summary>
+        /// dummy funktion to satisfy the interface
+        /// </summary>
+        /// <param name="patient">patients to be edit</param>
         void ISynchronise.editPatientByPatient(Patient patient)
         {
             throw new NotImplementedException();
         }
-
+        /// <summary>
+        ///dummy funktion to satisfy the interface 
+        /// </summary>
+        /// <param name="appointment"> appointments to be edit </param>
         void ISynchronise.editPatientByAppointment(Appointment appointment)
         {
             throw new NotImplementedException();
@@ -153,7 +172,7 @@ namespace DMS_Service
         /// <param name="gds_mis">Byte array of the gds_mis database.</param>
         /// <param name="gds_mis_agenda">Byte array of the gds_mis_agenda database.</param>
         /// <param name="gds_mis_auth">Byte array of the gds_mis_agenda database.</param>
-        /// <returns></returns>
+        /// <returns>ture= backup sucessfull false= didn't backup</returns>
         public bool setBackup(byte[] gds_mis, byte[] gds_mis_agenda, byte[] gds_mis_auth)
         {
             try
@@ -186,7 +205,10 @@ namespace DMS_Service
             return true;
         }
 
-
+        /// <summary>
+        /// read the files to store the database backup and sents them to restore the backup 
+        /// </summary>
+        /// <returns> ture= backup sucessfull false= didn't backup</returns>
         public bool forcePushBackup()
         {
             byte[] gds_mis = System.IO.File.ReadAllBytes(@"c:\wamp\bin\mysql\backup_gds_mis.sql");
@@ -196,45 +218,6 @@ namespace DMS_Service
             return this.setBackup(gds_mis, gds_mis_agenda, gds_mis_auth);
         }
 
-        /* Old code
-        /// <summary>
-        /// Class to help with the ping mechanism.
-        /// </summary>
-        public class UserToken
-        {
-            public string Destination { get; set; }
-            public DateTime InitiatedTime { get; set; }
-        }
-
-            /// <summary>
-            /// Pings a domain and (eventually will..) measures the average response time.
-            /// 
-            /// </summary>
-            /// <param name="domain">The domain to ping, If none is given, the loopback domain is used.</param>
-            private void pingDomain(string domain = null)
-            {
-                // Domain parameter has to be the domain OR the IP of the other server.
-                // For now I'll leave the loopback.
-                if (domain == null)
-                    domain = "127.0.0.1";
-
-                Ping pingy = new Ping();
-                UserToken token = new UserToken() { Destination = domain, InitiatedTime = DateTime.Now };
-                pingy.PingCompleted += new PingCompletedEventHandler(PingCompletedCallback);
-                pingy.SendAsync(domain, token);
-
-            }
-
-            /// <summary>
-            /// Callback of the ping function.
-            /// </summary>
-            /// <param name="sender"></param>
-            /// <param name="e"></param>
-            private void PingCompletedCallback(object sender, PingCompletedEventArgs e)
-            {
-                UserToken token = (UserToken)e.UserState;
-                Debug.Assert(true, string.Format("Reply from {0} with the status {1}", token.Destination, e.Reply.Status));
-            }
-             */
+     
     }
 }

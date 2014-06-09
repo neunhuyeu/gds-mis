@@ -8,6 +8,9 @@ using DMS_Service.Structs;
 
 namespace DMS_Service
 {
+    /// <summary>
+    /// an interface which specifieces the communication for the syncronisation service 
+    /// </summary>
     [ServiceContract]
     public interface ISynchronise
     {
@@ -39,7 +42,9 @@ namespace DMS_Service
         [OperationContract]
         bool forcePushBackup();
     }
-
+    /// <summary>
+    /// a class defineing the composition of bool and strings for synconasation  
+    /// </summary>
     [DataContract]
     public class CompositeType
     {

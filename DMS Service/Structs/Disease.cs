@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace DMS_Service.Structs
 {
+    /// <summary>
+    /// structure to store Disease informations
+    /// </summary>
     [Serializable]
     public struct Disease
     {

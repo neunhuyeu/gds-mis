@@ -7,6 +7,9 @@ using System.Runtime.Serialization;
 
 namespace DMS_Service.Structs
 {
+    /// <summary>
+    /// structure to store appointment informations
+    /// </summary>
     [Serializable]
     public struct Appointment
     {
