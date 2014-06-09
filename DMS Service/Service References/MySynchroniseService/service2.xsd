@@ -85,4 +85,30 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+  <xs:element name="setBackup">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="gds_mis" nillable="true" type="xs:base64Binary" />
+        <xs:element minOccurs="0" name="gds_mis_agenda" nillable="true" type="xs:base64Binary" />
+        <xs:element minOccurs="0" name="gds_mis_auth" nillable="true" type="xs:base64Binary" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="setBackupResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="setBackupResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="forcePushBackup">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="forcePushBackupResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
 </xs:schema>

@@ -50,6 +50,18 @@
   <wsdl:message name="ISynchronise_ping_OutputMessage">
     <wsdl:part name="parameters" element="tns:pingResponse" />
   </wsdl:message>
+  <wsdl:message name="ISynchronise_setBackup_InputMessage">
+    <wsdl:part name="parameters" element="tns:setBackup" />
+  </wsdl:message>
+  <wsdl:message name="ISynchronise_setBackup_OutputMessage">
+    <wsdl:part name="parameters" element="tns:setBackupResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISynchronise_forcePushBackup_InputMessage">
+    <wsdl:part name="parameters" element="tns:forcePushBackup" />
+  </wsdl:message>
+  <wsdl:message name="ISynchronise_forcePushBackup_OutputMessage">
+    <wsdl:part name="parameters" element="tns:forcePushBackupResponse" />
+  </wsdl:message>
   <wsdl:portType name="ISynchronise">
     <wsdl:operation name="addPatient">
       <wsdl:input wsaw:Action="http://tempuri.org/ISynchronise/addPatient" message="tns:ISynchronise_addPatient_InputMessage" />
@@ -78,6 +90,14 @@
     <wsdl:operation name="ping">
       <wsdl:input wsaw:Action="http://tempuri.org/ISynchronise/ping" message="tns:ISynchronise_ping_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/ISynchronise/pingResponse" message="tns:ISynchronise_ping_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="setBackup">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISynchronise/setBackup" message="tns:ISynchronise_setBackup_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISynchronise/setBackupResponse" message="tns:ISynchronise_setBackup_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="forcePushBackup">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISynchronise/forcePushBackup" message="tns:ISynchronise_forcePushBackup_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISynchronise/forcePushBackupResponse" message="tns:ISynchronise_forcePushBackup_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_ISynchronise" type="tns:ISynchronise">
@@ -138,6 +158,24 @@
     </wsdl:operation>
     <wsdl:operation name="ping">
       <soap:operation soapAction="http://tempuri.org/ISynchronise/ping" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="setBackup">
+      <soap:operation soapAction="http://tempuri.org/ISynchronise/setBackup" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="forcePushBackup">
+      <soap:operation soapAction="http://tempuri.org/ISynchronise/forcePushBackup" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

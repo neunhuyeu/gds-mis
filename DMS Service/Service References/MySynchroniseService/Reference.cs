@@ -200,21 +200,21 @@ namespace DMS_Service.MySynchroniseService {
     [System.SerializableAttribute()]
     public partial class Staff : DMS_Service.MySynchroniseService.Person {
         
-        private DMS_Service.MySynchroniseService.Staff.StaffType Functionk__BackingFieldField;
+        private string Functionk__BackingFieldField;
         
-        private int RoomNumberk__BackingFieldField;
+        private string RoomNumberk__BackingFieldField;
         
         private string Specializationk__BackingFieldField;
         
         private int StaffIDk__BackingFieldField;
         
         [System.Runtime.Serialization.DataMemberAttribute(Name="<Function>k__BackingField", IsRequired=true)]
-        public DMS_Service.MySynchroniseService.Staff.StaffType Functionk__BackingField {
+        public string Functionk__BackingField {
             get {
                 return this.Functionk__BackingFieldField;
             }
             set {
-                if ((this.Functionk__BackingFieldField.Equals(value) != true)) {
+                if ((object.ReferenceEquals(this.Functionk__BackingFieldField, value) != true)) {
                     this.Functionk__BackingFieldField = value;
                     this.RaisePropertyChanged("Functionk__BackingField");
                 }
@@ -222,12 +222,12 @@ namespace DMS_Service.MySynchroniseService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute(Name="<RoomNumber>k__BackingField", IsRequired=true)]
-        public int RoomNumberk__BackingField {
+        public string RoomNumberk__BackingField {
             get {
                 return this.RoomNumberk__BackingFieldField;
             }
             set {
-                if ((this.RoomNumberk__BackingFieldField.Equals(value) != true)) {
+                if ((object.ReferenceEquals(this.RoomNumberk__BackingFieldField, value) != true)) {
                     this.RoomNumberk__BackingFieldField = value;
                     this.RaisePropertyChanged("RoomNumberk__BackingField");
                 }
@@ -258,20 +258,6 @@ namespace DMS_Service.MySynchroniseService {
                     this.RaisePropertyChanged("StaffIDk__BackingField");
                 }
             }
-        }
-        
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-        [System.Runtime.Serialization.DataContractAttribute(Name="Staff.StaffType", Namespace="http://schemas.datacontract.org/2004/07/DMS_Service.Structs")]
-        public enum StaffType : int {
-            
-            [System.Runtime.Serialization.EnumMemberAttribute()]
-            physician = 0,
-            
-            [System.Runtime.Serialization.EnumMemberAttribute()]
-            assistant = 1,
-            
-            [System.Runtime.Serialization.EnumMemberAttribute()]
-            secretary = 2,
         }
     }
     
@@ -873,6 +859,18 @@ namespace DMS_Service.MySynchroniseService {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISynchronise/ping", ReplyAction="http://tempuri.org/ISynchronise/pingResponse")]
         System.Threading.Tasks.Task<bool> pingAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISynchronise/setBackup", ReplyAction="http://tempuri.org/ISynchronise/setBackupResponse")]
+        bool setBackup(byte[] gds_mis, byte[] gds_mis_agenda, byte[] gds_mis_auth);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISynchronise/setBackup", ReplyAction="http://tempuri.org/ISynchronise/setBackupResponse")]
+        System.Threading.Tasks.Task<bool> setBackupAsync(byte[] gds_mis, byte[] gds_mis_agenda, byte[] gds_mis_auth);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISynchronise/forcePushBackup", ReplyAction="http://tempuri.org/ISynchronise/forcePushBackupResponse")]
+        void forcePushBackup();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISynchronise/forcePushBackup", ReplyAction="http://tempuri.org/ISynchronise/forcePushBackupResponse")]
+        System.Threading.Tasks.Task forcePushBackupAsync();
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -956,6 +954,22 @@ namespace DMS_Service.MySynchroniseService {
         
         public System.Threading.Tasks.Task<bool> pingAsync() {
             return base.Channel.pingAsync();
+        }
+        
+        public bool setBackup(byte[] gds_mis, byte[] gds_mis_agenda, byte[] gds_mis_auth) {
+            return base.Channel.setBackup(gds_mis, gds_mis_agenda, gds_mis_auth);
+        }
+        
+        public System.Threading.Tasks.Task<bool> setBackupAsync(byte[] gds_mis, byte[] gds_mis_agenda, byte[] gds_mis_auth) {
+            return base.Channel.setBackupAsync(gds_mis, gds_mis_agenda, gds_mis_auth);
+        }
+        
+        public void forcePushBackup() {
+            base.Channel.forcePushBackup();
+        }
+        
+        public System.Threading.Tasks.Task forcePushBackupAsync() {
+            return base.Channel.forcePushBackupAsync();
         }
     }
 }

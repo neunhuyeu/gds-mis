@@ -11,7 +11,7 @@ using System.Timers;
 
 namespace DMS_Service
 {
-    [ServiceBehavior(InstanceContextMode=InstanceContextMode.Single)]
+    [ServiceBehavior(InstanceContextMode = InstanceContextMode.Single)]
     public class CSynchronise : ISynchronise
     {
         /// DbAccessLayer object for saving changes to the database.
@@ -21,8 +21,8 @@ namespace DMS_Service
         private bool serverWasOffline;
         //create the sync proxy
         DMS_Service.MySynchroniseService.SynchroniseClient proxy;
-       
-        
+
+
         /// <summary>
         /// Constructor
         /// </summary>
@@ -36,13 +36,12 @@ namespace DMS_Service
             timer.AutoReset = true;
             timer.Enabled = true;
             //Interval of Synchronise Timer is 15 mins * 60 seconds * 1000 miliseconds
-            timer.Interval =  15 * 60 * 1000;
+            timer.Interval = 60 * 1000;
             timer.Start();
-            
+
         }
 
         /// <summary>
-        /// JP.
         /// Adds new patient from the parameter to the database
         /// </summary>
         public void addPatient(Patient patient)
@@ -80,18 +79,24 @@ namespace DMS_Service
         {
             //create sql dump
             this.backup();
-            
+
             try
             {
                 //Check if other server is online
                 proxy.ping();
-                
+
                 //If it is online (no exception), but it was offline before, then restore backup
-                if(serverWasOffline)
+                if (serverWasOffline)
                 {
-                    //restore backup
-                    //proxy.setbackup();
-                    serverWasOffline = false;
+                    byte[] gds_mis = System.IO.File.ReadAllBytes(@"c:\wamp\bin\mysql\mysql5.6.12\bin\mysqldump");
+                    byte[] gds_mis_auth = System.IO.File.ReadAllBytes(@"c:\wamp\bin\mysql\mysql5.6.12\bin\mysqldump");
+                    byte[] gds_mis_agenda = System.IO.File.ReadAllBytes(@"c:\wamp\bin\mysql\mysql5.6.12\bin\mysqldump");
+                    
+                    //restore backup, if it is successfull only then mark other server as online
+                    if (proxy.setBackup(gds_mis, gds_mis_auth, gds_mis_agenda))
+                    {
+                        serverWasOffline = false;
+                    }
                 }
 
             }
@@ -100,7 +105,7 @@ namespace DMS_Service
                 serverWasOffline = true;
             }
         }
-        
+
         /// <summary>
         /// Method to send unsynced changes to the other server
         /// </summary>
@@ -149,7 +154,7 @@ namespace DMS_Service
         /// <param name="gds_mis_agenda">Byte array of the gds_mis_agenda database.</param>
         /// <param name="gds_mis_auth">Byte array of the gds_mis_agenda database.</param>
         /// <returns></returns>
-        bool ISynchronise.setBackup(byte[] gds_mis, byte[] gds_mis_agenda, byte[] gds_mis_auth)
+        public bool setBackup(byte[] gds_mis, byte[] gds_mis_agenda, byte[] gds_mis_auth)
         {
             try
             {
@@ -160,8 +165,8 @@ namespace DMS_Service
 
                 //execute saved scripts
                 this.dbManager.executeScript("received_backups\\gds_mis.sql");
-                this.dbManager.executeScript("received_backups\\gds_mis.sql");
-                this.dbManager.executeScript("received_backups\\gds_mis.sql");
+                this.dbManager.executeScript("received_backups\\gds_mis_agenda.sql");
+                this.dbManager.executeScript("received_backups\\gds_mis_auth.sql");
 
                 return true;
             }
@@ -169,9 +174,9 @@ namespace DMS_Service
             {
                 return false;
             }
-            
+
         }
-        
+
         /// <summary>
         /// Just retrns true to check if server is up
         /// </summary>
@@ -180,46 +185,56 @@ namespace DMS_Service
         {
             return true;
         }
-    }
 
-    /// <summary>
-    /// Class to help with the ping mechanism.
-    /// </summary>
-    public class UserToken
-    {
-        public string Destination { get; set; }
-        public DateTime InitiatedTime { get; set; }
-    }
 
-    /* Old code
-        /// <summary>
-        /// Pings a domain and (eventually will..) measures the average response time.
-        /// 
-        /// </summary>
-        /// <param name="domain">The domain to ping, If none is given, the loopback domain is used.</param>
-        private void pingDomain(string domain = null)
+        public bool forcePushBackup()
         {
-            // Domain parameter has to be the domain OR the IP of the other server.
-            // For now I'll leave the loopback.
-            if (domain == null)
-                domain = "127.0.0.1";
-
-            Ping pingy = new Ping();
-            UserToken token = new UserToken() { Destination = domain, InitiatedTime = DateTime.Now };
-            pingy.PingCompleted += new PingCompletedEventHandler(PingCompletedCallback);
-            pingy.SendAsync(domain, token);
-
+            byte[] gds_mis = System.IO.File.ReadAllBytes(@"c:\wamp\bin\mysql\backup_gds_mis.sql");
+            byte[] gds_mis_auth = System.IO.File.ReadAllBytes(@"c:\wamp\bin\mysql\backup_gds_mis_agenda.sql");
+            byte[] gds_mis_agenda = System.IO.File.ReadAllBytes(@"c:\wamp\bin\mysql\backup_gds_mis_auth.sql");
+            //restore backup
+            return this.setBackup(gds_mis, gds_mis_agenda, gds_mis_auth);
         }
 
+        /* Old code
         /// <summary>
-        /// Callback of the ping function.
+        /// Class to help with the ping mechanism.
         /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void PingCompletedCallback(object sender, PingCompletedEventArgs e)
+        public class UserToken
         {
-            UserToken token = (UserToken)e.UserState;
-            Debug.Assert(true, string.Format("Reply from {0} with the status {1}", token.Destination, e.Reply.Status));
+            public string Destination { get; set; }
+            public DateTime InitiatedTime { get; set; }
         }
-         */ 
+
+            /// <summary>
+            /// Pings a domain and (eventually will..) measures the average response time.
+            /// 
+            /// </summary>
+            /// <param name="domain">The domain to ping, If none is given, the loopback domain is used.</param>
+            private void pingDomain(string domain = null)
+            {
+                // Domain parameter has to be the domain OR the IP of the other server.
+                // For now I'll leave the loopback.
+                if (domain == null)
+                    domain = "127.0.0.1";
+
+                Ping pingy = new Ping();
+                UserToken token = new UserToken() { Destination = domain, InitiatedTime = DateTime.Now };
+                pingy.PingCompleted += new PingCompletedEventHandler(PingCompletedCallback);
+                pingy.SendAsync(domain, token);
+
+            }
+
+            /// <summary>
+            /// Callback of the ping function.
+            /// </summary>
+            /// <param name="sender"></param>
+            /// <param name="e"></param>
+            private void PingCompletedCallback(object sender, PingCompletedEventArgs e)
+            {
+                UserToken token = (UserToken)e.UserState;
+                Debug.Assert(true, string.Format("Reply from {0} with the status {1}", token.Destination, e.Reply.Status));
+            }
+             */
+    }
 }
