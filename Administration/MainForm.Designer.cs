@@ -121,33 +121,22 @@
             this.label42 = new System.Windows.Forms.Label();
             this.label43 = new System.Windows.Forms.Label();
             this.tb_patientDetails = new System.Windows.Forms.TabPage();
-            this.tabs = new System.Windows.Forms.TabControl();
-            this.tabPastAppointments = new System.Windows.Forms.TabPage();
-            this.tabCurrentMedication = new System.Windows.Forms.TabPage();
-            this.btAddPrescription = new System.Windows.Forms.Button();
-            this.label55 = new System.Windows.Forms.Label();
-            this.cBconsultationID = new System.Windows.Forms.ComboBox();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.pastConsultations = new System.Windows.Forms.RadioButton();
-            this.rbCurrent = new System.Windows.Forms.RadioButton();
-            this.lbvolume = new System.Windows.Forms.Label();
-            this.lbnumPils = new System.Windows.Forms.Label();
-            this.lbStrength = new System.Windows.Forms.Label();
-            this.tbVolume = new System.Windows.Forms.TextBox();
-            this.tbNumPills = new System.Windows.Forms.TextBox();
-            this.tbstrength = new System.Windows.Forms.TextBox();
-            this.tbMedicine = new System.Windows.Forms.TextBox();
-            this.lbMedicne = new System.Windows.Forms.Label();
-            this.printSelectedPersription = new System.Windows.Forms.Button();
-            this.PerscriptionLb = new System.Windows.Forms.ListBox();
-            this.tapConsultations = new System.Windows.Forms.TabPage();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.diagnosishead = new System.Windows.Forms.TextBox();
-            this.btClear = new System.Windows.Forms.Button();
-            this.btSave = new System.Windows.Forms.Button();
-            this.tbinputSyntoms = new System.Windows.Forms.TextBox();
-            this.tbInputDiagnosis = new System.Windows.Forms.TextBox();
-            this.DiagnosisHistory = new System.Windows.Forms.ListBox();
+            this.tabControlPatientsDetails = new System.Windows.Forms.TabControl();
+            this.tabAppointments = new System.Windows.Forms.TabPage();
+            this.lbl_apDoctor = new System.Windows.Forms.Label();
+            this.label81 = new System.Windows.Forms.Label();
+            this.lbl_apSpecialization = new System.Windows.Forms.Label();
+            this.label79 = new System.Windows.Forms.Label();
+            this.lbl_apFunction = new System.Windows.Forms.Label();
+            this.label77 = new System.Windows.Forms.Label();
+            this.lbl_apRoomNr = new System.Windows.Forms.Label();
+            this.label61 = new System.Windows.Forms.Label();
+            this.label60 = new System.Windows.Forms.Label();
+            this.label58 = new System.Windows.Forms.Label();
+            this.label54 = new System.Windows.Forms.Label();
+            this.label35 = new System.Windows.Forms.Label();
+            this.clndr_appointments = new System.Windows.Forms.MonthCalendar();
+            this.lstbx_patientAppointments = new System.Windows.Forms.ListBox();
             this.tb_staff = new System.Windows.Forms.TabPage();
             this.tabControlDoctors = new System.Windows.Forms.TabControl();
             this.tb_searchStaff = new System.Windows.Forms.TabPage();
@@ -235,10 +224,8 @@
             this.grp_prd.SuspendLayout();
             this.tb_infoEditPatient.SuspendLayout();
             this.tb_patientDetails.SuspendLayout();
-            this.tabs.SuspendLayout();
-            this.tabCurrentMedication.SuspendLayout();
-            this.groupBox2.SuspendLayout();
-            this.tapConsultations.SuspendLayout();
+            this.tabControlPatientsDetails.SuspendLayout();
+            this.tabAppointments.SuspendLayout();
             this.tb_staff.SuspendLayout();
             this.tabControlDoctors.SuspendLayout();
             this.tb_searchStaff.SuspendLayout();
@@ -280,6 +267,7 @@
             resources.ApplyResources(this.tabControlPatients, "tabControlPatients");
             this.tabControlPatients.Name = "tabControlPatients";
             this.tabControlPatients.SelectedIndex = 0;
+            this.tabControlPatients.SelectedIndexChanged += new System.EventHandler(this.tabControlPatientsDetails_Selecting);
             // 
             // tb_searchPatients
             // 
@@ -867,187 +855,111 @@
             // 
             // tb_patientDetails
             // 
-            this.tb_patientDetails.Controls.Add(this.tabs);
+            this.tb_patientDetails.Controls.Add(this.tabControlPatientsDetails);
             resources.ApplyResources(this.tb_patientDetails, "tb_patientDetails");
             this.tb_patientDetails.Name = "tb_patientDetails";
             this.tb_patientDetails.UseVisualStyleBackColor = true;
             // 
-            // tabs
+            // tabControlPatientsDetails
             // 
-            this.tabs.Controls.Add(this.tabPastAppointments);
-            this.tabs.Controls.Add(this.tabCurrentMedication);
-            this.tabs.Controls.Add(this.tapConsultations);
-            resources.ApplyResources(this.tabs, "tabs");
-            this.tabs.Name = "tabs";
-            this.tabs.SelectedIndex = 0;
+            this.tabControlPatientsDetails.Controls.Add(this.tabAppointments);
+            resources.ApplyResources(this.tabControlPatientsDetails, "tabControlPatientsDetails");
+            this.tabControlPatientsDetails.Name = "tabControlPatientsDetails";
+            this.tabControlPatientsDetails.SelectedIndex = 0;
+            this.tabControlPatientsDetails.Selecting += new System.Windows.Forms.TabControlCancelEventHandler(this.tabControlPatientsDetails_Selecting);
             // 
-            // tabPastAppointments
+            // tabAppointments
             // 
-            resources.ApplyResources(this.tabPastAppointments, "tabPastAppointments");
-            this.tabPastAppointments.Name = "tabPastAppointments";
-            this.tabPastAppointments.UseVisualStyleBackColor = true;
+            this.tabAppointments.Controls.Add(this.lbl_apDoctor);
+            this.tabAppointments.Controls.Add(this.label81);
+            this.tabAppointments.Controls.Add(this.lbl_apSpecialization);
+            this.tabAppointments.Controls.Add(this.label79);
+            this.tabAppointments.Controls.Add(this.lbl_apFunction);
+            this.tabAppointments.Controls.Add(this.label77);
+            this.tabAppointments.Controls.Add(this.lbl_apRoomNr);
+            this.tabAppointments.Controls.Add(this.label61);
+            this.tabAppointments.Controls.Add(this.label60);
+            this.tabAppointments.Controls.Add(this.label58);
+            this.tabAppointments.Controls.Add(this.label54);
+            this.tabAppointments.Controls.Add(this.label35);
+            this.tabAppointments.Controls.Add(this.clndr_appointments);
+            this.tabAppointments.Controls.Add(this.lstbx_patientAppointments);
+            resources.ApplyResources(this.tabAppointments, "tabAppointments");
+            this.tabAppointments.Name = "tabAppointments";
+            this.tabAppointments.UseVisualStyleBackColor = true;
             // 
-            // tabCurrentMedication
+            // lbl_apDoctor
             // 
-            this.tabCurrentMedication.Controls.Add(this.btAddPrescription);
-            this.tabCurrentMedication.Controls.Add(this.label55);
-            this.tabCurrentMedication.Controls.Add(this.cBconsultationID);
-            this.tabCurrentMedication.Controls.Add(this.groupBox2);
-            this.tabCurrentMedication.Controls.Add(this.lbvolume);
-            this.tabCurrentMedication.Controls.Add(this.lbnumPils);
-            this.tabCurrentMedication.Controls.Add(this.lbStrength);
-            this.tabCurrentMedication.Controls.Add(this.tbVolume);
-            this.tabCurrentMedication.Controls.Add(this.tbNumPills);
-            this.tabCurrentMedication.Controls.Add(this.tbstrength);
-            this.tabCurrentMedication.Controls.Add(this.tbMedicine);
-            this.tabCurrentMedication.Controls.Add(this.lbMedicne);
-            this.tabCurrentMedication.Controls.Add(this.printSelectedPersription);
-            this.tabCurrentMedication.Controls.Add(this.PerscriptionLb);
-            resources.ApplyResources(this.tabCurrentMedication, "tabCurrentMedication");
-            this.tabCurrentMedication.Name = "tabCurrentMedication";
-            this.tabCurrentMedication.UseVisualStyleBackColor = true;
+            resources.ApplyResources(this.lbl_apDoctor, "lbl_apDoctor");
+            this.lbl_apDoctor.Name = "lbl_apDoctor";
             // 
-            // btAddPrescription
+            // label81
             // 
-            resources.ApplyResources(this.btAddPrescription, "btAddPrescription");
-            this.btAddPrescription.Name = "btAddPrescription";
-            this.btAddPrescription.UseVisualStyleBackColor = true;
+            resources.ApplyResources(this.label81, "label81");
+            this.label81.Name = "label81";
             // 
-            // label55
+            // lbl_apSpecialization
             // 
-            resources.ApplyResources(this.label55, "label55");
-            this.label55.Name = "label55";
+            resources.ApplyResources(this.lbl_apSpecialization, "lbl_apSpecialization");
+            this.lbl_apSpecialization.Name = "lbl_apSpecialization";
             // 
-            // cBconsultationID
+            // label79
             // 
-            resources.ApplyResources(this.cBconsultationID, "cBconsultationID");
-            this.cBconsultationID.FormattingEnabled = true;
-            this.cBconsultationID.Name = "cBconsultationID";
+            resources.ApplyResources(this.label79, "label79");
+            this.label79.Name = "label79";
             // 
-            // groupBox2
+            // lbl_apFunction
             // 
-            resources.ApplyResources(this.groupBox2, "groupBox2");
-            this.groupBox2.Controls.Add(this.pastConsultations);
-            this.groupBox2.Controls.Add(this.rbCurrent);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.TabStop = false;
+            resources.ApplyResources(this.lbl_apFunction, "lbl_apFunction");
+            this.lbl_apFunction.Name = "lbl_apFunction";
             // 
-            // pastConsultations
+            // label77
             // 
-            resources.ApplyResources(this.pastConsultations, "pastConsultations");
-            this.pastConsultations.Name = "pastConsultations";
-            this.pastConsultations.UseVisualStyleBackColor = true;
+            resources.ApplyResources(this.label77, "label77");
+            this.label77.Name = "label77";
             // 
-            // rbCurrent
+            // lbl_apRoomNr
             // 
-            resources.ApplyResources(this.rbCurrent, "rbCurrent");
-            this.rbCurrent.Checked = true;
-            this.rbCurrent.Name = "rbCurrent";
-            this.rbCurrent.TabStop = true;
-            this.rbCurrent.UseVisualStyleBackColor = true;
+            resources.ApplyResources(this.lbl_apRoomNr, "lbl_apRoomNr");
+            this.lbl_apRoomNr.Name = "lbl_apRoomNr";
             // 
-            // lbvolume
+            // label61
             // 
-            resources.ApplyResources(this.lbvolume, "lbvolume");
-            this.lbvolume.Name = "lbvolume";
+            resources.ApplyResources(this.label61, "label61");
+            this.label61.Name = "label61";
             // 
-            // lbnumPils
+            // label60
             // 
-            resources.ApplyResources(this.lbnumPils, "lbnumPils");
-            this.lbnumPils.Name = "lbnumPils";
+            resources.ApplyResources(this.label60, "label60");
+            this.label60.Name = "label60";
             // 
-            // lbStrength
+            // label58
             // 
-            resources.ApplyResources(this.lbStrength, "lbStrength");
-            this.lbStrength.Name = "lbStrength";
+            resources.ApplyResources(this.label58, "label58");
+            this.label58.Name = "label58";
             // 
-            // tbVolume
+            // label54
             // 
-            resources.ApplyResources(this.tbVolume, "tbVolume");
-            this.tbVolume.Name = "tbVolume";
+            resources.ApplyResources(this.label54, "label54");
+            this.label54.Name = "label54";
             // 
-            // tbNumPills
+            // label35
             // 
-            resources.ApplyResources(this.tbNumPills, "tbNumPills");
-            this.tbNumPills.Name = "tbNumPills";
+            resources.ApplyResources(this.label35, "label35");
+            this.label35.Name = "label35";
             // 
-            // tbstrength
+            // clndr_appointments
             // 
-            resources.ApplyResources(this.tbstrength, "tbstrength");
-            this.tbstrength.Name = "tbstrength";
+            resources.ApplyResources(this.clndr_appointments, "clndr_appointments");
+            this.clndr_appointments.Name = "clndr_appointments";
+            this.clndr_appointments.DateSelected += new System.Windows.Forms.DateRangeEventHandler(this.event_getAppointments);
             // 
-            // tbMedicine
+            // lstbx_patientAppointments
             // 
-            resources.ApplyResources(this.tbMedicine, "tbMedicine");
-            this.tbMedicine.Name = "tbMedicine";
-            // 
-            // lbMedicne
-            // 
-            resources.ApplyResources(this.lbMedicne, "lbMedicne");
-            this.lbMedicne.Name = "lbMedicne";
-            // 
-            // printSelectedPersription
-            // 
-            resources.ApplyResources(this.printSelectedPersription, "printSelectedPersription");
-            this.printSelectedPersription.Name = "printSelectedPersription";
-            this.printSelectedPersription.UseVisualStyleBackColor = true;
-            // 
-            // PerscriptionLb
-            // 
-            resources.ApplyResources(this.PerscriptionLb, "PerscriptionLb");
-            this.PerscriptionLb.FormattingEnabled = true;
-            this.PerscriptionLb.Name = "PerscriptionLb";
-            // 
-            // tapConsultations
-            // 
-            this.tapConsultations.Controls.Add(this.textBox3);
-            this.tapConsultations.Controls.Add(this.diagnosishead);
-            this.tapConsultations.Controls.Add(this.btClear);
-            this.tapConsultations.Controls.Add(this.btSave);
-            this.tapConsultations.Controls.Add(this.tbinputSyntoms);
-            this.tapConsultations.Controls.Add(this.tbInputDiagnosis);
-            this.tapConsultations.Controls.Add(this.DiagnosisHistory);
-            resources.ApplyResources(this.tapConsultations, "tapConsultations");
-            this.tapConsultations.Name = "tapConsultations";
-            this.tapConsultations.UseVisualStyleBackColor = true;
-            // 
-            // textBox3
-            // 
-            resources.ApplyResources(this.textBox3, "textBox3");
-            this.textBox3.Name = "textBox3";
-            // 
-            // diagnosishead
-            // 
-            resources.ApplyResources(this.diagnosishead, "diagnosishead");
-            this.diagnosishead.Name = "diagnosishead";
-            // 
-            // btClear
-            // 
-            resources.ApplyResources(this.btClear, "btClear");
-            this.btClear.Name = "btClear";
-            this.btClear.UseVisualStyleBackColor = true;
-            // 
-            // btSave
-            // 
-            resources.ApplyResources(this.btSave, "btSave");
-            this.btSave.Name = "btSave";
-            this.btSave.UseVisualStyleBackColor = true;
-            // 
-            // tbinputSyntoms
-            // 
-            resources.ApplyResources(this.tbinputSyntoms, "tbinputSyntoms");
-            this.tbinputSyntoms.Name = "tbinputSyntoms";
-            // 
-            // tbInputDiagnosis
-            // 
-            resources.ApplyResources(this.tbInputDiagnosis, "tbInputDiagnosis");
-            this.tbInputDiagnosis.Name = "tbInputDiagnosis";
-            // 
-            // DiagnosisHistory
-            // 
-            resources.ApplyResources(this.DiagnosisHistory, "DiagnosisHistory");
-            this.DiagnosisHistory.FormattingEnabled = true;
-            this.DiagnosisHistory.Name = "DiagnosisHistory";
+            this.lstbx_patientAppointments.FormattingEnabled = true;
+            resources.ApplyResources(this.lstbx_patientAppointments, "lstbx_patientAppointments");
+            this.lstbx_patientAppointments.Name = "lstbx_patientAppointments";
+            this.lstbx_patientAppointments.SelectedIndexChanged += new System.EventHandler(this.event_selectedAppointment);
             // 
             // tb_staff
             // 
@@ -1090,7 +1002,7 @@
             this.lstbx_staff.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.lstbx_staff.FormattingEnabled = true;
             this.lstbx_staff.Name = "lstbx_staff";
-            this.lstbx_staff.SelectedIndexChanged += new System.EventHandler(this.event_SelectedStaff);
+            this.lstbx_staff.SelectedIndexChanged += new System.EventHandler(this.event_selectedStaff);
             // 
             // tbx_lname
             // 
@@ -1595,13 +1507,9 @@
             this.tb_infoEditPatient.ResumeLayout(false);
             this.tb_infoEditPatient.PerformLayout();
             this.tb_patientDetails.ResumeLayout(false);
-            this.tabs.ResumeLayout(false);
-            this.tabCurrentMedication.ResumeLayout(false);
-            this.tabCurrentMedication.PerformLayout();
-            this.groupBox2.ResumeLayout(false);
-            this.groupBox2.PerformLayout();
-            this.tapConsultations.ResumeLayout(false);
-            this.tapConsultations.PerformLayout();
+            this.tabControlPatientsDetails.ResumeLayout(false);
+            this.tabAppointments.ResumeLayout(false);
+            this.tabAppointments.PerformLayout();
             this.tb_staff.ResumeLayout(false);
             this.tabControlDoctors.ResumeLayout(false);
             this.tb_searchStaff.ResumeLayout(false);
@@ -1736,33 +1644,8 @@
         private System.Windows.Forms.Label label42;
         private System.Windows.Forms.Label label43;
         private System.Windows.Forms.TabPage tb_patientDetails;
-        private System.Windows.Forms.TabControl tabs;
-        private System.Windows.Forms.TabPage tabPastAppointments;
-        private System.Windows.Forms.TabPage tabCurrentMedication;
-        private System.Windows.Forms.Button btAddPrescription;
-        private System.Windows.Forms.Label label55;
-        private System.Windows.Forms.ComboBox cBconsultationID;
-        private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.RadioButton pastConsultations;
-        private System.Windows.Forms.RadioButton rbCurrent;
-        private System.Windows.Forms.Label lbvolume;
-        private System.Windows.Forms.Label lbnumPils;
-        private System.Windows.Forms.Label lbStrength;
-        private System.Windows.Forms.TextBox tbVolume;
-        private System.Windows.Forms.TextBox tbNumPills;
-        private System.Windows.Forms.TextBox tbstrength;
-        private System.Windows.Forms.TextBox tbMedicine;
-        private System.Windows.Forms.Label lbMedicne;
-        private System.Windows.Forms.Button printSelectedPersription;
-        private System.Windows.Forms.ListBox PerscriptionLb;
-        private System.Windows.Forms.TabPage tapConsultations;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox diagnosishead;
-        private System.Windows.Forms.Button btClear;
-        private System.Windows.Forms.Button btSave;
-        private System.Windows.Forms.TextBox tbinputSyntoms;
-        private System.Windows.Forms.TextBox tbInputDiagnosis;
-        private System.Windows.Forms.ListBox DiagnosisHistory;
+        private System.Windows.Forms.TabControl tabControlPatientsDetails;
+        private System.Windows.Forms.TabPage tabAppointments;
         private System.Windows.Forms.Label lbl_pinsurance;
         private System.Windows.Forms.Label lbl_paddrs;
         private System.Windows.Forms.Label lbl_pmnmbr;
@@ -1815,6 +1698,20 @@
         private System.Windows.Forms.Label label57;
         private System.Windows.Forms.Label lbl_sStaffId;
         private System.Windows.Forms.Label label44;
+        private System.Windows.Forms.ListBox lstbx_patientAppointments;
+        private System.Windows.Forms.MonthCalendar clndr_appointments;
+        private System.Windows.Forms.Label label60;
+        private System.Windows.Forms.Label label58;
+        private System.Windows.Forms.Label label54;
+        private System.Windows.Forms.Label label35;
+        private System.Windows.Forms.Label label61;
+        private System.Windows.Forms.Label lbl_apDoctor;
+        private System.Windows.Forms.Label label81;
+        private System.Windows.Forms.Label lbl_apSpecialization;
+        private System.Windows.Forms.Label label79;
+        private System.Windows.Forms.Label lbl_apFunction;
+        private System.Windows.Forms.Label label77;
+        private System.Windows.Forms.Label lbl_apRoomNr;
 
     }
 }

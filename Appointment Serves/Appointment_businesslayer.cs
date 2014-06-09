@@ -30,22 +30,22 @@ namespace Appointment_Serves
         /// <returns>List of patients with their details that have an appointment on that date with that staff Id </returns>
         public List<Patient> SearchappointmentsbyDate(DateTime date, int staffId)
         {
-            List<Patient> mypersons = new List<Patient>();
+            List<Patient> patients = new List<Patient>();
             DataTable dataTable = dbAcess.SearchAppointmentsbyDate(date, staffId);
 
             foreach (DataRow row in dataTable.Rows)
             {
-                Patient person = new Patient();
+                Patient patient = new Patient();
 
-                person.FirstName = Convert.ToString(row["first_name"]);
-                person.LastName = Convert.ToString(row["last_name"]);
-                person.DateOfBirth = Convert.ToDateTime(row["date_of_birth"]);
-                person.InsuranceNumber = Convert.ToString(row["insurance_number"]);
-                person.PatientID = Convert.ToInt32(row["patient_id"]);
+                patient.FirstName = Convert.ToString(row["first_name"]);
+                patient.LastName = Convert.ToString(row["last_name"]);
+                patient.DateOfBirth = Convert.ToDateTime(row["date_of_birth"]);
+                patient.InsuranceNumber = Convert.ToString(row["insurance_number"]);
+                patient.PatientID = Convert.ToInt32(row["patient_id"]);
 
-                mypersons.Add(person);
+                patients.Add(patient);
             }
-            return mypersons;
+            return patients;
 
         }
 
@@ -63,8 +63,11 @@ namespace Appointment_Serves
             {
                 Appointment appointment = new Appointment();
 
-                appointment.Start_date = Convert.ToDateTime(row["start_date"]);
                 appointment.AppointmentID = Convert.ToInt32(row["appointment_id"]);
+                appointment.Patient_id = Convert.ToInt32(row["patient_id"]);
+                appointment.Staff_id = Convert.ToInt32(row["staff_id"]);
+                appointment.Start_date = Convert.ToDateTime(row["start_date"]);
+                appointment.End_date = Convert.ToDateTime(row["end_date"]);
 
                 myappointments.Add(appointment);
             }
@@ -133,13 +136,13 @@ namespace Appointment_Serves
         }
 
         /// <summary>
-        /// Method for getting the appointments history of a certain patient by id
+        /// Method for getting the appointments history of a certain patient by id. NOT
         /// </summary>
         /// <param name="ID">a specific patient ID</param>
         /// <returns>a datatable containing the appointments history of a certain patient</returns>
         public DataTable getAppointmentsHistorybyPatientID(int ID)
         {
-            DataTable dataTable = dbAcess.SearchAppointmentsByPersonID(ID);
+            DataTable dataTable = dbAcess.SearchAppointmentsByPatientId(ID);
             return dataTable;
         }
 
@@ -180,10 +183,47 @@ namespace Appointment_Serves
                 int staffId = dbAcess.GetStaffId(staffLastName);
                 int patientId = dbAcess.GetPatientId(patientMail);
 
-                return dbAcess.addAppointmrnt(staffId, patientId, startDate, endDate);
+                return dbAcess.addAppointment(staffId, patientId, startDate, endDate);
             }
             else
                 return false;
+        }
+
+        /// <summary>
+        /// Return a list of appointments associated to the given persons' ID.
+        /// If no appointments exists it returns an empty list.
+        /// </summary>
+        /// <param name="ID">The Patient Id</param>
+        /// <returns>list of appointments</returns>
+        public List<Appointment> getAppointmentsListbyPatientId(int ID, string date = "")
+        {
+            List<Appointment> appointments = new List<Appointment>();
+
+            DataTable dt;
+            if (date == "")
+            {
+                dt = this.dbAcess.SearchAppointmentsByPatientId(ID);
+            }
+            else
+            {
+                IFormatProvider culture = new System.Globalization.CultureInfo("en-US", true);
+                DateTime dateType = Convert.ToDateTime(date, culture);
+                dt = this.dbAcess.searchAppointmentsByDate(dateType);
+            }
+            if (dt.Rows.Count > 0)
+            {
+                foreach (DataRow row in dt.Rows)
+                {
+                    Appointment appointment = new Appointment();
+                    appointment.AppointmentID = Convert.ToInt32(row["appointment_id"]);
+                    appointment.Patient_id = ID;
+                    appointment.Staff_id = Convert.ToInt32(row["staff_id"]);
+                    appointment.Start_date = Convert.ToDateTime(row["start_date"]);
+                    appointment.End_date = Convert.ToDateTime(row["end_date"]);
+                    appointments.Add(appointment);
+                }
+            }
+            return appointments;
         }
     }
 }

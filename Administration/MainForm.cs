@@ -11,33 +11,76 @@ using System.Windows.Forms;
 // Using the service namespaces to avoid typing long identifiers.
 using Administration.MedicalInformation;
 using Administration.Appointments;
+using Administration.serverAdministration;
 
 namespace Administration
 {
     public partial class MainForm : Form
     {
-        // Keep a list of the searched staff and patients.
-        private MedicalInformation.Patient[] patientsFound;
-        private serverAdministration.Staff[] staffFound;
+        /// <summary>
+        /// The user that logged in to the administration service.
+        /// </summary>
+        private Administration.MedicalInformation.Staff loggedInUser;
 
-        // Keep the users last selection for convenience.
-        MedicalInformation.Patient lastSelectedPatient = null;
-        serverAdministration.Staff lastSelectedStaff = null;
-
-        // Define the service access points.
-        MedicalInformation.DoctorClient proxy = new MedicalInformation.DoctorClient();
-        serverAdministration.AdministrationClient server = new serverAdministration.AdministrationClient();
+        /* Keep a list of the searched staff and patients. */
 
         /// <summary>
-        /// Users reply.
+        /// Patients array as returned from the Medical service.
+        /// </summary>
+        private MedicalInformation.Patient[] patientsFound;
+
+        /// <summary>
+        /// Staff array as returned from Administration service.
+        /// </summary>
+        private serverAdministration.Staff[] staffFound;
+
+        /// <summary>
+        /// Appointments array as returned from Appointments(aka. Agenda) service.
+        /// </summary>
+        private Appointments.Appointment[] appointmentsFound;
+
+        /* Keep the users last selection for convenience. */
+
+        /// <summary>
+        /// The Patient object the user selected last.
+        /// </summary>
+        MedicalInformation.Patient lastSelectedPatient = null;
+
+        /// <summary>
+        /// The Staff object the user selected last.
+        /// </summary>
+        serverAdministration.Staff lastSelectedStaff = null;
+
+        Appointments.Appointment lastSelectedAppointment = new Appointments.Appointment();
+
+        /* Define the service access points. */
+
+        /// <summary>
+        /// Medical Information service.
+        /// </summary>
+        MedicalInformation.DoctorClient medical = new MedicalInformation.DoctorClient();
+
+        /// <summary>
+        /// Administration service.
+        /// </summary>
+        serverAdministration.AdministrationClient admin = new serverAdministration.AdministrationClient();
+
+        /// <summary>
+        /// Agenda service.
+        /// </summary>
+        Appointments.AppointmentClient agenda = new Appointments.AppointmentClient();
+
+        /// <summary>
+        /// A dialog result object holding the users reply.
         /// </summary>
         DialogResult dr;
 
-        public MainForm(Staff staff)
+        public MainForm(MedicalInformation.Staff staff)
         {
             InitializeComponent();
-            this.lbl_userGreeting.Text = staff.FirstNamek__BackingField;
-            this.lbl_dateNow.Text = DateTime.Now.Date.ToString("d/m/YYYY");
+            this.loggedInUser = staff;
+            this.lbl_userGreeting.Text = loggedInUser.FirstNamek__BackingField;
+            this.lbl_dateNow.Text = DateTime.Now.Date.ToString("dd/MM/yyyy");
             this.DOBSearch.Value = DateTime.Now.Date;
             this.btn_editPatient.Hide();
             this.btn_updatePatient.Hide();
@@ -54,7 +97,7 @@ namespace Administration
             searchListLB.Items.Clear();
             if (tbSearchFirstName.Text.Length + tbInsuranceSearch.Text.Length + DOBSearch.Text.Length + tbSearchLastName.Text.Length > 0)
             {
-                if (((patientsFound = proxy.SearchPatients(tbSearchFirstName.Text, tbSearchLastName.Text, DOBSearch.Value, tbInsuranceSearch.Text)) != null))
+                if (((patientsFound = medical.SearchPatients(tbSearchFirstName.Text, tbSearchLastName.Text, DOBSearch.Value, tbInsuranceSearch.Text)) != null))
                 {
                     foreach (MedicalInformation.Patient patient in patientsFound)
                     {
@@ -81,7 +124,7 @@ namespace Administration
             this.event_clearStaff(null, null);
             lstbx_staff.Items.Clear();
 
-            if ((staffFound = server.getStaff()) != null)
+            if ((staffFound = admin.getAllStaff()) != null)
             {
                 foreach (serverAdministration.Staff staff in staffFound)
                 {
@@ -90,7 +133,7 @@ namespace Administration
             }
         }
 
-        private void event_SelectedStaff(object sender, EventArgs e)
+        private void event_selectedStaff(object sender, EventArgs e)
         {
             this.event_clearStaff(null, null);
             if (this.lstbx_staff.SelectedIndex < 0)
@@ -283,7 +326,7 @@ namespace Administration
 
             bool result;
             // Send the request for new patient to the server.
-            if (result = server.addPatient(newPatient))
+            if (result = admin.addPatient(newPatient))
             {
                 MessageBox.Show(this, String.Format("The new Patient with name: {0} , was added succesfully.", newPatient.FirstNamek__BackingField), "Success");
                 // this.btn_cancelPatient_Click(null, null);
@@ -307,7 +350,7 @@ namespace Administration
 
             bool result;
             // Send the request for new patient to the server.
-            if (result = server.editPatient(updatedPatient))
+            if (result = admin.editPatient(updatedPatient))
             {
                 MessageBox.Show(this, String.Format("The Patient with name: {0} , was updated succesfully.", updatedPatient.FirstNamek__BackingField), "Success");
                 // this.btn_cancelPatient_Click(null, null);
@@ -323,7 +366,6 @@ namespace Administration
         private serverAdministration.Patient getUserInputFromAddPatientTab()
         {
             // TODO: Add Input validation.
-
             // Create a new Patient.
             Administration.serverAdministration.Patient patient = new Administration.serverAdministration.Patient();
             // Fill in the details from users input.
@@ -363,7 +405,7 @@ namespace Administration
 
             bool result;
             // Send the request for new patient to the server.
-            if (result = server.addStaff(newStaff))
+            if (result = admin.addStaff(newStaff))
             {
                 MessageBox.Show(this, String.Format("The new Staff member with name: {0} , was added succesfully.", newStaff.FirstNamek__BackingField), "Success");
                 // this.btn_cancelPatient_Click(null, null);
@@ -376,7 +418,6 @@ namespace Administration
         private serverAdministration.Staff getUserInputFromAddStaffTab()
         {
             // TODO: Add Input validation.
-
             // Create a new Staff.
             Administration.serverAdministration.Staff staff = new Administration.serverAdministration.Staff();
             // Fill in the details from users input.
@@ -405,7 +446,7 @@ namespace Administration
 
             bool result;
             // Send the request for new patient to the server.
-            if (result = server.editStaff(updatedStaff))
+            if (result = admin.editStaff(updatedStaff))
             {
                 MessageBox.Show(this, String.Format("The staff member with name: {0} , was updated succesfully.", updatedStaff.FirstNamek__BackingField), "Success");
                 // this.btn_cancelStaff_Click(null, null);
@@ -440,7 +481,7 @@ namespace Administration
             }
             bool result;
             // Send the request for new patient to the server.
-            if (result = server.removeStaff(this.lastSelectedStaff))
+            if (result = admin.removeStaff(this.lastSelectedStaff))
             {
                 MessageBox.Show(this, String.Format("The staff member with staff ID: {0} , was deleted succesfully.", this.lastSelectedStaff.StaffIDk__BackingField), "Success");
                 this.event_clearStaff(null, null);
@@ -453,6 +494,89 @@ namespace Administration
             }
         }
 
+        private void event_getAppointments(object sender, EventArgs e)
+        {
+
+            if (this.lastSelectedPatient == null)
+            {
+                this.clearAppointments();
+                return;
+            }
+            this.clearAppointments(false);
+            if (sender != null && sender.Equals(this.clndr_appointments))
+            {
+                this.appointmentsFound = agenda.getAppointmentsListbyPatientId(this.lastSelectedPatient.PatientIDk__BackingField, this.clndr_appointments.SelectionStart.Date.ToString("dd/M/yyy"));
+            }
+            else
+            {
+                this.appointmentsFound = agenda.getAppointmentsListbyPatientId(this.lastSelectedPatient.PatientIDk__BackingField, "");
+            }
+
+            if (appointmentsFound != null && appointmentsFound.Length > 0)
+            {
+                foreach (Administration.Appointments.Appointment ap in appointmentsFound)
+                {
+                    this.lstbx_patientAppointments.Items.Add(string.Format("{0}\t{1}\t{2}\t{3}", ap.appointmentID, ap.start_date, ap.end_date, ap.staff_id));
+                    this.clndr_appointments.AddBoldedDate(ap.start_date);
+                }
+            }
+            else
+            {
+                this.clearAppointments();
+            }
+        }
+
+        private void event_selectedAppointment(object sender, EventArgs e)
+        {
+            this.event_clearStaff(null, null);
+            if (this.lstbx_patientAppointments.SelectedIndex < 0)
+                return;
+            lastSelectedAppointment = appointmentsFound[this.lstbx_patientAppointments.SelectedIndex];
+            showAppointmentInfo(lastSelectedAppointment);
+        }
+
+        private void showAppointmentInfo(Appointments.Appointment lastSelectedAppointment)
+        {
+            serverAdministration.Staff s = admin.getStaffById(lastSelectedAppointment.staff_id);
+            if (s == null)
+                return;
+            this.lbl_apDoctor.Text = string.Format("{0} {1}", s.LastNamek__BackingField, s.FirstNamek__BackingField);
+            this.lbl_apFunction.Text = s.Functionk__BackingField.ToString();
+            this.lbl_apRoomNr.Text = s.RoomNumberk__BackingField.ToString();
+            this.lbl_apSpecialization.Text = s.Specializationk__BackingField.ToString();
+        }
+
+        /// <summary>
+        /// Clears all the appointment related fields and variables.
+        /// </summary>
+        /// <param name="clearAll">(Optional) Pass FALSE to clear only the form fields, not the variables</param>
+        private void clearAppointments(bool clearAll = true)
+        {
+            if (clearAll)
+            {
+                this.lastSelectedAppointment = new Appointments.Appointment();
+                this.appointmentsFound = null;
+                this.clndr_appointments.RemoveAllBoldedDates();
+            }
+            this.lstbx_patientAppointments.Items.Clear();
+            this.lbl_apDoctor.Text = "";
+            this.lbl_apFunction.Text = "";
+            this.lbl_apRoomNr.Text = "";
+            this.lbl_apSpecialization.Text = "";
+        }
+
+        private void tabControlPatientsDetails_Selecting(object sender, EventArgs e)
+        {
+            if (tabControlPatients.SelectedTab == tb_patientDetails)
+            {
+                if (tabControlPatientsDetails.SelectedTab == tabAppointments)
+                    this.event_getAppointments(null, null);
+                else
+                {
+                    this.clearAppointments();
+                }
+            }
+        }
     }
 
 }

@@ -19,7 +19,6 @@ namespace DMS_Service
         /// </summary>
         public enum task { select, update, insert, delete };
 
-
         /// <summary>
         /// Constructor.
         /// </summary>
@@ -36,7 +35,7 @@ namespace DMS_Service
         public bool addPerson(Person person)
         {
             // TODO: Add better handling if database fails to insert.
-            return db.personExists(person.FirstName,person.LastName,person.DateOfBirth) ? false : db.addPerson(person);
+            return db.personExists(person.FirstName, person.LastName, person.DateOfBirth) ? false : db.addPerson(person);
         }
 
         /// <summary>
@@ -136,7 +135,7 @@ namespace DMS_Service
         /// <returns>True on success | False on failure</returns>
         public bool addStaff(Staff staff)
         {
-            return db.personExists(staff.FirstName,staff.LastName,staff.DateOfBirth) ? false : db.addStaff(staff);
+            return db.personExists(staff.FirstName, staff.LastName, staff.DateOfBirth) ? false : db.addStaff(staff);
         }
 
         /// <summary>
@@ -179,7 +178,7 @@ namespace DMS_Service
             return true;
         }
 
-        public List<Staff> getStaff()
+        public List<Staff> getAllStaff()
         {
             System.Data.DataTable dt = db.getAllStaff();
             List<Staff> staff = new List<Staff>();
@@ -209,6 +208,24 @@ namespace DMS_Service
                 staff.Add(s);
             }
             return staff;
+        }
+
+        /// <summary>
+        /// Get a Staff object by a given staff id.
+        /// </summary>
+        /// <param name="staffId">The staff Id</param>
+        /// <returns>NULL if non existant, Staff Object</returns>
+        public Staff getStaffById(int staffId)
+        {
+            List<Staff> staff = this.getAllStaff();
+            Staff returnable = null;
+            try
+            {
+                int index = staff.FindIndex(member => member.StaffID == staffId);
+                returnable = staff[index];
+            }
+            catch { return null; }
+            return returnable;
         }
     }
 }

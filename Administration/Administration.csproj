@@ -126,6 +126,9 @@
     <None Include="Service References\Appointments\System.Data2.xsd">
       <SubType>Designer</SubType>
     </None>
+    <None Include="Service References\Appointments\System.Data3.xsd">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Service References\MedicalInformation\Administration.MedicalInformation.Appointment.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
