@@ -11,6 +11,9 @@ using Doctor_Client.ServerConnectionMedicalInformation;
 
 namespace Doctor_Client
 {
+    /// <summary>
+    /// constructor for the login implementing together with the form class 
+    /// </summary>
     public partial class Login : Form
     {
 
@@ -25,16 +28,13 @@ namespace Doctor_Client
             InitializeComponent();
         }
 
-        private void label1_Click(object sender, EventArgs e)
-        {
+     
 
-        }
-
-        private void Login_Load(object sender, EventArgs e)
-        {
-
-        }
-
+ 
+        /// <summary>
+        /// these is the done when the login button is pressed it should log the user in to the form, if the e-mail and password are equal of the audentification values in the database for the user
+        /// </summary>
+    
         private void btnLogin_Click(object sender, EventArgs e)
         {
             LoginErrorlb.Text = "";

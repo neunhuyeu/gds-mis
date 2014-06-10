@@ -66,7 +66,7 @@
             this.label1.Size = new System.Drawing.Size(74, 25);
             this.label1.TabIndex = 2;
             this.label1.Text = "E-Mail:";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
+           
             // 
             // label2
             // 
@@ -123,7 +123,6 @@
             this.Name = "Login";
             this.Text = "Login";
             this.TransparencyKey = System.Drawing.Color.DarkGoldenrod;
-            this.Load += new System.EventHandler(this.Login_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
