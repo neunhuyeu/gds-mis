@@ -123,6 +123,7 @@
             this.tb_patientDetails = new System.Windows.Forms.TabPage();
             this.tabControlPatientsDetails = new System.Windows.Forms.TabControl();
             this.tabAppointments = new System.Windows.Forms.TabPage();
+            this.button2 = new System.Windows.Forms.Button();
             this.lbl_apDoctor = new System.Windows.Forms.Label();
             this.label81 = new System.Windows.Forms.Label();
             this.lbl_apSpecialization = new System.Windows.Forms.Label();
@@ -137,6 +138,18 @@
             this.label35 = new System.Windows.Forms.Label();
             this.clndr_appointments = new System.Windows.Forms.MonthCalendar();
             this.lstbx_patientAppointments = new System.Windows.Forms.ListBox();
+            this.tab_AddAppointment = new System.Windows.Forms.TabPage();
+            this.btn_addAppointCancel = new System.Windows.Forms.Button();
+            this.btn_addAppointm = new System.Windows.Forms.Button();
+            this.cmb_addAppointmentEndTime = new System.Windows.Forms.ComboBox();
+            this.label80 = new System.Windows.Forms.Label();
+            this.cmb_addAppointmentStartTime = new System.Windows.Forms.ComboBox();
+            this.label78 = new System.Windows.Forms.Label();
+            this.cmb_addAppointmentDoctor = new System.Windows.Forms.ComboBox();
+            this.dt_addAppointment = new System.Windows.Forms.DateTimePicker();
+            this.label55 = new System.Windows.Forms.Label();
+            this.label75 = new System.Windows.Forms.Label();
+            this.label76 = new System.Windows.Forms.Label();
             this.tb_staff = new System.Windows.Forms.TabPage();
             this.tabControlDoctors = new System.Windows.Forms.TabControl();
             this.tb_searchStaff = new System.Windows.Forms.TabPage();
@@ -226,6 +239,7 @@
             this.tb_patientDetails.SuspendLayout();
             this.tabControlPatientsDetails.SuspendLayout();
             this.tabAppointments.SuspendLayout();
+            this.tab_AddAppointment.SuspendLayout();
             this.tb_staff.SuspendLayout();
             this.tabControlDoctors.SuspendLayout();
             this.tb_searchStaff.SuspendLayout();
@@ -863,6 +877,7 @@
             // tabControlPatientsDetails
             // 
             this.tabControlPatientsDetails.Controls.Add(this.tabAppointments);
+            this.tabControlPatientsDetails.Controls.Add(this.tab_AddAppointment);
             resources.ApplyResources(this.tabControlPatientsDetails, "tabControlPatientsDetails");
             this.tabControlPatientsDetails.Name = "tabControlPatientsDetails";
             this.tabControlPatientsDetails.SelectedIndex = 0;
@@ -870,6 +885,7 @@
             // 
             // tabAppointments
             // 
+            this.tabAppointments.Controls.Add(this.button2);
             this.tabAppointments.Controls.Add(this.lbl_apDoctor);
             this.tabAppointments.Controls.Add(this.label81);
             this.tabAppointments.Controls.Add(this.lbl_apSpecialization);
@@ -887,6 +903,12 @@
             resources.ApplyResources(this.tabAppointments, "tabAppointments");
             this.tabAppointments.Name = "tabAppointments";
             this.tabAppointments.UseVisualStyleBackColor = true;
+            // 
+            // button2
+            // 
+            resources.ApplyResources(this.button2, "button2");
+            this.button2.Name = "button2";
+            this.button2.UseVisualStyleBackColor = true;
             // 
             // lbl_apDoctor
             // 
@@ -960,6 +982,121 @@
             resources.ApplyResources(this.lstbx_patientAppointments, "lstbx_patientAppointments");
             this.lstbx_patientAppointments.Name = "lstbx_patientAppointments";
             this.lstbx_patientAppointments.SelectedIndexChanged += new System.EventHandler(this.event_selectedAppointment);
+            // 
+            // tab_AddAppointment
+            // 
+            this.tab_AddAppointment.Controls.Add(this.btn_addAppointCancel);
+            this.tab_AddAppointment.Controls.Add(this.btn_addAppointm);
+            this.tab_AddAppointment.Controls.Add(this.cmb_addAppointmentEndTime);
+            this.tab_AddAppointment.Controls.Add(this.label80);
+            this.tab_AddAppointment.Controls.Add(this.cmb_addAppointmentStartTime);
+            this.tab_AddAppointment.Controls.Add(this.label78);
+            this.tab_AddAppointment.Controls.Add(this.cmb_addAppointmentDoctor);
+            this.tab_AddAppointment.Controls.Add(this.dt_addAppointment);
+            this.tab_AddAppointment.Controls.Add(this.label55);
+            this.tab_AddAppointment.Controls.Add(this.label75);
+            this.tab_AddAppointment.Controls.Add(this.label76);
+            resources.ApplyResources(this.tab_AddAppointment, "tab_AddAppointment");
+            this.tab_AddAppointment.Name = "tab_AddAppointment";
+            this.tab_AddAppointment.UseVisualStyleBackColor = true;
+            // 
+            // btn_addAppointCancel
+            // 
+            resources.ApplyResources(this.btn_addAppointCancel, "btn_addAppointCancel");
+            this.btn_addAppointCancel.Name = "btn_addAppointCancel";
+            this.btn_addAppointCancel.UseVisualStyleBackColor = true;
+            // 
+            // btn_addAppointm
+            // 
+            resources.ApplyResources(this.btn_addAppointm, "btn_addAppointm");
+            this.btn_addAppointm.Name = "btn_addAppointm";
+            this.btn_addAppointm.UseVisualStyleBackColor = true;
+            this.btn_addAppointm.Click += new System.EventHandler(this.event_addAppointment);
+            // 
+            // cmb_addAppointmentEndTime
+            // 
+            this.cmb_addAppointmentEndTime.FormattingEnabled = true;
+            this.cmb_addAppointmentEndTime.Items.AddRange(new object[] {
+            resources.GetString("cmb_addAppointmentEndTime.Items"),
+            resources.GetString("cmb_addAppointmentEndTime.Items1"),
+            resources.GetString("cmb_addAppointmentEndTime.Items2"),
+            resources.GetString("cmb_addAppointmentEndTime.Items3"),
+            resources.GetString("cmb_addAppointmentEndTime.Items4"),
+            resources.GetString("cmb_addAppointmentEndTime.Items5"),
+            resources.GetString("cmb_addAppointmentEndTime.Items6"),
+            resources.GetString("cmb_addAppointmentEndTime.Items7"),
+            resources.GetString("cmb_addAppointmentEndTime.Items8"),
+            resources.GetString("cmb_addAppointmentEndTime.Items9"),
+            resources.GetString("cmb_addAppointmentEndTime.Items10"),
+            resources.GetString("cmb_addAppointmentEndTime.Items11"),
+            resources.GetString("cmb_addAppointmentEndTime.Items12"),
+            resources.GetString("cmb_addAppointmentEndTime.Items13"),
+            resources.GetString("cmb_addAppointmentEndTime.Items14"),
+            resources.GetString("cmb_addAppointmentEndTime.Items15")});
+            resources.ApplyResources(this.cmb_addAppointmentEndTime, "cmb_addAppointmentEndTime");
+            this.cmb_addAppointmentEndTime.Name = "cmb_addAppointmentEndTime";
+            // 
+            // label80
+            // 
+            resources.ApplyResources(this.label80, "label80");
+            this.label80.Name = "label80";
+            // 
+            // cmb_addAppointmentStartTime
+            // 
+            this.cmb_addAppointmentStartTime.FormattingEnabled = true;
+            this.cmb_addAppointmentStartTime.Items.AddRange(new object[] {
+            resources.GetString("cmb_addAppointmentStartTime.Items"),
+            resources.GetString("cmb_addAppointmentStartTime.Items1"),
+            resources.GetString("cmb_addAppointmentStartTime.Items2"),
+            resources.GetString("cmb_addAppointmentStartTime.Items3"),
+            resources.GetString("cmb_addAppointmentStartTime.Items4"),
+            resources.GetString("cmb_addAppointmentStartTime.Items5"),
+            resources.GetString("cmb_addAppointmentStartTime.Items6"),
+            resources.GetString("cmb_addAppointmentStartTime.Items7"),
+            resources.GetString("cmb_addAppointmentStartTime.Items8"),
+            resources.GetString("cmb_addAppointmentStartTime.Items9"),
+            resources.GetString("cmb_addAppointmentStartTime.Items10"),
+            resources.GetString("cmb_addAppointmentStartTime.Items11"),
+            resources.GetString("cmb_addAppointmentStartTime.Items12"),
+            resources.GetString("cmb_addAppointmentStartTime.Items13"),
+            resources.GetString("cmb_addAppointmentStartTime.Items14"),
+            resources.GetString("cmb_addAppointmentStartTime.Items15")});
+            resources.ApplyResources(this.cmb_addAppointmentStartTime, "cmb_addAppointmentStartTime");
+            this.cmb_addAppointmentStartTime.Name = "cmb_addAppointmentStartTime";
+            // 
+            // label78
+            // 
+            resources.ApplyResources(this.label78, "label78");
+            this.label78.Name = "label78";
+            // 
+            // cmb_addAppointment
+            // 
+            this.cmb_addAppointmentDoctor.FormattingEnabled = true;
+            resources.ApplyResources(this.cmb_addAppointmentDoctor, "cmb_addAppointment");
+            this.cmb_addAppointmentDoctor.Name = "cmb_addAppointment";
+            // 
+            // dt_addAppointment
+            // 
+            resources.ApplyResources(this.dt_addAppointment, "dt_addAppointment");
+            this.dt_addAppointment.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dt_addAppointment.Name = "dt_addAppointment";
+            this.dt_addAppointment.Value = new System.DateTime(2014, 5, 18, 19, 24, 35, 0);
+            // 
+            // label55
+            // 
+            resources.ApplyResources(this.label55, "label55");
+            this.label55.Name = "label55";
+            // 
+            // label75
+            // 
+            resources.ApplyResources(this.label75, "label75");
+            this.label75.Name = "label75";
+            // 
+            // label76
+            // 
+            resources.ApplyResources(this.label76, "label76");
+            this.label76.BackColor = System.Drawing.Color.White;
+            this.label76.Name = "label76";
             // 
             // tb_staff
             // 
@@ -1510,6 +1647,8 @@
             this.tabControlPatientsDetails.ResumeLayout(false);
             this.tabAppointments.ResumeLayout(false);
             this.tabAppointments.PerformLayout();
+            this.tab_AddAppointment.ResumeLayout(false);
+            this.tab_AddAppointment.PerformLayout();
             this.tb_staff.ResumeLayout(false);
             this.tabControlDoctors.ResumeLayout(false);
             this.tb_searchStaff.ResumeLayout(false);
@@ -1712,6 +1851,19 @@
         private System.Windows.Forms.Label lbl_apFunction;
         private System.Windows.Forms.Label label77;
         private System.Windows.Forms.Label lbl_apRoomNr;
+        private System.Windows.Forms.TabPage tab_AddAppointment;
+        private System.Windows.Forms.DateTimePicker dt_addAppointment;
+        private System.Windows.Forms.Label label55;
+        private System.Windows.Forms.Label label75;
+        private System.Windows.Forms.Label label76;
+        private System.Windows.Forms.ComboBox cmb_addAppointmentStartTime;
+        private System.Windows.Forms.Label label78;
+        private System.Windows.Forms.ComboBox cmb_addAppointmentDoctor;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btn_addAppointCancel;
+        private System.Windows.Forms.Button btn_addAppointm;
+        private System.Windows.Forms.ComboBox cmb_addAppointmentEndTime;
+        private System.Windows.Forms.Label label80;
 
     }
 }

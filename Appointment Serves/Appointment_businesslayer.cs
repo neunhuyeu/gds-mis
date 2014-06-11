@@ -207,7 +207,7 @@ namespace Appointment_Serves
             else
             {
                 IFormatProvider culture = new System.Globalization.CultureInfo("en-US", true);
-                DateTime dateType = Convert.ToDateTime(date, culture);
+                DateTime dateType = DateTime.Parse(date, culture);
                 dt = this.dbAcess.searchAppointmentsByDate(dateType);
             }
             if (dt.Rows.Count > 0)

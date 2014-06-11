@@ -2793,6 +2793,39 @@
   <data name="&gt;&gt;tb_infoEditPatient.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
+  <data name="button2.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Right</value>
+  </data>
+  <data name="button2.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 8pt</value>
+  </data>
+  <data name="button2.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="button2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>395, 133</value>
+  </data>
+  <data name="button2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>99, 24</value>
+  </data>
+  <data name="button2.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="button2.Text" xml:space="preserve">
+    <value>Edit</value>
+  </data>
+  <data name="&gt;&gt;button2.Name" xml:space="preserve">
+    <value>button2</value>
+  </data>
+  <data name="&gt;&gt;button2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;button2.Parent" xml:space="preserve">
+    <value>tabAppointments</value>
+  </data>
+  <data name="&gt;&gt;button2.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
   <data name="lbl_apDoctor.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -2821,7 +2854,7 @@
     <value>tabAppointments</value>
   </data>
   <data name="&gt;&gt;lbl_apDoctor.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>1</value>
   </data>
   <data name="label81.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -2854,7 +2887,7 @@
     <value>tabAppointments</value>
   </data>
   <data name="&gt;&gt;label81.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>2</value>
   </data>
   <data name="lbl_apSpecialization.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -2884,7 +2917,7 @@
     <value>tabAppointments</value>
   </data>
   <data name="&gt;&gt;lbl_apSpecialization.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>3</value>
   </data>
   <data name="label79.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -2917,7 +2950,7 @@
     <value>tabAppointments</value>
   </data>
   <data name="&gt;&gt;label79.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>4</value>
   </data>
   <data name="lbl_apFunction.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -2947,7 +2980,7 @@
     <value>tabAppointments</value>
   </data>
   <data name="&gt;&gt;lbl_apFunction.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>5</value>
   </data>
   <data name="label77.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -2980,7 +3013,7 @@
     <value>tabAppointments</value>
   </data>
   <data name="&gt;&gt;label77.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>6</value>
   </data>
   <data name="lbl_apRoomNr.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -3010,7 +3043,7 @@
     <value>tabAppointments</value>
   </data>
   <data name="&gt;&gt;lbl_apRoomNr.ZOrder" xml:space="preserve">
-    <value>6</value>
+    <value>7</value>
   </data>
   <data name="label61.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -3043,7 +3076,7 @@
     <value>tabAppointments</value>
   </data>
   <data name="&gt;&gt;label61.ZOrder" xml:space="preserve">
-    <value>7</value>
+    <value>8</value>
   </data>
   <data name="label60.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -3073,7 +3106,7 @@
     <value>tabAppointments</value>
   </data>
   <data name="&gt;&gt;label60.ZOrder" xml:space="preserve">
-    <value>8</value>
+    <value>9</value>
   </data>
   <data name="label58.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -3103,7 +3136,7 @@
     <value>tabAppointments</value>
   </data>
   <data name="&gt;&gt;label58.ZOrder" xml:space="preserve">
-    <value>9</value>
+    <value>10</value>
   </data>
   <data name="label54.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -3133,7 +3166,7 @@
     <value>tabAppointments</value>
   </data>
   <data name="&gt;&gt;label54.ZOrder" xml:space="preserve">
-    <value>10</value>
+    <value>11</value>
   </data>
   <data name="label35.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -3160,7 +3193,7 @@
     <value>tabAppointments</value>
   </data>
   <data name="&gt;&gt;label35.ZOrder" xml:space="preserve">
-    <value>11</value>
+    <value>12</value>
   </data>
   <data name="clndr_appointments.Location" type="System.Drawing.Point, System.Drawing">
     <value>10, 12</value>
@@ -3178,7 +3211,7 @@
     <value>tabAppointments</value>
   </data>
   <data name="&gt;&gt;clndr_appointments.ZOrder" xml:space="preserve">
-    <value>12</value>
+    <value>13</value>
   </data>
   <data name="lstbx_patientAppointments.ItemHeight" type="System.Int32, mscorlib">
     <value>15</value>
@@ -3205,7 +3238,7 @@
     <value>tabAppointments</value>
   </data>
   <data name="&gt;&gt;lstbx_patientAppointments.ZOrder" xml:space="preserve">
-    <value>13</value>
+    <value>14</value>
   </data>
   <data name="tabAppointments.Location" type="System.Drawing.Point, System.Drawing">
     <value>4, 24</value>
@@ -3233,6 +3266,459 @@
   </data>
   <data name="&gt;&gt;tabAppointments.ZOrder" xml:space="preserve">
     <value>0</value>
+  </data>
+  <data name="btn_addAppointCancel.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Right</value>
+  </data>
+  <data name="btn_addAppointCancel.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 8pt</value>
+  </data>
+  <data name="btn_addAppointCancel.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="btn_addAppointCancel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>14, 282</value>
+  </data>
+  <data name="btn_addAppointCancel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>83, 38</value>
+  </data>
+  <data name="btn_addAppointCancel.TabIndex" type="System.Int32, mscorlib">
+    <value>59</value>
+  </data>
+  <data name="btn_addAppointCancel.Text" xml:space="preserve">
+    <value>Cancel</value>
+  </data>
+  <data name="&gt;&gt;btn_addAppointCancel.Name" xml:space="preserve">
+    <value>btn_addAppointCancel</value>
+  </data>
+  <data name="&gt;&gt;btn_addAppointCancel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btn_addAppointCancel.Parent" xml:space="preserve">
+    <value>tab_AddAppointment</value>
+  </data>
+  <data name="&gt;&gt;btn_addAppointCancel.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="btn_addAppointm.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Right</value>
+  </data>
+  <data name="btn_addAppointm.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 8pt</value>
+  </data>
+  <data name="btn_addAppointm.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="btn_addAppointm.Location" type="System.Drawing.Point, System.Drawing">
+    <value>227, 282</value>
+  </data>
+  <data name="btn_addAppointm.Size" type="System.Drawing.Size, System.Drawing">
+    <value>83, 38</value>
+  </data>
+  <data name="btn_addAppointm.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="btn_addAppointm.Text" xml:space="preserve">
+    <value>Save</value>
+  </data>
+  <data name="&gt;&gt;btn_addAppointm.Name" xml:space="preserve">
+    <value>btn_addAppointm</value>
+  </data>
+  <data name="&gt;&gt;btn_addAppointm.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btn_addAppointm.Parent" xml:space="preserve">
+    <value>tab_AddAppointment</value>
+  </data>
+  <data name="&gt;&gt;btn_addAppointm.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="cmb_addAppointmentEndTime.Items" xml:space="preserve">
+    <value>09:00</value>
+  </data>
+  <data name="cmb_addAppointmentEndTime.Items1" xml:space="preserve">
+    <value>09:30</value>
+  </data>
+  <data name="cmb_addAppointmentEndTime.Items2" xml:space="preserve">
+    <value>10:00</value>
+  </data>
+  <data name="cmb_addAppointmentEndTime.Items3" xml:space="preserve">
+    <value>10:30</value>
+  </data>
+  <data name="cmb_addAppointmentEndTime.Items4" xml:space="preserve">
+    <value>11:00</value>
+  </data>
+  <data name="cmb_addAppointmentEndTime.Items5" xml:space="preserve">
+    <value>11:30</value>
+  </data>
+  <data name="cmb_addAppointmentEndTime.Items6" xml:space="preserve">
+    <value>12:00</value>
+  </data>
+  <data name="cmb_addAppointmentEndTime.Items7" xml:space="preserve">
+    <value>12:30</value>
+  </data>
+  <data name="cmb_addAppointmentEndTime.Items8" xml:space="preserve">
+    <value>13:00</value>
+  </data>
+  <data name="cmb_addAppointmentEndTime.Items9" xml:space="preserve">
+    <value>13:30</value>
+  </data>
+  <data name="cmb_addAppointmentEndTime.Items10" xml:space="preserve">
+    <value>14:00</value>
+  </data>
+  <data name="cmb_addAppointmentEndTime.Items11" xml:space="preserve">
+    <value>14:30</value>
+  </data>
+  <data name="cmb_addAppointmentEndTime.Items12" xml:space="preserve">
+    <value>15:00</value>
+  </data>
+  <data name="cmb_addAppointmentEndTime.Items13" xml:space="preserve">
+    <value>15:30</value>
+  </data>
+  <data name="cmb_addAppointmentEndTime.Items14" xml:space="preserve">
+    <value>16:00</value>
+  </data>
+  <data name="cmb_addAppointmentEndTime.Items15" xml:space="preserve">
+    <value>16:30</value>
+  </data>
+  <data name="cmb_addAppointmentEndTime.Location" type="System.Drawing.Point, System.Drawing">
+    <value>136, 212</value>
+  </data>
+  <data name="cmb_addAppointmentEndTime.Size" type="System.Drawing.Size, System.Drawing">
+    <value>174, 23</value>
+  </data>
+  <data name="cmb_addAppointmentEndTime.TabIndex" type="System.Int32, mscorlib">
+    <value>58</value>
+  </data>
+  <data name="&gt;&gt;cmb_addAppointmentEndTime.Name" xml:space="preserve">
+    <value>cmb_addAppointmentEndTime</value>
+  </data>
+  <data name="&gt;&gt;cmb_addAppointmentEndTime.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cmb_addAppointmentEndTime.Parent" xml:space="preserve">
+    <value>tab_AddAppointment</value>
+  </data>
+  <data name="&gt;&gt;cmb_addAppointmentEndTime.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="label80.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label80.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 9pt</value>
+  </data>
+  <data name="label80.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="label80.Location" type="System.Drawing.Point, System.Drawing">
+    <value>11, 215</value>
+  </data>
+  <data name="label80.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 0, 2, 0</value>
+  </data>
+  <data name="label80.Size" type="System.Drawing.Size, System.Drawing">
+    <value>66, 15</value>
+  </data>
+  <data name="label80.TabIndex" type="System.Int32, mscorlib">
+    <value>57</value>
+  </data>
+  <data name="label80.Text" xml:space="preserve">
+    <value>End Time: </value>
+  </data>
+  <data name="&gt;&gt;label80.Name" xml:space="preserve">
+    <value>label80</value>
+  </data>
+  <data name="&gt;&gt;label80.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label80.Parent" xml:space="preserve">
+    <value>tab_AddAppointment</value>
+  </data>
+  <data name="&gt;&gt;label80.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="cmb_addAppointmentStartTime.Items" xml:space="preserve">
+    <value>09:00</value>
+  </data>
+  <data name="cmb_addAppointmentStartTime.Items1" xml:space="preserve">
+    <value>09:30</value>
+  </data>
+  <data name="cmb_addAppointmentStartTime.Items2" xml:space="preserve">
+    <value>10:00</value>
+  </data>
+  <data name="cmb_addAppointmentStartTime.Items3" xml:space="preserve">
+    <value>10:30</value>
+  </data>
+  <data name="cmb_addAppointmentStartTime.Items4" xml:space="preserve">
+    <value>11:00</value>
+  </data>
+  <data name="cmb_addAppointmentStartTime.Items5" xml:space="preserve">
+    <value>11:30</value>
+  </data>
+  <data name="cmb_addAppointmentStartTime.Items6" xml:space="preserve">
+    <value>12:00</value>
+  </data>
+  <data name="cmb_addAppointmentStartTime.Items7" xml:space="preserve">
+    <value>12:30</value>
+  </data>
+  <data name="cmb_addAppointmentStartTime.Items8" xml:space="preserve">
+    <value>13:00</value>
+  </data>
+  <data name="cmb_addAppointmentStartTime.Items9" xml:space="preserve">
+    <value>13:30</value>
+  </data>
+  <data name="cmb_addAppointmentStartTime.Items10" xml:space="preserve">
+    <value>14:00</value>
+  </data>
+  <data name="cmb_addAppointmentStartTime.Items11" xml:space="preserve">
+    <value>14:30</value>
+  </data>
+  <data name="cmb_addAppointmentStartTime.Items12" xml:space="preserve">
+    <value>15:00</value>
+  </data>
+  <data name="cmb_addAppointmentStartTime.Items13" xml:space="preserve">
+    <value>15:30</value>
+  </data>
+  <data name="cmb_addAppointmentStartTime.Items14" xml:space="preserve">
+    <value>16:00</value>
+  </data>
+  <data name="cmb_addAppointmentStartTime.Items15" xml:space="preserve">
+    <value>16:30</value>
+  </data>
+  <data name="cmb_addAppointmentStartTime.Location" type="System.Drawing.Point, System.Drawing">
+    <value>136, 169</value>
+  </data>
+  <data name="cmb_addAppointmentStartTime.Size" type="System.Drawing.Size, System.Drawing">
+    <value>174, 23</value>
+  </data>
+  <data name="cmb_addAppointmentStartTime.TabIndex" type="System.Int32, mscorlib">
+    <value>56</value>
+  </data>
+  <data name="&gt;&gt;cmb_addAppointmentStartTime.Name" xml:space="preserve">
+    <value>cmb_addAppointmentStartTime</value>
+  </data>
+  <data name="&gt;&gt;cmb_addAppointmentStartTime.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cmb_addAppointmentStartTime.Parent" xml:space="preserve">
+    <value>tab_AddAppointment</value>
+  </data>
+  <data name="&gt;&gt;cmb_addAppointmentStartTime.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="label78.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label78.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 9pt</value>
+  </data>
+  <data name="label78.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="label78.Location" type="System.Drawing.Point, System.Drawing">
+    <value>11, 172</value>
+  </data>
+  <data name="label78.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 0, 2, 0</value>
+  </data>
+  <data name="label78.Size" type="System.Drawing.Size, System.Drawing">
+    <value>69, 15</value>
+  </data>
+  <data name="label78.TabIndex" type="System.Int32, mscorlib">
+    <value>55</value>
+  </data>
+  <data name="label78.Text" xml:space="preserve">
+    <value>Start Time: </value>
+  </data>
+  <data name="&gt;&gt;label78.Name" xml:space="preserve">
+    <value>label78</value>
+  </data>
+  <data name="&gt;&gt;label78.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label78.Parent" xml:space="preserve">
+    <value>tab_AddAppointment</value>
+  </data>
+  <data name="&gt;&gt;label78.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="cmb_addAppointment.Location" type="System.Drawing.Point, System.Drawing">
+    <value>136, 86</value>
+  </data>
+  <data name="cmb_addAppointment.Size" type="System.Drawing.Size, System.Drawing">
+    <value>174, 23</value>
+  </data>
+  <data name="cmb_addAppointment.TabIndex" type="System.Int32, mscorlib">
+    <value>54</value>
+  </data>
+  <data name="&gt;&gt;cmb_addAppointment.Name" xml:space="preserve">
+    <value>cmb_addAppointment</value>
+  </data>
+  <data name="&gt;&gt;cmb_addAppointment.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cmb_addAppointment.Parent" xml:space="preserve">
+    <value>tab_AddAppointment</value>
+  </data>
+  <data name="&gt;&gt;cmb_addAppointment.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="dt_addAppointment.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 7pt</value>
+  </data>
+  <data name="dt_addAppointment.Location" type="System.Drawing.Point, System.Drawing">
+    <value>136, 131</value>
+  </data>
+  <data name="dt_addAppointment.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 2, 2, 2</value>
+  </data>
+  <data name="dt_addAppointment.Size" type="System.Drawing.Size, System.Drawing">
+    <value>174, 18</value>
+  </data>
+  <data name="dt_addAppointment.TabIndex" type="System.Int32, mscorlib">
+    <value>51</value>
+  </data>
+  <data name="&gt;&gt;dt_addAppointment.Name" xml:space="preserve">
+    <value>dt_addAppointment</value>
+  </data>
+  <data name="&gt;&gt;dt_addAppointment.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DateTimePicker, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;dt_addAppointment.Parent" xml:space="preserve">
+    <value>tab_AddAppointment</value>
+  </data>
+  <data name="&gt;&gt;dt_addAppointment.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="label55.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label55.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 9pt</value>
+  </data>
+  <data name="label55.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="label55.Location" type="System.Drawing.Point, System.Drawing">
+    <value>11, 89</value>
+  </data>
+  <data name="label55.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 0, 2, 0</value>
+  </data>
+  <data name="label55.Size" type="System.Drawing.Size, System.Drawing">
+    <value>46, 15</value>
+  </data>
+  <data name="label55.TabIndex" type="System.Int32, mscorlib">
+    <value>49</value>
+  </data>
+  <data name="label55.Text" xml:space="preserve">
+    <value>Doctor:</value>
+  </data>
+  <data name="&gt;&gt;label55.Name" xml:space="preserve">
+    <value>label55</value>
+  </data>
+  <data name="&gt;&gt;label55.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label55.Parent" xml:space="preserve">
+    <value>tab_AddAppointment</value>
+  </data>
+  <data name="&gt;&gt;label55.ZOrder" xml:space="preserve">
+    <value>8</value>
+  </data>
+  <data name="label75.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label75.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 9pt</value>
+  </data>
+  <data name="label75.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="label75.Location" type="System.Drawing.Point, System.Drawing">
+    <value>11, 131</value>
+  </data>
+  <data name="label75.Size" type="System.Drawing.Size, System.Drawing">
+    <value>123, 15</value>
+  </data>
+  <data name="label75.TabIndex" type="System.Int32, mscorlib">
+    <value>48</value>
+  </data>
+  <data name="label75.Text" xml:space="preserve">
+    <value>Date Of Appointment:</value>
+  </data>
+  <data name="&gt;&gt;label75.Name" xml:space="preserve">
+    <value>label75</value>
+  </data>
+  <data name="&gt;&gt;label75.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label75.Parent" xml:space="preserve">
+    <value>tab_AddAppointment</value>
+  </data>
+  <data name="&gt;&gt;label75.ZOrder" xml:space="preserve">
+    <value>9</value>
+  </data>
+  <data name="label76.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label76.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 11pt, style=Bold</value>
+  </data>
+  <data name="label76.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="label76.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 11</value>
+  </data>
+  <data name="label76.Size" type="System.Drawing.Size, System.Drawing">
+    <value>304, 18</value>
+  </data>
+  <data name="label76.TabIndex" type="System.Int32, mscorlib">
+    <value>47</value>
+  </data>
+  <data name="label76.Text" xml:space="preserve">
+    <value>Select a date for the users appointment</value>
+  </data>
+  <data name="&gt;&gt;label76.Name" xml:space="preserve">
+    <value>label76</value>
+  </data>
+  <data name="&gt;&gt;label76.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label76.Parent" xml:space="preserve">
+    <value>tab_AddAppointment</value>
+  </data>
+  <data name="&gt;&gt;label76.ZOrder" xml:space="preserve">
+    <value>10</value>
+  </data>
+  <data name="tab_AddAppointment.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 24</value>
+  </data>
+  <data name="tab_AddAppointment.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 3, 3, 3</value>
+  </data>
+  <data name="tab_AddAppointment.Size" type="System.Drawing.Size, System.Drawing">
+    <value>759, 469</value>
+  </data>
+  <data name="tab_AddAppointment.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="tab_AddAppointment.Text" xml:space="preserve">
+    <value>Add Appointments</value>
+  </data>
+  <data name="&gt;&gt;tab_AddAppointment.Name" xml:space="preserve">
+    <value>tab_AddAppointment</value>
+  </data>
+  <data name="&gt;&gt;tab_AddAppointment.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tab_AddAppointment.Parent" xml:space="preserve">
+    <value>tabControlPatientsDetails</value>
+  </data>
+  <data name="&gt;&gt;tab_AddAppointment.ZOrder" xml:space="preserve">
+    <value>1</value>
   </data>
   <data name="tabControlPatientsDetails.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>

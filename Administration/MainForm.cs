@@ -505,7 +505,7 @@ namespace Administration
             this.clearAppointments(false);
             if (sender != null && sender.Equals(this.clndr_appointments))
             {
-                this.appointmentsFound = agenda.getAppointmentsListbyPatientId(this.lastSelectedPatient.PatientIDk__BackingField, this.clndr_appointments.SelectionStart.Date.ToString("dd/M/yyy"));
+                this.appointmentsFound = agenda.getAppointmentsListbyPatientId(this.lastSelectedPatient.PatientIDk__BackingField, this.clndr_appointments.SelectionStart.ToString());
             }
             else
             {
@@ -569,6 +569,15 @@ namespace Administration
         {
             if (tabControlPatients.SelectedTab == tb_patientDetails)
             {
+                serverAdministration.Staff[] allStaff = admin.getAllStaff();
+                foreach (serverAdministration.Staff s in allStaff)
+                {
+                    if (s.Specializationk__BackingField != null)
+                    {
+                        this.cmb_addAppointmentDoctor.Items.Add(string.Format("{0} : {1}", s.Specializationk__BackingField, s.LastNamek__BackingField));
+                    }
+                }
+                this.dt_addAppointment.Value = DateTime.Now;
                 if (tabControlPatientsDetails.SelectedTab == tabAppointments)
                     this.event_getAppointments(null, null);
                 else
@@ -576,6 +585,58 @@ namespace Administration
                     this.clearAppointments();
                 }
             }
+        }
+
+        private void event_addAppointment(object sender, EventArgs e)
+        {
+            if (!validateAddAppointmentInput())
+            {
+                return;
+            }
+
+            string staffName = admin.getAllStaff()[this.cmb_addAppointmentDoctor.SelectedIndex].LastNamek__BackingField;
+            string startTime = new DateTime(dt_addAppointment.Value.Date.Year, dt_addAppointment.Value.Month, dt_addAppointment.Value.Day, Convert.ToInt32(cmb_addAppointmentStartTime.SelectedItem.ToString().Split(':')[0]), Convert.ToInt32(cmb_addAppointmentStartTime.SelectedItem.ToString().Split(':')[1]), 0).ToString();
+            string endTime = new DateTime(dt_addAppointment.Value.Date.Year, dt_addAppointment.Value.Month, dt_addAppointment.Value.Day, Convert.ToInt32(cmb_addAppointmentEndTime.SelectedItem.ToString().Split(':')[0]), Convert.ToInt32(cmb_addAppointmentEndTime.SelectedItem.ToString().Split(':')[1]), 0).ToString();
+
+            if (agenda.AddAppointment(staffName, lastSelectedPatient.Emailk__BackingField, startTime, endTime))
+            {
+                MessageBox.Show("Succesfully added the appointment.");
+            }
+            else
+            {
+                MessageBox.Show("Appointment was NOT added. Try different dates.");
+            }
+
+        }
+
+        private bool validateAddAppointmentInput()
+        {
+            if (this.lastSelectedPatient == null)
+            {
+                MessageBox.Show("No patient record is defined.");
+                return false;
+            }
+            if (this.cmb_addAppointmentDoctor.SelectedIndex < 0)
+            {
+                MessageBox.Show("You need to select a doctor first.");
+                return false;
+            }
+            if (this.dt_addAppointment.Value.Date < DateTime.Now.Date)
+            {
+                MessageBox.Show("Only future dates are available for booking.");
+                return false;
+            }
+            if (this.cmb_addAppointmentStartTime.SelectedIndex + this.cmb_addAppointmentEndTime.SelectedIndex < 0)
+            {
+                MessageBox.Show("You Have to select both start and end time.");
+                return false;
+            }
+            if (Convert.ToDateTime(this.cmb_addAppointmentEndTime.SelectedItem) < Convert.ToDateTime(this.cmb_addAppointmentStartTime.SelectedItem))
+            {
+                MessageBox.Show("End time cannot be earlier than the start time.");
+                return false;
+            }
+            return true;
         }
     }
 
