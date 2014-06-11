@@ -18,15 +18,11 @@ namespace DMS_Service
         bool addPerson(Person person);
         [OperationContract]
         bool editPerson(Person person);
-        [OperationContract]
-        bool removePerson(Person person, bool completely);
 
         [OperationContract]
         bool addPatient(Patient patient);
         [OperationContract]
         bool editPatient(Patient patient);
-        [OperationContract]
-        bool removePatient(Patient patient);
 
         [OperationContract]
         bool addStaff(Staff staff);
@@ -34,9 +30,6 @@ namespace DMS_Service
         bool editStaff(Staff staff);
         [OperationContract]
         bool removeStaff(Staff staff);
-
-        [OperationContract]
-        bool hasPermissions(int id, CAdministration.task t);
 
         [OperationContract]
         List<Staff> getAllStaff();

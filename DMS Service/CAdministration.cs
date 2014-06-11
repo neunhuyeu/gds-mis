@@ -49,18 +49,6 @@ namespace DMS_Service
         }
 
         /// <summary>
-        /// Removes a given person from the database,
-        /// only if there are no patient records.
-        /// </summary>
-        /// <param name="person">The person object to delete.</param>
-        /// <param name="completely">If true it will also delete existing patient of staff member records.</param>
-        /// <returns>True on success | False on failure</returns>
-        public bool removePerson(Person person, bool completely = false)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
         /// Inserts a new patient in the database.
         /// If the person record for that patient is not yet created, it will be!
         /// muahahaha...
@@ -116,18 +104,6 @@ namespace DMS_Service
         }
 
         /// <summary>
-        /// Removes the data for a given patient.
-        /// The person record is not affected.
-        /// </summary>
-        /// <param name="patient">The patient object to delete.</param>
-        /// <returns>True on success | False on failure</returns>
-        public bool removePatient(Patient patient)
-        {
-            throw new NotImplementedException();
-            //return db.deletePatient(patient.PatientID);
-        }
-
-        /// <summary>
         /// Inserts a staff member in the db.
         /// If the person record for this person doesn't exist, it will be created.
         /// </summary>
@@ -164,19 +140,6 @@ namespace DMS_Service
             else { return false; }
         }
 
-        /// <summary>
-        /// Not Implemented yet. (Everyone has permissions)
-        /// Checks whether a given id (patient, staff, person) can manage specific tasks.
-        /// </summary>
-        /// <param name="id">The users id, as is stored in the database.</param>
-        /// <param name="t">The task the user is trying to perform.</param>
-        /// <returns></returns>
-        public bool hasPermissions(int id, task t = task.select)
-        {
-            // Go to the db, fetch the permissions for that id and test
-            // them against the task (t) the user wants to perform.
-            return true;
-        }
         /// <summary>
         /// gives all information about all staffmember
         /// </summary>
