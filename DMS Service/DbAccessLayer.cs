@@ -238,12 +238,12 @@ namespace DMS_Service
                 result = dbConnection.SelectQuery(query, sqlParameters);
                 if (result.Rows.Count == 0)
                 {
-                    throw new DirectoryNotFoundException();
+                    throw new Exception("No id was found");
                 }
             }
             catch
             { return -1; }
-            return Convert.ToInt32(result.Rows[0]["person_id"]);
+            return Convert.ToInt32(result.Rows[0]["id"]);
         }
 
         /// <summary>
@@ -382,7 +382,7 @@ namespace DMS_Service
         private MySqlParameter[] getPersonParams(ref Person person)
         {
             // Parameters for person table.
-            MySqlParameter[] sqlParameters = new MySqlParameter[8];
+            MySqlParameter[] sqlParameters = new MySqlParameter[9];
             sqlParameters[0] = new MySqlParameter("?first_name", MySqlDbType.VarChar);
             sqlParameters[0].Value = Convert.ToString(person.FirstName);
             sqlParameters[1] = new MySqlParameter("?last_name", MySqlDbType.VarChar);
@@ -399,6 +399,9 @@ namespace DMS_Service
             sqlParameters[6].Value = Convert.ToString(person.Address);
             sqlParameters[7] = new MySqlParameter("?insurance_number", MySqlDbType.VarChar);
             sqlParameters[7].Value = Convert.ToString(person.InsuranceNumber);
+            sqlParameters[8] = new MySqlParameter("?person_id", MySqlDbType.Int32);
+            sqlParameters[8].Value = Convert.ToInt32(person.PersonId);
+
             return sqlParameters;
         }
         /// <summary>
@@ -407,7 +410,7 @@ namespace DMS_Service
         /// <returns> returns the highest personit plus one</returns>
         private int newPersonId()
         {
-            string query = "SELECT MAX(person_id)+1 as new FROM person";
+            string query = "SELECT MAX(`person_id`)+1 as new FROM person";
             int result;
             try
             {
@@ -422,14 +425,14 @@ namespace DMS_Service
         /// </summary>
         /// <param name="person"> all the information to be added to the database</param>
         /// <returns>true= the sql statement was executed , false = the sql statement was not propper executed </returns>
-       
+
         public bool addPerson(Person person)
         {
             bool result = false;
             // Query for person table.
             string query = "INSERT INTO person " +
-                           "(person_id, first_name, last_name, date_of_birth, email_address, mobile_number, landline_number, home_address, insurance_number) " +
-                           "VALUES (?person_id, ?first_name, ?last_name, ?date_of_birth, ?email_address, ?mobile_number, ?landline_number, ?home_address, ?insurance_number";
+                           "(`person_id`, `first_name`, `last_name`, `date_of_birth`, `email_address`, `mobile_number`, `landline_number`, `home_address`, `insurance_number`) " +
+                           "VALUES (?person_id, ?first_name, ?last_name, ?date_of_birth, ?email_address, ?mobile_number, ?landline_number, ?home_address, ?insurance_number)";
 
             MySqlParameter[] sqlParameters;
 
@@ -451,20 +454,20 @@ namespace DMS_Service
             catch { return false; }
             return result;
         }
+
         /// <summary>
         /// updates the information about a person
         /// </summary>
         /// <param name="person"> the class containing all new infromationa bout a person</param>
         /// <returns>true= the sql statement was executed , false = the sql statement was not propper executed </returns>
-       
         public bool updatePerson(Person person)
         {
             bool result = false;
-            string query = "UPDATE  person" +
-                            "SET first_name=?first_name, last_name=?last_name, date_of_birth=?date_of_birth," +
-                                "email_address=?email_address, mobile_number=?mobile_number, landline_number=?landline_number," +
-                                "home_address=?home_address,insurance_number=?insurance_number" +
-                            "WHERE person_id=person_id";
+            string query = "UPDATE  person " +
+                            "SET first_name=?first_name, last_name=?last_name, date_of_birth=?date_of_birth, " +
+                                "email_address=?email_address, mobile_number=?mobile_number, landline_number=?landline_number, " +
+                                "home_address=?home_address, insurance_number=?insurance_number " +
+                            "WHERE person_id=?person_id";
 
             MySqlParameter[] sqlParameters = getPersonParams(ref person);
 
@@ -475,6 +478,7 @@ namespace DMS_Service
             catch { return false; }
             return result;
         }
+
         /// <summary>
         /// function to genrate a parameter array for an sql stament regarding a patient
         /// </summary>
@@ -507,13 +511,14 @@ namespace DMS_Service
 
             return sqlParameters;
         }
+
         /// <summary>
         /// gets the next  paient id to be genrated 
         /// </summary>
         /// <returns> gets the next generated paient id </returns>
         private int newPatientId()
         {
-            string query = "SELECT MAX(patient_id)+1 as new FROM patients";
+            string query = "SELECT MAX(`patient_id`)+1 as new FROM patients";
             int result;
             try
             {
@@ -530,7 +535,7 @@ namespace DMS_Service
         /// </summary>
         /// <param name="patient">The patient object to add.</param>
         ///<return> true= the sql statement was executed , false = the sql statement was not propper executed </returns>
-       
+
         public bool addPatient(Patient patient)
         {
             bool result = false;
@@ -565,7 +570,7 @@ namespace DMS_Service
         /// </summary>
         /// <param name="p">the patient information to replace the old with</param>
         /// <returns>true= the sql statement was executed , false = the sql statement was not propper executed </returns>
-       
+
         public bool updatePatient(Patient p)
         {
             bool result = false;
@@ -593,15 +598,16 @@ namespace DMS_Service
             // Parameters for Staff_members table.
             MySqlParameter[] sqlParameters = new MySqlParameter[5];
             sqlParameters[0] = new MySqlParameter("?function", MySqlDbType.VarChar);
-            sqlParameters[0].Value = staff.Gender;
-            sqlParameters[1] = new MySqlParameter("?specialization", MySqlDbType.Int32);
+            sqlParameters[0].Value = staff.Function;
+            sqlParameters[1] = new MySqlParameter("?specialization", MySqlDbType.VarChar);
             sqlParameters[1].Value = staff.Specialization;
-            sqlParameters[2] = new MySqlParameter("?room_number", MySqlDbType.Int32);
-            sqlParameters[2].Value = staff.RoomNumber;
-            sqlParameters[3] = new MySqlParameter("?person_id", MySqlDbType.VarChar);
-            sqlParameters[3].Value = staff.PersonId;
+            sqlParameters[2] = new MySqlParameter("?room_number", MySqlDbType.VarChar);
+            sqlParameters[2].Value = Convert.ToString(staff.RoomNumber);
+            sqlParameters[3] = new MySqlParameter("?person_id", MySqlDbType.Int32);
+            sqlParameters[3].Value = Convert.ToInt32(staff.PersonId);
             sqlParameters[4] = new MySqlParameter("?Staff_id", MySqlDbType.Int32);
-            sqlParameters[4].Value = staff.StaffID;
+            sqlParameters[4].Value = Convert.ToInt32(staff.StaffID);
+
             return sqlParameters;
         }
         /// <summary>
@@ -610,7 +616,7 @@ namespace DMS_Service
         /// <returns>the next staff id to be generated</returns>
         private int newStaffId()
         {
-            string query = "SELECT MAX(Staff_id)+1 as new FROM Staff";
+            string query = "SELECT MAX(`Staff_id`)+1 as new FROM Staff_members;";
             int result;
             try
             {
@@ -625,7 +631,7 @@ namespace DMS_Service
         /// </summary>
         /// <param name="staff"> contains all the information about the to beadded staffmember</param>
         /// <returns>true= the sql statement was executed , false = the sql statement was not propper executed </returns>
-       
+
         public bool addStaff(Staff staff)
         {
             bool result = false;
@@ -659,13 +665,13 @@ namespace DMS_Service
         /// </summary>
         /// <param name="staff"> holds the new staff informations</param>
         /// <returns>true= the sql statement was executed , false = the sql statement was not propper executed </returns>
-       
+
         public bool updateStaff(Staff staff)
         {
             bool result = false;
-            string query = "UPDATE Staff_members" +
-                            "SET function=?function,specialization=?specialization,room_number=?room_number,person_id=?person_id" +
-                            "WHERE Staff_id=?Staff_id";
+            string query = @"UPDATE Staff_members
+                            SET `function`=?function,`specialization`=?specialization,`room_number`=?room_number
+                            WHERE `Staff_id`=?Staff_id";
             MySqlParameter[] sqlParameters = getStaffParams(ref staff);
 
             try
@@ -681,7 +687,7 @@ namespace DMS_Service
         /// </summary>
         /// <param name="Diagnosis"> object holding all information about the new diagnosis</param>
         /// <returns>true= the sql statement was executed , false = the sql statement was not propper executed </returns>
-       
+
         public bool addDiagnosis(Diagnosis Diagnosis)
         {
             //query
@@ -739,7 +745,7 @@ namespace DMS_Service
         /// <param name="perscription"> the perscription information of the to be added prescripion</param>
         /// <param name="consultationId">the consultationid of the time when the prescription were prescriped </param>
         /// <returns>true= the sql statement was executed , false = the sql statement was not propper executed </returns>
-  
+
         public bool addPrescrption(Perscription perscription, int consultationId)
         {
             //query
@@ -789,7 +795,7 @@ namespace DMS_Service
         /// </summary>
         /// <param name="currentConultion">the object holding all information about the current consultation</param>
         /// <returns>true= the sql statement was executed , false = the sql statement was not propper executed </returns>
-       
+
         public bool updateConsultionEnd_date(Consultation currentConultion)
         {
             //query
@@ -923,7 +929,7 @@ namespace DMS_Service
 
             return dbConnection.SelectQuery(query, sqlParameters);
         }
-        
+
         /// <summary>
         ///reads changes in the databases from a file and executes it in the database, for syncronation
         /// </summary>
@@ -950,9 +956,9 @@ namespace DMS_Service
         /// <returns>true= the person was deleted, false = person was not deleted </returns>
         public bool deletePerson(int personId)
         {
-            string query = "DELETE * FROM person WHERE person_id = ?person_id";
+            string query = "DELETE FROM person WHERE person_id = ?person_id";
             MySqlParameter[] sqlParameters = new MySqlParameter[1];
-            sqlParameters[0] = new MySqlParameter("?person_id_id", MySqlDbType.Int32);
+            sqlParameters[0] = new MySqlParameter("?person_id", MySqlDbType.Int32);
             sqlParameters[0].Value = Convert.ToString(personId);
             bool result = false;
             try
@@ -977,7 +983,7 @@ namespace DMS_Service
         /// </returns>
         public int deleteStaff(int personId, int staffId)
         {
-            string query = "DELETE * FROM Staff WHERE Staff_id = ?Staff_id";
+            string query = "DELETE FROM Staff_members WHERE Staff_id = ?Staff_id";
             MySqlParameter[] sqlParameters = new MySqlParameter[1];
             sqlParameters[0] = new MySqlParameter("?Staff_id", MySqlDbType.Int32);
             sqlParameters[0].Value = Convert.ToString(staffId);
@@ -1002,6 +1008,42 @@ namespace DMS_Service
                 return 1;
             }
             else return returnable; // Abnormality
+        }
+
+        /// <summary>
+        /// Search staff members according to their first name, last name and or staff id.
+        /// If staff ID is passed as an argument, it will only look for a matching ID and will
+        /// ignore any given name.
+        /// </summary>
+        /// <param name="fname">First Name</param>
+        /// <param name="lname">Last Name</param>
+        /// <param name="staffId">Staff ID</param>
+        /// <returns>The combined information from a "staff_members" and "person" tables.</returns>
+        public DataTable searchStaff(string fname, string lname, int staffId = -1)
+        {
+            string query = "SELECT p.*, s.* " +
+                           "FROM person p, staff_members s " +
+                           "WHERE p.person_id = s.person_id";
+
+            if (staffId != -1)
+            {
+                query += " AND s.Staff_id = ?Staff_id";
+            }
+            else
+            {
+                query += " AND p.first_name LIKE ?first_name" +
+                         " AND p.last_name LIKE ?last_name";
+            }
+
+            MySqlParameter[] sqlParameters = new MySqlParameter[3];
+            sqlParameters[0] = new MySqlParameter("?first_name", MySqlDbType.VarChar);
+            sqlParameters[0].Value = string.Format("%{0}%", fname);
+            sqlParameters[1] = new MySqlParameter("?last_name", MySqlDbType.VarChar);
+            sqlParameters[1].Value = string.Format("%{0}%", lname);
+            sqlParameters[2] = new MySqlParameter("?Staff_id", MySqlDbType.Int32);
+            sqlParameters[2].Value = staffId;
+
+            return dbConnection.SelectQuery(query, sqlParameters);
         }
     }
 }

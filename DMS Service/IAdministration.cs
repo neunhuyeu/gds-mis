@@ -36,7 +36,8 @@ namespace DMS_Service
 
         [OperationContract]
         Staff getStaffById(int staffId);
-
+        [OperationContract]
+        List<Staff> searchStaff(string fname, string lname, int staffId = -1);
 
         /*
          * [OperationContract] 

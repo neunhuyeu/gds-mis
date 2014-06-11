@@ -173,8 +173,6 @@ namespace DMS_Service.database_connection
         /// <returns></returns>
         public bool UpdateQuery(String query, MySqlParameter[] sqlParameter)
         {
-            DataSet dt_set = new DataSet();
-            DataTable dt_table = new DataTable();
             try
             {
                 using (MySqlConnection con = new MySqlConnection(db_connection_string))
@@ -190,8 +188,6 @@ namespace DMS_Service.database_connection
                         using (MySqlDataAdapter dt_adapter = new MySqlDataAdapter())
                         {
                             dt_adapter.UpdateCommand = cmd;
-                            //dt_adapter.Fill(dt_set);
-                            //dt_table = dt_set.Tables[0];
                         }
 
                         cmd.ExecuteNonQuery();
@@ -215,8 +211,6 @@ namespace DMS_Service.database_connection
         /// <returns></returns>
         public bool DeleteQuery(String query, MySqlParameter[] sqlParameter)
         {
-            DataSet dt_set = new DataSet();
-            DataTable dt_table = new DataTable();
             try
             {
                 using (MySqlConnection con = new MySqlConnection(db_connection_string))

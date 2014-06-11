@@ -117,18 +117,40 @@ namespace Administration
             this.btn_editPatient.Show();
             this.tabControlPatients.SelectedTab = tb_infoEditPatient;
             populateInfoPatientTab(lastSelectedPatient);
+            this.event_getAppointments(null, null);
         }
 
         private void event_searchStaff(object sender, EventArgs e)
         {
-            this.event_clearStaff(null, null);
             lstbx_staff.Items.Clear();
 
-            if ((staffFound = admin.getAllStaff()) != null)
+            if (
+            this.tbx_sSearchFname.Text.Length +
+            this.tbx_sSearchLname.Text.Length +
+            this.tbx_sSearchStaffId.Text.Length == 0)
+            {
+                staffFound = admin.getAllStaff();
+            }
+            else
+            {
+                    if (this.tbx_sSearchStaffId.Text.Length > 0)
+               {
+                    int id = -1;
+                    try { id = Convert.ToInt32(this.tbx_sSearchStaffId.Text); }
+                    catch (FormatException)
+                    {
+                        MessageBox.Show("The given input is not in the right format.", "Error");
+                        return;
+                    }
+                    staffFound = admin.searchStaff("", "", id);
+                }
+                else { staffFound = admin.searchStaff(this.tbx_sSearchFname.Text, this.tbx_sSearchLname.Text, -1); }
+            }
+            if (staffFound != null)
             {
                 foreach (serverAdministration.Staff staff in staffFound)
                 {
-                    lstbx_staff.Items.Add(String.Format("{0,-11}  {1,-11}   {2,8} {0,25}", staff.StaffIDk__BackingField, staff.FirstNamek__BackingField, staff.LastNamek__BackingField, staff.DateOfBirthk__BackingField.GetDateTimeFormats('d')[1]));
+                    lstbx_staff.Items.Add(String.Format("{0,-5} {1,-25} {2,-25} {3,-5}", staff.StaffIDk__BackingField, staff.FirstNamek__BackingField, staff.LastNamek__BackingField, staff.DateOfBirthk__BackingField.GetDateTimeFormats('d')[1]));
                 }
             }
         }
@@ -263,6 +285,10 @@ namespace Administration
         private void event_clearStaff(object sender, EventArgs e)
         {
             lastSelectedStaff = null;
+            // Clear the search tab.
+            this.tbx_sSearchFname.Text = "";
+            this.tbx_sSearchLname.Text = "";
+            this.tbx_sSearchStaffId.Text = "";
             // Clear the Add Tab fields.
             this.tbx_sfname.Text = "";
             this.tbx_slname.Text = "";
@@ -432,7 +458,7 @@ namespace Administration
             staff.Genderk__BackingField = (this.rd_smale.Checked && !this.rd_sfemale.Checked) ? 'm' : 'f';
             // Staff details
             // TODO: Function has to be of type: Staff.Type
-            // enumerator.staff.Functionk__BackingField = cmb_function;
+            staff.Functionk__BackingField = cmb_function.SelectedItem.ToString();
             staff.Specializationk__BackingField = tbx_sspecialization.Text;
             staff.RoomNumberk__BackingField = tbx_roomNo.Text;
             // Send the object to the caller.
@@ -503,14 +529,12 @@ namespace Administration
                 return;
             }
             this.clearAppointments(false);
+            string date = "";
             if (sender != null && sender.Equals(this.clndr_appointments))
             {
-                this.appointmentsFound = agenda.getAppointmentsListbyPatientId(this.lastSelectedPatient.PatientIDk__BackingField, this.clndr_appointments.SelectionStart.ToString());
+                date = this.clndr_appointments.SelectionStart.Date.ToString();
             }
-            else
-            {
-                this.appointmentsFound = agenda.getAppointmentsListbyPatientId(this.lastSelectedPatient.PatientIDk__BackingField, "");
-            }
+            this.appointmentsFound = agenda.getAppointmentsListbyPatientId(this.lastSelectedPatient.PatientIDk__BackingField, date);
 
             if (appointmentsFound != null && appointmentsFound.Length > 0)
             {
@@ -565,7 +589,7 @@ namespace Administration
             this.lbl_apSpecialization.Text = "";
         }
 
-        private void tabControlPatientsDetails_Selecting(object sender, EventArgs e)
+        private void event_onTabPatientsSelection(object sender, EventArgs e)
         {
             if (tabControlPatients.SelectedTab == tb_patientDetails)
             {
@@ -589,7 +613,7 @@ namespace Administration
 
         private void event_addAppointment(object sender, EventArgs e)
         {
-            if (!validateAddAppointmentInput())
+            if (validateAddAppointmentInput() == false)
             {
                 return;
             }
@@ -637,6 +661,34 @@ namespace Administration
                 return false;
             }
             return true;
+        }
+
+        /// <summary>
+        /// Actions to take when the main active tab is changed.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void tabControlMain_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            // Common functionality.
+            this.event_clearPatients(null, null);
+            this.event_clearStaff(null, null);
+            this.clearAppointments();
+
+            if (tabControlMain.SelectedTab == tb_main)
+            {
+            }
+            else if (tabControlMain.SelectedTab == tb_patients)
+            {
+                this.event_searchPatients(null, null);
+            }
+            else if (tabControlMain.SelectedTab == tb_staff)
+            {
+                this.event_searchStaff(null, null);
+            }
+            else 
+            {}
+
         }
     }
 

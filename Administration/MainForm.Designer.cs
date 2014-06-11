@@ -123,7 +123,6 @@
             this.tb_patientDetails = new System.Windows.Forms.TabPage();
             this.tabControlPatientsDetails = new System.Windows.Forms.TabControl();
             this.tabAppointments = new System.Windows.Forms.TabPage();
-            this.button2 = new System.Windows.Forms.Button();
             this.lbl_apDoctor = new System.Windows.Forms.Label();
             this.label81 = new System.Windows.Forms.Label();
             this.lbl_apSpecialization = new System.Windows.Forms.Label();
@@ -153,13 +152,13 @@
             this.tb_staff = new System.Windows.Forms.TabPage();
             this.tabControlDoctors = new System.Windows.Forms.TabControl();
             this.tb_searchStaff = new System.Windows.Forms.TabPage();
-            this.tbx_staffId = new System.Windows.Forms.TextBox();
+            this.tbx_sSearchStaffId = new System.Windows.Forms.TextBox();
             this.lstbx_staff = new System.Windows.Forms.ListBox();
-            this.tbx_lname = new System.Windows.Forms.TextBox();
+            this.tbx_sSearchLname = new System.Windows.Forms.TextBox();
             this.lbl_stc_lname = new System.Windows.Forms.Label();
             this.lbl_stc_staffId = new System.Windows.Forms.Label();
             this.lbl_stc_fname = new System.Windows.Forms.Label();
-            this.tbx_fname = new System.Windows.Forms.TextBox();
+            this.tbx_sSearchFname = new System.Windows.Forms.TextBox();
             this.tb_addStaff = new System.Windows.Forms.TabPage();
             this.btn_updateStaff = new System.Windows.Forms.Button();
             this.tbx_sspecialization = new System.Windows.Forms.TextBox();
@@ -257,6 +256,7 @@
             this.tabControlMain.Multiline = true;
             this.tabControlMain.Name = "tabControlMain";
             this.tabControlMain.SelectedIndex = 0;
+            this.tabControlMain.SelectedIndexChanged += new System.EventHandler(this.tabControlMain_SelectedIndexChanged);
             // 
             // tb_main
             // 
@@ -281,7 +281,7 @@
             resources.ApplyResources(this.tabControlPatients, "tabControlPatients");
             this.tabControlPatients.Name = "tabControlPatients";
             this.tabControlPatients.SelectedIndex = 0;
-            this.tabControlPatients.SelectedIndexChanged += new System.EventHandler(this.tabControlPatientsDetails_Selecting);
+            this.tabControlPatients.SelectedIndexChanged += new System.EventHandler(this.event_onTabPatientsSelection);
             // 
             // tb_searchPatients
             // 
@@ -881,11 +881,10 @@
             resources.ApplyResources(this.tabControlPatientsDetails, "tabControlPatientsDetails");
             this.tabControlPatientsDetails.Name = "tabControlPatientsDetails";
             this.tabControlPatientsDetails.SelectedIndex = 0;
-            this.tabControlPatientsDetails.Selecting += new System.Windows.Forms.TabControlCancelEventHandler(this.tabControlPatientsDetails_Selecting);
+            this.tabControlPatientsDetails.Selecting += new System.Windows.Forms.TabControlCancelEventHandler(this.event_onTabPatientsSelection);
             // 
             // tabAppointments
             // 
-            this.tabAppointments.Controls.Add(this.button2);
             this.tabAppointments.Controls.Add(this.lbl_apDoctor);
             this.tabAppointments.Controls.Add(this.label81);
             this.tabAppointments.Controls.Add(this.lbl_apSpecialization);
@@ -903,12 +902,6 @@
             resources.ApplyResources(this.tabAppointments, "tabAppointments");
             this.tabAppointments.Name = "tabAppointments";
             this.tabAppointments.UseVisualStyleBackColor = true;
-            // 
-            // button2
-            // 
-            resources.ApplyResources(this.button2, "button2");
-            this.button2.Name = "button2";
-            this.button2.UseVisualStyleBackColor = true;
             // 
             // lbl_apDoctor
             // 
@@ -1069,11 +1062,11 @@
             resources.ApplyResources(this.label78, "label78");
             this.label78.Name = "label78";
             // 
-            // cmb_addAppointment
+            // cmb_addAppointmentDoctor
             // 
             this.cmb_addAppointmentDoctor.FormattingEnabled = true;
-            resources.ApplyResources(this.cmb_addAppointmentDoctor, "cmb_addAppointment");
-            this.cmb_addAppointmentDoctor.Name = "cmb_addAppointment";
+            resources.ApplyResources(this.cmb_addAppointmentDoctor, "cmb_addAppointmentDoctor");
+            this.cmb_addAppointmentDoctor.Name = "cmb_addAppointmentDoctor";
             // 
             // dt_addAppointment
             // 
@@ -1116,22 +1109,22 @@
             // 
             // tb_searchStaff
             // 
-            this.tb_searchStaff.Controls.Add(this.tbx_staffId);
+            this.tb_searchStaff.Controls.Add(this.tbx_sSearchStaffId);
             this.tb_searchStaff.Controls.Add(this.lstbx_staff);
-            this.tb_searchStaff.Controls.Add(this.tbx_lname);
+            this.tb_searchStaff.Controls.Add(this.tbx_sSearchLname);
             this.tb_searchStaff.Controls.Add(this.lbl_stc_lname);
             this.tb_searchStaff.Controls.Add(this.lbl_stc_staffId);
             this.tb_searchStaff.Controls.Add(this.lbl_stc_fname);
-            this.tb_searchStaff.Controls.Add(this.tbx_fname);
+            this.tb_searchStaff.Controls.Add(this.tbx_sSearchFname);
             resources.ApplyResources(this.tb_searchStaff, "tb_searchStaff");
             this.tb_searchStaff.Name = "tb_searchStaff";
             this.tb_searchStaff.UseVisualStyleBackColor = true;
             // 
-            // tbx_staffId
+            // tbx_sSearchStaffId
             // 
-            resources.ApplyResources(this.tbx_staffId, "tbx_staffId");
-            this.tbx_staffId.Name = "tbx_staffId";
-            this.tbx_staffId.TextChanged += new System.EventHandler(this.event_searchStaff);
+            resources.ApplyResources(this.tbx_sSearchStaffId, "tbx_sSearchStaffId");
+            this.tbx_sSearchStaffId.Name = "tbx_sSearchStaffId";
+            this.tbx_sSearchStaffId.TextChanged += new System.EventHandler(this.event_searchStaff);
             // 
             // lstbx_staff
             // 
@@ -1141,11 +1134,11 @@
             this.lstbx_staff.Name = "lstbx_staff";
             this.lstbx_staff.SelectedIndexChanged += new System.EventHandler(this.event_selectedStaff);
             // 
-            // tbx_lname
+            // tbx_sSearchLname
             // 
-            resources.ApplyResources(this.tbx_lname, "tbx_lname");
-            this.tbx_lname.Name = "tbx_lname";
-            this.tbx_lname.TextChanged += new System.EventHandler(this.event_searchStaff);
+            resources.ApplyResources(this.tbx_sSearchLname, "tbx_sSearchLname");
+            this.tbx_sSearchLname.Name = "tbx_sSearchLname";
+            this.tbx_sSearchLname.TextChanged += new System.EventHandler(this.event_searchStaff);
             // 
             // lbl_stc_lname
             // 
@@ -1163,11 +1156,11 @@
             this.lbl_stc_fname.BackColor = System.Drawing.Color.White;
             this.lbl_stc_fname.Name = "lbl_stc_fname";
             // 
-            // tbx_fname
+            // tbx_sSearchFname
             // 
-            resources.ApplyResources(this.tbx_fname, "tbx_fname");
-            this.tbx_fname.Name = "tbx_fname";
-            this.tbx_fname.TextChanged += new System.EventHandler(this.event_searchStaff);
+            resources.ApplyResources(this.tbx_sSearchFname, "tbx_sSearchFname");
+            this.tbx_sSearchFname.Name = "tbx_sSearchFname";
+            this.tbx_sSearchFname.TextChanged += new System.EventHandler(this.event_searchStaff);
             // 
             // tb_addStaff
             // 
@@ -1692,13 +1685,13 @@
         private System.Windows.Forms.TextBox tbInsuranceSearch;
         private System.Windows.Forms.TextBox tbSearchFirstName;
         private System.Windows.Forms.ListBox searchListLB;
-        private System.Windows.Forms.TextBox tbx_staffId;
+        private System.Windows.Forms.TextBox tbx_sSearchStaffId;
         private System.Windows.Forms.ListBox lstbx_staff;
-        private System.Windows.Forms.TextBox tbx_lname;
+        private System.Windows.Forms.TextBox tbx_sSearchLname;
         private System.Windows.Forms.Label lbl_stc_lname;
         private System.Windows.Forms.Label lbl_stc_staffId;
         private System.Windows.Forms.Label lbl_stc_fname;
-        private System.Windows.Forms.TextBox tbx_fname;
+        private System.Windows.Forms.TextBox tbx_sSearchFname;
         private System.Windows.Forms.TextBox tbx_saddress;
         private System.Windows.Forms.TextBox tbx_slname;
         private System.Windows.Forms.Label label2;
@@ -1859,7 +1852,6 @@
         private System.Windows.Forms.ComboBox cmb_addAppointmentStartTime;
         private System.Windows.Forms.Label label78;
         private System.Windows.Forms.ComboBox cmb_addAppointmentDoctor;
-        private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button btn_addAppointCancel;
         private System.Windows.Forms.Button btn_addAppointm;
         private System.Windows.Forms.ComboBox cmb_addAppointmentEndTime;

@@ -34,7 +34,7 @@ namespace DMS_Service
         /// <returns>True on success | False on failure</returns>
         public bool addPerson(Person person)
         {
-         
+
             return db.personExists(person.FirstName, person.LastName, person.DateOfBirth) ? false : db.addPerson(person);
         }
 
@@ -100,7 +100,11 @@ namespace DMS_Service
         /// <returns>True on success | False on failure</returns>
         public bool editPatient(Patient patient)
         {
-            return db.updatePatient(patient);
+            if (this.editPerson((Person)patient))
+            {
+                return db.updatePatient(patient);
+            }
+            else { return false; }
         }
 
         /// <summary>
@@ -111,7 +115,29 @@ namespace DMS_Service
         /// <returns>True on success | False on failure</returns>
         public bool addStaff(Staff staff)
         {
-            return db.personExists(staff.FirstName, staff.LastName, staff.DateOfBirth) ? false : db.addStaff(staff);
+            // Check if a person with the same first+last name and d.o.b. exists.
+            bool result = false;
+            try
+            {
+                int id = getpersonId(staff);
+                if (id > 0)
+                {
+                    staff.PersonId = id;
+                    result = db.addStaff(staff);
+                }
+                else
+                {
+                    result = db.addPerson((Person)staff);
+                    staff.PersonId = getpersonId((Person)staff);
+                    if (!result || staff.PersonId < 0)
+                        throw new Exception("Staff id couldn't be retrieved.");
+                    result = db.addStaff(staff);
+                }
+            }
+            catch
+            { return false; }
+
+            return result;
         }
 
         /// <summary>
@@ -121,7 +147,13 @@ namespace DMS_Service
         /// <returns>True on success | False on failure</returns>
         public bool editStaff(Staff staff)
         {
-            return db.updateStaff(staff);
+            if (this.editPerson((Person)staff))
+            {
+                return db.updateStaff(staff);
+            }
+            else {
+                return false;
+            }
         }
 
         /// <summary>
@@ -154,24 +186,7 @@ namespace DMS_Service
 
             foreach (System.Data.DataRow dr in dt.Rows)
             {
-                Staff s = new Staff();
-                s.StaffID = Convert.ToInt32(dr["Staff_id"]);
-                s.Specialization = dr["specialization"].ToString();
-                var rn = dr["room_number"];
-                try { s.RoomNumber = rn.ToString(); }
-                catch { s.RoomNumber = "unassigned"; }
-                s.PersonId = Convert.ToInt32(dr["person_id"]);
-                s.MobileNumber = dr["mobile_number"].ToString();
-                s.LastName = dr["last_name"].ToString();
-                s.LandLineNumber = dr["landline_number"].ToString();
-                s.InsuranceNumber = dr["insurance_number"].ToString();
-                // TODO: Make a function for the function type.
-                s.Function = dr["function"].ToString();
-                s.FirstName = dr["first_name"].ToString();
-                s.Email = dr["email_address"].ToString();
-                s.DateOfBirth = Convert.ToDateTime(dr["date_of_birth"]);
-                s.Address = dr["home_address"].ToString();
-                staff.Add(s);
+                staff.Add(getStaffFromDataRow(dr));
             }
             return staff;
         }
@@ -192,6 +207,54 @@ namespace DMS_Service
             }
             catch { return null; }
             return returnable;
+        }
+
+        public List<Staff> searchStaff(string fname, string lname, int staffId = -1)
+        {
+            List<Staff> staff = new List<Staff>();
+            System.Data.DataTable dt;
+            if (staffId > 0)
+            {
+                dt = db.searchStaff(fname, lname, staffId);
+            }
+            else { dt = db.searchStaff(fname, lname); }
+
+            if (dt == null || dt.Rows.Count <= 0)
+                return staff;
+
+            foreach (System.Data.DataRow dr in dt.Rows)
+            {
+
+                staff.Add(getStaffFromDataRow(dr));
+            }
+            return staff;
+        }
+
+        /// <summary>
+        /// Creates a new Staff object from a given DataRow object.
+        /// </summary>
+        /// <param name="dr">The DataRow object that contains all the person and staff info.</param>
+        /// <returns>Staff Object</returns>
+        private Staff getStaffFromDataRow(System.Data.DataRow dr)
+        {
+            Staff s = new Staff();
+            s.StaffID = Convert.ToInt32(dr["Staff_id"]);
+            s.Specialization = dr["specialization"].ToString();
+            var rn = dr["room_number"];
+            try { s.RoomNumber = rn.ToString(); }
+            catch { s.RoomNumber = "unassigned"; }
+            s.PersonId = Convert.ToInt32(dr["person_id"]);
+            s.MobileNumber = dr["mobile_number"].ToString();
+            s.LastName = dr["last_name"].ToString();
+            s.LandLineNumber = dr["landline_number"].ToString();
+            s.InsuranceNumber = dr["insurance_number"].ToString();
+            // TODO: Make a function for the function type.
+            s.Function = dr["function"].ToString();
+            s.FirstName = dr["first_name"].ToString();
+            s.Email = dr["email_address"].ToString();
+            s.DateOfBirth = Convert.ToDateTime(dr["date_of_birth"]);
+            s.Address = dr["home_address"].ToString();
+            return s;
         }
     }
 }

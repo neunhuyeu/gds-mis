@@ -120,10 +120,10 @@
     <None Include="Service References\Appointments\service1.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\Appointments\System.Data.xsd">
+    <None Include="Service References\Appointments\System.Data1.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\Appointments\System.Data1.xsd">
+    <None Include="Service References\Appointments\System.Data11.xsd">
       <SubType>Designer</SubType>
     </None>
     <None Include="Service References\Appointments\System.Data2.xsd">
@@ -170,9 +170,6 @@
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Service References\serverAdministration\DMS_Service.Structs.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\serverAdministration\DMS_Service.xsd">
       <SubType>Designer</SubType>
     </None>
     <None Include="Service References\serverAdministration\service.wsdl" />
