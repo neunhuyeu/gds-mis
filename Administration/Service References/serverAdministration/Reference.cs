@@ -372,21 +372,21 @@ namespace Administration.serverAdministration {
     [System.SerializableAttribute()]
     public partial class Staff : Administration.serverAdministration.Person {
         
-        private Administration.serverAdministration.Staff.StaffType Functionk__BackingFieldField;
+        private string Functionk__BackingFieldField;
         
-        private int RoomNumberk__BackingFieldField;
+        private string RoomNumberk__BackingFieldField;
         
         private string Specializationk__BackingFieldField;
         
         private int StaffIDk__BackingFieldField;
         
         [System.Runtime.Serialization.DataMemberAttribute(Name="<Function>k__BackingField", IsRequired=true)]
-        public Administration.serverAdministration.Staff.StaffType Functionk__BackingField {
+        public string Functionk__BackingField {
             get {
                 return this.Functionk__BackingFieldField;
             }
             set {
-                if ((this.Functionk__BackingFieldField.Equals(value) != true)) {
+                if ((object.ReferenceEquals(this.Functionk__BackingFieldField, value) != true)) {
                     this.Functionk__BackingFieldField = value;
                     this.RaisePropertyChanged("Functionk__BackingField");
                 }
@@ -394,12 +394,12 @@ namespace Administration.serverAdministration {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute(Name="<RoomNumber>k__BackingField", IsRequired=true)]
-        public int RoomNumberk__BackingField {
+        public string RoomNumberk__BackingField {
             get {
                 return this.RoomNumberk__BackingFieldField;
             }
             set {
-                if ((this.RoomNumberk__BackingFieldField.Equals(value) != true)) {
+                if ((object.ReferenceEquals(this.RoomNumberk__BackingFieldField, value) != true)) {
                     this.RoomNumberk__BackingFieldField = value;
                     this.RaisePropertyChanged("RoomNumberk__BackingField");
                 }
@@ -430,20 +430,6 @@ namespace Administration.serverAdministration {
                     this.RaisePropertyChanged("StaffIDk__BackingField");
                 }
             }
-        }
-        
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-        [System.Runtime.Serialization.DataContractAttribute(Name="Staff.StaffType", Namespace="http://schemas.datacontract.org/2004/07/DMS_Service.Structs")]
-        public enum StaffType : int {
-            
-            [System.Runtime.Serialization.EnumMemberAttribute()]
-            physician = 0,
-            
-            [System.Runtime.Serialization.EnumMemberAttribute()]
-            assistant = 1,
-            
-            [System.Runtime.Serialization.EnumMemberAttribute()]
-            secretary = 2,
         }
     }
     
@@ -528,11 +514,17 @@ namespace Administration.serverAdministration {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAdministration/hasPermissions", ReplyAction="http://tempuri.org/IAdministration/hasPermissionsResponse")]
         System.Threading.Tasks.Task<bool> hasPermissionsAsync(int id, Administration.serverAdministration.CAdministrationtask t);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAdministration/getStaff", ReplyAction="http://tempuri.org/IAdministration/getStaffResponse")]
-        Administration.serverAdministration.Staff[] getStaff();
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAdministration/getAllStaff", ReplyAction="http://tempuri.org/IAdministration/getAllStaffResponse")]
+        Administration.serverAdministration.Staff[] getAllStaff();
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAdministration/getStaff", ReplyAction="http://tempuri.org/IAdministration/getStaffResponse")]
-        System.Threading.Tasks.Task<Administration.serverAdministration.Staff[]> getStaffAsync();
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAdministration/getAllStaff", ReplyAction="http://tempuri.org/IAdministration/getAllStaffResponse")]
+        System.Threading.Tasks.Task<Administration.serverAdministration.Staff[]> getAllStaffAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAdministration/getStaffById", ReplyAction="http://tempuri.org/IAdministration/getStaffByIdResponse")]
+        Administration.serverAdministration.Staff getStaffById(int staffId);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAdministration/getStaffById", ReplyAction="http://tempuri.org/IAdministration/getStaffByIdResponse")]
+        System.Threading.Tasks.Task<Administration.serverAdministration.Staff> getStaffByIdAsync(int staffId);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -642,12 +634,20 @@ namespace Administration.serverAdministration {
             return base.Channel.hasPermissionsAsync(id, t);
         }
         
-        public Administration.serverAdministration.Staff[] getStaff() {
-            return base.Channel.getStaff();
+        public Administration.serverAdministration.Staff[] getAllStaff() {
+            return base.Channel.getAllStaff();
         }
         
-        public System.Threading.Tasks.Task<Administration.serverAdministration.Staff[]> getStaffAsync() {
-            return base.Channel.getStaffAsync();
+        public System.Threading.Tasks.Task<Administration.serverAdministration.Staff[]> getAllStaffAsync() {
+            return base.Channel.getAllStaffAsync();
+        }
+        
+        public Administration.serverAdministration.Staff getStaffById(int staffId) {
+            return base.Channel.getStaffById(staffId);
+        }
+        
+        public System.Threading.Tasks.Task<Administration.serverAdministration.Staff> getStaffByIdAsync(int staffId) {
+            return base.Channel.getStaffByIdAsync(staffId);
         }
     }
 }

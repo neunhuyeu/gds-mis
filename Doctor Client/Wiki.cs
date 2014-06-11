@@ -28,7 +28,9 @@ namespace Doctor_Client
         //contains bool, for if it's closed or not
         public bool isclosed;
 
-        //constructor, creates a new proxy and sets bool isclosed to false
+        /// <summary>
+        /// constructor, creates a new proxy and sets bool isclosed to false
+        /// </summary>
          public Wiki()
         {
 
@@ -37,13 +39,19 @@ namespace Doctor_Client
              isclosed = false;
         }
 
-        //method for when the wiki form loads, it calls the fillsearchboxes method and fills the searchboxes
+        /// <summary>
+         /// method for when the wiki form loads, it calls the fillsearchboxes method and fills the searchboxes
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Wiki_Load(object sender, EventArgs e)
         {
             fillSearchboxes();
         }
 
-        //method loads the diseaselistbox with the diseases and fills the medicinelistbox with all the medicines
+        /// <summary>
+        /// method loads the diseaselistbox with the diseases and fills the medicinelistbox with all the medicines
+        /// </summary>
         private void fillSearchboxes()
         {
             diseasList = new List<Disease>(proxy.get_all_diseases());
@@ -59,10 +67,14 @@ namespace Doctor_Client
             }
         }
 
-        //method for when a medicine is selected. it shows information about it
+        /// <summary>
+        /// method for when a medicine is selected. it shows information about it
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void MedicineSearch_SelectedIndexChanged(object sender, EventArgs e)
         {
-            //DiseaseSearch.ClearSelected();
+           
             Medicine Med = medicinelist[MedicineSearch.SelectedIndex];
  
             info_box.Text = ("Medicine Name: " + Med.name);
@@ -72,10 +84,14 @@ namespace Doctor_Client
             info_box.Text += "\n" + ("Description: " + Med.description);
         }
 
-        //method for when a disease is selected, it shows information about it
+        /// <summary>
+        /// method for when a disease is selected, it shows information about it
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void DiseaseSearch_SelectedIndexChanged(object sender, EventArgs e)
         {
-            //MedicineSearch.ClearSelected();
+           
             Disease illness = diseasList[DiseaseSearch.SelectedIndex];
 
             info_box.Text = ("Diseas Name: " + illness.namek__BackingField);
@@ -88,36 +104,50 @@ namespace Doctor_Client
   
         }
 
-        //button method to search google for more information about the medicine
+        /// <summary>
+        /// button method to search google for more information about the medicine
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void button1_Click(object sender, EventArgs e)
         {
             GoogleSearch(MedNameSearch.Text);
         }
 
-        //button method to search google for more information about the disease
+        /// <summary>
+        /// button method to search google for more information about the disease
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void button2_Click(object sender, EventArgs e)
         {
             GoogleSearch(diseaseName.Text);
         }
 
-        //method to open the google website, and search for the string parameter that is given
+        /// <summary>
+        /// method to open the google website, and search for the string parameter that is given
+        /// </summary>
+        /// <param name="t"></param>
         private void GoogleSearch(string t)
         {
             Process.Start("http://google.com/search?q=" + t);
         }
 
-        //method for when the wiki form is closed. it sets the bool isclosed to true
+        /// <summary>
+        /// method for when the wiki form is closed. it sets the bool isclosed to true
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Wiki_FormClosed(object sender, FormClosedEventArgs e)
         {
             isclosed = true;
         }
 
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        //method searches for medicines and fills the list variable with those medicines
+        /// <summary>
+        /// method searches for medicines and fills the list variable with those medicines
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         public void search_meds(object sender, EventArgs e)
         {
             MedicineSearch.Items.Clear();
@@ -131,7 +161,11 @@ namespace Doctor_Client
         }
 
 
-        //method searches for diseases and fills the list variable with those diseases
+        /// <summary>
+        /// method searches for diseases and fills the list variable with those diseases
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         public void search_disease(object sender, EventArgs e)
         {
             DiseaseSearch.Items.Clear();

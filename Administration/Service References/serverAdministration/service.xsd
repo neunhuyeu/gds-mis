@@ -144,15 +144,29 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="getStaff">
+  <xs:element name="getAllStaff">
     <xs:complexType>
       <xs:sequence />
     </xs:complexType>
   </xs:element>
-  <xs:element name="getStaffResponse">
+  <xs:element name="getAllStaffResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q11="http://schemas.datacontract.org/2004/07/DMS_Service.Structs" minOccurs="0" name="getStaffResult" nillable="true" type="q11:ArrayOfStaff" />
+        <xs:element xmlns:q11="http://schemas.datacontract.org/2004/07/DMS_Service.Structs" minOccurs="0" name="getAllStaffResult" nillable="true" type="q11:ArrayOfStaff" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getStaffById">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="staffId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getStaffByIdResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q12="http://schemas.datacontract.org/2004/07/DMS_Service.Structs" minOccurs="0" name="getStaffByIdResult" nillable="true" type="q12:Staff" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>

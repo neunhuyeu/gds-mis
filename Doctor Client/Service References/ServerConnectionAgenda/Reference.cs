@@ -478,6 +478,12 @@ namespace Doctor_Client.ServerConnectionagenda {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAppointment/getAppointmentsHistorybyPatient", ReplyAction="http://tempuri.org/IAppointment/getAppointmentsHistorybyPatientResponse")]
         System.Threading.Tasks.Task<System.Data.DataTable> getAppointmentsHistorybyPatientAsync(string un);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAppointment/getAppointmentsListbyPatientId", ReplyAction="http://tempuri.org/IAppointment/getAppointmentsListbyPatientIdResponse")]
+        Doctor_Client.ServerConnectionagenda.Appointment[] getAppointmentsListbyPatientId(int ID, string date);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAppointment/getAppointmentsListbyPatientId", ReplyAction="http://tempuri.org/IAppointment/getAppointmentsListbyPatientIdResponse")]
+        System.Threading.Tasks.Task<Doctor_Client.ServerConnectionagenda.Appointment[]> getAppointmentsListbyPatientIdAsync(int ID, string date);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAppointment/AddAppointment", ReplyAction="http://tempuri.org/IAppointment/AddAppointmentResponse")]
         bool AddAppointment(string staffLastName, string patientMail, string startDate, string endDate);
         
@@ -558,6 +564,14 @@ namespace Doctor_Client.ServerConnectionagenda {
         
         public System.Threading.Tasks.Task<System.Data.DataTable> getAppointmentsHistorybyPatientAsync(string un) {
             return base.Channel.getAppointmentsHistorybyPatientAsync(un);
+        }
+        
+        public Doctor_Client.ServerConnectionagenda.Appointment[] getAppointmentsListbyPatientId(int ID, string date) {
+            return base.Channel.getAppointmentsListbyPatientId(ID, date);
+        }
+        
+        public System.Threading.Tasks.Task<Doctor_Client.ServerConnectionagenda.Appointment[]> getAppointmentsListbyPatientIdAsync(int ID, string date) {
+            return base.Channel.getAppointmentsListbyPatientIdAsync(ID, date);
         }
         
         public bool AddAppointment(string staffLastName, string patientMail, string startDate, string endDate) {

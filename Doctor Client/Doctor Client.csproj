@@ -161,9 +161,6 @@
     <None Include="Service References\ServerConnectionMedicalInformation\DMS_Service.Structs3.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\ServerConnectionMedicalInformation\Doctor_Client.ServerConnectionMedicalInformation.Appointment.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
     <None Include="Service References\ServerConnectionMedicalInformation\Doctor_Client.ServerConnectionMedicalInformation.Consultation.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>

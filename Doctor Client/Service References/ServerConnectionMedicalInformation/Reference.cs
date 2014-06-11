@@ -200,21 +200,21 @@ namespace Doctor_Client.ServerConnectionMedicalInformation {
     [System.SerializableAttribute()]
     public partial class Staff : Doctor_Client.ServerConnectionMedicalInformation.Person {
         
-        private Doctor_Client.ServerConnectionMedicalInformation.Staff.StaffType Functionk__BackingFieldField;
+        private string Functionk__BackingFieldField;
         
-        private int RoomNumberk__BackingFieldField;
+        private string RoomNumberk__BackingFieldField;
         
         private string Specializationk__BackingFieldField;
         
         private int StaffIDk__BackingFieldField;
         
         [System.Runtime.Serialization.DataMemberAttribute(Name="<Function>k__BackingField", IsRequired=true)]
-        public Doctor_Client.ServerConnectionMedicalInformation.Staff.StaffType Functionk__BackingField {
+        public string Functionk__BackingField {
             get {
                 return this.Functionk__BackingFieldField;
             }
             set {
-                if ((this.Functionk__BackingFieldField.Equals(value) != true)) {
+                if ((object.ReferenceEquals(this.Functionk__BackingFieldField, value) != true)) {
                     this.Functionk__BackingFieldField = value;
                     this.RaisePropertyChanged("Functionk__BackingField");
                 }
@@ -222,12 +222,12 @@ namespace Doctor_Client.ServerConnectionMedicalInformation {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute(Name="<RoomNumber>k__BackingField", IsRequired=true)]
-        public int RoomNumberk__BackingField {
+        public string RoomNumberk__BackingField {
             get {
                 return this.RoomNumberk__BackingFieldField;
             }
             set {
-                if ((this.RoomNumberk__BackingFieldField.Equals(value) != true)) {
+                if ((object.ReferenceEquals(this.RoomNumberk__BackingFieldField, value) != true)) {
                     this.RoomNumberk__BackingFieldField = value;
                     this.RaisePropertyChanged("RoomNumberk__BackingField");
                 }
@@ -258,20 +258,6 @@ namespace Doctor_Client.ServerConnectionMedicalInformation {
                     this.RaisePropertyChanged("StaffIDk__BackingField");
                 }
             }
-        }
-        
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-        [System.Runtime.Serialization.DataContractAttribute(Name="Staff.StaffType", Namespace="http://schemas.datacontract.org/2004/07/DMS_Service.Structs")]
-        public enum StaffType : int {
-            
-            [System.Runtime.Serialization.EnumMemberAttribute()]
-            physician = 0,
-            
-            [System.Runtime.Serialization.EnumMemberAttribute()]
-            assistant = 1,
-            
-            [System.Runtime.Serialization.EnumMemberAttribute()]
-            secretary = 2,
         }
     }
     
@@ -665,139 +651,6 @@ namespace Doctor_Client.ServerConnectionMedicalInformation {
                 if ((object.ReferenceEquals(this.symptomsField, value) != true)) {
                     this.symptomsField = value;
                     this.RaisePropertyChanged("symptoms");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="Appointment", Namespace="http://schemas.datacontract.org/2004/07/DMS_Service.Structs")]
-    [System.SerializableAttribute()]
-    public partial struct Appointment : System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        private string[] Diagnosisk__BackingFieldField;
-        
-        private bool canceledk__BackingFieldField;
-        
-        private System.DateTime endTimek__BackingFieldField;
-        
-        private string notesk__BackingFieldField;
-        
-        private Doctor_Client.ServerConnectionMedicalInformation.Perscription[] perscriptionsk__BackingFieldField;
-        
-        private System.DateTime startTimek__BackingFieldField;
-        
-        private string[] symptomsk__BackingFieldField;
-        
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Name="<Diagnosis>k__BackingField", IsRequired=true)]
-        public string[] Diagnosisk__BackingField {
-            get {
-                return this.Diagnosisk__BackingFieldField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.Diagnosisk__BackingFieldField, value) != true)) {
-                    this.Diagnosisk__BackingFieldField = value;
-                    this.RaisePropertyChanged("Diagnosisk__BackingField");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Name="<canceled>k__BackingField", IsRequired=true)]
-        public bool canceledk__BackingField {
-            get {
-                return this.canceledk__BackingFieldField;
-            }
-            set {
-                if ((this.canceledk__BackingFieldField.Equals(value) != true)) {
-                    this.canceledk__BackingFieldField = value;
-                    this.RaisePropertyChanged("canceledk__BackingField");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Name="<endTime>k__BackingField", IsRequired=true)]
-        public System.DateTime endTimek__BackingField {
-            get {
-                return this.endTimek__BackingFieldField;
-            }
-            set {
-                if ((this.endTimek__BackingFieldField.Equals(value) != true)) {
-                    this.endTimek__BackingFieldField = value;
-                    this.RaisePropertyChanged("endTimek__BackingField");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Name="<notes>k__BackingField", IsRequired=true)]
-        public string notesk__BackingField {
-            get {
-                return this.notesk__BackingFieldField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.notesk__BackingFieldField, value) != true)) {
-                    this.notesk__BackingFieldField = value;
-                    this.RaisePropertyChanged("notesk__BackingField");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Name="<perscriptions>k__BackingField", IsRequired=true)]
-        public Doctor_Client.ServerConnectionMedicalInformation.Perscription[] perscriptionsk__BackingField {
-            get {
-                return this.perscriptionsk__BackingFieldField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.perscriptionsk__BackingFieldField, value) != true)) {
-                    this.perscriptionsk__BackingFieldField = value;
-                    this.RaisePropertyChanged("perscriptionsk__BackingField");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Name="<startTime>k__BackingField", IsRequired=true)]
-        public System.DateTime startTimek__BackingField {
-            get {
-                return this.startTimek__BackingFieldField;
-            }
-            set {
-                if ((this.startTimek__BackingFieldField.Equals(value) != true)) {
-                    this.startTimek__BackingFieldField = value;
-                    this.RaisePropertyChanged("startTimek__BackingField");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Name="<symptoms>k__BackingField", IsRequired=true)]
-        public string[] symptomsk__BackingField {
-            get {
-                return this.symptomsk__BackingFieldField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.symptomsk__BackingFieldField, value) != true)) {
-                    this.symptomsk__BackingFieldField = value;
-                    this.RaisePropertyChanged("symptomsk__BackingField");
                 }
             }
         }
@@ -1222,18 +1075,6 @@ namespace Doctor_Client.ServerConnectionMedicalInformation {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IDoctor/GetStaff_by_Personid", ReplyAction="http://tempuri.org/IDoctor/GetStaff_by_PersonidResponse")]
         System.Threading.Tasks.Task<Doctor_Client.ServerConnectionMedicalInformation.Staff> GetStaff_by_PersonidAsync(int id);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IDoctor/GetPatientDiseases", ReplyAction="http://tempuri.org/IDoctor/GetPatientDiseasesResponse")]
-        string[] GetPatientDiseases(int patientID);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IDoctor/GetPatientDiseases", ReplyAction="http://tempuri.org/IDoctor/GetPatientDiseasesResponse")]
-        System.Threading.Tasks.Task<string[]> GetPatientDiseasesAsync(int patientID);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IDoctor/getPatientAppointments", ReplyAction="http://tempuri.org/IDoctor/getPatientAppointmentsResponse")]
-        Doctor_Client.ServerConnectionMedicalInformation.Appointment[] getPatientAppointments(int patientID);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IDoctor/getPatientAppointments", ReplyAction="http://tempuri.org/IDoctor/getPatientAppointmentsResponse")]
-        System.Threading.Tasks.Task<Doctor_Client.ServerConnectionMedicalInformation.Appointment[]> getPatientAppointmentsAsync(int patientID);
-        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IDoctor/getPatientPerscriptions", ReplyAction="http://tempuri.org/IDoctor/getPatientPerscriptionsResponse")]
         Doctor_Client.ServerConnectionMedicalInformation.Perscription[] getPatientPerscriptions(int patientID);
         
@@ -1245,12 +1086,6 @@ namespace Doctor_Client.ServerConnectionMedicalInformation {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IDoctor/SearchPatients", ReplyAction="http://tempuri.org/IDoctor/SearchPatientsResponse")]
         System.Threading.Tasks.Task<Doctor_Client.ServerConnectionMedicalInformation.Patient[]> SearchPatientsAsync(string first, string last, System.DateTime dateOfBirth, string insurance);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IDoctor/setPerscription", ReplyAction="http://tempuri.org/IDoctor/setPerscriptionResponse")]
-        string setPerscription(int appointmentID, Doctor_Client.ServerConnectionMedicalInformation.Perscription perscription);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IDoctor/setPerscription", ReplyAction="http://tempuri.org/IDoctor/setPerscriptionResponse")]
-        System.Threading.Tasks.Task<string> setPerscriptionAsync(int appointmentID, Doctor_Client.ServerConnectionMedicalInformation.Perscription perscription);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IDoctor/addPerscription", ReplyAction="http://tempuri.org/IDoctor/addPerscriptionResponse")]
         bool addPerscription(int appointmentID, Doctor_Client.ServerConnectionMedicalInformation.Perscription perscription);
@@ -1424,22 +1259,6 @@ namespace Doctor_Client.ServerConnectionMedicalInformation {
             return base.Channel.GetStaff_by_PersonidAsync(id);
         }
         
-        public string[] GetPatientDiseases(int patientID) {
-            return base.Channel.GetPatientDiseases(patientID);
-        }
-        
-        public System.Threading.Tasks.Task<string[]> GetPatientDiseasesAsync(int patientID) {
-            return base.Channel.GetPatientDiseasesAsync(patientID);
-        }
-        
-        public Doctor_Client.ServerConnectionMedicalInformation.Appointment[] getPatientAppointments(int patientID) {
-            return base.Channel.getPatientAppointments(patientID);
-        }
-        
-        public System.Threading.Tasks.Task<Doctor_Client.ServerConnectionMedicalInformation.Appointment[]> getPatientAppointmentsAsync(int patientID) {
-            return base.Channel.getPatientAppointmentsAsync(patientID);
-        }
-        
         public Doctor_Client.ServerConnectionMedicalInformation.Perscription[] getPatientPerscriptions(int patientID) {
             return base.Channel.getPatientPerscriptions(patientID);
         }
@@ -1454,14 +1273,6 @@ namespace Doctor_Client.ServerConnectionMedicalInformation {
         
         public System.Threading.Tasks.Task<Doctor_Client.ServerConnectionMedicalInformation.Patient[]> SearchPatientsAsync(string first, string last, System.DateTime dateOfBirth, string insurance) {
             return base.Channel.SearchPatientsAsync(first, last, dateOfBirth, insurance);
-        }
-        
-        public string setPerscription(int appointmentID, Doctor_Client.ServerConnectionMedicalInformation.Perscription perscription) {
-            return base.Channel.setPerscription(appointmentID, perscription);
-        }
-        
-        public System.Threading.Tasks.Task<string> setPerscriptionAsync(int appointmentID, Doctor_Client.ServerConnectionMedicalInformation.Perscription perscription) {
-            return base.Channel.setPerscriptionAsync(appointmentID, perscription);
         }
         
         public bool addPerscription(int appointmentID, Doctor_Client.ServerConnectionMedicalInformation.Perscription perscription) {

@@ -68,11 +68,17 @@
   <wsdl:message name="IAdministration_hasPermissions_OutputMessage">
     <wsdl:part name="parameters" element="tns:hasPermissionsResponse" />
   </wsdl:message>
-  <wsdl:message name="IAdministration_getStaff_InputMessage">
-    <wsdl:part name="parameters" element="tns:getStaff" />
+  <wsdl:message name="IAdministration_getAllStaff_InputMessage">
+    <wsdl:part name="parameters" element="tns:getAllStaff" />
   </wsdl:message>
-  <wsdl:message name="IAdministration_getStaff_OutputMessage">
-    <wsdl:part name="parameters" element="tns:getStaffResponse" />
+  <wsdl:message name="IAdministration_getAllStaff_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getAllStaffResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAdministration_getStaffById_InputMessage">
+    <wsdl:part name="parameters" element="tns:getStaffById" />
+  </wsdl:message>
+  <wsdl:message name="IAdministration_getStaffById_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getStaffByIdResponse" />
   </wsdl:message>
   <wsdl:portType name="IAdministration">
     <wsdl:operation name="addPerson">
@@ -115,9 +121,13 @@
       <wsdl:input wsaw:Action="http://tempuri.org/IAdministration/hasPermissions" message="tns:IAdministration_hasPermissions_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IAdministration/hasPermissionsResponse" message="tns:IAdministration_hasPermissions_OutputMessage" />
     </wsdl:operation>
-    <wsdl:operation name="getStaff">
-      <wsdl:input wsaw:Action="http://tempuri.org/IAdministration/getStaff" message="tns:IAdministration_getStaff_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IAdministration/getStaffResponse" message="tns:IAdministration_getStaff_OutputMessage" />
+    <wsdl:operation name="getAllStaff">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAdministration/getAllStaff" message="tns:IAdministration_getAllStaff_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAdministration/getAllStaffResponse" message="tns:IAdministration_getAllStaff_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getStaffById">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAdministration/getStaffById" message="tns:IAdministration_getStaffById_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAdministration/getStaffByIdResponse" message="tns:IAdministration_getStaffById_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_IAdministration" type="tns:IAdministration">
@@ -212,8 +222,17 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="getStaff">
-      <soap:operation soapAction="http://tempuri.org/IAdministration/getStaff" style="document" />
+    <wsdl:operation name="getAllStaff">
+      <soap:operation soapAction="http://tempuri.org/IAdministration/getAllStaff" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getStaffById">
+      <soap:operation soapAction="http://tempuri.org/IAdministration/getStaffById" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

@@ -40,8 +40,8 @@
     <xs:complexContent mixed="false">
       <xs:extension base="tns:Person">
         <xs:sequence>
-          <xs:element name="_x003C_Function_x003E_k__BackingField" type="tns:Staff.StaffType" />
-          <xs:element name="_x003C_RoomNumber_x003E_k__BackingField" type="xs:int" />
+          <xs:element name="_x003C_Function_x003E_k__BackingField" nillable="true" type="xs:string" />
+          <xs:element name="_x003C_RoomNumber_x003E_k__BackingField" nillable="true" type="xs:string" />
           <xs:element name="_x003C_Specialization_x003E_k__BackingField" nillable="true" type="xs:string" />
           <xs:element name="_x003C_StaffID_x003E_k__BackingField" type="xs:int" />
         </xs:sequence>
@@ -49,14 +49,6 @@
     </xs:complexContent>
   </xs:complexType>
   <xs:element name="Staff" nillable="true" type="tns:Staff" />
-  <xs:simpleType name="Staff.StaffType">
-    <xs:restriction base="xs:string">
-      <xs:enumeration value="physician" />
-      <xs:enumeration value="assistant" />
-      <xs:enumeration value="secretary" />
-    </xs:restriction>
-  </xs:simpleType>
-  <xs:element name="Staff.StaffType" nillable="true" type="tns:Staff.StaffType" />
   <xs:complexType name="ArrayOfStaff">
     <xs:sequence>
       <xs:element minOccurs="0" maxOccurs="unbounded" name="Staff" nillable="true" type="tns:Staff" />
