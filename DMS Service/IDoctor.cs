@@ -43,20 +43,15 @@ namespace DMS_Service
         [OperationContract]
         Staff GetStaff_by_Personid(int id);
 
-        [OperationContract]
-        List<string> GetPatientDiseases(int patientID);
-
-        [OperationContract]
-        List<Appointment> getPatientAppointments(int patientID);
-
+       
+        
         [OperationContract]
         List<Perscription> getPatientPerscriptions(int patientID);
 
         [OperationContract]
         List<Patient> SearchPatients(string first, string last, DateTime dateOfBirth, string insurance);
 
-        [OperationContract]
-        string setPerscription(int appointmentID, Perscription perscription);
+        
         [OperationContract]
         bool addPerscription(int appointmentID, Perscription perscription);
         [OperationContract]

@@ -468,28 +468,28 @@ namespace DMS_Service
             
         }
         /// <summary>
-        /// 
+        /// these function finishes a consultation by entering the end date
         /// </summary>
-        /// <param name="currentConultion"></param>
-        /// <returns></returns>
+        /// <param name="currentConultion"> stores all information about the consultation</param>
+        /// <returns> true =  the update were successfully done false= the update could not be performed</returns>
         public bool updateConsultion_End_Date(Consultation currentConultion)
        {
            return dbAcess.updateConsultionEnd_date(currentConultion);
        }
         /// <summary>
-        /// 
+        /// These function adds a diagnosis into the database
         /// </summary>
-        /// <param name="diagnosis"></param>
-        /// <returns></returns>
+        /// <param name="diagnosis">storing all information about the diagnosis to be added</param>
+        /// <returns>true = The diagnosis were successfully added, false = the inceting of the diagnosis in the database could not be performed could not be performed</returns>
         public bool addDiagnosis(Diagnosis diagnosis)
         {
             return dbAcess.addDiagnosis(diagnosis);
         }
         /// <summary>
-        /// 
+        /// These function adds a cnsultation into the database
         /// </summary>
         /// <param name="currentConsultation"></param>
-        /// <returns></returns>
+        /// <returns> true = The consultation were successfully added, false = the inceting of the consultation in the database could not be performed could not be performed</returns>
        public bool addConsultion(Consultation currentConsultation)
        {
          return  dbAcess.addConsultion(currentConsultation);
