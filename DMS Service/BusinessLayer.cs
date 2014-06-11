@@ -125,28 +125,6 @@ namespace DMS_Service
             }
             return staff;
         }
-
-       /// <summary>
-       /// shows all dieses by the specified patient
-       /// </summary>
-       /// <param name="patientID">the patient id of the patient to get the diseases from</param>
-       /// <returns>a list of diseses in a string</returns>
-        public List<string> GetPatientDiseases(int patientID)
-        {
-            throw new System.NotImplementedException();
-        }
-
-       /// <summary>
-       ///  gets all appointments of a patient 
-       /// </summary>
-       /// <param name="patientID"> the patient id for wich all appointments are needed</param>
-       /// <returns> all appointments of the previous specified person</returns>
-        public List<Appointment> getPatientAppointments(int patientID)
-        {
-            throw new System.NotImplementedException();
-            
-        }
-
         
 
         /// <summary>
@@ -262,16 +240,7 @@ namespace DMS_Service
 
             return patients;
         }
-        /// <summary>
-        /// adds a new prescription to the database
-        /// </summary>
-        /// <param name="appointmentID"> the appointment ID of the prescription</param>
-        /// <param name="perscription"> the prescription information </param>
-        /// <returns> the name of the perscription</returns>
-        public string setPerscription(int appointmentID, Perscription perscription)
-        {
-            throw new NotImplementedException();
-        }
+       
 
          /// <summary>
         /// adds a new prescription to the database
