@@ -209,6 +209,14 @@ namespace DMS_Service
             return returnable;
         }
 
+        /// <summary>
+        /// Queries the DB for a staff member with a given first name, last name OR staff id.
+        /// If a staff id is passed, it will only search for a staff member with the given ID.
+        /// </summary>
+        /// <param name="fname">First name.</param>
+        /// <param name="lname">Last name</param>
+        /// <param name="staffId">(Optional)Staff id.</param>
+        /// <returns></returns>
         public List<Staff> searchStaff(string fname, string lname, int staffId = -1)
         {
             List<Staff> staff = new List<Staff>();
@@ -248,7 +256,6 @@ namespace DMS_Service
             s.LastName = dr["last_name"].ToString();
             s.LandLineNumber = dr["landline_number"].ToString();
             s.InsuranceNumber = dr["insurance_number"].ToString();
-            // TODO: Make a function for the function type.
             s.Function = dr["function"].ToString();
             s.FirstName = dr["first_name"].ToString();
             s.Email = dr["email_address"].ToString();

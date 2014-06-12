@@ -39,14 +39,5 @@ namespace DMS_Service
         [OperationContract]
         List<Staff> searchStaff(string fname, string lname, int staffId = -1);
 
-        /*
-         * [OperationContract] 
-         * Edit appointments
-         * [OperationContract] 
-         * Add appointments
-         * [OperationContract] 
-         * Remove appointments
-         * 
-        */
     }
 }

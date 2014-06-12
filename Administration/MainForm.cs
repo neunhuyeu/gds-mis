@@ -75,6 +75,10 @@ namespace Administration
         /// </summary>
         DialogResult dr;
 
+        /// <summary>
+        /// Main form constructor.
+        /// </summary>
+        /// <param name="staff">The staff object that logged in sucssefully.</param>
         public MainForm(MedicalInformation.Staff staff)
         {
             InitializeComponent();
@@ -86,11 +90,21 @@ namespace Administration
             this.btn_updatePatient.Hide();
         }
 
+        /// <summary>
+        /// Logs out the user and exits the main form.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void event_logout(object sender, EventArgs e)
         {
             this.Close();
         }
 
+        /// <summary>
+        /// Auto search event for patients.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void event_searchPatients(object sender, EventArgs e)
         {
             this.event_clearPatients(null, null);
@@ -108,6 +122,12 @@ namespace Administration
             }
         }
 
+        /// <summary>
+        /// Event that fires on selection of a patient.
+        /// Redirect the user to the edit info page and updates the labels with the patients details.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void event_selectedPatient(object sender, EventArgs e)
         {
             this.event_clearPatients(null, null);
@@ -120,6 +140,12 @@ namespace Administration
             this.event_getAppointments(null, null);
         }
 
+        /// <summary>
+        /// Event to search for staff members.
+        /// If an id is given for the search, it ignores the names of the users.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void event_searchStaff(object sender, EventArgs e)
         {
             lstbx_staff.Items.Clear();
@@ -155,6 +181,12 @@ namespace Administration
             }
         }
 
+        /// <summary>
+        /// Event that fires when a staff person is selected.
+        /// Redirects the user to the info page and fills in the appropriate labels with his details.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void event_selectedStaff(object sender, EventArgs e)
         {
             this.event_clearStaff(null, null);
@@ -166,6 +198,10 @@ namespace Administration
             populateInfoStaffTab(lastSelectedStaff);
         }
 
+        /// <summary>
+        /// Convention function to opulate the info staff page.
+        /// </summary>
+        /// <param name="s"></param>
         private void populateInfoStaffTab(serverAdministration.Staff s)
         {
             // Personal details.
@@ -185,6 +221,10 @@ namespace Administration
             lbl_sroomNmbr.Text = s.RoomNumberk__BackingField.ToString();
         }
 
+        /// <summary>
+        /// Populates the add staff tab with a selected staff members data in order to edit them.
+        /// </summary>
+        /// <param name="staff"></param>
         private void editStaff(serverAdministration.Staff staff)
         {
             // Hide staff save button.
@@ -208,6 +248,10 @@ namespace Administration
             this.tbx_roomNo.Text = staff.RoomNumberk__BackingField.ToString();
         }
 
+        /// <summary>
+        /// Populates the add patient tab with a selected patient members data in order to edit them.
+        /// </summary>
+        /// <param name="patient"></param>
         private void editPatient(MedicalInformation.Patient patient)
         {
             // Hide patients save button.
@@ -235,6 +279,11 @@ namespace Administration
             this.trck_druggy.Value = patient.hard_drugs_frequencyk__BackingField;
         }
 
+        /// <summary>
+        /// Resets all the patient details and clears all the fields from the form.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void event_clearPatients(object sender, EventArgs e)
         {
             lastSelectedPatient = null;
@@ -282,6 +331,11 @@ namespace Administration
             lbl_druggyfrequency.Text = "";
         }
 
+        /// <summary>
+        /// Resets all the form fields of the staff tab and clears the staff related variables.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void event_clearStaff(object sender, EventArgs e)
         {
             lastSelectedStaff = null;
@@ -324,6 +378,10 @@ namespace Administration
             lbl_sroomNmbr.Text = "";
         }
 
+        /// <summary>
+        /// Populates the info patient tab with a given patients details. 
+        /// </summary>
+        /// <param name="p">Patient Object</param>
         public void populateInfoPatientTab(MedicalInformation.Patient p)
         {
             lbl_pPersonId.Text = p.PersonIdk__BackingField.ToString();
@@ -345,6 +403,11 @@ namespace Administration
             lbl_druggyfrequency.Text = p.hard_drugs_frequencyk__BackingField.ToString();
         }
 
+        /// <summary>
+        /// Connects to the service and tries to insert a new patient.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void event_addPatient(object sender, EventArgs e)
         {
             // Create a new Patient.
@@ -361,6 +424,11 @@ namespace Administration
                 MessageBox.Show(this, "There was a problem with adding the new Patient.", "Error");
         }
 
+        /// <summary>
+        /// Event that fires when a user chooses to edit a patient.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void event_editPatient(object sender, EventArgs e)
         {
             if (this.lastSelectedPatient == null)
@@ -369,6 +437,11 @@ namespace Administration
             this.tabControlPatients.SelectedTab = tb_addPatient;
         }
 
+        /// <summary>
+        /// Connects to the service and tries to update a patient.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void event_updatePatient(object sender, EventArgs e)
         {
             // Create a new Patient.
@@ -389,6 +462,10 @@ namespace Administration
             }
         }
 
+        /// <summary>
+        /// Gets the user input from the add patient tab fields.
+        /// </summary>
+        /// <returns>A patient Object</returns>
         private serverAdministration.Patient getUserInputFromAddPatientTab()
         {
             // TODO: Add Input validation.
@@ -415,6 +492,11 @@ namespace Administration
             return patient;
         }
 
+        /// <summary>
+        /// Event that fires when the user chooses to edit a staff member.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void event_editStaff(object sender, EventArgs e)
         {
             if (this.lastSelectedStaff == null)
@@ -423,6 +505,11 @@ namespace Administration
             this.tabControlDoctors.SelectedTab = tb_addStaff;
         }
 
+        /// <summary>
+        /// Connects to the service and tries to insert a new staff member.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void event_addStaff(object sender, EventArgs e)
         {
 
@@ -441,6 +528,10 @@ namespace Administration
 
         }
 
+        /// <summary>
+        /// Gets the user input from the add patient tab.
+        /// </summary>
+        /// <returns>A Staff Object</returns>
         private serverAdministration.Staff getUserInputFromAddStaffTab()
         {
             // TODO: Add Input validation.
@@ -465,6 +556,11 @@ namespace Administration
             return staff;
         }
 
+        /// <summary>
+        /// Connects to the service and tries to update a staff member.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void event_updateStaff(object sender, EventArgs e)
         {
             // Create a new Patient.
@@ -485,6 +581,11 @@ namespace Administration
             }
         }
 
+        /// <summary>
+        /// Connects to the server and tries to delete a staff member.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void event_deleteStaff(object sender, EventArgs e)
         {
             // Get the chosen staff memebr.
@@ -520,6 +621,12 @@ namespace Administration
             }
         }
 
+        /// <summary>
+        /// Connects to the service and retrieves all appointments for a given patient.
+        /// If a date is chosen from the datepicker. It will search for appointmets on that date only.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void event_getAppointments(object sender, EventArgs e)
         {
 
@@ -550,6 +657,12 @@ namespace Administration
             }
         }
 
+        /// <summary>
+        /// Fires when the user selects an appointment from the list.
+        /// Populates the doctor related fields associated with the appointment.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void event_selectedAppointment(object sender, EventArgs e)
         {
             this.event_clearStaff(null, null);
@@ -559,6 +672,10 @@ namespace Administration
             showAppointmentInfo(lastSelectedAppointment);
         }
 
+        /// <summary>
+        /// Fills in the staff info on the appointments details tab for a given appointment object.
+        /// </summary>
+        /// <param name="lastSelectedAppointment">An appointment object</param>
         private void showAppointmentInfo(Appointments.Appointment lastSelectedAppointment)
         {
             serverAdministration.Staff s = admin.getStaffById(lastSelectedAppointment.staff_id);
@@ -589,6 +706,11 @@ namespace Administration
             this.lbl_apSpecialization.Text = "";
         }
 
+        /// <summary>
+        /// Event that controls the users navigation when being on the patients section.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void event_onTabPatientsSelection(object sender, EventArgs e)
         {
             if (tabControlPatients.SelectedTab == tb_patientDetails)
@@ -611,6 +733,11 @@ namespace Administration
             }
         }
 
+        /// <summary>
+        /// Connects to the agenda service and tries to add a new appointment.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void event_addAppointment(object sender, EventArgs e)
         {
             if (validateAddAppointmentInput() == false)
@@ -633,6 +760,11 @@ namespace Administration
 
         }
 
+        /// <summary>
+        /// Gets and validates the user input from the add appointments section.
+        /// If input is invalid, the user is notified.
+        /// </summary>
+        /// <returns>True on correct input | False otherwise</returns>
         private bool validateAddAppointmentInput()
         {
             if (this.lastSelectedPatient == null)
@@ -664,7 +796,7 @@ namespace Administration
         }
 
         /// <summary>
-        /// Actions to take when the main active tab is changed.
+        /// Actions to take when the main tab is changed.
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
