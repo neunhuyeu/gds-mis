@@ -9,6 +9,7 @@ using System.Text;
 using DMS_Service.Structs;
 using System.Timers;
 using System.Data;
+using System.IO;
 
 namespace DMS_Service
 {
@@ -176,6 +177,7 @@ namespace DMS_Service
         {
             try
             {
+                Directory.CreateDirectory("received_backups");
                 //Save received scripts into local files
                 System.IO.File.WriteAllBytes(@"received_backups\gds_mis.sql", gds_mis);
                 System.IO.File.WriteAllBytes(@"received_backups\gds_mis_agenda.sql", gds_mis_agenda);
@@ -214,7 +216,7 @@ namespace DMS_Service
             byte[] gds_mis_auth = System.IO.File.ReadAllBytes(@"c:\wamp\bin\mysql\backup_gds_mis_agenda.sql");
             byte[] gds_mis_agenda = System.IO.File.ReadAllBytes(@"c:\wamp\bin\mysql\backup_gds_mis_auth.sql");
             //restore backup
-            return this.setBackup(gds_mis, gds_mis_agenda, gds_mis_auth);
+            return proxy.setBackup(gds_mis, gds_mis_agenda, gds_mis_auth);
         }
 
         /// <summary>
