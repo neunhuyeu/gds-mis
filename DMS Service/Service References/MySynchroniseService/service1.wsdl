@@ -5,6 +5,7 @@
       <xsd:import namespace="http://tempuri.org/" />
       <xsd:import namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
       <xsd:import namespace="http://schemas.datacontract.org/2004/07/DMS_Service.Structs" />
+      <xsd:import namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
     </xsd:schema>
   </wsdl:types>
   <wsdl:message name="ISynchronise_addPatient_InputMessage">
@@ -19,17 +20,29 @@
   <wsdl:message name="ISynchronise_addAppointment_OutputMessage">
     <wsdl:part name="parameters" element="tns:addAppointmentResponse" />
   </wsdl:message>
-  <wsdl:message name="ISynchronise_editPatient_InputMessage">
-    <wsdl:part name="parameters" element="tns:editPatient" />
+  <wsdl:message name="ISynchronise_addStaff_InputMessage">
+    <wsdl:part name="parameters" element="tns:addStaff" />
   </wsdl:message>
-  <wsdl:message name="ISynchronise_editPatient_OutputMessage">
-    <wsdl:part name="parameters" element="tns:editPatientResponse" />
+  <wsdl:message name="ISynchronise_addStaff_OutputMessage">
+    <wsdl:part name="parameters" element="tns:addStaffResponse" />
   </wsdl:message>
-  <wsdl:message name="ISynchronise_addPrescription_InputMessage">
-    <wsdl:part name="parameters" element="tns:addPrescription" />
+  <wsdl:message name="ISynchronise_addConsultation_InputMessage">
+    <wsdl:part name="parameters" element="tns:addConsultation" />
   </wsdl:message>
-  <wsdl:message name="ISynchronise_addPrescription_OutputMessage">
-    <wsdl:part name="parameters" element="tns:addPrescriptionResponse" />
+  <wsdl:message name="ISynchronise_addConsultation_OutputMessage">
+    <wsdl:part name="parameters" element="tns:addConsultationResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISynchronise_editPatientByPatient_InputMessage">
+    <wsdl:part name="parameters" element="tns:editPatientByPatient" />
+  </wsdl:message>
+  <wsdl:message name="ISynchronise_editPatientByPatient_OutputMessage">
+    <wsdl:part name="parameters" element="tns:editPatientByPatientResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISynchronise_editPatientByAppointment_InputMessage">
+    <wsdl:part name="parameters" element="tns:editPatientByAppointment" />
+  </wsdl:message>
+  <wsdl:message name="ISynchronise_editPatientByAppointment_OutputMessage">
+    <wsdl:part name="parameters" element="tns:editPatientByAppointmentResponse" />
   </wsdl:message>
   <wsdl:message name="ISynchronise_ping_InputMessage">
     <wsdl:part name="parameters" element="tns:ping" />
@@ -58,13 +71,21 @@
       <wsdl:input wsaw:Action="http://tempuri.org/ISynchronise/addAppointment" message="tns:ISynchronise_addAppointment_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/ISynchronise/addAppointmentResponse" message="tns:ISynchronise_addAppointment_OutputMessage" />
     </wsdl:operation>
-    <wsdl:operation name="editPatient">
-      <wsdl:input wsaw:Action="http://tempuri.org/ISynchronise/editPatient" message="tns:ISynchronise_editPatient_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/ISynchronise/editPatientResponse" message="tns:ISynchronise_editPatient_OutputMessage" />
+    <wsdl:operation name="addStaff">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISynchronise/addStaff" message="tns:ISynchronise_addStaff_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISynchronise/addStaffResponse" message="tns:ISynchronise_addStaff_OutputMessage" />
     </wsdl:operation>
-    <wsdl:operation name="addPrescription">
-      <wsdl:input wsaw:Action="http://tempuri.org/ISynchronise/addPrescription" message="tns:ISynchronise_addPrescription_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/ISynchronise/addPrescriptionResponse" message="tns:ISynchronise_addPrescription_OutputMessage" />
+    <wsdl:operation name="addConsultation">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISynchronise/addConsultation" message="tns:ISynchronise_addConsultation_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISynchronise/addConsultationResponse" message="tns:ISynchronise_addConsultation_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="editPatientByPatient">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISynchronise/editPatientByPatient" message="tns:ISynchronise_editPatientByPatient_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISynchronise/editPatientByPatientResponse" message="tns:ISynchronise_editPatientByPatient_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="editPatientByAppointment">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISynchronise/editPatientByAppointment" message="tns:ISynchronise_editPatientByAppointment_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISynchronise/editPatientByAppointmentResponse" message="tns:ISynchronise_editPatientByAppointment_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="ping">
       <wsdl:input wsaw:Action="http://tempuri.org/ISynchronise/ping" message="tns:ISynchronise_ping_InputMessage" />
@@ -99,8 +120,8 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="editPatient">
-      <soap:operation soapAction="http://tempuri.org/ISynchronise/editPatient" style="document" />
+    <wsdl:operation name="addStaff">
+      <soap:operation soapAction="http://tempuri.org/ISynchronise/addStaff" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -108,8 +129,26 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="addPrescription">
-      <soap:operation soapAction="http://tempuri.org/ISynchronise/addPrescription" style="document" />
+    <wsdl:operation name="addConsultation">
+      <soap:operation soapAction="http://tempuri.org/ISynchronise/addConsultation" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="editPatientByPatient">
+      <soap:operation soapAction="http://tempuri.org/ISynchronise/editPatientByPatient" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="editPatientByAppointment">
+      <soap:operation soapAction="http://tempuri.org/ISynchronise/editPatientByAppointment" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

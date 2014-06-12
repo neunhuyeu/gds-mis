@@ -26,7 +26,7 @@
     <MetadataFile FileName="service.xsd" MetadataType="Schema" ID="3cfb98f5-8c29-40c6-843e-49c5035593c2" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses/Appointment_Serves/IAppointment/mex" />
     <MetadataFile FileName="service1.xsd" MetadataType="Schema" ID="5da31151-741e-4b0e-aab3-78d3bb645077" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses/Appointment_Serves/IAppointment/mex" />
     <MetadataFile FileName="Appointment_Serves.xsd" MetadataType="Schema" ID="06f5a518-c924-438b-a32e-b41e6ff2f9d6" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses/Appointment_Serves/IAppointment/mex" />
-    <MetadataFile FileName="System.Data.xsd" MetadataType="Schema" ID="8eae769b-7917-4069-ba93-576efcf14808" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses/Appointment_Serves/IAppointment/mex" />
+    <MetadataFile FileName="System.Data14.xsd" MetadataType="Schema" ID="c9a6f9cb-39cb-4d5d-a707-63d5b42b9d38" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses/Appointment_Serves/IAppointment/mex" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

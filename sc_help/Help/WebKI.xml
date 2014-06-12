@@ -1,0 +1,2185 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<HelpKI>
+  <HelpKINode Title="AddAppointment method">
+    <HelpKINode Title="AppointmentClient.AddAppointment Method " Url="html/4cca4b2d-cb7d-0563-bf81-2debb6e788fc.htm" />
+    <HelpKINode Title="AppointmentClient.AddAppointment Method " Url="html/aebead98-fd37-653d-8ff0-aa70f88cc7bf.htm" />
+    <HelpKINode Title="Appointment_businesslayer.AddAppointment Method " Url="html/f56da250-3904-defa-3b3b-e511c04112e8.htm" />
+    <HelpKINode Title="IAppointment.AddAppointment Method " Url="html/5743791c-9975-3b22-f4ea-4074349e88f5.htm" />
+    <HelpKINode Title="IAppointment.AddAppointment Method " Url="html/38c6f49c-5788-b95f-9d81-73001035c171.htm" />
+    <HelpKINode Title="IAppointment.AddAppointment Method " Url="html/1c48cb6a-4cc6-ad4a-7ed1-9399ea70f96f.htm" />
+  </HelpKINode>
+  <HelpKINode Title="AddAppointmentAsync method">
+    <HelpKINode Title="AppointmentClient.AddAppointmentAsync Method " Url="html/6a55146b-c034-792c-fe7a-d88837850a8d.htm" />
+    <HelpKINode Title="AppointmentClient.AddAppointmentAsync Method " Url="html/1982fb60-d669-cd8d-ac5b-261fea691d3e.htm" />
+    <HelpKINode Title="IAppointment.AddAppointmentAsync Method " Url="html/59786317-0b8d-a8fc-058c-6b1fd3890fde.htm" />
+    <HelpKINode Title="IAppointment.AddAppointmentAsync Method " Url="html/00f19df1-6d92-cac5-af90-94696546d012.htm" />
+  </HelpKINode>
+  <HelpKINode Title="addConsultion method">
+    <HelpKINode Title="DoctorClient.addConsultion Method " Url="html/54b93169-aeb2-3182-603f-b73594a1c51b.htm" />
+    <HelpKINode Title="DoctorClient.addConsultion Method " Url="html/f5c33576-d3ba-78d1-8192-b8c357f6880b.htm" />
+    <HelpKINode Title="IDoctor.addConsultion Method " Url="html/2b6cf0f4-a4ea-9204-46e5-dfdae58f4de7.htm" />
+    <HelpKINode Title="IDoctor.addConsultion Method " Url="html/ff057453-2d32-a7b4-4f44-191441eb6b10.htm" />
+  </HelpKINode>
+  <HelpKINode Title="addConsultionAsync method">
+    <HelpKINode Title="DoctorClient.addConsultionAsync Method " Url="html/9033bb2c-d199-2175-23e4-28a85c10e13f.htm" />
+    <HelpKINode Title="DoctorClient.addConsultionAsync Method " Url="html/a28dc03c-a096-21b2-3aa1-e09ea17440bf.htm" />
+    <HelpKINode Title="IDoctor.addConsultionAsync Method " Url="html/6376a427-ad63-3e38-65c0-26b6198d6e92.htm" />
+    <HelpKINode Title="IDoctor.addConsultionAsync Method " Url="html/8d1a5077-7327-a3a5-97d7-aa29174f64e7.htm" />
+  </HelpKINode>
+  <HelpKINode Title="addDiagnosis method">
+    <HelpKINode Title="DoctorClient.addDiagnosis Method " Url="html/872e8bf3-6a36-4032-107e-749eeef19683.htm" />
+    <HelpKINode Title="DoctorClient.addDiagnosis Method " Url="html/055d31a6-fe8b-692b-2f3a-38a2d6e4bee0.htm" />
+    <HelpKINode Title="IDoctor.addDiagnosis Method " Url="html/208cd313-19cf-4550-b1c7-d20f10532ee4.htm" />
+    <HelpKINode Title="IDoctor.addDiagnosis Method " Url="html/c7d6e22a-c8b6-e41c-5a5a-62466b98b767.htm" />
+  </HelpKINode>
+  <HelpKINode Title="addDiagnosisAsync method">
+    <HelpKINode Title="DoctorClient.addDiagnosisAsync Method " Url="html/af0a50f5-51de-c87c-8f8c-6d6e9cdf975e.htm" />
+    <HelpKINode Title="DoctorClient.addDiagnosisAsync Method " Url="html/4907fae5-9912-a5d6-c610-85aaeb41bf53.htm" />
+    <HelpKINode Title="IDoctor.addDiagnosisAsync Method " Url="html/ca9a2e4a-6614-bfe3-1ff3-c562955da172.htm" />
+    <HelpKINode Title="IDoctor.addDiagnosisAsync Method " Url="html/6668986c-39f5-dd0b-9c70-93b9231227c0.htm" />
+  </HelpKINode>
+  <HelpKINode Title="addPatient method">
+    <HelpKINode Title="AdministrationClient.addPatient Method " Url="html/d854ac17-bb20-c56d-a265-0cb508bf0825.htm" />
+    <HelpKINode Title="IAdministration.addPatient Method " Url="html/565fc507-64c4-375a-e209-97fb77b768aa.htm" />
+  </HelpKINode>
+  <HelpKINode Title="addPatientAsync method">
+    <HelpKINode Title="AdministrationClient.addPatientAsync Method " Url="html/a6541f0f-c0e1-d226-5c1e-e45abe276895.htm" />
+    <HelpKINode Title="IAdministration.addPatientAsync Method " Url="html/efb5244d-b433-6d51-4a7d-218f1ccebc98.htm" />
+  </HelpKINode>
+  <HelpKINode Title="addPerscription method">
+    <HelpKINode Title="DoctorClient.addPerscription Method " Url="html/2e49de75-c031-e8ff-c6b9-b6cc64b98152.htm" />
+    <HelpKINode Title="DoctorClient.addPerscription Method " Url="html/6148addd-d84e-c28c-cae5-81ca3986c33f.htm" />
+    <HelpKINode Title="IDoctor.addPerscription Method " Url="html/fa2a1584-eb77-50be-bd4a-ce8ca5676dab.htm" />
+    <HelpKINode Title="IDoctor.addPerscription Method " Url="html/64d041b2-67de-69ff-7724-6f0a02f988ac.htm" />
+  </HelpKINode>
+  <HelpKINode Title="addPerscriptionAsync method">
+    <HelpKINode Title="DoctorClient.addPerscriptionAsync Method " Url="html/2291ea03-1a47-d62b-a912-5ac40314ab78.htm" />
+    <HelpKINode Title="DoctorClient.addPerscriptionAsync Method " Url="html/11585616-7ba0-76f2-b49c-4a35c65b724e.htm" />
+    <HelpKINode Title="IDoctor.addPerscriptionAsync Method " Url="html/95060c1e-b01e-5db8-4729-39a1ecd1cb5a.htm" />
+    <HelpKINode Title="IDoctor.addPerscriptionAsync Method " Url="html/3c828722-a8bd-093f-e952-842ebbb61e18.htm" />
+  </HelpKINode>
+  <HelpKINode Title="addPerson method">
+    <HelpKINode Title="AdministrationClient.addPerson Method " Url="html/11063f02-39bf-76f3-a1dc-9416df172741.htm" />
+    <HelpKINode Title="IAdministration.addPerson Method " Url="html/a88a6059-8caf-ea6f-9eb6-ef6127c13b57.htm" />
+  </HelpKINode>
+  <HelpKINode Title="addPersonAsync method">
+    <HelpKINode Title="AdministrationClient.addPersonAsync Method " Url="html/06292526-964c-2236-1e1b-701be282d50b.htm" />
+    <HelpKINode Title="IAdministration.addPersonAsync Method " Url="html/bfb80a49-c00b-dffb-bef4-7584ed547ced.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Address property" Url="html/bdcf22ad-9149-239a-6a94-916b37d5cd7e.htm" />
+  <HelpKINode Title="Addressk__BackingField property">
+    <HelpKINode Title="Person.Addressk__BackingField Property " Url="html/2d280b31-1475-19ee-f511-4179325cc460.htm" />
+    <HelpKINode Title="Person.Addressk__BackingField Property " Url="html/d67ca274-bef3-508c-610c-4f23d6f9272a.htm" />
+    <HelpKINode Title="Person.Addressk__BackingField Property " Url="html/415524da-3d3a-cdc6-73bf-d3afa8f8c857.htm" />
+    <HelpKINode Title="Person.Addressk__BackingField Property " Url="html/b4e95753-cfd2-28e3-dc12-edc2686646a2.htm" />
+    <HelpKINode Title="Person.Addressk__BackingField Property " Url="html/e157912f-144e-d5a2-d3af-950509943182.htm" />
+  </HelpKINode>
+  <HelpKINode Title="addStaff method">
+    <HelpKINode Title="AdministrationClient.addStaff Method " Url="html/5a122198-d3f9-fc0b-44d0-bc35a735c640.htm" />
+    <HelpKINode Title="IAdministration.addStaff Method " Url="html/d6bb1a82-1c5e-249a-7cd9-bda2cd546f9d.htm" />
+  </HelpKINode>
+  <HelpKINode Title="addStaffAsync method">
+    <HelpKINode Title="AdministrationClient.addStaffAsync Method " Url="html/0138b830-f007-fa99-1bb2-159564ed160e.htm" />
+    <HelpKINode Title="IAdministration.addStaffAsync Method " Url="html/a9813068-652f-3da5-faac-be3160e8b354.htm" />
+  </HelpKINode>
+  <HelpKINode Title="addTestAppointment method">
+    <HelpKINode Title="DoctorClient.addTestAppointment Method " Url="html/5cb2bf4d-a889-50fc-de70-f8aa2f44ee09.htm" />
+    <HelpKINode Title="DoctorClient.addTestAppointment Method " Url="html/4866767d-3668-58e0-5a21-8f5d5fea45ab.htm" />
+    <HelpKINode Title="IDoctor.addTestAppointment Method " Url="html/a563dd21-2666-d424-a3b1-727a37307070.htm" />
+    <HelpKINode Title="IDoctor.addTestAppointment Method " Url="html/affe71b5-8b47-6c15-6e7a-a26fe1ea8bc7.htm" />
+  </HelpKINode>
+  <HelpKINode Title="addTestAppointmentAsync method">
+    <HelpKINode Title="DoctorClient.addTestAppointmentAsync Method " Url="html/b55157e6-d76c-6af5-8262-16a88c1e024d.htm" />
+    <HelpKINode Title="DoctorClient.addTestAppointmentAsync Method " Url="html/b4ef7284-49a5-3b96-ceb3-bf844d226768.htm" />
+    <HelpKINode Title="IDoctor.addTestAppointmentAsync Method " Url="html/e59e09af-cb30-7d4c-fa6f-71f6354bf3f3.htm" />
+    <HelpKINode Title="IDoctor.addTestAppointmentAsync Method " Url="html/ba145b62-fe49-8c18-dbb6-f6260ead617b.htm" />
+  </HelpKINode>
+  <HelpKINode Title="addTestPatient method">
+    <HelpKINode Title="DoctorClient.addTestPatient Method " Url="html/2dce56d9-9c51-9200-4acf-9534a92b496d.htm" />
+    <HelpKINode Title="DoctorClient.addTestPatient Method " Url="html/ea21bbcf-4d3a-3300-e31f-696bd878c105.htm" />
+    <HelpKINode Title="IDoctor.addTestPatient Method " Url="html/0c159f66-aa2b-908e-5dd6-fab2ca6eadf1.htm" />
+    <HelpKINode Title="IDoctor.addTestPatient Method " Url="html/e2832078-c3cf-2741-3451-1cf190bed4a4.htm" />
+  </HelpKINode>
+  <HelpKINode Title="addTestPatientAsync method">
+    <HelpKINode Title="DoctorClient.addTestPatientAsync Method " Url="html/d9d5e0a9-1479-46d2-c5d0-c6fa75197897.htm" />
+    <HelpKINode Title="DoctorClient.addTestPatientAsync Method " Url="html/5365c7d3-044c-40f0-03ec-a00b5c4594a9.htm" />
+    <HelpKINode Title="IDoctor.addTestPatientAsync Method " Url="html/e50ec806-0ac8-8cce-4a47-05dd552c28e2.htm" />
+    <HelpKINode Title="IDoctor.addTestPatientAsync Method " Url="html/c382d21d-0fea-6fe2-89c4-a3086b52ed47.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Administration namespace" Url="html/bc466fb5-864c-75ce-bf90-9f2639cdc26c.htm" />
+  <HelpKINode Title="Administration.Appointments namespace" Url="html/cab8936d-f35c-6300-8264-e6359bd5114a.htm" />
+  <HelpKINode Title="Administration.Appointments.Appointment structure" Url="html/f0bab646-ee48-ff02-5cbe-874bd36fe94f.htm" />
+  <HelpKINode Title="Administration.Appointments.AppointmentClient class" Url="html/eb838953-8fa4-87dc-4454-7339dd90b84c.htm" />
+  <HelpKINode Title="Administration.Appointments.IAppointment interface" Url="html/41f497f4-fafc-5f44-817f-a76d2e609e66.htm" />
+  <HelpKINode Title="Administration.Appointments.IAppointmentChannel interface" Url="html/74cda473-09c7-775c-3f08-fdf58694d621.htm" />
+  <HelpKINode Title="Administration.Appointments.Patient class" Url="html/9779aac3-591c-92b6-449c-5b82bbfded51.htm" />
+  <HelpKINode Title="Administration.Appointments.Person class" Url="html/861a4a43-de52-2160-5599-79144bf89505.htm" />
+  <HelpKINode Title="Administration.Login class" Url="html/12a85100-8a2a-ae38-8d61-3cceff3d6426.htm" />
+  <HelpKINode Title="Administration.MainForm class" Url="html/164df9c0-2725-3b0b-0954-21c2668a5a63.htm" />
+  <HelpKINode Title="Administration.MedicalInformation namespace" Url="html/ad75a8d4-dd0f-50d1-7584-b833db111bbb.htm" />
+  <HelpKINode Title="Administration.MedicalInformation.Consultation structure" Url="html/3c7f81e7-a392-11b2-a78d-3f05539761ea.htm" />
+  <HelpKINode Title="Administration.MedicalInformation.Diagnosis structure" Url="html/e99d8de0-9b38-7aab-57be-9268473b2537.htm" />
+  <HelpKINode Title="Administration.MedicalInformation.Disease structure" Url="html/72477af5-b3f6-7e64-de41-8f1dfe316d68.htm" />
+  <HelpKINode Title="Administration.MedicalInformation.DoctorClient class" Url="html/ce894f7a-77b6-1c28-1e32-ca64032acff8.htm" />
+  <HelpKINode Title="Administration.MedicalInformation.IDoctor interface" Url="html/d89778ba-fd7c-8809-8bfd-2f8986a0b3a8.htm" />
+  <HelpKINode Title="Administration.MedicalInformation.IDoctorChannel interface" Url="html/751595f6-4637-cadd-5109-ad97c4ecade9.htm" />
+  <HelpKINode Title="Administration.MedicalInformation.Medicine structure" Url="html/92e8ca8b-abe8-ff89-1074-535b181cd6d0.htm" />
+  <HelpKINode Title="Administration.MedicalInformation.Patient class" Url="html/b6574f19-df35-4542-ad43-62f6c73f2427.htm" />
+  <HelpKINode Title="Administration.MedicalInformation.Perscription structure" Url="html/7b53c192-6d4c-dc29-28bd-e52055aa297a.htm" />
+  <HelpKINode Title="Administration.MedicalInformation.Person class" Url="html/fbaf22a8-f63a-ef68-e64a-897927e2c594.htm" />
+  <HelpKINode Title="Administration.MedicalInformation.Staff class" Url="html/069b716c-21b0-d876-6983-a321873cd08d.htm" />
+  <HelpKINode Title="Administration.serverAdministration namespace" Url="html/68d0d7b1-30f8-87c9-1bcb-77d741182524.htm" />
+  <HelpKINode Title="Administration.serverAdministration.AdministrationClient class" Url="html/6a016118-185b-cc91-f0ac-b2bcd0ced70c.htm" />
+  <HelpKINode Title="Administration.serverAdministration.IAdministration interface" Url="html/f747df25-1741-3a49-d531-3d0807633cd3.htm" />
+  <HelpKINode Title="Administration.serverAdministration.IAdministrationChannel interface" Url="html/c7fcbcc6-c0d0-0794-4437-66734bfdcf7a.htm" />
+  <HelpKINode Title="Administration.serverAdministration.Patient class" Url="html/a79c3828-daa5-0cae-6c84-0b323a15167c.htm" />
+  <HelpKINode Title="Administration.serverAdministration.Person class" Url="html/b2ebb60c-08f8-7172-2500-acab9d5177df.htm" />
+  <HelpKINode Title="Administration.serverAdministration.Staff class" Url="html/b8b1c4c3-8ee0-0a8e-5b5d-d925001d7fc0.htm" />
+  <HelpKINode Title="AdministrationClient class">
+    <HelpKINode Title="AdministrationClient Class" Url="html/6a016118-185b-cc91-f0ac-b2bcd0ced70c.htm" />
+    <HelpKINode Title="about AdministrationClient class" Url="html/6a016118-185b-cc91-f0ac-b2bcd0ced70c.htm" />
+    <HelpKINode Title="constructor" Url="html/d09ce1fd-80ce-e110-210f-d57456ffcd79.htm" />
+    <HelpKINode Title="methods" Url="html/9cc656f5-61eb-2365-0d0d-665f0dbcad09.htm" />
+    <HelpKINode Title="properties" Url="html/6023aea2-83d2-b008-74fa-c46c4b4d45c0.htm" />
+  </HelpKINode>
+  <HelpKINode Title="AdministrationClient.addPatient method" Url="html/d854ac17-bb20-c56d-a265-0cb508bf0825.htm" />
+  <HelpKINode Title="AdministrationClient.addPatientAsync method" Url="html/a6541f0f-c0e1-d226-5c1e-e45abe276895.htm" />
+  <HelpKINode Title="AdministrationClient.addPerson method" Url="html/11063f02-39bf-76f3-a1dc-9416df172741.htm" />
+  <HelpKINode Title="AdministrationClient.addPersonAsync method" Url="html/06292526-964c-2236-1e1b-701be282d50b.htm" />
+  <HelpKINode Title="AdministrationClient.addStaff method" Url="html/5a122198-d3f9-fc0b-44d0-bc35a735c640.htm" />
+  <HelpKINode Title="AdministrationClient.addStaffAsync method" Url="html/0138b830-f007-fa99-1bb2-159564ed160e.htm" />
+  <HelpKINode Title="AdministrationClient.AdministrationClient constructor" Url="html/d09ce1fd-80ce-e110-210f-d57456ffcd79.htm" />
+  <HelpKINode Title="AdministrationClient.editPatient method" Url="html/bad2dcab-a8da-da76-2af8-453a7b82b4e9.htm" />
+  <HelpKINode Title="AdministrationClient.editPatientAsync method" Url="html/d3f4d789-e2fe-4c7b-9ad5-9d17eac4f980.htm" />
+  <HelpKINode Title="AdministrationClient.editPerson method" Url="html/e1ad2c39-4852-6c45-d2f6-648a13c30f3e.htm" />
+  <HelpKINode Title="AdministrationClient.editPersonAsync method" Url="html/4bff2691-608e-ab41-5c5b-7697f3baf37a.htm" />
+  <HelpKINode Title="AdministrationClient.editStaff method" Url="html/c8a12bcd-9fc2-a15c-28e6-39cd74fede1a.htm" />
+  <HelpKINode Title="AdministrationClient.editStaffAsync method" Url="html/c224817d-80e5-10d4-6338-eb997a76e007.htm" />
+  <HelpKINode Title="AdministrationClient.getAllStaff method" Url="html/cec99fbf-3b50-e562-f41c-c3cfe0078cb8.htm" />
+  <HelpKINode Title="AdministrationClient.getAllStaffAsync method" Url="html/08ad00be-16b1-7c9c-ec7f-5710e5dca622.htm" />
+  <HelpKINode Title="AdministrationClient.getStaffById method" Url="html/86e6ebf0-9e82-054f-375a-1f769279ad0c.htm" />
+  <HelpKINode Title="AdministrationClient.getStaffByIdAsync method" Url="html/95598117-b774-a1c4-c516-95a71d4ffab7.htm" />
+  <HelpKINode Title="AdministrationClient.removeStaff method" Url="html/6df80510-f8b5-efcd-e8cb-fb0ed46f4340.htm" />
+  <HelpKINode Title="AdministrationClient.removeStaffAsync method" Url="html/53599b63-72b3-56c0-48f4-5414be2f49a7.htm" />
+  <HelpKINode Title="AdministrationClient.searchStaff method" Url="html/7d416220-872f-9d2a-529e-756dc5a2531b.htm" />
+  <HelpKINode Title="AdministrationClient.searchStaffAsync method" Url="html/0325fd4b-9583-8ec1-a50c-fb6c4631b05a.htm" />
+  <HelpKINode Title="amount_ml property">
+    <HelpKINode Title="Perscription.amount_ml Property " Url="html/1006f64f-b127-ad7c-df14-3d0029aa168c.htm" />
+    <HelpKINode Title="Perscription.amount_ml Property " Url="html/7145b500-19e2-7f4d-6153-348d12bbc92b.htm" />
+  </HelpKINode>
+  <HelpKINode Title="amount_pills property">
+    <HelpKINode Title="Perscription.amount_pills Property " Url="html/79f24c97-ace9-f7b2-9c2e-b55502d17a97.htm" />
+    <HelpKINode Title="Perscription.amount_pills Property " Url="html/6aa6087e-a439-0b02-9d07-80fa6aaf4a92.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Appointment class">
+    <HelpKINode Title="Appointment Class" Url="html/89adba32-5f50-d0ef-4599-25a7418b1674.htm" />
+    <HelpKINode Title="about Appointment class" Url="html/89adba32-5f50-d0ef-4599-25a7418b1674.htm" />
+    <HelpKINode Title="constructor" Url="html/930bbc57-24c3-5de2-8f83-caa63b3a06bc.htm" />
+    <HelpKINode Title="events" Url="html/8ce262f5-0995-aa58-2733-b44a38bb8e36.htm" />
+    <HelpKINode Title="methods" Url="html/82a233cb-8010-1849-ebf8-b40c509d4b76.htm" />
+    <HelpKINode Title="properties" Url="html/57b4e5da-aa9e-504e-5229-04b26dfe185e.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Appointment structure">
+    <HelpKINode Title="Appointment Structure" Url="html/f0bab646-ee48-ff02-5cbe-874bd36fe94f.htm" />
+    <HelpKINode Title="Appointment Structure" Url="html/cfd9cf36-f778-f87a-d07d-83e92e1bfd8c.htm" />
+    <HelpKINode Title="Appointment Structure" Url="html/81660b45-4375-2b8a-e6e1-05212c27ffe4.htm" />
+    <HelpKINode Title="about Appointment structure" Url="html/cfd9cf36-f778-f87a-d07d-83e92e1bfd8c.htm" />
+    <HelpKINode Title="about Appointment structure" Url="html/f0bab646-ee48-ff02-5cbe-874bd36fe94f.htm" />
+    <HelpKINode Title="about Appointment structure" Url="html/81660b45-4375-2b8a-e6e1-05212c27ffe4.htm" />
+    <HelpKINode Title="events" Url="html/ed0b7480-2622-2d71-4bc9-6030cfeb535d.htm" />
+    <HelpKINode Title="events" Url="html/d5cb75e4-b08e-7042-f219-22e2ce99dd08.htm" />
+    <HelpKINode Title="methods" Url="html/d77a2219-7a67-a2e3-9d4b-d437c26b809f.htm" />
+    <HelpKINode Title="methods" Url="html/bf1ff56a-bc46-5f87-ce0d-a728a263f101.htm" />
+    <HelpKINode Title="methods" Url="html/1e487c01-7371-3037-820a-d806017890f0.htm" />
+    <HelpKINode Title="properties" Url="html/a6b3cb28-1989-4bb9-80ed-770b99d91149.htm" />
+    <HelpKINode Title="properties" Url="html/45ff9550-5940-8c0f-4a09-659b09225db5.htm" />
+    <HelpKINode Title="properties" Url="html/82a80fae-8922-b209-f611-afeb9c70b0f4.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Appointment.Appointment constructor" Url="html/930bbc57-24c3-5de2-8f83-caa63b3a06bc.htm" />
+  <HelpKINode Title="Appointment.appointmentID property">
+    <HelpKINode Title="Appointment.appointmentID Property " Url="html/eee23289-d657-0ebb-641c-58fef1e0ff40.htm" />
+    <HelpKINode Title="Appointment.appointmentID Property " Url="html/3c27cadf-1abd-b052-8d16-6215713154bd.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Appointment.AppointmentID property" Url="html/cdbfffa9-9098-5462-ae3b-52ea74b9d7dd.htm" />
+  <HelpKINode Title="Appointment.Dispose method" Url="html/f76cca00-a14a-f6ac-7942-23f7263bca22.htm" />
+  <HelpKINode Title="Appointment.end_date property">
+    <HelpKINode Title="Appointment.end_date Property " Url="html/1701d5e3-f1fa-6e44-13ac-ee0598bf85ed.htm" />
+    <HelpKINode Title="Appointment.end_date Property " Url="html/c9cbd0b8-cb28-5511-dabb-66db75056856.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Appointment.End_date property" Url="html/899c52da-eb56-e963-a0a3-510b79ffe3fc.htm" />
+  <HelpKINode Title="Appointment.ExtensionData property">
+    <HelpKINode Title="Appointment.ExtensionData Property " Url="html/7812628f-7653-e3b2-c643-441665567fb8.htm" />
+    <HelpKINode Title="Appointment.ExtensionData Property " Url="html/a845e02b-a23b-3ca5-54b8-581582873ae8.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Appointment.patient_id property">
+    <HelpKINode Title="Appointment.patient_id Property " Url="html/b17295c9-b84e-f403-3af9-be069a51cb19.htm" />
+    <HelpKINode Title="Appointment.patient_id Property " Url="html/74c432b4-6c6b-86dd-fe98-bcfd08f4a5af.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Appointment.Patient_id property" Url="html/d923207a-fff0-1b2a-c043-268dcd310e68.htm" />
+  <HelpKINode Title="Appointment.PropertyChanged event">
+    <HelpKINode Title="Appointment.PropertyChanged Event" Url="html/0754a231-9e41-9a17-d6a4-60e189d6c1cf.htm" />
+    <HelpKINode Title="Appointment.PropertyChanged Event" Url="html/72c5b826-4702-64b9-d3c4-c8fe7bbae930.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Appointment.staff_id property">
+    <HelpKINode Title="Appointment.staff_id Property " Url="html/e7bb8dec-ad2b-b272-2a93-5a5a295a3b97.htm" />
+    <HelpKINode Title="Appointment.staff_id Property " Url="html/11c3b05c-5aea-d39a-b452-e34fd75d9fdd.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Appointment.Staff_id property" Url="html/04325560-c15e-f394-4545-db349e12f350.htm" />
+  <HelpKINode Title="Appointment.Start_date property" Url="html/3b977a73-25e7-ff4e-45f2-89798a0e6d33.htm" />
+  <HelpKINode Title="Appointment.start_date property">
+    <HelpKINode Title="Appointment.start_date Property " Url="html/bc99fb8d-cc6f-0d0c-7003-92a644c8e382.htm" />
+    <HelpKINode Title="Appointment.start_date Property " Url="html/149defed-ae3b-b29f-766a-fe0590dc69ea.htm" />
+  </HelpKINode>
+  <HelpKINode Title="AppointmentClient class">
+    <HelpKINode Title="AppointmentClient Class" Url="html/6fc972c5-1307-1829-f965-85a2507b5e55.htm" />
+    <HelpKINode Title="AppointmentClient Class" Url="html/eb838953-8fa4-87dc-4454-7339dd90b84c.htm" />
+    <HelpKINode Title="about AppointmentClient class" Url="html/eb838953-8fa4-87dc-4454-7339dd90b84c.htm" />
+    <HelpKINode Title="about AppointmentClient class" Url="html/6fc972c5-1307-1829-f965-85a2507b5e55.htm" />
+    <HelpKINode Title="constructor" Url="html/ff98fef5-bea9-228c-6e16-d561c6039642.htm" />
+    <HelpKINode Title="constructor" Url="html/b67e78b7-7883-b957-21c1-3e2fd8e8fde2.htm" />
+    <HelpKINode Title="methods" Url="html/72da7520-474f-7c7a-37f7-01eaf50aa74e.htm" />
+    <HelpKINode Title="methods" Url="html/2f9c71f5-46e2-5386-57c9-61f904d085f3.htm" />
+    <HelpKINode Title="properties" Url="html/94c94814-f3fb-e87d-25a5-a807bbe8fc83.htm" />
+    <HelpKINode Title="properties" Url="html/36c6934f-a4ef-063b-8f1a-b96dba2d0174.htm" />
+  </HelpKINode>
+  <HelpKINode Title="AppointmentClient.AddAppointment method">
+    <HelpKINode Title="AppointmentClient.AddAppointment Method " Url="html/4cca4b2d-cb7d-0563-bf81-2debb6e788fc.htm" />
+    <HelpKINode Title="AppointmentClient.AddAppointment Method " Url="html/aebead98-fd37-653d-8ff0-aa70f88cc7bf.htm" />
+  </HelpKINode>
+  <HelpKINode Title="AppointmentClient.AddAppointmentAsync method">
+    <HelpKINode Title="AppointmentClient.AddAppointmentAsync Method " Url="html/6a55146b-c034-792c-fe7a-d88837850a8d.htm" />
+    <HelpKINode Title="AppointmentClient.AddAppointmentAsync Method " Url="html/1982fb60-d669-cd8d-ac5b-261fea691d3e.htm" />
+  </HelpKINode>
+  <HelpKINode Title="AppointmentClient.AppointmentClient constructor">
+    <HelpKINode Title="AppointmentClient Constructor " Url="html/ff98fef5-bea9-228c-6e16-d561c6039642.htm" />
+    <HelpKINode Title="AppointmentClient Constructor " Url="html/b67e78b7-7883-b957-21c1-3e2fd8e8fde2.htm" />
+  </HelpKINode>
+  <HelpKINode Title="AppointmentClient.getAppointmentsHistorybyPatient method">
+    <HelpKINode Title="AppointmentClient.getAppointmentsHistorybyPatient Method " Url="html/bb8aabd6-56de-8fc6-d6ab-43f3d581c729.htm" />
+    <HelpKINode Title="AppointmentClient.getAppointmentsHistorybyPatient Method " Url="html/2c7d24fa-c6af-2f7e-ad7d-ead0f2c01b87.htm" />
+  </HelpKINode>
+  <HelpKINode Title="AppointmentClient.getAppointmentsHistorybyPatientAsync method">
+    <HelpKINode Title="AppointmentClient.getAppointmentsHistorybyPatientAsync Method " Url="html/be84944a-bebb-cc33-1c9c-ce1e32276d2b.htm" />
+    <HelpKINode Title="AppointmentClient.getAppointmentsHistorybyPatientAsync Method " Url="html/35896d3a-1753-0cfc-d7a6-2e0d7b4b99a3.htm" />
+  </HelpKINode>
+  <HelpKINode Title="AppointmentClient.getAppointmentsHistorybyPatientID method">
+    <HelpKINode Title="AppointmentClient.getAppointmentsHistorybyPatientID Method " Url="html/3d9d6195-4339-50b7-191e-5688ec2dcef7.htm" />
+    <HelpKINode Title="AppointmentClient.getAppointmentsHistorybyPatientID Method " Url="html/b9efeec6-26d1-4d7b-8a47-344a8dbcf795.htm" />
+  </HelpKINode>
+  <HelpKINode Title="AppointmentClient.getAppointmentsHistorybyPatientIDAsync method">
+    <HelpKINode Title="AppointmentClient.getAppointmentsHistorybyPatientIDAsync Method " Url="html/aff2866c-7bb6-3ba2-a928-c208cf2f4eb3.htm" />
+    <HelpKINode Title="AppointmentClient.getAppointmentsHistorybyPatientIDAsync Method " Url="html/5050e879-7004-04b2-7683-515f16f2be76.htm" />
+  </HelpKINode>
+  <HelpKINode Title="AppointmentClient.getAppointmentsListbyPatientId method">
+    <HelpKINode Title="AppointmentClient.getAppointmentsListbyPatientId Method " Url="html/d240804e-c915-dd46-8eef-0d7ac5436049.htm" />
+    <HelpKINode Title="AppointmentClient.getAppointmentsListbyPatientId Method " Url="html/2583909d-5bd0-7bd2-40d6-d3e8ac6e9c43.htm" />
+  </HelpKINode>
+  <HelpKINode Title="AppointmentClient.getAppointmentsListbyPatientIdAsync method">
+    <HelpKINode Title="AppointmentClient.getAppointmentsListbyPatientIdAsync Method " Url="html/fe7c01bc-b69f-549e-137c-063f34fc896d.htm" />
+    <HelpKINode Title="AppointmentClient.getAppointmentsListbyPatientIdAsync Method " Url="html/66a1965c-9f69-c9c2-ae6c-ff29cf421dc3.htm" />
+  </HelpKINode>
+  <HelpKINode Title="AppointmentClient.getAppointmnetsOfToday method">
+    <HelpKINode Title="AppointmentClient.getAppointmnetsOfToday Method " Url="html/d7248018-d592-827f-258c-b834b7446848.htm" />
+    <HelpKINode Title="AppointmentClient.getAppointmnetsOfToday Method " Url="html/106ad4cb-60b6-42e2-0560-139583e6fe01.htm" />
+  </HelpKINode>
+  <HelpKINode Title="AppointmentClient.getAppointmnetsOfTodayAsync method">
+    <HelpKINode Title="AppointmentClient.getAppointmnetsOfTodayAsync Method " Url="html/922b14ba-404c-67d1-f296-75154da27843.htm" />
+    <HelpKINode Title="AppointmentClient.getAppointmnetsOfTodayAsync Method " Url="html/fd89e7e9-94ba-ef09-540b-465f04f3ab70.htm" />
+  </HelpKINode>
+  <HelpKINode Title="AppointmentClient.Login method">
+    <HelpKINode Title="AppointmentClient.Login Method " Url="html/5de2eff4-1a58-174a-d0b8-dca68a97eaf6.htm" />
+    <HelpKINode Title="AppointmentClient.Login Method " Url="html/5f14f176-f74d-1c74-3707-d35e51eaee37.htm" />
+  </HelpKINode>
+  <HelpKINode Title="AppointmentClient.LoginAsync method">
+    <HelpKINode Title="AppointmentClient.LoginAsync Method " Url="html/5fd60b5a-fa1a-b166-a20c-fa43578172bc.htm" />
+    <HelpKINode Title="AppointmentClient.LoginAsync Method " Url="html/89996001-5ae4-7fa0-b76e-14264ca06946.htm" />
+  </HelpKINode>
+  <HelpKINode Title="AppointmentClient.SearchappointmentsbyDate method">
+    <HelpKINode Title="AppointmentClient.SearchappointmentsbyDate Method " Url="html/80546c2e-757c-f509-f02f-ebe9dc51e91a.htm" />
+    <HelpKINode Title="AppointmentClient.SearchappointmentsbyDate Method " Url="html/a318f3ae-4c57-e8bb-544a-604fd05f35af.htm" />
+  </HelpKINode>
+  <HelpKINode Title="AppointmentClient.SearchappointmentsbyDateAsync method">
+    <HelpKINode Title="AppointmentClient.SearchappointmentsbyDateAsync Method " Url="html/9b8c9f9b-7d1e-42b4-ba97-13a82776af10.htm" />
+    <HelpKINode Title="AppointmentClient.SearchappointmentsbyDateAsync Method " Url="html/bf53863a-3571-78c4-dc2c-40bb53497450.htm" />
+  </HelpKINode>
+  <HelpKINode Title="AppointmentClient.SearchAppointmentsByStaffID method">
+    <HelpKINode Title="AppointmentClient.SearchAppointmentsByStaffID Method " Url="html/6cb9bfce-e262-4e37-2794-e3de09ec19e0.htm" />
+    <HelpKINode Title="AppointmentClient.SearchAppointmentsByStaffID Method " Url="html/d84bf68c-ba2c-2926-7794-d5413cb40f0f.htm" />
+  </HelpKINode>
+  <HelpKINode Title="AppointmentClient.SearchAppointmentsByStaffIDAsync method">
+    <HelpKINode Title="AppointmentClient.SearchAppointmentsByStaffIDAsync Method " Url="html/34faebea-8959-03d0-681c-fdae392719dc.htm" />
+    <HelpKINode Title="AppointmentClient.SearchAppointmentsByStaffIDAsync Method " Url="html/452117fa-4a09-2248-9670-b73b0820b67c.htm" />
+  </HelpKINode>
+  <HelpKINode Title="appointmentID property">
+    <HelpKINode Title="Appointment.appointmentID Property " Url="html/eee23289-d657-0ebb-641c-58fef1e0ff40.htm" />
+    <HelpKINode Title="Appointment.appointmentID Property " Url="html/3c27cadf-1abd-b052-8d16-6215713154bd.htm" />
+  </HelpKINode>
+  <HelpKINode Title="AppointmentID property" Url="html/cdbfffa9-9098-5462-ae3b-52ea74b9d7dd.htm" />
+  <HelpKINode Title="Appointment_businesslayer class">
+    <HelpKINode Title="Appointment_businesslayer Class" Url="html/24a8c850-0b94-c531-c98d-542df3d91ea4.htm" />
+    <HelpKINode Title="about Appointment_businesslayer class" Url="html/24a8c850-0b94-c531-c98d-542df3d91ea4.htm" />
+    <HelpKINode Title="constructor" Url="html/ed1e9bb5-5fed-a49d-5c1b-f8f20b303a42.htm" />
+    <HelpKINode Title="methods" Url="html/ae958c38-097b-10dd-5319-d3a9b002b5fd.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Appointment_businesslayer.AddAppointment method" Url="html/f56da250-3904-defa-3b3b-e511c04112e8.htm" />
+  <HelpKINode Title="Appointment_businesslayer.Appointment_businesslayer constructor" Url="html/ed1e9bb5-5fed-a49d-5c1b-f8f20b303a42.htm" />
+  <HelpKINode Title="Appointment_businesslayer.getAppointmentsHistorybyPatient method" Url="html/a476f63d-0b56-bab3-1a12-2688f41f2047.htm" />
+  <HelpKINode Title="Appointment_businesslayer.getAppointmentsHistorybyPatientID method" Url="html/e063aeb0-feaa-4a12-76e4-c591c4f1f154.htm" />
+  <HelpKINode Title="Appointment_businesslayer.getAppointmentsListbyPatientId method" Url="html/8acbba84-a391-6219-fb83-5719653f8a04.htm" />
+  <HelpKINode Title="Appointment_businesslayer.getAppointmnetsOfToday method" Url="html/872768fd-5123-ec81-1c12-f9d26a53eecc.htm" />
+  <HelpKINode Title="Appointment_businesslayer.SearchappointmentsbyDate method" Url="html/385441c1-2d90-9448-e2fb-ae83a4883d26.htm" />
+  <HelpKINode Title="Appointment_businesslayer.SearchAppointmentsByStaffID method" Url="html/5555b14c-7b5b-3a7b-2429-d3570f7c1192.htm" />
+  <HelpKINode Title="Appointment_Serves namespace" Url="html/85c244f2-c575-f4df-63b9-14fe5cdbf50d.htm" />
+  <HelpKINode Title="Appointment_Serves.Appointment structure" Url="html/cfd9cf36-f778-f87a-d07d-83e92e1bfd8c.htm" />
+  <HelpKINode Title="Appointment_Serves.Appointment_businesslayer class" Url="html/24a8c850-0b94-c531-c98d-542df3d91ea4.htm" />
+  <HelpKINode Title="Appointment_Serves.IAppointment interface" Url="html/a995b4c5-bc0b-1f47-ecd8-47718886478e.htm" />
+  <HelpKINode Title="Appointment_Serves.Patient class" Url="html/b99e7542-02db-1863-53cf-9baca228e85e.htm" />
+  <HelpKINode Title="Appointment_Serves.Person class" Url="html/8753cf98-d57e-1458-0a31-b4f37a354d6b.htm" />
+  <HelpKINode Title="BloodType property" Url="html/886c7c67-a72d-c986-8a1a-de28cd9596ac.htm" />
+  <HelpKINode Title="BloodTypek__BackingField property">
+    <HelpKINode Title="Patient.BloodTypek__BackingField Property " Url="html/43a0f258-927b-1f38-c0c4-5c346ca05ab3.htm" />
+    <HelpKINode Title="Patient.BloodTypek__BackingField Property " Url="html/ff379719-ffae-0d19-8444-8c63872ef267.htm" />
+    <HelpKINode Title="Patient.BloodTypek__BackingField Property " Url="html/022a93f3-a38c-42ea-070f-56ed34619348.htm" />
+    <HelpKINode Title="Patient.BloodTypek__BackingField Property " Url="html/79943639-6352-51eb-e45d-4137d0b63090.htm" />
+    <HelpKINode Title="Patient.BloodTypek__BackingField Property " Url="html/28758ead-bfb7-8524-a419-987b5e568d7a.htm" />
+  </HelpKINode>
+  <HelpKINode Title="causesk__BackingField property">
+    <HelpKINode Title="Disease.causesk__BackingField Property " Url="html/967ccc29-c2f4-ef3e-9009-d09b786513fd.htm" />
+    <HelpKINode Title="Disease.causesk__BackingField Property " Url="html/195d67b3-4cdb-5363-6522-25aaddb03747.htm" />
+  </HelpKINode>
+  <HelpKINode Title="classificationk__BackingField property">
+    <HelpKINode Title="Disease.classificationk__BackingField Property " Url="html/9e7418f1-896d-c98f-6d85-3f7f5c2f6ec6.htm" />
+    <HelpKINode Title="Disease.classificationk__BackingField Property " Url="html/be02e2c2-a6b3-5d89-ff87-f80cda2ee61a.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Client class">
+    <HelpKINode Title="Client Class" Url="html/9c1ddbbb-bf33-ec39-f480-118b6f158bee.htm" />
+    <HelpKINode Title="about Client class" Url="html/9c1ddbbb-bf33-ec39-f480-118b6f158bee.htm" />
+    <HelpKINode Title="constructor" Url="html/4da8afe4-881f-4586-b41c-2f00d59e5d79.htm" />
+    <HelpKINode Title="events" Url="html/44c1b3eb-5a7a-0cc9-c7f3-3788526cf2c6.htm" />
+    <HelpKINode Title="methods" Url="html/53ae0c29-af7a-8017-ae73-4257a83b8045.htm" />
+    <HelpKINode Title="properties" Url="html/94c8f0ab-a0f0-d1a0-01fe-f276588d228e.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Client.Client constructor" Url="html/4da8afe4-881f-4586-b41c-2f00d59e5d79.htm" />
+  <HelpKINode Title="Client.Dispose method" Url="html/3f4f1cb7-b430-e229-aa86-fc3dba761920.htm" />
+  <HelpKINode Title="Client.NewWiki method" Url="html/199091b3-d6c7-5a4b-6adf-564104fbb8ff.htm" />
+  <HelpKINode Title="Consultation structure">
+    <HelpKINode Title="Consultation Structure" Url="html/3c7f81e7-a392-11b2-a78d-3f05539761ea.htm" />
+    <HelpKINode Title="Consultation Structure" Url="html/9ff8957b-eff5-f17c-317f-e7316436ac28.htm" />
+    <HelpKINode Title="about Consultation structure" Url="html/9ff8957b-eff5-f17c-317f-e7316436ac28.htm" />
+    <HelpKINode Title="about Consultation structure" Url="html/3c7f81e7-a392-11b2-a78d-3f05539761ea.htm" />
+    <HelpKINode Title="events" Url="html/da1fa866-0322-5e63-2f3b-b7a4bee10e56.htm" />
+    <HelpKINode Title="events" Url="html/2e559de1-d050-0f52-5b23-ad6896bbf8d3.htm" />
+    <HelpKINode Title="methods" Url="html/b77dd40f-8bbb-b730-17d2-f7cc65e730d3.htm" />
+    <HelpKINode Title="methods" Url="html/24973595-f61e-38ae-e706-85fcb6f068b2.htm" />
+    <HelpKINode Title="properties" Url="html/dffe4f39-2c2f-cad2-553f-db47016334fb.htm" />
+    <HelpKINode Title="properties" Url="html/c04b2e73-2e9b-a789-89d0-244eab9e6d0b.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Consultation.consultationID property">
+    <HelpKINode Title="Consultation.consultationID Property " Url="html/7c7c4cd9-2c20-10be-16e7-c6b639dd615f.htm" />
+    <HelpKINode Title="Consultation.consultationID Property " Url="html/9e2f71df-0715-9e33-3708-a23e2ecb44fd.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Consultation.end_date property">
+    <HelpKINode Title="Consultation.end_date Property " Url="html/dd06b617-6b50-f8b3-a01c-04672ffc4795.htm" />
+    <HelpKINode Title="Consultation.end_date Property " Url="html/a71a5741-8f33-8199-df55-759d7e7448c4.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Consultation.ExtensionData property">
+    <HelpKINode Title="Consultation.ExtensionData Property " Url="html/1776b1a4-82b7-3201-e175-80f5c6eedf40.htm" />
+    <HelpKINode Title="Consultation.ExtensionData Property " Url="html/e4bc677e-8952-f3ef-7bcf-7ab74c8d29a2.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Consultation.patient_id property">
+    <HelpKINode Title="Consultation.patient_id Property " Url="html/d5678210-cc15-d2ae-f53f-6ca86c1f37b1.htm" />
+    <HelpKINode Title="Consultation.patient_id Property " Url="html/b4ed14a7-b707-bf4c-be69-13c0b1e4c8ce.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Consultation.PropertyChanged event">
+    <HelpKINode Title="Consultation.PropertyChanged Event" Url="html/04a9449f-9693-0d21-7db8-abbbcc684290.htm" />
+    <HelpKINode Title="Consultation.PropertyChanged Event" Url="html/d22e5602-63cc-ea46-1251-467a8a6c1a3f.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Consultation.staff_id property">
+    <HelpKINode Title="Consultation.staff_id Property " Url="html/df7bb1d2-ea97-9b33-e4e3-92170e4c22bd.htm" />
+    <HelpKINode Title="Consultation.staff_id Property " Url="html/bd27ee3a-fedc-deea-36c5-eae30263f71b.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Consultation.start_date property">
+    <HelpKINode Title="Consultation.start_date Property " Url="html/2d92deac-3ffe-0a96-5d20-2a4b5130cdf3.htm" />
+    <HelpKINode Title="Consultation.start_date Property " Url="html/1e96a63b-956b-49e1-2391-6c60189debd0.htm" />
+  </HelpKINode>
+  <HelpKINode Title="ConsultationId property" Url="html/320c0785-b516-92a1-b42a-6e4f3a5190a9.htm" />
+  <HelpKINode Title="consultationID property">
+    <HelpKINode Title="Consultation.consultationID Property " Url="html/7c7c4cd9-2c20-10be-16e7-c6b639dd615f.htm" />
+    <HelpKINode Title="Consultation.consultationID Property " Url="html/9e2f71df-0715-9e33-3708-a23e2ecb44fd.htm" />
+  </HelpKINode>
+  <HelpKINode Title="ConsultationIdk__BackingField property">
+    <HelpKINode Title="Patient.ConsultationIdk__BackingField Property " Url="html/0be4c84d-21ef-1b1d-8ad3-1c584e3440a7.htm" />
+    <HelpKINode Title="Patient.ConsultationIdk__BackingField Property " Url="html/627a25d8-96c0-3fcc-5d25-cbcd383bcb32.htm" />
+    <HelpKINode Title="Patient.ConsultationIdk__BackingField Property " Url="html/4ae50cd9-9afe-9bc6-c245-3ab19c0c2b48.htm" />
+    <HelpKINode Title="Patient.ConsultationIdk__BackingField Property " Url="html/b832c272-fc2f-4e65-20d5-d3a92e641da4.htm" />
+    <HelpKINode Title="Patient.ConsultationIdk__BackingField Property " Url="html/261885c4-3fb1-e23e-0395-590d976d9ea6.htm" />
+  </HelpKINode>
+  <HelpKINode Title="consultation_id property">
+    <HelpKINode Title="Diagnosis.consultation_id Property " Url="html/f11d18c0-fd6f-4336-aea2-899b7a87671a.htm" />
+    <HelpKINode Title="Diagnosis.consultation_id Property " Url="html/0e818e01-28ed-4258-1d68-ae5c9b6535f9.htm" />
+  </HelpKINode>
+  <HelpKINode Title="date property">
+    <HelpKINode Title="Diagnosis.date Property " Url="html/0f9a23a5-54a1-ba39-1b10-7c3a23e4434e.htm" />
+    <HelpKINode Title="Diagnosis.date Property " Url="html/804cb1d8-be8d-e41a-300d-083061ea0b91.htm" />
+    <HelpKINode Title="Perscription.date Property " Url="html/6d53c3e9-7788-be12-9d06-c2345d6df126.htm" />
+    <HelpKINode Title="Perscription.date Property " Url="html/fd126de3-096e-c1f7-6727-5cb72ba00093.htm" />
+  </HelpKINode>
+  <HelpKINode Title="DateOfBirth property" Url="html/ab9d9366-ed82-a851-6b01-51f880ab196e.htm" />
+  <HelpKINode Title="DateOfBirthk__BackingField property">
+    <HelpKINode Title="Person.DateOfBirthk__BackingField Property " Url="html/6349b965-f7b1-7d96-02f6-559e4bee024b.htm" />
+    <HelpKINode Title="Person.DateOfBirthk__BackingField Property " Url="html/a8c4d1d8-2c4a-9778-3fc8-fdde5eb6825d.htm" />
+    <HelpKINode Title="Person.DateOfBirthk__BackingField Property " Url="html/733b984a-befe-4a8c-6d90-3d01c50edfa9.htm" />
+    <HelpKINode Title="Person.DateOfBirthk__BackingField Property " Url="html/ae82a78b-002c-5a79-3794-03a609565270.htm" />
+    <HelpKINode Title="Person.DateOfBirthk__BackingField Property " Url="html/792bab26-f362-06bf-5f25-4567c948303a.htm" />
+  </HelpKINode>
+  <HelpKINode Title="description property">
+    <HelpKINode Title="Medicine.description Property " Url="html/82bafe5a-580c-96f5-5f22-4e1017012c53.htm" />
+    <HelpKINode Title="Medicine.description Property " Url="html/68764c50-5289-885b-2c02-1abbe07c866a.htm" />
+  </HelpKINode>
+  <HelpKINode Title="descriptionk__BackingField property">
+    <HelpKINode Title="Disease.descriptionk__BackingField Property " Url="html/dfbc2cbb-f224-0d63-af1f-fed66d50831b.htm" />
+    <HelpKINode Title="Disease.descriptionk__BackingField Property " Url="html/a053a06c-bd24-68b5-82f2-a40dfdd77118.htm" />
+  </HelpKINode>
+  <HelpKINode Title="diagnosis property">
+    <HelpKINode Title="Diagnosis.diagnosis Property " Url="html/f653b6ab-5b33-ae31-5ffe-0c9b6f3130a6.htm" />
+    <HelpKINode Title="Diagnosis.diagnosis Property " Url="html/792bd58a-c392-6d28-9c61-3de89683be3d.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Diagnosis structure">
+    <HelpKINode Title="Diagnosis Structure" Url="html/dc021932-7c6d-d850-f939-e66c89824c94.htm" />
+    <HelpKINode Title="Diagnosis Structure" Url="html/e99d8de0-9b38-7aab-57be-9268473b2537.htm" />
+    <HelpKINode Title="about Diagnosis structure" Url="html/e99d8de0-9b38-7aab-57be-9268473b2537.htm" />
+    <HelpKINode Title="about Diagnosis structure" Url="html/dc021932-7c6d-d850-f939-e66c89824c94.htm" />
+    <HelpKINode Title="events" Url="html/2d48b8f5-53f8-1c79-cec4-e373cd4dffd5.htm" />
+    <HelpKINode Title="events" Url="html/1d9a47a5-5f7e-1611-f68a-87613a19d17f.htm" />
+    <HelpKINode Title="methods" Url="html/9af4982e-24cd-9237-9cd9-9831b2d52615.htm" />
+    <HelpKINode Title="methods" Url="html/69d57635-b691-32e1-c95c-00acd8adb098.htm" />
+    <HelpKINode Title="properties" Url="html/d8f9cd7b-95a6-38f5-c6f2-6a9367c7d884.htm" />
+    <HelpKINode Title="properties" Url="html/406eabc5-5764-ed8e-c096-4d98e58011ca.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Diagnosis.consultation_id property">
+    <HelpKINode Title="Diagnosis.consultation_id Property " Url="html/0e818e01-28ed-4258-1d68-ae5c9b6535f9.htm" />
+    <HelpKINode Title="Diagnosis.consultation_id Property " Url="html/f11d18c0-fd6f-4336-aea2-899b7a87671a.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Diagnosis.date property">
+    <HelpKINode Title="Diagnosis.date Property " Url="html/0f9a23a5-54a1-ba39-1b10-7c3a23e4434e.htm" />
+    <HelpKINode Title="Diagnosis.date Property " Url="html/804cb1d8-be8d-e41a-300d-083061ea0b91.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Diagnosis.diagnosis property">
+    <HelpKINode Title="Diagnosis.diagnosis Property " Url="html/f653b6ab-5b33-ae31-5ffe-0c9b6f3130a6.htm" />
+    <HelpKINode Title="Diagnosis.diagnosis Property " Url="html/792bd58a-c392-6d28-9c61-3de89683be3d.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Diagnosis.diagnosis_id property">
+    <HelpKINode Title="Diagnosis.diagnosis_id Property " Url="html/675a1ce1-b8e9-437e-3890-9d935234a67b.htm" />
+    <HelpKINode Title="Diagnosis.diagnosis_id Property " Url="html/227f9c32-dfad-a1da-44c2-d6500461b6a4.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Diagnosis.doctorName property">
+    <HelpKINode Title="Diagnosis.doctorName Property " Url="html/c12dd89b-0d62-f822-b9b5-6e4ff6b2ca46.htm" />
+    <HelpKINode Title="Diagnosis.doctorName Property " Url="html/eb69489b-f392-fc97-d019-d328a9aa7ebd.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Diagnosis.ExtensionData property">
+    <HelpKINode Title="Diagnosis.ExtensionData Property " Url="html/bf50d8e0-1e45-cad6-afc4-308d3ea96316.htm" />
+    <HelpKINode Title="Diagnosis.ExtensionData Property " Url="html/53e2c9ae-c11b-62c3-218f-616d99844caa.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Diagnosis.PropertyChanged event">
+    <HelpKINode Title="Diagnosis.PropertyChanged Event" Url="html/e1d338e9-865b-ec32-ac0f-f1c7922fe067.htm" />
+    <HelpKINode Title="Diagnosis.PropertyChanged Event" Url="html/b802d6e4-6944-30e2-3bb3-87e6cc287516.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Diagnosis.symptoms property">
+    <HelpKINode Title="Diagnosis.symptoms Property " Url="html/448d090c-f26a-8053-f70f-4dff92d8893e.htm" />
+    <HelpKINode Title="Diagnosis.symptoms Property " Url="html/e793032f-c29e-7544-d509-8c5fbf64f851.htm" />
+  </HelpKINode>
+  <HelpKINode Title="DiagnosisId property" Url="html/73461bc7-55f5-f9bf-7a86-ed8f99fe75a0.htm" />
+  <HelpKINode Title="DiagnosisIdk__BackingField property">
+    <HelpKINode Title="Patient.DiagnosisIdk__BackingField Property " Url="html/5b4d6771-3e06-f36b-2416-02215e0a5023.htm" />
+    <HelpKINode Title="Patient.DiagnosisIdk__BackingField Property " Url="html/d2f2578f-ec67-7771-1c9b-ca23ee552344.htm" />
+    <HelpKINode Title="Patient.DiagnosisIdk__BackingField Property " Url="html/64572673-2f42-ed71-9aa2-2319c8cab3bc.htm" />
+    <HelpKINode Title="Patient.DiagnosisIdk__BackingField Property " Url="html/47abf4de-19fe-cb89-cbcb-9644fde430b2.htm" />
+    <HelpKINode Title="Patient.DiagnosisIdk__BackingField Property " Url="html/f762ca6a-3781-30d9-c2f1-bec668caf262.htm" />
+  </HelpKINode>
+  <HelpKINode Title="diagnosis_id property">
+    <HelpKINode Title="Diagnosis.diagnosis_id Property " Url="html/227f9c32-dfad-a1da-44c2-d6500461b6a4.htm" />
+    <HelpKINode Title="Diagnosis.diagnosis_id Property " Url="html/675a1ce1-b8e9-437e-3890-9d935234a67b.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Disease structure">
+    <HelpKINode Title="Disease Structure" Url="html/72477af5-b3f6-7e64-de41-8f1dfe316d68.htm" />
+    <HelpKINode Title="Disease Structure" Url="html/d2ffbf44-6956-ce56-634c-ec77efd6c5d9.htm" />
+    <HelpKINode Title="about Disease structure" Url="html/72477af5-b3f6-7e64-de41-8f1dfe316d68.htm" />
+    <HelpKINode Title="about Disease structure" Url="html/d2ffbf44-6956-ce56-634c-ec77efd6c5d9.htm" />
+    <HelpKINode Title="events" Url="html/6ebb48fd-3ca7-af8c-4873-00a4996bfe87.htm" />
+    <HelpKINode Title="events" Url="html/1749766a-f4e8-38f0-30af-6d60feaf120a.htm" />
+    <HelpKINode Title="methods" Url="html/ee1f8930-d4ef-b23f-6a1a-8dae8b821c3d.htm" />
+    <HelpKINode Title="methods" Url="html/5d66199e-1e13-9b54-28d6-7e8800a2cbb7.htm" />
+    <HelpKINode Title="properties" Url="html/d0d22224-21e3-642f-4037-bbe22f0a38c4.htm" />
+    <HelpKINode Title="properties" Url="html/380a5af2-3249-afe6-7c15-a7ef5b88c0f4.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Disease.causesk__BackingField property">
+    <HelpKINode Title="Disease.causesk__BackingField Property " Url="html/967ccc29-c2f4-ef3e-9009-d09b786513fd.htm" />
+    <HelpKINode Title="Disease.causesk__BackingField Property " Url="html/195d67b3-4cdb-5363-6522-25aaddb03747.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Disease.classificationk__BackingField property">
+    <HelpKINode Title="Disease.classificationk__BackingField Property " Url="html/9e7418f1-896d-c98f-6d85-3f7f5c2f6ec6.htm" />
+    <HelpKINode Title="Disease.classificationk__BackingField Property " Url="html/be02e2c2-a6b3-5d89-ff87-f80cda2ee61a.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Disease.descriptionk__BackingField property">
+    <HelpKINode Title="Disease.descriptionk__BackingField Property " Url="html/dfbc2cbb-f224-0d63-af1f-fed66d50831b.htm" />
+    <HelpKINode Title="Disease.descriptionk__BackingField Property " Url="html/a053a06c-bd24-68b5-82f2-a40dfdd77118.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Disease.ExtensionData property">
+    <HelpKINode Title="Disease.ExtensionData Property " Url="html/99d2ece7-85eb-8662-63f2-aef67aa67220.htm" />
+    <HelpKINode Title="Disease.ExtensionData Property " Url="html/d07e824a-d10d-a43f-2fd5-85a663ecd6cc.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Disease.namek__BackingField property">
+    <HelpKINode Title="Disease.namek__BackingField Property " Url="html/b407978a-56be-297a-c70f-263223aacc95.htm" />
+    <HelpKINode Title="Disease.namek__BackingField Property " Url="html/ac842d9d-f569-9577-9ca7-86c7e1f64a0e.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Disease.PropertyChanged event">
+    <HelpKINode Title="Disease.PropertyChanged Event" Url="html/c5e07111-22ec-3c62-46a7-fb0422dc267a.htm" />
+    <HelpKINode Title="Disease.PropertyChanged Event" Url="html/8d5c4d60-ad4a-2691-1666-631029d68828.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Disease.symptomsk__BackingField property">
+    <HelpKINode Title="Disease.symptomsk__BackingField Property " Url="html/d41de7c0-2757-0ed4-d846-a0942f74d5a8.htm" />
+    <HelpKINode Title="Disease.symptomsk__BackingField Property " Url="html/a1771fbe-afe5-87d6-fe08-33c6f9db943d.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Disease.treatmentsk__BackingField property">
+    <HelpKINode Title="Disease.treatmentsk__BackingField Property " Url="html/61e71baf-8cf4-a667-7269-b0b1a8392106.htm" />
+    <HelpKINode Title="Disease.treatmentsk__BackingField Property " Url="html/64ccffff-e168-2f72-4bf3-297cde4c44e2.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Dispose method">
+    <HelpKINode Title="Appointment.Dispose Method " Url="html/f76cca00-a14a-f6ac-7942-23f7263bca22.htm" />
+    <HelpKINode Title="Client.Dispose Method " Url="html/3f4f1cb7-b430-e229-aa86-fc3dba761920.htm" />
+    <HelpKINode Title="Login.Dispose Method " Url="html/059c9e04-2d95-1c5d-ad12-70694330d9c6.htm" />
+    <HelpKINode Title="Login.Dispose Method " Url="html/44ca87d6-808a-d3b8-9b43-304adda8f996.htm" />
+    <HelpKINode Title="MainForm.Dispose Method " Url="html/c091600e-cdcf-7b12-1756-c139864c6795.htm" />
+    <HelpKINode Title="PatientDetails.Dispose Method " Url="html/34038871-aa41-caec-76bd-bb4b1fd93de0.htm" />
+    <HelpKINode Title="Wiki.Dispose Method " Url="html/86b2ad82-6d65-e00a-93c1-4537c62ba2ef.htm" />
+  </HelpKINode>
+  <HelpKINode Title="DMS_Service.user_auth namespace" Url="html/e9ead8ab-c203-642d-ef99-429c85327d89.htm" />
+  <HelpKINode Title="DMS_Service.user_auth.user_auth_business class" Url="html/6f866fe1-c323-dca3-8167-9e92337f148a.htm" />
+  <HelpKINode Title="doctor property">
+    <HelpKINode Title="Perscription.doctor Property " Url="html/5ca175e6-59ea-088b-d0a1-97f0840bfa47.htm" />
+    <HelpKINode Title="Perscription.doctor Property " Url="html/3c348c98-7a68-05d2-5392-7fb10e7309c5.htm" />
+  </HelpKINode>
+  <HelpKINode Title="DoctorClient class">
+    <HelpKINode Title="DoctorClient Class" Url="html/8432bf7f-136a-c9e1-d1d9-29974804402f.htm" />
+    <HelpKINode Title="DoctorClient Class" Url="html/ce894f7a-77b6-1c28-1e32-ca64032acff8.htm" />
+    <HelpKINode Title="about DoctorClient class" Url="html/8432bf7f-136a-c9e1-d1d9-29974804402f.htm" />
+    <HelpKINode Title="about DoctorClient class" Url="html/ce894f7a-77b6-1c28-1e32-ca64032acff8.htm" />
+    <HelpKINode Title="constructor" Url="html/707c09a0-3ebb-81d5-5d22-c51b155273bc.htm" />
+    <HelpKINode Title="constructor" Url="html/90fbfeeb-5357-5c9a-8f74-70fefeae3648.htm" />
+    <HelpKINode Title="methods" Url="html/e4015048-26a3-29f1-402c-594e5a33d277.htm" />
+    <HelpKINode Title="methods" Url="html/96e91964-9eec-b203-7842-a7a322797e50.htm" />
+    <HelpKINode Title="properties" Url="html/d0f96f1d-97b7-7933-6c11-577410a5c095.htm" />
+    <HelpKINode Title="properties" Url="html/ca88a76b-8990-254a-d05c-f1634db76c28.htm" />
+  </HelpKINode>
+  <HelpKINode Title="DoctorClient.addConsultion method">
+    <HelpKINode Title="DoctorClient.addConsultion Method " Url="html/f5c33576-d3ba-78d1-8192-b8c357f6880b.htm" />
+    <HelpKINode Title="DoctorClient.addConsultion Method " Url="html/54b93169-aeb2-3182-603f-b73594a1c51b.htm" />
+  </HelpKINode>
+  <HelpKINode Title="DoctorClient.addConsultionAsync method">
+    <HelpKINode Title="DoctorClient.addConsultionAsync Method " Url="html/9033bb2c-d199-2175-23e4-28a85c10e13f.htm" />
+    <HelpKINode Title="DoctorClient.addConsultionAsync Method " Url="html/a28dc03c-a096-21b2-3aa1-e09ea17440bf.htm" />
+  </HelpKINode>
+  <HelpKINode Title="DoctorClient.addDiagnosis method">
+    <HelpKINode Title="DoctorClient.addDiagnosis Method " Url="html/872e8bf3-6a36-4032-107e-749eeef19683.htm" />
+    <HelpKINode Title="DoctorClient.addDiagnosis Method " Url="html/055d31a6-fe8b-692b-2f3a-38a2d6e4bee0.htm" />
+  </HelpKINode>
+  <HelpKINode Title="DoctorClient.addDiagnosisAsync method">
+    <HelpKINode Title="DoctorClient.addDiagnosisAsync Method " Url="html/4907fae5-9912-a5d6-c610-85aaeb41bf53.htm" />
+    <HelpKINode Title="DoctorClient.addDiagnosisAsync Method " Url="html/af0a50f5-51de-c87c-8f8c-6d6e9cdf975e.htm" />
+  </HelpKINode>
+  <HelpKINode Title="DoctorClient.addPerscription method">
+    <HelpKINode Title="DoctorClient.addPerscription Method " Url="html/6148addd-d84e-c28c-cae5-81ca3986c33f.htm" />
+    <HelpKINode Title="DoctorClient.addPerscription Method " Url="html/2e49de75-c031-e8ff-c6b9-b6cc64b98152.htm" />
+  </HelpKINode>
+  <HelpKINode Title="DoctorClient.addPerscriptionAsync method">
+    <HelpKINode Title="DoctorClient.addPerscriptionAsync Method " Url="html/2291ea03-1a47-d62b-a912-5ac40314ab78.htm" />
+    <HelpKINode Title="DoctorClient.addPerscriptionAsync Method " Url="html/11585616-7ba0-76f2-b49c-4a35c65b724e.htm" />
+  </HelpKINode>
+  <HelpKINode Title="DoctorClient.addTestAppointment method">
+    <HelpKINode Title="DoctorClient.addTestAppointment Method " Url="html/5cb2bf4d-a889-50fc-de70-f8aa2f44ee09.htm" />
+    <HelpKINode Title="DoctorClient.addTestAppointment Method " Url="html/4866767d-3668-58e0-5a21-8f5d5fea45ab.htm" />
+  </HelpKINode>
+  <HelpKINode Title="DoctorClient.addTestAppointmentAsync method">
+    <HelpKINode Title="DoctorClient.addTestAppointmentAsync Method " Url="html/b4ef7284-49a5-3b96-ceb3-bf844d226768.htm" />
+    <HelpKINode Title="DoctorClient.addTestAppointmentAsync Method " Url="html/b55157e6-d76c-6af5-8262-16a88c1e024d.htm" />
+  </HelpKINode>
+  <HelpKINode Title="DoctorClient.addTestPatient method">
+    <HelpKINode Title="DoctorClient.addTestPatient Method " Url="html/ea21bbcf-4d3a-3300-e31f-696bd878c105.htm" />
+    <HelpKINode Title="DoctorClient.addTestPatient Method " Url="html/2dce56d9-9c51-9200-4acf-9534a92b496d.htm" />
+  </HelpKINode>
+  <HelpKINode Title="DoctorClient.addTestPatientAsync method">
+    <HelpKINode Title="DoctorClient.addTestPatientAsync Method " Url="html/d9d5e0a9-1479-46d2-c5d0-c6fa75197897.htm" />
+    <HelpKINode Title="DoctorClient.addTestPatientAsync Method " Url="html/5365c7d3-044c-40f0-03ec-a00b5c4594a9.htm" />
+  </HelpKINode>
+  <HelpKINode Title="DoctorClient.DoctorClient constructor">
+    <HelpKINode Title="DoctorClient Constructor " Url="html/90fbfeeb-5357-5c9a-8f74-70fefeae3648.htm" />
+    <HelpKINode Title="DoctorClient Constructor " Url="html/707c09a0-3ebb-81d5-5d22-c51b155273bc.htm" />
+  </HelpKINode>
+  <HelpKINode Title="DoctorClient.getConsultationHistorybyPatient method">
+    <HelpKINode Title="DoctorClient.getConsultationHistorybyPatient Method " Url="html/369daa38-4e37-60a0-35f6-a2e849a3c1b7.htm" />
+    <HelpKINode Title="DoctorClient.getConsultationHistorybyPatient Method " Url="html/1cfed953-28b9-cfd7-5972-60f16ec382a9.htm" />
+  </HelpKINode>
+  <HelpKINode Title="DoctorClient.getConsultationHistorybyPatientAsync method">
+    <HelpKINode Title="DoctorClient.getConsultationHistorybyPatientAsync Method " Url="html/9945b8d5-7f56-7fc9-f6d5-74c4aba2773c.htm" />
+    <HelpKINode Title="DoctorClient.getConsultationHistorybyPatientAsync Method " Url="html/ae164f8c-4d24-bb4a-a9cf-ecc0058e446e.htm" />
+  </HelpKINode>
+  <HelpKINode Title="DoctorClient.getConsultationOfToday method">
+    <HelpKINode Title="DoctorClient.getConsultationOfToday Method " Url="html/4e405910-730e-cbf9-4c27-a4d9aa71974a.htm" />
+    <HelpKINode Title="DoctorClient.getConsultationOfToday Method " Url="html/b09cc0fd-228e-0734-31f9-d9d73bf303af.htm" />
+  </HelpKINode>
+  <HelpKINode Title="DoctorClient.getConsultationOfTodayAsync method">
+    <HelpKINode Title="DoctorClient.getConsultationOfTodayAsync Method " Url="html/b12f94a0-4f68-beb5-29e7-af4929c57e27.htm" />
+    <HelpKINode Title="DoctorClient.getConsultationOfTodayAsync Method " Url="html/4173c0ee-42b6-c3a2-ccb2-57b72232b545.htm" />
+  </HelpKINode>
+  <HelpKINode Title="DoctorClient.getDiagnosisHistoryByPersionID method">
+    <HelpKINode Title="DoctorClient.getDiagnosisHistoryByPersionID Method " Url="html/01c93495-a494-0eca-9d8b-2f34f0f47dee.htm" />
+    <HelpKINode Title="DoctorClient.getDiagnosisHistoryByPersionID Method " Url="html/417e369e-5d9f-0c3f-65e1-0e32304dd525.htm" />
+  </HelpKINode>
+  <HelpKINode Title="DoctorClient.getDiagnosisHistoryByPersionIDAsync method">
+    <HelpKINode Title="DoctorClient.getDiagnosisHistoryByPersionIDAsync Method " Url="html/291c5b77-8491-2a87-8c42-6eefbb1c06bb.htm" />
+    <HelpKINode Title="DoctorClient.getDiagnosisHistoryByPersionIDAsync Method " Url="html/466bf5f3-5391-12ad-53a5-46579161d289.htm" />
+  </HelpKINode>
+  <HelpKINode Title="DoctorClient.getnextConsultationID method">
+    <HelpKINode Title="DoctorClient.getnextConsultationID Method " Url="html/ceab3932-2d00-fc02-0810-938575be0b3d.htm" />
+    <HelpKINode Title="DoctorClient.getnextConsultationID Method " Url="html/99b269f9-e27f-b976-4bb5-866880ecc69c.htm" />
+  </HelpKINode>
+  <HelpKINode Title="DoctorClient.getnextConsultationIDAsync method">
+    <HelpKINode Title="DoctorClient.getnextConsultationIDAsync Method " Url="html/946c5595-0376-2983-fae4-1a02befb3070.htm" />
+    <HelpKINode Title="DoctorClient.getnextConsultationIDAsync Method " Url="html/ba9d03e8-315b-9609-bc0b-2ff2417efe3b.htm" />
+  </HelpKINode>
+  <HelpKINode Title="DoctorClient.GetPatientOverview method">
+    <HelpKINode Title="DoctorClient.GetPatientOverview Method " Url="html/032ff4d0-de23-bfff-3af7-3ba98e5a8a90.htm" />
+    <HelpKINode Title="DoctorClient.GetPatientOverview Method " Url="html/d57e26db-21e4-9dbf-427e-f4c5b9400d81.htm" />
+  </HelpKINode>
+  <HelpKINode Title="DoctorClient.GetPatientOverviewAsync method">
+    <HelpKINode Title="DoctorClient.GetPatientOverviewAsync Method " Url="html/02265137-1b95-c211-d9ea-ce87b42e4356.htm" />
+    <HelpKINode Title="DoctorClient.GetPatientOverviewAsync Method " Url="html/e193e0b5-5e7c-3915-0b97-19616a225076.htm" />
+  </HelpKINode>
+  <HelpKINode Title="DoctorClient.getPatientPerscriptions method">
+    <HelpKINode Title="DoctorClient.getPatientPerscriptions Method " Url="html/2d7060f9-4110-b05d-675e-df0e57300e3f.htm" />
+    <HelpKINode Title="DoctorClient.getPatientPerscriptions Method " Url="html/1f6e7c93-163e-d435-0848-62f8c8dfc8ad.htm" />
+  </HelpKINode>
+  <HelpKINode Title="DoctorClient.getPatientPerscriptionsAsync method">
+    <HelpKINode Title="DoctorClient.getPatientPerscriptionsAsync Method " Url="html/99195b95-408c-f63d-51a4-804797bb46c0.htm" />
+    <HelpKINode Title="DoctorClient.getPatientPerscriptionsAsync Method " Url="html/e9d840f0-96fc-beda-66e9-58a50170f4f2.htm" />
+  </HelpKINode>
+  <HelpKINode Title="DoctorClient.GetPatient_by_lastName_DateOfBirth method">
+    <HelpKINode Title="DoctorClient.GetPatient_by_lastName_DateOfBirth Method " Url="html/e24c1abb-13c4-aec1-a4f9-a0659ecdb897.htm" />
+    <HelpKINode Title="DoctorClient.GetPatient_by_lastName_DateOfBirth Method " Url="html/4d9b7e51-3143-6033-d046-104aa7b6aa6f.htm" />
+  </HelpKINode>
+  <HelpKINode Title="DoctorClient.GetPatient_by_lastName_DateOfBirthAsync method">
+    <HelpKINode Title="DoctorClient.GetPatient_by_lastName_DateOfBirthAsync Method " Url="html/55705c61-b2df-cbb8-4477-eea0d605b7dd.htm" />
+    <HelpKINode Title="DoctorClient.GetPatient_by_lastName_DateOfBirthAsync Method " Url="html/7bbb1c67-8fa3-1966-d335-a2a2cabf0100.htm" />
+  </HelpKINode>
+  <HelpKINode Title="DoctorClient.GetStaff_by_Personid method">
+    <HelpKINode Title="DoctorClient.GetStaff_by_Personid Method " Url="html/116bad37-1608-250e-c726-4fb5c1932fda.htm" />
+    <HelpKINode Title="DoctorClient.GetStaff_by_Personid Method " Url="html/1751ca3b-5e72-a392-4723-85836624c3c1.htm" />
+  </HelpKINode>
+  <HelpKINode Title="DoctorClient.GetStaff_by_PersonidAsync method">
+    <HelpKINode Title="DoctorClient.GetStaff_by_PersonidAsync Method " Url="html/fa8dbb5a-1ce9-4d04-9c7f-04009c409221.htm" />
+    <HelpKINode Title="DoctorClient.GetStaff_by_PersonidAsync Method " Url="html/0f61523a-9eae-7214-bfbe-5cd8078f507d.htm" />
+  </HelpKINode>
+  <HelpKINode Title="DoctorClient.GetStaff_by_staff_id method">
+    <HelpKINode Title="DoctorClient.GetStaff_by_staff_id Method " Url="html/88737c3f-b011-ac7b-0b36-3c4df34b408a.htm" />
+    <HelpKINode Title="DoctorClient.GetStaff_by_staff_id Method " Url="html/0e59ff2a-293b-ea3e-cbeb-a423555b322a.htm" />
+  </HelpKINode>
+  <HelpKINode Title="DoctorClient.GetStaff_by_staff_idAsync method">
+    <HelpKINode Title="DoctorClient.GetStaff_by_staff_idAsync Method " Url="html/ab58a7c2-05a2-d287-5247-9230bb4c3318.htm" />
+    <HelpKINode Title="DoctorClient.GetStaff_by_staff_idAsync Method " Url="html/fc2ce40a-b88b-7248-8bd6-c24fb7a82c1e.htm" />
+  </HelpKINode>
+  <HelpKINode Title="DoctorClient.get_all_diseases method">
+    <HelpKINode Title="DoctorClient.get_all_diseases Method " Url="html/a96a38c3-13a4-9b07-727d-dd59391680c8.htm" />
+    <HelpKINode Title="DoctorClient.get_all_diseases Method " Url="html/bfe4f229-cc25-df7d-3527-3314d7067e7f.htm" />
+  </HelpKINode>
+  <HelpKINode Title="DoctorClient.get_all_diseasesAsync method">
+    <HelpKINode Title="DoctorClient.get_all_diseasesAsync Method " Url="html/34d65ebe-8d35-e7eb-d08b-ba5998fce0d7.htm" />
+    <HelpKINode Title="DoctorClient.get_all_diseasesAsync Method " Url="html/89978c1b-9b43-234b-3526-99dcaaedf847.htm" />
+  </HelpKINode>
+  <HelpKINode Title="DoctorClient.get_all_medicines method">
+    <HelpKINode Title="DoctorClient.get_all_medicines Method " Url="html/6c0f19f3-0605-3c66-0271-167550ef469b.htm" />
+    <HelpKINode Title="DoctorClient.get_all_medicines Method " Url="html/30bd5909-042e-790f-5cdd-4901847f2e81.htm" />
+  </HelpKINode>
+  <HelpKINode Title="DoctorClient.get_all_medicinesAsync method">
+    <HelpKINode Title="DoctorClient.get_all_medicinesAsync Method " Url="html/e58747c9-c284-7aea-67bd-14b5dcc0ce9b.htm" />
+    <HelpKINode Title="DoctorClient.get_all_medicinesAsync Method " Url="html/fda36373-03ba-8242-0fb2-9ec1fdd2a5b3.htm" />
+  </HelpKINode>
+  <HelpKINode Title="DoctorClient.Login method">
+    <HelpKINode Title="DoctorClient.Login Method " Url="html/723661df-7b10-5868-3ec6-642bdb59f0fb.htm" />
+    <HelpKINode Title="DoctorClient.Login Method " Url="html/90fb8abf-e7a2-76af-6ba1-dd50b97887a0.htm" />
+  </HelpKINode>
+  <HelpKINode Title="DoctorClient.LoginAsync method">
+    <HelpKINode Title="DoctorClient.LoginAsync Method " Url="html/01987cf4-5fc2-c190-abde-1e54e152eb2b.htm" />
+    <HelpKINode Title="DoctorClient.LoginAsync Method " Url="html/afa18d8c-120c-4324-526e-12dd9d28af61.htm" />
+  </HelpKINode>
+  <HelpKINode Title="DoctorClient.SearchconsultionHistoryByStaffID method">
+    <HelpKINode Title="DoctorClient.SearchconsultionHistoryByStaffID Method " Url="html/ff4df503-8fc2-e10b-887b-82869d895d27.htm" />
+    <HelpKINode Title="DoctorClient.SearchconsultionHistoryByStaffID Method " Url="html/485dd42b-435c-6933-78ad-b8b8cf64473b.htm" />
+  </HelpKINode>
+  <HelpKINode Title="DoctorClient.SearchconsultionHistoryByStaffIDAsync method">
+    <HelpKINode Title="DoctorClient.SearchconsultionHistoryByStaffIDAsync Method " Url="html/343faa7f-798e-2c39-dc84-c646e0098fbf.htm" />
+    <HelpKINode Title="DoctorClient.SearchconsultionHistoryByStaffIDAsync Method " Url="html/07e14f83-67bc-ecc4-075b-e3b4fff4baab.htm" />
+  </HelpKINode>
+  <HelpKINode Title="DoctorClient.SearchPatients method">
+    <HelpKINode Title="DoctorClient.SearchPatients Method " Url="html/fd0b5898-6ccd-8856-120d-e665ac88e268.htm" />
+    <HelpKINode Title="DoctorClient.SearchPatients Method " Url="html/0850336b-eebc-d275-de75-6b0d8cddc2b4.htm" />
+  </HelpKINode>
+  <HelpKINode Title="DoctorClient.SearchPatientsAsync method">
+    <HelpKINode Title="DoctorClient.SearchPatientsAsync Method " Url="html/94584813-5649-5b00-0bfc-21e67ae5df1e.htm" />
+    <HelpKINode Title="DoctorClient.SearchPatientsAsync Method " Url="html/4ba3bd5b-47bc-dc43-549c-3175c2daf724.htm" />
+  </HelpKINode>
+  <HelpKINode Title="DoctorClient.search_disease method">
+    <HelpKINode Title="DoctorClient.search_disease Method " Url="html/56a89903-c8ca-3ba2-8871-114e63d9799d.htm" />
+    <HelpKINode Title="DoctorClient.search_disease Method " Url="html/25809cc5-1d37-6b92-5e28-cecb45b4bf00.htm" />
+  </HelpKINode>
+  <HelpKINode Title="DoctorClient.search_diseaseAsync method">
+    <HelpKINode Title="DoctorClient.search_diseaseAsync Method " Url="html/326aa756-7f3f-4295-2138-0c91a3e54e96.htm" />
+    <HelpKINode Title="DoctorClient.search_diseaseAsync Method " Url="html/cecf8ecb-afca-41e5-9290-421245eebc0d.htm" />
+  </HelpKINode>
+  <HelpKINode Title="DoctorClient.search_medicine method">
+    <HelpKINode Title="DoctorClient.search_medicine Method " Url="html/92920a21-ab0e-1774-3cd9-a90ba5a66d62.htm" />
+    <HelpKINode Title="DoctorClient.search_medicine Method " Url="html/23f6c244-42b1-2e2b-b59a-92ad0ea19934.htm" />
+  </HelpKINode>
+  <HelpKINode Title="DoctorClient.search_medicineAsync method">
+    <HelpKINode Title="DoctorClient.search_medicineAsync Method " Url="html/971b68ff-7af4-2a1e-da9b-a8e0202d4860.htm" />
+    <HelpKINode Title="DoctorClient.search_medicineAsync Method " Url="html/960eadf1-f30b-2174-4be6-41f5e05b6727.htm" />
+  </HelpKINode>
+  <HelpKINode Title="DoctorClient.updateConsultion_End_Date method">
+    <HelpKINode Title="DoctorClient.updateConsultion_End_Date Method " Url="html/e58336b6-eb8f-c26f-b5df-87b58b6d7751.htm" />
+    <HelpKINode Title="DoctorClient.updateConsultion_End_Date Method " Url="html/0155c483-f4a5-6390-c46d-f9a2c1c16eba.htm" />
+  </HelpKINode>
+  <HelpKINode Title="DoctorClient.updateConsultion_End_DateAsync method">
+    <HelpKINode Title="DoctorClient.updateConsultion_End_DateAsync Method " Url="html/e71924e1-78b1-55d1-c49f-5609f3a31529.htm" />
+    <HelpKINode Title="DoctorClient.updateConsultion_End_DateAsync Method " Url="html/7b59191c-eb14-ada1-4dfb-c0864e561f74.htm" />
+  </HelpKINode>
+  <HelpKINode Title="doctorId property">
+    <HelpKINode Title="Perscription.doctorId Property " Url="html/b03c00a3-b66a-2c95-29f9-3198f08c4e76.htm" />
+    <HelpKINode Title="Perscription.doctorId Property " Url="html/8225c695-d289-f3aa-5e0a-80f39f30188d.htm" />
+  </HelpKINode>
+  <HelpKINode Title="doctorName property">
+    <HelpKINode Title="Diagnosis.doctorName Property " Url="html/c12dd89b-0d62-f822-b9b5-6e4ff6b2ca46.htm" />
+    <HelpKINode Title="Diagnosis.doctorName Property " Url="html/eb69489b-f392-fc97-d019-d328a9aa7ebd.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Doctor_Client namespace" Url="html/5a8305d2-032b-9898-c93c-34dbe3976b06.htm" />
+  <HelpKINode Title="Doctor_Client.Appointment class" Url="html/89adba32-5f50-d0ef-4599-25a7418b1674.htm" />
+  <HelpKINode Title="Doctor_Client.Client class" Url="html/9c1ddbbb-bf33-ec39-f480-118b6f158bee.htm" />
+  <HelpKINode Title="Doctor_Client.Login class" Url="html/a688b95d-f75c-6262-9606-2e02145a2e7c.htm" />
+  <HelpKINode Title="Doctor_Client.PatientDetails class" Url="html/00920e19-4fc7-13fd-56eb-14fc1632b1ce.htm" />
+  <HelpKINode Title="Doctor_Client.ServerConnectionagenda namespace" Url="html/4e7676a5-0049-2be7-22ec-475a262fd71c.htm" />
+  <HelpKINode Title="Doctor_Client.ServerConnectionagenda.Appointment structure" Url="html/81660b45-4375-2b8a-e6e1-05212c27ffe4.htm" />
+  <HelpKINode Title="Doctor_Client.ServerConnectionagenda.AppointmentClient class" Url="html/6fc972c5-1307-1829-f965-85a2507b5e55.htm" />
+  <HelpKINode Title="Doctor_Client.ServerConnectionagenda.IAppointment interface" Url="html/abfb8497-65fb-e1bc-eac1-c8406fbebead.htm" />
+  <HelpKINode Title="Doctor_Client.ServerConnectionagenda.IAppointmentChannel interface" Url="html/29338ecf-34e8-0ace-506e-1793286876ce.htm" />
+  <HelpKINode Title="Doctor_Client.ServerConnectionagenda.Patient class" Url="html/899113aa-eafc-ff5d-647b-aa3325d0c9bb.htm" />
+  <HelpKINode Title="Doctor_Client.ServerConnectionagenda.Person class" Url="html/877c6fda-edef-8b32-8244-0e5fea654d9f.htm" />
+  <HelpKINode Title="Doctor_Client.ServerConnectionMedicalInformation namespace" Url="html/f736ee30-92e3-e68c-f59d-432e2aad2e30.htm" />
+  <HelpKINode Title="Doctor_Client.ServerConnectionMedicalInformation.Consultation structure" Url="html/9ff8957b-eff5-f17c-317f-e7316436ac28.htm" />
+  <HelpKINode Title="Doctor_Client.ServerConnectionMedicalInformation.Diagnosis structure" Url="html/dc021932-7c6d-d850-f939-e66c89824c94.htm" />
+  <HelpKINode Title="Doctor_Client.ServerConnectionMedicalInformation.Disease structure" Url="html/d2ffbf44-6956-ce56-634c-ec77efd6c5d9.htm" />
+  <HelpKINode Title="Doctor_Client.ServerConnectionMedicalInformation.DoctorClient class" Url="html/8432bf7f-136a-c9e1-d1d9-29974804402f.htm" />
+  <HelpKINode Title="Doctor_Client.ServerConnectionMedicalInformation.IDoctor interface" Url="html/04c76745-830e-7913-52c4-ec99f3cecd5f.htm" />
+  <HelpKINode Title="Doctor_Client.ServerConnectionMedicalInformation.IDoctorChannel interface" Url="html/68f0adb4-9603-72b4-09ba-9aa23f948709.htm" />
+  <HelpKINode Title="Doctor_Client.ServerConnectionMedicalInformation.Medicine structure" Url="html/177f9026-f221-49ee-9397-a745313139a4.htm" />
+  <HelpKINode Title="Doctor_Client.ServerConnectionMedicalInformation.Patient class" Url="html/5062a5ef-2e84-2aa3-71d3-3085809b989a.htm" />
+  <HelpKINode Title="Doctor_Client.ServerConnectionMedicalInformation.Perscription structure" Url="html/f592e8b6-b464-0f85-7d2d-84551fae84cc.htm" />
+  <HelpKINode Title="Doctor_Client.ServerConnectionMedicalInformation.Person class" Url="html/094c8a58-e7e7-923b-9764-da8ad3e4b19c.htm" />
+  <HelpKINode Title="Doctor_Client.ServerConnectionMedicalInformation.Staff class" Url="html/eef3c097-f38e-93e9-da50-8aea7d7cb08a.htm" />
+  <HelpKINode Title="Doctor_Client.Wiki class" Url="html/5d90ae7a-9c52-d9c8-1a9b-24645e028a5f.htm" />
+  <HelpKINode Title="editPatient method">
+    <HelpKINode Title="AdministrationClient.editPatient Method " Url="html/bad2dcab-a8da-da76-2af8-453a7b82b4e9.htm" />
+    <HelpKINode Title="IAdministration.editPatient Method " Url="html/00325fbc-e5f2-65b0-d0cb-5b1ea686cd3b.htm" />
+  </HelpKINode>
+  <HelpKINode Title="editPatientAsync method">
+    <HelpKINode Title="AdministrationClient.editPatientAsync Method " Url="html/d3f4d789-e2fe-4c7b-9ad5-9d17eac4f980.htm" />
+    <HelpKINode Title="IAdministration.editPatientAsync Method " Url="html/4936fc12-a47c-a9eb-a2fa-46ed04b6b5db.htm" />
+  </HelpKINode>
+  <HelpKINode Title="editPerson method">
+    <HelpKINode Title="AdministrationClient.editPerson Method " Url="html/e1ad2c39-4852-6c45-d2f6-648a13c30f3e.htm" />
+    <HelpKINode Title="IAdministration.editPerson Method " Url="html/b758066b-2a78-68a6-15e8-0feb73cb827a.htm" />
+  </HelpKINode>
+  <HelpKINode Title="editPersonAsync method">
+    <HelpKINode Title="AdministrationClient.editPersonAsync Method " Url="html/4bff2691-608e-ab41-5c5b-7697f3baf37a.htm" />
+    <HelpKINode Title="IAdministration.editPersonAsync Method " Url="html/42d754bb-3138-6a3b-9fd9-ca42fdd4f852.htm" />
+  </HelpKINode>
+  <HelpKINode Title="editStaff method">
+    <HelpKINode Title="AdministrationClient.editStaff Method " Url="html/c8a12bcd-9fc2-a15c-28e6-39cd74fede1a.htm" />
+    <HelpKINode Title="IAdministration.editStaff Method " Url="html/bf816687-d1d6-80b6-61e0-8d8b29596932.htm" />
+  </HelpKINode>
+  <HelpKINode Title="editStaffAsync method">
+    <HelpKINode Title="AdministrationClient.editStaffAsync Method " Url="html/c224817d-80e5-10d4-6338-eb997a76e007.htm" />
+    <HelpKINode Title="IAdministration.editStaffAsync Method " Url="html/16f1a769-9692-dee1-87f6-0f656f99ca60.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Email property" Url="html/0dc98bfd-592b-e348-76b9-ea8625bcad2e.htm" />
+  <HelpKINode Title="Emailk__BackingField property">
+    <HelpKINode Title="Person.Emailk__BackingField Property " Url="html/66de9a87-2a3c-04eb-5c71-2d760e573ae6.htm" />
+    <HelpKINode Title="Person.Emailk__BackingField Property " Url="html/76506de0-6040-be3e-29d3-eb340886033d.htm" />
+    <HelpKINode Title="Person.Emailk__BackingField Property " Url="html/33692256-d4cf-63d4-96ab-bc063c0c1ecf.htm" />
+    <HelpKINode Title="Person.Emailk__BackingField Property " Url="html/b2ab00c7-26ec-23eb-7d2e-3407907ad385.htm" />
+    <HelpKINode Title="Person.Emailk__BackingField Property " Url="html/be673c7f-8c30-4c30-b093-e275ba27bcfa.htm" />
+  </HelpKINode>
+  <HelpKINode Title="end_date property">
+    <HelpKINode Title="Appointment.end_date Property " Url="html/c9cbd0b8-cb28-5511-dabb-66db75056856.htm" />
+    <HelpKINode Title="Appointment.end_date Property " Url="html/1701d5e3-f1fa-6e44-13ac-ee0598bf85ed.htm" />
+    <HelpKINode Title="Consultation.end_date Property " Url="html/a71a5741-8f33-8199-df55-759d7e7448c4.htm" />
+    <HelpKINode Title="Consultation.end_date Property " Url="html/dd06b617-6b50-f8b3-a01c-04672ffc4795.htm" />
+  </HelpKINode>
+  <HelpKINode Title="End_date property" Url="html/899c52da-eb56-e963-a0a3-510b79ffe3fc.htm" />
+  <HelpKINode Title="ExtensionData property">
+    <HelpKINode Title="Appointment.ExtensionData Property " Url="html/7812628f-7653-e3b2-c643-441665567fb8.htm" />
+    <HelpKINode Title="Appointment.ExtensionData Property " Url="html/a845e02b-a23b-3ca5-54b8-581582873ae8.htm" />
+    <HelpKINode Title="Consultation.ExtensionData Property " Url="html/1776b1a4-82b7-3201-e175-80f5c6eedf40.htm" />
+    <HelpKINode Title="Consultation.ExtensionData Property " Url="html/e4bc677e-8952-f3ef-7bcf-7ab74c8d29a2.htm" />
+    <HelpKINode Title="Diagnosis.ExtensionData Property " Url="html/bf50d8e0-1e45-cad6-afc4-308d3ea96316.htm" />
+    <HelpKINode Title="Diagnosis.ExtensionData Property " Url="html/53e2c9ae-c11b-62c3-218f-616d99844caa.htm" />
+    <HelpKINode Title="Disease.ExtensionData Property " Url="html/d07e824a-d10d-a43f-2fd5-85a663ecd6cc.htm" />
+    <HelpKINode Title="Disease.ExtensionData Property " Url="html/99d2ece7-85eb-8662-63f2-aef67aa67220.htm" />
+    <HelpKINode Title="Medicine.ExtensionData Property " Url="html/bdb10b3f-8047-de88-26fd-919e51b563aa.htm" />
+    <HelpKINode Title="Medicine.ExtensionData Property " Url="html/937ccad6-17d7-89db-df1e-75cbf2007ea1.htm" />
+    <HelpKINode Title="Perscription.ExtensionData Property " Url="html/8f4782ba-922b-52ff-9490-1eb19693db59.htm" />
+    <HelpKINode Title="Perscription.ExtensionData Property " Url="html/fa376f37-1fc7-85f9-3a67-2575423b1e30.htm" />
+    <HelpKINode Title="Person.ExtensionData Property " Url="html/697c7702-c81a-b72b-409c-ff5d41c9b1e5.htm" />
+    <HelpKINode Title="Person.ExtensionData Property " Url="html/696cf557-b97f-1dde-a4b0-d2aba9419a05.htm" />
+    <HelpKINode Title="Person.ExtensionData Property " Url="html/f240257c-11f9-5c9e-201a-131fc50cc11e.htm" />
+    <HelpKINode Title="Person.ExtensionData Property " Url="html/6c9604c5-e8b5-417c-0e14-c990c2c3744a.htm" />
+    <HelpKINode Title="Person.ExtensionData Property " Url="html/94d80e64-53ef-6e2a-7cfe-d3b9f824e2ee.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Finalize method" Url="html/231a0b2a-f2c2-8da7-58f0-35b3f5f38a83.htm" />
+  <HelpKINode Title="FirstName property" Url="html/d133ef83-8820-7a41-b438-ec203b6b3b35.htm" />
+  <HelpKINode Title="FirstNamek__BackingField property">
+    <HelpKINode Title="Person.FirstNamek__BackingField Property " Url="html/bfb74876-4cb4-dd4b-563d-81e2391b8445.htm" />
+    <HelpKINode Title="Person.FirstNamek__BackingField Property " Url="html/e3534258-b99e-5262-f94e-e81be97ef1e5.htm" />
+    <HelpKINode Title="Person.FirstNamek__BackingField Property " Url="html/e8789312-7bbd-889f-fbd4-5d4fbb828596.htm" />
+    <HelpKINode Title="Person.FirstNamek__BackingField Property " Url="html/9f4fce1d-c774-7520-7496-fe9dd51eb697.htm" />
+    <HelpKINode Title="Person.FirstNamek__BackingField Property " Url="html/98b9d552-5cba-d620-5475-ed330cc3979b.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Functionk__BackingField property">
+    <HelpKINode Title="Staff.Functionk__BackingField Property " Url="html/f04212f9-d80e-59d2-d068-4d21432514a2.htm" />
+    <HelpKINode Title="Staff.Functionk__BackingField Property " Url="html/8cb74a07-1168-cc5d-1c57-d608f508fef4.htm" />
+    <HelpKINode Title="Staff.Functionk__BackingField Property " Url="html/1815b8cd-212e-e464-287d-b3bc2dddbe55.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Gender property" Url="html/fe007d30-f57a-3363-1176-4d6fbf02b4a2.htm" />
+  <HelpKINode Title="Genderk__BackingField property">
+    <HelpKINode Title="Person.Genderk__BackingField Property " Url="html/0b748db8-d03a-308e-8903-fd4319d855cd.htm" />
+    <HelpKINode Title="Person.Genderk__BackingField Property " Url="html/62442561-0c60-7fcd-602e-d4590dbaae1c.htm" />
+    <HelpKINode Title="Person.Genderk__BackingField Property " Url="html/6a19a783-6229-a064-11e5-6cd1db74dc7b.htm" />
+    <HelpKINode Title="Person.Genderk__BackingField Property " Url="html/33fae85c-cc5f-ca17-3a7e-0138e6e5dc34.htm" />
+    <HelpKINode Title="Person.Genderk__BackingField Property " Url="html/977a8962-b515-6651-8645-32e6086b8702.htm" />
+  </HelpKINode>
+  <HelpKINode Title="getAllStaff method">
+    <HelpKINode Title="AdministrationClient.getAllStaff Method " Url="html/cec99fbf-3b50-e562-f41c-c3cfe0078cb8.htm" />
+    <HelpKINode Title="IAdministration.getAllStaff Method " Url="html/a9244936-761b-24b9-ba2b-ecb964d50772.htm" />
+  </HelpKINode>
+  <HelpKINode Title="getAllStaffAsync method">
+    <HelpKINode Title="AdministrationClient.getAllStaffAsync Method " Url="html/08ad00be-16b1-7c9c-ec7f-5710e5dca622.htm" />
+    <HelpKINode Title="IAdministration.getAllStaffAsync Method " Url="html/78b63f1f-f63b-53a1-000b-9bae5a253d17.htm" />
+  </HelpKINode>
+  <HelpKINode Title="getAppointmentsHistorybyPatient method">
+    <HelpKINode Title="AppointmentClient.getAppointmentsHistorybyPatient Method " Url="html/2c7d24fa-c6af-2f7e-ad7d-ead0f2c01b87.htm" />
+    <HelpKINode Title="AppointmentClient.getAppointmentsHistorybyPatient Method " Url="html/bb8aabd6-56de-8fc6-d6ab-43f3d581c729.htm" />
+    <HelpKINode Title="Appointment_businesslayer.getAppointmentsHistorybyPatient Method " Url="html/a476f63d-0b56-bab3-1a12-2688f41f2047.htm" />
+    <HelpKINode Title="IAppointment.getAppointmentsHistorybyPatient Method " Url="html/a3e6f4a0-e155-cfaf-57c6-544457203a62.htm" />
+    <HelpKINode Title="IAppointment.getAppointmentsHistorybyPatient Method " Url="html/81569293-a865-17f5-017e-846decb4936c.htm" />
+    <HelpKINode Title="IAppointment.getAppointmentsHistorybyPatient Method " Url="html/baa5cd43-5bcc-95ba-1314-29537aab7246.htm" />
+  </HelpKINode>
+  <HelpKINode Title="getAppointmentsHistorybyPatientAsync method">
+    <HelpKINode Title="AppointmentClient.getAppointmentsHistorybyPatientAsync Method " Url="html/35896d3a-1753-0cfc-d7a6-2e0d7b4b99a3.htm" />
+    <HelpKINode Title="AppointmentClient.getAppointmentsHistorybyPatientAsync Method " Url="html/be84944a-bebb-cc33-1c9c-ce1e32276d2b.htm" />
+    <HelpKINode Title="IAppointment.getAppointmentsHistorybyPatientAsync Method " Url="html/af98337e-78fe-77f5-3c78-5af35a6253e3.htm" />
+    <HelpKINode Title="IAppointment.getAppointmentsHistorybyPatientAsync Method " Url="html/18820457-a7db-c1a2-2003-ade768184b11.htm" />
+  </HelpKINode>
+  <HelpKINode Title="getAppointmentsHistorybyPatientID method">
+    <HelpKINode Title="AppointmentClient.getAppointmentsHistorybyPatientID Method " Url="html/b9efeec6-26d1-4d7b-8a47-344a8dbcf795.htm" />
+    <HelpKINode Title="AppointmentClient.getAppointmentsHistorybyPatientID Method " Url="html/3d9d6195-4339-50b7-191e-5688ec2dcef7.htm" />
+    <HelpKINode Title="Appointment_businesslayer.getAppointmentsHistorybyPatientID Method " Url="html/e063aeb0-feaa-4a12-76e4-c591c4f1f154.htm" />
+    <HelpKINode Title="IAppointment.getAppointmentsHistorybyPatientID Method " Url="html/28dda10c-f3b2-6eb4-5694-ed58d7fee347.htm" />
+    <HelpKINode Title="IAppointment.getAppointmentsHistorybyPatientID Method " Url="html/175f5c11-17fd-0688-981e-50eda4d8d74e.htm" />
+    <HelpKINode Title="IAppointment.getAppointmentsHistorybyPatientID Method " Url="html/980289c8-38f7-cf2a-de78-386b18f6c2e9.htm" />
+  </HelpKINode>
+  <HelpKINode Title="getAppointmentsHistorybyPatientIDAsync method">
+    <HelpKINode Title="AppointmentClient.getAppointmentsHistorybyPatientIDAsync Method " Url="html/aff2866c-7bb6-3ba2-a928-c208cf2f4eb3.htm" />
+    <HelpKINode Title="AppointmentClient.getAppointmentsHistorybyPatientIDAsync Method " Url="html/5050e879-7004-04b2-7683-515f16f2be76.htm" />
+    <HelpKINode Title="IAppointment.getAppointmentsHistorybyPatientIDAsync Method " Url="html/ff41229f-d560-e30c-904e-931927670fa5.htm" />
+    <HelpKINode Title="IAppointment.getAppointmentsHistorybyPatientIDAsync Method " Url="html/62da9ae9-fe6c-3ba1-2996-80cfad3cd695.htm" />
+  </HelpKINode>
+  <HelpKINode Title="getAppointmentsListbyPatientId method">
+    <HelpKINode Title="AppointmentClient.getAppointmentsListbyPatientId Method " Url="html/2583909d-5bd0-7bd2-40d6-d3e8ac6e9c43.htm" />
+    <HelpKINode Title="AppointmentClient.getAppointmentsListbyPatientId Method " Url="html/d240804e-c915-dd46-8eef-0d7ac5436049.htm" />
+    <HelpKINode Title="Appointment_businesslayer.getAppointmentsListbyPatientId Method " Url="html/8acbba84-a391-6219-fb83-5719653f8a04.htm" />
+    <HelpKINode Title="IAppointment.getAppointmentsListbyPatientId Method " Url="html/ae8049f3-c2ca-fa1a-0b0f-313776a83cb2.htm" />
+    <HelpKINode Title="IAppointment.getAppointmentsListbyPatientId Method " Url="html/f6d2f1aa-7c9d-3847-366d-2715822d012f.htm" />
+    <HelpKINode Title="IAppointment.getAppointmentsListbyPatientId Method " Url="html/2fdd46a9-32e9-c5b6-b392-4424018c6d33.htm" />
+  </HelpKINode>
+  <HelpKINode Title="getAppointmentsListbyPatientIdAsync method">
+    <HelpKINode Title="AppointmentClient.getAppointmentsListbyPatientIdAsync Method " Url="html/fe7c01bc-b69f-549e-137c-063f34fc896d.htm" />
+    <HelpKINode Title="AppointmentClient.getAppointmentsListbyPatientIdAsync Method " Url="html/66a1965c-9f69-c9c2-ae6c-ff29cf421dc3.htm" />
+    <HelpKINode Title="IAppointment.getAppointmentsListbyPatientIdAsync Method " Url="html/0df5e6e7-6373-ce5e-0970-5fe47eefe2aa.htm" />
+    <HelpKINode Title="IAppointment.getAppointmentsListbyPatientIdAsync Method " Url="html/cd88685a-3953-973d-8c41-50ec3ab4d542.htm" />
+  </HelpKINode>
+  <HelpKINode Title="getAppointmnetsOfToday method">
+    <HelpKINode Title="AppointmentClient.getAppointmnetsOfToday Method " Url="html/d7248018-d592-827f-258c-b834b7446848.htm" />
+    <HelpKINode Title="AppointmentClient.getAppointmnetsOfToday Method " Url="html/106ad4cb-60b6-42e2-0560-139583e6fe01.htm" />
+    <HelpKINode Title="Appointment_businesslayer.getAppointmnetsOfToday Method " Url="html/872768fd-5123-ec81-1c12-f9d26a53eecc.htm" />
+    <HelpKINode Title="IAppointment.getAppointmnetsOfToday Method " Url="html/ce9bc655-9e17-7eec-46ab-5256dd4c82d8.htm" />
+    <HelpKINode Title="IAppointment.getAppointmnetsOfToday Method " Url="html/c1c6c95a-a54d-ef47-07ad-ee97086d0ec4.htm" />
+    <HelpKINode Title="IAppointment.getAppointmnetsOfToday Method " Url="html/33397d14-0e51-87c0-655a-6d2f509dcefd.htm" />
+  </HelpKINode>
+  <HelpKINode Title="getAppointmnetsOfTodayAsync method">
+    <HelpKINode Title="AppointmentClient.getAppointmnetsOfTodayAsync Method " Url="html/922b14ba-404c-67d1-f296-75154da27843.htm" />
+    <HelpKINode Title="AppointmentClient.getAppointmnetsOfTodayAsync Method " Url="html/fd89e7e9-94ba-ef09-540b-465f04f3ab70.htm" />
+    <HelpKINode Title="IAppointment.getAppointmnetsOfTodayAsync Method " Url="html/52075bf0-bbab-9492-22c5-e62014d09915.htm" />
+    <HelpKINode Title="IAppointment.getAppointmnetsOfTodayAsync Method " Url="html/2b648ec8-eda2-3ae4-b824-f105a647930b.htm" />
+  </HelpKINode>
+  <HelpKINode Title="getConsultationHistorybyPatient method">
+    <HelpKINode Title="DoctorClient.getConsultationHistorybyPatient Method " Url="html/369daa38-4e37-60a0-35f6-a2e849a3c1b7.htm" />
+    <HelpKINode Title="DoctorClient.getConsultationHistorybyPatient Method " Url="html/1cfed953-28b9-cfd7-5972-60f16ec382a9.htm" />
+    <HelpKINode Title="IDoctor.getConsultationHistorybyPatient Method " Url="html/afdcec16-6b1d-e5e3-4d53-ad092d382d2e.htm" />
+    <HelpKINode Title="IDoctor.getConsultationHistorybyPatient Method " Url="html/33a2723b-60fe-f9be-d435-0bfb25063572.htm" />
+  </HelpKINode>
+  <HelpKINode Title="getConsultationHistorybyPatientAsync method">
+    <HelpKINode Title="DoctorClient.getConsultationHistorybyPatientAsync Method " Url="html/ae164f8c-4d24-bb4a-a9cf-ecc0058e446e.htm" />
+    <HelpKINode Title="DoctorClient.getConsultationHistorybyPatientAsync Method " Url="html/9945b8d5-7f56-7fc9-f6d5-74c4aba2773c.htm" />
+    <HelpKINode Title="IDoctor.getConsultationHistorybyPatientAsync Method " Url="html/45ba7326-df77-6fbc-9561-a30fa12f270f.htm" />
+    <HelpKINode Title="IDoctor.getConsultationHistorybyPatientAsync Method " Url="html/4ceaf598-77ad-9b1a-d09e-54732caab203.htm" />
+  </HelpKINode>
+  <HelpKINode Title="getConsultationOfToday method">
+    <HelpKINode Title="DoctorClient.getConsultationOfToday Method " Url="html/b09cc0fd-228e-0734-31f9-d9d73bf303af.htm" />
+    <HelpKINode Title="DoctorClient.getConsultationOfToday Method " Url="html/4e405910-730e-cbf9-4c27-a4d9aa71974a.htm" />
+    <HelpKINode Title="IDoctor.getConsultationOfToday Method " Url="html/e058090b-94cf-072c-f124-39f95e896ad5.htm" />
+    <HelpKINode Title="IDoctor.getConsultationOfToday Method " Url="html/68070349-aeeb-0e7a-3f68-f6d7db92f7fc.htm" />
+  </HelpKINode>
+  <HelpKINode Title="getConsultationOfTodayAsync method">
+    <HelpKINode Title="DoctorClient.getConsultationOfTodayAsync Method " Url="html/b12f94a0-4f68-beb5-29e7-af4929c57e27.htm" />
+    <HelpKINode Title="DoctorClient.getConsultationOfTodayAsync Method " Url="html/4173c0ee-42b6-c3a2-ccb2-57b72232b545.htm" />
+    <HelpKINode Title="IDoctor.getConsultationOfTodayAsync Method " Url="html/3a5e5488-ca32-eb84-e654-7f849a282e9f.htm" />
+    <HelpKINode Title="IDoctor.getConsultationOfTodayAsync Method " Url="html/80dee950-3748-a01b-116b-ef75974c1a23.htm" />
+  </HelpKINode>
+  <HelpKINode Title="getDiagnosisHistoryByPersionID method">
+    <HelpKINode Title="DoctorClient.getDiagnosisHistoryByPersionID Method " Url="html/01c93495-a494-0eca-9d8b-2f34f0f47dee.htm" />
+    <HelpKINode Title="DoctorClient.getDiagnosisHistoryByPersionID Method " Url="html/417e369e-5d9f-0c3f-65e1-0e32304dd525.htm" />
+    <HelpKINode Title="IDoctor.getDiagnosisHistoryByPersionID Method " Url="html/c13b873e-dcaa-06b1-de6d-0b0944467c42.htm" />
+    <HelpKINode Title="IDoctor.getDiagnosisHistoryByPersionID Method " Url="html/93ca3614-9775-3691-c38b-8ce7eb379c10.htm" />
+  </HelpKINode>
+  <HelpKINode Title="getDiagnosisHistoryByPersionIDAsync method">
+    <HelpKINode Title="DoctorClient.getDiagnosisHistoryByPersionIDAsync Method " Url="html/291c5b77-8491-2a87-8c42-6eefbb1c06bb.htm" />
+    <HelpKINode Title="DoctorClient.getDiagnosisHistoryByPersionIDAsync Method " Url="html/466bf5f3-5391-12ad-53a5-46579161d289.htm" />
+    <HelpKINode Title="IDoctor.getDiagnosisHistoryByPersionIDAsync Method " Url="html/621fa62d-bba1-72ae-9f9f-d74a93d6d1d5.htm" />
+    <HelpKINode Title="IDoctor.getDiagnosisHistoryByPersionIDAsync Method " Url="html/4d9513b0-d786-3410-f2c1-2e8bae38cbd9.htm" />
+  </HelpKINode>
+  <HelpKINode Title="getnextConsultationID method">
+    <HelpKINode Title="DoctorClient.getnextConsultationID Method " Url="html/ceab3932-2d00-fc02-0810-938575be0b3d.htm" />
+    <HelpKINode Title="DoctorClient.getnextConsultationID Method " Url="html/99b269f9-e27f-b976-4bb5-866880ecc69c.htm" />
+    <HelpKINode Title="IDoctor.getnextConsultationID Method " Url="html/a4c6802d-a580-3434-6df1-0379a68a7d2d.htm" />
+    <HelpKINode Title="IDoctor.getnextConsultationID Method " Url="html/4b0ccdfb-363e-b24c-e2fb-09dbe2505815.htm" />
+  </HelpKINode>
+  <HelpKINode Title="getnextConsultationIDAsync method">
+    <HelpKINode Title="DoctorClient.getnextConsultationIDAsync Method " Url="html/ba9d03e8-315b-9609-bc0b-2ff2417efe3b.htm" />
+    <HelpKINode Title="DoctorClient.getnextConsultationIDAsync Method " Url="html/946c5595-0376-2983-fae4-1a02befb3070.htm" />
+    <HelpKINode Title="IDoctor.getnextConsultationIDAsync Method " Url="html/d2c9659f-1d20-b3dd-28d5-c3a318a6ab10.htm" />
+    <HelpKINode Title="IDoctor.getnextConsultationIDAsync Method " Url="html/270b0c55-5d53-4517-4286-6a5337154b21.htm" />
+  </HelpKINode>
+  <HelpKINode Title="GetPatientOverview method">
+    <HelpKINode Title="DoctorClient.GetPatientOverview Method " Url="html/032ff4d0-de23-bfff-3af7-3ba98e5a8a90.htm" />
+    <HelpKINode Title="DoctorClient.GetPatientOverview Method " Url="html/d57e26db-21e4-9dbf-427e-f4c5b9400d81.htm" />
+    <HelpKINode Title="IDoctor.GetPatientOverview Method " Url="html/0c03e2ba-712c-5081-857f-849fdfa8d9b6.htm" />
+    <HelpKINode Title="IDoctor.GetPatientOverview Method " Url="html/b32644be-8aea-cb3e-976c-eb2398683bf3.htm" />
+  </HelpKINode>
+  <HelpKINode Title="GetPatientOverviewAsync method">
+    <HelpKINode Title="DoctorClient.GetPatientOverviewAsync Method " Url="html/e193e0b5-5e7c-3915-0b97-19616a225076.htm" />
+    <HelpKINode Title="DoctorClient.GetPatientOverviewAsync Method " Url="html/02265137-1b95-c211-d9ea-ce87b42e4356.htm" />
+    <HelpKINode Title="IDoctor.GetPatientOverviewAsync Method " Url="html/5fe21438-e68d-bf58-b80a-392b5bd5f796.htm" />
+    <HelpKINode Title="IDoctor.GetPatientOverviewAsync Method " Url="html/cd595c63-deb5-e2e2-b883-b79080214add.htm" />
+  </HelpKINode>
+  <HelpKINode Title="getPatientPerscriptions method">
+    <HelpKINode Title="DoctorClient.getPatientPerscriptions Method " Url="html/1f6e7c93-163e-d435-0848-62f8c8dfc8ad.htm" />
+    <HelpKINode Title="DoctorClient.getPatientPerscriptions Method " Url="html/2d7060f9-4110-b05d-675e-df0e57300e3f.htm" />
+    <HelpKINode Title="IDoctor.getPatientPerscriptions Method " Url="html/8b86346d-86c2-ae2d-4c4a-20e1f7337405.htm" />
+    <HelpKINode Title="IDoctor.getPatientPerscriptions Method " Url="html/e18ed73e-2676-5bc9-a696-f575cf060b36.htm" />
+  </HelpKINode>
+  <HelpKINode Title="getPatientPerscriptionsAsync method">
+    <HelpKINode Title="DoctorClient.getPatientPerscriptionsAsync Method " Url="html/e9d840f0-96fc-beda-66e9-58a50170f4f2.htm" />
+    <HelpKINode Title="DoctorClient.getPatientPerscriptionsAsync Method " Url="html/99195b95-408c-f63d-51a4-804797bb46c0.htm" />
+    <HelpKINode Title="IDoctor.getPatientPerscriptionsAsync Method " Url="html/15316748-adaa-040d-0858-781a6d54eee1.htm" />
+    <HelpKINode Title="IDoctor.getPatientPerscriptionsAsync Method " Url="html/8f0e6e72-1771-0b20-4338-2c6476113fd0.htm" />
+  </HelpKINode>
+  <HelpKINode Title="GetPatient_by_lastName_DateOfBirth method">
+    <HelpKINode Title="DoctorClient.GetPatient_by_lastName_DateOfBirth Method " Url="html/e24c1abb-13c4-aec1-a4f9-a0659ecdb897.htm" />
+    <HelpKINode Title="DoctorClient.GetPatient_by_lastName_DateOfBirth Method " Url="html/4d9b7e51-3143-6033-d046-104aa7b6aa6f.htm" />
+    <HelpKINode Title="IDoctor.GetPatient_by_lastName_DateOfBirth Method " Url="html/cdc45313-fed9-ea91-cb2d-7964a7fd798e.htm" />
+    <HelpKINode Title="IDoctor.GetPatient_by_lastName_DateOfBirth Method " Url="html/e3026ee8-9429-9fd1-b14c-f3d2b5b69625.htm" />
+  </HelpKINode>
+  <HelpKINode Title="GetPatient_by_lastName_DateOfBirthAsync method">
+    <HelpKINode Title="DoctorClient.GetPatient_by_lastName_DateOfBirthAsync Method " Url="html/55705c61-b2df-cbb8-4477-eea0d605b7dd.htm" />
+    <HelpKINode Title="DoctorClient.GetPatient_by_lastName_DateOfBirthAsync Method " Url="html/7bbb1c67-8fa3-1966-d335-a2a2cabf0100.htm" />
+    <HelpKINode Title="IDoctor.GetPatient_by_lastName_DateOfBirthAsync Method " Url="html/7e1d8c1c-3bde-41fa-36cc-6c1046526cc5.htm" />
+    <HelpKINode Title="IDoctor.GetPatient_by_lastName_DateOfBirthAsync Method " Url="html/f18ba996-ed92-bfc4-2b3a-b69dafb55851.htm" />
+  </HelpKINode>
+  <HelpKINode Title="getStaffById method">
+    <HelpKINode Title="AdministrationClient.getStaffById Method " Url="html/86e6ebf0-9e82-054f-375a-1f769279ad0c.htm" />
+    <HelpKINode Title="IAdministration.getStaffById Method " Url="html/72f67d02-b3bb-c06f-b9f5-8e7f7b61ef30.htm" />
+  </HelpKINode>
+  <HelpKINode Title="getStaffByIdAsync method">
+    <HelpKINode Title="AdministrationClient.getStaffByIdAsync Method " Url="html/95598117-b774-a1c4-c516-95a71d4ffab7.htm" />
+    <HelpKINode Title="IAdministration.getStaffByIdAsync Method " Url="html/41741c59-9925-5b24-0600-79d4fd846ddc.htm" />
+  </HelpKINode>
+  <HelpKINode Title="GetStaff_by_Personid method">
+    <HelpKINode Title="DoctorClient.GetStaff_by_Personid Method " Url="html/1751ca3b-5e72-a392-4723-85836624c3c1.htm" />
+    <HelpKINode Title="DoctorClient.GetStaff_by_Personid Method " Url="html/116bad37-1608-250e-c726-4fb5c1932fda.htm" />
+    <HelpKINode Title="IDoctor.GetStaff_by_Personid Method " Url="html/41f89e4c-04bc-1cf7-4308-cfbdc9f659b2.htm" />
+    <HelpKINode Title="IDoctor.GetStaff_by_Personid Method " Url="html/c28297a5-ee03-e5b9-b813-f950da9867f2.htm" />
+  </HelpKINode>
+  <HelpKINode Title="GetStaff_by_PersonidAsync method">
+    <HelpKINode Title="DoctorClient.GetStaff_by_PersonidAsync Method " Url="html/fa8dbb5a-1ce9-4d04-9c7f-04009c409221.htm" />
+    <HelpKINode Title="DoctorClient.GetStaff_by_PersonidAsync Method " Url="html/0f61523a-9eae-7214-bfbe-5cd8078f507d.htm" />
+    <HelpKINode Title="IDoctor.GetStaff_by_PersonidAsync Method " Url="html/d9015609-e92a-30b4-6a83-c3979d945e8d.htm" />
+    <HelpKINode Title="IDoctor.GetStaff_by_PersonidAsync Method " Url="html/67c64dd3-c894-51f0-cc72-329a8d2eb355.htm" />
+  </HelpKINode>
+  <HelpKINode Title="GetStaff_by_staff_id method">
+    <HelpKINode Title="DoctorClient.GetStaff_by_staff_id Method " Url="html/0e59ff2a-293b-ea3e-cbeb-a423555b322a.htm" />
+    <HelpKINode Title="DoctorClient.GetStaff_by_staff_id Method " Url="html/88737c3f-b011-ac7b-0b36-3c4df34b408a.htm" />
+    <HelpKINode Title="IDoctor.GetStaff_by_staff_id Method " Url="html/304d0e2e-719a-339c-ad84-f3bb37ad6d57.htm" />
+    <HelpKINode Title="IDoctor.GetStaff_by_staff_id Method " Url="html/6c8b71f1-83f0-eed1-37e7-0a2717fc9955.htm" />
+  </HelpKINode>
+  <HelpKINode Title="GetStaff_by_staff_idAsync method">
+    <HelpKINode Title="DoctorClient.GetStaff_by_staff_idAsync Method " Url="html/ab58a7c2-05a2-d287-5247-9230bb4c3318.htm" />
+    <HelpKINode Title="DoctorClient.GetStaff_by_staff_idAsync Method " Url="html/fc2ce40a-b88b-7248-8bd6-c24fb7a82c1e.htm" />
+    <HelpKINode Title="IDoctor.GetStaff_by_staff_idAsync Method " Url="html/d562c474-0cc3-afbf-5c68-d927646a7837.htm" />
+    <HelpKINode Title="IDoctor.GetStaff_by_staff_idAsync Method " Url="html/3dfbe3fe-7f2f-2125-6f09-ff465e1b994f.htm" />
+  </HelpKINode>
+  <HelpKINode Title="get_all_diseases method">
+    <HelpKINode Title="DoctorClient.get_all_diseases Method " Url="html/bfe4f229-cc25-df7d-3527-3314d7067e7f.htm" />
+    <HelpKINode Title="DoctorClient.get_all_diseases Method " Url="html/a96a38c3-13a4-9b07-727d-dd59391680c8.htm" />
+    <HelpKINode Title="IDoctor.get_all_diseases Method " Url="html/0166efc6-8abb-ab2e-4292-ffaedb9d4a90.htm" />
+    <HelpKINode Title="IDoctor.get_all_diseases Method " Url="html/ccd41f85-a628-2be1-4a5d-ae3541309a61.htm" />
+  </HelpKINode>
+  <HelpKINode Title="get_all_diseasesAsync method">
+    <HelpKINode Title="DoctorClient.get_all_diseasesAsync Method " Url="html/34d65ebe-8d35-e7eb-d08b-ba5998fce0d7.htm" />
+    <HelpKINode Title="DoctorClient.get_all_diseasesAsync Method " Url="html/89978c1b-9b43-234b-3526-99dcaaedf847.htm" />
+    <HelpKINode Title="IDoctor.get_all_diseasesAsync Method " Url="html/d12034be-3614-206d-3e18-441d2da4f86d.htm" />
+    <HelpKINode Title="IDoctor.get_all_diseasesAsync Method " Url="html/f7df82c4-57ff-c230-dbaa-902e39d2320f.htm" />
+  </HelpKINode>
+  <HelpKINode Title="get_all_medicines method">
+    <HelpKINode Title="DoctorClient.get_all_medicines Method " Url="html/6c0f19f3-0605-3c66-0271-167550ef469b.htm" />
+    <HelpKINode Title="DoctorClient.get_all_medicines Method " Url="html/30bd5909-042e-790f-5cdd-4901847f2e81.htm" />
+    <HelpKINode Title="IDoctor.get_all_medicines Method " Url="html/9c560ab8-c518-d9a6-676f-aee25964b309.htm" />
+    <HelpKINode Title="IDoctor.get_all_medicines Method " Url="html/2e07f967-865d-3078-1767-3b91e510ddb5.htm" />
+  </HelpKINode>
+  <HelpKINode Title="get_all_medicinesAsync method">
+    <HelpKINode Title="DoctorClient.get_all_medicinesAsync Method " Url="html/fda36373-03ba-8242-0fb2-9ec1fdd2a5b3.htm" />
+    <HelpKINode Title="DoctorClient.get_all_medicinesAsync Method " Url="html/e58747c9-c284-7aea-67bd-14b5dcc0ce9b.htm" />
+    <HelpKINode Title="IDoctor.get_all_medicinesAsync Method " Url="html/caf410ad-9ccc-d7db-1ef1-23e3d24e7df6.htm" />
+    <HelpKINode Title="IDoctor.get_all_medicinesAsync Method " Url="html/ece08838-23b4-4ae8-534b-88c8c3f3f5de.htm" />
+  </HelpKINode>
+  <HelpKINode Title="hard_drugsk__BackingField property">
+    <HelpKINode Title="Patient.hard_drugsk__BackingField Property " Url="html/62557f97-0651-2be6-0a2d-b178814794b3.htm" />
+    <HelpKINode Title="Patient.hard_drugsk__BackingField Property " Url="html/bf8cbef6-1a7c-36dd-d8cd-23b832f16028.htm" />
+    <HelpKINode Title="Patient.hard_drugsk__BackingField Property " Url="html/06579d49-836f-26c2-22e5-07f111f2b309.htm" />
+  </HelpKINode>
+  <HelpKINode Title="hard_drugs_frequencyk__BackingField property">
+    <HelpKINode Title="Patient.hard_drugs_frequencyk__BackingField Property " Url="html/143d9e52-587d-a13e-4543-a75efbb60d15.htm" />
+    <HelpKINode Title="Patient.hard_drugs_frequencyk__BackingField Property " Url="html/85635286-5fbe-6223-c3d5-e8e4c8031cbe.htm" />
+    <HelpKINode Title="Patient.hard_drugs_frequencyk__BackingField Property " Url="html/4e000c03-e8a8-892f-4d3e-337b5cc4d064.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Height property" Url="html/27e80c6d-5cb3-b03f-5549-4c3f6e37ed90.htm" />
+  <HelpKINode Title="Heightk__BackingField property">
+    <HelpKINode Title="Patient.Heightk__BackingField Property " Url="html/9059a02f-833f-5729-ecfe-95f18fef52f5.htm" />
+    <HelpKINode Title="Patient.Heightk__BackingField Property " Url="html/8666918f-6370-65df-7f9c-52fe834fc3c2.htm" />
+    <HelpKINode Title="Patient.Heightk__BackingField Property " Url="html/b775c8f0-b304-b75c-a035-69485b2cc188.htm" />
+    <HelpKINode Title="Patient.Heightk__BackingField Property " Url="html/20d90299-ddcb-c86e-b847-b05da83a8668.htm" />
+    <HelpKINode Title="Patient.Heightk__BackingField Property " Url="html/62f8d2e3-f225-2ce3-4759-dc92d33f7e63.htm" />
+  </HelpKINode>
+  <HelpKINode Title="IAdministration interface">
+    <HelpKINode Title="IAdministration Interface" Url="html/f747df25-1741-3a49-d531-3d0807633cd3.htm" />
+    <HelpKINode Title="about IAdministration interface" Url="html/f747df25-1741-3a49-d531-3d0807633cd3.htm" />
+    <HelpKINode Title="methods" Url="html/9559c197-3f28-d37c-94b4-8213bd734676.htm" />
+  </HelpKINode>
+  <HelpKINode Title="IAdministration.addPatient method" Url="html/565fc507-64c4-375a-e209-97fb77b768aa.htm" />
+  <HelpKINode Title="IAdministration.addPatientAsync method" Url="html/efb5244d-b433-6d51-4a7d-218f1ccebc98.htm" />
+  <HelpKINode Title="IAdministration.addPerson method" Url="html/a88a6059-8caf-ea6f-9eb6-ef6127c13b57.htm" />
+  <HelpKINode Title="IAdministration.addPersonAsync method" Url="html/bfb80a49-c00b-dffb-bef4-7584ed547ced.htm" />
+  <HelpKINode Title="IAdministration.addStaff method" Url="html/d6bb1a82-1c5e-249a-7cd9-bda2cd546f9d.htm" />
+  <HelpKINode Title="IAdministration.addStaffAsync method" Url="html/a9813068-652f-3da5-faac-be3160e8b354.htm" />
+  <HelpKINode Title="IAdministration.editPatient method" Url="html/00325fbc-e5f2-65b0-d0cb-5b1ea686cd3b.htm" />
+  <HelpKINode Title="IAdministration.editPatientAsync method" Url="html/4936fc12-a47c-a9eb-a2fa-46ed04b6b5db.htm" />
+  <HelpKINode Title="IAdministration.editPerson method" Url="html/b758066b-2a78-68a6-15e8-0feb73cb827a.htm" />
+  <HelpKINode Title="IAdministration.editPersonAsync method" Url="html/42d754bb-3138-6a3b-9fd9-ca42fdd4f852.htm" />
+  <HelpKINode Title="IAdministration.editStaff method" Url="html/bf816687-d1d6-80b6-61e0-8d8b29596932.htm" />
+  <HelpKINode Title="IAdministration.editStaffAsync method" Url="html/16f1a769-9692-dee1-87f6-0f656f99ca60.htm" />
+  <HelpKINode Title="IAdministration.getAllStaff method" Url="html/a9244936-761b-24b9-ba2b-ecb964d50772.htm" />
+  <HelpKINode Title="IAdministration.getAllStaffAsync method" Url="html/78b63f1f-f63b-53a1-000b-9bae5a253d17.htm" />
+  <HelpKINode Title="IAdministration.getStaffById method" Url="html/72f67d02-b3bb-c06f-b9f5-8e7f7b61ef30.htm" />
+  <HelpKINode Title="IAdministration.getStaffByIdAsync method" Url="html/41741c59-9925-5b24-0600-79d4fd846ddc.htm" />
+  <HelpKINode Title="IAdministration.removeStaff method" Url="html/14df2468-4567-ab05-02fe-0fcf8127dcdd.htm" />
+  <HelpKINode Title="IAdministration.removeStaffAsync method" Url="html/bd67b4d7-3ae5-2692-7023-902970998209.htm" />
+  <HelpKINode Title="IAdministration.searchStaff method" Url="html/ebb78002-6e62-9af9-a1d6-93f1d4c9a3d5.htm" />
+  <HelpKINode Title="IAdministration.searchStaffAsync method" Url="html/6a29462a-6867-bd05-451f-e06b9ca575c9.htm" />
+  <HelpKINode Title="IAdministrationChannel interface">
+    <HelpKINode Title="IAdministrationChannel Interface" Url="html/c7fcbcc6-c0d0-0794-4437-66734bfdcf7a.htm" />
+    <HelpKINode Title="about IAdministrationChannel interface" Url="html/c7fcbcc6-c0d0-0794-4437-66734bfdcf7a.htm" />
+    <HelpKINode Title="events" Url="html/b8ff7b63-fe77-d1f6-7045-0a86224bfafb.htm" />
+    <HelpKINode Title="methods" Url="html/46065403-7a19-c458-55de-449f0c7e5bbf.htm" />
+    <HelpKINode Title="properties" Url="html/06673ce3-17fe-69e5-6915-55aaa9fd3e74.htm" />
+  </HelpKINode>
+  <HelpKINode Title="IAppointment interface">
+    <HelpKINode Title="IAppointment Interface" Url="html/a995b4c5-bc0b-1f47-ecd8-47718886478e.htm" />
+    <HelpKINode Title="IAppointment Interface" Url="html/abfb8497-65fb-e1bc-eac1-c8406fbebead.htm" />
+    <HelpKINode Title="IAppointment Interface" Url="html/41f497f4-fafc-5f44-817f-a76d2e609e66.htm" />
+    <HelpKINode Title="about IAppointment interface" Url="html/a995b4c5-bc0b-1f47-ecd8-47718886478e.htm" />
+    <HelpKINode Title="about IAppointment interface" Url="html/41f497f4-fafc-5f44-817f-a76d2e609e66.htm" />
+    <HelpKINode Title="about IAppointment interface" Url="html/abfb8497-65fb-e1bc-eac1-c8406fbebead.htm" />
+    <HelpKINode Title="methods" Url="html/07f9ae98-81e0-8e08-0c2b-d745236d6481.htm" />
+    <HelpKINode Title="methods" Url="html/426557ed-bcaa-62ad-775a-77071ee7e9c0.htm" />
+    <HelpKINode Title="methods" Url="html/7b34a51b-bbc3-7431-79c5-f0294c0e278b.htm" />
+  </HelpKINode>
+  <HelpKINode Title="IAppointment.AddAppointment method">
+    <HelpKINode Title="IAppointment.AddAppointment Method " Url="html/38c6f49c-5788-b95f-9d81-73001035c171.htm" />
+    <HelpKINode Title="IAppointment.AddAppointment Method " Url="html/1c48cb6a-4cc6-ad4a-7ed1-9399ea70f96f.htm" />
+    <HelpKINode Title="IAppointment.AddAppointment Method " Url="html/5743791c-9975-3b22-f4ea-4074349e88f5.htm" />
+  </HelpKINode>
+  <HelpKINode Title="IAppointment.AddAppointmentAsync method">
+    <HelpKINode Title="IAppointment.AddAppointmentAsync Method " Url="html/59786317-0b8d-a8fc-058c-6b1fd3890fde.htm" />
+    <HelpKINode Title="IAppointment.AddAppointmentAsync Method " Url="html/00f19df1-6d92-cac5-af90-94696546d012.htm" />
+  </HelpKINode>
+  <HelpKINode Title="IAppointment.getAppointmentsHistorybyPatient method">
+    <HelpKINode Title="IAppointment.getAppointmentsHistorybyPatient Method " Url="html/baa5cd43-5bcc-95ba-1314-29537aab7246.htm" />
+    <HelpKINode Title="IAppointment.getAppointmentsHistorybyPatient Method " Url="html/81569293-a865-17f5-017e-846decb4936c.htm" />
+    <HelpKINode Title="IAppointment.getAppointmentsHistorybyPatient Method " Url="html/a3e6f4a0-e155-cfaf-57c6-544457203a62.htm" />
+  </HelpKINode>
+  <HelpKINode Title="IAppointment.getAppointmentsHistorybyPatientAsync method">
+    <HelpKINode Title="IAppointment.getAppointmentsHistorybyPatientAsync Method " Url="html/af98337e-78fe-77f5-3c78-5af35a6253e3.htm" />
+    <HelpKINode Title="IAppointment.getAppointmentsHistorybyPatientAsync Method " Url="html/18820457-a7db-c1a2-2003-ade768184b11.htm" />
+  </HelpKINode>
+  <HelpKINode Title="IAppointment.getAppointmentsHistorybyPatientID method">
+    <HelpKINode Title="IAppointment.getAppointmentsHistorybyPatientID Method " Url="html/175f5c11-17fd-0688-981e-50eda4d8d74e.htm" />
+    <HelpKINode Title="IAppointment.getAppointmentsHistorybyPatientID Method " Url="html/980289c8-38f7-cf2a-de78-386b18f6c2e9.htm" />
+    <HelpKINode Title="IAppointment.getAppointmentsHistorybyPatientID Method " Url="html/28dda10c-f3b2-6eb4-5694-ed58d7fee347.htm" />
+  </HelpKINode>
+  <HelpKINode Title="IAppointment.getAppointmentsHistorybyPatientIDAsync method">
+    <HelpKINode Title="IAppointment.getAppointmentsHistorybyPatientIDAsync Method " Url="html/ff41229f-d560-e30c-904e-931927670fa5.htm" />
+    <HelpKINode Title="IAppointment.getAppointmentsHistorybyPatientIDAsync Method " Url="html/62da9ae9-fe6c-3ba1-2996-80cfad3cd695.htm" />
+  </HelpKINode>
+  <HelpKINode Title="IAppointment.getAppointmentsListbyPatientId method">
+    <HelpKINode Title="IAppointment.getAppointmentsListbyPatientId Method " Url="html/2fdd46a9-32e9-c5b6-b392-4424018c6d33.htm" />
+    <HelpKINode Title="IAppointment.getAppointmentsListbyPatientId Method " Url="html/f6d2f1aa-7c9d-3847-366d-2715822d012f.htm" />
+    <HelpKINode Title="IAppointment.getAppointmentsListbyPatientId Method " Url="html/ae8049f3-c2ca-fa1a-0b0f-313776a83cb2.htm" />
+  </HelpKINode>
+  <HelpKINode Title="IAppointment.getAppointmentsListbyPatientIdAsync method">
+    <HelpKINode Title="IAppointment.getAppointmentsListbyPatientIdAsync Method " Url="html/0df5e6e7-6373-ce5e-0970-5fe47eefe2aa.htm" />
+    <HelpKINode Title="IAppointment.getAppointmentsListbyPatientIdAsync Method " Url="html/cd88685a-3953-973d-8c41-50ec3ab4d542.htm" />
+  </HelpKINode>
+  <HelpKINode Title="IAppointment.getAppointmnetsOfToday method">
+    <HelpKINode Title="IAppointment.getAppointmnetsOfToday Method " Url="html/ce9bc655-9e17-7eec-46ab-5256dd4c82d8.htm" />
+    <HelpKINode Title="IAppointment.getAppointmnetsOfToday Method " Url="html/33397d14-0e51-87c0-655a-6d2f509dcefd.htm" />
+    <HelpKINode Title="IAppointment.getAppointmnetsOfToday Method " Url="html/c1c6c95a-a54d-ef47-07ad-ee97086d0ec4.htm" />
+  </HelpKINode>
+  <HelpKINode Title="IAppointment.getAppointmnetsOfTodayAsync method">
+    <HelpKINode Title="IAppointment.getAppointmnetsOfTodayAsync Method " Url="html/2b648ec8-eda2-3ae4-b824-f105a647930b.htm" />
+    <HelpKINode Title="IAppointment.getAppointmnetsOfTodayAsync Method " Url="html/52075bf0-bbab-9492-22c5-e62014d09915.htm" />
+  </HelpKINode>
+  <HelpKINode Title="IAppointment.Login method">
+    <HelpKINode Title="IAppointment.Login Method " Url="html/5d67f13d-dc4a-74a7-c2cc-0138a442e2a6.htm" />
+    <HelpKINode Title="IAppointment.Login Method " Url="html/09baf523-bb5e-ccc4-40b1-8345c448207c.htm" />
+    <HelpKINode Title="IAppointment.Login Method " Url="html/9934d696-283c-93ab-5445-b8e080bc3cdb.htm" />
+  </HelpKINode>
+  <HelpKINode Title="IAppointment.LoginAsync method">
+    <HelpKINode Title="IAppointment.LoginAsync Method " Url="html/c189ca78-6621-483d-aa11-954957b73ba5.htm" />
+    <HelpKINode Title="IAppointment.LoginAsync Method " Url="html/a1da41b0-c814-9d1c-e144-c3382a22c7f1.htm" />
+  </HelpKINode>
+  <HelpKINode Title="IAppointment.SearchappointmentsbyDate method">
+    <HelpKINode Title="IAppointment.SearchappointmentsbyDate Method " Url="html/a25878df-3896-49e7-4d0f-85f6e9f569a6.htm" />
+    <HelpKINode Title="IAppointment.SearchappointmentsbyDate Method " Url="html/12fef6bd-7d31-5185-8079-4565eb5c0805.htm" />
+    <HelpKINode Title="IAppointment.SearchappointmentsbyDate Method " Url="html/eae3dba8-f8b1-13f7-1078-8363907ee0a8.htm" />
+  </HelpKINode>
+  <HelpKINode Title="IAppointment.SearchappointmentsbyDateAsync method">
+    <HelpKINode Title="IAppointment.SearchappointmentsbyDateAsync Method " Url="html/611a32e3-1f95-ad30-4dc7-c8c9cbeab2e8.htm" />
+    <HelpKINode Title="IAppointment.SearchappointmentsbyDateAsync Method " Url="html/ff8261ed-ead6-7328-0457-9e3bc206f6d1.htm" />
+  </HelpKINode>
+  <HelpKINode Title="IAppointment.SearchAppointmentsByStaffID method">
+    <HelpKINode Title="IAppointment.SearchAppointmentsByStaffID Method " Url="html/943701de-0d19-57ed-4487-8ba93e7cbdcd.htm" />
+    <HelpKINode Title="IAppointment.SearchAppointmentsByStaffID Method " Url="html/2aa4142f-e11c-c0c3-a0c3-f983ee17168c.htm" />
+    <HelpKINode Title="IAppointment.SearchAppointmentsByStaffID Method " Url="html/e46a2142-b71d-ffff-0572-a401cea42de8.htm" />
+  </HelpKINode>
+  <HelpKINode Title="IAppointment.SearchAppointmentsByStaffIDAsync method">
+    <HelpKINode Title="IAppointment.SearchAppointmentsByStaffIDAsync Method " Url="html/bd328873-0deb-4a3e-a6dc-8d310e987ecb.htm" />
+    <HelpKINode Title="IAppointment.SearchAppointmentsByStaffIDAsync Method " Url="html/948ab040-d635-23bc-f244-962ec7a4cd7e.htm" />
+  </HelpKINode>
+  <HelpKINode Title="IAppointmentChannel interface">
+    <HelpKINode Title="IAppointmentChannel Interface" Url="html/29338ecf-34e8-0ace-506e-1793286876ce.htm" />
+    <HelpKINode Title="IAppointmentChannel Interface" Url="html/74cda473-09c7-775c-3f08-fdf58694d621.htm" />
+    <HelpKINode Title="about IAppointmentChannel interface" Url="html/74cda473-09c7-775c-3f08-fdf58694d621.htm" />
+    <HelpKINode Title="about IAppointmentChannel interface" Url="html/29338ecf-34e8-0ace-506e-1793286876ce.htm" />
+    <HelpKINode Title="events" Url="html/b7ab89a9-e819-21d8-d21a-5d8698322830.htm" />
+    <HelpKINode Title="events" Url="html/ca33038c-3537-7524-48a7-da3e39d04978.htm" />
+    <HelpKINode Title="methods" Url="html/0817559e-d639-d4be-5856-09fbb1087d6c.htm" />
+    <HelpKINode Title="methods" Url="html/6a86f54d-69c0-486c-cc38-9a8e27641b6b.htm" />
+    <HelpKINode Title="properties" Url="html/8b2f64fb-15be-ff8f-757d-be4c130d99a0.htm" />
+    <HelpKINode Title="properties" Url="html/18c6688d-7da9-0cbb-c695-e3613258ab93.htm" />
+  </HelpKINode>
+  <HelpKINode Title="IDoctor interface">
+    <HelpKINode Title="IDoctor Interface" Url="html/d89778ba-fd7c-8809-8bfd-2f8986a0b3a8.htm" />
+    <HelpKINode Title="IDoctor Interface" Url="html/04c76745-830e-7913-52c4-ec99f3cecd5f.htm" />
+    <HelpKINode Title="about IDoctor interface" Url="html/04c76745-830e-7913-52c4-ec99f3cecd5f.htm" />
+    <HelpKINode Title="about IDoctor interface" Url="html/d89778ba-fd7c-8809-8bfd-2f8986a0b3a8.htm" />
+    <HelpKINode Title="methods" Url="html/cfb38f19-1219-ce53-04a7-28c38ed63b5b.htm" />
+    <HelpKINode Title="methods" Url="html/42c1b7fe-86ca-91c7-f575-aef0bb2302d1.htm" />
+  </HelpKINode>
+  <HelpKINode Title="IDoctor.addConsultion method">
+    <HelpKINode Title="IDoctor.addConsultion Method " Url="html/ff057453-2d32-a7b4-4f44-191441eb6b10.htm" />
+    <HelpKINode Title="IDoctor.addConsultion Method " Url="html/2b6cf0f4-a4ea-9204-46e5-dfdae58f4de7.htm" />
+  </HelpKINode>
+  <HelpKINode Title="IDoctor.addConsultionAsync method">
+    <HelpKINode Title="IDoctor.addConsultionAsync Method " Url="html/8d1a5077-7327-a3a5-97d7-aa29174f64e7.htm" />
+    <HelpKINode Title="IDoctor.addConsultionAsync Method " Url="html/6376a427-ad63-3e38-65c0-26b6198d6e92.htm" />
+  </HelpKINode>
+  <HelpKINode Title="IDoctor.addDiagnosis method">
+    <HelpKINode Title="IDoctor.addDiagnosis Method " Url="html/208cd313-19cf-4550-b1c7-d20f10532ee4.htm" />
+    <HelpKINode Title="IDoctor.addDiagnosis Method " Url="html/c7d6e22a-c8b6-e41c-5a5a-62466b98b767.htm" />
+  </HelpKINode>
+  <HelpKINode Title="IDoctor.addDiagnosisAsync method">
+    <HelpKINode Title="IDoctor.addDiagnosisAsync Method " Url="html/ca9a2e4a-6614-bfe3-1ff3-c562955da172.htm" />
+    <HelpKINode Title="IDoctor.addDiagnosisAsync Method " Url="html/6668986c-39f5-dd0b-9c70-93b9231227c0.htm" />
+  </HelpKINode>
+  <HelpKINode Title="IDoctor.addPerscription method">
+    <HelpKINode Title="IDoctor.addPerscription Method " Url="html/fa2a1584-eb77-50be-bd4a-ce8ca5676dab.htm" />
+    <HelpKINode Title="IDoctor.addPerscription Method " Url="html/64d041b2-67de-69ff-7724-6f0a02f988ac.htm" />
+  </HelpKINode>
+  <HelpKINode Title="IDoctor.addPerscriptionAsync method">
+    <HelpKINode Title="IDoctor.addPerscriptionAsync Method " Url="html/95060c1e-b01e-5db8-4729-39a1ecd1cb5a.htm" />
+    <HelpKINode Title="IDoctor.addPerscriptionAsync Method " Url="html/3c828722-a8bd-093f-e952-842ebbb61e18.htm" />
+  </HelpKINode>
+  <HelpKINode Title="IDoctor.addTestAppointment method">
+    <HelpKINode Title="IDoctor.addTestAppointment Method " Url="html/a563dd21-2666-d424-a3b1-727a37307070.htm" />
+    <HelpKINode Title="IDoctor.addTestAppointment Method " Url="html/affe71b5-8b47-6c15-6e7a-a26fe1ea8bc7.htm" />
+  </HelpKINode>
+  <HelpKINode Title="IDoctor.addTestAppointmentAsync method">
+    <HelpKINode Title="IDoctor.addTestAppointmentAsync Method " Url="html/ba145b62-fe49-8c18-dbb6-f6260ead617b.htm" />
+    <HelpKINode Title="IDoctor.addTestAppointmentAsync Method " Url="html/e59e09af-cb30-7d4c-fa6f-71f6354bf3f3.htm" />
+  </HelpKINode>
+  <HelpKINode Title="IDoctor.addTestPatient method">
+    <HelpKINode Title="IDoctor.addTestPatient Method " Url="html/0c159f66-aa2b-908e-5dd6-fab2ca6eadf1.htm" />
+    <HelpKINode Title="IDoctor.addTestPatient Method " Url="html/e2832078-c3cf-2741-3451-1cf190bed4a4.htm" />
+  </HelpKINode>
+  <HelpKINode Title="IDoctor.addTestPatientAsync method">
+    <HelpKINode Title="IDoctor.addTestPatientAsync Method " Url="html/e50ec806-0ac8-8cce-4a47-05dd552c28e2.htm" />
+    <HelpKINode Title="IDoctor.addTestPatientAsync Method " Url="html/c382d21d-0fea-6fe2-89c4-a3086b52ed47.htm" />
+  </HelpKINode>
+  <HelpKINode Title="IDoctor.getConsultationHistorybyPatient method">
+    <HelpKINode Title="IDoctor.getConsultationHistorybyPatient Method " Url="html/33a2723b-60fe-f9be-d435-0bfb25063572.htm" />
+    <HelpKINode Title="IDoctor.getConsultationHistorybyPatient Method " Url="html/afdcec16-6b1d-e5e3-4d53-ad092d382d2e.htm" />
+  </HelpKINode>
+  <HelpKINode Title="IDoctor.getConsultationHistorybyPatientAsync method">
+    <HelpKINode Title="IDoctor.getConsultationHistorybyPatientAsync Method " Url="html/4ceaf598-77ad-9b1a-d09e-54732caab203.htm" />
+    <HelpKINode Title="IDoctor.getConsultationHistorybyPatientAsync Method " Url="html/45ba7326-df77-6fbc-9561-a30fa12f270f.htm" />
+  </HelpKINode>
+  <HelpKINode Title="IDoctor.getConsultationOfToday method">
+    <HelpKINode Title="IDoctor.getConsultationOfToday Method " Url="html/68070349-aeeb-0e7a-3f68-f6d7db92f7fc.htm" />
+    <HelpKINode Title="IDoctor.getConsultationOfToday Method " Url="html/e058090b-94cf-072c-f124-39f95e896ad5.htm" />
+  </HelpKINode>
+  <HelpKINode Title="IDoctor.getConsultationOfTodayAsync method">
+    <HelpKINode Title="IDoctor.getConsultationOfTodayAsync Method " Url="html/3a5e5488-ca32-eb84-e654-7f849a282e9f.htm" />
+    <HelpKINode Title="IDoctor.getConsultationOfTodayAsync Method " Url="html/80dee950-3748-a01b-116b-ef75974c1a23.htm" />
+  </HelpKINode>
+  <HelpKINode Title="IDoctor.getDiagnosisHistoryByPersionID method">
+    <HelpKINode Title="IDoctor.getDiagnosisHistoryByPersionID Method " Url="html/93ca3614-9775-3691-c38b-8ce7eb379c10.htm" />
+    <HelpKINode Title="IDoctor.getDiagnosisHistoryByPersionID Method " Url="html/c13b873e-dcaa-06b1-de6d-0b0944467c42.htm" />
+  </HelpKINode>
+  <HelpKINode Title="IDoctor.getDiagnosisHistoryByPersionIDAsync method">
+    <HelpKINode Title="IDoctor.getDiagnosisHistoryByPersionIDAsync Method " Url="html/621fa62d-bba1-72ae-9f9f-d74a93d6d1d5.htm" />
+    <HelpKINode Title="IDoctor.getDiagnosisHistoryByPersionIDAsync Method " Url="html/4d9513b0-d786-3410-f2c1-2e8bae38cbd9.htm" />
+  </HelpKINode>
+  <HelpKINode Title="IDoctor.getnextConsultationID method">
+    <HelpKINode Title="IDoctor.getnextConsultationID Method " Url="html/4b0ccdfb-363e-b24c-e2fb-09dbe2505815.htm" />
+    <HelpKINode Title="IDoctor.getnextConsultationID Method " Url="html/a4c6802d-a580-3434-6df1-0379a68a7d2d.htm" />
+  </HelpKINode>
+  <HelpKINode Title="IDoctor.getnextConsultationIDAsync method">
+    <HelpKINode Title="IDoctor.getnextConsultationIDAsync Method " Url="html/270b0c55-5d53-4517-4286-6a5337154b21.htm" />
+    <HelpKINode Title="IDoctor.getnextConsultationIDAsync Method " Url="html/d2c9659f-1d20-b3dd-28d5-c3a318a6ab10.htm" />
+  </HelpKINode>
+  <HelpKINode Title="IDoctor.GetPatientOverview method">
+    <HelpKINode Title="IDoctor.GetPatientOverview Method " Url="html/b32644be-8aea-cb3e-976c-eb2398683bf3.htm" />
+    <HelpKINode Title="IDoctor.GetPatientOverview Method " Url="html/0c03e2ba-712c-5081-857f-849fdfa8d9b6.htm" />
+  </HelpKINode>
+  <HelpKINode Title="IDoctor.GetPatientOverviewAsync method">
+    <HelpKINode Title="IDoctor.GetPatientOverviewAsync Method " Url="html/5fe21438-e68d-bf58-b80a-392b5bd5f796.htm" />
+    <HelpKINode Title="IDoctor.GetPatientOverviewAsync Method " Url="html/cd595c63-deb5-e2e2-b883-b79080214add.htm" />
+  </HelpKINode>
+  <HelpKINode Title="IDoctor.getPatientPerscriptions method">
+    <HelpKINode Title="IDoctor.getPatientPerscriptions Method " Url="html/8b86346d-86c2-ae2d-4c4a-20e1f7337405.htm" />
+    <HelpKINode Title="IDoctor.getPatientPerscriptions Method " Url="html/e18ed73e-2676-5bc9-a696-f575cf060b36.htm" />
+  </HelpKINode>
+  <HelpKINode Title="IDoctor.getPatientPerscriptionsAsync method">
+    <HelpKINode Title="IDoctor.getPatientPerscriptionsAsync Method " Url="html/15316748-adaa-040d-0858-781a6d54eee1.htm" />
+    <HelpKINode Title="IDoctor.getPatientPerscriptionsAsync Method " Url="html/8f0e6e72-1771-0b20-4338-2c6476113fd0.htm" />
+  </HelpKINode>
+  <HelpKINode Title="IDoctor.GetPatient_by_lastName_DateOfBirth method">
+    <HelpKINode Title="IDoctor.GetPatient_by_lastName_DateOfBirth Method " Url="html/cdc45313-fed9-ea91-cb2d-7964a7fd798e.htm" />
+    <HelpKINode Title="IDoctor.GetPatient_by_lastName_DateOfBirth Method " Url="html/e3026ee8-9429-9fd1-b14c-f3d2b5b69625.htm" />
+  </HelpKINode>
+  <HelpKINode Title="IDoctor.GetPatient_by_lastName_DateOfBirthAsync method">
+    <HelpKINode Title="IDoctor.GetPatient_by_lastName_DateOfBirthAsync Method " Url="html/f18ba996-ed92-bfc4-2b3a-b69dafb55851.htm" />
+    <HelpKINode Title="IDoctor.GetPatient_by_lastName_DateOfBirthAsync Method " Url="html/7e1d8c1c-3bde-41fa-36cc-6c1046526cc5.htm" />
+  </HelpKINode>
+  <HelpKINode Title="IDoctor.GetStaff_by_Personid method">
+    <HelpKINode Title="IDoctor.GetStaff_by_Personid Method " Url="html/c28297a5-ee03-e5b9-b813-f950da9867f2.htm" />
+    <HelpKINode Title="IDoctor.GetStaff_by_Personid Method " Url="html/41f89e4c-04bc-1cf7-4308-cfbdc9f659b2.htm" />
+  </HelpKINode>
+  <HelpKINode Title="IDoctor.GetStaff_by_PersonidAsync method">
+    <HelpKINode Title="IDoctor.GetStaff_by_PersonidAsync Method " Url="html/d9015609-e92a-30b4-6a83-c3979d945e8d.htm" />
+    <HelpKINode Title="IDoctor.GetStaff_by_PersonidAsync Method " Url="html/67c64dd3-c894-51f0-cc72-329a8d2eb355.htm" />
+  </HelpKINode>
+  <HelpKINode Title="IDoctor.GetStaff_by_staff_id method">
+    <HelpKINode Title="IDoctor.GetStaff_by_staff_id Method " Url="html/304d0e2e-719a-339c-ad84-f3bb37ad6d57.htm" />
+    <HelpKINode Title="IDoctor.GetStaff_by_staff_id Method " Url="html/6c8b71f1-83f0-eed1-37e7-0a2717fc9955.htm" />
+  </HelpKINode>
+  <HelpKINode Title="IDoctor.GetStaff_by_staff_idAsync method">
+    <HelpKINode Title="IDoctor.GetStaff_by_staff_idAsync Method " Url="html/3dfbe3fe-7f2f-2125-6f09-ff465e1b994f.htm" />
+    <HelpKINode Title="IDoctor.GetStaff_by_staff_idAsync Method " Url="html/d562c474-0cc3-afbf-5c68-d927646a7837.htm" />
+  </HelpKINode>
+  <HelpKINode Title="IDoctor.get_all_diseases method">
+    <HelpKINode Title="IDoctor.get_all_diseases Method " Url="html/ccd41f85-a628-2be1-4a5d-ae3541309a61.htm" />
+    <HelpKINode Title="IDoctor.get_all_diseases Method " Url="html/0166efc6-8abb-ab2e-4292-ffaedb9d4a90.htm" />
+  </HelpKINode>
+  <HelpKINode Title="IDoctor.get_all_diseasesAsync method">
+    <HelpKINode Title="IDoctor.get_all_diseasesAsync Method " Url="html/f7df82c4-57ff-c230-dbaa-902e39d2320f.htm" />
+    <HelpKINode Title="IDoctor.get_all_diseasesAsync Method " Url="html/d12034be-3614-206d-3e18-441d2da4f86d.htm" />
+  </HelpKINode>
+  <HelpKINode Title="IDoctor.get_all_medicines method">
+    <HelpKINode Title="IDoctor.get_all_medicines Method " Url="html/9c560ab8-c518-d9a6-676f-aee25964b309.htm" />
+    <HelpKINode Title="IDoctor.get_all_medicines Method " Url="html/2e07f967-865d-3078-1767-3b91e510ddb5.htm" />
+  </HelpKINode>
+  <HelpKINode Title="IDoctor.get_all_medicinesAsync method">
+    <HelpKINode Title="IDoctor.get_all_medicinesAsync Method " Url="html/caf410ad-9ccc-d7db-1ef1-23e3d24e7df6.htm" />
+    <HelpKINode Title="IDoctor.get_all_medicinesAsync Method " Url="html/ece08838-23b4-4ae8-534b-88c8c3f3f5de.htm" />
+  </HelpKINode>
+  <HelpKINode Title="IDoctor.Login method">
+    <HelpKINode Title="IDoctor.Login Method " Url="html/5cf6d26e-99ef-1474-8c23-411c4858b59d.htm" />
+    <HelpKINode Title="IDoctor.Login Method " Url="html/fc6c6ce7-17d3-bfae-ec23-2bb9890dcf77.htm" />
+  </HelpKINode>
+  <HelpKINode Title="IDoctor.LoginAsync method">
+    <HelpKINode Title="IDoctor.LoginAsync Method " Url="html/ce5eca06-bc9c-c8e5-b563-52fa601b36af.htm" />
+    <HelpKINode Title="IDoctor.LoginAsync Method " Url="html/0bfb065e-1063-56e4-9dd0-c9829e33957e.htm" />
+  </HelpKINode>
+  <HelpKINode Title="IDoctor.SearchconsultionHistoryByStaffID method">
+    <HelpKINode Title="IDoctor.SearchconsultionHistoryByStaffID Method " Url="html/083163f5-ba29-0b0b-bd22-55f9e70439cc.htm" />
+    <HelpKINode Title="IDoctor.SearchconsultionHistoryByStaffID Method " Url="html/53a6c144-7481-65a3-a856-c09b120c73bf.htm" />
+  </HelpKINode>
+  <HelpKINode Title="IDoctor.SearchconsultionHistoryByStaffIDAsync method">
+    <HelpKINode Title="IDoctor.SearchconsultionHistoryByStaffIDAsync Method " Url="html/44c97c73-8cc2-f773-52cf-2e4ce95bb0b9.htm" />
+    <HelpKINode Title="IDoctor.SearchconsultionHistoryByStaffIDAsync Method " Url="html/d9f236d4-bf3a-16cd-8286-884ab54d1060.htm" />
+  </HelpKINode>
+  <HelpKINode Title="IDoctor.SearchPatients method">
+    <HelpKINode Title="IDoctor.SearchPatients Method " Url="html/ebfd785e-fa45-2f0d-67d6-255cf74c93b4.htm" />
+    <HelpKINode Title="IDoctor.SearchPatients Method " Url="html/7339b7ba-efc3-6198-e6d4-c9550597db3a.htm" />
+  </HelpKINode>
+  <HelpKINode Title="IDoctor.SearchPatientsAsync method">
+    <HelpKINode Title="IDoctor.SearchPatientsAsync Method " Url="html/7a5d05a4-c0bf-cf35-2d9b-9329dae1fc57.htm" />
+    <HelpKINode Title="IDoctor.SearchPatientsAsync Method " Url="html/ae80b596-24ed-9608-cadc-1a61e9844448.htm" />
+  </HelpKINode>
+  <HelpKINode Title="IDoctor.search_disease method">
+    <HelpKINode Title="IDoctor.search_disease Method " Url="html/4a48846d-0d06-0dea-585c-68d99eedcbc2.htm" />
+    <HelpKINode Title="IDoctor.search_disease Method " Url="html/a9e48ad3-e651-1f1c-3de2-125c2ac44b1c.htm" />
+  </HelpKINode>
+  <HelpKINode Title="IDoctor.search_diseaseAsync method">
+    <HelpKINode Title="IDoctor.search_diseaseAsync Method " Url="html/1781b7c2-e672-37da-cb83-002590b6f94a.htm" />
+    <HelpKINode Title="IDoctor.search_diseaseAsync Method " Url="html/66f4b9f8-aebd-8591-c2cd-6c1b3b67142a.htm" />
+  </HelpKINode>
+  <HelpKINode Title="IDoctor.search_medicine method">
+    <HelpKINode Title="IDoctor.search_medicine Method " Url="html/11470522-ec1e-4fce-b4c3-a07beda67883.htm" />
+    <HelpKINode Title="IDoctor.search_medicine Method " Url="html/9fecf3fe-a661-ee60-5a18-e3794be1acce.htm" />
+  </HelpKINode>
+  <HelpKINode Title="IDoctor.search_medicineAsync method">
+    <HelpKINode Title="IDoctor.search_medicineAsync Method " Url="html/34c12792-97e0-8138-3550-a20a4917ca40.htm" />
+    <HelpKINode Title="IDoctor.search_medicineAsync Method " Url="html/1246aea1-dab1-b1e4-840a-a1d48c6a9eb6.htm" />
+  </HelpKINode>
+  <HelpKINode Title="IDoctor.updateConsultion_End_Date method">
+    <HelpKINode Title="IDoctor.updateConsultion_End_Date Method " Url="html/cb9b1033-9d46-1716-b955-e1c40fc4a085.htm" />
+    <HelpKINode Title="IDoctor.updateConsultion_End_Date Method " Url="html/854983d2-bd6c-c1d2-0299-b9b5172e3f9c.htm" />
+  </HelpKINode>
+  <HelpKINode Title="IDoctor.updateConsultion_End_DateAsync method">
+    <HelpKINode Title="IDoctor.updateConsultion_End_DateAsync Method " Url="html/945408ec-9765-a8de-8188-435f0010fde1.htm" />
+    <HelpKINode Title="IDoctor.updateConsultion_End_DateAsync Method " Url="html/571e2fc0-44e5-c005-47a9-7425ba705869.htm" />
+  </HelpKINode>
+  <HelpKINode Title="IDoctorChannel interface">
+    <HelpKINode Title="IDoctorChannel Interface" Url="html/68f0adb4-9603-72b4-09ba-9aa23f948709.htm" />
+    <HelpKINode Title="IDoctorChannel Interface" Url="html/751595f6-4637-cadd-5109-ad97c4ecade9.htm" />
+    <HelpKINode Title="about IDoctorChannel interface" Url="html/751595f6-4637-cadd-5109-ad97c4ecade9.htm" />
+    <HelpKINode Title="about IDoctorChannel interface" Url="html/68f0adb4-9603-72b4-09ba-9aa23f948709.htm" />
+    <HelpKINode Title="events" Url="html/ff24aeaf-a144-517c-d648-98412c3fb5af.htm" />
+    <HelpKINode Title="events" Url="html/eff361c5-93f1-4b4e-fb0e-48d5c2f8aebe.htm" />
+    <HelpKINode Title="methods" Url="html/1e7c4f03-f7fa-ce27-feee-d07f32ac409f.htm" />
+    <HelpKINode Title="methods" Url="html/4faf31c9-7d7c-f3e5-242d-ac85a347c4b9.htm" />
+    <HelpKINode Title="properties" Url="html/38657ab6-9ad4-5bf9-5ee6-616981bdaee3.htm" />
+    <HelpKINode Title="properties" Url="html/8221c130-b8af-eb1d-dd8c-9855ccc6a97e.htm" />
+  </HelpKINode>
+  <HelpKINode Title="InsuranceNumber property" Url="html/339333e3-f9fb-e6f0-e895-acafeafc8500.htm" />
+  <HelpKINode Title="InsuranceNumberk__BackingField property">
+    <HelpKINode Title="Person.InsuranceNumberk__BackingField Property " Url="html/2192068a-3d4a-263d-ea15-e224c5891d65.htm" />
+    <HelpKINode Title="Person.InsuranceNumberk__BackingField Property " Url="html/fdc0f240-c816-b76e-a134-335aabf00377.htm" />
+    <HelpKINode Title="Person.InsuranceNumberk__BackingField Property " Url="html/c7665921-bf3a-2817-5c86-604dee5114e3.htm" />
+    <HelpKINode Title="Person.InsuranceNumberk__BackingField Property " Url="html/a6e985d1-5034-66ae-9d72-2f57104bf5f9.htm" />
+    <HelpKINode Title="Person.InsuranceNumberk__BackingField Property " Url="html/42c99eda-4021-0b0c-c637-828ed6b421be.htm" />
+  </HelpKINode>
+  <HelpKINode Title="isclosed field" Url="html/6d9706db-f6a9-4d03-b1e9-a703ecbb0353.htm" />
+  <HelpKINode Title="LandLineNumber property" Url="html/9365d173-a487-b917-8c2f-8b19932e780d.htm" />
+  <HelpKINode Title="LandLineNumberk__BackingField property">
+    <HelpKINode Title="Person.LandLineNumberk__BackingField Property " Url="html/ca5b7289-05da-d2ee-c8fa-fb3c1da3f209.htm" />
+    <HelpKINode Title="Person.LandLineNumberk__BackingField Property " Url="html/b347f79e-6833-6802-5f9a-50f0776878b2.htm" />
+    <HelpKINode Title="Person.LandLineNumberk__BackingField Property " Url="html/694fdeef-3cb2-3cf0-828b-36faa88a1c5b.htm" />
+    <HelpKINode Title="Person.LandLineNumberk__BackingField Property " Url="html/39b8c931-8ade-b35f-64a7-ee0120719f40.htm" />
+    <HelpKINode Title="Person.LandLineNumberk__BackingField Property " Url="html/ef3dbb00-c4fb-efb4-bcfc-9501f97edea0.htm" />
+  </HelpKINode>
+  <HelpKINode Title="LastName property" Url="html/04920e2e-cc10-920c-a8c7-5ab672003eef.htm" />
+  <HelpKINode Title="LastNamek__BackingField property">
+    <HelpKINode Title="Person.LastNamek__BackingField Property " Url="html/c61da468-61e2-dc6d-ac25-011a7a804239.htm" />
+    <HelpKINode Title="Person.LastNamek__BackingField Property " Url="html/24be0ff4-888b-c613-9d5d-8fbc4be88154.htm" />
+    <HelpKINode Title="Person.LastNamek__BackingField Property " Url="html/4bfdd48e-d573-3cb0-71ee-5f6ccb75a2da.htm" />
+    <HelpKINode Title="Person.LastNamek__BackingField Property " Url="html/b10f578e-7b59-4f56-6160-7ca2a88d8193.htm" />
+    <HelpKINode Title="Person.LastNamek__BackingField Property " Url="html/13b15d5e-1017-fa62-3a6c-038871d37d81.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Login class">
+    <HelpKINode Title="Login Class" Url="html/a688b95d-f75c-6262-9606-2e02145a2e7c.htm" />
+    <HelpKINode Title="Login Class" Url="html/12a85100-8a2a-ae38-8d61-3cceff3d6426.htm" />
+    <HelpKINode Title="about Login class" Url="html/a688b95d-f75c-6262-9606-2e02145a2e7c.htm" />
+    <HelpKINode Title="about Login class" Url="html/12a85100-8a2a-ae38-8d61-3cceff3d6426.htm" />
+    <HelpKINode Title="constructor" Url="html/dd10a63a-f7df-5d6a-1736-090211ce21f4.htm" />
+    <HelpKINode Title="constructor" Url="html/0faebd1d-6396-edf8-1746-c99b4d9e16a8.htm" />
+    <HelpKINode Title="events" Url="html/ce6c358c-b61d-4e13-a7b8-1a027f6c22cf.htm" />
+    <HelpKINode Title="events" Url="html/47ddf59a-94f5-6269-7d34-fc525a2a8fce.htm" />
+    <HelpKINode Title="methods" Url="html/93ca763a-bb84-f022-2f4c-24dcdd576b23.htm" />
+    <HelpKINode Title="methods" Url="html/523f5563-918d-cbc8-69b7-b267150aa720.htm" />
+    <HelpKINode Title="properties" Url="html/5d2421ca-4e97-7843-8c1c-ef2906ec771c.htm" />
+    <HelpKINode Title="properties" Url="html/018568e7-bf69-3c2d-7096-1ec7e1e7b463.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Login method">
+    <HelpKINode Title="AppointmentClient.Login Method " Url="html/5f14f176-f74d-1c74-3707-d35e51eaee37.htm" />
+    <HelpKINode Title="AppointmentClient.Login Method " Url="html/5de2eff4-1a58-174a-d0b8-dca68a97eaf6.htm" />
+    <HelpKINode Title="DoctorClient.Login Method " Url="html/723661df-7b10-5868-3ec6-642bdb59f0fb.htm" />
+    <HelpKINode Title="DoctorClient.Login Method " Url="html/90fb8abf-e7a2-76af-6ba1-dd50b97887a0.htm" />
+    <HelpKINode Title="IAppointment.Login Method " Url="html/9934d696-283c-93ab-5445-b8e080bc3cdb.htm" />
+    <HelpKINode Title="IAppointment.Login Method " Url="html/5d67f13d-dc4a-74a7-c2cc-0138a442e2a6.htm" />
+    <HelpKINode Title="IAppointment.Login Method " Url="html/09baf523-bb5e-ccc4-40b1-8345c448207c.htm" />
+    <HelpKINode Title="IDoctor.Login Method " Url="html/5cf6d26e-99ef-1474-8c23-411c4858b59d.htm" />
+    <HelpKINode Title="IDoctor.Login Method " Url="html/fc6c6ce7-17d3-bfae-ec23-2bb9890dcf77.htm" />
+  </HelpKINode>
+  <HelpKINode Title="login method" Url="html/6ad8767b-3930-f926-154d-7547219c3bef.htm" />
+  <HelpKINode Title="Login.Dispose method">
+    <HelpKINode Title="Login.Dispose Method " Url="html/44ca87d6-808a-d3b8-9b43-304adda8f996.htm" />
+    <HelpKINode Title="Login.Dispose Method " Url="html/059c9e04-2d95-1c5d-ad12-70694330d9c6.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Login.Login constructor">
+    <HelpKINode Title="Login Constructor " Url="html/0faebd1d-6396-edf8-1746-c99b4d9e16a8.htm" />
+    <HelpKINode Title="Login Constructor " Url="html/dd10a63a-f7df-5d6a-1736-090211ce21f4.htm" />
+  </HelpKINode>
+  <HelpKINode Title="LoginAsync method">
+    <HelpKINode Title="AppointmentClient.LoginAsync Method " Url="html/89996001-5ae4-7fa0-b76e-14264ca06946.htm" />
+    <HelpKINode Title="AppointmentClient.LoginAsync Method " Url="html/5fd60b5a-fa1a-b166-a20c-fa43578172bc.htm" />
+    <HelpKINode Title="DoctorClient.LoginAsync Method " Url="html/01987cf4-5fc2-c190-abde-1e54e152eb2b.htm" />
+    <HelpKINode Title="DoctorClient.LoginAsync Method " Url="html/afa18d8c-120c-4324-526e-12dd9d28af61.htm" />
+    <HelpKINode Title="IAppointment.LoginAsync Method " Url="html/c189ca78-6621-483d-aa11-954957b73ba5.htm" />
+    <HelpKINode Title="IAppointment.LoginAsync Method " Url="html/a1da41b0-c814-9d1c-e144-c3382a22c7f1.htm" />
+    <HelpKINode Title="IDoctor.LoginAsync Method " Url="html/0bfb065e-1063-56e4-9dd0-c9829e33957e.htm" />
+    <HelpKINode Title="IDoctor.LoginAsync Method " Url="html/ce5eca06-bc9c-c8e5-b563-52fa601b36af.htm" />
+  </HelpKINode>
+  <HelpKINode Title="MainForm class">
+    <HelpKINode Title="MainForm Class" Url="html/164df9c0-2725-3b0b-0954-21c2668a5a63.htm" />
+    <HelpKINode Title="about MainForm class" Url="html/164df9c0-2725-3b0b-0954-21c2668a5a63.htm" />
+    <HelpKINode Title="constructor" Url="html/496b670a-c8db-005d-cb15-875ed4f8f35d.htm" />
+    <HelpKINode Title="events" Url="html/2cf1cb3a-c2e6-56da-117b-4a5f5c267cc3.htm" />
+    <HelpKINode Title="methods" Url="html/018cad90-62cc-7059-882b-404643aa0809.htm" />
+    <HelpKINode Title="properties" Url="html/319ed39a-9050-a532-caca-a5b12fdaf993.htm" />
+  </HelpKINode>
+  <HelpKINode Title="MainForm.Dispose method" Url="html/c091600e-cdcf-7b12-1756-c139864c6795.htm" />
+  <HelpKINode Title="MainForm.MainForm constructor" Url="html/496b670a-c8db-005d-cb15-875ed4f8f35d.htm" />
+  <HelpKINode Title="MainForm.populateInfoPatientTab method" Url="html/c3424c4d-b221-8303-b655-6b8181ae3924.htm" />
+  <HelpKINode Title="medicine property">
+    <HelpKINode Title="Perscription.medicine Property " Url="html/dce70c07-9007-3b1e-6b4b-05424012eadf.htm" />
+    <HelpKINode Title="Perscription.medicine Property " Url="html/0d075755-b882-2ba7-53dd-a3ff219b5f7f.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Medicine structure">
+    <HelpKINode Title="Medicine Structure" Url="html/177f9026-f221-49ee-9397-a745313139a4.htm" />
+    <HelpKINode Title="Medicine Structure" Url="html/92e8ca8b-abe8-ff89-1074-535b181cd6d0.htm" />
+    <HelpKINode Title="about Medicine structure" Url="html/92e8ca8b-abe8-ff89-1074-535b181cd6d0.htm" />
+    <HelpKINode Title="about Medicine structure" Url="html/177f9026-f221-49ee-9397-a745313139a4.htm" />
+    <HelpKINode Title="events" Url="html/73c0cc05-fd14-1f9e-2734-9de16c844269.htm" />
+    <HelpKINode Title="events" Url="html/0d0b547e-1a25-1fac-5222-749460948804.htm" />
+    <HelpKINode Title="methods" Url="html/8b9bf3e2-d3f8-384e-c187-d4140b5d774e.htm" />
+    <HelpKINode Title="methods" Url="html/9cbcb6ef-acf3-f2b0-c610-1f7cb0f17fad.htm" />
+    <HelpKINode Title="properties" Url="html/9e0feae7-cd86-cb66-072a-abdd5d6280d8.htm" />
+    <HelpKINode Title="properties" Url="html/323d581f-282b-986f-3b25-8195683811ea.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Medicine.description property">
+    <HelpKINode Title="Medicine.description Property " Url="html/68764c50-5289-885b-2c02-1abbe07c866a.htm" />
+    <HelpKINode Title="Medicine.description Property " Url="html/82bafe5a-580c-96f5-5f22-4e1017012c53.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Medicine.ExtensionData property">
+    <HelpKINode Title="Medicine.ExtensionData Property " Url="html/bdb10b3f-8047-de88-26fd-919e51b563aa.htm" />
+    <HelpKINode Title="Medicine.ExtensionData Property " Url="html/937ccad6-17d7-89db-df1e-75cbf2007ea1.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Medicine.name property">
+    <HelpKINode Title="Medicine.name Property " Url="html/48a07782-2c40-7773-8446-0a6dc66cb224.htm" />
+    <HelpKINode Title="Medicine.name Property " Url="html/2cd30cff-6a7a-e07d-0647-b770c32e78d8.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Medicine.PropertyChanged event">
+    <HelpKINode Title="Medicine.PropertyChanged Event" Url="html/81dbe98a-71c8-53ce-8c84-b588f5537fae.htm" />
+    <HelpKINode Title="Medicine.PropertyChanged Event" Url="html/565d27e0-6757-680d-b889-48c96c40bd82.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Medicine.strength_mg property">
+    <HelpKINode Title="Medicine.strength_mg Property " Url="html/622f6096-1713-f689-e1ff-662cf2e4ffcb.htm" />
+    <HelpKINode Title="Medicine.strength_mg Property " Url="html/d6defe2c-39c0-317f-7d07-337dc0796ada.htm" />
+  </HelpKINode>
+  <HelpKINode Title="MobileNumber property" Url="html/c05bcac0-eff1-217a-7538-840f840139ba.htm" />
+  <HelpKINode Title="MobileNumberk__BackingField property">
+    <HelpKINode Title="Person.MobileNumberk__BackingField Property " Url="html/2a312c33-0574-f4e2-f1e9-f2b265e9ed74.htm" />
+    <HelpKINode Title="Person.MobileNumberk__BackingField Property " Url="html/7f0bac22-8d92-da83-0435-c6b673eaa80d.htm" />
+    <HelpKINode Title="Person.MobileNumberk__BackingField Property " Url="html/0ceec895-f0a4-001b-bfcc-ee692f57b025.htm" />
+    <HelpKINode Title="Person.MobileNumberk__BackingField Property " Url="html/76ee1e5e-e0b5-9ad6-b265-bf2bc15079b0.htm" />
+    <HelpKINode Title="Person.MobileNumberk__BackingField Property " Url="html/4f4718a8-8653-4d12-883b-e3f62359272f.htm" />
+  </HelpKINode>
+  <HelpKINode Title="name property">
+    <HelpKINode Title="Medicine.name Property " Url="html/2cd30cff-6a7a-e07d-0647-b770c32e78d8.htm" />
+    <HelpKINode Title="Medicine.name Property " Url="html/48a07782-2c40-7773-8446-0a6dc66cb224.htm" />
+  </HelpKINode>
+  <HelpKINode Title="namek__BackingField property">
+    <HelpKINode Title="Disease.namek__BackingField Property " Url="html/b407978a-56be-297a-c70f-263223aacc95.htm" />
+    <HelpKINode Title="Disease.namek__BackingField Property " Url="html/ac842d9d-f569-9577-9ca7-86c7e1f64a0e.htm" />
+  </HelpKINode>
+  <HelpKINode Title="NewWiki method">
+    <HelpKINode Title="Client.NewWiki Method " Url="html/199091b3-d6c7-5a4b-6adf-564104fbb8ff.htm" />
+    <HelpKINode Title="PatientDetails.NewWiki Method " Url="html/2a5bfaae-946d-0a3c-5b2e-c3547b97bae5.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Patient class">
+    <HelpKINode Title="Patient Class" Url="html/b99e7542-02db-1863-53cf-9baca228e85e.htm" />
+    <HelpKINode Title="Patient Class" Url="html/b6574f19-df35-4542-ad43-62f6c73f2427.htm" />
+    <HelpKINode Title="Patient Class" Url="html/a79c3828-daa5-0cae-6c84-0b323a15167c.htm" />
+    <HelpKINode Title="Patient Class" Url="html/9779aac3-591c-92b6-449c-5b82bbfded51.htm" />
+    <HelpKINode Title="Patient Class" Url="html/5062a5ef-2e84-2aa3-71d3-3085809b989a.htm" />
+    <HelpKINode Title="Patient Class" Url="html/899113aa-eafc-ff5d-647b-aa3325d0c9bb.htm" />
+    <HelpKINode Title="about Patient class" Url="html/899113aa-eafc-ff5d-647b-aa3325d0c9bb.htm" />
+    <HelpKINode Title="about Patient class" Url="html/a79c3828-daa5-0cae-6c84-0b323a15167c.htm" />
+    <HelpKINode Title="about Patient class" Url="html/9779aac3-591c-92b6-449c-5b82bbfded51.htm" />
+    <HelpKINode Title="about Patient class" Url="html/b6574f19-df35-4542-ad43-62f6c73f2427.htm" />
+    <HelpKINode Title="about Patient class" Url="html/5062a5ef-2e84-2aa3-71d3-3085809b989a.htm" />
+    <HelpKINode Title="about Patient class" Url="html/b99e7542-02db-1863-53cf-9baca228e85e.htm" />
+    <HelpKINode Title="constructor" Url="html/070a8655-953b-8285-21cd-73f0e56c7090.htm" />
+    <HelpKINode Title="constructor" Url="html/768fd7ae-3c19-c495-2e3f-60900c3b9e48.htm" />
+    <HelpKINode Title="constructor" Url="html/e8c82a60-99aa-4ff3-2a5c-673164693d53.htm" />
+    <HelpKINode Title="constructor" Url="html/a65b7b19-7398-cc9c-fb8e-d86c3f493cdb.htm" />
+    <HelpKINode Title="constructor" Url="html/51c22a64-8886-a44d-312b-6bf2f441cfb0.htm" />
+    <HelpKINode Title="constructor" Url="html/ed324742-adf3-4cf2-967d-e50ef81b70d6.htm" />
+    <HelpKINode Title="events" Url="html/f4fe1e4c-ac86-fed2-bb5e-29f189144351.htm" />
+    <HelpKINode Title="events" Url="html/b4b10a6c-9bda-c3c3-57b0-370f753f80ef.htm" />
+    <HelpKINode Title="events" Url="html/33ea892f-3f8d-0508-894d-9ac6853907d1.htm" />
+    <HelpKINode Title="events" Url="html/dea2c084-c307-0cc9-174f-8f26c064b192.htm" />
+    <HelpKINode Title="events" Url="html/f71c89c5-0786-9ad7-c7e9-088f2405c0c5.htm" />
+    <HelpKINode Title="methods" Url="html/b909e9b2-cc73-3802-b54b-9855fe5a013a.htm" />
+    <HelpKINode Title="methods" Url="html/fdde1580-4331-ca0c-12a6-c1217459b3fe.htm" />
+    <HelpKINode Title="methods" Url="html/84eee3ec-b407-4f8d-9a12-2feaf8e3454d.htm" />
+    <HelpKINode Title="methods" Url="html/93b38a60-a327-3691-15ca-3f098a1e56f4.htm" />
+    <HelpKINode Title="methods" Url="html/c17344f8-ef14-98c6-97dc-dbb76dcc7b4c.htm" />
+    <HelpKINode Title="methods" Url="html/46e5e237-eb94-8ccf-b7d5-a33f845b9b7a.htm" />
+    <HelpKINode Title="properties" Url="html/45beb98b-b375-19bd-3049-5b409d4abd9f.htm" />
+    <HelpKINode Title="properties" Url="html/61802b1e-4552-7c59-8a16-be4e4cf3351b.htm" />
+    <HelpKINode Title="properties" Url="html/ae391ede-8f5f-5257-91b0-f54f3ed4c922.htm" />
+    <HelpKINode Title="properties" Url="html/e53f6346-1990-1b79-4ab5-0ad0363c14f1.htm" />
+    <HelpKINode Title="properties" Url="html/35bbd54c-c4d4-13a8-b93f-23995c9993c1.htm" />
+    <HelpKINode Title="properties" Url="html/c6f83b38-9027-38e7-3ef1-d37afb7964aa.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Patient.BloodType property" Url="html/886c7c67-a72d-c986-8a1a-de28cd9596ac.htm" />
+  <HelpKINode Title="Patient.BloodTypek__BackingField property">
+    <HelpKINode Title="Patient.BloodTypek__BackingField Property " Url="html/28758ead-bfb7-8524-a419-987b5e568d7a.htm" />
+    <HelpKINode Title="Patient.BloodTypek__BackingField Property " Url="html/022a93f3-a38c-42ea-070f-56ed34619348.htm" />
+    <HelpKINode Title="Patient.BloodTypek__BackingField Property " Url="html/ff379719-ffae-0d19-8444-8c63872ef267.htm" />
+    <HelpKINode Title="Patient.BloodTypek__BackingField Property " Url="html/79943639-6352-51eb-e45d-4137d0b63090.htm" />
+    <HelpKINode Title="Patient.BloodTypek__BackingField Property " Url="html/43a0f258-927b-1f38-c0c4-5c346ca05ab3.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Patient.ConsultationId property" Url="html/320c0785-b516-92a1-b42a-6e4f3a5190a9.htm" />
+  <HelpKINode Title="Patient.ConsultationIdk__BackingField property">
+    <HelpKINode Title="Patient.ConsultationIdk__BackingField Property " Url="html/4ae50cd9-9afe-9bc6-c245-3ab19c0c2b48.htm" />
+    <HelpKINode Title="Patient.ConsultationIdk__BackingField Property " Url="html/b832c272-fc2f-4e65-20d5-d3a92e641da4.htm" />
+    <HelpKINode Title="Patient.ConsultationIdk__BackingField Property " Url="html/261885c4-3fb1-e23e-0395-590d976d9ea6.htm" />
+    <HelpKINode Title="Patient.ConsultationIdk__BackingField Property " Url="html/627a25d8-96c0-3fcc-5d25-cbcd383bcb32.htm" />
+    <HelpKINode Title="Patient.ConsultationIdk__BackingField Property " Url="html/0be4c84d-21ef-1b1d-8ad3-1c584e3440a7.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Patient.DiagnosisId property" Url="html/73461bc7-55f5-f9bf-7a86-ed8f99fe75a0.htm" />
+  <HelpKINode Title="Patient.DiagnosisIdk__BackingField property">
+    <HelpKINode Title="Patient.DiagnosisIdk__BackingField Property " Url="html/64572673-2f42-ed71-9aa2-2319c8cab3bc.htm" />
+    <HelpKINode Title="Patient.DiagnosisIdk__BackingField Property " Url="html/5b4d6771-3e06-f36b-2416-02215e0a5023.htm" />
+    <HelpKINode Title="Patient.DiagnosisIdk__BackingField Property " Url="html/47abf4de-19fe-cb89-cbcb-9644fde430b2.htm" />
+    <HelpKINode Title="Patient.DiagnosisIdk__BackingField Property " Url="html/f762ca6a-3781-30d9-c2f1-bec668caf262.htm" />
+    <HelpKINode Title="Patient.DiagnosisIdk__BackingField Property " Url="html/d2f2578f-ec67-7771-1c9b-ca23ee552344.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Patient.hard_drugsk__BackingField property">
+    <HelpKINode Title="Patient.hard_drugsk__BackingField Property " Url="html/62557f97-0651-2be6-0a2d-b178814794b3.htm" />
+    <HelpKINode Title="Patient.hard_drugsk__BackingField Property " Url="html/06579d49-836f-26c2-22e5-07f111f2b309.htm" />
+    <HelpKINode Title="Patient.hard_drugsk__BackingField Property " Url="html/bf8cbef6-1a7c-36dd-d8cd-23b832f16028.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Patient.hard_drugs_frequencyk__BackingField property">
+    <HelpKINode Title="Patient.hard_drugs_frequencyk__BackingField Property " Url="html/4e000c03-e8a8-892f-4d3e-337b5cc4d064.htm" />
+    <HelpKINode Title="Patient.hard_drugs_frequencyk__BackingField Property " Url="html/85635286-5fbe-6223-c3d5-e8e4c8031cbe.htm" />
+    <HelpKINode Title="Patient.hard_drugs_frequencyk__BackingField Property " Url="html/143d9e52-587d-a13e-4543-a75efbb60d15.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Patient.Height property" Url="html/27e80c6d-5cb3-b03f-5549-4c3f6e37ed90.htm" />
+  <HelpKINode Title="Patient.Heightk__BackingField property">
+    <HelpKINode Title="Patient.Heightk__BackingField Property " Url="html/8666918f-6370-65df-7f9c-52fe834fc3c2.htm" />
+    <HelpKINode Title="Patient.Heightk__BackingField Property " Url="html/20d90299-ddcb-c86e-b847-b05da83a8668.htm" />
+    <HelpKINode Title="Patient.Heightk__BackingField Property " Url="html/b775c8f0-b304-b75c-a035-69485b2cc188.htm" />
+    <HelpKINode Title="Patient.Heightk__BackingField Property " Url="html/9059a02f-833f-5729-ecfe-95f18fef52f5.htm" />
+    <HelpKINode Title="Patient.Heightk__BackingField Property " Url="html/62f8d2e3-f225-2ce3-4759-dc92d33f7e63.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Patient.Patient constructor">
+    <HelpKINode Title="Patient Constructor " Url="html/070a8655-953b-8285-21cd-73f0e56c7090.htm" />
+    <HelpKINode Title="Patient Constructor " Url="html/ed324742-adf3-4cf2-967d-e50ef81b70d6.htm" />
+    <HelpKINode Title="Patient Constructor " Url="html/e8c82a60-99aa-4ff3-2a5c-673164693d53.htm" />
+    <HelpKINode Title="Patient Constructor " Url="html/51c22a64-8886-a44d-312b-6bf2f441cfb0.htm" />
+    <HelpKINode Title="Patient Constructor " Url="html/a65b7b19-7398-cc9c-fb8e-d86c3f493cdb.htm" />
+    <HelpKINode Title="Patient Constructor " Url="html/768fd7ae-3c19-c495-2e3f-60900c3b9e48.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Patient.PatientID property" Url="html/03cf8086-d470-0ae1-79ac-d0ee38eb9a22.htm" />
+  <HelpKINode Title="Patient.PatientIDk__BackingField property">
+    <HelpKINode Title="Patient.PatientIDk__BackingField Property " Url="html/6727fcf3-63af-0d2f-d1d2-ad92cc82d3aa.htm" />
+    <HelpKINode Title="Patient.PatientIDk__BackingField Property " Url="html/00569fb9-fd1d-e872-fabd-a46f0d796534.htm" />
+    <HelpKINode Title="Patient.PatientIDk__BackingField Property " Url="html/a113f06e-6372-efa3-7d73-9a6350e047be.htm" />
+    <HelpKINode Title="Patient.PatientIDk__BackingField Property " Url="html/490e174f-fbf0-366d-06d5-c1a2a3b3e2e2.htm" />
+    <HelpKINode Title="Patient.PatientIDk__BackingField Property " Url="html/babafa00-d71c-9064-d929-ffc3713a083b.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Patient.PrescriptionId property" Url="html/66d3ece6-f449-69bb-e21a-f7dee7843aaa.htm" />
+  <HelpKINode Title="Patient.PrescriptionIdk__BackingField property">
+    <HelpKINode Title="Patient.PrescriptionIdk__BackingField Property " Url="html/f5369fc8-4acd-857e-fde8-39e83ee75f2e.htm" />
+    <HelpKINode Title="Patient.PrescriptionIdk__BackingField Property " Url="html/fb5e0ca9-9078-a520-3927-67783e47e3b5.htm" />
+    <HelpKINode Title="Patient.PrescriptionIdk__BackingField Property " Url="html/86f148d6-9424-4100-604b-19cb55c5d20f.htm" />
+    <HelpKINode Title="Patient.PrescriptionIdk__BackingField Property " Url="html/b6b69437-c2ca-517c-2b79-d1e11d537e34.htm" />
+    <HelpKINode Title="Patient.PrescriptionIdk__BackingField Property " Url="html/87e955c3-cc3c-d2d1-3b92-957586957282.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Patient.Smoker property" Url="html/e6ac8a40-ee75-3204-d58c-e127921faf9a.htm" />
+  <HelpKINode Title="Patient.Smokerk__BackingField property">
+    <HelpKINode Title="Patient.Smokerk__BackingField Property " Url="html/bd247478-e506-9f52-45d3-f2ddd1b38da1.htm" />
+    <HelpKINode Title="Patient.Smokerk__BackingField Property " Url="html/d86e39e8-a7d7-6c11-1ada-753c35acbd58.htm" />
+    <HelpKINode Title="Patient.Smokerk__BackingField Property " Url="html/c29cf626-86ea-27c1-2618-206eeca50ab5.htm" />
+    <HelpKINode Title="Patient.Smokerk__BackingField Property " Url="html/5fdafcdb-ed11-33ae-16e9-27bb6f4707f8.htm" />
+    <HelpKINode Title="Patient.Smokerk__BackingField Property " Url="html/8b347265-f5df-b1d4-dffa-137f564a1dc4.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Patient.SmokingFrequency property" Url="html/b1ce174c-23b2-5469-e946-fad7bf46608e.htm" />
+  <HelpKINode Title="Patient.SmokingFrequencyk__BackingField property">
+    <HelpKINode Title="Patient.SmokingFrequencyk__BackingField Property " Url="html/e117faee-3c53-0e54-cd2e-abeaede8c2b5.htm" />
+    <HelpKINode Title="Patient.SmokingFrequencyk__BackingField Property " Url="html/5bd6290b-2161-1507-fc85-e010ce428f69.htm" />
+    <HelpKINode Title="Patient.SmokingFrequencyk__BackingField Property " Url="html/3aa983d7-2252-3fe0-b9bf-09e4e1d9f552.htm" />
+    <HelpKINode Title="Patient.SmokingFrequencyk__BackingField Property " Url="html/ce3fb18a-5d22-6bf4-9592-de580f465acb.htm" />
+    <HelpKINode Title="Patient.SmokingFrequencyk__BackingField Property " Url="html/4ea79466-5056-9c9d-a683-9da530c5fbd4.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Patient.Weight property" Url="html/e3b81b04-5349-c5b7-e484-6d666c83c69b.htm" />
+  <HelpKINode Title="Patient.Weightk__BackingField property">
+    <HelpKINode Title="Patient.Weightk__BackingField Property " Url="html/56915c06-7457-45cc-9f4f-4fb1a147a625.htm" />
+    <HelpKINode Title="Patient.Weightk__BackingField Property " Url="html/a1d9021a-6a9b-7c07-f3b4-b1608284ea94.htm" />
+    <HelpKINode Title="Patient.Weightk__BackingField Property " Url="html/5b0660fc-e181-0e8e-7e96-7a40ef032151.htm" />
+    <HelpKINode Title="Patient.Weightk__BackingField Property " Url="html/d714f206-eb6b-bf48-c42e-508b00c3aab3.htm" />
+    <HelpKINode Title="Patient.Weightk__BackingField Property " Url="html/90635a68-b3b5-41f8-79c3-af93c93ff1a2.htm" />
+  </HelpKINode>
+  <HelpKINode Title="PatientDetails class">
+    <HelpKINode Title="PatientDetails Class" Url="html/00920e19-4fc7-13fd-56eb-14fc1632b1ce.htm" />
+    <HelpKINode Title="about PatientDetails class" Url="html/00920e19-4fc7-13fd-56eb-14fc1632b1ce.htm" />
+    <HelpKINode Title="constructor" Url="html/7a20f87b-6df4-496b-1f6f-58f1a946b5ae.htm" />
+    <HelpKINode Title="events" Url="html/952b6a54-8c2e-d86a-d2fa-8ea6120d8fcd.htm" />
+    <HelpKINode Title="methods" Url="html/24995592-8ed6-8101-08af-40a7fdfe2255.htm" />
+    <HelpKINode Title="properties" Url="html/fc590e2a-f547-1a6c-e04e-530dfafdfb6c.htm" />
+  </HelpKINode>
+  <HelpKINode Title="PatientDetails.Dispose method" Url="html/34038871-aa41-caec-76bd-bb4b1fd93de0.htm" />
+  <HelpKINode Title="PatientDetails.Finalize method" Url="html/231a0b2a-f2c2-8da7-58f0-35b3f5f38a83.htm" />
+  <HelpKINode Title="PatientDetails.NewWiki method" Url="html/2a5bfaae-946d-0a3c-5b2e-c3547b97bae5.htm" />
+  <HelpKINode Title="PatientDetails.PatientDetails constructor" Url="html/7a20f87b-6df4-496b-1f6f-58f1a946b5ae.htm" />
+  <HelpKINode Title="PatientID property" Url="html/03cf8086-d470-0ae1-79ac-d0ee38eb9a22.htm" />
+  <HelpKINode Title="PatientIDk__BackingField property">
+    <HelpKINode Title="Patient.PatientIDk__BackingField Property " Url="html/6727fcf3-63af-0d2f-d1d2-ad92cc82d3aa.htm" />
+    <HelpKINode Title="Patient.PatientIDk__BackingField Property " Url="html/babafa00-d71c-9064-d929-ffc3713a083b.htm" />
+    <HelpKINode Title="Patient.PatientIDk__BackingField Property " Url="html/00569fb9-fd1d-e872-fabd-a46f0d796534.htm" />
+    <HelpKINode Title="Patient.PatientIDk__BackingField Property " Url="html/a113f06e-6372-efa3-7d73-9a6350e047be.htm" />
+    <HelpKINode Title="Patient.PatientIDk__BackingField Property " Url="html/490e174f-fbf0-366d-06d5-c1a2a3b3e2e2.htm" />
+  </HelpKINode>
+  <HelpKINode Title="patient_id property">
+    <HelpKINode Title="Appointment.patient_id Property " Url="html/b17295c9-b84e-f403-3af9-be069a51cb19.htm" />
+    <HelpKINode Title="Appointment.patient_id Property " Url="html/74c432b4-6c6b-86dd-fe98-bcfd08f4a5af.htm" />
+    <HelpKINode Title="Consultation.patient_id Property " Url="html/d5678210-cc15-d2ae-f53f-6ca86c1f37b1.htm" />
+    <HelpKINode Title="Consultation.patient_id Property " Url="html/b4ed14a7-b707-bf4c-be69-13c0b1e4c8ce.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Patient_id property" Url="html/d923207a-fff0-1b2a-c043-268dcd310e68.htm" />
+  <HelpKINode Title="Perscription structure">
+    <HelpKINode Title="Perscription Structure" Url="html/f592e8b6-b464-0f85-7d2d-84551fae84cc.htm" />
+    <HelpKINode Title="Perscription Structure" Url="html/7b53c192-6d4c-dc29-28bd-e52055aa297a.htm" />
+    <HelpKINode Title="about Perscription structure" Url="html/7b53c192-6d4c-dc29-28bd-e52055aa297a.htm" />
+    <HelpKINode Title="about Perscription structure" Url="html/f592e8b6-b464-0f85-7d2d-84551fae84cc.htm" />
+    <HelpKINode Title="events" Url="html/d1313196-5466-8e7b-58da-0e0edd35052b.htm" />
+    <HelpKINode Title="events" Url="html/51ffc03c-4e65-90cc-f015-ce89c4b4b3b4.htm" />
+    <HelpKINode Title="methods" Url="html/a4a710e4-2f19-9655-4060-c7476005b3b6.htm" />
+    <HelpKINode Title="methods" Url="html/b4667138-39bd-7b2e-7063-d12ac352cfb5.htm" />
+    <HelpKINode Title="properties" Url="html/0d3d7eaa-d5bd-6949-7fcf-68fed70ea1e4.htm" />
+    <HelpKINode Title="properties" Url="html/5676b513-b59f-dc39-b239-fdb20549e2b3.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Perscription.amount_ml property">
+    <HelpKINode Title="Perscription.amount_ml Property " Url="html/7145b500-19e2-7f4d-6153-348d12bbc92b.htm" />
+    <HelpKINode Title="Perscription.amount_ml Property " Url="html/1006f64f-b127-ad7c-df14-3d0029aa168c.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Perscription.amount_pills property">
+    <HelpKINode Title="Perscription.amount_pills Property " Url="html/79f24c97-ace9-f7b2-9c2e-b55502d17a97.htm" />
+    <HelpKINode Title="Perscription.amount_pills Property " Url="html/6aa6087e-a439-0b02-9d07-80fa6aaf4a92.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Perscription.date property">
+    <HelpKINode Title="Perscription.date Property " Url="html/fd126de3-096e-c1f7-6727-5cb72ba00093.htm" />
+    <HelpKINode Title="Perscription.date Property " Url="html/6d53c3e9-7788-be12-9d06-c2345d6df126.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Perscription.doctor property">
+    <HelpKINode Title="Perscription.doctor Property " Url="html/5ca175e6-59ea-088b-d0a1-97f0840bfa47.htm" />
+    <HelpKINode Title="Perscription.doctor Property " Url="html/3c348c98-7a68-05d2-5392-7fb10e7309c5.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Perscription.doctorId property">
+    <HelpKINode Title="Perscription.doctorId Property " Url="html/b03c00a3-b66a-2c95-29f9-3198f08c4e76.htm" />
+    <HelpKINode Title="Perscription.doctorId Property " Url="html/8225c695-d289-f3aa-5e0a-80f39f30188d.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Perscription.ExtensionData property">
+    <HelpKINode Title="Perscription.ExtensionData Property " Url="html/8f4782ba-922b-52ff-9490-1eb19693db59.htm" />
+    <HelpKINode Title="Perscription.ExtensionData Property " Url="html/fa376f37-1fc7-85f9-3a67-2575423b1e30.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Perscription.medicine property">
+    <HelpKINode Title="Perscription.medicine Property " Url="html/dce70c07-9007-3b1e-6b4b-05424012eadf.htm" />
+    <HelpKINode Title="Perscription.medicine Property " Url="html/0d075755-b882-2ba7-53dd-a3ff219b5f7f.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Perscription.PropertyChanged event">
+    <HelpKINode Title="Perscription.PropertyChanged Event" Url="html/e74a1acb-e38a-6b44-3ace-ea43a870be3f.htm" />
+    <HelpKINode Title="Perscription.PropertyChanged Event" Url="html/177fba04-c49a-9dda-205b-07acd0cefd13.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Perscription.strength property">
+    <HelpKINode Title="Perscription.strength Property " Url="html/0e579e3a-19c2-72c0-1235-725fa984e7fa.htm" />
+    <HelpKINode Title="Perscription.strength Property " Url="html/10eb726a-1a3b-123a-6f73-0797a65f0576.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Person class">
+    <HelpKINode Title="Person Class" Url="html/094c8a58-e7e7-923b-9764-da8ad3e4b19c.htm" />
+    <HelpKINode Title="Person Class" Url="html/b2ebb60c-08f8-7172-2500-acab9d5177df.htm" />
+    <HelpKINode Title="Person Class" Url="html/877c6fda-edef-8b32-8244-0e5fea654d9f.htm" />
+    <HelpKINode Title="Person Class" Url="html/861a4a43-de52-2160-5599-79144bf89505.htm" />
+    <HelpKINode Title="Person Class" Url="html/8753cf98-d57e-1458-0a31-b4f37a354d6b.htm" />
+    <HelpKINode Title="Person Class" Url="html/fbaf22a8-f63a-ef68-e64a-897927e2c594.htm" />
+    <HelpKINode Title="about Person class" Url="html/861a4a43-de52-2160-5599-79144bf89505.htm" />
+    <HelpKINode Title="about Person class" Url="html/094c8a58-e7e7-923b-9764-da8ad3e4b19c.htm" />
+    <HelpKINode Title="about Person class" Url="html/b2ebb60c-08f8-7172-2500-acab9d5177df.htm" />
+    <HelpKINode Title="about Person class" Url="html/877c6fda-edef-8b32-8244-0e5fea654d9f.htm" />
+    <HelpKINode Title="about Person class" Url="html/8753cf98-d57e-1458-0a31-b4f37a354d6b.htm" />
+    <HelpKINode Title="about Person class" Url="html/fbaf22a8-f63a-ef68-e64a-897927e2c594.htm" />
+    <HelpKINode Title="constructor" Url="html/34d790e2-6c48-5205-4c48-3640c8c54071.htm" />
+    <HelpKINode Title="constructor" Url="html/aba7c30e-bfd7-2ce0-08ef-0a7b8f11187a.htm" />
+    <HelpKINode Title="constructor" Url="html/20204360-d394-6f68-9240-f155015526ba.htm" />
+    <HelpKINode Title="constructor" Url="html/a3249c56-45ea-2ce6-d684-13b7f5460232.htm" />
+    <HelpKINode Title="constructor" Url="html/5cd777f0-1cfd-303a-97bd-8d0fa66bf6c1.htm" />
+    <HelpKINode Title="constructor" Url="html/94d9fe00-5d24-e6a7-5a64-8a8075e02bb9.htm" />
+    <HelpKINode Title="events" Url="html/a5505b38-06cd-5f06-c1fb-0f72e395b903.htm" />
+    <HelpKINode Title="events" Url="html/95cc3edb-df46-9a3d-e936-f55128996129.htm" />
+    <HelpKINode Title="events" Url="html/1fa17270-fc05-86a1-3214-ac8a37a8156b.htm" />
+    <HelpKINode Title="events" Url="html/a79124eb-bd23-be1d-64d2-3cc78b95bcc6.htm" />
+    <HelpKINode Title="events" Url="html/928a5cf0-f8f5-7519-0b0d-dd83e38f11d3.htm" />
+    <HelpKINode Title="methods" Url="html/d39aee02-78a7-8357-0ed8-7dc1fc4c9dd1.htm" />
+    <HelpKINode Title="methods" Url="html/5c16ab56-24e0-ae5d-19c6-47b50f1371ef.htm" />
+    <HelpKINode Title="methods" Url="html/3955bcdc-582a-2796-2ddf-d926efb54cf5.htm" />
+    <HelpKINode Title="methods" Url="html/0619e6d3-c1b4-7e2a-4ce4-35fdf82271d6.htm" />
+    <HelpKINode Title="methods" Url="html/3447c990-5336-71dd-e45c-051d5ce4b516.htm" />
+    <HelpKINode Title="methods" Url="html/e22ad91f-11fe-2a2a-5564-b7d2dcabe534.htm" />
+    <HelpKINode Title="properties" Url="html/1ffa5d11-3bad-94d5-d573-0fbae5ff0315.htm" />
+    <HelpKINode Title="properties" Url="html/71913192-f934-2c9a-8c91-579b32976ca2.htm" />
+    <HelpKINode Title="properties" Url="html/827cfb17-a2b0-b785-ea4a-4f0afc2186a4.htm" />
+    <HelpKINode Title="properties" Url="html/9e2a6717-d0fb-b647-a672-d0d6ca62434c.htm" />
+    <HelpKINode Title="properties" Url="html/0260a976-370d-1b7a-44f3-37740be3ecd3.htm" />
+    <HelpKINode Title="properties" Url="html/b91ed1b6-9827-ec81-45ee-5e95754b4473.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Person.Address property" Url="html/bdcf22ad-9149-239a-6a94-916b37d5cd7e.htm" />
+  <HelpKINode Title="Person.Addressk__BackingField property">
+    <HelpKINode Title="Person.Addressk__BackingField Property " Url="html/d67ca274-bef3-508c-610c-4f23d6f9272a.htm" />
+    <HelpKINode Title="Person.Addressk__BackingField Property " Url="html/2d280b31-1475-19ee-f511-4179325cc460.htm" />
+    <HelpKINode Title="Person.Addressk__BackingField Property " Url="html/e157912f-144e-d5a2-d3af-950509943182.htm" />
+    <HelpKINode Title="Person.Addressk__BackingField Property " Url="html/b4e95753-cfd2-28e3-dc12-edc2686646a2.htm" />
+    <HelpKINode Title="Person.Addressk__BackingField Property " Url="html/415524da-3d3a-cdc6-73bf-d3afa8f8c857.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Person.DateOfBirth property" Url="html/ab9d9366-ed82-a851-6b01-51f880ab196e.htm" />
+  <HelpKINode Title="Person.DateOfBirthk__BackingField property">
+    <HelpKINode Title="Person.DateOfBirthk__BackingField Property " Url="html/ae82a78b-002c-5a79-3794-03a609565270.htm" />
+    <HelpKINode Title="Person.DateOfBirthk__BackingField Property " Url="html/733b984a-befe-4a8c-6d90-3d01c50edfa9.htm" />
+    <HelpKINode Title="Person.DateOfBirthk__BackingField Property " Url="html/a8c4d1d8-2c4a-9778-3fc8-fdde5eb6825d.htm" />
+    <HelpKINode Title="Person.DateOfBirthk__BackingField Property " Url="html/792bab26-f362-06bf-5f25-4567c948303a.htm" />
+    <HelpKINode Title="Person.DateOfBirthk__BackingField Property " Url="html/6349b965-f7b1-7d96-02f6-559e4bee024b.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Person.Email property" Url="html/0dc98bfd-592b-e348-76b9-ea8625bcad2e.htm" />
+  <HelpKINode Title="Person.Emailk__BackingField property">
+    <HelpKINode Title="Person.Emailk__BackingField Property " Url="html/33692256-d4cf-63d4-96ab-bc063c0c1ecf.htm" />
+    <HelpKINode Title="Person.Emailk__BackingField Property " Url="html/66de9a87-2a3c-04eb-5c71-2d760e573ae6.htm" />
+    <HelpKINode Title="Person.Emailk__BackingField Property " Url="html/be673c7f-8c30-4c30-b093-e275ba27bcfa.htm" />
+    <HelpKINode Title="Person.Emailk__BackingField Property " Url="html/76506de0-6040-be3e-29d3-eb340886033d.htm" />
+    <HelpKINode Title="Person.Emailk__BackingField Property " Url="html/b2ab00c7-26ec-23eb-7d2e-3407907ad385.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Person.ExtensionData property">
+    <HelpKINode Title="Person.ExtensionData Property " Url="html/f240257c-11f9-5c9e-201a-131fc50cc11e.htm" />
+    <HelpKINode Title="Person.ExtensionData Property " Url="html/94d80e64-53ef-6e2a-7cfe-d3b9f824e2ee.htm" />
+    <HelpKINode Title="Person.ExtensionData Property " Url="html/6c9604c5-e8b5-417c-0e14-c990c2c3744a.htm" />
+    <HelpKINode Title="Person.ExtensionData Property " Url="html/696cf557-b97f-1dde-a4b0-d2aba9419a05.htm" />
+    <HelpKINode Title="Person.ExtensionData Property " Url="html/697c7702-c81a-b72b-409c-ff5d41c9b1e5.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Person.FirstName property" Url="html/d133ef83-8820-7a41-b438-ec203b6b3b35.htm" />
+  <HelpKINode Title="Person.FirstNamek__BackingField property">
+    <HelpKINode Title="Person.FirstNamek__BackingField Property " Url="html/bfb74876-4cb4-dd4b-563d-81e2391b8445.htm" />
+    <HelpKINode Title="Person.FirstNamek__BackingField Property " Url="html/e8789312-7bbd-889f-fbd4-5d4fbb828596.htm" />
+    <HelpKINode Title="Person.FirstNamek__BackingField Property " Url="html/e3534258-b99e-5262-f94e-e81be97ef1e5.htm" />
+    <HelpKINode Title="Person.FirstNamek__BackingField Property " Url="html/98b9d552-5cba-d620-5475-ed330cc3979b.htm" />
+    <HelpKINode Title="Person.FirstNamek__BackingField Property " Url="html/9f4fce1d-c774-7520-7496-fe9dd51eb697.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Person.Gender property" Url="html/fe007d30-f57a-3363-1176-4d6fbf02b4a2.htm" />
+  <HelpKINode Title="Person.Genderk__BackingField property">
+    <HelpKINode Title="Person.Genderk__BackingField Property " Url="html/977a8962-b515-6651-8645-32e6086b8702.htm" />
+    <HelpKINode Title="Person.Genderk__BackingField Property " Url="html/62442561-0c60-7fcd-602e-d4590dbaae1c.htm" />
+    <HelpKINode Title="Person.Genderk__BackingField Property " Url="html/0b748db8-d03a-308e-8903-fd4319d855cd.htm" />
+    <HelpKINode Title="Person.Genderk__BackingField Property " Url="html/6a19a783-6229-a064-11e5-6cd1db74dc7b.htm" />
+    <HelpKINode Title="Person.Genderk__BackingField Property " Url="html/33fae85c-cc5f-ca17-3a7e-0138e6e5dc34.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Person.InsuranceNumber property" Url="html/339333e3-f9fb-e6f0-e895-acafeafc8500.htm" />
+  <HelpKINode Title="Person.InsuranceNumberk__BackingField property">
+    <HelpKINode Title="Person.InsuranceNumberk__BackingField Property " Url="html/a6e985d1-5034-66ae-9d72-2f57104bf5f9.htm" />
+    <HelpKINode Title="Person.InsuranceNumberk__BackingField Property " Url="html/fdc0f240-c816-b76e-a134-335aabf00377.htm" />
+    <HelpKINode Title="Person.InsuranceNumberk__BackingField Property " Url="html/42c99eda-4021-0b0c-c637-828ed6b421be.htm" />
+    <HelpKINode Title="Person.InsuranceNumberk__BackingField Property " Url="html/c7665921-bf3a-2817-5c86-604dee5114e3.htm" />
+    <HelpKINode Title="Person.InsuranceNumberk__BackingField Property " Url="html/2192068a-3d4a-263d-ea15-e224c5891d65.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Person.LandLineNumber property" Url="html/9365d173-a487-b917-8c2f-8b19932e780d.htm" />
+  <HelpKINode Title="Person.LandLineNumberk__BackingField property">
+    <HelpKINode Title="Person.LandLineNumberk__BackingField Property " Url="html/694fdeef-3cb2-3cf0-828b-36faa88a1c5b.htm" />
+    <HelpKINode Title="Person.LandLineNumberk__BackingField Property " Url="html/39b8c931-8ade-b35f-64a7-ee0120719f40.htm" />
+    <HelpKINode Title="Person.LandLineNumberk__BackingField Property " Url="html/ef3dbb00-c4fb-efb4-bcfc-9501f97edea0.htm" />
+    <HelpKINode Title="Person.LandLineNumberk__BackingField Property " Url="html/b347f79e-6833-6802-5f9a-50f0776878b2.htm" />
+    <HelpKINode Title="Person.LandLineNumberk__BackingField Property " Url="html/ca5b7289-05da-d2ee-c8fa-fb3c1da3f209.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Person.LastName property" Url="html/04920e2e-cc10-920c-a8c7-5ab672003eef.htm" />
+  <HelpKINode Title="Person.LastNamek__BackingField property">
+    <HelpKINode Title="Person.LastNamek__BackingField Property " Url="html/24be0ff4-888b-c613-9d5d-8fbc4be88154.htm" />
+    <HelpKINode Title="Person.LastNamek__BackingField Property " Url="html/4bfdd48e-d573-3cb0-71ee-5f6ccb75a2da.htm" />
+    <HelpKINode Title="Person.LastNamek__BackingField Property " Url="html/c61da468-61e2-dc6d-ac25-011a7a804239.htm" />
+    <HelpKINode Title="Person.LastNamek__BackingField Property " Url="html/b10f578e-7b59-4f56-6160-7ca2a88d8193.htm" />
+    <HelpKINode Title="Person.LastNamek__BackingField Property " Url="html/13b15d5e-1017-fa62-3a6c-038871d37d81.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Person.MobileNumber property" Url="html/c05bcac0-eff1-217a-7538-840f840139ba.htm" />
+  <HelpKINode Title="Person.MobileNumberk__BackingField property">
+    <HelpKINode Title="Person.MobileNumberk__BackingField Property " Url="html/7f0bac22-8d92-da83-0435-c6b673eaa80d.htm" />
+    <HelpKINode Title="Person.MobileNumberk__BackingField Property " Url="html/4f4718a8-8653-4d12-883b-e3f62359272f.htm" />
+    <HelpKINode Title="Person.MobileNumberk__BackingField Property " Url="html/2a312c33-0574-f4e2-f1e9-f2b265e9ed74.htm" />
+    <HelpKINode Title="Person.MobileNumberk__BackingField Property " Url="html/76ee1e5e-e0b5-9ad6-b265-bf2bc15079b0.htm" />
+    <HelpKINode Title="Person.MobileNumberk__BackingField Property " Url="html/0ceec895-f0a4-001b-bfcc-ee692f57b025.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Person.Person constructor">
+    <HelpKINode Title="Person Constructor " Url="html/a3249c56-45ea-2ce6-d684-13b7f5460232.htm" />
+    <HelpKINode Title="Person Constructor " Url="html/aba7c30e-bfd7-2ce0-08ef-0a7b8f11187a.htm" />
+    <HelpKINode Title="Person Constructor " Url="html/34d790e2-6c48-5205-4c48-3640c8c54071.htm" />
+    <HelpKINode Title="Person Constructor " Url="html/94d9fe00-5d24-e6a7-5a64-8a8075e02bb9.htm" />
+    <HelpKINode Title="Person Constructor " Url="html/20204360-d394-6f68-9240-f155015526ba.htm" />
+    <HelpKINode Title="Person Constructor " Url="html/5cd777f0-1cfd-303a-97bd-8d0fa66bf6c1.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Person.PersonId property" Url="html/d8e116a5-57ac-e226-4899-ca3818fd73d8.htm" />
+  <HelpKINode Title="Person.PersonIdk__BackingField property">
+    <HelpKINode Title="Person.PersonIdk__BackingField Property " Url="html/568c98bc-bc6c-cc3e-a813-d270e7de723f.htm" />
+    <HelpKINode Title="Person.PersonIdk__BackingField Property " Url="html/b3410832-228f-b0f2-0039-9b05bdb7c43c.htm" />
+    <HelpKINode Title="Person.PersonIdk__BackingField Property " Url="html/15caf55f-8b84-6955-c1b9-7ba63c795e3b.htm" />
+    <HelpKINode Title="Person.PersonIdk__BackingField Property " Url="html/6ba3efe7-7df7-27fe-4414-8d11bc279b3d.htm" />
+    <HelpKINode Title="Person.PersonIdk__BackingField Property " Url="html/50c51ea9-912d-d0df-1ee7-f49e2c3ea554.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Person.PropertyChanged event">
+    <HelpKINode Title="Person.PropertyChanged Event" Url="html/42a3cb40-5a98-b73e-900f-57632a5630b2.htm" />
+    <HelpKINode Title="Person.PropertyChanged Event" Url="html/d0dc6ce9-4fe7-5aab-5e4a-51aa8fca024d.htm" />
+    <HelpKINode Title="Person.PropertyChanged Event" Url="html/f88334c1-66a1-16c0-f575-db17f75e8f55.htm" />
+    <HelpKINode Title="Person.PropertyChanged Event" Url="html/8037298c-98a1-7251-4492-1b91bf0c254a.htm" />
+    <HelpKINode Title="Person.PropertyChanged Event" Url="html/92d182b7-73b0-b568-3e44-db5fd908ad78.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Person.RaisePropertyChanged method">
+    <HelpKINode Title="Person.RaisePropertyChanged Method " Url="html/c20565f6-2dab-b3c5-4eab-e2a8805d3ce1.htm" />
+    <HelpKINode Title="Person.RaisePropertyChanged Method " Url="html/4ad28daf-f72d-542a-cd18-ceeab0319fd1.htm" />
+    <HelpKINode Title="Person.RaisePropertyChanged Method " Url="html/90412053-7cc9-1fd6-69af-4673c173267c.htm" />
+    <HelpKINode Title="Person.RaisePropertyChanged Method " Url="html/ab2cdc34-1649-11b7-8a3a-1043dac398b8.htm" />
+    <HelpKINode Title="Person.RaisePropertyChanged Method " Url="html/93b1aff2-0fc2-b13d-29a6-a1989a6eb724.htm" />
+  </HelpKINode>
+  <HelpKINode Title="PersonId property" Url="html/d8e116a5-57ac-e226-4899-ca3818fd73d8.htm" />
+  <HelpKINode Title="PersonIdk__BackingField property">
+    <HelpKINode Title="Person.PersonIdk__BackingField Property " Url="html/6ba3efe7-7df7-27fe-4414-8d11bc279b3d.htm" />
+    <HelpKINode Title="Person.PersonIdk__BackingField Property " Url="html/568c98bc-bc6c-cc3e-a813-d270e7de723f.htm" />
+    <HelpKINode Title="Person.PersonIdk__BackingField Property " Url="html/b3410832-228f-b0f2-0039-9b05bdb7c43c.htm" />
+    <HelpKINode Title="Person.PersonIdk__BackingField Property " Url="html/15caf55f-8b84-6955-c1b9-7ba63c795e3b.htm" />
+    <HelpKINode Title="Person.PersonIdk__BackingField Property " Url="html/50c51ea9-912d-d0df-1ee7-f49e2c3ea554.htm" />
+  </HelpKINode>
+  <HelpKINode Title="populateInfoPatientTab method" Url="html/c3424c4d-b221-8303-b655-6b8181ae3924.htm" />
+  <HelpKINode Title="PrescriptionId property" Url="html/66d3ece6-f449-69bb-e21a-f7dee7843aaa.htm" />
+  <HelpKINode Title="PrescriptionIdk__BackingField property">
+    <HelpKINode Title="Patient.PrescriptionIdk__BackingField Property " Url="html/fb5e0ca9-9078-a520-3927-67783e47e3b5.htm" />
+    <HelpKINode Title="Patient.PrescriptionIdk__BackingField Property " Url="html/f5369fc8-4acd-857e-fde8-39e83ee75f2e.htm" />
+    <HelpKINode Title="Patient.PrescriptionIdk__BackingField Property " Url="html/b6b69437-c2ca-517c-2b79-d1e11d537e34.htm" />
+    <HelpKINode Title="Patient.PrescriptionIdk__BackingField Property " Url="html/86f148d6-9424-4100-604b-19cb55c5d20f.htm" />
+    <HelpKINode Title="Patient.PrescriptionIdk__BackingField Property " Url="html/87e955c3-cc3c-d2d1-3b92-957586957282.htm" />
+  </HelpKINode>
+  <HelpKINode Title="PropertyChanged event">
+    <HelpKINode Title="Appointment.PropertyChanged Event" Url="html/72c5b826-4702-64b9-d3c4-c8fe7bbae930.htm" />
+    <HelpKINode Title="Appointment.PropertyChanged Event" Url="html/0754a231-9e41-9a17-d6a4-60e189d6c1cf.htm" />
+    <HelpKINode Title="Consultation.PropertyChanged Event" Url="html/04a9449f-9693-0d21-7db8-abbbcc684290.htm" />
+    <HelpKINode Title="Consultation.PropertyChanged Event" Url="html/d22e5602-63cc-ea46-1251-467a8a6c1a3f.htm" />
+    <HelpKINode Title="Diagnosis.PropertyChanged Event" Url="html/b802d6e4-6944-30e2-3bb3-87e6cc287516.htm" />
+    <HelpKINode Title="Diagnosis.PropertyChanged Event" Url="html/e1d338e9-865b-ec32-ac0f-f1c7922fe067.htm" />
+    <HelpKINode Title="Disease.PropertyChanged Event" Url="html/8d5c4d60-ad4a-2691-1666-631029d68828.htm" />
+    <HelpKINode Title="Disease.PropertyChanged Event" Url="html/c5e07111-22ec-3c62-46a7-fb0422dc267a.htm" />
+    <HelpKINode Title="Medicine.PropertyChanged Event" Url="html/81dbe98a-71c8-53ce-8c84-b588f5537fae.htm" />
+    <HelpKINode Title="Medicine.PropertyChanged Event" Url="html/565d27e0-6757-680d-b889-48c96c40bd82.htm" />
+    <HelpKINode Title="Perscription.PropertyChanged Event" Url="html/177fba04-c49a-9dda-205b-07acd0cefd13.htm" />
+    <HelpKINode Title="Perscription.PropertyChanged Event" Url="html/e74a1acb-e38a-6b44-3ace-ea43a870be3f.htm" />
+    <HelpKINode Title="Person.PropertyChanged Event" Url="html/42a3cb40-5a98-b73e-900f-57632a5630b2.htm" />
+    <HelpKINode Title="Person.PropertyChanged Event" Url="html/f88334c1-66a1-16c0-f575-db17f75e8f55.htm" />
+    <HelpKINode Title="Person.PropertyChanged Event" Url="html/d0dc6ce9-4fe7-5aab-5e4a-51aa8fca024d.htm" />
+    <HelpKINode Title="Person.PropertyChanged Event" Url="html/92d182b7-73b0-b568-3e44-db5fd908ad78.htm" />
+    <HelpKINode Title="Person.PropertyChanged Event" Url="html/8037298c-98a1-7251-4492-1b91bf0c254a.htm" />
+  </HelpKINode>
+  <HelpKINode Title="RaisePropertyChanged method">
+    <HelpKINode Title="Person.RaisePropertyChanged Method " Url="html/ab2cdc34-1649-11b7-8a3a-1043dac398b8.htm" />
+    <HelpKINode Title="Person.RaisePropertyChanged Method " Url="html/c20565f6-2dab-b3c5-4eab-e2a8805d3ce1.htm" />
+    <HelpKINode Title="Person.RaisePropertyChanged Method " Url="html/4ad28daf-f72d-542a-cd18-ceeab0319fd1.htm" />
+    <HelpKINode Title="Person.RaisePropertyChanged Method " Url="html/93b1aff2-0fc2-b13d-29a6-a1989a6eb724.htm" />
+    <HelpKINode Title="Person.RaisePropertyChanged Method " Url="html/90412053-7cc9-1fd6-69af-4673c173267c.htm" />
+  </HelpKINode>
+  <HelpKINode Title="removeStaff method">
+    <HelpKINode Title="AdministrationClient.removeStaff Method " Url="html/6df80510-f8b5-efcd-e8cb-fb0ed46f4340.htm" />
+    <HelpKINode Title="IAdministration.removeStaff Method " Url="html/14df2468-4567-ab05-02fe-0fcf8127dcdd.htm" />
+  </HelpKINode>
+  <HelpKINode Title="removeStaffAsync method">
+    <HelpKINode Title="AdministrationClient.removeStaffAsync Method " Url="html/53599b63-72b3-56c0-48f4-5414be2f49a7.htm" />
+    <HelpKINode Title="IAdministration.removeStaffAsync Method " Url="html/bd67b4d7-3ae5-2692-7023-902970998209.htm" />
+  </HelpKINode>
+  <HelpKINode Title="RoomNumberk__BackingField property">
+    <HelpKINode Title="Staff.RoomNumberk__BackingField Property " Url="html/a3a34d3b-a2a8-1824-36be-111d77699114.htm" />
+    <HelpKINode Title="Staff.RoomNumberk__BackingField Property " Url="html/ba56ef90-ff5f-9632-d04a-f32e17c0297c.htm" />
+    <HelpKINode Title="Staff.RoomNumberk__BackingField Property " Url="html/f98c7d58-9b88-506b-aa02-e75adbb67a92.htm" />
+  </HelpKINode>
+  <HelpKINode Title="SearchappointmentsbyDate method">
+    <HelpKINode Title="AppointmentClient.SearchappointmentsbyDate Method " Url="html/a318f3ae-4c57-e8bb-544a-604fd05f35af.htm" />
+    <HelpKINode Title="AppointmentClient.SearchappointmentsbyDate Method " Url="html/80546c2e-757c-f509-f02f-ebe9dc51e91a.htm" />
+    <HelpKINode Title="Appointment_businesslayer.SearchappointmentsbyDate Method " Url="html/385441c1-2d90-9448-e2fb-ae83a4883d26.htm" />
+    <HelpKINode Title="IAppointment.SearchappointmentsbyDate Method " Url="html/a25878df-3896-49e7-4d0f-85f6e9f569a6.htm" />
+    <HelpKINode Title="IAppointment.SearchappointmentsbyDate Method " Url="html/12fef6bd-7d31-5185-8079-4565eb5c0805.htm" />
+    <HelpKINode Title="IAppointment.SearchappointmentsbyDate Method " Url="html/eae3dba8-f8b1-13f7-1078-8363907ee0a8.htm" />
+  </HelpKINode>
+  <HelpKINode Title="SearchappointmentsbyDateAsync method">
+    <HelpKINode Title="AppointmentClient.SearchappointmentsbyDateAsync Method " Url="html/9b8c9f9b-7d1e-42b4-ba97-13a82776af10.htm" />
+    <HelpKINode Title="AppointmentClient.SearchappointmentsbyDateAsync Method " Url="html/bf53863a-3571-78c4-dc2c-40bb53497450.htm" />
+    <HelpKINode Title="IAppointment.SearchappointmentsbyDateAsync Method " Url="html/611a32e3-1f95-ad30-4dc7-c8c9cbeab2e8.htm" />
+    <HelpKINode Title="IAppointment.SearchappointmentsbyDateAsync Method " Url="html/ff8261ed-ead6-7328-0457-9e3bc206f6d1.htm" />
+  </HelpKINode>
+  <HelpKINode Title="SearchAppointmentsByStaffID method">
+    <HelpKINode Title="AppointmentClient.SearchAppointmentsByStaffID Method " Url="html/d84bf68c-ba2c-2926-7794-d5413cb40f0f.htm" />
+    <HelpKINode Title="AppointmentClient.SearchAppointmentsByStaffID Method " Url="html/6cb9bfce-e262-4e37-2794-e3de09ec19e0.htm" />
+    <HelpKINode Title="Appointment_businesslayer.SearchAppointmentsByStaffID Method " Url="html/5555b14c-7b5b-3a7b-2429-d3570f7c1192.htm" />
+    <HelpKINode Title="IAppointment.SearchAppointmentsByStaffID Method " Url="html/e46a2142-b71d-ffff-0572-a401cea42de8.htm" />
+    <HelpKINode Title="IAppointment.SearchAppointmentsByStaffID Method " Url="html/943701de-0d19-57ed-4487-8ba93e7cbdcd.htm" />
+    <HelpKINode Title="IAppointment.SearchAppointmentsByStaffID Method " Url="html/2aa4142f-e11c-c0c3-a0c3-f983ee17168c.htm" />
+  </HelpKINode>
+  <HelpKINode Title="SearchAppointmentsByStaffIDAsync method">
+    <HelpKINode Title="AppointmentClient.SearchAppointmentsByStaffIDAsync Method " Url="html/452117fa-4a09-2248-9670-b73b0820b67c.htm" />
+    <HelpKINode Title="AppointmentClient.SearchAppointmentsByStaffIDAsync Method " Url="html/34faebea-8959-03d0-681c-fdae392719dc.htm" />
+    <HelpKINode Title="IAppointment.SearchAppointmentsByStaffIDAsync Method " Url="html/948ab040-d635-23bc-f244-962ec7a4cd7e.htm" />
+    <HelpKINode Title="IAppointment.SearchAppointmentsByStaffIDAsync Method " Url="html/bd328873-0deb-4a3e-a6dc-8d310e987ecb.htm" />
+  </HelpKINode>
+  <HelpKINode Title="SearchconsultionHistoryByStaffID method">
+    <HelpKINode Title="DoctorClient.SearchconsultionHistoryByStaffID Method " Url="html/ff4df503-8fc2-e10b-887b-82869d895d27.htm" />
+    <HelpKINode Title="DoctorClient.SearchconsultionHistoryByStaffID Method " Url="html/485dd42b-435c-6933-78ad-b8b8cf64473b.htm" />
+    <HelpKINode Title="IDoctor.SearchconsultionHistoryByStaffID Method " Url="html/083163f5-ba29-0b0b-bd22-55f9e70439cc.htm" />
+    <HelpKINode Title="IDoctor.SearchconsultionHistoryByStaffID Method " Url="html/53a6c144-7481-65a3-a856-c09b120c73bf.htm" />
+  </HelpKINode>
+  <HelpKINode Title="SearchconsultionHistoryByStaffIDAsync method">
+    <HelpKINode Title="DoctorClient.SearchconsultionHistoryByStaffIDAsync Method " Url="html/07e14f83-67bc-ecc4-075b-e3b4fff4baab.htm" />
+    <HelpKINode Title="DoctorClient.SearchconsultionHistoryByStaffIDAsync Method " Url="html/343faa7f-798e-2c39-dc84-c646e0098fbf.htm" />
+    <HelpKINode Title="IDoctor.SearchconsultionHistoryByStaffIDAsync Method " Url="html/d9f236d4-bf3a-16cd-8286-884ab54d1060.htm" />
+    <HelpKINode Title="IDoctor.SearchconsultionHistoryByStaffIDAsync Method " Url="html/44c97c73-8cc2-f773-52cf-2e4ce95bb0b9.htm" />
+  </HelpKINode>
+  <HelpKINode Title="SearchPatients method">
+    <HelpKINode Title="DoctorClient.SearchPatients Method " Url="html/fd0b5898-6ccd-8856-120d-e665ac88e268.htm" />
+    <HelpKINode Title="DoctorClient.SearchPatients Method " Url="html/0850336b-eebc-d275-de75-6b0d8cddc2b4.htm" />
+    <HelpKINode Title="IDoctor.SearchPatients Method " Url="html/7339b7ba-efc3-6198-e6d4-c9550597db3a.htm" />
+    <HelpKINode Title="IDoctor.SearchPatients Method " Url="html/ebfd785e-fa45-2f0d-67d6-255cf74c93b4.htm" />
+  </HelpKINode>
+  <HelpKINode Title="SearchPatientsAsync method">
+    <HelpKINode Title="DoctorClient.SearchPatientsAsync Method " Url="html/94584813-5649-5b00-0bfc-21e67ae5df1e.htm" />
+    <HelpKINode Title="DoctorClient.SearchPatientsAsync Method " Url="html/4ba3bd5b-47bc-dc43-549c-3175c2daf724.htm" />
+    <HelpKINode Title="IDoctor.SearchPatientsAsync Method " Url="html/ae80b596-24ed-9608-cadc-1a61e9844448.htm" />
+    <HelpKINode Title="IDoctor.SearchPatientsAsync Method " Url="html/7a5d05a4-c0bf-cf35-2d9b-9329dae1fc57.htm" />
+  </HelpKINode>
+  <HelpKINode Title="searchStaff method">
+    <HelpKINode Title="AdministrationClient.searchStaff Method " Url="html/7d416220-872f-9d2a-529e-756dc5a2531b.htm" />
+    <HelpKINode Title="IAdministration.searchStaff Method " Url="html/ebb78002-6e62-9af9-a1d6-93f1d4c9a3d5.htm" />
+  </HelpKINode>
+  <HelpKINode Title="searchStaffAsync method">
+    <HelpKINode Title="AdministrationClient.searchStaffAsync Method " Url="html/0325fd4b-9583-8ec1-a50c-fb6c4631b05a.htm" />
+    <HelpKINode Title="IAdministration.searchStaffAsync Method " Url="html/6a29462a-6867-bd05-451f-e06b9ca575c9.htm" />
+  </HelpKINode>
+  <HelpKINode Title="search_disease method">
+    <HelpKINode Title="DoctorClient.search_disease Method " Url="html/56a89903-c8ca-3ba2-8871-114e63d9799d.htm" />
+    <HelpKINode Title="DoctorClient.search_disease Method " Url="html/25809cc5-1d37-6b92-5e28-cecb45b4bf00.htm" />
+    <HelpKINode Title="IDoctor.search_disease Method " Url="html/a9e48ad3-e651-1f1c-3de2-125c2ac44b1c.htm" />
+    <HelpKINode Title="IDoctor.search_disease Method " Url="html/4a48846d-0d06-0dea-585c-68d99eedcbc2.htm" />
+    <HelpKINode Title="Wiki.search_disease Method " Url="html/a8cae6d1-2047-9ba5-4d85-9d47230628dd.htm" />
+  </HelpKINode>
+  <HelpKINode Title="search_diseaseAsync method">
+    <HelpKINode Title="DoctorClient.search_diseaseAsync Method " Url="html/cecf8ecb-afca-41e5-9290-421245eebc0d.htm" />
+    <HelpKINode Title="DoctorClient.search_diseaseAsync Method " Url="html/326aa756-7f3f-4295-2138-0c91a3e54e96.htm" />
+    <HelpKINode Title="IDoctor.search_diseaseAsync Method " Url="html/66f4b9f8-aebd-8591-c2cd-6c1b3b67142a.htm" />
+    <HelpKINode Title="IDoctor.search_diseaseAsync Method " Url="html/1781b7c2-e672-37da-cb83-002590b6f94a.htm" />
+  </HelpKINode>
+  <HelpKINode Title="search_medicine method">
+    <HelpKINode Title="DoctorClient.search_medicine Method " Url="html/23f6c244-42b1-2e2b-b59a-92ad0ea19934.htm" />
+    <HelpKINode Title="DoctorClient.search_medicine Method " Url="html/92920a21-ab0e-1774-3cd9-a90ba5a66d62.htm" />
+    <HelpKINode Title="IDoctor.search_medicine Method " Url="html/11470522-ec1e-4fce-b4c3-a07beda67883.htm" />
+    <HelpKINode Title="IDoctor.search_medicine Method " Url="html/9fecf3fe-a661-ee60-5a18-e3794be1acce.htm" />
+  </HelpKINode>
+  <HelpKINode Title="search_medicineAsync method">
+    <HelpKINode Title="DoctorClient.search_medicineAsync Method " Url="html/960eadf1-f30b-2174-4be6-41f5e05b6727.htm" />
+    <HelpKINode Title="DoctorClient.search_medicineAsync Method " Url="html/971b68ff-7af4-2a1e-da9b-a8e0202d4860.htm" />
+    <HelpKINode Title="IDoctor.search_medicineAsync Method " Url="html/1246aea1-dab1-b1e4-840a-a1d48c6a9eb6.htm" />
+    <HelpKINode Title="IDoctor.search_medicineAsync Method " Url="html/34c12792-97e0-8138-3550-a20a4917ca40.htm" />
+  </HelpKINode>
+  <HelpKINode Title="search_meds method" Url="html/de785fa9-ddc5-b084-56fd-6529dcc6f53b.htm" />
+  <HelpKINode Title="Smoker property" Url="html/e6ac8a40-ee75-3204-d58c-e127921faf9a.htm" />
+  <HelpKINode Title="Smokerk__BackingField property">
+    <HelpKINode Title="Patient.Smokerk__BackingField Property " Url="html/5fdafcdb-ed11-33ae-16e9-27bb6f4707f8.htm" />
+    <HelpKINode Title="Patient.Smokerk__BackingField Property " Url="html/c29cf626-86ea-27c1-2618-206eeca50ab5.htm" />
+    <HelpKINode Title="Patient.Smokerk__BackingField Property " Url="html/bd247478-e506-9f52-45d3-f2ddd1b38da1.htm" />
+    <HelpKINode Title="Patient.Smokerk__BackingField Property " Url="html/8b347265-f5df-b1d4-dffa-137f564a1dc4.htm" />
+    <HelpKINode Title="Patient.Smokerk__BackingField Property " Url="html/d86e39e8-a7d7-6c11-1ada-753c35acbd58.htm" />
+  </HelpKINode>
+  <HelpKINode Title="SmokingFrequency property" Url="html/b1ce174c-23b2-5469-e946-fad7bf46608e.htm" />
+  <HelpKINode Title="SmokingFrequencyk__BackingField property">
+    <HelpKINode Title="Patient.SmokingFrequencyk__BackingField Property " Url="html/ce3fb18a-5d22-6bf4-9592-de580f465acb.htm" />
+    <HelpKINode Title="Patient.SmokingFrequencyk__BackingField Property " Url="html/e117faee-3c53-0e54-cd2e-abeaede8c2b5.htm" />
+    <HelpKINode Title="Patient.SmokingFrequencyk__BackingField Property " Url="html/5bd6290b-2161-1507-fc85-e010ce428f69.htm" />
+    <HelpKINode Title="Patient.SmokingFrequencyk__BackingField Property " Url="html/4ea79466-5056-9c9d-a683-9da530c5fbd4.htm" />
+    <HelpKINode Title="Patient.SmokingFrequencyk__BackingField Property " Url="html/3aa983d7-2252-3fe0-b9bf-09e4e1d9f552.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Specializationk__BackingField property">
+    <HelpKINode Title="Staff.Specializationk__BackingField Property " Url="html/1bd488b6-a0ae-f432-9e4d-a86e6cc03ac8.htm" />
+    <HelpKINode Title="Staff.Specializationk__BackingField Property " Url="html/fdd63949-3c78-b6e6-528c-683f5fe60b4e.htm" />
+    <HelpKINode Title="Staff.Specializationk__BackingField Property " Url="html/d1f69440-0114-885a-db06-21bfefc3cf9a.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Staff class">
+    <HelpKINode Title="Staff Class" Url="html/eef3c097-f38e-93e9-da50-8aea7d7cb08a.htm" />
+    <HelpKINode Title="Staff Class" Url="html/069b716c-21b0-d876-6983-a321873cd08d.htm" />
+    <HelpKINode Title="Staff Class" Url="html/b8b1c4c3-8ee0-0a8e-5b5d-d925001d7fc0.htm" />
+    <HelpKINode Title="about Staff class" Url="html/eef3c097-f38e-93e9-da50-8aea7d7cb08a.htm" />
+    <HelpKINode Title="about Staff class" Url="html/b8b1c4c3-8ee0-0a8e-5b5d-d925001d7fc0.htm" />
+    <HelpKINode Title="about Staff class" Url="html/069b716c-21b0-d876-6983-a321873cd08d.htm" />
+    <HelpKINode Title="constructor" Url="html/7d60bd6b-04bc-ada9-de24-2f97f31a422e.htm" />
+    <HelpKINode Title="constructor" Url="html/4646ecfd-8dda-64c7-69ec-dec742273ec1.htm" />
+    <HelpKINode Title="constructor" Url="html/2bbcc2de-014d-e181-bce8-d30e2488521b.htm" />
+    <HelpKINode Title="events" Url="html/a830fc27-7939-94a4-b050-b82519335979.htm" />
+    <HelpKINode Title="events" Url="html/9a5a111a-f393-05a9-00d1-f0295ca2c126.htm" />
+    <HelpKINode Title="events" Url="html/e75f637a-e5d1-3a0b-3ad0-2d549afcbda9.htm" />
+    <HelpKINode Title="methods" Url="html/e4d28f3c-9be6-2d05-d410-411e6c9499fc.htm" />
+    <HelpKINode Title="methods" Url="html/c91cdbf8-601d-2746-26b3-35c3548cb98b.htm" />
+    <HelpKINode Title="methods" Url="html/828fa979-2264-969b-51d5-ef9131a89c71.htm" />
+    <HelpKINode Title="properties" Url="html/b722c158-c1cf-050c-1cd0-171918e958ca.htm" />
+    <HelpKINode Title="properties" Url="html/13cf723b-1089-c696-6aa6-91fe1526c61d.htm" />
+    <HelpKINode Title="properties" Url="html/d30a2d9b-39a2-caac-0cb7-9113718b1f73.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Staff.Functionk__BackingField property">
+    <HelpKINode Title="Staff.Functionk__BackingField Property " Url="html/8cb74a07-1168-cc5d-1c57-d608f508fef4.htm" />
+    <HelpKINode Title="Staff.Functionk__BackingField Property " Url="html/f04212f9-d80e-59d2-d068-4d21432514a2.htm" />
+    <HelpKINode Title="Staff.Functionk__BackingField Property " Url="html/1815b8cd-212e-e464-287d-b3bc2dddbe55.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Staff.RoomNumberk__BackingField property">
+    <HelpKINode Title="Staff.RoomNumberk__BackingField Property " Url="html/a3a34d3b-a2a8-1824-36be-111d77699114.htm" />
+    <HelpKINode Title="Staff.RoomNumberk__BackingField Property " Url="html/f98c7d58-9b88-506b-aa02-e75adbb67a92.htm" />
+    <HelpKINode Title="Staff.RoomNumberk__BackingField Property " Url="html/ba56ef90-ff5f-9632-d04a-f32e17c0297c.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Staff.Specializationk__BackingField property">
+    <HelpKINode Title="Staff.Specializationk__BackingField Property " Url="html/1bd488b6-a0ae-f432-9e4d-a86e6cc03ac8.htm" />
+    <HelpKINode Title="Staff.Specializationk__BackingField Property " Url="html/fdd63949-3c78-b6e6-528c-683f5fe60b4e.htm" />
+    <HelpKINode Title="Staff.Specializationk__BackingField Property " Url="html/d1f69440-0114-885a-db06-21bfefc3cf9a.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Staff.Staff constructor">
+    <HelpKINode Title="Staff Constructor " Url="html/4646ecfd-8dda-64c7-69ec-dec742273ec1.htm" />
+    <HelpKINode Title="Staff Constructor " Url="html/2bbcc2de-014d-e181-bce8-d30e2488521b.htm" />
+    <HelpKINode Title="Staff Constructor " Url="html/7d60bd6b-04bc-ada9-de24-2f97f31a422e.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Staff.StaffIDk__BackingField property">
+    <HelpKINode Title="Staff.StaffIDk__BackingField Property " Url="html/ff1ad970-d902-0906-0256-5bac84ddb312.htm" />
+    <HelpKINode Title="Staff.StaffIDk__BackingField Property " Url="html/eefe17c3-4b41-b541-2ea3-9b45ca4b8246.htm" />
+    <HelpKINode Title="Staff.StaffIDk__BackingField Property " Url="html/23aba3f5-7aff-8390-f2a4-4ff620b1dafb.htm" />
+  </HelpKINode>
+  <HelpKINode Title="StaffIDk__BackingField property">
+    <HelpKINode Title="Staff.StaffIDk__BackingField Property " Url="html/eefe17c3-4b41-b541-2ea3-9b45ca4b8246.htm" />
+    <HelpKINode Title="Staff.StaffIDk__BackingField Property " Url="html/23aba3f5-7aff-8390-f2a4-4ff620b1dafb.htm" />
+    <HelpKINode Title="Staff.StaffIDk__BackingField Property " Url="html/ff1ad970-d902-0906-0256-5bac84ddb312.htm" />
+  </HelpKINode>
+  <HelpKINode Title="staff_id property">
+    <HelpKINode Title="Appointment.staff_id Property " Url="html/e7bb8dec-ad2b-b272-2a93-5a5a295a3b97.htm" />
+    <HelpKINode Title="Appointment.staff_id Property " Url="html/11c3b05c-5aea-d39a-b452-e34fd75d9fdd.htm" />
+    <HelpKINode Title="Consultation.staff_id Property " Url="html/bd27ee3a-fedc-deea-36c5-eae30263f71b.htm" />
+    <HelpKINode Title="Consultation.staff_id Property " Url="html/df7bb1d2-ea97-9b33-e4e3-92170e4c22bd.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Staff_id property" Url="html/04325560-c15e-f394-4545-db349e12f350.htm" />
+  <HelpKINode Title="start_date property">
+    <HelpKINode Title="Appointment.start_date Property " Url="html/149defed-ae3b-b29f-766a-fe0590dc69ea.htm" />
+    <HelpKINode Title="Appointment.start_date Property " Url="html/bc99fb8d-cc6f-0d0c-7003-92a644c8e382.htm" />
+    <HelpKINode Title="Consultation.start_date Property " Url="html/2d92deac-3ffe-0a96-5d20-2a4b5130cdf3.htm" />
+    <HelpKINode Title="Consultation.start_date Property " Url="html/1e96a63b-956b-49e1-2391-6c60189debd0.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Start_date property" Url="html/3b977a73-25e7-ff4e-45f2-89798a0e6d33.htm" />
+  <HelpKINode Title="strength property">
+    <HelpKINode Title="Perscription.strength Property " Url="html/10eb726a-1a3b-123a-6f73-0797a65f0576.htm" />
+    <HelpKINode Title="Perscription.strength Property " Url="html/0e579e3a-19c2-72c0-1235-725fa984e7fa.htm" />
+  </HelpKINode>
+  <HelpKINode Title="strength_mg property">
+    <HelpKINode Title="Medicine.strength_mg Property " Url="html/622f6096-1713-f689-e1ff-662cf2e4ffcb.htm" />
+    <HelpKINode Title="Medicine.strength_mg Property " Url="html/d6defe2c-39c0-317f-7d07-337dc0796ada.htm" />
+  </HelpKINode>
+  <HelpKINode Title="symptoms property">
+    <HelpKINode Title="Diagnosis.symptoms Property " Url="html/448d090c-f26a-8053-f70f-4dff92d8893e.htm" />
+    <HelpKINode Title="Diagnosis.symptoms Property " Url="html/e793032f-c29e-7544-d509-8c5fbf64f851.htm" />
+  </HelpKINode>
+  <HelpKINode Title="symptomsk__BackingField property">
+    <HelpKINode Title="Disease.symptomsk__BackingField Property " Url="html/d41de7c0-2757-0ed4-d846-a0942f74d5a8.htm" />
+    <HelpKINode Title="Disease.symptomsk__BackingField Property " Url="html/a1771fbe-afe5-87d6-fe08-33c6f9db943d.htm" />
+  </HelpKINode>
+  <HelpKINode Title="treatmentsk__BackingField property">
+    <HelpKINode Title="Disease.treatmentsk__BackingField Property " Url="html/61e71baf-8cf4-a667-7269-b0b1a8392106.htm" />
+    <HelpKINode Title="Disease.treatmentsk__BackingField Property " Url="html/64ccffff-e168-2f72-4bf3-297cde4c44e2.htm" />
+  </HelpKINode>
+  <HelpKINode Title="updateConsultion_End_Date method">
+    <HelpKINode Title="DoctorClient.updateConsultion_End_Date Method " Url="html/0155c483-f4a5-6390-c46d-f9a2c1c16eba.htm" />
+    <HelpKINode Title="DoctorClient.updateConsultion_End_Date Method " Url="html/e58336b6-eb8f-c26f-b5df-87b58b6d7751.htm" />
+    <HelpKINode Title="IDoctor.updateConsultion_End_Date Method " Url="html/854983d2-bd6c-c1d2-0299-b9b5172e3f9c.htm" />
+    <HelpKINode Title="IDoctor.updateConsultion_End_Date Method " Url="html/cb9b1033-9d46-1716-b955-e1c40fc4a085.htm" />
+  </HelpKINode>
+  <HelpKINode Title="updateConsultion_End_DateAsync method">
+    <HelpKINode Title="DoctorClient.updateConsultion_End_DateAsync Method " Url="html/7b59191c-eb14-ada1-4dfb-c0864e561f74.htm" />
+    <HelpKINode Title="DoctorClient.updateConsultion_End_DateAsync Method " Url="html/e71924e1-78b1-55d1-c49f-5609f3a31529.htm" />
+    <HelpKINode Title="IDoctor.updateConsultion_End_DateAsync Method " Url="html/945408ec-9765-a8de-8188-435f0010fde1.htm" />
+    <HelpKINode Title="IDoctor.updateConsultion_End_DateAsync Method " Url="html/571e2fc0-44e5-c005-47a9-7425ba705869.htm" />
+  </HelpKINode>
+  <HelpKINode Title="user_auth_business class">
+    <HelpKINode Title="user_auth_business Class" Url="html/6f866fe1-c323-dca3-8167-9e92337f148a.htm" />
+    <HelpKINode Title="about user_auth_business class" Url="html/6f866fe1-c323-dca3-8167-9e92337f148a.htm" />
+    <HelpKINode Title="constructor" Url="html/a3062be4-fa57-50c6-527d-7b1ae7d97e74.htm" />
+    <HelpKINode Title="methods" Url="html/69b1cd2d-38bc-190e-1627-d0e3cd76d20e.htm" />
+  </HelpKINode>
+  <HelpKINode Title="user_auth_business.login method" Url="html/6ad8767b-3930-f926-154d-7547219c3bef.htm" />
+  <HelpKINode Title="user_auth_business.user_auth_business constructor" Url="html/a3062be4-fa57-50c6-527d-7b1ae7d97e74.htm" />
+  <HelpKINode Title="Weight property" Url="html/e3b81b04-5349-c5b7-e484-6d666c83c69b.htm" />
+  <HelpKINode Title="Weightk__BackingField property">
+    <HelpKINode Title="Patient.Weightk__BackingField Property " Url="html/5b0660fc-e181-0e8e-7e96-7a40ef032151.htm" />
+    <HelpKINode Title="Patient.Weightk__BackingField Property " Url="html/90635a68-b3b5-41f8-79c3-af93c93ff1a2.htm" />
+    <HelpKINode Title="Patient.Weightk__BackingField Property " Url="html/a1d9021a-6a9b-7c07-f3b4-b1608284ea94.htm" />
+    <HelpKINode Title="Patient.Weightk__BackingField Property " Url="html/56915c06-7457-45cc-9f4f-4fb1a147a625.htm" />
+    <HelpKINode Title="Patient.Weightk__BackingField Property " Url="html/d714f206-eb6b-bf48-c42e-508b00c3aab3.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Wiki class">
+    <HelpKINode Title="Wiki Class" Url="html/5d90ae7a-9c52-d9c8-1a9b-24645e028a5f.htm" />
+    <HelpKINode Title="about Wiki class" Url="html/5d90ae7a-9c52-d9c8-1a9b-24645e028a5f.htm" />
+    <HelpKINode Title="constructor" Url="html/4e7277aa-b9db-4f57-fb4c-38cacc7432b7.htm" />
+    <HelpKINode Title="events" Url="html/1c98ef89-9434-38b1-73a0-3ac5a8d937e4.htm" />
+    <HelpKINode Title="fields" Url="html/892f78de-9950-3cbf-3a59-6df9b1e00d20.htm" />
+    <HelpKINode Title="methods" Url="html/502d09f1-cf86-2f3f-f941-8ecfe2d31a2d.htm" />
+    <HelpKINode Title="properties" Url="html/01be92d3-b7de-5131-7682-52d0ffbeab5e.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Wiki.Dispose method" Url="html/86b2ad82-6d65-e00a-93c1-4537c62ba2ef.htm" />
+  <HelpKINode Title="Wiki.isclosed field" Url="html/6d9706db-f6a9-4d03-b1e9-a703ecbb0353.htm" />
+  <HelpKINode Title="Wiki.search_disease method" Url="html/a8cae6d1-2047-9ba5-4d85-9d47230628dd.htm" />
+  <HelpKINode Title="Wiki.search_meds method" Url="html/de785fa9-ddc5-b084-56fd-6529dcc6f53b.htm" />
+  <HelpKINode Title="Wiki.Wiki constructor" Url="html/4e7277aa-b9db-4f57-fb4c-38cacc7432b7.htm" />
+</HelpKI>
