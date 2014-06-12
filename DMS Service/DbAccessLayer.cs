@@ -714,31 +714,56 @@ namespace DMS_Service
         }
 
         /// <summary>
-        /// Adds consultation to the conusltation table.
+        /// Method for adding an appointment to the database
         /// </summary>
-        /// <param name="appointment">appointment to be added</param>
-        public void addAppointment(Appointment appointment)
+        /// <param name="staffId">a specific staff Id</param>
+        /// <param name="patientId">a specific patient Id</param>
+        /// <param name="startDate">a specific start date</param>
+        /// <param name="endDate">a specific end date</param>
+        /// <returns>true if the appointment has successfully been added. or else returns false</returns>
+        public bool addAppointment(int staffId, int patientId, string startDate, string endDate)
         {
-            //query
-            string query = "INSERT INTO consultations(start_date, end_date, patient_id, staff_id)" +
-                           "VALUES (?start_date, ?end_date, ?patient_id, ?staff_id)";
+            string query = string.Format("INSERT INTO appointments (appointment_id, staff_id, patient_id, start_date, end_date) "
+                                + "VALUES (@appId, @staffId, @patientId, @startDate, @endDate)");
+            MySqlParameter[] sqlParameters = new MySqlParameter[5];
 
-            //parameters
-            MySqlParameter[] sqlParameters = new MySqlParameter[4];
-            sqlParameters[0] = new MySqlParameter("?start_date", MySqlDbType.DateTime);
-            sqlParameters[0].Value = appointment.startTime;
-            sqlParameters[1] = new MySqlParameter("?end_date", MySqlDbType.DateTime);
-            sqlParameters[1].Value = appointment.endTime;
-            sqlParameters[2] = new MySqlParameter("?patient_id", MySqlDbType.Int32);
+            IFormatProvider culture = new System.Globalization.CultureInfo("en-US", true);
+            DateTime date;
 
-            sqlParameters[2].Value = 1;
-            sqlParameters[3] = new MySqlParameter("?staff_id", MySqlDbType.Int32);
-            sqlParameters[3].Value = 1;
+            int appId = newAppointmentId();
 
-            //execute query on appointment table
-            dbConnection.InsertQuery(query, sqlParameters);
+            sqlParameters[0] = new MySqlParameter("@appId", MySqlDbType.Int32);
+            sqlParameters[0].Value = appId;
+            sqlParameters[1] = new MySqlParameter("@staffId", MySqlDbType.Int32);
+            sqlParameters[1].Value = staffId;
+            sqlParameters[2] = new MySqlParameter("@patientId", MySqlDbType.Int32);
+            sqlParameters[2].Value = patientId;
+            sqlParameters[3] = new MySqlParameter("@startDate", MySqlDbType.DateTime);
+            date = DateTime.Parse(startDate, culture);
+            sqlParameters[3].Value = date;
+            sqlParameters[4] = new MySqlParameter("@endDate", MySqlDbType.DateTime);
+            date = DateTime.Parse(endDate, culture);
+            sqlParameters[4].Value = date;
+
+            return dbConnection.InsertQuery(query, sqlParameters);
         }
 
+        /// <summary>
+        /// Method for returning the next new appointment id
+        /// </summary>
+        /// <returns>returns the new next appointment id</returns>
+        private int newAppointmentId()
+        {
+            string query = "SELECT MAX(appointment_id)+1 as new FROM appointments";
+            int result;
+            try
+            {
+                // Execute query on person table.
+                result = Convert.ToInt32(dbConnection.SelectQuery(query).Rows[0]["new"]);
+            }
+            catch { return -1; }
+            return result;
+        }
         /// <summary>
         /// prescription to be added
         /// </summary>
@@ -1044,6 +1069,64 @@ namespace DMS_Service
             sqlParameters[2].Value = staffId;
 
             return dbConnection.SelectQuery(query, sqlParameters);
+        }
+
+        /// <summary>
+        /// Method for getting the staff id by a certain last name
+        /// </summary>
+        /// <param name="staffLastName">a specific staff last name</param>
+        /// <returns>returns the staff id of the staff who has that last name</returns>
+        internal int GetStaffId(string staffLastName)
+        {
+            int staffId = -1;
+            string query = string.Format("SELECT staff_id " +
+                                        "FROM staff_info " +
+                                        "WHERE last_name = @staffLastName");
+
+            MySqlParameter[] sqlParameters = new MySqlParameter[1];
+            sqlParameters[0] = new MySqlParameter("@staffLastName", MySqlDbType.String);
+            sqlParameters[0].Value = Convert.ToString(staffLastName);
+
+            DataTable dt = dbConnection.SelectQuery(query, sqlParameters);
+            if (dt.Rows.Count > 0)
+            {
+                staffId = Convert.ToInt32(dt.Rows[0][0]);
+            }
+            return staffId;
+        }
+
+        /// <summary>
+        /// Method for getting the patient id by a certain email address
+        /// </summary>
+        /// <param name="patientMail">a specific email address</param>
+        /// <returns>the patient id of the patient who has that email</returns>
+        internal int GetPatientId(string patientMail)
+        {
+            int patientId = -1;
+            string query = string.Format("SELECT patient_id " +
+                                        "FROM patient_info " +
+                                        "WHERE email_address = @patientMail");
+
+            MySqlParameter[] sqlParameters = new MySqlParameter[1];
+            sqlParameters[0] = new MySqlParameter("@patientMail", MySqlDbType.String);
+            sqlParameters[0].Value = Convert.ToString(patientMail);
+
+            DataTable dt = dbConnection.SelectQuery(query, sqlParameters);
+            if (dt.Rows.Count > 0)
+            {
+                patientId = Convert.ToInt32(dt.Rows[0][0]);
+            }
+            return patientId;
+        }
+
+        /// <summary>
+        /// Method for getting all the appointments start dates
+        /// </summary>
+        /// <returns>a datatable containing all appointments start dates</returns>
+        public DataTable GetAppointmentStartDates()
+        {
+            string query = string.Format("select start_date from appointments");
+            return dbConnection.SelectQuery(query);
         }
     }
 }

@@ -448,7 +448,7 @@ namespace DMS_Service
             
             
             //Add appointment to own database   
-            dbAcess.addAppointment(appoinment);
+            //dbAcess.addAppointment(appoinment);
 
             //Add appointment to other server
             try

@@ -15,22 +15,16 @@ namespace DMS_Service
     public interface ISynchronise
     {
         [OperationContract]
-        void addPatient(Patient patient);
+        bool addPatient(Patient patient);
 
         [OperationContract]
-        void addAppointment(Appointment appointment);
+        bool addAppointment(string staffLastName, string patientMail, string startDate, string endDate);
 
         [OperationContract]
-        void addStaff(Staff staff);
+        bool editPatient(Patient patient);
 
         [OperationContract]
-        void addConsultation(Consultation consult);
-
-        [OperationContract]
-        void editPatientByPatient(Patient patient);
-
-        [OperationContract]
-        void editPatientByAppointment(Appointment appointment);
+        bool addPrescription(int appointmentId, Perscription per);
 
         [OperationContract]
         bool ping();
@@ -42,27 +36,5 @@ namespace DMS_Service
         [OperationContract]
         bool forcePushBackup();
     }
-    /// <summary>
-    /// a class defineing the composition of bool and strings for synconasation  
-    /// </summary>
-    [DataContract]
-    public class CompositeType
-    {
-        bool boolValue = true;
-        string stringValue = "Hello ";
 
-        [DataMember]
-        public bool BoolValue
-        {
-            get { return boolValue; }
-            set { boolValue = value; }
-        }
-
-        [DataMember]
-        public string StringValue
-        {
-            get { return stringValue; }
-            set { stringValue = value; }
-        }
-    }
 }

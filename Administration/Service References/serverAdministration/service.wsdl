@@ -5,7 +5,6 @@
       <xsd:import namespace="http://tempuri.org/" />
       <xsd:import namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
       <xsd:import namespace="http://schemas.datacontract.org/2004/07/DMS_Service.Structs" />
-      <xsd:import namespace="http://schemas.datacontract.org/2004/07/DMS_Service" />
     </xsd:schema>
   </wsdl:types>
   <wsdl:message name="IAdministration_addPerson_InputMessage">
@@ -20,12 +19,6 @@
   <wsdl:message name="IAdministration_editPerson_OutputMessage">
     <wsdl:part name="parameters" element="tns:editPersonResponse" />
   </wsdl:message>
-  <wsdl:message name="IAdministration_removePerson_InputMessage">
-    <wsdl:part name="parameters" element="tns:removePerson" />
-  </wsdl:message>
-  <wsdl:message name="IAdministration_removePerson_OutputMessage">
-    <wsdl:part name="parameters" element="tns:removePersonResponse" />
-  </wsdl:message>
   <wsdl:message name="IAdministration_addPatient_InputMessage">
     <wsdl:part name="parameters" element="tns:addPatient" />
   </wsdl:message>
@@ -37,12 +30,6 @@
   </wsdl:message>
   <wsdl:message name="IAdministration_editPatient_OutputMessage">
     <wsdl:part name="parameters" element="tns:editPatientResponse" />
-  </wsdl:message>
-  <wsdl:message name="IAdministration_removePatient_InputMessage">
-    <wsdl:part name="parameters" element="tns:removePatient" />
-  </wsdl:message>
-  <wsdl:message name="IAdministration_removePatient_OutputMessage">
-    <wsdl:part name="parameters" element="tns:removePatientResponse" />
   </wsdl:message>
   <wsdl:message name="IAdministration_addStaff_InputMessage">
     <wsdl:part name="parameters" element="tns:addStaff" />
@@ -62,12 +49,6 @@
   <wsdl:message name="IAdministration_removeStaff_OutputMessage">
     <wsdl:part name="parameters" element="tns:removeStaffResponse" />
   </wsdl:message>
-  <wsdl:message name="IAdministration_hasPermissions_InputMessage">
-    <wsdl:part name="parameters" element="tns:hasPermissions" />
-  </wsdl:message>
-  <wsdl:message name="IAdministration_hasPermissions_OutputMessage">
-    <wsdl:part name="parameters" element="tns:hasPermissionsResponse" />
-  </wsdl:message>
   <wsdl:message name="IAdministration_getAllStaff_InputMessage">
     <wsdl:part name="parameters" element="tns:getAllStaff" />
   </wsdl:message>
@@ -80,6 +61,12 @@
   <wsdl:message name="IAdministration_getStaffById_OutputMessage">
     <wsdl:part name="parameters" element="tns:getStaffByIdResponse" />
   </wsdl:message>
+  <wsdl:message name="IAdministration_searchStaff_InputMessage">
+    <wsdl:part name="parameters" element="tns:searchStaff" />
+  </wsdl:message>
+  <wsdl:message name="IAdministration_searchStaff_OutputMessage">
+    <wsdl:part name="parameters" element="tns:searchStaffResponse" />
+  </wsdl:message>
   <wsdl:portType name="IAdministration">
     <wsdl:operation name="addPerson">
       <wsdl:input wsaw:Action="http://tempuri.org/IAdministration/addPerson" message="tns:IAdministration_addPerson_InputMessage" />
@@ -89,10 +76,6 @@
       <wsdl:input wsaw:Action="http://tempuri.org/IAdministration/editPerson" message="tns:IAdministration_editPerson_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IAdministration/editPersonResponse" message="tns:IAdministration_editPerson_OutputMessage" />
     </wsdl:operation>
-    <wsdl:operation name="removePerson">
-      <wsdl:input wsaw:Action="http://tempuri.org/IAdministration/removePerson" message="tns:IAdministration_removePerson_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IAdministration/removePersonResponse" message="tns:IAdministration_removePerson_OutputMessage" />
-    </wsdl:operation>
     <wsdl:operation name="addPatient">
       <wsdl:input wsaw:Action="http://tempuri.org/IAdministration/addPatient" message="tns:IAdministration_addPatient_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IAdministration/addPatientResponse" message="tns:IAdministration_addPatient_OutputMessage" />
@@ -100,10 +83,6 @@
     <wsdl:operation name="editPatient">
       <wsdl:input wsaw:Action="http://tempuri.org/IAdministration/editPatient" message="tns:IAdministration_editPatient_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IAdministration/editPatientResponse" message="tns:IAdministration_editPatient_OutputMessage" />
-    </wsdl:operation>
-    <wsdl:operation name="removePatient">
-      <wsdl:input wsaw:Action="http://tempuri.org/IAdministration/removePatient" message="tns:IAdministration_removePatient_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IAdministration/removePatientResponse" message="tns:IAdministration_removePatient_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="addStaff">
       <wsdl:input wsaw:Action="http://tempuri.org/IAdministration/addStaff" message="tns:IAdministration_addStaff_InputMessage" />
@@ -117,10 +96,6 @@
       <wsdl:input wsaw:Action="http://tempuri.org/IAdministration/removeStaff" message="tns:IAdministration_removeStaff_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IAdministration/removeStaffResponse" message="tns:IAdministration_removeStaff_OutputMessage" />
     </wsdl:operation>
-    <wsdl:operation name="hasPermissions">
-      <wsdl:input wsaw:Action="http://tempuri.org/IAdministration/hasPermissions" message="tns:IAdministration_hasPermissions_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IAdministration/hasPermissionsResponse" message="tns:IAdministration_hasPermissions_OutputMessage" />
-    </wsdl:operation>
     <wsdl:operation name="getAllStaff">
       <wsdl:input wsaw:Action="http://tempuri.org/IAdministration/getAllStaff" message="tns:IAdministration_getAllStaff_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IAdministration/getAllStaffResponse" message="tns:IAdministration_getAllStaff_OutputMessage" />
@@ -128,6 +103,10 @@
     <wsdl:operation name="getStaffById">
       <wsdl:input wsaw:Action="http://tempuri.org/IAdministration/getStaffById" message="tns:IAdministration_getStaffById_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IAdministration/getStaffByIdResponse" message="tns:IAdministration_getStaffById_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="searchStaff">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAdministration/searchStaff" message="tns:IAdministration_searchStaff_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAdministration/searchStaffResponse" message="tns:IAdministration_searchStaff_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_IAdministration" type="tns:IAdministration">
@@ -150,15 +129,6 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="removePerson">
-      <soap:operation soapAction="http://tempuri.org/IAdministration/removePerson" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
     <wsdl:operation name="addPatient">
       <soap:operation soapAction="http://tempuri.org/IAdministration/addPatient" style="document" />
       <wsdl:input>
@@ -170,15 +140,6 @@
     </wsdl:operation>
     <wsdl:operation name="editPatient">
       <soap:operation soapAction="http://tempuri.org/IAdministration/editPatient" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="removePatient">
-      <soap:operation soapAction="http://tempuri.org/IAdministration/removePatient" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -213,15 +174,6 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="hasPermissions">
-      <soap:operation soapAction="http://tempuri.org/IAdministration/hasPermissions" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
     <wsdl:operation name="getAllStaff">
       <soap:operation soapAction="http://tempuri.org/IAdministration/getAllStaff" style="document" />
       <wsdl:input>
@@ -233,6 +185,15 @@
     </wsdl:operation>
     <wsdl:operation name="getStaffById">
       <soap:operation soapAction="http://tempuri.org/IAdministration/getStaffById" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="searchStaff">
+      <soap:operation soapAction="http://tempuri.org/IAdministration/searchStaff" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

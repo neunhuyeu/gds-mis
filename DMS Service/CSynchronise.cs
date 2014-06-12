@@ -8,6 +8,7 @@ using System.ServiceModel;
 using System.Text;
 using DMS_Service.Structs;
 using System.Timers;
+using System.Data;
 
 namespace DMS_Service
 {
@@ -37,7 +38,7 @@ namespace DMS_Service
             timer.AutoReset = true;
             timer.Enabled = true;
             //Interval of Synchronise Timer is 15 mins * 60 seconds * 1000 miliseconds
-            timer.Interval = 60 * 1000;
+            timer.Interval = 15 * 60 * 1000;
             timer.Start();
 
         }
@@ -45,31 +46,61 @@ namespace DMS_Service
         /// <summary>
         /// Adds new patient from the parameter to the database
         /// </summary>
-        public void addPatient(Patient patient)
+        public bool addPatient(Patient patient)
         {
-            this.dbManager.addPatient(patient);
+            bool result = false;
+            // Check if a person with the same first+last name and d.o.b. exists.
+            try
+            {
+                int id = getpersonId(patient);
+
+                if (id > 0)
+                {
+                    patient.PersonId = id;
+                    result = dbManager.addPatient(patient);
+                }
+                else
+                {
+                    result = dbManager.addPerson((Person)patient);
+                    patient.PersonId = getpersonId((Person)patient);
+                    if (!result || patient.PersonId < 0)
+                        throw new Exception("Person id couldn't be retrieved.");
+                    result = dbManager.addPatient(patient);
+                }
+            }
+            catch
+            { return false; }
+
+            return result;
         }
 
-        public void addAppointment(Appointment appointment)
+        /// <summary>
+        /// Add new appoinment
+        /// </summary>
+        /// <param name="staffLastName">Doctor's last name</param>
+        /// <param name="patientMail">Patient's e-mail</param>
+        /// <param name="startDate"></param>
+        /// <param name="endDate"></param>
+        /// <returns></returns>
+        public bool addAppointment(string staffLastName, string patientMail, string startDate, string endDate)
         {
-            this.dbManager.addAppointment(appointment);
-        }
+            DateTime date;
+            IFormatProvider culture = new System.Globalization.CultureInfo("en-US", true);
+            date = DateTime.Parse(startDate, culture);
 
-        public void removePatient()
-        {
-            throw new System.NotImplementedException();
-        }
+            if (ValidateAppointment(date))
+            {
+                int staffId = dbManager.GetStaffId(staffLastName);
+                int patientId = dbManager.GetPatientId(patientMail);
 
-        public void addStaff(Staff staff)
-        {
-            throw new System.NotImplementedException();
+                return dbManager.addAppointment(staffId, patientId, startDate, endDate);
+            }
+            else
+            {
+                return false;
+            }
+           
         }
-
-        public void removeStaff()
-        {
-            throw new System.NotImplementedException();
-        }
-
 
         /// <summary>
         /// Event handler for periodically backup on timer elapse.+
@@ -116,55 +147,23 @@ namespace DMS_Service
             //runs batch file which backs up databases
             System.Diagnostics.Process.Start("..\\..\\backup.bat");
         }
-        /// <summary>
-        /// dummy funktion to satisfy the interface
-        /// </summary>
-        /// <param name="patient"></param>
+ 
 
-        void ISynchronise.addPatient(Patient patient)
+        bool ISynchronise.addPrescription(int appointmentId, Perscription per)
         {
-            throw new NotImplementedException();
+            return dbManager.addPrescrption(per, appointmentId);
         }
-        /// <summary>
-        /// dummy funktion to satisfy the interface
-        /// </summary>
-        /// <param name="appointment"></param>
-        void ISynchronise.addAppointment(Appointment appointment)
-        {
-            throw new NotImplementedException();
-        }
-        /// <summary>
-        /// dummy funktion to satisfy the interface
-        /// </summary>
-        /// <param name="staff"> saff to be edit</param>
-        void ISynchronise.addStaff(Staff staff)
-        {
-            throw new NotImplementedException();
-        }
-        /// <summary>
-        /// dummy funktion to satisfy the interface
-        /// </summary>
-        /// <param name="consult">consultation to be edit</param>
-        void ISynchronise.addConsultation(Consultation consult)
-        {
-            throw new NotImplementedException();
-        }
+       
+       
         /// <summary>
         /// dummy funktion to satisfy the interface
         /// </summary>
         /// <param name="patient">patients to be edit</param>
-        void ISynchronise.editPatientByPatient(Patient patient)
+        bool ISynchronise.editPatient(Patient patient)
         {
-            throw new NotImplementedException();
+            return dbManager.updatePatient(patient);
         }
-        /// <summary>
-        ///dummy funktion to satisfy the interface 
-        /// </summary>
-        /// <param name="appointment"> appointments to be edit </param>
-        void ISynchronise.editPatientByAppointment(Appointment appointment)
-        {
-            throw new NotImplementedException();
-        }
+ 
 
         /// <summary>
         /// Receives 3 sql files as aparameters, saves the files, then updates the database
@@ -218,6 +217,33 @@ namespace DMS_Service
             return this.setBackup(gds_mis, gds_mis_agenda, gds_mis_auth);
         }
 
+        /// <summary>
+        /// Gets the database id for a given person.
+        /// </summary>
+        /// <param name="p">The person object to get its id.</param>
+        /// <returns>-1 if non existant person. | The id of the person.</returns>
+        private int getpersonId(Person p)
+        {
+            return dbManager.getPersonId(p.FirstName, p.LastName, p.DateOfBirth);
+        }
+
+        /// <summary>
+        /// Method for validating an appointment
+        /// </summary>
+        /// <param name="start_date">a specific start date</param>
+        /// <returns>true if the appointment has successfully been validated. or else returns false</returns>
+        bool ValidateAppointment(DateTime start_date)
+        {
+            DataTable dt = dbManager.GetAppointmentStartDates();
+
+            foreach (DataRow dr in dt.Rows)
+            {
+                if (dr.ItemArray[0].ToString() == start_date.ToString())
+                    return false;
+
+            }
+            return true;
+        }
      
     }
 }

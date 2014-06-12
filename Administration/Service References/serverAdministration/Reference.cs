@@ -433,23 +433,6 @@ namespace Administration.serverAdministration {
         }
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="CAdministration.task", Namespace="http://schemas.datacontract.org/2004/07/DMS_Service")]
-    public enum CAdministrationtask : int {
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        select = 0,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        update = 1,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        insert = 2,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        delete = 3,
-    }
-    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="serverAdministration.IAdministration")]
     public interface IAdministration {
@@ -466,12 +449,6 @@ namespace Administration.serverAdministration {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAdministration/editPerson", ReplyAction="http://tempuri.org/IAdministration/editPersonResponse")]
         System.Threading.Tasks.Task<bool> editPersonAsync(Administration.serverAdministration.Person person);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAdministration/removePerson", ReplyAction="http://tempuri.org/IAdministration/removePersonResponse")]
-        bool removePerson(Administration.serverAdministration.Person person, bool completely);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAdministration/removePerson", ReplyAction="http://tempuri.org/IAdministration/removePersonResponse")]
-        System.Threading.Tasks.Task<bool> removePersonAsync(Administration.serverAdministration.Person person, bool completely);
-        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAdministration/addPatient", ReplyAction="http://tempuri.org/IAdministration/addPatientResponse")]
         bool addPatient(Administration.serverAdministration.Patient patient);
         
@@ -483,12 +460,6 @@ namespace Administration.serverAdministration {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAdministration/editPatient", ReplyAction="http://tempuri.org/IAdministration/editPatientResponse")]
         System.Threading.Tasks.Task<bool> editPatientAsync(Administration.serverAdministration.Patient patient);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAdministration/removePatient", ReplyAction="http://tempuri.org/IAdministration/removePatientResponse")]
-        bool removePatient(Administration.serverAdministration.Patient patient);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAdministration/removePatient", ReplyAction="http://tempuri.org/IAdministration/removePatientResponse")]
-        System.Threading.Tasks.Task<bool> removePatientAsync(Administration.serverAdministration.Patient patient);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAdministration/addStaff", ReplyAction="http://tempuri.org/IAdministration/addStaffResponse")]
         bool addStaff(Administration.serverAdministration.Staff staff);
@@ -508,12 +479,6 @@ namespace Administration.serverAdministration {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAdministration/removeStaff", ReplyAction="http://tempuri.org/IAdministration/removeStaffResponse")]
         System.Threading.Tasks.Task<bool> removeStaffAsync(Administration.serverAdministration.Staff staff);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAdministration/hasPermissions", ReplyAction="http://tempuri.org/IAdministration/hasPermissionsResponse")]
-        bool hasPermissions(int id, Administration.serverAdministration.CAdministrationtask t);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAdministration/hasPermissions", ReplyAction="http://tempuri.org/IAdministration/hasPermissionsResponse")]
-        System.Threading.Tasks.Task<bool> hasPermissionsAsync(int id, Administration.serverAdministration.CAdministrationtask t);
-        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAdministration/getAllStaff", ReplyAction="http://tempuri.org/IAdministration/getAllStaffResponse")]
         Administration.serverAdministration.Staff[] getAllStaff();
         
@@ -525,6 +490,12 @@ namespace Administration.serverAdministration {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAdministration/getStaffById", ReplyAction="http://tempuri.org/IAdministration/getStaffByIdResponse")]
         System.Threading.Tasks.Task<Administration.serverAdministration.Staff> getStaffByIdAsync(int staffId);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAdministration/searchStaff", ReplyAction="http://tempuri.org/IAdministration/searchStaffResponse")]
+        Administration.serverAdministration.Staff[] searchStaff(string fname, string lname, int staffId);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAdministration/searchStaff", ReplyAction="http://tempuri.org/IAdministration/searchStaffResponse")]
+        System.Threading.Tasks.Task<Administration.serverAdministration.Staff[]> searchStaffAsync(string fname, string lname, int staffId);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -570,14 +541,6 @@ namespace Administration.serverAdministration {
             return base.Channel.editPersonAsync(person);
         }
         
-        public bool removePerson(Administration.serverAdministration.Person person, bool completely) {
-            return base.Channel.removePerson(person, completely);
-        }
-        
-        public System.Threading.Tasks.Task<bool> removePersonAsync(Administration.serverAdministration.Person person, bool completely) {
-            return base.Channel.removePersonAsync(person, completely);
-        }
-        
         public bool addPatient(Administration.serverAdministration.Patient patient) {
             return base.Channel.addPatient(patient);
         }
@@ -592,14 +555,6 @@ namespace Administration.serverAdministration {
         
         public System.Threading.Tasks.Task<bool> editPatientAsync(Administration.serverAdministration.Patient patient) {
             return base.Channel.editPatientAsync(patient);
-        }
-        
-        public bool removePatient(Administration.serverAdministration.Patient patient) {
-            return base.Channel.removePatient(patient);
-        }
-        
-        public System.Threading.Tasks.Task<bool> removePatientAsync(Administration.serverAdministration.Patient patient) {
-            return base.Channel.removePatientAsync(patient);
         }
         
         public bool addStaff(Administration.serverAdministration.Staff staff) {
@@ -626,14 +581,6 @@ namespace Administration.serverAdministration {
             return base.Channel.removeStaffAsync(staff);
         }
         
-        public bool hasPermissions(int id, Administration.serverAdministration.CAdministrationtask t) {
-            return base.Channel.hasPermissions(id, t);
-        }
-        
-        public System.Threading.Tasks.Task<bool> hasPermissionsAsync(int id, Administration.serverAdministration.CAdministrationtask t) {
-            return base.Channel.hasPermissionsAsync(id, t);
-        }
-        
         public Administration.serverAdministration.Staff[] getAllStaff() {
             return base.Channel.getAllStaff();
         }
@@ -648,6 +595,14 @@ namespace Administration.serverAdministration {
         
         public System.Threading.Tasks.Task<Administration.serverAdministration.Staff> getStaffByIdAsync(int staffId) {
             return base.Channel.getStaffByIdAsync(staffId);
+        }
+        
+        public Administration.serverAdministration.Staff[] searchStaff(string fname, string lname, int staffId) {
+            return base.Channel.searchStaff(fname, lname, staffId);
+        }
+        
+        public System.Threading.Tasks.Task<Administration.serverAdministration.Staff[]> searchStaffAsync(string fname, string lname, int staffId) {
+            return base.Channel.searchStaffAsync(fname, lname, staffId);
         }
     }
 }
