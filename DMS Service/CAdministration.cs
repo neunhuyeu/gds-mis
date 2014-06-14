@@ -75,6 +75,38 @@ namespace DMS_Service
                     if (!result || patient.PersonId < 0)
                         throw new Exception("Person id couldn't be retrieved.");
                     result = db.addPatient(patient);
+                    
+                    //Add to other server
+                    try
+                    {
+                        DMS_Service.MySynchroniseService.SynchroniseClient proxy;
+                        proxy = new DMS_Service.MySynchroniseService.SynchroniseClient;
+                        DMS_Service.MySynchroniseService.Patient dude = new DMS_Service.MySynchroniseService.Patient();
+
+                        //convert type
+                        dude.FirstNamek__BackingField = patient.FirstName;
+                        dude.LastNamek__BackingField = patient.LastName;
+                        dude.DateOfBirthk__BackingField = patient.DateOfBirth;
+                        dude.Emailk__BackingField = patient.Email;
+                        dude.MobileNumberk__BackingField = patient.MobileNumber;
+                        dude.LandLineNumberk__BackingField = patient.LandLineNumber;
+                        dude.Addressk__BackingField = patient.Address;
+                        dude.InsuranceNumberk__BackingField = patient.InsuranceNumber;
+                        dude.Genderk__BackingField = patient.Gender;
+                        dude.Heightk__BackingField = patient.Height;
+                        dude.Weightk__BackingField = patient.Weight;
+                        dude.BloodTypek__BackingField = patient.BloodType;
+                        dude.Smokerk__BackingField = patient.Smoker;
+                        dude.SmokingFrequencyk__BackingField = patient.SmokingFrequency;
+                        dude.hard_drugsk__BackingField = patient.hard_drugs;
+                        dude.hard_drugs_frequencyk__BackingField = patient.hard_drugs_frequency;
+                    
+                        proxy.addPatient(dude);
+                    }
+                    catch
+                    {
+
+                    }
                 }
             }
             catch
