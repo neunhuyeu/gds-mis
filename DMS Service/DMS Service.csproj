@@ -86,10 +86,10 @@
     </None>
     <None Include="ClassDiagram1.cd" />
     <None Include="packages.config" />
-    <None Include="Service References\MySynchroniseService\Arrays.xsd">
+    <None Include="Service References\MySynchroniseService\Arrays1.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\MySynchroniseService\Arrays1.xsd">
+    <None Include="Service References\MySynchroniseService\Arrays11.xsd">
       <SubType>Designer</SubType>
     </None>
     <None Include="Service References\MySynchroniseService\DMS_Service.Structs.xsd">

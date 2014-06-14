@@ -80,7 +80,7 @@ namespace DMS_Service
                     try
                     {
                         DMS_Service.MySynchroniseService.SynchroniseClient proxy;
-                        proxy = new DMS_Service.MySynchroniseService.SynchroniseClient;
+                        proxy = new DMS_Service.MySynchroniseService.SynchroniseClient();
                         DMS_Service.MySynchroniseService.Patient dude = new DMS_Service.MySynchroniseService.Patient();
 
                         //convert type
