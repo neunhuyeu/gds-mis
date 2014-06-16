@@ -17,7 +17,6 @@ namespace DMS_Service.MySynchroniseService {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="Person", Namespace="http://schemas.datacontract.org/2004/07/DMS_Service.Structs")]
     [System.SerializableAttribute()]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(DMS_Service.MySynchroniseService.Staff))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(DMS_Service.MySynchroniseService.Patient))]
     public partial class Person : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
@@ -196,73 +195,6 @@ namespace DMS_Service.MySynchroniseService {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="Staff", Namespace="http://schemas.datacontract.org/2004/07/DMS_Service.Structs")]
-    [System.SerializableAttribute()]
-    public partial class Staff : DMS_Service.MySynchroniseService.Person {
-        
-        private string Functionk__BackingFieldField;
-        
-        private string RoomNumberk__BackingFieldField;
-        
-        private string Specializationk__BackingFieldField;
-        
-        private int StaffIDk__BackingFieldField;
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Name="<Function>k__BackingField", IsRequired=true)]
-        public string Functionk__BackingField {
-            get {
-                return this.Functionk__BackingFieldField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.Functionk__BackingFieldField, value) != true)) {
-                    this.Functionk__BackingFieldField = value;
-                    this.RaisePropertyChanged("Functionk__BackingField");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Name="<RoomNumber>k__BackingField", IsRequired=true)]
-        public string RoomNumberk__BackingField {
-            get {
-                return this.RoomNumberk__BackingFieldField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.RoomNumberk__BackingFieldField, value) != true)) {
-                    this.RoomNumberk__BackingFieldField = value;
-                    this.RaisePropertyChanged("RoomNumberk__BackingField");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Name="<Specialization>k__BackingField", IsRequired=true)]
-        public string Specializationk__BackingField {
-            get {
-                return this.Specializationk__BackingFieldField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.Specializationk__BackingFieldField, value) != true)) {
-                    this.Specializationk__BackingFieldField = value;
-                    this.RaisePropertyChanged("Specializationk__BackingField");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Name="<StaffID>k__BackingField", IsRequired=true)]
-        public int StaffIDk__BackingField {
-            get {
-                return this.StaffIDk__BackingFieldField;
-            }
-            set {
-                if ((this.StaffIDk__BackingFieldField.Equals(value) != true)) {
-                    this.StaffIDk__BackingFieldField = value;
-                    this.RaisePropertyChanged("StaffIDk__BackingField");
-                }
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="Patient", Namespace="http://schemas.datacontract.org/2004/07/DMS_Service.Structs")]
     [System.SerializableAttribute()]
     public partial class Patient : DMS_Service.MySynchroniseService.Person {
@@ -435,139 +367,6 @@ namespace DMS_Service.MySynchroniseService {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="Appointment", Namespace="http://schemas.datacontract.org/2004/07/DMS_Service.Structs")]
-    [System.SerializableAttribute()]
-    public partial struct Appointment : System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        private string[] Diagnosisk__BackingFieldField;
-        
-        private bool canceledk__BackingFieldField;
-        
-        private System.DateTime endTimek__BackingFieldField;
-        
-        private string notesk__BackingFieldField;
-        
-        private DMS_Service.MySynchroniseService.Perscription[] perscriptionsk__BackingFieldField;
-        
-        private System.DateTime startTimek__BackingFieldField;
-        
-        private string[] symptomsk__BackingFieldField;
-        
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Name="<Diagnosis>k__BackingField", IsRequired=true)]
-        public string[] Diagnosisk__BackingField {
-            get {
-                return this.Diagnosisk__BackingFieldField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.Diagnosisk__BackingFieldField, value) != true)) {
-                    this.Diagnosisk__BackingFieldField = value;
-                    this.RaisePropertyChanged("Diagnosisk__BackingField");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Name="<canceled>k__BackingField", IsRequired=true)]
-        public bool canceledk__BackingField {
-            get {
-                return this.canceledk__BackingFieldField;
-            }
-            set {
-                if ((this.canceledk__BackingFieldField.Equals(value) != true)) {
-                    this.canceledk__BackingFieldField = value;
-                    this.RaisePropertyChanged("canceledk__BackingField");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Name="<endTime>k__BackingField", IsRequired=true)]
-        public System.DateTime endTimek__BackingField {
-            get {
-                return this.endTimek__BackingFieldField;
-            }
-            set {
-                if ((this.endTimek__BackingFieldField.Equals(value) != true)) {
-                    this.endTimek__BackingFieldField = value;
-                    this.RaisePropertyChanged("endTimek__BackingField");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Name="<notes>k__BackingField", IsRequired=true)]
-        public string notesk__BackingField {
-            get {
-                return this.notesk__BackingFieldField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.notesk__BackingFieldField, value) != true)) {
-                    this.notesk__BackingFieldField = value;
-                    this.RaisePropertyChanged("notesk__BackingField");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Name="<perscriptions>k__BackingField", IsRequired=true)]
-        public DMS_Service.MySynchroniseService.Perscription[] perscriptionsk__BackingField {
-            get {
-                return this.perscriptionsk__BackingFieldField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.perscriptionsk__BackingFieldField, value) != true)) {
-                    this.perscriptionsk__BackingFieldField = value;
-                    this.RaisePropertyChanged("perscriptionsk__BackingField");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Name="<startTime>k__BackingField", IsRequired=true)]
-        public System.DateTime startTimek__BackingField {
-            get {
-                return this.startTimek__BackingFieldField;
-            }
-            set {
-                if ((this.startTimek__BackingFieldField.Equals(value) != true)) {
-                    this.startTimek__BackingFieldField = value;
-                    this.RaisePropertyChanged("startTimek__BackingField");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Name="<symptoms>k__BackingField", IsRequired=true)]
-        public string[] symptomsk__BackingField {
-            get {
-                return this.symptomsk__BackingFieldField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.symptomsk__BackingFieldField, value) != true)) {
-                    this.symptomsk__BackingFieldField = value;
-                    this.RaisePropertyChanged("symptomsk__BackingField");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="Perscription", Namespace="http://schemas.datacontract.org/2004/07/DMS_Service.Structs")]
     [System.SerializableAttribute()]
     public partial struct Perscription : System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
@@ -706,153 +505,33 @@ namespace DMS_Service.MySynchroniseService {
         }
     }
     
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="Consultation", Namespace="http://schemas.datacontract.org/2004/07/DMS_Service.Structs")]
-    [System.SerializableAttribute()]
-    public partial struct Consultation : System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int consultationIDField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.DateTime end_dateField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int patient_idField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int staff_idField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.DateTime start_dateField;
-        
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int consultationID {
-            get {
-                return this.consultationIDField;
-            }
-            set {
-                if ((this.consultationIDField.Equals(value) != true)) {
-                    this.consultationIDField = value;
-                    this.RaisePropertyChanged("consultationID");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.DateTime end_date {
-            get {
-                return this.end_dateField;
-            }
-            set {
-                if ((this.end_dateField.Equals(value) != true)) {
-                    this.end_dateField = value;
-                    this.RaisePropertyChanged("end_date");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int patient_id {
-            get {
-                return this.patient_idField;
-            }
-            set {
-                if ((this.patient_idField.Equals(value) != true)) {
-                    this.patient_idField = value;
-                    this.RaisePropertyChanged("patient_id");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int staff_id {
-            get {
-                return this.staff_idField;
-            }
-            set {
-                if ((this.staff_idField.Equals(value) != true)) {
-                    this.staff_idField = value;
-                    this.RaisePropertyChanged("staff_id");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.DateTime start_date {
-            get {
-                return this.start_dateField;
-            }
-            set {
-                if ((this.start_dateField.Equals(value) != true)) {
-                    this.start_dateField = value;
-                    this.RaisePropertyChanged("start_date");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="MySynchroniseService.ISynchronise")]
     public interface ISynchronise {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISynchronise/addPatient", ReplyAction="http://tempuri.org/ISynchronise/addPatientResponse")]
-        void addPatient(DMS_Service.MySynchroniseService.Patient patient);
+        bool addPatient(DMS_Service.MySynchroniseService.Patient patient);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISynchronise/addPatient", ReplyAction="http://tempuri.org/ISynchronise/addPatientResponse")]
-        System.Threading.Tasks.Task addPatientAsync(DMS_Service.MySynchroniseService.Patient patient);
+        System.Threading.Tasks.Task<bool> addPatientAsync(DMS_Service.MySynchroniseService.Patient patient);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISynchronise/addAppointment", ReplyAction="http://tempuri.org/ISynchronise/addAppointmentResponse")]
-        void addAppointment(DMS_Service.MySynchroniseService.Appointment appointment);
+        bool addAppointment(string staffLastName, string patientMail, string startDate, string endDate);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISynchronise/addAppointment", ReplyAction="http://tempuri.org/ISynchronise/addAppointmentResponse")]
-        System.Threading.Tasks.Task addAppointmentAsync(DMS_Service.MySynchroniseService.Appointment appointment);
+        System.Threading.Tasks.Task<bool> addAppointmentAsync(string staffLastName, string patientMail, string startDate, string endDate);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISynchronise/addStaff", ReplyAction="http://tempuri.org/ISynchronise/addStaffResponse")]
-        void addStaff(DMS_Service.MySynchroniseService.Staff staff);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISynchronise/editPatient", ReplyAction="http://tempuri.org/ISynchronise/editPatientResponse")]
+        bool editPatient(DMS_Service.MySynchroniseService.Patient patient);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISynchronise/addStaff", ReplyAction="http://tempuri.org/ISynchronise/addStaffResponse")]
-        System.Threading.Tasks.Task addStaffAsync(DMS_Service.MySynchroniseService.Staff staff);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISynchronise/editPatient", ReplyAction="http://tempuri.org/ISynchronise/editPatientResponse")]
+        System.Threading.Tasks.Task<bool> editPatientAsync(DMS_Service.MySynchroniseService.Patient patient);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISynchronise/addConsultation", ReplyAction="http://tempuri.org/ISynchronise/addConsultationResponse")]
-        void addConsultation(DMS_Service.MySynchroniseService.Consultation consult);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISynchronise/addPrescription", ReplyAction="http://tempuri.org/ISynchronise/addPrescriptionResponse")]
+        bool addPrescription(int appointmentId, DMS_Service.MySynchroniseService.Perscription per);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISynchronise/addConsultation", ReplyAction="http://tempuri.org/ISynchronise/addConsultationResponse")]
-        System.Threading.Tasks.Task addConsultationAsync(DMS_Service.MySynchroniseService.Consultation consult);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISynchronise/editPatientByPatient", ReplyAction="http://tempuri.org/ISynchronise/editPatientByPatientResponse")]
-        void editPatientByPatient(DMS_Service.MySynchroniseService.Patient patient);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISynchronise/editPatientByPatient", ReplyAction="http://tempuri.org/ISynchronise/editPatientByPatientResponse")]
-        System.Threading.Tasks.Task editPatientByPatientAsync(DMS_Service.MySynchroniseService.Patient patient);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISynchronise/editPatientByAppointment", ReplyAction="http://tempuri.org/ISynchronise/editPatientByAppointmentResponse")]
-        void editPatientByAppointment(DMS_Service.MySynchroniseService.Appointment appointment);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISynchronise/editPatientByAppointment", ReplyAction="http://tempuri.org/ISynchronise/editPatientByAppointmentResponse")]
-        System.Threading.Tasks.Task editPatientByAppointmentAsync(DMS_Service.MySynchroniseService.Appointment appointment);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISynchronise/addPrescription", ReplyAction="http://tempuri.org/ISynchronise/addPrescriptionResponse")]
+        System.Threading.Tasks.Task<bool> addPrescriptionAsync(int appointmentId, DMS_Service.MySynchroniseService.Perscription per);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISynchronise/ping", ReplyAction="http://tempuri.org/ISynchronise/pingResponse")]
         bool ping();
@@ -900,52 +579,36 @@ namespace DMS_Service.MySynchroniseService {
                 base(binding, remoteAddress) {
         }
         
-        public void addPatient(DMS_Service.MySynchroniseService.Patient patient) {
-            base.Channel.addPatient(patient);
+        public bool addPatient(DMS_Service.MySynchroniseService.Patient patient) {
+            return base.Channel.addPatient(patient);
         }
         
-        public System.Threading.Tasks.Task addPatientAsync(DMS_Service.MySynchroniseService.Patient patient) {
+        public System.Threading.Tasks.Task<bool> addPatientAsync(DMS_Service.MySynchroniseService.Patient patient) {
             return base.Channel.addPatientAsync(patient);
         }
         
-        public void addAppointment(DMS_Service.MySynchroniseService.Appointment appointment) {
-            base.Channel.addAppointment(appointment);
+        public bool addAppointment(string staffLastName, string patientMail, string startDate, string endDate) {
+            return base.Channel.addAppointment(staffLastName, patientMail, startDate, endDate);
         }
         
-        public System.Threading.Tasks.Task addAppointmentAsync(DMS_Service.MySynchroniseService.Appointment appointment) {
-            return base.Channel.addAppointmentAsync(appointment);
+        public System.Threading.Tasks.Task<bool> addAppointmentAsync(string staffLastName, string patientMail, string startDate, string endDate) {
+            return base.Channel.addAppointmentAsync(staffLastName, patientMail, startDate, endDate);
         }
         
-        public void addStaff(DMS_Service.MySynchroniseService.Staff staff) {
-            base.Channel.addStaff(staff);
+        public bool editPatient(DMS_Service.MySynchroniseService.Patient patient) {
+            return base.Channel.editPatient(patient);
         }
         
-        public System.Threading.Tasks.Task addStaffAsync(DMS_Service.MySynchroniseService.Staff staff) {
-            return base.Channel.addStaffAsync(staff);
+        public System.Threading.Tasks.Task<bool> editPatientAsync(DMS_Service.MySynchroniseService.Patient patient) {
+            return base.Channel.editPatientAsync(patient);
         }
         
-        public void addConsultation(DMS_Service.MySynchroniseService.Consultation consult) {
-            base.Channel.addConsultation(consult);
+        public bool addPrescription(int appointmentId, DMS_Service.MySynchroniseService.Perscription per) {
+            return base.Channel.addPrescription(appointmentId, per);
         }
         
-        public System.Threading.Tasks.Task addConsultationAsync(DMS_Service.MySynchroniseService.Consultation consult) {
-            return base.Channel.addConsultationAsync(consult);
-        }
-        
-        public void editPatientByPatient(DMS_Service.MySynchroniseService.Patient patient) {
-            base.Channel.editPatientByPatient(patient);
-        }
-        
-        public System.Threading.Tasks.Task editPatientByPatientAsync(DMS_Service.MySynchroniseService.Patient patient) {
-            return base.Channel.editPatientByPatientAsync(patient);
-        }
-        
-        public void editPatientByAppointment(DMS_Service.MySynchroniseService.Appointment appointment) {
-            base.Channel.editPatientByAppointment(appointment);
-        }
-        
-        public System.Threading.Tasks.Task editPatientByAppointmentAsync(DMS_Service.MySynchroniseService.Appointment appointment) {
-            return base.Channel.editPatientByAppointmentAsync(appointment);
+        public System.Threading.Tasks.Task<bool> addPrescriptionAsync(int appointmentId, DMS_Service.MySynchroniseService.Perscription per) {
+            return base.Channel.addPrescriptionAsync(appointmentId, per);
         }
         
         public bool ping() {

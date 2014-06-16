@@ -10,6 +10,7 @@ using DMS_Service.Structs;
 using System.Timers;
 using System.Data;
 using System.IO;
+using System.Threading;
 
 namespace DMS_Service
 {
@@ -19,7 +20,7 @@ namespace DMS_Service
     {
         /// DbAccessLayer object for saving changes to the database.
         private DbAccessLayer dbManager;
-        private Timer timer = new Timer();
+        private System.Timers.Timer timer = new System.Timers.Timer();
         //was the other server offline?
         private bool serverWasOffline;
         //create the sync proxy
@@ -212,6 +213,10 @@ namespace DMS_Service
         /// <returns> ture= backup sucessfull false= didn't backup</returns>
         public bool forcePushBackup()
         {
+            this.backup();
+            Thread.Sleep(300);
+        
+            
             byte[] gds_mis = System.IO.File.ReadAllBytes(@"c:\wamp\bin\mysql\backup_gds_mis.sql");
             byte[] gds_mis_auth = System.IO.File.ReadAllBytes(@"c:\wamp\bin\mysql\backup_gds_mis_agenda.sql");
             byte[] gds_mis_agenda = System.IO.File.ReadAllBytes(@"c:\wamp\bin\mysql\backup_gds_mis_auth.sql");

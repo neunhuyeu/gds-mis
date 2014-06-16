@@ -10,67 +10,55 @@
   </xs:element>
   <xs:element name="addPatientResponse">
     <xs:complexType>
-      <xs:sequence />
+      <xs:sequence>
+        <xs:element minOccurs="0" name="addPatientResult" type="xs:boolean" />
+      </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="addAppointment">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/DMS_Service.Structs" minOccurs="0" name="appointment" type="q2:Appointment" />
+        <xs:element minOccurs="0" name="staffLastName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="patientMail" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="startDate" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="endDate" nillable="true" type="xs:string" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="addAppointmentResponse">
     <xs:complexType>
-      <xs:sequence />
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="addStaff">
-    <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/DMS_Service.Structs" minOccurs="0" name="staff" nillable="true" type="q3:Staff" />
+        <xs:element minOccurs="0" name="addAppointmentResult" type="xs:boolean" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="addStaffResponse">
-    <xs:complexType>
-      <xs:sequence />
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="addConsultation">
+  <xs:element name="editPatient">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/DMS_Service.Structs" minOccurs="0" name="consult" type="q4:Consultation" />
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/DMS_Service.Structs" minOccurs="0" name="patient" nillable="true" type="q2:Patient" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="addConsultationResponse">
-    <xs:complexType>
-      <xs:sequence />
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="editPatientByPatient">
+  <xs:element name="editPatientResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/DMS_Service.Structs" minOccurs="0" name="patient" nillable="true" type="q5:Patient" />
+        <xs:element minOccurs="0" name="editPatientResult" type="xs:boolean" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="editPatientByPatientResponse">
-    <xs:complexType>
-      <xs:sequence />
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="editPatientByAppointment">
+  <xs:element name="addPrescription">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/DMS_Service.Structs" minOccurs="0" name="appointment" type="q6:Appointment" />
+        <xs:element minOccurs="0" name="appointmentId" type="xs:int" />
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/DMS_Service.Structs" minOccurs="0" name="per" type="q3:Perscription" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="editPatientByAppointmentResponse">
+  <xs:element name="addPrescriptionResponse">
     <xs:complexType>
-      <xs:sequence />
+      <xs:sequence>
+        <xs:element minOccurs="0" name="addPrescriptionResult" type="xs:boolean" />
+      </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="ping">

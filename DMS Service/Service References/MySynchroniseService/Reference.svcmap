@@ -26,7 +26,6 @@
     <MetadataFile FileName="service2.xsd" MetadataType="Schema" ID="c3065635-f065-42a5-ae1b-514bb2762435" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses/DMS_Service/CSynchronise/mex" />
     <MetadataFile FileName="service21.xsd" MetadataType="Schema" ID="c61f9b42-fee2-439e-a4a7-574ed6a852b0" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses/DMS_Service/CSynchronise/mex" />
     <MetadataFile FileName="DMS_Service.Structs.xsd" MetadataType="Schema" ID="523f1cd2-ef06-423f-8442-28c6d41f939a" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses/DMS_Service/CSynchronise/mex" />
-    <MetadataFile FileName="Arrays11.xsd" MetadataType="Schema" ID="571c80f8-3bd9-4eee-b33d-50c68b54f7d6" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses/DMS_Service/CSynchronise/mex" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

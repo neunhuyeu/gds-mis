@@ -418,10 +418,6 @@ namespace DMS_Service
             {
 
             }
-            
-            
-            
-
 
         }
         /// <summary>
@@ -439,22 +435,16 @@ namespace DMS_Service
             appoinment.endTime = new DateTime(2014, 1, 1, 13, 30, 0);
            
 
-            DMS_Service.MySynchroniseService.Appointment sameAppointment;
-            sameAppointment= new DMS_Service.MySynchroniseService.Appointment();
-
-            
-            sameAppointment.startTimek__BackingField = new DateTime(2014, 1, 1, 13, 0, 0);
-            sameAppointment.endTimek__BackingField = new DateTime(2014, 1, 1, 13, 30, 0);
             
             
             //Add appointment to own database   
-            //dbAcess.addAppointment(appoinment);
+            dbAcess.addAppointment(1,1,appoinment.startTime.ToString(),appoinment.endTime.ToString());
 
             //Add appointment to other server
             try
             {
                 proxy = new DMS_Service.MySynchroniseService.SynchroniseClient();
-                proxy.addAppointment(sameAppointment);
+                proxy.addAppointment("1", "1", appoinment.startTime.ToString(), appoinment.endTime.ToString());
                 
             }
             catch(TimeoutException)
